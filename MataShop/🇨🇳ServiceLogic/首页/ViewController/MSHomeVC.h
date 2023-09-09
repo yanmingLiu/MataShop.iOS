@@ -19,7 +19,7 @@
 
 #import "CasinoBannerCell.h"
 #import "BaiShaETProjMarqueeView.h"
-#import "BaiShaETProjInfoBoardView.h"
+#import "MSSearchBoardView.h"
 
 #import "BaseViewController.h"
 

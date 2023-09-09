@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B993043327D75E0EB77E92C0 /* Pods_MataShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C125973423803486C58BD /* Pods_MataShop.framework */; };
+		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
 		C561CDFD2AAC7CE200E28603 /* CasinoFlowDetailsVC_h in Resources */ = {isa = PBXBuildFile; fileRef = C561CD4A2AAC7CDD00E28603 /* CasinoFlowDetailsVC_h */; };
 		C561CDFE2AAC7CE200E28603 /* CasinoFlowDetailsVC_m in Resources */ = {isa = PBXBuildFile; fileRef = C561CD4B2AAC7CDD00E28603 /* CasinoFlowDetailsVC_m */; };
@@ -654,8 +655,6 @@
 		C561D9842AAC929000E28603 /* BaiShaETProjVIPSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9822AAC929000E28603 /* BaiShaETProjVIPSubModel.m */; };
 		C561D9882AAC92CC00E28603 /* CasinoBoundBankCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9872AAC92CC00E28603 /* CasinoBoundBankCardModel.m */; };
 		C561D98C2AAC954400E28603 /* BaiShaETProjHeaderIconModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D98A2AAC954400E28603 /* BaiShaETProjHeaderIconModel.m */; };
-		C561D99B2AAC9A8400E28603 /* BaiShaETProjInfoBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9942AAC9A8300E28603 /* BaiShaETProjInfoBoardView.m */; };
-		C561D99C2AAC9A8400E28603 /* BaiShaETProjInfoBoardView.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D9962AAC9A8300E28603 /* BaiShaETProjInfoBoardView.png */; };
 		C561D99D2AAC9A8400E28603 /* BaiShaETProjMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9982AAC9A8400E28603 /* BaiShaETProjMarqueeView.m */; };
 		C561D99E2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D99A2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png */; };
 		C561DA142AACA62900E28603 /* 首页.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C561DA132AACA62900E28603 /* 首页.xcassets */; };
@@ -698,6 +697,9 @@
 		71B8BC338A628F598A124F4E /* Pods-MataShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopTests.release.xcconfig"; path = "Target Support Files/Pods-MataShopTests/Pods-MataShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		B89C6B5C269ED0FC52F8B100 /* Pods-MataShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShop.debug.xcconfig"; path = "Target Support Files/Pods-MataShop/Pods-MataShop.debug.xcconfig"; sourceTree = "<group>"; };
 		BD29B03F9AE25E4A547369B7 /* Pods_MataShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MataShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
+		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
+		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
 		C561CD442AAC7C8C00E28603 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZMJCell+CustomView.m"; sourceTree = "<group>"; };
 		C561CD4A2AAC7CDD00E28603 /* CasinoFlowDetailsVC_h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CasinoFlowDetailsVC_h; sourceTree = "<group>"; };
@@ -1905,9 +1907,6 @@
 		C561D9872AAC92CC00E28603 /* CasinoBoundBankCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CasinoBoundBankCardModel.m; sourceTree = "<group>"; };
 		C561D98A2AAC954400E28603 /* BaiShaETProjHeaderIconModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjHeaderIconModel.m; sourceTree = "<group>"; };
 		C561D98B2AAC954400E28603 /* BaiShaETProjHeaderIconModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjHeaderIconModel.h; sourceTree = "<group>"; };
-		C561D9942AAC9A8300E28603 /* BaiShaETProjInfoBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjInfoBoardView.m; sourceTree = "<group>"; };
-		C561D9952AAC9A8300E28603 /* BaiShaETProjInfoBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjInfoBoardView.h; sourceTree = "<group>"; };
-		C561D9962AAC9A8300E28603 /* BaiShaETProjInfoBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjInfoBoardView.png; sourceTree = "<group>"; };
 		C561D9982AAC9A8400E28603 /* BaiShaETProjMarqueeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjMarqueeView.m; sourceTree = "<group>"; };
 		C561D9992AAC9A8400E28603 /* BaiShaETProjMarqueeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjMarqueeView.h; sourceTree = "<group>"; };
 		C561D99A2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjMarqueeView.png; sourceTree = "<group>"; };
@@ -1979,6 +1978,16 @@
 				BD29B03F9AE25E4A547369B7 /* Pods_MataShopUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
+			isa = PBXGroup;
+			children = (
+				C5371E502AACDD2F008988CE /* MSSearchBoardView.h */,
+				C5371E512AACDD2F008988CE /* MSSearchBoardView.m */,
+				C5371E542AACDD77008988CE /* MSSearchBoardView.png */,
+			);
+			path = MSSearchBoardView;
 			sourceTree = "<group>";
 		};
 		C561CD462AAC7CC500E28603 /* PodsManual */ = {
@@ -7522,27 +7531,17 @@
 		C561D9922AAC9A6B00E28603 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C561D9932AAC9A8300E28603 /* BaiShaETProjInfoBoardView */,
+				C5371E532AACDD37008988CE /* MSSearchBoardView */,
 				C561D9972AAC9A8400E28603 /* BaiShaETProjMarqueeView */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		C561D9932AAC9A8300E28603 /* BaiShaETProjInfoBoardView */ = {
-			isa = PBXGroup;
-			children = (
-				C561D9942AAC9A8300E28603 /* BaiShaETProjInfoBoardView.m */,
-				C561D9952AAC9A8300E28603 /* BaiShaETProjInfoBoardView.h */,
-				C561D9962AAC9A8300E28603 /* BaiShaETProjInfoBoardView.png */,
-			);
-			path = BaiShaETProjInfoBoardView;
-			sourceTree = "<group>";
-		};
 		C561D9972AAC9A8400E28603 /* BaiShaETProjMarqueeView */ = {
 			isa = PBXGroup;
 			children = (
-				C561D9982AAC9A8400E28603 /* BaiShaETProjMarqueeView.m */,
 				C561D9992AAC9A8400E28603 /* BaiShaETProjMarqueeView.h */,
+				C561D9982AAC9A8400E28603 /* BaiShaETProjMarqueeView.m */,
 				C561D99A2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png */,
 			);
 			path = BaiShaETProjMarqueeView;
@@ -7820,7 +7819,6 @@
 				C561D39E2AAC7E7A00E28603 /* 红色椭圆.png in Resources */,
 				C561D3552AAC7E7A00E28603 /* 分享控件的用法.md in Resources */,
 				C561D38D2AAC7E7A00E28603 /* JobsLeftRightLab.md in Resources */,
-				C561D99C2AAC9A8400E28603 /* BaiShaETProjInfoBoardView.png in Resources */,
 				C561D3112AAC7E7A00E28603 /* 上传与拍照.json in Resources */,
 				C561CE3C2AAC7CE200E28603 /* 日历@2x.png in Resources */,
 				C561D3262AAC7E7A00E28603 /* 尝试高仿蜜柚.md in Resources */,
@@ -8074,7 +8072,6 @@
 				C561D4522AAC7E7B00E28603 /* NSCache+Extra.m in Sources */,
 				C561D4422AAC7E7B00E28603 /* NSArray+Tools.m in Sources */,
 				C561D6762AAC862000E28603 /* JobsBaseConfigTestPopupView.m in Sources */,
-				C561D99B2AAC9A8400E28603 /* BaiShaETProjInfoBoardView.m in Sources */,
 				C561D3522AAC7E7A00E28603 /* BWItemModel.m in Sources */,
 				C561D9222AAC8D8000E28603 /* BaiShaETProjRuleTBVCell.m in Sources */,
 				C561D91E2AAC8D8000E28603 /* BaiShaETProjCreditRecordTBVCell.m in Sources */,
@@ -8246,6 +8243,7 @@
 				C561D4B32AAC7EC200E28603 /* AppDelegate+UIApplicationDelegate.m in Sources */,
 				C561D3E52AAC7E7B00E28603 /* UIColor+Gradient.m in Sources */,
 				C561CE292AAC7CE200E28603 /* ECPrivacyCheckReminders.m in Sources */,
+				C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */,
 				C561D3B42AAC7E7A00E28603 /* UIImage+Extras.m in Sources */,
 				C561D35D2AAC7E7A00E28603 /* JobsHotLabelWithMultiLineCVCell.m in Sources */,
 				C561CE092AAC7CE200E28603 /* UIBarButtonItem+GKNavigationBar.m in Sources */,

@@ -11,24 +11,25 @@
 #import <UIKit/UIKit.h>
 #import "MacroDef_SysWarning.h"
 #import "MacroDef_AppDeviceScreenSize.h"
+#import "UIDevice+XMUtils.h"
 
-static inline CGSize JobsMainScreen(){
+static inline CGSize JobsMainScreen(void){
     return UIScreen.mainScreen.bounds.size;
 }
 
-static inline CGFloat JobsMainScreen_WIDTH(){
+static inline CGFloat JobsMainScreen_WIDTH(void){
     return JobsMainScreen().width;
 }
 
-static inline CGFloat JobsMainScreen_HEIGHT(){
+static inline CGFloat JobsMainScreen_HEIGHT(void){
     return JobsMainScreen().height;
 }
 
-static inline CGFloat SCREEN_MAX_LENGTH(){
+static inline CGFloat SCREEN_MAX_LENGTH(void){
     return MAX(JobsMainScreen_WIDTH(), JobsMainScreen_HEIGHT());
 }
 
-static inline CGFloat SCREEN_MIN_LENGTH(){
+static inline CGFloat SCREEN_MIN_LENGTH(void){
     return MIN(JobsMainScreen_WIDTH(), JobsMainScreen_HEIGHT());
 }
 /// 输入原型图上的宽和高，对外输出App对应的移动设备的真实宽高
@@ -42,28 +43,67 @@ static inline CGFloat JobsHeight(CGFloat height){
 #import "MacroDef_Func.h"/// 提到最前面，就会因为编译顺序的问题报错
 #pragma mark —— 安全区域
 /// 顶部的安全距离
-static inline CGFloat JobsTopSafeAreaHeight(){
+static inline CGFloat JobsTopSafeAreaHeight(void){
     if (@available(iOS 11.0, *)) {
         return getMainWindow().safeAreaInsets.top;
     } else return 0.f;
 }
 /// 底部的安全距离，全面屏手机为34pt，非全面屏手机为0pt
-static inline CGFloat JobsBottomSafeAreaHeight(){
+static inline CGFloat JobsBottomSafeAreaHeight(void){
     if (@available(iOS 11.0, *)) {
         return getMainWindow().safeAreaInsets.bottom;
     } else return 0.f;
 }
-#pragma mark —— 状态栏高度：全面屏手机的状态栏高度为44pt，非全面屏手机的状态栏高度为20pt
+#pragma mark —— 状态栏高度
+/**
+【iOS 14前】
+ 刘海屏手机的状态栏高度 = 44pt
+ 非刘海屏手机的状态栏高度 = 20pt
+ 
+【iOS 14后】刘海屏的状态栏高度不再是固定的44pt
+ iPhone 11/X/XR的状态栏高度 = 48pt
+ iPhone 12/12 Pro/13/13 Pro/14的状态栏高度 = 47pt
+ iPhone 14 Pro/14 Pro Max的状态栏高度 = 59pt
+ 其他刘海屏的状态栏高度 = 44pt
+ 非刘海屏的状态栏高度 = 20pt
+ */
 /// 方法一：状态栏高度
-static inline CGFloat JobsRectOfStatusbar(){
+static inline CGFloat JobsStatusBarHeightByAppleIncData(void){
+    if (UIDevice.currentDevice.systemVersion.floatValue < 14.0) {
+        return isiPhoneX_series() ? 44 : 20;
+    } else {
+        if([UIDevice.simulatorModel isEqualToString:@"iPhone12,1"] ||// iPhone 11
+           [UIDevice.simulatorModel isEqualToString:@"iPhone12,3"] ||// iPhone 11 Pro
+           [UIDevice.simulatorModel isEqualToString:@"iPhone12,5"] ||// iPhone 11 Pro Max
+           [UIDevice.simulatorModel isEqualToString:@"iPhone10,6"] ||// iPhone X
+           [UIDevice.simulatorModel isEqualToString:@"iPhone10,8"] ){// iPhone XR
+            return 48;
+        }
+           
+        if([UIDevice.simulatorModel isEqualToString:@"iPhone13,2"] ||// iPhone 12
+           [UIDevice.simulatorModel isEqualToString:@"iPhone13,3"] ||// iPhone 12 Pro
+           [UIDevice.simulatorModel isEqualToString:@"iPhone14,2"] ||// iPhone 13 Pro
+           [UIDevice.simulatorModel isEqualToString:@"iPhone14,5"] ||// iPhone 13
+           [UIDevice.simulatorModel isEqualToString:@"iPhone14,7"] ){// iPhone 14
+            return 47;
+        }
+        
+        if([UIDevice.simulatorModel isEqualToString:@"iPhone15,2"] ||// iPhone 14 Pro
+           [UIDevice.simulatorModel isEqualToString:@"iPhone15,3"] ){// iPhone 14 Pro Max
+            return 59;
+        } return UIDevice.isFullScreen ? 44 : 20;
+    }
+}
+/// 方法二：状态栏高度
+static inline CGFloat JobsRectOfStatusbar(void){
     SuppressWdeprecatedDeclarationsWarning(
         if (@available(iOS 13.0, *)){
             UIStatusBarManager *statusBarManager = getMainWindow().windowScene.statusBarManager;
             return statusBarManager.statusBarHidden ? 0 : statusBarManager.statusBarFrame.size.height;
         }else return UIApplication.sharedApplication.statusBarFrame.size.height;);
 }
-/// 方法二：状态栏高度
-static inline CGFloat JobsStatusBarHeight(){
+/// 方法三：状态栏高度
+static inline CGFloat JobsStatusBarHeight(void){
     if (@available(iOS 11.0, *)) {
         return getMainWindow().safeAreaInsets.top;
     } else return JobsRectOfStatusbar();

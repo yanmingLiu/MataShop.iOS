@@ -26,7 +26,7 @@
 #import "WHToast.h"
 #endif
 
-static inline UIWindow *getMainWindow(){
+static inline UIWindow *getMainWindow(void){
     UIWindow *window = nil;
     //以下方法有时候会拿不到window
     if (@available(iOS 13.0, *)) {
@@ -55,17 +55,39 @@ static inline UIWindow *getMainWindow(){
  是否是iPhone刘海屏系列：   X系列（X/XS/XR/XS Max)、11系列（11、pro、pro max）
  @return YES 是该系列 NO 不是该系列
  */
-static inline BOOL isiPhoneX_series() {
+static inline BOOL isiPhoneX_series(void) {
+    /**
+     方法一：可能不准确（例如：没有包含iOS模拟器）
+     
+     BOOL iPhoneXSeries = NO;
+     if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
+         return iPhoneXSeries;
+     }
+     if (@available(iOS 11.0, *)) {
+         UIWindow *mainWindow = getMainWindow();
+         if (mainWindow.safeAreaInsets.bottom > 0.0) {
+             iPhoneXSeries = YES;
+         }
+     }return iPhoneXSeries;
+     
+     */
+    
+    /// 方法二：
     BOOL iPhoneXSeries = NO;
-    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
-        return iPhoneXSeries;
-    }
-    if (@available(iOS 11.0, *)) {
-        UIWindow *mainWindow = getMainWindow();
-        if (mainWindow.safeAreaInsets.bottom > 0.0) {
-            iPhoneXSeries = YES;
-        }
-    }return iPhoneXSeries;
+    if (@available(iOS 15.0, *)) {
+         UIWindowScene *keyWindowScene = (UIWindowScene *)UIApplication.sharedApplication.connectedScenes.allObjects.firstObject;
+         NSArray<UIWindow *> *sceneWindows = keyWindowScene.windows;
+         
+         if (sceneWindows.count > 0) {
+             UIWindow *window = sceneWindows.firstObject;
+             iPhoneXSeries = window.safeAreaInsets.top > 20;
+         }
+     } else if (@available(iOS 11.0, *)) {
+         UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+         iPhoneXSeries = window.safeAreaInsets.top > 20;
+     } else {
+         iPhoneXSeries = NO;
+     }return iPhoneXSeries;
 }
 /**
     1、该方法只能获取系统默认的AppDelegate；
@@ -81,7 +103,7 @@ static inline BOOL isiPhoneX_series() {
      
      获取方式：extern AppDelegate *appDelegate;
  */
-static inline id getSysAppDelegate(){
+static inline id getSysAppDelegate(void){
     return UIApplication.sharedApplication.delegate;
 }
 /**
@@ -98,7 +120,7 @@ static inline id getSysAppDelegate(){
      
      获取方式：extern SceneDelegate *sceneDelegate;
  */
-static inline id getSysSceneDelegate(){
+static inline id getSysSceneDelegate(void){
     id sceneDelegate = nil;
     if (@available(iOS 13.0, *)) {
         sceneDelegate = UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;

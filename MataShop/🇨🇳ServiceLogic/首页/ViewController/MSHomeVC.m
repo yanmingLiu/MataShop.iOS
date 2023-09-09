@@ -10,9 +10,9 @@
 BOOL ISLogin;
 @interface MSHomeVC ()
 /// UI
-@property(nonatomic,strong)WMZBannerView *bannerView;
+@property(nonatomic,strong)MSSearchBoardView *searchBoardView;
 @property(nonatomic,strong)BaiShaETProjMarqueeView *marqueeView;
-@property(nonatomic,strong)BaiShaETProjInfoBoardView *infoBoardView;
+@property(nonatomic,strong)WMZBannerView *bannerView;
 @property(nonatomic,strong)JXCategoryImageView *categoryView;
 @property(nonatomic,strong)JXCategoryIndicatorLineView *lineView;/// 跟随的指示器
 @property(nonatomic,strong)JXCategoryListContainerView *listContainerView;/// 此属性决定依附于此的viewController
@@ -45,16 +45,16 @@ BOOL ISLogin;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = UIColor.whiteColor;
-//    [self setGKNav];
-//    [self setGKNavBackBtn];
     
-    self.bannerParam.wDataSet(self.dataMutArr);
-    [self.bannerView updateUI];
-    self.marqueeView.alpha = 1;
-    self.infoBoardView.alpha = 1;
-    self.categoryView.alpha = 1;
+    self.searchBoardView.alpha = 1;
+//    self.marqueeView.alpha = 1;
+    
+//    self.bannerParam.wDataSet(self.dataMutArr);
+//    [self.bannerView updateUI];
+//
+//
+//    self.categoryView.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -120,6 +120,32 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
 //                                     selectedIndex:categoryView.selectedIndex];
 }
 #pragma mark —— lazyLoad
+-(MSSearchBoardView *)searchBoardView{
+    if (!_searchBoardView) {
+        _searchBoardView = [MSSearchBoardView.alloc initWithSize:[MSSearchBoardView viewSizeWithModel:nil]];
+        [_searchBoardView richElementsInViewWithModel:nil];
+        [self.view addSubview:_searchBoardView];
+        [_searchBoardView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo([MSSearchBoardView viewSizeWithModel:nil]);
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.view).offset(JobsStatusBarHeightByAppleIncData());
+        }];
+    }return _searchBoardView;
+}
+
+-(BaiShaETProjMarqueeView *)marqueeView{
+    if (!_marqueeView) {
+        _marqueeView = [BaiShaETProjMarqueeView.alloc initWithSize:[BaiShaETProjMarqueeView viewSizeWithModel:nil]];
+        [_marqueeView richElementsInViewWithModel:nil];
+        [self.view addSubview:_marqueeView];
+        [_marqueeView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo([BaiShaETProjMarqueeView viewSizeWithModel:nil]);
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.bannerView.mas_bottom).offset(JobsWidth(10));
+        }];
+    }return _marqueeView;
+}
+
 -(WMZBannerParam *)bannerParam{
     if (!_bannerParam) {
         _bannerParam = BannerParam()
@@ -183,32 +209,6 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     }return _bannerView;
 }
 
--(BaiShaETProjMarqueeView *)marqueeView{
-    if (!_marqueeView) {
-        _marqueeView = [BaiShaETProjMarqueeView.alloc initWithSize:[BaiShaETProjMarqueeView viewSizeWithModel:nil]];
-        [_marqueeView richElementsInViewWithModel:nil];
-        [self.view addSubview:_marqueeView];
-        [_marqueeView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo([BaiShaETProjMarqueeView viewSizeWithModel:nil]);
-            make.centerX.equalTo(self.view);
-            make.top.equalTo(self.bannerView.mas_bottom).offset(JobsWidth(10));
-        }];
-    }return _marqueeView;
-}
-
--(BaiShaETProjInfoBoardView *)infoBoardView{
-    if (!_infoBoardView) {
-        _infoBoardView = [BaiShaETProjInfoBoardView.alloc initWithSize:[BaiShaETProjInfoBoardView viewSizeWithModel:nil]];
-        [_infoBoardView richElementsInViewWithModel:nil];
-        [self.view addSubview:_infoBoardView];
-        [_infoBoardView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo([BaiShaETProjInfoBoardView viewSizeWithModel:nil]);
-            make.centerX.equalTo(self.view);
-            make.top.equalTo(self.marqueeView.mas_bottom);
-        }];
-    }return _infoBoardView;
-}
-
 -(NSMutableArray<UIImage *> *)dataMutArr{
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
@@ -244,7 +244,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _categoryView.contentScrollView = self.listContainerView.scrollView;//
         [self.view addSubview:_categoryView];
         [_categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.infoBoardView.mas_bottom).offset(0);
+            make.top.equalTo(self.searchBoardView.mas_bottom).offset(0);
             make.left.right.equalTo(self.view);
             make.height.mas_equalTo(listContainerViewDefaultOffset);
         }];
@@ -270,7 +270,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [self.view addSubview:_listContainerView];
         [_listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.edges.equalTo(self.view);
-            make.top.equalTo(self.infoBoardView.mas_bottom).offset(listContainerViewDefaultOffset);
+            make.top.equalTo(self.searchBoardView.mas_bottom).offset(listContainerViewDefaultOffset);
             make.left.right.bottom.equalTo(self.view);
             
         }];

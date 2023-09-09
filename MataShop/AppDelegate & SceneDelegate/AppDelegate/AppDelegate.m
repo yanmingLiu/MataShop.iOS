@@ -27,7 +27,6 @@ AppDelegate *appDelegate;
         NSLog(@"%@",JobsLocalFunc);
 //        [UIFont getAvailableFont];
 //        [UIFont foreignAidFontName];
-
     }return self;
 }
 #pragma mark —— 一些私有方法
