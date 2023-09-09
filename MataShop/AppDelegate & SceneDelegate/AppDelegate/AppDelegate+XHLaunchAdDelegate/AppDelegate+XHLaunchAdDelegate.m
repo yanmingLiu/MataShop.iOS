@@ -82,5 +82,4 @@ launchAdImageView:(UIImageView *)launchAdImageView
     
 }
 
-
 @end

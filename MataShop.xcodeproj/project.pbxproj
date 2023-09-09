@@ -284,7 +284,6 @@
 		C561D3AB2AAC7E7A00E28603 /* JobsShowObjInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CFDC2AAC7E7900E28603 /* JobsShowObjInfoVC.m */; };
 		C561D3AC2AAC7E7A00E28603 /* App国际化.md in Resources */ = {isa = PBXBuildFile; fileRef = C561CFDE2AAC7E7900E28603 /* App国际化.md */; };
 		C561D3AD2AAC7E7A00E28603 /* AppInternationalizationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CFE02AAC7E7900E28603 /* AppInternationalizationVC.m */; };
-		C561D3AE2AAC7E7A00E28603 /* DebugLogDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CFE52AAC7E7900E28603 /* DebugLogDescription.m */; };
 		C561D3AF2AAC7E7A00E28603 /* JobsDropDownListView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CFE92AAC7E7900E28603 /* JobsDropDownListView.m */; };
 		C561D3B02AAC7E7A00E28603 /* JobsDropDownListTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CFEA2AAC7E7900E28603 /* JobsDropDownListTBVCell.m */; };
 		C561D3B12AAC7E7A00E28603 /* UIScrollView+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CFEC2AAC7E7900E28603 /* UIScrollView+FDFullscreenPopGesture.m */; };
@@ -659,6 +658,8 @@
 		C561D99C2AAC9A8400E28603 /* BaiShaETProjInfoBoardView.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D9962AAC9A8300E28603 /* BaiShaETProjInfoBoardView.png */; };
 		C561D99D2AAC9A8400E28603 /* BaiShaETProjMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9982AAC9A8400E28603 /* BaiShaETProjMarqueeView.m */; };
 		C561D99E2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D99A2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png */; };
+		C561DA142AACA62900E28603 /* 首页.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C561DA132AACA62900E28603 /* 首页.xcassets */; };
+		C561DA8A2AACA95A00E28603 /* 临时的占位图.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */; };
 		C5BD5E6D2AAC76740048F36B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6C2AAC76740048F36B /* AppDelegate.m */; };
 		C5BD5E702AAC76740048F36B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6F2AAC76740048F36B /* SceneDelegate.m */; };
 		C5BD5E762AAC76740048F36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BD5E742AAC76740048F36B /* Main.storyboard */; };
@@ -1910,6 +1911,8 @@
 		C561D9982AAC9A8400E28603 /* BaiShaETProjMarqueeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjMarqueeView.m; sourceTree = "<group>"; };
 		C561D9992AAC9A8400E28603 /* BaiShaETProjMarqueeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjMarqueeView.h; sourceTree = "<group>"; };
 		C561D99A2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjMarqueeView.png; sourceTree = "<group>"; };
+		C561DA132AACA62900E28603 /* 首页.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "首页.xcassets"; sourceTree = "<group>"; };
+		C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "临时的占位图.xcassets"; sourceTree = "<group>"; };
 		C5BD5E682AAC76740048F36B /* MataShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD5E6B2AAC76740048F36B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5BD5E6C2AAC76740048F36B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2416,6 +2419,8 @@
 		C561CE622AAC7D8500E28603 /* xcassets */ = {
 			isa = PBXGroup;
 			children = (
+				C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */,
+				C561DA132AACA62900E28603 /* 首页.xcassets */,
 				C561CE682AAC7DA700E28603 /* 会员.xcassets */,
 				C561CE6B2AAC7DA900E28603 /* AppDoor.xcassets */,
 				C561CE6A2AAC7DA800E28603 /* Assets.xcassets */,
@@ -6240,15 +6245,13 @@
 		C561D4A52AAC7EA600E28603 /* 🇨🇳ServiceLogic */ = {
 			isa = PBXGroup;
 			children = (
-				C561D9642AAC917900E28603 /* BaiShaProjDoor */,
-				C561D9602AAC914300E28603 /* BaiShaETProjMembersSubsBaseVC */,
+				C561D5302AAC83CD00E28603 /* 首页 */,
+				C561D5312AAC83DA00E28603 /* 圈子 */,
+				C561D5322AAC83DF00E28603 /* ➕（视频拍摄并上传） */,
+				C561D5332AAC83E400E28603 /* 消息 */,
+				C561D5342AAC83E800E28603 /* 我的 */,
 				C561D95A2AAC90F200E28603 /* 设置手势密码 */,
 				C561D57A2AAC862000E28603 /* Common */,
-				C561D5342AAC83E800E28603 /* 我的 */,
-				C561D5332AAC83E400E28603 /* 消息 */,
-				C561D5322AAC83DF00E28603 /* 订单 */,
-				C561D5312AAC83DA00E28603 /* 圈子 */,
-				C561D5302AAC83CD00E28603 /* 首页 */,
 			);
 			path = "🇨🇳ServiceLogic";
 			sourceTree = "<group>";
@@ -6311,18 +6314,16 @@
 			isa = PBXGroup;
 			children = (
 				C561D98E2AAC9A4800E28603 /* ViewController */,
-				C561D5382AAC844700E28603 /* MSMomentsVC.h */,
-				C561D5392AAC844700E28603 /* MSMomentsVC.m */,
 			);
 			path = "圈子";
 			sourceTree = "<group>";
 		};
-		C561D5322AAC83DF00E28603 /* 订单 */ = {
+		C561D5322AAC83DF00E28603 /* ➕（视频拍摄并上传） */ = {
 			isa = PBXGroup;
 			children = (
 				C561D98F2AAC9A4E00E28603 /* ViewController */,
 			);
-			path = "订单";
+			path = "➕（视频拍摄并上传）";
 			sourceTree = "<group>";
 		};
 		C561D5332AAC83E400E28603 /* 消息 */ = {
@@ -6505,6 +6506,8 @@
 		C561D57A2AAC862000E28603 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C561D9642AAC917900E28603 /* BaiShaProjDoor */,
+				C561D9602AAC914300E28603 /* BaiShaETProjMembersSubsBaseVC */,
 				C561D57B2AAC862000E28603 /* BaiShaETProjCheck */,
 				C561D57E2AAC862000E28603 /* 网络请求 */,
 				C561D5932AAC862000E28603 /* ☀️业务模块中公用的View */,
@@ -7483,6 +7486,8 @@
 		C561D98E2AAC9A4800E28603 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C561D5382AAC844700E28603 /* MSMomentsVC.h */,
+				C561D5392AAC844700E28603 /* MSMomentsVC.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -7570,12 +7575,12 @@
 		C5BD5E6A2AAC76740048F36B /* MataShop */ = {
 			isa = PBXGroup;
 			children = (
-				C561D4A52AAC7EA600E28603 /* 🇨🇳ServiceLogic */,
 				C5BD5E7C2AAC76750048F36B /* Info.plist */,
+				C561CE592AAC7D1300E28603 /* AppDelegate & SceneDelegate */,
+				C561D4A52AAC7EA600E28603 /* 🇨🇳ServiceLogic */,
 				C561D5442AAC84DF00E28603 /* Macro */,
 				C561CE742AAC7E7900E28603 /* 3rd */,
 				C561CE5C2AAC7D4600E28603 /* Others */,
-				C561CE592AAC7D1300E28603 /* AppDelegate & SceneDelegate */,
 			);
 			path = MataShop;
 			sourceTree = "<group>";
@@ -7787,6 +7792,7 @@
 				C561D3852AAC7E7A00E28603 /* 2@2x.png in Resources */,
 				C561D3052AAC7E7A00E28603 /* 主页.json in Resources */,
 				C561D4052AAC7E7B00E28603 /* UICollectionView+RegisterClass.md in Resources */,
+				C561DA8A2AACA95A00E28603 /* 临时的占位图.xcassets in Resources */,
 				C561D41F2AAC7E7B00E28603 /* UIViewController+XLBubbleTransition.md in Resources */,
 				C561CE342AAC7CE200E28603 /* 麦克风@3x.png in Resources */,
 				C561D42C2AAC7E7B00E28603 /* 旋转.png in Resources */,
@@ -7930,6 +7936,7 @@
 				C561D6672AAC862000E28603 /* 弹框样式_04.png in Resources */,
 				C561D30F2AAC7E7A00E28603 /* 社区.json in Resources */,
 				C561D36C2AAC7E7A00E28603 /* JobsShowNum@3x.png in Resources */,
+				C561DA142AACA62900E28603 /* 首页.xcassets in Resources */,
 				C561D3082AAC7E7A00E28603 /* green_lottie_tab_news.json in Resources */,
 				C561D33D2AAC7E7A00E28603 /* 输入框样式_2（✉️获取并输入图形验证码）.md in Resources */,
 				C561D3812AAC7E7A00E28603 /* 8@2x.png in Resources */,
@@ -8297,7 +8304,6 @@
 				C561D3AD2AAC7E7A00E28603 /* AppInternationalizationVC.m in Sources */,
 				C561D3EC2AAC7E7B00E28603 /* UIView+BRPickerView.m in Sources */,
 				C561D3F82AAC7E7B00E28603 /* UIView+AOP.m in Sources */,
-				C561D3AE2AAC7E7A00E28603 /* DebugLogDescription.m in Sources */,
 				C561CE212AAC7CE200E28603 /* ECPrivacyCheckFilesAndFolders.m in Sources */,
 				C561D4712AAC7E7B00E28603 /* NSObject+OpenURL.m in Sources */,
 				C561D4112AAC7E7B00E28603 /* NSString+Conversion.m in Sources */,
