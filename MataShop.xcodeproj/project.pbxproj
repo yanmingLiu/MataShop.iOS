@@ -888,6 +888,7 @@
 		C5E012052AADE2C5005ABE09 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C561CE712AAC7DCD00E28603 /* iph_X.mp4 */; };
 		C5E012062AADE2C8005ABE09 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C561CE722AAC7DCE00E28603 /* 非iph_X.mp4 */; };
 		C5E012092AADE4D1005ABE09 /* 启动页SLOGAN.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E012082AADE4D1005ABE09 /* 启动页SLOGAN.png */; };
+		C5E015CB2AAE1DD9005ABE09 /* LunarFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E015C92AAE1DD9005ABE09 /* LunarFormatter.m */; };
 		F032FB3B280C586AF1EFA7DC /* Pods_MataShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */; };
 		F91CCF44732E8C50C8BB2479 /* Pods_MataShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD29B03F9AE25E4A547369B7 /* Pods_MataShopUITests.framework */; };
 /* End PBXBuildFile section */
@@ -2366,6 +2367,8 @@
 		C5E011272AADE1CD005ABE09 /* 13@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "13@2x.gif"; sourceTree = "<group>"; };
 		C5E011282AADE1CD005ABE09 /* 208@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "208@2x.gif"; sourceTree = "<group>"; };
 		C5E012082AADE4D1005ABE09 /* 启动页SLOGAN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启动页SLOGAN.png"; sourceTree = "<group>"; };
+		C5E015C92AAE1DD9005ABE09 /* LunarFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarFormatter.m; sourceTree = "<group>"; };
+		C5E015CA2AAE1DD9005ABE09 /* LunarFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarFormatter.h; sourceTree = "<group>"; };
 		D9F4E560DCFD78A2DE92A1BF /* Pods-MataShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-MataShopUITests/Pods-MataShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -6781,6 +6784,8 @@
 		C561D5332AAC83E400E28603 /* 消息 */ = {
 			isa = PBXGroup;
 			children = (
+				C5E015CA2AAE1DD9005ABE09 /* LunarFormatter.h */,
+				C5E015C92AAE1DD9005ABE09 /* LunarFormatter.m */,
 				C561D9902AAC9A5400E28603 /* ViewController */,
 			);
 			path = "消息";
@@ -9135,6 +9140,7 @@
 				C561CE042AAC7CE200E28603 /* EmptyView.m in Sources */,
 				C561D3F32AAC7E7B00E28603 /* UIView+UIBackgroundConfig.m in Sources */,
 				C561D42E2AAC7E7B00E28603 /* MJRefreshConfigModel.m in Sources */,
+				C5E015CB2AAE1DD9005ABE09 /* LunarFormatter.m in Sources */,
 				C561D3BC2AAC7E7A00E28603 /* UIScrollView+AnimationKit.m in Sources */,
 				C561CE1A2AAC7CE200E28603 /* JXCategoryTimelineCell.m in Sources */,
 				C561D3C22AAC7E7B00E28603 /* UILabel+Gesture.m in Sources */,

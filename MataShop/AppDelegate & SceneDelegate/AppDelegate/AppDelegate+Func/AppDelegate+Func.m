@@ -443,7 +443,7 @@
         default:{
             imgNameOrUrlStr = @"启动页SLOGAN.png";
         }break;
-    }
+    }return imgNameOrUrlStr;
 }
 
 @end

@@ -111,6 +111,7 @@ def func
   pod 'lottie-ios', '~> 2.5.3' # 这是OC终极版本
   pod 'WCDB'
   pod 'AYCheckVersion'  # https://github.com/AYJk/AYCheckVersion 提示更新 Check version from AppStore / 从AppStore检查更新
+  pod 'FSCalendar' # https://github.com/WenchaoD/FSCalendar 日历签到
   videoFunc # 视频相关
   end
 # 数据库
