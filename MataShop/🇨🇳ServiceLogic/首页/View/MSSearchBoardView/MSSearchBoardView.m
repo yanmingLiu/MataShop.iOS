@@ -8,6 +8,10 @@
 #import "MSSearchBoardView.h"
 
 @interface MSSearchBoardView ()
+/// UI
+@property(nonatomic,strong)UILabel *titleLab;
+@property(nonatomic,strong)UITextField *searchTF;
+@property(nonatomic,strong)UIButton *searchBtn;
 
 @end
 
@@ -32,7 +36,7 @@ static dispatch_once_t static_searchBoardViewOnceToken;
 
 -(instancetype)init{
     if (self = [super init]) {
-        self.backgroundColor = JobsRedColor;
+        self.backgroundColor = JobsWhiteColor;
     }return self;
 }
 
@@ -56,7 +60,7 @@ static dispatch_once_t static_searchBoardViewOnceToken;
 #pragma mark —— BaseViewProtocol
 - (instancetype)initWithSize:(CGSize)thisViewSize{
     if (self = [super init]) {
-        self.backgroundColor = JobsRedColor;
+        self.backgroundColor = JobsWhiteColor;
     }return self;
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
@@ -69,5 +73,13 @@ static dispatch_once_t static_searchBoardViewOnceToken;
     return CGSizeMake(JobsMainScreen_WIDTH(), JobsWidth(102));
 }
 #pragma mark —— lazyLoad
+//property(nonatomic,strong)UILabel *titleLab;
+//@property(nonatomic,strong)UITextField *searchTF;
+//@property(nonatomic,strong)UIButton *searchBtn;
+-(UILabel *)titleLab{
+    if(!_titleLab){
+        _titleLab = UILabel.new;
+    }return _titleLab;
+}
 
 @end

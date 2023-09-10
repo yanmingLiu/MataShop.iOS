@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "CF86E485-8B98-49BC-A33A-5DB8D16274D6.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "CF86E485-8B98-49BC-A33A-5DB8D16274D6@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "CF86E485-8B98-49BC-A33A-5DB8D16274D6@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

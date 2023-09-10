@@ -667,6 +667,7 @@
 		C5BD5E882AAC76750048F36B /* MataShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E872AAC76750048F36B /* MataShopTests.m */; };
 		C5BD5E922AAC76750048F36B /* MataShopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E912AAC76750048F36B /* MataShopUITests.m */; };
 		C5BD5E942AAC76750048F36B /* MataShopUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E932AAC76750048F36B /* MataShopUITestsLaunchTests.m */; };
+		C5E00BF92AADD15A005ABE09 /* MataShopLib.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E00BF82AADD15A005ABE09 /* MataShopLib.xcassets */; };
 		F032FB3B280C586AF1EFA7DC /* Pods_MataShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */; };
 		F91CCF44732E8C50C8BB2479 /* Pods_MataShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD29B03F9AE25E4A547369B7 /* Pods_MataShopUITests.framework */; };
 /* End PBXBuildFile section */
@@ -1926,6 +1927,7 @@
 		C5BD5E8D2AAC76750048F36B /* MataShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MataShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD5E912AAC76750048F36B /* MataShopUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MataShopUITests.m; sourceTree = "<group>"; };
 		C5BD5E932AAC76750048F36B /* MataShopUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MataShopUITestsLaunchTests.m; sourceTree = "<group>"; };
+		C5E00BF82AADD15A005ABE09 /* MataShopLib.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MataShopLib.xcassets; sourceTree = "<group>"; };
 		D9F4E560DCFD78A2DE92A1BF /* Pods-MataShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-MataShopUITests/Pods-MataShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2428,6 +2430,7 @@
 		C561CE622AAC7D8500E28603 /* xcassets */ = {
 			isa = PBXGroup;
 			children = (
+				C5E00BF82AADD15A005ABE09 /* MataShopLib.xcassets */,
 				C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */,
 				C561DA132AACA62900E28603 /* 首页.xcassets */,
 				C561CE682AAC7DA700E28603 /* 会员.xcassets */,
@@ -7911,6 +7914,7 @@
 				C561D6742AAC862000E28603 /* 测试弹窗的确定按钮@3x.png in Resources */,
 				C561D3392AAC7E7A00E28603 /* 输入框样式_7.png in Resources */,
 				C561D3042AAC7E7A00E28603 /* home_priase_animation.json in Resources */,
+				C5E00BF92AADD15A005ABE09 /* MataShopLib.xcassets in Resources */,
 				C561D31A2AAC7E7A00E28603 /* JobsPullListAutoSizeView.md in Resources */,
 				C561D3882AAC7E7A00E28603 /* JobsUpDownLab.png in Resources */,
 				C561D3352AAC7E7A00E28603 /* 输入框样式_1(✉️获取并输入手机短信验证码).md in Resources */,
@@ -8662,9 +8666,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K92UCMVH8G;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Macro/BaiShaETProjPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MataShop/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mata商城";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -8690,9 +8696,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K92UCMVH8G;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Macro/BaiShaETProjPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MataShop/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mata商城";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

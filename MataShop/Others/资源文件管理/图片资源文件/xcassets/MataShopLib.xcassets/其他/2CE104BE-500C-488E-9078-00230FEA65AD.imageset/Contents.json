@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "2CE104BE-500C-488E-9078-00230FEA65AD.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "2CE104BE-500C-488E-9078-00230FEA65AD@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "2CE104BE-500C-488E-9078-00230FEA65AD@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
