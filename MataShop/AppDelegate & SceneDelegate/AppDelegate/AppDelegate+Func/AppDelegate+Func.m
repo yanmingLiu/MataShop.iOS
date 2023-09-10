@@ -8,9 +8,7 @@
 #import "AppDelegate+Func.h"
 
 @implementation AppDelegate (Func)
-
 -(void)reachabilityChanged:(NSNotification *)notify{}
-
 #pragma mark —— 启动调用功能
 +(void)launchFunc1{
     XHLaunchAd *ad = [XHLaunchAd setWaitDataDuration:10];
@@ -120,38 +118,37 @@
 #pragma mark —— 开屏广告
 -(void)makeXHLaunchAdConfigure{
     
-//    [self launchAd_localPic_default];//图 - 本地 - 默认
+    [self launchAd_localPic_default];//图 - 本地 - 默认
 //    [self launchAd_localPic_custom];//图 - 本地 - 自定义
 //    [self launchAd_networkDataPic_default];//图 - 网络 - 默认
 //    [self launchAd_networkDataPic_custom];//图 - 网络 - 自定义
 //    [self launchAd_localVedio_default];//视频 - 本地 - 默认
-    [self launchAd_localVedio_custom];//视频 - 本地 - 自定义
+//    [self launchAd_localVedio_custom];//视频 - 本地 - 自定义 👌
 //    [self launchAd_networkVedio_default];//视频 - 网络 - 默认
 //    [self launchAd_networkVedio_custom];//视频 - 网络 - 自定义
 }
 #pragma mark —— 配置开屏广告
-//图 - 本地 - 默认
+/// 图 - 本地 - 默认
 -(void)launchAd_localPic_default{
     //1.使用默认配置初始化
     //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchScreen];
-
     //配置广告数据
-    XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
+    XHLaunchImageAdConfiguration *imageAdconfiguration = XHLaunchImageAdConfiguration.defaultConfiguration;
     //广告图片URLString/或本地图片名(.jpg/.gif/.png请带上后缀)
-    imageAdconfiguration.imageNameOrURLString = @"启动页SLOGAN.png";
+    imageAdconfiguration.imageNameOrURLString = self.imageNameOrURLString;
      //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
 //    imageAdconfiguration.openModel = @"http://www.it7090.com";
     //显示图片开屏广告
     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
 }
-//图 - 本地 - 自定义
+/// 图 - 本地 - 自定义
 -(void)launchAd_localPic_custom{
     //2.自定义配置初始化
     //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
     //配置广告数据
-    XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration new];
+    XHLaunchImageAdConfiguration *imageAdconfiguration = XHLaunchImageAdConfiguration.new;
     //广告停留时间
     imageAdconfiguration.duration = 5;
     //广告frame
@@ -160,7 +157,7 @@
                                             [UIScreen mainScreen].bounds.size.width,
                                             [UIScreen mainScreen].bounds.size.height - 150);
     //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
-    imageAdconfiguration.imageNameOrURLString = @"启动页SLOGAN.png";
+    imageAdconfiguration.imageNameOrURLString = self.imageNameOrURLString;
     //设置GIF动图是否只循环播放一次(仅对动图设置有效)
     imageAdconfiguration.GIFImageCycleOnce = NO;
     //网络图片缓存机制(只对网络图片有效)
@@ -182,7 +179,7 @@
     //显示图片开屏广告
     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
 }
-//图 - 网络 - 默认
+/// 图 - 网络 - 默认
 -(void)launchAd_networkDataPic_default{
     //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
@@ -213,7 +210,7 @@
 //
 //    }];
 }
-//图 - 网络 - 自定义
+/// 图 - 网络 - 自定义
 -(void)launchAd_networkDataPic_custom{
     //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
@@ -263,13 +260,13 @@
 //
 //    }];
 }
-//视频 - 本地 - 默认
+/// 视频 - 本地 - 默认
 -(void)launchAd_localVedio_default{
     //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
 
     //1.使用默认配置初始化
-    XHLaunchVideoAdConfiguration *videoAdconfiguration = [XHLaunchVideoAdConfiguration defaultConfiguration];
+    XHLaunchVideoAdConfiguration *videoAdconfiguration = XHLaunchVideoAdConfiguration.defaultConfiguration;
     //广告视频URLString/或本地视频名(请带上后缀)
     videoAdconfiguration.videoNameOrURLString = @"video0.mp4";
      //广告点击打开页面参数(openModel可为NSString,模型,字典等任意类型)
@@ -277,12 +274,12 @@
     //显示视频开屏广告
     [XHLaunchAd videoAdWithVideoAdConfiguration:videoAdconfiguration delegate:self];
 }
-//视频 - 本地 - 自定义
+/// 视频 - 本地 - 自定义
 -(void)launchAd_localVedio_custom{
     //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
     //2.自定义配置
-    XHLaunchVideoAdConfiguration *videoAdconfiguration = [XHLaunchVideoAdConfiguration new];
+    XHLaunchVideoAdConfiguration *videoAdconfiguration = XHLaunchVideoAdConfiguration.new;
     //广告停留时间
     videoAdconfiguration.duration = 5;
     //广告frame
@@ -313,7 +310,7 @@
     //显示视频开屏广告
     [XHLaunchAd videoAdWithVideoAdConfiguration:videoAdconfiguration delegate:self];
 }
-//视频 - 网络 - 默认
+/// 视频 - 网络 - 默认
 -(void)launchAd_networkVedio_default{
     //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
@@ -338,7 +335,7 @@
 //
 //    }];
 }
-//视频 - 网络 - 自定义
+/// 视频 - 网络 - 自定义
 -(void)launchAd_networkVedio_custom{
     //设置你工程的启动页使用的是:LaunchImage 还是 LaunchScreen.storyboard(不设置默认:LaunchImage)
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchImage];
@@ -386,6 +383,67 @@
 //    } failure:^(NSError *error) {
 //
 //    }];
+}
+/// 适配各种机型的开屏图片
+-(NSString * _Nullable)imageNameOrURLString{
+    NSString *imgNameOrUrlStr = @"";
+    switch (iPhScrPx()) {
+        case iPhScrPxType_4_4S:{// 屏幕分辨率(px) = 640 * 960
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_5_5C_5S_SE:{// 屏幕分辨率(px) = 640 * 1136
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_6_6S_7_8_SE2:{// 屏幕分辨率(px) = 750 * 1334
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_6_6S_7_8Plus:{// 屏幕分辨率(px) = 1242 * 2208
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_X_XS_11Pro:{// 屏幕分辨率(px) = 1125 * 2436
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_Xr_11:{// 屏幕分辨率(px) = 828 * 1792
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_XSMax_11ProMax:{// 屏幕分辨率(px) = 1242 * 2688
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_12mini:{// 屏幕分辨率(px) = 1125 * 2436
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_12_12Pro:{// 屏幕分辨率(px) = 1170 * 2532
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_12ProMax:{// 屏幕分辨率(px) = 1284 * 2778
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_13mini:{// 屏幕分辨率(px) = 1125 * 2436
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_13_13Pro:{// 屏幕分辨率(px) = 1170 * 2532
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_13ProMax:{// 屏幕分辨率(px) = 1284 * 2778
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_14:{// 屏幕分辨率(px) = 1125 * 2436
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_14Plus:{// 屏幕分辨率(px) = 1284 * 2778
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_14Pro:{// 屏幕分辨率(px) = 1179 * 2556
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+        case iPhScrPxType_14ProMax:{// 屏幕分辨率(px) = 1290 * 2796
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+            
+        default:{
+            imgNameOrUrlStr = @"启动页SLOGAN.png";
+        }break;
+    }
 }
 
 @end

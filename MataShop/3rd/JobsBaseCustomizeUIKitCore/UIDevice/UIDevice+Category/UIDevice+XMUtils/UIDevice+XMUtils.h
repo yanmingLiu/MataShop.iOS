@@ -27,8 +27,10 @@
  ⚠️标识处：在数据来源处并未罗列
  */
 +(NSString * _Nullable)platform:(NSString * _Nullable)string;
-///  获取设备型号名称
-+(NSString * _Nullable)platformString;
+///  获取设备型号名称（可以区分iOS模拟器）
++(NSString * _Nullable)platformNameStr;
+/// 获取当前设备标识符Identifier（不区分iOS模拟器：把IOS模拟器当真机对待）
++(NSString * _Nullable)platformIDStr;
 /// 判断当前机型是否是iphone6 及其以上机型,过滤掉对ipad的判断
 +(BOOL)judgementUpperIphone6;
 /// 判断当前机型是否为非刘海屏：是刘海屏return YES，不是刘海屏return NO

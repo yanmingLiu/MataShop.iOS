@@ -80,6 +80,7 @@
         if ([string isEqualToString:@"iPhone12,1"])   return @"iPhone 11";
         if ([string isEqualToString:@"iPhone12,3"])   return @"iPhone 11 Pro";
         if ([string isEqualToString:@"iPhone12,5"])   return @"iPhone 11 Pro Max";
+        if ([string isEqualToString:@"iPhone12,8"])   return @"iPhone SE (2nd generation)";
         if ([string isEqualToString:@"iPhone13,1"])   return @"iPhone 12 mini";
         if ([string isEqualToString:@"iPhone13,2"])   return @"iPhone 12";
         if ([string isEqualToString:@"iPhone13,3"])   return @"iPhone 12 Pro";
@@ -194,16 +195,20 @@
         if ([string isEqualToString:@"x86_64"])       return [NSString stringWithFormat:@"%@ Simulator", UIDevice.currentDevice.model];
     }return nil;
 }
-///  获取设备型号名称
-+(NSString * _Nullable)platformString{
+///  获取设备型号名称（可以区分iOS模拟器）
++(NSString * _Nullable)platformNameStr{
     NSString *platformStr = [self platform];
     if (!platformStr) {
         return UIDevice.currentDevice.model; // e.g. @"iPhone", @"iPod touch"
     }return [self platform:platformStr];
 }
+/// 获取当前设备标识符Identifier（不区分iOS模拟器：把IOS模拟器当真机对待）
++(NSString * _Nullable)platformIDStr{
+    return self.isSimulator ? UIDevice.simulatorModel : [self platform];
+}
 /// 判断当前机型是否是iphone6 及其以上机型,过滤掉对ipad的判断
 +(BOOL)judgementUpperIphone6{
-    NSString *str = [UIDevice platformString];
+    NSString *str = [UIDevice platformNameStr];
     if ([str isEqualToString:@"iPhone 2G"])         return NO;
     if ([str isEqualToString:@"iPhone 3G"])         return NO;
     if ([str isEqualToString:@"iPhone 3GS"])        return NO;
@@ -218,40 +223,39 @@
 /// 判断当前机型是否为非刘海屏：是刘海屏return YES，不是刘海屏return NO
 +(BOOL)isFullScreen{
     if(self.isiPhone){
-        NSString *platformStr = self.isSimulator ? UIDevice.simulatorModel : [self platform];
-        if ([platformStr isEqualToString:@"iPhone1,1"])    return NO;// iPhone 初代
-        if ([platformStr isEqualToString:@"iPhone1,2"])    return NO;// iPhone 3G
-        if ([platformStr isEqualToString:@"iPhone2,1"])    return NO;// iPhone 3GS
-        if ([platformStr isEqualToString:@"iPhone3,1"])    return NO;// iPhone 4 (GSM)
-        if ([platformStr isEqualToString:@"iPhone3,2"])    return NO;// iPhone 4 (GSM Rev A)
-        if ([platformStr isEqualToString:@"iPhone3,3"])    return NO;// iPhone 4 (CDMA)
-        if ([platformStr isEqualToString:@"iPhone4,1"])    return NO;// iPhone 4S
-        if ([platformStr isEqualToString:@"iPhone5,1"])    return NO;// iPhone 5 (GSM)
-        if ([platformStr isEqualToString:@"iPhone5,2"])    return NO;// iPhone 5 (CDMA)
-        if ([platformStr isEqualToString:@"iPhone5,3"])    return NO;// iPhone 5c
-        if ([platformStr isEqualToString:@"iPhone5,4"])    return NO;// iPhone 5c
-        if ([platformStr isEqualToString:@"iPhone6,1"])    return NO;// iPhone 5s
-        if ([platformStr isEqualToString:@"iPhone6,2"])    return NO;// iPhone 5s
-        if ([platformStr isEqualToString:@"iPhone7,1"])    return NO;// iPhone 6 Plus
-        if ([platformStr isEqualToString:@"iPhone7,2"])    return NO;// iPhone 6
-        if ([platformStr isEqualToString:@"iPhone8,1"])    return NO;// iPhone 6s
-        if ([platformStr isEqualToString:@"iPhone8,2"])    return NO;// iPhone 6s Plus
-        if ([platformStr isEqualToString:@"iPhone8,4"])    return NO;// iPhone SE (1st generation)
-        if ([platformStr isEqualToString:@"iPhone9,1"])    return NO;// iPhone 7
-        if ([platformStr isEqualToString:@"iPhone9,2"])    return NO;// iPhone 7 Plus
-        if ([platformStr isEqualToString:@"iPhone9,3"])    return NO;// iPhone 7
-        if ([platformStr isEqualToString:@"iPhone9,4"])    return NO;// iPhone 7 Plus
-        if ([platformStr isEqualToString:@"iPhone10,1"])   return NO;// iPhone 8
-        if ([platformStr isEqualToString:@"iPhone10,2"])   return NO;// iPhone 8 Plus
-        if ([platformStr isEqualToString:@"iPhone10,4"])   return NO;// iPhone 8
-        if ([platformStr isEqualToString:@"iPhone10,5"])   return NO;// iPhone 8 Plus
-        if ([platformStr isEqualToString:@"iPhone14,6"])   return NO;// iPhone SE (3rd generation)
+        if ([self.platformIDStr isEqualToString:@"iPhone1,1"])    return NO;// iPhone 初代
+        if ([self.platformIDStr isEqualToString:@"iPhone1,2"])    return NO;// iPhone 3G
+        if ([self.platformIDStr isEqualToString:@"iPhone2,1"])    return NO;// iPhone 3GS
+        if ([self.platformIDStr isEqualToString:@"iPhone3,1"])    return NO;// iPhone 4 (GSM)
+        if ([self.platformIDStr isEqualToString:@"iPhone3,2"])    return NO;// iPhone 4 (GSM Rev A)
+        if ([self.platformIDStr isEqualToString:@"iPhone3,3"])    return NO;// iPhone 4 (CDMA)
+        if ([self.platformIDStr isEqualToString:@"iPhone4,1"])    return NO;// iPhone 4S
+        if ([self.platformIDStr isEqualToString:@"iPhone5,1"])    return NO;// iPhone 5 (GSM)
+        if ([self.platformIDStr isEqualToString:@"iPhone5,2"])    return NO;// iPhone 5 (CDMA)
+        if ([self.platformIDStr isEqualToString:@"iPhone5,3"])    return NO;// iPhone 5c
+        if ([self.platformIDStr isEqualToString:@"iPhone5,4"])    return NO;// iPhone 5c
+        if ([self.platformIDStr isEqualToString:@"iPhone6,1"])    return NO;// iPhone 5s
+        if ([self.platformIDStr isEqualToString:@"iPhone6,2"])    return NO;// iPhone 5s
+        if ([self.platformIDStr isEqualToString:@"iPhone7,1"])    return NO;// iPhone 6 Plus
+        if ([self.platformIDStr isEqualToString:@"iPhone7,2"])    return NO;// iPhone 6
+        if ([self.platformIDStr isEqualToString:@"iPhone8,1"])    return NO;// iPhone 6s
+        if ([self.platformIDStr isEqualToString:@"iPhone8,2"])    return NO;// iPhone 6s Plus
+        if ([self.platformIDStr isEqualToString:@"iPhone8,4"])    return NO;// iPhone SE (1st generation)
+        if ([self.platformIDStr isEqualToString:@"iPhone9,1"])    return NO;// iPhone 7
+        if ([self.platformIDStr isEqualToString:@"iPhone9,2"])    return NO;// iPhone 7 Plus
+        if ([self.platformIDStr isEqualToString:@"iPhone9,3"])    return NO;// iPhone 7
+        if ([self.platformIDStr isEqualToString:@"iPhone9,4"])    return NO;// iPhone 7 Plus
+        if ([self.platformIDStr isEqualToString:@"iPhone10,1"])   return NO;// iPhone 8
+        if ([self.platformIDStr isEqualToString:@"iPhone10,2"])   return NO;// iPhone 8 Plus
+        if ([self.platformIDStr isEqualToString:@"iPhone10,4"])   return NO;// iPhone 8
+        if ([self.platformIDStr isEqualToString:@"iPhone10,5"])   return NO;// iPhone 8 Plus
+        if ([self.platformIDStr isEqualToString:@"iPhone14,6"])   return NO;// iPhone SE (3rd generation)
         return YES;
     }return NO;
 }
 /// 判断当前是否是iOS模拟器
 +(BOOL)isSimulator{
-    NSString *str = [UIDevice platformString];
+    NSString *str = [UIDevice platformNameStr];
     return [str isEqualToString:@"iPhone Simulator"];
 }
 /// 判断当前iOS机型
@@ -286,13 +290,13 @@
 }
 /**
  获取设备型号名称
- @return 设备型号名称，与 platformString 一致，只查询一次然后缓存
+ @return 设备型号名称，与 platformNameStr 一致，只查询一次然后缓存
  */
 +(NSString * _Nullable)deviceName{
     static NSString *deviceName = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        deviceName = [self platformString];
+        deviceName = [self platformNameStr];
         if (deviceName.length == 0) {
             deviceName = @"iPhone";
         }
