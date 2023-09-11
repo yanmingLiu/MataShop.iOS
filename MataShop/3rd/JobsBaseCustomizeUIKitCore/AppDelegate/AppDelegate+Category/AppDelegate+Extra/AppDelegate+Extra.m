@@ -12,10 +12,10 @@
 -(void)addElementByTabBarTitleMutArr:(NSMutableArray *)tabBarTitleMutArr{
     if (tabBarTitleMutArr) {
         [tabBarTitleMutArr addObject:Internationalization(@"首页")];
-        [tabBarTitleMutArr addObject:Internationalization(@"游戏")];
-        [tabBarTitleMutArr addObject:Internationalization(@"优惠")];
-        [tabBarTitleMutArr addObject:Internationalization(@"教程")];
-        [tabBarTitleMutArr addObject:Internationalization(@"会员")];
+        [tabBarTitleMutArr addObject:Internationalization(@"圈子")];
+        [tabBarTitleMutArr addObject:Internationalization(@"爱拍")];
+        [tabBarTitleMutArr addObject:Internationalization(@"消息")];
+        [tabBarTitleMutArr addObject:Internationalization(@"我的")];
         objc_setAssociatedObject(self,
                                  AppDelegate_Extra_tabBarTitleMutArr,
                                  tabBarTitleMutArr,

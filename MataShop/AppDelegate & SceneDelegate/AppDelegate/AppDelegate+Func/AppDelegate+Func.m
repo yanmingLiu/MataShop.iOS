@@ -32,7 +32,7 @@
     [self makeTABAnimatedConfigure];
     [self makeIQKeyboardManagerConfigure];
     [self makeGKNavigationBarConfigure];//自定义导航栏
-//    [self makeXHLaunchAdConfigure];//开屏广告
+    [self makeXHLaunchAdConfigure];//开屏广告
 //    [self makeReachabilityConfigure];//网络环境监测
 }
 #pragma mark —— 欢迎引导页面
@@ -389,55 +389,55 @@
     NSString *imgNameOrUrlStr = @"";
     switch (iPhScrPx()) {
         case iPhScrPxType_4_4S:{// 屏幕分辨率(px) = 640 * 960
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"640x960.png";
         }break;
         case iPhScrPxType_5_5C_5S_SE:{// 屏幕分辨率(px) = 640 * 1136
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"640x1136.png";
         }break;
         case iPhScrPxType_6_6S_7_8_SE2:{// 屏幕分辨率(px) = 750 * 1334
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"750x1334.png";
         }break;
         case iPhScrPxType_6_6S_7_8Plus:{// 屏幕分辨率(px) = 1242 * 2208
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1242x2208.png";
         }break;
         case iPhScrPxType_X_XS_11Pro:{// 屏幕分辨率(px) = 1125 * 2436
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1125x2436.png";
         }break;
         case iPhScrPxType_Xr_11:{// 屏幕分辨率(px) = 828 * 1792
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"828x1792.png";
         }break;
         case iPhScrPxType_XSMax_11ProMax:{// 屏幕分辨率(px) = 1242 * 2688
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1242x2688.png";
         }break;
         case iPhScrPxType_12mini:{// 屏幕分辨率(px) = 1125 * 2436
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1125x2436.png";
         }break;
         case iPhScrPxType_12_12Pro:{// 屏幕分辨率(px) = 1170 * 2532
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1170x2532.png";
         }break;
         case iPhScrPxType_12ProMax:{// 屏幕分辨率(px) = 1284 * 2778
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1284x2778.png";
         }break;
         case iPhScrPxType_13mini:{// 屏幕分辨率(px) = 1125 * 2436
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1125x2436.png";
         }break;
         case iPhScrPxType_13_13Pro:{// 屏幕分辨率(px) = 1170 * 2532
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1170x2532.png";
         }break;
         case iPhScrPxType_13ProMax:{// 屏幕分辨率(px) = 1284 * 2778
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1284x2778.png";
         }break;
         case iPhScrPxType_14:{// 屏幕分辨率(px) = 1125 * 2436
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1125x2436.png";
         }break;
         case iPhScrPxType_14Plus:{// 屏幕分辨率(px) = 1284 * 2778
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1284x2778.png";
         }break;
         case iPhScrPxType_14Pro:{// 屏幕分辨率(px) = 1179 * 2556
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1179x2556.png";
         }break;
         case iPhScrPxType_14ProMax:{// 屏幕分辨率(px) = 1290 * 2796
-            imgNameOrUrlStr = @"启动页SLOGAN.png";
+            imgNameOrUrlStr = @"1290x2796.png";
         }break;
             
         default:{

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LunarFormatter : NSObject
 
-- (NSString *)stringFromDate:(NSDate *)date;
+-(NSString *)stringFromDate:(NSDate *)date;
 
 @end
 
