@@ -48,9 +48,9 @@ NSString *const 日历数组信息 = @"日历数组信息";
     self.setupNavigationBarHidden = YES;
 
     self.viewModel.backBtnTitleModel.text = @"";
-    self.viewModel.textModel.textCor = HEXCOLOR(0x3D4A58);
+    self.viewModel.textModel.textCor = RGBA_COLOR(51, 51, 51, 1);
     self.viewModel.textModel.text = Internationalization(@"签到");
-    self.viewModel.textModel.font = notoSansBold(16);
+    self.viewModel.textModel.font = UIFontWeightRegularSize(18);
     
 //    self.bgImage = nil;
 }
@@ -82,21 +82,21 @@ NSString *const 日历数组信息 = @"日历数组信息";
     self.calendar.frame = CGRectMake(0,
                                      CGRectGetMaxY(self.navigationController.navigationBar.frame),
                                      JobsMainScreen_WIDTH() - JobsWidth(50),
-                                     JobsHeight(300));
+                                     JobsWidth(300));
     [self.calendar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(JobsMainScreen_WIDTH() - JobsWidth(50));
-        make.height.mas_equalTo(JobsHeight(300));
+        make.height.mas_equalTo(JobsWidth(300));
         make.centerX.mas_equalTo(self.view.mas_centerX);
-        make.top.mas_equalTo(JobsHeight(50));
+        make.top.mas_equalTo(JobsWidth(50));
     }];
 
     //布局签到按钮
-    int signHeight = JobsHeight(60);
+    int signHeight = JobsWidth(60);
     [self.signBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(self.calendar.width / JobsWidth(1.2));
         make.height.mas_equalTo(35);
         make.centerX.mas_equalTo(self.view.mas_centerX);
-        make.top.mas_equalTo(CGRectGetMaxY(self.calendar.frame) + signHeight + JobsHeight(44));
+        make.top.mas_equalTo(CGRectGetMaxY(self.calendar.frame) + signHeight + JobsWidth(44));
     }];
 }
 
@@ -342,7 +342,6 @@ numberOfEventsForDate:(NSDate *)date{
             [self getSign];
         }];
         
-    
         [_signBtn cornerCutToCircleWithCornerRadius:5];
         
         if(UIDevice.currentDevice.systemVersion.floatValue < 15.0){
@@ -358,9 +357,9 @@ numberOfEventsForDate:(NSDate *)date{
         _calendarBack = UIImageView.new;
         _calendarBack.image = JobsIMG(@"signInCalandarBack");
         _calendarBack.frame = CGRectMake(JobsWidth(10),
-                                         self.navigationController.navigationBar.height * 2 + JobsHeight(30),
+                                         self.navigationController.navigationBar.height * 2 + JobsWidth(30),
                                          self.calendar.width + JobsWidth(30),
-                                         self.calendar.height + JobsHeight(45));
+                                         self.calendar.height + JobsWidth(45));
         [self.view insertSubview:_calendarBack atIndex:1];
     }return _calendarBack;
 }
@@ -383,7 +382,7 @@ numberOfEventsForDate:(NSDate *)date{
         _calendar.frame = CGRectMake(0,
                                      self.navigationController.navigationBar.frame.size.height,//❤️
                                      JobsMainScreen_WIDTH() - JobsWidth(50),
-                                     JobsHeight(300));
+                                     JobsWidth(300));
         _calendar.backgroundColor = JobsWhiteColor;
         _calendar.dataSource = self;
         _calendar.delegate = self;

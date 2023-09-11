@@ -1,13 +1,13 @@
 //
-//  BaiShaETProjMarqueeView.m
-//  BaiShaEntertainmentProj
+//  MSChuBaoAdMarqueeView.m
+//  MataShop
 //
-//  Created by Jobs on 2022/5/15.
+//  Created by Jobs Hi on 9/11/23.
 //
 
-#import "BaiShaETProjMarqueeView.h"
+#import "MSChuBaoAdMarqueeView.h"
 
-@interface BaiShaETProjMarqueeView ()
+@interface MSChuBaoAdMarqueeView ()
 /// UI
 @property(nonatomic,strong)WMZBannerView *bannerView;
 @property(nonatomic,strong)UIImageView *hornIMGV;
@@ -17,26 +17,25 @@
 
 @end
 
-@implementation BaiShaETProjMarqueeView
-
+@implementation MSChuBaoAdMarqueeView
 #pragma mark —— BaseProtocol
 /// 单例化和销毁
 +(void)destroySingleton{
-    static_marqueeViewOnceToken = 0;
-    static_marqueeView = nil;
+    static_chuBaoAdMarqueeViewOnceToken = 0;
+    static_chuBaoAdMarqueeView = nil;
 }
 
-static BaiShaETProjMarqueeView *static_marqueeView = nil;
-static dispatch_once_t static_marqueeViewOnceToken;
+static MSChuBaoAdMarqueeView *static_chuBaoAdMarqueeView = nil;
+static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
 +(instancetype)sharedInstance{
-    dispatch_once(&static_marqueeViewOnceToken, ^{
-        static_marqueeView = BaiShaETProjMarqueeView.new;
-    });return static_marqueeView;
+    dispatch_once(&static_chuBaoAdMarqueeViewOnceToken, ^{
+        static_chuBaoAdMarqueeView = MSChuBaoAdMarqueeView.new;
+    });return static_chuBaoAdMarqueeView;
 }
 
 -(instancetype)init{
     if (self = [super init]) {
-        self.backgroundColor = UIColor.whiteColor;
+        self.backgroundColor = JobsBlackColor;
     }return self;
 }
 
@@ -48,7 +47,7 @@ static dispatch_once_t static_marqueeViewOnceToken;
 #pragma mark —— BaseViewProtocol
 - (instancetype)initWithSize:(CGSize)thisViewSize{
     if (self = [super init]) {
-        self.backgroundColor = UIColor.whiteColor;;
+        self.backgroundColor = JobsBlackColor;
     }return self;
 }
 
@@ -70,7 +69,7 @@ static dispatch_once_t static_marqueeViewOnceToken;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)viewSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsMainScreen_WIDTH() - JobsWidth(16 * 2), JobsWidth(20));
+    return CGSizeMake(JobsWidth(343), JobsWidth(36));
 }
 #pragma mark —— 网络请求
 -(void)netWorking{
@@ -149,7 +148,7 @@ static dispatch_once_t static_marqueeViewOnceToken;
 -(UIImageView *)hornIMGV{
     if (!_hornIMGV) {
         _hornIMGV = UIImageView.new;
-        _hornIMGV.image = JobsIMG(@"公告小喇叭");
+        _hornIMGV.image = JobsIMG(@"912241CB-F48C-48AC-BC2F-3CA7742C8B1F");
         [self addSubview:_hornIMGV];
         [_hornIMGV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(16), JobsWidth(16)));
@@ -162,7 +161,7 @@ static dispatch_once_t static_marqueeViewOnceToken;
 -(NSMutableArray <NSString *>*)dataMutArr{
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
-        [_dataMutArr addObject:Internationalization(@"本公司為自營平台且無任何合作授權網站，勿輕信來路不明的")];
+        [_dataMutArr addObject:Internationalization(@"我是储宝产品的广告滚动条")];
     }return _dataMutArr;
 }
 

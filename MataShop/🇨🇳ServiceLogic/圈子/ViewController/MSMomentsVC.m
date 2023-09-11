@@ -69,6 +69,10 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self forceComingToPushVC:MSChuBaoVC.new requestParams:@""];
+}
 #pragma mark —— lazyLoad
 
 @end

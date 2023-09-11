@@ -905,6 +905,12 @@
 		C5E0174B2AAF1299005ABE09 /* 720x1242.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E0173C2AAF1299005ABE09 /* 720x1242.png */; };
 		C5E0174C2AAF1299005ABE09 /* 1284x2778.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E0173D2AAF1299005ABE09 /* 1284x2778.png */; };
 		C5E017562AAF1FE9005ABE09 /* MSSignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E017542AAF1FE9005ABE09 /* MSSignInVC.m */; };
+		C5E017592AAF2F15005ABE09 /* 储宝.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E017582AAF2F15005ABE09 /* 储宝.xcassets */; };
+		C5E0175D2AAF2F90005ABE09 /* MSChuBaoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0175C2AAF2F90005ABE09 /* MSChuBaoVC.m */; };
+		C5E017652AAF3676005ABE09 /* MSChuBaoView1.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E017642AAF3676005ABE09 /* MSChuBaoView1.m */; };
+		C5E017682AAF3684005ABE09 /* MSChuBaoView2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E017672AAF3684005ABE09 /* MSChuBaoView2.m */; };
+		C5E0176C2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */; };
+		C5E0176E2AAF4B49005ABE09 /* MSChuBaoAdMarqueeView.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */; };
 		F032FB3B280C586AF1EFA7DC /* Pods_MataShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */; };
 		F91CCF44732E8C50C8BB2479 /* Pods_MataShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD29B03F9AE25E4A547369B7 /* Pods_MataShopUITests.framework */; };
 /* End PBXBuildFile section */
@@ -2402,6 +2408,18 @@
 		C5E0173D2AAF1299005ABE09 /* 1284x2778.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1284x2778.png; sourceTree = "<group>"; };
 		C5E017542AAF1FE9005ABE09 /* MSSignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSignInVC.m; sourceTree = "<group>"; };
 		C5E017552AAF1FE9005ABE09 /* MSSignInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSignInVC.h; sourceTree = "<group>"; };
+		C5E017582AAF2F15005ABE09 /* 储宝.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "储宝.xcassets"; sourceTree = "<group>"; };
+		C5E0175B2AAF2F90005ABE09 /* MSChuBaoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoVC.h; sourceTree = "<group>"; };
+		C5E0175C2AAF2F90005ABE09 /* MSChuBaoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoVC.m; sourceTree = "<group>"; };
+		C5E0175F2AAF3635005ABE09 /* 储宝视图子控件1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "储宝视图子控件1.jpg"; sourceTree = "<group>"; };
+		C5E017602AAF3635005ABE09 /* 储宝视图子控件2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "储宝视图子控件2.jpg"; sourceTree = "<group>"; };
+		C5E017632AAF3676005ABE09 /* MSChuBaoView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoView1.h; sourceTree = "<group>"; };
+		C5E017642AAF3676005ABE09 /* MSChuBaoView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoView1.m; sourceTree = "<group>"; };
+		C5E017662AAF3684005ABE09 /* MSChuBaoView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoView2.h; sourceTree = "<group>"; };
+		C5E017672AAF3684005ABE09 /* MSChuBaoView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoView2.m; sourceTree = "<group>"; };
+		C5E0176A2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoAdMarqueeView.h; sourceTree = "<group>"; };
+		C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoAdMarqueeView.m; sourceTree = "<group>"; };
+		C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSChuBaoAdMarqueeView.jpg; sourceTree = "<group>"; };
 		D9F4E560DCFD78A2DE92A1BF /* Pods-MataShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-MataShopUITests/Pods-MataShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2906,6 +2924,7 @@
 		C561CE622AAC7D8500E28603 /* xcassets */ = {
 			isa = PBXGroup;
 			children = (
+				C5E017582AAF2F15005ABE09 /* 储宝.xcassets */,
 				C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */,
 				C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */,
 				C561DA132AACA62900E28603 /* 首页.xcassets */,
@@ -4033,45 +4052,45 @@
 		C561CFF12AAC7E7900E28603 /* JobsBaseCustomizeUIKitCore */ = {
 			isa = PBXGroup;
 			children = (
-				C561CFF22AAC7E7900E28603 /* UIImage */,
-				C561D0082AAC7E7900E28603 /* UISwitch */,
-				C561D00E2AAC7E7900E28603 /* UIScrollView */,
-				C561D0172AAC7E7900E28603 /* UILabel */,
-				C561D0312AAC7E7900E28603 /* UITableViewCell */,
-				C561D0492AAC7E7900E28603 /* NSBundle */,
-				C561D04F2AAC7E7900E28603 /* UIButton */,
-				C561D07E2AAC7E7900E28603 /* UIColor */,
-				C561D0872AAC7E7900E28603 /* UIView */,
-				C561D0C72AAC7E7900E28603 /* UIFont */,
-				C561D0CD2AAC7E7900E28603 /* UICollectionHeaderFooterView */,
 				C561D0D02AAC7E7900E28603 /* JobsBaseCustomizeUIKitCoreHeader.h */,
-				C561D0D12AAC7E7900E28603 /* NSMutableDictionary */,
-				C561D0D82AAC7E7900E28603 /* UITextView */,
-				C561D0E22AAC7E7900E28603 /* UIDevice */,
-				C561D0E92AAC7E7900E28603 /* UICollectionView */,
-				C561D0F62AAC7E7900E28603 /* UICollectionViewCell */,
-				C561D1072AAC7E7900E28603 /* UIBezierPath */,
-				C561D10D2AAC7E7900E28603 /* UIImageView */,
-				C561D1152AAC7E7900E28603 /* UINavigationBar */,
-				C561D11A2AAC7E7900E28603 /* NSString */,
-				C561D1382AAC7E7900E28603 /* UIViewController */,
-				C561D1812AAC7E7A00E28603 /* UINavigationController */,
-				C561D18D2AAC7E7A00E28603 /* UITableView */,
-				C561D19E2AAC7E7A00E28603 /* UIControl */,
-				C561D1A82AAC7E7A00E28603 /* UIProgressView */,
-				C561D1AE2AAC7E7A00E28603 /* NSArray */,
-				C561D1B72AAC7E7A00E28603 /* UITableViewHeaderFooterView */,
-				C561D1C62AAC7E7A00E28603 /* NSMutableArray */,
-				C561D1C92AAC7E7A00E28603 /* UICollectionViewFlowLayout */,
-				C561D1D92AAC7E7A00E28603 /* NSUserDefaults */,
-				C561D1E62AAC7E7A00E28603 /* NSCache */,
-				C561D1EC2AAC7E7A00E28603 /* UICollectionReusableView */,
-				C561D1F12AAC7E7A00E28603 /* CALayer */,
 				C561D1FA2AAC7E7A00E28603 /* AppDelegate */,
+				C561D2C52AAC7E7A00E28603 /* BaseProtocol */,
+				C561D1F12AAC7E7A00E28603 /* CALayer */,
+				C561D1AE2AAC7E7A00E28603 /* NSArray */,
+				C561D0492AAC7E7900E28603 /* NSBundle */,
+				C561D1E62AAC7E7A00E28603 /* NSCache */,
+				C561D1C62AAC7E7A00E28603 /* NSMutableArray */,
+				C561D0D12AAC7E7900E28603 /* NSMutableDictionary */,
 				C561D2002AAC7E7A00E28603 /* NSNumber */,
 				C561D2052AAC7E7A00E28603 /* NSObject */,
-				C561D2C52AAC7E7A00E28603 /* BaseProtocol */,
+				C561D11A2AAC7E7900E28603 /* NSString */,
+				C561D1D92AAC7E7A00E28603 /* NSUserDefaults */,
+				C561D1072AAC7E7900E28603 /* UIBezierPath */,
+				C561D04F2AAC7E7900E28603 /* UIButton */,
+				C561D0CD2AAC7E7900E28603 /* UICollectionHeaderFooterView */,
+				C561D1EC2AAC7E7A00E28603 /* UICollectionReusableView */,
+				C561D0E92AAC7E7900E28603 /* UICollectionView */,
+				C561D0F62AAC7E7900E28603 /* UICollectionViewCell */,
+				C561D1C92AAC7E7A00E28603 /* UICollectionViewFlowLayout */,
+				C561D07E2AAC7E7900E28603 /* UIColor */,
+				C561D19E2AAC7E7A00E28603 /* UIControl */,
+				C561D0E22AAC7E7900E28603 /* UIDevice */,
+				C561D0C72AAC7E7900E28603 /* UIFont */,
+				C561CFF22AAC7E7900E28603 /* UIImage */,
+				C561D10D2AAC7E7900E28603 /* UIImageView */,
+				C561D0172AAC7E7900E28603 /* UILabel */,
+				C561D1152AAC7E7900E28603 /* UINavigationBar */,
+				C561D1812AAC7E7A00E28603 /* UINavigationController */,
+				C561D1A82AAC7E7A00E28603 /* UIProgressView */,
+				C561D00E2AAC7E7900E28603 /* UIScrollView */,
+				C561D0082AAC7E7900E28603 /* UISwitch */,
+				C561D18D2AAC7E7A00E28603 /* UITableView */,
+				C561D0312AAC7E7900E28603 /* UITableViewCell */,
+				C561D1B72AAC7E7A00E28603 /* UITableViewHeaderFooterView */,
 				C561D2DF2AAC7E7A00E28603 /* UITextField */,
+				C561D0D82AAC7E7900E28603 /* UITextView */,
+				C561D0872AAC7E7900E28603 /* UIView */,
+				C561D1382AAC7E7900E28603 /* UIViewController */,
 			);
 			path = JobsBaseCustomizeUIKitCore;
 			sourceTree = "<group>";
@@ -5082,8 +5101,8 @@
 		C561D10F2AAC7E7900E28603 /* BaseImageView */ = {
 			isa = PBXGroup;
 			children = (
-				C561D1102AAC7E7900E28603 /* BaseImageView.m */,
 				C561D1112AAC7E7900E28603 /* BaseImageView.h */,
+				C561D1102AAC7E7900E28603 /* BaseImageView.m */,
 			);
 			path = BaseImageView;
 			sourceTree = "<group>";
@@ -6733,6 +6752,7 @@
 		C561D4A52AAC7EA600E28603 /* 🇨🇳ServiceLogic */ = {
 			isa = PBXGroup;
 			children = (
+				C5E017572AAF2D77005ABE09 /* 储宝 */,
 				C5E0174F2AAF1F95005ABE09 /* 签到 */,
 				C561D5302AAC83CD00E28603 /* 首页 */,
 				C561D5312AAC83DA00E28603 /* 圈子 */,
@@ -8387,6 +8407,64 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		C5E017572AAF2D77005ABE09 /* 储宝 */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0175E2AAF35BE005ABE09 /* View */,
+				C5E0175A2AAF2F79005ABE09 /* ViewController */,
+			);
+			path = "储宝";
+			sourceTree = "<group>";
+		};
+		C5E0175A2AAF2F79005ABE09 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0175B2AAF2F90005ABE09 /* MSChuBaoVC.h */,
+				C5E0175C2AAF2F90005ABE09 /* MSChuBaoVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C5E0175E2AAF35BE005ABE09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5E017692AAF4A47005ABE09 /* 储宝跑马灯广告 */,
+				C5E017612AAF363D005ABE09 /* 储宝视图子控件1 */,
+				C5E017622AAF3645005ABE09 /* 储宝视图子控件2 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5E017612AAF363D005ABE09 /* 储宝视图子控件1 */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0175F2AAF3635005ABE09 /* 储宝视图子控件1.jpg */,
+				C5E017632AAF3676005ABE09 /* MSChuBaoView1.h */,
+				C5E017642AAF3676005ABE09 /* MSChuBaoView1.m */,
+			);
+			path = "储宝视图子控件1";
+			sourceTree = "<group>";
+		};
+		C5E017622AAF3645005ABE09 /* 储宝视图子控件2 */ = {
+			isa = PBXGroup;
+			children = (
+				C5E017602AAF3635005ABE09 /* 储宝视图子控件2.jpg */,
+				C5E017662AAF3684005ABE09 /* MSChuBaoView2.h */,
+				C5E017672AAF3684005ABE09 /* MSChuBaoView2.m */,
+			);
+			path = "储宝视图子控件2";
+			sourceTree = "<group>";
+		};
+		C5E017692AAF4A47005ABE09 /* 储宝跑马灯广告 */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */,
+				C5E0176A2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.h */,
+				C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */,
+			);
+			path = "储宝跑马灯广告";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -8716,6 +8794,7 @@
 				C561D3982AAC7E7A00E28603 /* gesture_headIcon@2x.png in Resources */,
 				C5E011EF2AADE1CD005ABE09 /* 181@2x.gif in Resources */,
 				C5E0174C2AAF1299005ABE09 /* 1284x2778.png in Resources */,
+				C5E0176E2AAF4B49005ABE09 /* MSChuBaoAdMarqueeView.jpg in Resources */,
 				C5E011DB2AADE1CD005ABE09 /* 139@2x.gif in Resources */,
 				C561D3DB2AAC7E7B00E28603 /* LGiOSBtn.md in Resources */,
 				C561D34F2AAC7E7A00E28603 /* 输入框样式_3.png in Resources */,
@@ -8734,6 +8813,7 @@
 				C561CE3B2AAC7CE200E28603 /* 语音识别@3x.png in Resources */,
 				C561D4682AAC7E7B00E28603 /* DeleteSystemUITabBarButton.md in Resources */,
 				C5E0115D2AADE1CD005ABE09 /* 157@2x.gif in Resources */,
+				C5E017592AAF2F15005ABE09 /* 储宝.xcassets in Resources */,
 				C5E011622AADE1CD005ABE09 /* 39@2x.gif in Resources */,
 				C5E011C22AADE1CD005ABE09 /* 125@2x.gif in Resources */,
 				C561CE572AAC7CE200E28603 /* RAC_Define.md in Resources */,
@@ -9180,6 +9260,7 @@
 				C561D4162AAC7E7B00E28603 /* NSString+Path.m in Sources */,
 				C561D3F02AAC7E7B00E28603 /* UIView+EmptyData.m in Sources */,
 				C561D6602AAC862000E28603 /* DDNetworkingAPI+Test.m in Sources */,
+				C5E017682AAF3684005ABE09 /* MSChuBaoView2.m in Sources */,
 				C561D4602AAC7E7B00E28603 /* JobsFormatTime.m in Sources */,
 				C561CE0E2AAC7CE200E28603 /* UINavigationController+GKGestureHandle.m in Sources */,
 				C561D6692AAC862000E28603 /* BaiShaETProjPopupView05.m in Sources */,
@@ -9219,6 +9300,7 @@
 				C561D3A22AAC7E7A00E28603 /* JobsPageTBVCell.m in Sources */,
 				C561D47F2AAC7E7B00E28603 /* NSObject+Time.m in Sources */,
 				C561D49F2AAC7E7B00E28603 /* UITextField+Placeholder.m in Sources */,
+				C5E017652AAF3676005ABE09 /* MSChuBaoView1.m in Sources */,
 				C561D68C2AAC862000E28603 /* UBLVerticalListCollectionView.m in Sources */,
 				C561D42A2AAC7E7B00E28603 /* UIViewController+GifImageView.m in Sources */,
 				C561D38B2AAC7E7A00E28603 /* JobsUpDownLabModel.m in Sources */,
@@ -9229,6 +9311,7 @@
 				C561CE0C2AAC7CE200E28603 /* GKNavigationBarConfigure.m in Sources */,
 				C561D4402AAC7E7B00E28603 /* UIProgressView+Extra.m in Sources */,
 				C5E017562AAF1FE9005ABE09 /* MSSignInVC.m in Sources */,
+				C5E0176C2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m in Sources */,
 				C561D33F2AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_2.m in Sources */,
 				C561D3972AAC7E7A00E28603 /* ZLGestureLockView.m in Sources */,
 				C561D4072AAC7E7B00E28603 /* BaseCollectionView.m in Sources */,
@@ -9327,6 +9410,7 @@
 				C561D3EC2AAC7E7B00E28603 /* UIView+BRPickerView.m in Sources */,
 				C561D3F82AAC7E7B00E28603 /* UIView+AOP.m in Sources */,
 				C561CE212AAC7CE200E28603 /* ECPrivacyCheckFilesAndFolders.m in Sources */,
+				C5E0175D2AAF2F90005ABE09 /* MSChuBaoVC.m in Sources */,
 				C561D4712AAC7E7B00E28603 /* NSObject+OpenURL.m in Sources */,
 				C561D4112AAC7E7B00E28603 /* NSString+Conversion.m in Sources */,
 				C561D4442AAC7E7B00E28603 /* UITableViewHeaderFooterView+Attribute.m in Sources */,
