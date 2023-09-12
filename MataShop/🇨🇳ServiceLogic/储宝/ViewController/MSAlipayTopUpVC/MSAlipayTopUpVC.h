@@ -1,16 +1,15 @@
 //
-//  MSPromotionIncentiveVC.h
+//  MSAlipayTopUpVC.h
 //  MataShop
 //
 //  Created by Jobs Hi on 9/12/23.
 //
 
 #import "BaseViewController.h"
-#import "MSPromotionIncentiveCVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
-/// 推广奖励
-@interface MSPromotionIncentiveVC : BaseViewController
+
+@interface MSAlipayTopUpVC : BaseViewController
 
 @end
 

@@ -1,13 +1,13 @@
 //
-//  MSProdSelectVC.m
+//  MSInterestSettleRecordVC.m
 //  MataShop
 //
 //  Created by Jobs Hi on 9/12/23.
 //
 
-#import "MSProdSelectVC.h"
+#import "MSInterestSettleRecordVC.h"
 
-@interface MSProdSelectVC ()
+@interface MSInterestSettleRecordVC ()
 /// UI
 @property(nonatomic,strong)UICollectionViewFlowLayout *layout;
 @property(nonatomic,strong)UICollectionView *collectionView;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation MSProdSelectVC
+@implementation MSInterestSettleRecordVC
 
 - (void)dealloc{
     [NSNotificationCenter.defaultCenter removeObserver:self];
@@ -76,7 +76,7 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView
                                    cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     @jobs_weakify(self)
-    MSProdSelectCVC *cell = [MSProdSelectCVC cellWithCollectionView:collectionView forIndexPath:indexPath];
+    MSInterestSettleRecordCVC *cell = [MSInterestSettleRecordCVC cellWithCollectionView:collectionView forIndexPath:indexPath];
     [cell richElementsInCellWithModel:self.dataMutArr[indexPath.section]];
     return cell;
 }

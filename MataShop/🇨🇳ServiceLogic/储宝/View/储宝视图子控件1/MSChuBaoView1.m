@@ -153,7 +153,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastErrMsg:Internationalization(@"充值")];
+            [self forceComingToPushVC:MSTopUpVC.new requestParams:@""];
         }];
         
     }return _rechargeBtn;

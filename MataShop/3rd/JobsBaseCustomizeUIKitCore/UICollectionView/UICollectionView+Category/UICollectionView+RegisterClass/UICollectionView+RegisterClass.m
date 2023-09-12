@@ -27,31 +27,12 @@
     [self registerCollectionViewCellClass:BaseCollectionViewCell.class];
     [self registerCollectionViewCellClass:JobsHotLabelWithMultiLineCVCell.class];
     [self registerCollectionViewCellClass:JobsCVCell.class];
-
-//    [self registerCollectionViewCellClass:BaiShaETProjCVCellStyle1.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjMyWalletCVCell.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjHeaderIconCVCell.class];
-//    
-//    [self registerCollectionViewCellClass:BaiShaETProjVIPSubCVCell_01.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjVIPSubCVCell_02.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjVIPSubCVCell_03.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjVIPSubCVCell_04.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjVIPSubCVCell_05.class];
     
-//    [self registerCollectionViewCellClass:BaiShaETProjFirstGiftVCVCell_01.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjFirstGiftVCVCell_02.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjFirstGiftVCVCell_03.class];
-//    
-//    [self registerCollectionViewCellClass:BaiShaETProjAmountDepositInputCVCell.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjDealProtocalCVCell.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjCoinSpeciesCVCell.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjPaymentWayCVCell.class];
-//    
-//    [self registerCollectionViewCellClass:BaiShaETProjCountdownCVCell.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjOrderDetailsCVCell.class];
-//    [self registerCollectionViewCellClass:BaiShaETProjAmountDepositClickCVCell.class];
-//    
-//    [self registerCollectionViewCellClass:BaiShaETProjUSDTWithdrawalCVCell.class];
+    [self registerCollectionViewCellClass:MSTransactionRecordCVC.class];// 储宝-交易记录子控件UI
+    [self registerCollectionViewCellClass:MSPromotionIncentiveCVC.class];// 储宝-推广奖励子控件UI
+    [self registerCollectionViewCellClass:MSInterestSettleRecordCVC.class];//储宝-结息记录子控件UI
+    [self registerCollectionViewCellClass:MSProdSelectCVC.class];//储宝-产品选购子控件UI
+
 }
 /// 注册 UICollectionViewCell 及其子类
 -(void)registerCollectionViewCellClass:(Class)cls{

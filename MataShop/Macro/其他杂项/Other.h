@@ -34,6 +34,7 @@
 #import "MSMineVC.h"// 我的
 #import "MSSignInVC.h"// 签到
 #import "MSChuBaoVC.h"// 储宝
+#import "MSTopUpVC.h"// 充值
 /// 首页相关子控制器
 
 /// 个人中心相关子控制器
