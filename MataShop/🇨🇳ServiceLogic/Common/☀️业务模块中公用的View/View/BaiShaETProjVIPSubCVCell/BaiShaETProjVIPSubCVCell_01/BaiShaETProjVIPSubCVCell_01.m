@@ -41,12 +41,20 @@
 #pragma mark —— BaseCellProtocol
 +(instancetype)cellWithCollectionView:(nonnull UICollectionView *)collectionView
                          forIndexPath:(nonnull NSIndexPath *)indexPath{
-    [collectionView registerCollectionViewCellClass:BaiShaETProjVIPSubCVCell_01.class];
     BaiShaETProjVIPSubCVCell_01 *cell = (BaiShaETProjVIPSubCVCell_01 *)[collectionView collectionViewCellClass:BaiShaETProjVIPSubCVCell_01.class forIndexPath:indexPath];
     if (!cell) {
+        [collectionView registerCollectionViewCellClass:BaiShaETProjVIPSubCVCell_01.class];
         cell = (BaiShaETProjVIPSubCVCell_01 *)[collectionView collectionViewCellClass:BaiShaETProjVIPSubCVCell_01.class forIndexPath:indexPath];
     }
+    
+    // UICollectionViewCell圆切角
+//    cell.contentView.layer.cornerRadius = cell.layer.cornerRadius = JobsWidth(8);
+//    cell.contentView.layer.borderWidth = cell.layer.borderWidth = JobsWidth(1);
+//    cell.contentView.layer.borderColor = cell.layer.borderColor = RGBA_COLOR(255, 225, 144, 1).CGColor;
+//    cell.contentView.layer.masksToBounds = cell.layer.masksToBounds = YES;;
+
     cell.indexPath = indexPath;
+    
     return cell;
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】

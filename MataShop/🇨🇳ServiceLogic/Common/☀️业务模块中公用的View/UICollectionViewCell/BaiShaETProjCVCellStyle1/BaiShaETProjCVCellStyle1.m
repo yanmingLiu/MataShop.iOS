@@ -30,15 +30,19 @@
 #pragma mark —— UICollectionViewCellProtocol
 +(instancetype)cellWithCollectionView:(nonnull UICollectionView *)collectionView
                          forIndexPath:(nonnull NSIndexPath *)indexPath{
-    [collectionView registerCollectionViewCellClass:BaiShaETProjCVCellStyle1.class];
     BaiShaETProjCVCellStyle1 *cell = (BaiShaETProjCVCellStyle1 *)[collectionView collectionViewCellClass:BaiShaETProjCVCellStyle1.class forIndexPath:indexPath];
     if (!cell) {
+        [collectionView registerCollectionViewCellClass:BaiShaETProjCVCellStyle1.class];
         cell = (BaiShaETProjCVCellStyle1 *)[collectionView collectionViewCellClass:BaiShaETProjCVCellStyle1.class forIndexPath:indexPath];
     }
-    cell.indexPath = indexPath;
     
-    [cell cornerCutToCircleWithCornerRadius:JobsWidth(8)];
-    [cell layerBorderColour:HEXCOLOR(0xEEE2C8) andBorderWidth:JobsWidth(2)];
+    // UICollectionViewCell圆切角
+//    cell.contentView.layer.cornerRadius = cell.layer.cornerRadius = JobsWidth(8);
+//    cell.contentView.layer.borderWidth = cell.layer.borderWidth = JobsWidth(1);
+//    cell.contentView.layer.borderColor = cell.layer.borderColor = RGBA_COLOR(255, 225, 144, 1).CGColor;
+//    cell.contentView.layer.masksToBounds = cell.layer.masksToBounds = YES;;
+
+    cell.indexPath = indexPath;
     
     return cell;
 }

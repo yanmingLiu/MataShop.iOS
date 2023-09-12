@@ -31,14 +31,20 @@
 #pragma mark —— UICollectionViewCellProtocol
 +(instancetype)cellWithCollectionView:(nonnull UICollectionView *)collectionView
                          forIndexPath:(nonnull NSIndexPath *)indexPath{
-    [collectionView registerCollectionViewCellClass:BaiShaETProjHeaderIconCVCell.class];
-    BaiShaETProjHeaderIconCVCell *cell = (BaiShaETProjHeaderIconCVCell *)[collectionView collectionViewCellClass:BaiShaETProjHeaderIconCVCell.class
-                                                                                                    forIndexPath:indexPath];
+    BaiShaETProjHeaderIconCVCell *cell = (BaiShaETProjHeaderIconCVCell *)[collectionView collectionViewCellClass:BaiShaETProjHeaderIconCVCell.class forIndexPath:indexPath];
     if (!cell) {
+        [collectionView registerCollectionViewCellClass:BaiShaETProjHeaderIconCVCell.class];
         cell = (BaiShaETProjHeaderIconCVCell *)[collectionView collectionViewCellClass:BaiShaETProjHeaderIconCVCell.class forIndexPath:indexPath];
     }
-    [cell cornerCutToCircleWithCornerRadius:[BaiShaETProjHeaderIconCVCell cellSizeWithModel:nil].height / 2];
+    
+    // UICollectionViewCell圆切角
+//    cell.contentView.layer.cornerRadius = cell.layer.cornerRadius = JobsWidth(8);
+//    cell.contentView.layer.borderWidth = cell.layer.borderWidth = JobsWidth(1);
+//    cell.contentView.layer.borderColor = cell.layer.borderColor = RGBA_COLOR(255, 225, 144, 1).CGColor;
+//    cell.contentView.layer.masksToBounds = cell.layer.masksToBounds = YES;;
+
     cell.indexPath = indexPath;
+    
     return cell;
 }
 #pragma mark —— BaseCellProtocol

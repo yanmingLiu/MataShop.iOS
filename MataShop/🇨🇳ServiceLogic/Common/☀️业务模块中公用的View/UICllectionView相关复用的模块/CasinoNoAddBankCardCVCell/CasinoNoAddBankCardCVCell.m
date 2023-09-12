@@ -26,12 +26,20 @@
 #pragma mark —— UICollectionViewCellProtocol
 +(instancetype)cellWithCollectionView:(nonnull UICollectionView *)collectionView
                          forIndexPath:(nonnull NSIndexPath *)indexPath{
-    [collectionView registerCollectionViewCellClass:CasinoNoAddBankCardCVCell.class];
     CasinoNoAddBankCardCVCell *cell = (CasinoNoAddBankCardCVCell *)[collectionView collectionViewCellClass:CasinoNoAddBankCardCVCell.class forIndexPath:indexPath];
     if (!cell) {
+        [collectionView registerCollectionViewCellClass:CasinoNoAddBankCardCVCell.class];
         cell = (CasinoNoAddBankCardCVCell *)[collectionView collectionViewCellClass:CasinoNoAddBankCardCVCell.class forIndexPath:indexPath];
     }
+    
+    // UICollectionViewCell圆切角
+//    cell.contentView.layer.cornerRadius = cell.layer.cornerRadius = JobsWidth(8);
+//    cell.contentView.layer.borderWidth = cell.layer.borderWidth = JobsWidth(1);
+//    cell.contentView.layer.borderColor = cell.layer.borderColor = RGBA_COLOR(255, 225, 144, 1).CGColor;
+//    cell.contentView.layer.masksToBounds = cell.layer.masksToBounds = YES;;
+
     cell.indexPath = indexPath;
+    
     return cell;
 }
 #pragma mark —— BaseCellProtocol

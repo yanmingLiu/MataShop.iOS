@@ -7,6 +7,7 @@
 
 #import "BaseViewController.h"
 #import "MSProdSelectCVC.h"
+#import "MSProdSelectModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 /// 产品选购
