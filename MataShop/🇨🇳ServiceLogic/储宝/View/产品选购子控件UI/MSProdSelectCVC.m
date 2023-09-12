@@ -94,7 +94,7 @@
         _prodRemainsLab = JobsUpDownLab.new;
         [self.contentView addSubview:_prodRemainsLab];
         [_prodRemainsLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(JobsWidth(112));
+            make.left.equalTo(self.contentView).offset(JobsWidth(192));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
         [_prodRemainsLab richElementsInViewWithModel:self.prodRemainsModel];
@@ -107,7 +107,7 @@
         _prodDailyRateLab = JobsUpDownLab.new;
         [self.contentView addSubview:_prodDailyRateLab];
         [_prodDailyRateLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(JobsWidth(192));
+            make.left.equalTo(self.contentView).offset(JobsWidth(112));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
         [_prodDailyRateLab richElementsInViewWithModel:self.prodDailyRateModel];
@@ -201,7 +201,7 @@
 //    _prodNameModel.upLabText = Internationalization(@"暂无数据");/// 产品名
     _prodNameModel.upLabTextAlignment = NSTextAlignmentCenter;
     _prodNameModel.upLabFont = JobsFontRegular(12);
-    _prodNameModel.upLabTextCor = RGBA_COLOR(51, 51, 51, 1);
+    _prodNameModel.upLabTextCor = JobsBlackColor;
     _prodNameModel.upLabBgCor = JobsClearColor;
     
 //    _prodNameModel.downLabText = Internationalization(@"暂无数据");
@@ -228,13 +228,13 @@
     _prodDailyRateModel.upLabText = Internationalization(@"日利率：") ;
     _prodDailyRateModel.upLabTextAlignment = NSTextAlignmentCenter;
     _prodDailyRateModel.upLabFont = JobsFontRegular(12);
-    _prodDailyRateModel.upLabTextCor = RGBA_COLOR(51, 51, 51, 1);
+    _prodDailyRateModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
     _prodDailyRateModel.upLabBgCor = JobsClearColor;
     
 //    _prodDailyRateModel.downLabText = Internationalization(@"暂无数据");
     _prodDailyRateModel.downLabTextAlignment = NSTextAlignmentCenter;
     _prodDailyRateModel.downLabFont = JobsFontBold(16);
-    _prodDailyRateModel.downLabTextCor = RGBA_COLOR(236, 86, 40, 1);
+    _prodDailyRateModel.downLabTextCor = JobsBlackColor;
     _prodDailyRateModel.downLabBgCor = JobsClearColor;
 
     _prodDailyRateModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
@@ -255,13 +255,13 @@
     _prodRemainsModel.upLabText = Internationalization(@"剩余:") ;
     _prodRemainsModel.upLabTextAlignment = NSTextAlignmentCenter;
     _prodRemainsModel.upLabFont = JobsFontRegular(12);
-    _prodRemainsModel.upLabTextCor = RGBA_COLOR(51, 51, 51, 1);
+    _prodRemainsModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
     _prodRemainsModel.upLabBgCor = JobsClearColor;
     
 //    _prodRemainsModel.downLabText = Internationalization(@"暂无数据");
     _prodRemainsModel.downLabTextAlignment = NSTextAlignmentCenter;
     _prodRemainsModel.downLabFont = JobsFontBold(16);
-    _prodRemainsModel.downLabTextCor = RGBA_COLOR(236, 86, 40, 1);
+    _prodRemainsModel.downLabTextCor = JobsBlackColor;
     _prodRemainsModel.downLabBgCor = JobsClearColor;
 
     _prodRemainsModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
@@ -273,7 +273,5 @@
     
     return _prodRemainsModel;
 }
-
-
 
 @end

@@ -195,7 +195,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
             make.centerX.equalTo(self.view);
             make.top.equalTo(self.chuBaoView2.mas_bottom).offset(JobsWidth(12));
         }];
-        [_marqueeView cornerCutToCircleWithCornerRadius:8];
+        [_marqueeView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
     }return _marqueeView;
 }
 
@@ -203,7 +203,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     if (!_categoryView) {
         _categoryView = JXCategoryTitleView.new;
         _categoryView.delegate = self;
-        _categoryView.backgroundColor = JobsClearColor;
+        _categoryView.backgroundColor = RGBA_COLOR(210, 213, 224, 0.2);;
         _categoryView.titleSelectedColor = RGBA_COLOR(51, 51, 51, 1);
         _categoryView.titleColor = RGBA_COLOR(102, 102, 102, 1);
         _categoryView.titleFont = UIFontWeightRegularSize(14);
@@ -257,6 +257,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [_childVCMutArr addObject:MSProdSelectVC.new];// 产品选购
         [_childVCMutArr addObject:MSTransactionRecordVC.new];// 交易记录
         [_childVCMutArr addObject:MSPromotionIncentiveVC.new];// 推广奖励
+        [_childVCMutArr addObject:MSInterestSettleRecordVC.new];// 结息记录
     }return _childVCMutArr;
 }
 
@@ -266,6 +267,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [_titleMutArr addObject:Internationalization(@"产品选购")];
         [_titleMutArr addObject:Internationalization(@"交易记录")];
         [_titleMutArr addObject:Internationalization(@"推广奖励")];
+        [_titleMutArr addObject:Internationalization(@"结息记录")];
     }return _titleMutArr;
 }
 

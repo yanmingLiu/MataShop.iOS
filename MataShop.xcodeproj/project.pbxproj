@@ -656,6 +656,7 @@
 		C5CFE71E2AB08AE200D0F225 /* MSInterestSettleRecordCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE71D2AB08AE200D0F225 /* MSInterestSettleRecordCVC.m */; };
 		C5CFE7212AB08B4200D0F225 /* MSTransactionRecordCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVC.m */; };
 		C5CFE7242AB0934F00D0F225 /* MSProdSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7232AB0934F00D0F225 /* MSProdSelectModel.m */; };
+		C5CFE79F2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */; };
 		C5E00CE52AADDEF6005ABE09 /* MataShopLib.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */; };
 		C5E011292AADE1CD005ABE09 /* 164@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E0104D2AADE1B5005ABE09 /* 164@2x.gif */; };
 		C5E0112A2AADE1CD005ABE09 /* newemoji_007.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E0104E2AADE1B5005ABE09 /* newemoji_007.gif */; };
@@ -2164,6 +2165,8 @@
 		C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTransactionRecordCVC.m; sourceTree = "<group>"; };
 		C5CFE7222AB0934F00D0F225 /* MSProdSelectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdSelectModel.h; sourceTree = "<group>"; };
 		C5CFE7232AB0934F00D0F225 /* MSProdSelectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdSelectModel.m; sourceTree = "<group>"; };
+		C5CFE79D2AB0FEF600D0F225 /* MSInterestSettleRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInterestSettleRecordModel.h; sourceTree = "<group>"; };
+		C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInterestSettleRecordModel.m; sourceTree = "<group>"; };
 		C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MataShopLib.xcassets; sourceTree = "<group>"; };
 		C5E0104D2AADE1B5005ABE09 /* 164@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "164@2x.gif"; sourceTree = "<group>"; };
 		C5E0104E2AADE1B5005ABE09 /* newemoji_007.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = newemoji_007.gif; sourceTree = "<group>"; };
@@ -8149,6 +8152,8 @@
 			children = (
 				C5CFE7162AB089A300D0F225 /* MSInterestSettleRecordVC.h */,
 				C5CFE7172AB089A300D0F225 /* MSInterestSettleRecordVC.m */,
+				C5CFE79D2AB0FEF600D0F225 /* MSInterestSettleRecordModel.h */,
+				C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */,
 			);
 			path = MSInterestSettleRecordVC;
 			sourceTree = "<group>";
@@ -9611,6 +9616,7 @@
 				C561D4782AAC7E7B00E28603 /* NSObject+PopViewToLogOut.m in Sources */,
 				C561D4972AAC7E7B00E28603 /* NSObject+Class.m in Sources */,
 				C561D94A2AAC8D8000E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVCell.m in Sources */,
+				C5CFE79F2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m in Sources */,
 				C561D4362AAC7E7B00E28603 /* BaseNavigationVC.m in Sources */,
 				C561D3A82AAC7E7A00E28603 /* JobsSuspendLab.m in Sources */,
 				C561D3F72AAC7E7B00E28603 /* UIView+Masonry.m in Sources */,

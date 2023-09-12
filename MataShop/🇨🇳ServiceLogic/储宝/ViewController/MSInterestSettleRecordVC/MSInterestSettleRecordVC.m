@@ -151,7 +151,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView
                        layout:(UICollectionViewLayout *)collectionViewLayout
        insetForSectionAtIndex:(NSInteger)section {
-    return jobsSameEdgeInset(16);
+    return jobsSameEdgeInset(6);
 }
 #pragma mark —— lazyLoad
 -(UICollectionViewFlowLayout *)layout{
@@ -180,56 +180,66 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 -(NSMutableArray<UIViewModel *> *)dataMutArr{
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
+        
         {
+            MSInterestSettleRecordModel *prodSelectModel = MSInterestSettleRecordModel.new;
+            {
+                prodSelectModel.prodName = Internationalization(@"日日盈");
+                prodSelectModel.prodPrice = @"￥888.99";
+                prodSelectModel.prodInterestSettledYesterday = @"3445.33";
+                prodSelectModel.prodInterestSettledAll = @"456";
+                prodSelectModel.prodTimeTips = Internationalization(@"购买时间：2023.2.4 23:44:20");
+                prodSelectModel.prodStyle = ProdStyle01;
+            }
             UIViewModel *viewModel = UIViewModel.new;
+            viewModel.data = prodSelectModel;
             [_dataMutArr addObject:viewModel];
         }
         
         {
-            NSMutableArray <UIViewModel *>*mutArr = NSMutableArray.array;
+            MSInterestSettleRecordModel *prodSelectModel = MSInterestSettleRecordModel.new;
             {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"存款金额");
-                viewModel.subTextModel.text = Internationalization(@"10,000.00");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"存款方式");
-                viewModel.subTextModel.text = Internationalization(@"虛擬幣充值");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"訂單編號");
-                viewModel.subTextModel.text = Internationalization(@"YSF2025022302644565964");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"轉賬姓名");
-                viewModel.subTextModel.text = Internationalization(@"張三 ");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"銀行賬號");
-                viewModel.subTextModel.text = Internationalization(@"6230 5822 0031 5762 430");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"轉賬地址");
-                viewModel.subTextModel.text = Internationalization(@"中國平安銀行");
-                [mutArr addObject:viewModel];
+                prodSelectModel.prodName = Internationalization(@"周宝");
+                prodSelectModel.prodPrice = @"￥888.99";
+                prodSelectModel.prodDailyRate = @"3.33%";
+                prodSelectModel.prodExpectedIncome = @"456";
+                prodSelectModel.prodTimeTips = Internationalization(@"购买时间：2023.2.4 23:44:20\n到期释放时间：2023.1.23");
+                prodSelectModel.prodStyle = ProdStyle02;
             }
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.jobsDataMutArr = mutArr;
+            viewModel.data = prodSelectModel;
+            [_dataMutArr addObject:viewModel];
+        }
+        
+        {
+            MSInterestSettleRecordModel *prodSelectModel = MSInterestSettleRecordModel.new;
+            {
+                prodSelectModel.prodName = Internationalization(@"月月舒");
+                prodSelectModel.prodPrice = @"￥888.99";
+                prodSelectModel.prodDailyRate = @"3.33%";
+                prodSelectModel.prodExpectedIncome = @"456";
+                prodSelectModel.prodEarnedIncome = @"3444";
+                prodSelectModel.prodTimeTips = Internationalization(@"购买时间：2023.2.4 23:44:20\n到期释放时间：2023.1.23");
+                prodSelectModel.prodStyle = ProdStyle03;
+            }
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.data = prodSelectModel;
+            [_dataMutArr addObject:viewModel];
+        }
+        
+        {
+            MSInterestSettleRecordModel *prodSelectModel = MSInterestSettleRecordModel.new;
+            {
+                prodSelectModel.prodName = Internationalization(@"半年享");
+                prodSelectModel.prodPrice = @"￥888.99";
+                prodSelectModel.prodDailyRate = @"3.33%";
+                prodSelectModel.prodExpectedIncome = @"456";
+                prodSelectModel.prodEarnedIncome = @"3444";
+                prodSelectModel.prodTimeTips = Internationalization(@"购买时间：2023.2.4 23:44:20\n到期释放时间：2023.1.23");
+                prodSelectModel.prodStyle = ProdStyle02;
+            }
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.data = prodSelectModel;
             [_dataMutArr addObject:viewModel];
         }
     }return _dataMutArr;

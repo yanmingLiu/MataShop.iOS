@@ -65,5 +65,4 @@
     }return _prodTips;
 }
 
-
 @end
