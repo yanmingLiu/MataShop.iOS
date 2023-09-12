@@ -20,5 +20,7 @@
 #import "BaiShaETProjPopupView08.h"
 #import "BaiShaETProjPopupView09.h"
 #import "BaiShaETProjPopupView10.h"
+#import "BaiShaETProjPopupView11.h"
+#import "BaiShaETProjPopupView11SubView.h"
 
 #endif /* BaiShaETProjPopupViewHeader_h */

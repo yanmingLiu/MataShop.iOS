@@ -24,7 +24,7 @@
 #import "NSObject+BaiShaETProjCheck.h"// 数据检验
 #import "BaiShaETProjPopupViewHeader.h"// 本App相关的自定义弹出框
 #import "BaiShaETProjTipsViewHeader.h"// 本App相关的各种提示视图
-#import "UICollectionViewCellHeader.h"// 本App相关的各种提示视图
+#import "UICollectionViewCellHeader.h"// 
 #import "BaiShaProjDoorHeader.h"// 登录、注册、忘记密码
 
 #import "MSHomeVC.h"// 首页

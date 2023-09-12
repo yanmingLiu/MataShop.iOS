@@ -63,6 +63,9 @@ BOOL ISLogin;
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    /// 首页弹框
+//    [getMainWindow() popupWithView:[self jobsPopView:BaiShaETProjPopupView11.class
+//                                           viewModel:UIViewModel.new]];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
