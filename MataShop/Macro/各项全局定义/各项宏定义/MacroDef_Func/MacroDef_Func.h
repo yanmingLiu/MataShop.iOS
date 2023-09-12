@@ -164,7 +164,7 @@ static inline void toastErr(NSString *msg){
 #endif
 
 #ifndef JobsCellRandomCor
-#define JobsCellRandomCor cell.backgroundColor = cell.contentView.backgroundColor = RandomColor;
+#define JobsCellRandomCor cell.backgroundColor = cell.contentView.backgroundColor = JobsRandomColor;
 #endif
 
 #ifndef JobsCellCor

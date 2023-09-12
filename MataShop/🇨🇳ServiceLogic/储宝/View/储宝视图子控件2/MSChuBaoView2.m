@@ -16,12 +16,12 @@
 @property(nonatomic,strong)JobsUpDownLab *lab5;// 前一日总收益
 @property(nonatomic,strong)JobsUpDownLab *lab6;// 储宝总资产
 /// Data
-@property(nonatomic,strong)JobsUpDownLabModel *labModel1;// 定期余额
-@property(nonatomic,strong)JobsUpDownLabModel *labModel2;// 活期余额
-@property(nonatomic,strong)JobsUpDownLabModel *labModel3;// 前一日定期收益
-@property(nonatomic,strong)JobsUpDownLabModel *labModel4;// 前一日活期收益
-@property(nonatomic,strong)JobsUpDownLabModel *labModel5;// 前一日总收益
-@property(nonatomic,strong)JobsUpDownLabModel *labModel6;// 储宝总资产
+@property(nonatomic,strong)JobsUpDownLabModel *labModel1;// 定期余额Data
+@property(nonatomic,strong)JobsUpDownLabModel *labModel2;// 活期余额Data
+@property(nonatomic,strong)JobsUpDownLabModel *labModel3;// 前一日定期收益Data
+@property(nonatomic,strong)JobsUpDownLabModel *labModel4;// 前一日活期收益Data
+@property(nonatomic,strong)JobsUpDownLabModel *labModel5;// 前一日总收益Data
+@property(nonatomic,strong)JobsUpDownLabModel *labModel6;// 储宝总资产Data
 
 @end
 

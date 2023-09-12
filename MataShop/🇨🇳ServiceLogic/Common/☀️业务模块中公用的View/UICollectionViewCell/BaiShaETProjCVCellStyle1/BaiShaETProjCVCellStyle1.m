@@ -78,7 +78,7 @@
         _btn.normalTitle = Internationalization(@"立即開始");
         _btn.normalTitleColor = JobsWhiteColor;
         _btn.titleFont = UIFontWeightRegularSize(10);
-        _btn.normalBackgroundImage = self.viewModel.bgImage ? : [UIColor imageWithColor:RandomColor];
+        _btn.normalBackgroundImage = self.viewModel.bgImage ? : [UIColor imageWithColor:JobsRandomColor];
         [self.contentView addSubview:_btn];
         [_btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(52), JobsWidth(18)));
@@ -96,7 +96,7 @@
 -(UIImageView *)imgV{
     if (!_imgV) {
         _imgV = UIImageView.new;
-        _imgV.image = self.viewModel.image ? : [UIColor imageWithColor:RandomColor];
+        _imgV.image = self.viewModel.image ? : [UIColor imageWithColor:JobsRandomColor];
         [self.contentView addSubview:_imgV];
         [_imgV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(95), JobsWidth(95 - 12)));

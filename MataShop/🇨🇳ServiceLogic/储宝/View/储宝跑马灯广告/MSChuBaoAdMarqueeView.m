@@ -10,7 +10,7 @@
 @interface MSChuBaoAdMarqueeView ()
 /// UI
 @property(nonatomic,strong)WMZBannerView *bannerView;
-@property(nonatomic,strong)UIImageView *hornIMGV;
+@property(nonatomic,strong)BaseButton *hornBtn;
 /// Data
 @property(nonatomic,strong)WMZBannerParam *bannerParam;
 @property(nonatomic,strong)NSMutableArray <NSString *>*dataMutArr;
@@ -63,7 +63,7 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
     self.viewModel = model ? : UIViewModel.new;
     MakeDataNull
-    self.hornIMGV.alpha = 1;
+    self.hornBtn.alpha = 1;
     self.bannerParam.wDataSet(self.dataMutArr);
     [self.bannerView updateUI];
 }
@@ -91,8 +91,8 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
             CasinoMarqueeCell *cell = [CasinoMarqueeCell cellWithCollectionView:collectionView
                                                                    forIndexPath:indexPath];
             cell.backgroundLabel.text = self.dataMutArr[indexPath.item];
-            cell.backgroundLabel.textColor = HEXCOLOR(0x524740);
-            cell.backgroundLabel.font = [UIFont systemFontOfSize:JobsWidth(12) weight:UIFontWeightRegular];
+            cell.backgroundLabel.textColor = JobsWhiteColor;
+            cell.backgroundLabel.font = UIFontWeightRegularSize(JobsWidth(12));
             return cell;
         })
         .wEventClickSet(^(id anyID, NSInteger index) {
@@ -101,10 +101,10 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
         .wEventCenterClickSet(^(id anyID, NSInteger index,BOOL isCenter,UICollectionViewCell *cell) {
             NSLog(@"判断居中点击");
         })
-        .wFrameSet(CGRectMake(self.hornIMGV.x + self.hornIMGV.width + JobsWidth(20),
+        .wFrameSet(CGRectMake(self.hornBtn.x + self.hornBtn.width + JobsWidth(110),
                               0,
-                              [BaiShaETProjMarqueeView viewSizeWithModel:nil].width - self.hornIMGV.width - JobsWidth(10),
-                              [BaiShaETProjMarqueeView viewSizeWithModel:nil].height))
+                              [MSChuBaoAdMarqueeView viewSizeWithModel:nil].width - self.hornBtn.width - JobsWidth(110),
+                              [MSChuBaoAdMarqueeView viewSizeWithModel:nil].height))
         //图片铺满
         .wImageFillSet(YES)
         //循环滚动
@@ -145,17 +145,21 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
     }return _bannerView;
 }
 
--(UIImageView *)hornIMGV{
-    if (!_hornIMGV) {
-        _hornIMGV = UIImageView.new;
-        _hornIMGV.image = JobsIMG(@"912241CB-F48C-48AC-BC2F-3CA7742C8B1F");
-        [self addSubview:_hornIMGV];
-        [_hornIMGV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(16), JobsWidth(16)));
+-(BaseButton *)hornBtn{
+    if (!_hornBtn) {
+        _hornBtn = BaseButton.new;
+        [self addSubview:_hornBtn];
+        [_hornBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.mas_centerY);
-            make.left.equalTo(self).offset(JobsWidth(0));
+            make.left.equalTo(self).offset(JobsWidth(10));
+            make.height.mas_equalTo(JobsWidth(16));
         }];
-    }return _hornIMGV;
+    }
+    _hornBtn.normalImage = JobsIMG(@"912241CB-F48C-48AC-BC2F-3CA7742C8B1F");
+    _hornBtn.normalTitle = Internationalization(@" 活动通知: ");
+    _hornBtn.normalTitleColor = RGBA_COLOR(255, 255, 144, 1);
+    _hornBtn.titleFont = UIFontWeightBoldSize(14);
+    return _hornBtn;
 }
 
 -(NSMutableArray <NSString *>*)dataMutArr{
