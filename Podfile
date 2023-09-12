@@ -53,7 +53,7 @@ def appCommon
   end
 ## GK一族
 def gk
-#  pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar NO_SMP
+  pod 'GKNavigationBar' # https://github.com/QuintGao/GKNavigationBar NO_SMP
   pod 'GKPhotoBrowser' # https://github.com/QuintGao/GKPhotoBrowser iOS仿微信、今日头条等图片浏览器
   end
 ## JX一族

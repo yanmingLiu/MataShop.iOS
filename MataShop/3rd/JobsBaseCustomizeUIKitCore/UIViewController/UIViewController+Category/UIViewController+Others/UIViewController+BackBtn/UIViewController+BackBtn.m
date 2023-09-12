@@ -25,6 +25,7 @@
 }
 /// 配置返回键图片
 -(UIImage *)makeBackBtnImage{
+    id f = self.viewModel.backBtnIMG;
     return self.viewModel.backBtnIMG ? : JobsBuddleIMG(nil,@"Frameworks/GKNavigationBar.framework/GKNavigationBar",nil,self.gk_backStyle == GKNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white");
 }
 ///【子类需要覆写 】创建返回键的点击事件

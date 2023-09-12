@@ -185,7 +185,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     if (!_viewModel) {
         _viewModel = UIViewModel.new;
         _viewModel.textModel.textCor = HEXCOLOR(0x3D4A58);
-        _viewModel.textModel.font = [UIFont systemFontOfSize:JobsWidth(16) weight:UIFontWeightMedium];
+        _viewModel.textModel.font = UIFontWeightRegularSize(JobsWidth(16));
     }return _viewModel;
 }
 

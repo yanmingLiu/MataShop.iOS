@@ -25,7 +25,7 @@
         self.viewModel = (UIViewModel *)self.requestParams;
     }
     self.setupNavigationBarHidden = YES;
-    self.viewModel.backBtnTitleModel.text = @"";
+    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");
     self.viewModel.textModel.textCor = HEXCOLOR(0x3D4A58);
     self.viewModel.textModel.font = notoSansBold(16);
     self.bgImage = nil;

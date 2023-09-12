@@ -47,7 +47,7 @@ NSString *const 日历数组信息 = @"日历数组信息";
     }
     self.setupNavigationBarHidden = YES;
 
-    self.viewModel.backBtnTitleModel.text = @"";
+    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");
     self.viewModel.textModel.textCor = RGBA_COLOR(51, 51, 51, 1);
     self.viewModel.textModel.text = Internationalization(@"签到");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);

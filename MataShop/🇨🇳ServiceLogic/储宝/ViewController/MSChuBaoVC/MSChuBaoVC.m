@@ -37,7 +37,7 @@
     }
     self.setupNavigationBarHidden = YES;
     
-    self.viewModel.backBtnTitleModel.text = @"";
+    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");;
     self.viewModel.textModel.textCor = RGBA_COLOR(51, 51, 51, 1);
     self.viewModel.textModel.text = Internationalization(@"储宝");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);
@@ -152,7 +152,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         @jobs_weakify(self)
         [_aboutBtn btnClickEventBlock:^(id data) {
             @jobs_strongify(self)
-            [WHToast toastErrMsg:Internationalization(@"关于储宝")];
+            [self forceComingToPushVC:MSAboutChuBaoVC.new requestParams:@""];
         }];
     }return _aboutBtn;
 }
