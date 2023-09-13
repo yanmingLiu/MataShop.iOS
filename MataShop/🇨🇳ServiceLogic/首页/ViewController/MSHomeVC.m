@@ -14,16 +14,13 @@ BOOL ISLogin;
 @property(nonatomic,strong)BaiShaETProjMarqueeView *marqueeView;
 @property(nonatomic,strong)MS3rdShopLinkView *shopLinkView;
 @property(nonatomic,strong)WMZBannerView *bannerView;
-@property(nonatomic,strong)JXCategoryImageView *categoryView;
-@property(nonatomic,strong)JXCategoryIndicatorLineView *lineView;/// 跟随的指示器
-@property(nonatomic,strong)JXCategoryListContainerView *listContainerView;/// 此属性决定依附于此的viewController
+@property(nonatomic,strong)UIImageView *adIMGV1;
+@property(nonatomic,strong)UIImageView *adIMGV2;
+@property(nonatomic,strong)UIImageView *adIMGV3;
 /// Data
 @property(nonatomic,strong)WMZBannerParam *bannerParam;
 @property(nonatomic,strong)NSMutableArray <UIImage *>*dataMutArr;
 @property(nonatomic,strong)NSArray *__block dataArr;
-@property(nonatomic,strong)NSMutableArray <UIViewController *>*childVCMutArr;
-@property(nonatomic,strong)NSMutableArray <NSString *>*imageNames;
-@property(nonatomic,strong)NSMutableArray <NSString *>*selectedImageNames;
 
 @end
 
@@ -54,7 +51,9 @@ BOOL ISLogin;
     self.bannerParam.wDataSet(self.dataMutArr);
     [self.bannerView updateUI];
     self.shopLinkView.alpha = 1;
-//    self.categoryView.alpha = 1;
+    self.adIMGV1.alpha = 1;
+    self.adIMGV2.alpha = 1;
+    self.adIMGV3.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -70,57 +69,6 @@ BOOL ISLogin;
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-}
-#pragma mark JXCategoryTitleViewDataSource
-//// 如果将JXCategoryTitleView嵌套进UITableView的cell，每次重用的时候，JXCategoryTitleView进行reloadData时，会重新计算所有的title宽度。所以该应用场景，需要UITableView的cellModel缓存titles的文字宽度，再通过该代理方法返回给JXCategoryTitleView。
-//// 如果实现了该方法就以该方法返回的宽度为准，不触发内部默认的文字宽度计算。
-//- (CGFloat)categoryTitleView:(JXCategoryTitleView *)titleView
-//               widthForTitle:(NSString *)title{
-//
-//    return 10;
-//}
-#pragma mark JXCategoryListContainerViewDelegate
-/**
- 返回list的数量
-
- @param listContainerView 列表的容器视图
- @return list的数量
- */
-- (NSInteger)numberOfListsInlistContainerView:(JXCategoryListContainerView *)listContainerView{
-    return self.imageNames.count;
-}
-/**
- 根据index初始化一个对应列表实例，需要是遵从`JXCategoryListContentViewDelegate`协议的对象。
- 如果列表是用自定义UIView封装的，就让自定义UIView遵从`JXCategoryListContentViewDelegate`协议，该方法返回自定义UIView即可。
- 如果列表是用自定义UIViewController封装的，就让自定义UIViewController遵从`JXCategoryListContentViewDelegate`协议，该方法返回自定义UIViewController即可。
-
- @param listContainerView 列表的容器视图
- @param index 目标下标
- @return 遵从JXCategoryListContentViewDelegate协议的list实例
- */
-- (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView
-                                          initListForIndex:(NSInteger)index{
-    return self.childVCMutArr[index];
-}
-#pragma mark JXCategoryViewDelegate
-//传递didClickSelectedItemAt事件给listContainerView，必须调用！！！
-- (void)categoryView:(JXCategoryBaseView *)categoryView
-didClickSelectedItemAtIndex:(NSInteger)index {
-     [self.listContainerView didClickSelectedItemAtIndex:index];
-}
-
-- (void)categoryView:(JXCategoryBaseView *)categoryView
-didScrollSelectedItemAtIndex:(NSInteger)index{}
-//传递scrolling事件给listContainerView，必须调用！！！
-- (void)categoryView:(JXCategoryBaseView *)categoryView
-scrollingFromLeftIndex:(NSInteger)leftIndex
-        toRightIndex:(NSInteger)rightIndex
-               ratio:(CGFloat)ratio {
-    NSLog(@"");
-//    [self.listContainerView scrollingFromLeftIndex:leftIndex
-//                                      toRightIndex:rightIndex
-//                                             ratio:ratio
-//                                     selectedIndex:categoryView.selectedIndex];
 }
 #pragma mark —— lazyLoad
 -(MSSearchBoardView *)searchBoardView{
@@ -225,6 +173,96 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     }return _shopLinkView;
 }
 
+-(UIImageView *)adIMGV1{
+    if(!_adIMGV1){
+        _adIMGV1 = UIImageView.new;
+        _adIMGV1.image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"超值折扣区" ofType:@"gif"]]];
+        [self.view addSubview:_adIMGV1];
+        [_adIMGV1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view);
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(343), JobsWidth(110)));
+            make.top.equalTo(self.bannerView.mas_bottom).offset(JobsWidth(16));
+        }];
+        
+        {
+            _adIMGV1.numberOfTouchesRequired = 1;
+            _adIMGV1.numberOfTapsRequired = 1;/// ⚠️注意：如果要设置长按手势，此属性必须设置为0⚠️
+            _adIMGV1.minimumPressDuration = 0.1;
+            _adIMGV1.numberOfTouchesRequired = 1;
+            _adIMGV1.allowableMovement = 1;
+            _adIMGV1.userInteractionEnabled = YES;
+            @jobs_weakify(self)
+            _adIMGV1.target = weak_self;
+            _adIMGV1.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target, UITapGestureRecognizer *_Nullable arg) {
+                @jobs_strongify(self)
+                [WHToast toastErrMsg:Internationalization(@"超值折扣区")];
+            }];
+            _adIMGV1.tapGR.enabled = YES;/// 必须在设置完Target和selector以后方可开启执行
+        }
+    
+    }return _adIMGV1;
+}
+
+-(UIImageView *)adIMGV2{
+    if(!_adIMGV2){
+        _adIMGV2 = UIImageView.new;
+        _adIMGV2.image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"超值" ofType:@"gif"]]];
+        [self.view addSubview:_adIMGV2];
+        [_adIMGV2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view).offset(JobsWidth(16));
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(165), JobsWidth(100)));
+            make.top.equalTo(self.adIMGV1.mas_bottom).offset(JobsWidth(12));
+        }];
+        
+        {
+            _adIMGV2.numberOfTouchesRequired = 1;
+            _adIMGV2.numberOfTapsRequired = 1;/// ⚠️注意：如果要设置长按手势，此属性必须设置为0⚠️
+            _adIMGV2.minimumPressDuration = 0.1;
+            _adIMGV2.numberOfTouchesRequired = 1;
+            _adIMGV2.allowableMovement = 1;
+            _adIMGV2.userInteractionEnabled = YES;
+            @jobs_weakify(self)
+            _adIMGV2.target = weak_self;
+            _adIMGV2.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target, UITapGestureRecognizer *_Nullable arg) {
+                @jobs_strongify(self)
+                [WHToast toastErrMsg:Internationalization(@"超值")];
+            }];
+            _adIMGV2.tapGR.enabled = YES;/// 必须在设置完Target和selector以后方可开启执行
+        }
+        
+    }return _adIMGV2;
+}
+
+-(UIImageView *)adIMGV3{
+    if(!_adIMGV3){
+        _adIMGV3 = UIImageView.new;
+        _adIMGV3.image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"火爆" ofType:@"gif"]]];
+        [self.view addSubview:_adIMGV3];
+        [_adIMGV3 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.view).offset(JobsWidth(-16));
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(165), JobsWidth(100)));
+            make.top.equalTo(self.adIMGV1.mas_bottom).offset(JobsWidth(12));
+        }];
+        
+        {
+            _adIMGV3.numberOfTouchesRequired = 1;
+            _adIMGV3.numberOfTapsRequired = 1;/// ⚠️注意：如果要设置长按手势，此属性必须设置为0⚠️
+            _adIMGV3.minimumPressDuration = 0.1;
+            _adIMGV3.numberOfTouchesRequired = 1;
+            _adIMGV3.allowableMovement = 1;
+            _adIMGV3.userInteractionEnabled = YES;
+            @jobs_weakify(self)
+            _adIMGV3.target = weak_self;
+            _adIMGV3.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target, UITapGestureRecognizer *_Nullable arg) {
+                @jobs_strongify(self)
+                [WHToast toastErrMsg:Internationalization(@"火爆")];
+            }];
+            _adIMGV3.tapGR.enabled = YES;/// 必须在设置完Target和selector以后方可开启执行
+        }
+        
+    }return _adIMGV3;
+}
+
 -(NSMutableArray<UIImage *> *)dataMutArr{
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
@@ -235,99 +273,5 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     }return _dataMutArr;
 }
 
--(JXCategoryImageView *)categoryView{
-    if (!_categoryView) {
-        _categoryView = JXCategoryImageView.new;
-        _categoryView.backgroundColor = UIColor.clearColor;
-        _categoryView.delegate = self;
-
-        _categoryView.imageNames = self.imageNames;
-        _categoryView.selectedImageNames = self.selectedImageNames;
-        
-        //_categoryView.imageInfoArray = @[@"彩票_已选择",@"电子_已选择",@"棋牌_已选择",@"全部游戏_已选择",@"体育_已选择",@"真人直播_已选择"];
-        //@[JobsIMG(@"彩票_已选择"),JobsIMG(@"电子_已选择"),JobsIMG(@"棋牌_已选择"),JobsIMG(@"全部游戏_已选择"),JobsIMG(@"体育_已选择"),JobsIMG(@"真人直播_已选择")];
-        //_categoryView.selectedImageInfoArray = @[@"彩票_已选择",@"电子_已选择",@"棋牌_已选择",@"全部游戏_已选择",@"体育_已选择",@"真人直播_已选择"];
-        
-        _categoryView.imageSize = CGSizeMake(JobsWidth(30), JobsWidth(30));
-        _categoryView.imageCornerRadius = JobsWidth(1);
-        _categoryView.imageZoomEnabled = YES;
-        _categoryView.imageZoomScale = 1.3;
-
-        _categoryView.indicators = @[self.lineView];//
-        _categoryView.defaultSelectedIndex = 1;// 默认从第二个开始显示
-        _categoryView.cellSpacing = JobsWidth(-20);
-        // 关联cotentScrollView，关联之后才可以互相联动！！！
-        _categoryView.contentScrollView = self.listContainerView.scrollView;//
-        [self.view addSubview:_categoryView];
-        [_categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.searchBoardView.mas_bottom).offset(0);
-            make.left.right.equalTo(self.view);
-            make.height.mas_equalTo(listContainerViewDefaultOffset);
-        }];
-        [self.view layoutIfNeeded];
-    }return _categoryView;
-}
-
--(JXCategoryIndicatorLineView *)lineView{
-    if (!_lineView) {
-        _lineView = JXCategoryIndicatorLineView.new;
-        _lineView.indicatorColor = JobsWhiteColor;
-        _lineView.indicatorHeight = JobsWidth(4);
-        _lineView.indicatorWidthIncrement = JobsWidth(10);
-        _lineView.verticalMargin = 0;
-    }return _lineView;
-}
-/// 此属性决定依附于此的viewController
--(JXCategoryListContainerView *)listContainerView{
-    if (!_listContainerView) {
-        _listContainerView = [JXCategoryListContainerView.alloc initWithType:JXCategoryListContainerType_CollectionView
-                                                                    delegate:self];
-        _listContainerView.defaultSelectedIndex = 1;// 默认从第二个开始显示
-        [self.view addSubview:_listContainerView];
-        [_listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.equalTo(self.view);
-            make.top.equalTo(self.searchBoardView.mas_bottom).offset(listContainerViewDefaultOffset);
-            make.left.right.bottom.equalTo(self.view);
-            
-        }];
-        [self.view layoutIfNeeded];
-    }return _listContainerView;
-}
-
--(NSMutableArray<UIViewController *> *)childVCMutArr{
-    if (!_childVCMutArr) {
-        _childVCMutArr = NSMutableArray.array;
-        [_childVCMutArr addObject:BaseViewController.new];// 全部游戏
-        [_childVCMutArr addObject:BaseViewController.new];// 真人
-        [_childVCMutArr addObject:BaseViewController.new];// 体育
-        [_childVCMutArr addObject:BaseViewController.new];// 电子
-        [_childVCMutArr addObject:BaseViewController.new];// 棋牌
-        [_childVCMutArr addObject:BaseViewController.new];// 彩票
-    }return _childVCMutArr;
-}
-
--(NSMutableArray<NSString *> *)imageNames{
-    if (!_imageNames) {
-        _imageNames = NSMutableArray.array;
-        [_imageNames addObject:@"全部游戏_未选择"];
-        [_imageNames addObject:@"真人直播_未选择"];
-        [_imageNames addObject:@"体育_未选择"];
-        [_imageNames addObject:@"电子_未选择"];
-        [_imageNames addObject:@"棋牌_未选择"];
-        [_imageNames addObject:@"彩票_未选择"];
-    }return _imageNames;
-}
-
--(NSMutableArray<NSString *> *)selectedImageNames{
-    if (!_selectedImageNames) {
-        _selectedImageNames = NSMutableArray.array;
-        [_selectedImageNames addObject:@"全部游戏_已选择"];
-        [_selectedImageNames addObject:@"真人直播_已选择"];
-        [_selectedImageNames addObject:@"体育_已选择"];
-        [_selectedImageNames addObject:@"电子_已选择"];
-        [_selectedImageNames addObject:@"棋牌_已选择"];
-        [_selectedImageNames addObject:@"彩票_已选择"];
-    }return _selectedImageNames;
-}
 
 @end
