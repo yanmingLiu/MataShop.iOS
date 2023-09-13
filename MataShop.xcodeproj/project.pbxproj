@@ -657,6 +657,10 @@
 		C5CFE7212AB08B4200D0F225 /* MSTransactionRecordCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVC.m */; };
 		C5CFE7242AB0934F00D0F225 /* MSProdSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7232AB0934F00D0F225 /* MSProdSelectModel.m */; };
 		C5CFE79F2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */; };
+		C5CFE81A2AB197CA00D0F225 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5CFE8182AB197CA00D0F225 /* iph_X.mp4 */; };
+		C5CFE81B2AB197CA00D0F225 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5CFE8192AB197CA00D0F225 /* 非iph_X.mp4 */; };
+		C5CFE8962AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE8952AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m */; };
+		C5CFE8992AB1A79800D0F225 /* MSPromotionIncentiveCVHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE8982AB1A79800D0F225 /* MSPromotionIncentiveCVHeaderFooterView.m */; };
 		C5E00CE52AADDEF6005ABE09 /* MataShopLib.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */; };
 		C5E011292AADE1CD005ABE09 /* 164@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E0104D2AADE1B5005ABE09 /* 164@2x.gif */; };
 		C5E0112A2AADE1CD005ABE09 /* newemoji_007.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E0104E2AADE1B5005ABE09 /* newemoji_007.gif */; };
@@ -875,8 +879,6 @@
 		C5E012022AADE1CD005ABE09 /* 59@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E011262AADE1CD005ABE09 /* 59@2x.gif */; };
 		C5E012032AADE1CD005ABE09 /* 13@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E011272AADE1CD005ABE09 /* 13@2x.gif */; };
 		C5E012042AADE1CD005ABE09 /* 208@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E011282AADE1CD005ABE09 /* 208@2x.gif */; };
-		C5E012052AADE2C5005ABE09 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C561CE712AAC7DCD00E28603 /* iph_X.mp4 */; };
-		C5E012062AADE2C8005ABE09 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C561CE722AAC7DCE00E28603 /* 非iph_X.mp4 */; };
 		C5E012092AADE4D1005ABE09 /* 启动页SLOGAN.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E012082AADE4D1005ABE09 /* 启动页SLOGAN.png */; };
 		C5E015CB2AAE1DD9005ABE09 /* LunarFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E015C92AAE1DD9005ABE09 /* LunarFormatter.m */; };
 		C5E017562AAF1FE9005ABE09 /* MSSignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E017542AAF1FE9005ABE09 /* MSSignInVC.m */; };
@@ -1065,8 +1067,6 @@
 		C561CE692AAC7DA800E28603 /* Tabbar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Tabbar.xcassets; sourceTree = "<group>"; };
 		C561CE6A2AAC7DA800E28603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C561CE6B2AAC7DA900E28603 /* AppDoor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppDoor.xcassets; sourceTree = "<group>"; };
-		C561CE712AAC7DCD00E28603 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
-		C561CE722AAC7DCE00E28603 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
 		C561CE772AAC7E7900E28603 /* ImageCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCodeView.h; sourceTree = "<group>"; };
 		C561CE782AAC7E7900E28603 /* ImageCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCodeView.m; sourceTree = "<group>"; };
 		C561CE7B2AAC7E7900E28603 /* JobsBitsMonitorSuspendLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBitsMonitorSuspendLab.h; sourceTree = "<group>"; };
@@ -2167,6 +2167,12 @@
 		C5CFE7232AB0934F00D0F225 /* MSProdSelectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdSelectModel.m; sourceTree = "<group>"; };
 		C5CFE79D2AB0FEF600D0F225 /* MSInterestSettleRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInterestSettleRecordModel.h; sourceTree = "<group>"; };
 		C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInterestSettleRecordModel.m; sourceTree = "<group>"; };
+		C5CFE8182AB197CA00D0F225 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
+		C5CFE8192AB197CA00D0F225 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
+		C5CFE8942AB1A0BD00D0F225 /* MSPromotionIncentiveModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPromotionIncentiveModel.h; sourceTree = "<group>"; };
+		C5CFE8952AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPromotionIncentiveModel.m; sourceTree = "<group>"; };
+		C5CFE8972AB1A79700D0F225 /* MSPromotionIncentiveCVHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPromotionIncentiveCVHeaderFooterView.h; sourceTree = "<group>"; };
+		C5CFE8982AB1A79800D0F225 /* MSPromotionIncentiveCVHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPromotionIncentiveCVHeaderFooterView.m; sourceTree = "<group>"; };
 		C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MataShopLib.xcassets; sourceTree = "<group>"; };
 		C5E0104D2AADE1B5005ABE09 /* 164@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "164@2x.gif"; sourceTree = "<group>"; };
 		C5E0104E2AADE1B5005ABE09 /* newemoji_007.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = newemoji_007.gif; sourceTree = "<group>"; };
@@ -2856,8 +2862,8 @@
 		C561CE702AAC7DC000E28603 /* 视频资源文件 */ = {
 			isa = PBXGroup;
 			children = (
-				C561CE722AAC7DCE00E28603 /* 非iph_X.mp4 */,
-				C561CE712AAC7DCD00E28603 /* iph_X.mp4 */,
+				C5CFE8192AB197CA00D0F225 /* 非iph_X.mp4 */,
+				C5CFE8182AB197CA00D0F225 /* iph_X.mp4 */,
 			);
 			path = "视频资源文件";
 			sourceTree = "<group>";
@@ -8054,6 +8060,8 @@
 			children = (
 				C5CFE53C2AB0550700D0F225 /* MSPromotionIncentiveVC.h */,
 				C5CFE53D2AB0550700D0F225 /* MSPromotionIncentiveVC.m */,
+				C5CFE8942AB1A0BD00D0F225 /* MSPromotionIncentiveModel.h */,
+				C5CFE8952AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m */,
 			);
 			path = MSPromotionIncentiveVC;
 			sourceTree = "<group>";
@@ -8156,6 +8164,15 @@
 				C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */,
 			);
 			path = MSInterestSettleRecordVC;
+			sourceTree = "<group>";
+		};
+		C5CFE89A2AB1B0BD00D0F225 /* MSPromotionIncentiveCVHeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				C5CFE8972AB1A79700D0F225 /* MSPromotionIncentiveCVHeaderFooterView.h */,
+				C5CFE8982AB1A79800D0F225 /* MSPromotionIncentiveCVHeaderFooterView.m */,
+			);
+			path = MSPromotionIncentiveCVHeaderFooterView;
 			sourceTree = "<group>";
 		};
 		C5E00CE62AADDFF4005ABE09 /* Gif */ = {
@@ -8476,6 +8493,7 @@
 		C5E0175A2AAF2F79005ABE09 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C5CFE53A2AB054D700D0F225 /* MSTransactionRecordVC */,
 				C5CFE6742AB081BB00D0F225 /* MSTopUpVC */,
 				C5CFE67A2AB082C900D0F225 /* MSBankCardTopUpVC */,
 				C5CFE6792AB082B800D0F225 /* MSAlipayTopUpVC */,
@@ -8483,7 +8501,6 @@
 				C5CFE5422AB0637300D0F225 /* MSAboutChuBaoVC */,
 				C5CFE7152AB0897B00D0F225 /* MSInterestSettleRecordVC */,
 				C5CFE53B2AB054F200D0F225 /* MSPromotionIncentiveVC */,
-				C5CFE53A2AB054D700D0F225 /* MSTransactionRecordVC */,
 				C5CFE5332AB0542600D0F225 /* MSProdSelectVC */,
 				C5CFE5322AB0541F00D0F225 /* MSChuBaoVC */,
 			);
@@ -8493,6 +8510,7 @@
 		C5E0175E2AAF35BE005ABE09 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5CFE89A2AB1B0BD00D0F225 /* MSPromotionIncentiveCVHeaderFooterView */,
 				C5CFE70A2AB0881000D0F225 /* 交易记录子控件UI */,
 				C5CFE6872AB086DA00D0F225 /* 推广奖励子控件UI */,
 				C5CFE6862AB086CE00D0F225 /* 结息记录子控件UI */,
@@ -8663,7 +8681,6 @@
 				C5E011F92AADE1CD005ABE09 /* 36@2x.gif in Resources */,
 				C561D3E22AAC7E7B00E28603 /* Sound.wav in Resources */,
 				C561D3E42AAC7E7B00E28603 /* SoundBtn.md in Resources */,
-				C5E012052AADE2C5005ABE09 /* iph_X.mp4 in Resources */,
 				C561CE452AAC7CE200E28603 /* HomeKit@3x.png in Resources */,
 				C5E0119E2AADE1CD005ABE09 /* 105@2x.gif in Resources */,
 				C561D97F2AAC917900E28603 /* 登录异常验证.png in Resources */,
@@ -8740,7 +8757,6 @@
 				C561D3712AAC7E7A00E28603 /* 7@2x.png in Resources */,
 				C561D3742AAC7E7A00E28603 /* 9@3x.png in Resources */,
 				C5E0117B2AADE1CD005ABE09 /* 194@2x.gif in Resources */,
-				C5E012062AADE2C8005ABE09 /* 非iph_X.mp4 in Resources */,
 				C561D99E2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png in Resources */,
 				C561D3802AAC7E7A00E28603 /* 6@3x.png in Resources */,
 				C561D3792AAC7E7A00E28603 /* 3@3x.png in Resources */,
@@ -9064,6 +9080,7 @@
 				C561D3312AAC7E7A00E28603 /* 输入框样式_6.png in Resources */,
 				C5E011F82AADE1CD005ABE09 /* 28@2x.gif in Resources */,
 				C5E0113C2AADE1CD005ABE09 /* 124@2x.gif in Resources */,
+				C5CFE81B2AB197CA00D0F225 /* 非iph_X.mp4 in Resources */,
 				C561D3952AAC7E7A00E28603 /* 启动页_05.png in Resources */,
 				C5E011F22AADE1CD005ABE09 /* 153@2x.gif in Resources */,
 				C561CE442AAC7CE200E28603 /* 相机@3x.png in Resources */,
@@ -9071,6 +9088,7 @@
 				C561D6732AAC862000E28603 /* 测试弹窗的背景图@2x.png in Resources */,
 				C5E011CF2AADE1CD005ABE09 /* 268@2x.gif in Resources */,
 				C5E011472AADE1CD005ABE09 /* 172@2x.gif in Resources */,
+				C5CFE81A2AB197CA00D0F225 /* iph_X.mp4 in Resources */,
 				C561D4892AAC7E7B00E28603 /* KeychainHelper.webp in Resources */,
 				C561D30F2AAC7E7A00E28603 /* 社区.json in Resources */,
 				C5E011432AADE1CD005ABE09 /* 21@2x.gif in Resources */,
@@ -9342,9 +9360,11 @@
 				C561CE232AAC7CE200E28603 /* ECPrivacyCheckSpeechRecognition.m in Sources */,
 				C561D4102AAC7E7B00E28603 /* BaseNavigationBar.m in Sources */,
 				C561D3B32AAC7E7A00E28603 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				C5CFE8962AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m in Sources */,
 				C561D6802AAC862000E28603 /* BaiShaETProjPopupView08.m in Sources */,
 				C561D3A92AAC7E7A00E28603 /* JobsSuspendView.m in Sources */,
 				C561D6632AAC862000E28603 /* BaiShaETProjMembersBoardView.m in Sources */,
+				C5CFE8992AB1A79800D0F225 /* MSPromotionIncentiveCVHeaderFooterView.m in Sources */,
 				C561D3A22AAC7E7A00E28603 /* JobsPageTBVCell.m in Sources */,
 				C561D47F2AAC7E7B00E28603 /* NSObject+Time.m in Sources */,
 				C561D49F2AAC7E7B00E28603 /* UITextField+Placeholder.m in Sources */,

@@ -68,6 +68,8 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
 }
+#pragma mark —— UICollectionViewCell 部署策略
+//见 @interface NSObject (JobsDeployCellConfig)
 #pragma mark —— UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.dataMutArr.count;
@@ -77,13 +79,28 @@
                                    cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     @jobs_weakify(self)
     MSPromotionIncentiveCVC *cell = [MSPromotionIncentiveCVC cellWithCollectionView:collectionView forIndexPath:indexPath];
-    [cell richElementsInCellWithModel:self.dataMutArr[indexPath.section]];
+    
+    MSPromotionIncentiveModel *promotionIncentiveModel = (MSPromotionIncentiveModel *)self.dataMutArr[indexPath.section].data;
+    [cell richElementsInCellWithModel:promotionIncentiveModel.incentiveDetailModelMutArr[indexPath.row]];
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    MSPromotionIncentiveModel *promotionIncentiveModel = (MSPromotionIncentiveModel *)self.dataMutArr[section].data;
+    return promotionIncentiveModel.incentiveDetailModelMutArr.count;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath {
+    if (kind.isEqualToString(UICollectionElementKindSectionHeader)) {
+        MSPromotionIncentiveCVHeaderFooterView *headerView = [collectionView UICollectionElementKindSectionHeaderClass:MSPromotionIncentiveCVHeaderFooterView.class
+                                                                                                             forIndexPath:indexPath];
+        MSPromotionIncentiveModel *promotionIncentiveModel = (MSPromotionIncentiveModel *)self.dataMutArr[indexPath.section].data;
+        [headerView richElementsInViewWithModel:promotionIncentiveModel];
+        return headerView;
+    }else ReturnBaseCollectionReusableView;
 }
 #pragma mark —— UICollectionViewDelegate
 /// 允许选中时，高亮
@@ -130,16 +147,23 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
 }
 #pragma mark —— UICollectionViewDelegateFlowLayout
+/// header 大小
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+referenceSizeForHeaderInSection:(NSInteger)section {//
+    return [MSPromotionIncentiveCVHeaderFooterView collectionReusableViewSizeWithModel:nil];
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [MSInterestSettleRecordCVC cellSizeWithModel:nil];
+    return [MSPromotionIncentiveCVC cellSizeWithModel:nil];
 }
 /// 定义的是元素垂直之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView
                    layout:(UICollectionViewLayout *)collectionViewLayout
 minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return JobsWidth(12);
+    return JobsWidth(0);
 }
 /// 定义的是元素水平之间的间距。Api自动计算一行的Cell个数，只有当间距小于此定义的最小值时才会换行，最小执行单元是Section（每个section里面的样式是统一的）
 - (CGFloat)collectionView:(UICollectionView *)collectionView
@@ -151,7 +175,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView
                        layout:(UICollectionViewLayout *)collectionViewLayout
        insetForSectionAtIndex:(NSInteger)section {
-    return jobsSameEdgeInset(16);
+    return section ? jobsSameEdgeInset(6) : jobsSameEdgeInset(12);
 }
 #pragma mark —— lazyLoad
 -(UICollectionViewFlowLayout *)layout{
@@ -170,6 +194,39 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
         _collectionView.showsVerticalScrollIndicator = NO;
         [_collectionView registerCollectionViewClass];
         _collectionView.contentInset = UIEdgeInsetsMake(0, 0, JobsWidth(288), 0);
+        
+        {
+            MJRefreshConfigModel *refreshConfigHeader = MJRefreshConfigModel.new;
+            refreshConfigHeader.stateIdleTitle = Internationalization(@"下拉可以刷新");
+            refreshConfigHeader.pullingTitle = Internationalization(@"下拉可以刷新");
+            refreshConfigHeader.refreshingTitle = Internationalization(@"松开立即刷新");
+            refreshConfigHeader.willRefreshTitle = Internationalization(@"刷新数据中");
+            refreshConfigHeader.noMoreDataTitle = Internationalization(@"下拉可以刷新");
+
+            MJRefreshConfigModel *refreshConfigFooter = MJRefreshConfigModel.new;
+            refreshConfigFooter.stateIdleTitle = Internationalization(@"");
+            refreshConfigFooter.pullingTitle = Internationalization(@"");;
+            refreshConfigFooter.refreshingTitle = Internationalization(@"");;
+            refreshConfigFooter.willRefreshTitle = Internationalization(@"");;
+            refreshConfigFooter.noMoreDataTitle = Internationalization(@"");;
+
+            self.refreshConfigHeader = refreshConfigHeader;
+            self.refreshConfigFooter = refreshConfigFooter;
+
+            _collectionView.mj_header = self.mjRefreshNormalHeader;
+            _collectionView.mj_header.automaticallyChangeAlpha = YES;//根据拖拽比例自动切换透明度
+        }
+        
+        {
+            _collectionView.ly_emptyView = [LYEmptyView emptyViewWithImageStr:@"暂无数据"
+                                                                     titleStr:Internationalization(@"暂无数据")
+                                                                    detailStr:Internationalization(@"")];
+            
+            _collectionView.ly_emptyView.titleLabTextColor = JobsLightGrayColor;
+            _collectionView.ly_emptyView.contentViewOffset = JobsWidth(-180);
+            _collectionView.ly_emptyView.titleLabFont = UIFontWeightRegularSize(JobsWidth(16));
+        }
+        
         [self.view addSubview:_collectionView];
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.left.right.equalTo(self.view);
@@ -181,55 +238,59 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
         {
+            MSPromotionIncentiveModel *promotionIncentiveModel = MSPromotionIncentiveModel.new;
+            {
+                NSMutableArray *dataMutArr = NSMutableArray.array;
+                {
+                    MSPromotionIncentiveDetailModel *incentiveDetailModel = MSPromotionIncentiveDetailModel.new;
+                    incentiveDetailModel.myIncentiveDetailNameStr = Internationalization(@"我的储宝账户余额 + 推荐购买盈利*5%");
+                    incentiveDetailModel.userNameStr = Internationalization(@"下级用户：王老三（购买）");
+                    incentiveDetailModel.timeStr = Internationalization(@"2023.2.4 23:44:20");
+                    [dataMutArr addObject:incentiveDetailModel];
+                }
+                
+                {
+                    MSPromotionIncentiveDetailModel *incentiveDetailModel = MSPromotionIncentiveDetailModel.new;
+                    incentiveDetailModel.myIncentiveDetailNameStr = Internationalization(@"我的储宝账户余额 + 推荐购买盈利*5%");
+                    incentiveDetailModel.userNameStr = Internationalization(@"下级用户：王老三（购买）");
+                    incentiveDetailModel.timeStr = Internationalization(@"2023.2.4 23:44:20");
+                    [dataMutArr addObject:incentiveDetailModel];
+                }
+                
+                promotionIncentiveModel.myIncentiveTypeNameStr = Internationalization(@"我的直推奖励");
+                promotionIncentiveModel.incentiveDetailModelMutArr = dataMutArr;
+
+            }
             UIViewModel *viewModel = UIViewModel.new;
+            viewModel.data = promotionIncentiveModel;
             [_dataMutArr addObject:viewModel];
         }
         
         {
-            NSMutableArray <UIViewModel *>*mutArr = NSMutableArray.array;
+            MSPromotionIncentiveModel *promotionIncentiveModel = MSPromotionIncentiveModel.new;
             {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"存款金额");
-                viewModel.subTextModel.text = Internationalization(@"10,000.00");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"存款方式");
-                viewModel.subTextModel.text = Internationalization(@"虛擬幣充值");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"訂單編號");
-                viewModel.subTextModel.text = Internationalization(@"YSF2025022302644565964");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"轉賬姓名");
-                viewModel.subTextModel.text = Internationalization(@"張三 ");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"銀行賬號");
-                viewModel.subTextModel.text = Internationalization(@"6230 5822 0031 5762 430");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"轉賬地址");
-                viewModel.subTextModel.text = Internationalization(@"中國平安銀行");
-                [mutArr addObject:viewModel];
+                NSMutableArray *dataMutArr = NSMutableArray.array;
+                {
+                    MSPromotionIncentiveDetailModel *incentiveDetailModel = MSPromotionIncentiveDetailModel.new;
+                    incentiveDetailModel.myIncentiveDetailNameStr = Internationalization(@"我的储宝账户余额 + 推荐购买盈利*5%");
+                    incentiveDetailModel.userNameStr = Internationalization(@"下级用户：王老三（购买）");
+                    incentiveDetailModel.timeStr = Internationalization(@"2023.2.4 23:44:20");
+                    [dataMutArr addObject:incentiveDetailModel];
+                }
+                
+                {
+                    MSPromotionIncentiveDetailModel *incentiveDetailModel = MSPromotionIncentiveDetailModel.new;
+                    incentiveDetailModel.myIncentiveDetailNameStr = Internationalization(@"我的储宝账户余额 + 推荐购买盈利*5%");
+                    incentiveDetailModel.userNameStr = Internationalization(@"下级用户：王老三（购买）");
+                    incentiveDetailModel.timeStr = Internationalization(@"2023.2.4 23:44:20");
+                    [dataMutArr addObject:incentiveDetailModel];
+                }
+                
+                promotionIncentiveModel.myIncentiveTypeNameStr = Internationalization(@"我的间推奖励");
+                promotionIncentiveModel.incentiveDetailModelMutArr = dataMutArr;
             }
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.jobsDataMutArr = mutArr;
+            viewModel.data = promotionIncentiveModel;
             [_dataMutArr addObject:viewModel];
         }
     }return _dataMutArr;

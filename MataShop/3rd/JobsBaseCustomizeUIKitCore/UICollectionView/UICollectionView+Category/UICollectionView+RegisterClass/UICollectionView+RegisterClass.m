@@ -14,7 +14,8 @@
     [self registerCollectionElementKindSectionHeaderClass:UICollectionReusableView.class];
     [self registerCollectionElementKindSectionHeaderClass:BaseCollectionReusableView.class];
     [self registerCollectionElementKindSectionHeaderClass:JobsHotLabelWithMultiLineHeaderFooterView.class];
-//    [self registerCollectionElementKindSectionHeaderClass:BaiShaETProjMywalletCRView.class];
+    [self registerCollectionElementKindSectionHeaderClass:MSPromotionIncentiveCVHeaderFooterView.class];
+//    [self registerCollectionElementKindSectionHeaderClass:MSPromotionIncentiveCVHeaderFooterView.class];
 //    [self registerCollectionElementKindSectionHeaderClass:BaiShaETProjTopupTipsVIew.class];
 //    [self registerCollectionElementKindSectionHeaderClass:BaiShaETProjUSDTWithdrawalCRView.class];
     // CollectionReusableView—Footer

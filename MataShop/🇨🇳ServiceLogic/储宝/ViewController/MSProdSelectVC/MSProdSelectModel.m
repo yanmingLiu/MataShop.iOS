@@ -8,7 +8,6 @@
 #import "MSProdSelectModel.h"
 
 @implementation MSProdSelectModel
-
 @synthesize prodName = _prodName;
 @synthesize prodPrice = _prodPrice;
 @synthesize prodDailyRate = _prodDailyRate;

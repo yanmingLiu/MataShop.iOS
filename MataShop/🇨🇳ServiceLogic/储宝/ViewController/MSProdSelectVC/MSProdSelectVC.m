@@ -151,7 +151,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView
                        layout:(UICollectionViewLayout *)collectionViewLayout
        insetForSectionAtIndex:(NSInteger)section {
-    return jobsSameEdgeInset(6);
+    return section ? jobsSameEdgeInset(6) : jobsSameEdgeInset(12);
 }
 #pragma mark —— lazyLoad
 -(UICollectionViewFlowLayout *)layout{
@@ -170,6 +170,39 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
         _collectionView.showsVerticalScrollIndicator = NO;
         [_collectionView registerCollectionViewClass];
         _collectionView.contentInset = UIEdgeInsetsMake(0, 0, JobsWidth(288), 0);
+        
+        {
+            MJRefreshConfigModel *refreshConfigHeader = MJRefreshConfigModel.new;
+            refreshConfigHeader.stateIdleTitle = Internationalization(@"下拉可以刷新");
+            refreshConfigHeader.pullingTitle = Internationalization(@"下拉可以刷新");
+            refreshConfigHeader.refreshingTitle = Internationalization(@"松开立即刷新");
+            refreshConfigHeader.willRefreshTitle = Internationalization(@"刷新数据中");
+            refreshConfigHeader.noMoreDataTitle = Internationalization(@"下拉可以刷新");
+
+            MJRefreshConfigModel *refreshConfigFooter = MJRefreshConfigModel.new;
+            refreshConfigFooter.stateIdleTitle = Internationalization(@"");
+            refreshConfigFooter.pullingTitle = Internationalization(@"");;
+            refreshConfigFooter.refreshingTitle = Internationalization(@"");;
+            refreshConfigFooter.willRefreshTitle = Internationalization(@"");;
+            refreshConfigFooter.noMoreDataTitle = Internationalization(@"");;
+
+            self.refreshConfigHeader = refreshConfigHeader;
+            self.refreshConfigFooter = refreshConfigFooter;
+
+            _collectionView.mj_header = self.mjRefreshNormalHeader;
+            _collectionView.mj_header.automaticallyChangeAlpha = YES;//根据拖拽比例自动切换透明度
+        }
+        
+        {
+            _collectionView.ly_emptyView = [LYEmptyView emptyViewWithImageStr:@"暂无数据"
+                                                                     titleStr:Internationalization(@"暂无数据")
+                                                                    detailStr:Internationalization(@"")];
+            
+            _collectionView.ly_emptyView.titleLabTextColor = JobsLightGrayColor;
+            _collectionView.ly_emptyView.contentViewOffset = JobsWidth(-180);
+            _collectionView.ly_emptyView.titleLabFont = UIFontWeightRegularSize(JobsWidth(16));
+        }
+        
         [self.view addSubview:_collectionView];
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.left.right.equalTo(self.view);

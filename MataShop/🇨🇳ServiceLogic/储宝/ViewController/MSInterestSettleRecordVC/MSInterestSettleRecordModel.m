@@ -8,7 +8,6 @@
 #import "MSInterestSettleRecordModel.h"
 
 @implementation MSInterestSettleRecordModel
-
 @synthesize prodName = _prodName;
 @synthesize prodPrice = _prodPrice;
 @synthesize prodDailyRate = _prodDailyRate;

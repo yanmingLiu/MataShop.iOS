@@ -84,9 +84,10 @@
             make.left.equalTo(self.contentView).offset(JobsWidth(20));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
-        [_prodNameLab richElementsInViewWithModel:self.prodNameModel];
-        [self layoutIfNeeded];
-    }return _prodNameLab;
+    }
+    [_prodNameLab richElementsInViewWithModel:self.prodNameModel];
+    [self layoutIfNeeded];
+    return _prodNameLab;
 }
 
 -(JobsUpDownLab *)prodRemainsLab{
@@ -97,9 +98,10 @@
             make.left.equalTo(self.contentView).offset(JobsWidth(192));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
-        [_prodRemainsLab richElementsInViewWithModel:self.prodRemainsModel];
-        [self layoutIfNeeded];
-    }return _prodRemainsLab;
+    }
+    [_prodRemainsLab richElementsInViewWithModel:self.prodRemainsModel];
+    [self layoutIfNeeded];
+    return _prodRemainsLab;
 }
 
 -(JobsUpDownLab *)prodDailyRateLab{
@@ -110,9 +112,10 @@
             make.left.equalTo(self.contentView).offset(JobsWidth(112));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
-        [_prodDailyRateLab richElementsInViewWithModel:self.prodDailyRateModel];
-        [self layoutIfNeeded];
-    }return _prodDailyRateLab;
+    }
+    [_prodDailyRateLab richElementsInViewWithModel:self.prodDailyRateModel];
+    [self layoutIfNeeded];
+    return _prodDailyRateLab;
 }
 
 -(UILabel *)lineLab{
@@ -134,7 +137,6 @@
         _prodTipsTextView.backgroundColor = self.backgroundColor;
         _prodTipsTextView.font = UIFontWeightRegularSize(JobsWidth(9));
         _prodTipsTextView.textColor = RGBA_COLOR(102, 102, 102, 1);
-        _prodTipsTextView.text = self.prodSelectModel.prodTips;
         _prodTipsTextView.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_prodTipsTextView];
         [_prodTipsTextView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -142,7 +144,9 @@
             make.size.mas_equalTo(CGSizeMake(JobsWidth(132), JobsWidth(32)));
             make.bottom.equalTo(self.contentView).offset(JobsWidth(-16));
         }];
-    }return _prodTipsTextView;
+    }
+    _prodTipsTextView.text = self.prodSelectModel.prodTips;
+    return _prodTipsTextView;
 }
 
 -(BaseButton *)buyBtn{
