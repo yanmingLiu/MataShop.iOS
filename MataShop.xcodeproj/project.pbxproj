@@ -425,7 +425,6 @@
 		C561D43E2AAC7E7B00E28603 /* UIControl+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1A32AAC7E7A00E28603 /* UIControl+XY.m */; };
 		C561D43F2AAC7E7B00E28603 /* UIControl+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1A52AAC7E7A00E28603 /* UIControl+Extra.m */; };
 		C561D4402AAC7E7B00E28603 /* UIProgressView+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1AB2AAC7E7A00E28603 /* UIProgressView+Extra.m */; };
-		C561D4412AAC7E7B00E28603 /* NSArray+Safety.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1B32AAC7E7A00E28603 /* NSArray+Safety.m */; };
 		C561D4422AAC7E7B00E28603 /* NSArray+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1B62AAC7E7A00E28603 /* NSArray+Tools.m */; };
 		C561D4432AAC7E7B00E28603 /* UITableViewHeaderFooterView+BaseTableViewHeaderFooterViewProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1BC2AAC7E7A00E28603 /* UITableViewHeaderFooterView+BaseTableViewHeaderFooterViewProtocol.m */; };
 		C561D4442AAC7E7B00E28603 /* UITableViewHeaderFooterView+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1BE2AAC7E7A00E28603 /* UITableViewHeaderFooterView+Attribute.m */; };
@@ -657,10 +656,9 @@
 		C5CFE7212AB08B4200D0F225 /* MSTransactionRecordCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVC.m */; };
 		C5CFE7242AB0934F00D0F225 /* MSProdSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7232AB0934F00D0F225 /* MSProdSelectModel.m */; };
 		C5CFE79F2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */; };
-		C5CFE81A2AB197CA00D0F225 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5CFE8182AB197CA00D0F225 /* iph_X.mp4 */; };
-		C5CFE81B2AB197CA00D0F225 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5CFE8192AB197CA00D0F225 /* 非iph_X.mp4 */; };
 		C5CFE8962AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE8952AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m */; };
-		C5CFE8992AB1A79800D0F225 /* MSPromotionIncentiveCVHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE8982AB1A79800D0F225 /* MSPromotionIncentiveCVHeaderFooterView.m */; };
+		C5CFE9152AB22DE000D0F225 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5CFE9132AB22DE000D0F225 /* 非iph_X.mp4 */; };
+		C5CFE9162AB22DE000D0F225 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5CFE9142AB22DE000D0F225 /* iph_X.mp4 */; };
 		C5E00CE52AADDEF6005ABE09 /* MataShopLib.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */; };
 		C5E011292AADE1CD005ABE09 /* 164@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E0104D2AADE1B5005ABE09 /* 164@2x.gif */; };
 		C5E0112A2AADE1CD005ABE09 /* newemoji_007.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E0104E2AADE1B5005ABE09 /* newemoji_007.gif */; };
@@ -2167,12 +2165,10 @@
 		C5CFE7232AB0934F00D0F225 /* MSProdSelectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdSelectModel.m; sourceTree = "<group>"; };
 		C5CFE79D2AB0FEF600D0F225 /* MSInterestSettleRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInterestSettleRecordModel.h; sourceTree = "<group>"; };
 		C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInterestSettleRecordModel.m; sourceTree = "<group>"; };
-		C5CFE8182AB197CA00D0F225 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
-		C5CFE8192AB197CA00D0F225 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
 		C5CFE8942AB1A0BD00D0F225 /* MSPromotionIncentiveModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPromotionIncentiveModel.h; sourceTree = "<group>"; };
 		C5CFE8952AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPromotionIncentiveModel.m; sourceTree = "<group>"; };
-		C5CFE8972AB1A79700D0F225 /* MSPromotionIncentiveCVHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPromotionIncentiveCVHeaderFooterView.h; sourceTree = "<group>"; };
-		C5CFE8982AB1A79800D0F225 /* MSPromotionIncentiveCVHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPromotionIncentiveCVHeaderFooterView.m; sourceTree = "<group>"; };
+		C5CFE9132AB22DE000D0F225 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
+		C5CFE9142AB22DE000D0F225 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
 		C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MataShopLib.xcassets; sourceTree = "<group>"; };
 		C5E0104D2AADE1B5005ABE09 /* 164@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "164@2x.gif"; sourceTree = "<group>"; };
 		C5E0104E2AADE1B5005ABE09 /* newemoji_007.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = newemoji_007.gif; sourceTree = "<group>"; };
@@ -2862,8 +2858,8 @@
 		C561CE702AAC7DC000E28603 /* 视频资源文件 */ = {
 			isa = PBXGroup;
 			children = (
-				C5CFE8192AB197CA00D0F225 /* 非iph_X.mp4 */,
-				C5CFE8182AB197CA00D0F225 /* iph_X.mp4 */,
+				C5CFE9132AB22DE000D0F225 /* 非iph_X.mp4 */,
+				C5CFE9142AB22DE000D0F225 /* iph_X.mp4 */,
 			);
 			path = "视频资源文件";
 			sourceTree = "<group>";
@@ -8166,15 +8162,6 @@
 			path = MSInterestSettleRecordVC;
 			sourceTree = "<group>";
 		};
-		C5CFE89A2AB1B0BD00D0F225 /* MSPromotionIncentiveCVHeaderFooterView */ = {
-			isa = PBXGroup;
-			children = (
-				C5CFE8972AB1A79700D0F225 /* MSPromotionIncentiveCVHeaderFooterView.h */,
-				C5CFE8982AB1A79800D0F225 /* MSPromotionIncentiveCVHeaderFooterView.m */,
-			);
-			path = MSPromotionIncentiveCVHeaderFooterView;
-			sourceTree = "<group>";
-		};
 		C5E00CE62AADDFF4005ABE09 /* Gif */ = {
 			isa = PBXGroup;
 			children = (
@@ -8510,7 +8497,6 @@
 		C5E0175E2AAF35BE005ABE09 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C5CFE89A2AB1B0BD00D0F225 /* MSPromotionIncentiveCVHeaderFooterView */,
 				C5CFE70A2AB0881000D0F225 /* 交易记录子控件UI */,
 				C5CFE6872AB086DA00D0F225 /* 推广奖励子控件UI */,
 				C5CFE6862AB086CE00D0F225 /* 结息记录子控件UI */,
@@ -8696,6 +8682,7 @@
 				C561D5792AAC84DF00E28603 /* iPad尺寸.png in Resources */,
 				C5BD5E7B2AAC76750048F36B /* LaunchScreen.storyboard in Resources */,
 				C561D3172AAC7E7A00E28603 /* record_change.json in Resources */,
+				C5CFE9162AB22DE000D0F225 /* iph_X.mp4 in Resources */,
 				C561D9462AAC8D8000E28603 /* 自定义视图.png in Resources */,
 				C561D37A2AAC7E7A00E28603 /* 1@2x.png in Resources */,
 				C561D3832AAC7E7A00E28603 /* 0@2x.png in Resources */,
@@ -9034,6 +9021,7 @@
 				C5E011892AADE1CD005ABE09 /* 54@2x.gif in Resources */,
 				C5E0112D2AADE1CD005ABE09 /* 270@2x.gif in Resources */,
 				C5E011FA2AADE1CD005ABE09 /* 141@2x.gif in Resources */,
+				C5CFE9152AB22DE000D0F225 /* 非iph_X.mp4 in Resources */,
 				C561D3662AAC7E7A00E28603 /* JobsTitleView01.png in Resources */,
 				C5E011822AADE1CD005ABE09 /* 121@2x.gif in Resources */,
 				C5E011422AADE1CD005ABE09 /* 12@2x.gif in Resources */,
@@ -9080,7 +9068,6 @@
 				C561D3312AAC7E7A00E28603 /* 输入框样式_6.png in Resources */,
 				C5E011F82AADE1CD005ABE09 /* 28@2x.gif in Resources */,
 				C5E0113C2AADE1CD005ABE09 /* 124@2x.gif in Resources */,
-				C5CFE81B2AB197CA00D0F225 /* 非iph_X.mp4 in Resources */,
 				C561D3952AAC7E7A00E28603 /* 启动页_05.png in Resources */,
 				C5E011F22AADE1CD005ABE09 /* 153@2x.gif in Resources */,
 				C561CE442AAC7CE200E28603 /* 相机@3x.png in Resources */,
@@ -9088,7 +9075,6 @@
 				C561D6732AAC862000E28603 /* 测试弹窗的背景图@2x.png in Resources */,
 				C5E011CF2AADE1CD005ABE09 /* 268@2x.gif in Resources */,
 				C5E011472AADE1CD005ABE09 /* 172@2x.gif in Resources */,
-				C5CFE81A2AB197CA00D0F225 /* iph_X.mp4 in Resources */,
 				C561D4892AAC7E7B00E28603 /* KeychainHelper.webp in Resources */,
 				C561D30F2AAC7E7A00E28603 /* 社区.json in Resources */,
 				C5E011432AADE1CD005ABE09 /* 21@2x.gif in Resources */,
@@ -9283,7 +9269,6 @@
 				C561D3B82AAC7E7A00E28603 /* UIImage+Tailor.m in Sources */,
 				C561D4562AAC7E7B00E28603 /* AppDelegate+Extra.m in Sources */,
 				C561D4822AAC7E7B00E28603 /* NSObject+JobsDeployCellConfig.m in Sources */,
-				C561D4412AAC7E7B00E28603 /* NSArray+Safety.m in Sources */,
 				C561D3E82AAC7E7B00E28603 /* UIView+SuspendView.m in Sources */,
 				C561D44F2AAC7E7B00E28603 /* UserDefaultModel.m in Sources */,
 				C561D3BB2AAC7E7A00E28603 /* UIScrollView+Extra.m in Sources */,
@@ -9364,7 +9349,6 @@
 				C561D6802AAC862000E28603 /* BaiShaETProjPopupView08.m in Sources */,
 				C561D3A92AAC7E7A00E28603 /* JobsSuspendView.m in Sources */,
 				C561D6632AAC862000E28603 /* BaiShaETProjMembersBoardView.m in Sources */,
-				C5CFE8992AB1A79800D0F225 /* MSPromotionIncentiveCVHeaderFooterView.m in Sources */,
 				C561D3A22AAC7E7A00E28603 /* JobsPageTBVCell.m in Sources */,
 				C561D47F2AAC7E7B00E28603 /* NSObject+Time.m in Sources */,
 				C561D49F2AAC7E7B00E28603 /* UITextField+Placeholder.m in Sources */,

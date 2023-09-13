@@ -8,7 +8,6 @@
 #import "BaseViewController.h"
 #import "MSPromotionIncentiveCVC.h"
 #import "BaseCollectionReusableView.h"
-#import "MSPromotionIncentiveCVHeaderFooterView.h"
 
 #import "MSPromotionIncentiveModel.h"
 

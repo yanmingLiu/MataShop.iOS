@@ -9,6 +9,7 @@
 
 @interface MSPromotionIncentiveCVC ()
 /// UI
+@property(nonatomic,strong)UILabel *titleLab;/// 名目
 @property(nonatomic,strong)UILabel *myIncentiveDetailNameLab;/// 激励名
 @property(nonatomic,strong)UILabel *userNameLab;/// 下级用户名
 @property(nonatomic,strong)UILabel *timeLab;/// 时间
@@ -48,16 +49,36 @@
 -(void)richElementsInCellWithModel:(MSPromotionIncentiveDetailModel *_Nullable)model{
     self.contentView.backgroundColor = RGBA_COLOR(210, 213, 224, 0.2f);
     self.promotionIncentiveDetailModel = model;
-
-    self.myIncentiveDetailNameLab.alpha = 1;
-    self.userNameLab.alpha = 1;
-    self.timeLab.alpha = 1;
+    if(model.indexPath.row){
+        self.myIncentiveDetailNameLab.alpha = 1;
+        self.userNameLab.alpha = 1;
+        self.timeLab.alpha = 1;
+    }else{
+        self.titleLab.alpha = 1;
+    }
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)cellSizeWithModel:(UIViewModel *_Nullable)model{
     return CGSizeMake(JobsWidth(343), JobsWidth(64));
 }
 #pragma mark —— lazyLoad
+-(UILabel *)titleLab{
+    if(!_titleLab){
+        _titleLab = UILabel.new;
+        _titleLab.textColor = RGBA_COLOR(51, 51, 51, 1);
+        _titleLab.font = UIFontWeightBoldSize(JobsWidth(16));
+        [self.contentView addSubview:_titleLab];
+        [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView).offset(JobsWidth(20));
+            make.centerY.equalTo(self.contentView);
+        }];
+    }
+    _titleLab.text = self.promotionIncentiveDetailModel.myIncentiveTypeNameStr;
+    [_titleLab makeLabelByShowingType:UILabelShowingType_03];
+    return _titleLab;
+}
+
+
 -(UILabel *)myIncentiveDetailNameLab{
     if(!_myIncentiveDetailNameLab){
         _myIncentiveDetailNameLab = UILabel.new;
