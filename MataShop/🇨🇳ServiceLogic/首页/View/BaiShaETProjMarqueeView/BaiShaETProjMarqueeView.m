@@ -70,7 +70,7 @@ static dispatch_once_t static_marqueeViewOnceToken;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)viewSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsMainScreen_WIDTH() - JobsWidth(16 * 2), JobsWidth(20));
+    return CGSizeMake(JobsMainScreen_WIDTH() - JobsWidth(30), JobsWidth(20));
 }
 #pragma mark —— 网络请求
 -(void)netWorking{
@@ -78,6 +78,26 @@ static dispatch_once_t static_marqueeViewOnceToken;
 
 }
 #pragma mark —— lazyLoad
+-(UIImageView *)hornIMGV{
+    if (!_hornIMGV) {
+        _hornIMGV = UIImageView.new;
+        _hornIMGV.image = JobsIMG(@"系统公告");
+        [self addSubview:_hornIMGV];
+        [_hornIMGV mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(62), JobsWidth(20)));
+            make.centerY.equalTo(self.mas_centerY);
+            make.left.equalTo(self).offset(JobsWidth(0));
+        }];
+    }return _hornIMGV;
+}
+
+-(WMZBannerView *)bannerView{
+    if (!_bannerView) {
+        _bannerView = [WMZBannerView.alloc initConfigureWithModel:self.bannerParam];
+        [self addSubview:_bannerView];
+    }return _bannerView;
+}
+
 -(WMZBannerParam *)bannerParam{
     if (!_bannerParam) {
         _bannerParam = BannerParam()
@@ -91,6 +111,7 @@ static dispatch_once_t static_marqueeViewOnceToken;
             //自定义视图
             CasinoMarqueeCell *cell = [CasinoMarqueeCell cellWithCollectionView:collectionView
                                                                    forIndexPath:indexPath];
+//            cell.backgroundColor = JobsRandomColor;
             cell.backgroundLabel.text = self.dataMutArr[indexPath.item];
             cell.backgroundLabel.textColor = HEXCOLOR(0x524740);
             cell.backgroundLabel.font = [UIFont systemFontOfSize:JobsWidth(12) weight:UIFontWeightRegular];
@@ -102,16 +123,16 @@ static dispatch_once_t static_marqueeViewOnceToken;
         .wEventCenterClickSet(^(id anyID, NSInteger index,BOOL isCenter,UICollectionViewCell *cell) {
             NSLog(@"判断居中点击");
         })
-        .wFrameSet(CGRectMake(self.hornIMGV.x + self.hornIMGV.width + JobsWidth(20),
+        .wFrameSet(CGRectMake(JobsWidth(70),
                               0,
-                              [BaiShaETProjMarqueeView viewSizeWithModel:nil].width - self.hornIMGV.width - JobsWidth(10),
+                              [BaiShaETProjMarqueeView viewSizeWithModel:nil].width - JobsWidth(70),
                               [BaiShaETProjMarqueeView viewSizeWithModel:nil].height))
         //图片铺满
         .wImageFillSet(YES)
         //循环滚动
         .wRepeatSet(YES)
         //自动滚动时间
-        .wAutoScrollSecondSet(3)
+        .wAutoScrollSecondSet(5)
         //自动滚动
         .wAutoScrollSet(YES)
         //cell的位置
@@ -135,34 +156,16 @@ static dispatch_once_t static_marqueeViewOnceToken;
         //开启跑马灯效果
         .wMarqueeSet(YES)
         //跑马灯速度
-        .wMarqueeRateSet(0.5);
+        .wMarqueeRateSet(1);
     }return _bannerParam;
-}
-
--(WMZBannerView *)bannerView{
-    if (!_bannerView) {
-        _bannerView = [WMZBannerView.alloc initConfigureWithModel:self.bannerParam];
-        [self addSubview:_bannerView];
-    }return _bannerView;
-}
-
--(UIImageView *)hornIMGV{
-    if (!_hornIMGV) {
-        _hornIMGV = UIImageView.new;
-        _hornIMGV.image = JobsIMG(@"公告小喇叭");
-        [self addSubview:_hornIMGV];
-        [_hornIMGV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(16), JobsWidth(16)));
-            make.centerY.equalTo(self.mas_centerY);
-            make.left.equalTo(self).offset(JobsWidth(0));
-        }];
-    }return _hornIMGV;
 }
 
 -(NSMutableArray <NSString *>*)dataMutArr{
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
-        [_dataMutArr addObject:Internationalization(@"本公司為自營平台且無任何合作授權網站，勿輕信來路不明的")];
+#warning 文字过长会出现UI问题
+//        [_dataMutArr addObject:Internationalization(@"本公司為自營平台且無任何合作授權網站，勿輕信來路不明的")];
+        [_dataMutArr addObject:Internationalization(@"本公司")];
     }return _dataMutArr;
 }
 

@@ -12,6 +12,7 @@ BOOL ISLogin;
 /// UI
 @property(nonatomic,strong)MSSearchBoardView *searchBoardView;
 @property(nonatomic,strong)BaiShaETProjMarqueeView *marqueeView;
+@property(nonatomic,strong)MS3rdShopLinkView *shopLinkView;
 @property(nonatomic,strong)WMZBannerView *bannerView;
 @property(nonatomic,strong)JXCategoryImageView *categoryView;
 @property(nonatomic,strong)JXCategoryIndicatorLineView *lineView;/// 跟随的指示器
@@ -46,14 +47,13 @@ BOOL ISLogin;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    
+
     self.searchBoardView.alpha = 1;
-//    self.marqueeView.alpha = 1;
     
-//    self.bannerParam.wDataSet(self.dataMutArr);
-//    [self.bannerView updateUI];
-//
-//
+    self.marqueeView.alpha = 1;
+    self.bannerParam.wDataSet(self.dataMutArr);
+    [self.bannerView updateUI];
+    self.shopLinkView.alpha = 1;
 //    self.categoryView.alpha = 1;
 }
 
@@ -144,7 +144,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [_marqueeView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo([BaiShaETProjMarqueeView viewSizeWithModel:nil]);
             make.centerX.equalTo(self.view);
-            make.top.equalTo(self.bannerView.mas_bottom).offset(JobsWidth(10));
+            make.top.equalTo(self.searchBoardView.mas_bottom).offset(JobsWidth(10));
         }];
     }return _marqueeView;
 }
@@ -176,8 +176,8 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         .wEventCenterClickSet(^(id anyID, NSInteger index,BOOL isCenter,UICollectionViewCell *cell) {
             NSLog(@"判断居中点击");
         })
-        .wFrameSet(CGRectMake(0,
-                              0,
+        .wFrameSet(CGRectMake(JobsWidth(15),
+                              JobsStatusBarHeightByAppleIncData() + [MSSearchBoardView viewSizeWithModel:nil].height + [BaiShaETProjMarqueeView viewSizeWithModel:nil].height + [MS3rdShopLinkView viewSizeWithModel:nil].height,
                               [CasinoBannerCell cellSizeWithModel:nil].width,
                               [CasinoBannerCell cellSizeWithModel:nil].height))
         //图片铺满
@@ -185,7 +185,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         //循环滚动
         .wRepeatSet(YES)
         //自动滚动时间
-        .wAutoScrollSecondSet(3)
+        .wAutoScrollSecondSet(5)
         //自动滚动
         .wAutoScrollSet(YES)
         //cell的位置
@@ -212,13 +212,26 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     }return _bannerView;
 }
 
+-(MS3rdShopLinkView *)shopLinkView{
+    if(!_shopLinkView){
+        _shopLinkView = MS3rdShopLinkView.new;
+        [_shopLinkView richElementsInViewWithModel:nil];
+        [self.view addSubview:_shopLinkView];
+        [_shopLinkView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo([MS3rdShopLinkView viewSizeWithModel:nil]);
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.marqueeView.mas_bottom);
+        }];
+    }return _shopLinkView;
+}
+
 -(NSMutableArray<UIImage *> *)dataMutArr{
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
-        [_dataMutArr addObject:JobsIMG(@"滚动广告的临时占位图")];
-        [_dataMutArr addObject:JobsIMG(@"Banner-1")];
-        [_dataMutArr addObject:JobsIMG(@"Banner-2")];
-        [_dataMutArr addObject:JobsIMG(@"Banner-3")];
+        [_dataMutArr addObject:JobsIMG(@"创业招募令")];
+        [_dataMutArr addObject:JobsIMG(@"创业招募令")];
+        [_dataMutArr addObject:JobsIMG(@"创业招募令")];
+        [_dataMutArr addObject:JobsIMG(@"创业招募令")];
     }return _dataMutArr;
 }
 
