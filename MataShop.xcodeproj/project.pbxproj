@@ -657,8 +657,6 @@
 		C5CFE7242AB0934F00D0F225 /* MSProdSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7232AB0934F00D0F225 /* MSProdSelectModel.m */; };
 		C5CFE79F2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */; };
 		C5CFE8962AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE8952AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m */; };
-		C5CFE9152AB22DE000D0F225 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5CFE9132AB22DE000D0F225 /* 非iph_X.mp4 */; };
-		C5CFE9162AB22DE000D0F225 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5CFE9142AB22DE000D0F225 /* iph_X.mp4 */; };
 		C5CFE91A2AB237BD00D0F225 /* MSSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE9192AB237BD00D0F225 /* MSSearchView.m */; };
 		C5CFEA112AB255B500D0F225 /* MS3rdShopLinkView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFEA102AB255B500D0F225 /* MS3rdShopLinkView.m */; };
 		C5E00CE52AADDEF6005ABE09 /* MataShopLib.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */; };
@@ -888,6 +886,8 @@
 		C5E017682AAF3684005ABE09 /* MSChuBaoView2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E017672AAF3684005ABE09 /* MSChuBaoView2.m */; };
 		C5E0176C2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */; };
 		C5E0176E2AAF4B49005ABE09 /* MSChuBaoAdMarqueeView.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */; };
+		C5FB56612AB31B5E00C873B7 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */; };
+		C5FB56622AB31B5E00C873B7 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */; };
 		F032FB3B280C586AF1EFA7DC /* Pods_MataShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */; };
 		F91CCF44732E8C50C8BB2479 /* Pods_MataShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD29B03F9AE25E4A547369B7 /* Pods_MataShopUITests.framework */; };
 /* End PBXBuildFile section */
@@ -2169,8 +2169,6 @@
 		C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInterestSettleRecordModel.m; sourceTree = "<group>"; };
 		C5CFE8942AB1A0BD00D0F225 /* MSPromotionIncentiveModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPromotionIncentiveModel.h; sourceTree = "<group>"; };
 		C5CFE8952AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPromotionIncentiveModel.m; sourceTree = "<group>"; };
-		C5CFE9132AB22DE000D0F225 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
-		C5CFE9142AB22DE000D0F225 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
 		C5CFE9182AB237BD00D0F225 /* MSSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchView.h; sourceTree = "<group>"; };
 		C5CFE9192AB237BD00D0F225 /* MSSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchView.m; sourceTree = "<group>"; };
 		C5CFE91B2AB237FB00D0F225 /* MSSearchView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSSearchView.jpg; sourceTree = "<group>"; };
@@ -2411,6 +2409,8 @@
 		C5E0176A2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoAdMarqueeView.h; sourceTree = "<group>"; };
 		C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoAdMarqueeView.m; sourceTree = "<group>"; };
 		C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSChuBaoAdMarqueeView.jpg; sourceTree = "<group>"; };
+		C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
+		C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
 		D9F4E560DCFD78A2DE92A1BF /* Pods-MataShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-MataShopUITests/Pods-MataShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2865,8 +2865,8 @@
 		C561CE702AAC7DC000E28603 /* 视频资源文件 */ = {
 			isa = PBXGroup;
 			children = (
-				C5CFE9132AB22DE000D0F225 /* 非iph_X.mp4 */,
-				C5CFE9142AB22DE000D0F225 /* iph_X.mp4 */,
+				C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */,
+				C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */,
 			);
 			path = "视频资源文件";
 			sourceTree = "<group>";
@@ -8710,7 +8710,7 @@
 				C561D5792AAC84DF00E28603 /* iPad尺寸.png in Resources */,
 				C5BD5E7B2AAC76750048F36B /* LaunchScreen.storyboard in Resources */,
 				C561D3172AAC7E7A00E28603 /* record_change.json in Resources */,
-				C5CFE9162AB22DE000D0F225 /* iph_X.mp4 in Resources */,
+				C5FB56622AB31B5E00C873B7 /* iph_X.mp4 in Resources */,
 				C561D9462AAC8D8000E28603 /* 自定义视图.png in Resources */,
 				C561D37A2AAC7E7A00E28603 /* 1@2x.png in Resources */,
 				C561D3832AAC7E7A00E28603 /* 0@2x.png in Resources */,
@@ -9049,7 +9049,7 @@
 				C5E011892AADE1CD005ABE09 /* 54@2x.gif in Resources */,
 				C5E0112D2AADE1CD005ABE09 /* 270@2x.gif in Resources */,
 				C5E011FA2AADE1CD005ABE09 /* 141@2x.gif in Resources */,
-				C5CFE9152AB22DE000D0F225 /* 非iph_X.mp4 in Resources */,
+				C5FB56612AB31B5E00C873B7 /* 非iph_X.mp4 in Resources */,
 				C561D3662AAC7E7A00E28603 /* JobsTitleView01.png in Resources */,
 				C5E011822AADE1CD005ABE09 /* 121@2x.gif in Resources */,
 				C5E011422AADE1CD005ABE09 /* 12@2x.gif in Resources */,

@@ -118,12 +118,12 @@
 #pragma mark —— 开屏广告
 -(void)makeXHLaunchAdConfigure{
     
-    [self launchAd_localPic_default];//图 - 本地 - 默认
+//    [self launchAd_localPic_default];//图 - 本地 - 默认
 //    [self launchAd_localPic_custom];//图 - 本地 - 自定义
 //    [self launchAd_networkDataPic_default];//图 - 网络 - 默认
 //    [self launchAd_networkDataPic_custom];//图 - 网络 - 自定义
     
-//    [self launchAd_localVedio_default];//视频 - 本地 - 默认
+    [self launchAd_localVedio_default];//视频 - 本地 - 默认
 //    [self launchAd_localVedio_custom];//视频 - 本地 - 自定义 👌
 //    [self launchAd_networkVedio_default];//视频 - 网络 - 默认
 //    [self launchAd_networkVedio_custom];//视频 - 网络 - 自定义
