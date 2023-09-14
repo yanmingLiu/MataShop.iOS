@@ -23,6 +23,32 @@
 		C506259F2AAF5DAB00F14680 /* 640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625902AAF5DAB00F14680 /* 640x960.png */; };
 		C50625A02AAF5DAB00F14680 /* 750x1334.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625912AAF5DAB00F14680 /* 750x1334.png */; };
 		C50625A12AAF5DAB00F14680 /* 1290x2796.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625922AAF5DAB00F14680 /* 1290x2796.png */; };
+		C520F2392AB38CF700142DCC /* WMZBannerFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F22C2AB38CF700142DCC /* WMZBannerFlowLayout.m */; };
+		C520F23A2AB38CF700142DCC /* WMZBannerParam.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F22F2AB38CF700142DCC /* WMZBannerParam.m */; };
+		C520F23B2AB38CF700142DCC /* WMZBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2312AB38CF700142DCC /* WMZBannerView.m */; };
+		C520F23C2AB38CF700142DCC /* WMZBannerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2322AB38CF700142DCC /* WMZBannerControl.m */; };
+		C520F23D2AB38CF700142DCC /* WMZBannerFadeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2342AB38CF700142DCC /* WMZBannerFadeLayout.m */; };
+		C520F23E2AB38CF700142DCC /* WMZBannerOverLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2382AB38CF700142DCC /* WMZBannerOverLayout.m */; };
+		C520F2632AB38DC100142DCC /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2422AB38DC000142DCC /* UIProgressView+AFNetworking.m */; };
+		C520F2642AB38DC100142DCC /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2442AB38DC000142DCC /* UIRefreshControl+AFNetworking.m */; };
+		C520F2652AB38DC100142DCC /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2472AB38DC000142DCC /* AFNetworkActivityIndicatorManager.m */; };
+		C520F2662AB38DC100142DCC /* WKWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F24A2AB38DC000142DCC /* WKWebView+AFNetworking.m */; };
+		C520F2672AB38DC100142DCC /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F24C2AB38DC000142DCC /* UIImageView+AFNetworking.m */; };
+		C520F2682AB38DC100142DCC /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F24F2AB38DC000142DCC /* UIButton+AFNetworking.m */; };
+		C520F2692AB38DC100142DCC /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2502AB38DC000142DCC /* UIActivityIndicatorView+AFNetworking.m */; };
+		C520F26A2AB38DC100142DCC /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2512AB38DC000142DCC /* AFAutoPurgingImageCache.m */; };
+		C520F26B2AB38DC100142DCC /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2532AB38DC000142DCC /* AFImageDownloader.m */; };
+		C520F26C2AB38DC100142DCC /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2592AB38DC100142DCC /* AFURLResponseSerialization.m */; };
+		C520F26D2AB38DC100142DCC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F25A2AB38DC100142DCC /* AFHTTPSessionManager.m */; };
+		C520F26E2AB38DC100142DCC /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F25C2AB38DC100142DCC /* AFURLSessionManager.m */; };
+		C520F26F2AB38DC100142DCC /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F25D2AB38DC100142DCC /* AFURLRequestSerialization.m */; };
+		C520F2702AB38DC100142DCC /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F25F2AB38DC100142DCC /* AFNetworkReachabilityManager.m */; };
+		C520F2712AB38DC100142DCC /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F2602AB38DC100142DCC /* AFSecurityPolicy.m */; };
+		C520F5AD2AB390EF00142DCC /* NSString+ZBURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5A22AB390EF00142DCC /* NSString+ZBURLEncoding.m */; };
+		C520F5AE2AB390EF00142DCC /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5A32AB390EF00142DCC /* ZBURLRequest.m */; };
+		C520F5AF2AB390EF00142DCC /* ZBRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5A42AB390EF00142DCC /* ZBRequestEngine.m */; };
+		C520F5B02AB390EF00142DCC /* ZBRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5A52AB390EF00142DCC /* ZBRequestManager.m */; };
+		C520F5B12AB390EF00142DCC /* ZBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5A62AB390EF00142DCC /* ZBCacheManager.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
 		C561CDFD2AAC7CE200E28603 /* CasinoFlowDetailsVC_h in Resources */ = {isa = PBXBuildFile; fileRef = C561CD4A2AAC7CDD00E28603 /* CasinoFlowDetailsVC_h */; };
@@ -204,12 +230,6 @@
 		C561D35B2AAC7E7A00E28603 /* JobsHotLabelWithMultiLineHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF412AAC7E7900E28603 /* JobsHotLabelWithMultiLineHeaderFooterView.m */; };
 		C561D35C2AAC7E7A00E28603 /* JobsHotLabelWithSingleLine.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF442AAC7E7900E28603 /* JobsHotLabelWithSingleLine.m */; };
 		C561D35D2AAC7E7A00E28603 /* JobsHotLabelWithMultiLineCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF472AAC7E7900E28603 /* JobsHotLabelWithMultiLineCVCell.m */; };
-		C561D35E2AAC7E7A00E28603 /* ZBURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF4B2AAC7E7900E28603 /* ZBURLRequest.m */; };
-		C561D35F2AAC7E7A00E28603 /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF4C2AAC7E7900E28603 /* NSString+Check.m */; };
-		C561D3602AAC7E7A00E28603 /* ZBRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF4E2AAC7E7900E28603 /* ZBRequestEngine.m */; };
-		C561D3612AAC7E7A00E28603 /* ZBRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF4F2AAC7E7900E28603 /* ZBRequestManager.m */; };
-		C561D3622AAC7E7A00E28603 /* ZBCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF512AAC7E7900E28603 /* ZBCacheManager.m */; };
-		C561D3632AAC7E7A00E28603 /* NSString+ZBUTF8Encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF542AAC7E7900E28603 /* NSString+ZBUTF8Encoding.m */; };
 		C561D3642AAC7E7A00E28603 /* CustomZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF5B2AAC7E7900E28603 /* CustomZFPlayerControlView.m */; };
 		C561D3652AAC7E7A00E28603 /* ZFCustomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CF5F2AAC7E7900E28603 /* ZFCustomControlView.m */; };
 		C561D3662AAC7E7A00E28603 /* JobsTitleView01.png in Resources */ = {isa = PBXBuildFile; fileRef = C561CF622AAC7E7900E28603 /* JobsTitleView01.png */; };
@@ -934,6 +954,65 @@
 		C50625902AAF5DAB00F14680 /* 640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640x960.png; sourceTree = "<group>"; };
 		C50625912AAF5DAB00F14680 /* 750x1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 750x1334.png; sourceTree = "<group>"; };
 		C50625922AAF5DAB00F14680 /* 1290x2796.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1290x2796.png; sourceTree = "<group>"; };
+		C520F22C2AB38CF700142DCC /* WMZBannerFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerFlowLayout.m; sourceTree = "<group>"; };
+		C520F22D2AB38CF700142DCC /* WMZBannerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerControl.h; sourceTree = "<group>"; };
+		C520F22E2AB38CF700142DCC /* WMZBannerFadeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerFadeLayout.h; sourceTree = "<group>"; };
+		C520F22F2AB38CF700142DCC /* WMZBannerParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerParam.m; sourceTree = "<group>"; };
+		C520F2302AB38CF700142DCC /* WMZBannerOverLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerOverLayout.h; sourceTree = "<group>"; };
+		C520F2312AB38CF700142DCC /* WMZBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerView.m; sourceTree = "<group>"; };
+		C520F2322AB38CF700142DCC /* WMZBannerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerControl.m; sourceTree = "<group>"; };
+		C520F2332AB38CF700142DCC /* WMZBannerFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerFlowLayout.h; sourceTree = "<group>"; };
+		C520F2342AB38CF700142DCC /* WMZBannerFadeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerFadeLayout.m; sourceTree = "<group>"; };
+		C520F2352AB38CF700142DCC /* WMZBannerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerConfig.h; sourceTree = "<group>"; };
+		C520F2362AB38CF700142DCC /* WMZBannerParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerParam.h; sourceTree = "<group>"; };
+		C520F2372AB38CF700142DCC /* WMZBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZBannerView.h; sourceTree = "<group>"; };
+		C520F2382AB38CF700142DCC /* WMZBannerOverLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZBannerOverLayout.m; sourceTree = "<group>"; };
+		C520F2412AB38DC000142DCC /* WKWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		C520F2422AB38DC000142DCC /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		C520F2432AB38DC000142DCC /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		C520F2442AB38DC000142DCC /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		C520F2452AB38DC000142DCC /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		C520F2462AB38DC000142DCC /* AFImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageDownloader.h; sourceTree = "<group>"; };
+		C520F2472AB38DC000142DCC /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		C520F2482AB38DC000142DCC /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAutoPurgingImageCache.h; sourceTree = "<group>"; };
+		C520F2492AB38DC000142DCC /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		C520F24A2AB38DC000142DCC /* WKWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		C520F24B2AB38DC000142DCC /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		C520F24C2AB38DC000142DCC /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		C520F24D2AB38DC000142DCC /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		C520F24E2AB38DC000142DCC /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		C520F24F2AB38DC000142DCC /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		C520F2502AB38DC000142DCC /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		C520F2512AB38DC000142DCC /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAutoPurgingImageCache.m; sourceTree = "<group>"; };
+		C520F2522AB38DC000142DCC /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		C520F2532AB38DC000142DCC /* AFImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageDownloader.m; sourceTree = "<group>"; };
+		C520F2552AB38DC100142DCC /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		C520F2562AB38DC100142DCC /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		C520F2572AB38DC100142DCC /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		C520F2582AB38DC100142DCC /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		C520F2592AB38DC100142DCC /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		C520F25A2AB38DC100142DCC /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		C520F25B2AB38DC100142DCC /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		C520F25C2AB38DC100142DCC /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		C520F25D2AB38DC100142DCC /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		C520F25E2AB38DC100142DCC /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		C520F25F2AB38DC100142DCC /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		C520F2602AB38DC100142DCC /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		C520F2612AB38DC100142DCC /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompatibilityMacros.h; sourceTree = "<group>"; };
+		C520F2622AB38DC100142DCC /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		C520F5A12AB390EF00142DCC /* ZBRequestConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestConst.h; sourceTree = "<group>"; };
+		C520F5A22AB390EF00142DCC /* NSString+ZBURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZBURLEncoding.m"; sourceTree = "<group>"; };
+		C520F5A32AB390EF00142DCC /* ZBURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBURLRequest.m; sourceTree = "<group>"; };
+		C520F5A42AB390EF00142DCC /* ZBRequestEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestEngine.m; sourceTree = "<group>"; };
+		C520F5A52AB390EF00142DCC /* ZBRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestManager.m; sourceTree = "<group>"; };
+		C520F5A62AB390EF00142DCC /* ZBCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBCacheManager.m; sourceTree = "<group>"; };
+		C520F5A72AB390EF00142DCC /* ZBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBURLRequest.h; sourceTree = "<group>"; };
+		C520F5A82AB390EF00142DCC /* NSString+ZBURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZBURLEncoding.h"; sourceTree = "<group>"; };
+		C520F5A92AB390EF00142DCC /* ZBRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestManager.h; sourceTree = "<group>"; };
+		C520F5AA2AB390EF00142DCC /* ZBRequestEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestEngine.h; sourceTree = "<group>"; };
+		C520F5AB2AB390EF00142DCC /* ZBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNetworking.h; sourceTree = "<group>"; };
+		C520F5AC2AB390EF00142DCC /* ZBCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBCacheManager.h; sourceTree = "<group>"; };
+		C520F5B22AB3919500142DCC /* NetworkingConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingConstant.h; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -1220,21 +1299,6 @@
 		C561CF442AAC7E7900E28603 /* JobsHotLabelWithSingleLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsHotLabelWithSingleLine.m; sourceTree = "<group>"; };
 		C561CF462AAC7E7900E28603 /* JobsHotLabelWithMultiLineCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsHotLabelWithMultiLineCVCell.h; sourceTree = "<group>"; };
 		C561CF472AAC7E7900E28603 /* JobsHotLabelWithMultiLineCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsHotLabelWithMultiLineCVCell.m; sourceTree = "<group>"; };
-		C561CF4A2AAC7E7900E28603 /* ZBRequestConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestConst.h; sourceTree = "<group>"; };
-		C561CF4B2AAC7E7900E28603 /* ZBURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBURLRequest.m; sourceTree = "<group>"; };
-		C561CF4C2AAC7E7900E28603 /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
-		C561CF4D2AAC7E7900E28603 /* NetworkingConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingConstant.h; sourceTree = "<group>"; };
-		C561CF4E2AAC7E7900E28603 /* ZBRequestEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestEngine.m; sourceTree = "<group>"; };
-		C561CF4F2AAC7E7900E28603 /* ZBRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBRequestManager.m; sourceTree = "<group>"; };
-		C561CF502AAC7E7900E28603 /* NSString+ZBUTF8Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZBUTF8Encoding.h"; sourceTree = "<group>"; };
-		C561CF512AAC7E7900E28603 /* ZBCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBCacheManager.m; sourceTree = "<group>"; };
-		C561CF522AAC7E7900E28603 /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
-		C561CF532AAC7E7900E28603 /* ZBURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBURLRequest.h; sourceTree = "<group>"; };
-		C561CF542AAC7E7900E28603 /* NSString+ZBUTF8Encoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZBUTF8Encoding.m"; sourceTree = "<group>"; };
-		C561CF552AAC7E7900E28603 /* ZBRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestManager.h; sourceTree = "<group>"; };
-		C561CF562AAC7E7900E28603 /* ZBRequestEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBRequestEngine.h; sourceTree = "<group>"; };
-		C561CF572AAC7E7900E28603 /* ZBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBNetworking.h; sourceTree = "<group>"; };
-		C561CF582AAC7E7900E28603 /* ZBCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBCacheManager.h; sourceTree = "<group>"; };
 		C561CF5B2AAC7E7900E28603 /* CustomZFPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomZFPlayerControlView.m; sourceTree = "<group>"; };
 		C561CF5C2AAC7E7900E28603 /* CustomZFPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomZFPlayerControlView.h; sourceTree = "<group>"; };
 		C561CF5E2AAC7E7900E28603 /* ZFCustomControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCustomControlView.h; sourceTree = "<group>"; };
@@ -2469,6 +2533,101 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C520F22B2AB38CF700142DCC /* WMZBanner */ = {
+			isa = PBXGroup;
+			children = (
+				C520F22C2AB38CF700142DCC /* WMZBannerFlowLayout.m */,
+				C520F22D2AB38CF700142DCC /* WMZBannerControl.h */,
+				C520F22E2AB38CF700142DCC /* WMZBannerFadeLayout.h */,
+				C520F22F2AB38CF700142DCC /* WMZBannerParam.m */,
+				C520F2302AB38CF700142DCC /* WMZBannerOverLayout.h */,
+				C520F2312AB38CF700142DCC /* WMZBannerView.m */,
+				C520F2322AB38CF700142DCC /* WMZBannerControl.m */,
+				C520F2332AB38CF700142DCC /* WMZBannerFlowLayout.h */,
+				C520F2342AB38CF700142DCC /* WMZBannerFadeLayout.m */,
+				C520F2352AB38CF700142DCC /* WMZBannerConfig.h */,
+				C520F2362AB38CF700142DCC /* WMZBannerParam.h */,
+				C520F2372AB38CF700142DCC /* WMZBannerView.h */,
+				C520F2382AB38CF700142DCC /* WMZBannerOverLayout.m */,
+			);
+			path = WMZBanner;
+			sourceTree = "<group>";
+		};
+		C520F23F2AB38DB800142DCC /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				C520F2542AB38DC100142DCC /* AFNetworking */,
+				C520F2402AB38DC000142DCC /* UIKit+AFNetworking */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		C520F2402AB38DC000142DCC /* UIKit+AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				C520F2412AB38DC000142DCC /* WKWebView+AFNetworking.h */,
+				C520F2422AB38DC000142DCC /* UIProgressView+AFNetworking.m */,
+				C520F2432AB38DC000142DCC /* UIButton+AFNetworking.h */,
+				C520F2442AB38DC000142DCC /* UIRefreshControl+AFNetworking.m */,
+				C520F2452AB38DC000142DCC /* UIImageView+AFNetworking.h */,
+				C520F2462AB38DC000142DCC /* AFImageDownloader.h */,
+				C520F2472AB38DC000142DCC /* AFNetworkActivityIndicatorManager.m */,
+				C520F2482AB38DC000142DCC /* AFAutoPurgingImageCache.h */,
+				C520F2492AB38DC000142DCC /* UIActivityIndicatorView+AFNetworking.h */,
+				C520F24A2AB38DC000142DCC /* WKWebView+AFNetworking.m */,
+				C520F24B2AB38DC000142DCC /* UIProgressView+AFNetworking.h */,
+				C520F24C2AB38DC000142DCC /* UIImageView+AFNetworking.m */,
+				C520F24D2AB38DC000142DCC /* UIKit+AFNetworking.h */,
+				C520F24E2AB38DC000142DCC /* UIRefreshControl+AFNetworking.h */,
+				C520F24F2AB38DC000142DCC /* UIButton+AFNetworking.m */,
+				C520F2502AB38DC000142DCC /* UIActivityIndicatorView+AFNetworking.m */,
+				C520F2512AB38DC000142DCC /* AFAutoPurgingImageCache.m */,
+				C520F2522AB38DC000142DCC /* AFNetworkActivityIndicatorManager.h */,
+				C520F2532AB38DC000142DCC /* AFImageDownloader.m */,
+			);
+			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		C520F2542AB38DC100142DCC /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				C520F2612AB38DC100142DCC /* AFCompatibilityMacros.h */,
+				C520F2622AB38DC100142DCC /* AFHTTPSessionManager.h */,
+				C520F25A2AB38DC100142DCC /* AFHTTPSessionManager.m */,
+				C520F25E2AB38DC100142DCC /* AFNetworking.h */,
+				C520F2562AB38DC100142DCC /* AFNetworkReachabilityManager.h */,
+				C520F25F2AB38DC100142DCC /* AFNetworkReachabilityManager.m */,
+				C520F2552AB38DC100142DCC /* AFSecurityPolicy.h */,
+				C520F2602AB38DC100142DCC /* AFSecurityPolicy.m */,
+				C520F2582AB38DC100142DCC /* AFURLRequestSerialization.h */,
+				C520F25D2AB38DC100142DCC /* AFURLRequestSerialization.m */,
+				C520F25B2AB38DC100142DCC /* AFURLResponseSerialization.h */,
+				C520F2592AB38DC100142DCC /* AFURLResponseSerialization.m */,
+				C520F2572AB38DC100142DCC /* AFURLSessionManager.h */,
+				C520F25C2AB38DC100142DCC /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		C520F5A02AB390EF00142DCC /* ZBNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				C520F5A82AB390EF00142DCC /* NSString+ZBURLEncoding.h */,
+				C520F5A22AB390EF00142DCC /* NSString+ZBURLEncoding.m */,
+				C520F5AC2AB390EF00142DCC /* ZBCacheManager.h */,
+				C520F5A62AB390EF00142DCC /* ZBCacheManager.m */,
+				C520F5AB2AB390EF00142DCC /* ZBNetworking.h */,
+				C520F5A12AB390EF00142DCC /* ZBRequestConst.h */,
+				C520F5AA2AB390EF00142DCC /* ZBRequestEngine.h */,
+				C520F5A42AB390EF00142DCC /* ZBRequestEngine.m */,
+				C520F5A92AB390EF00142DCC /* ZBRequestManager.h */,
+				C520F5A52AB390EF00142DCC /* ZBRequestManager.m */,
+				C520F5A72AB390EF00142DCC /* ZBURLRequest.h */,
+				C520F5A32AB390EF00142DCC /* ZBURLRequest.m */,
+			);
+			path = ZBNetworking;
+			sourceTree = "<group>";
+		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2482,6 +2641,8 @@
 		C561CD462AAC7CC500E28603 /* PodsManual */ = {
 			isa = PBXGroup;
 			children = (
+				C520F23F2AB38DB800142DCC /* AFNetworking */,
+				C520F22B2AB38CF700142DCC /* WMZBanner */,
 				C561CD972AAC7CE100E28603 /* ECPrivacyCheckTools */,
 				C561CD4D2AAC7CDD00E28603 /* FMDatabase+Manager */,
 				C561CD852AAC7CE000E28603 /* JXCategoryView */,
@@ -3532,31 +3693,10 @@
 		C561CF482AAC7E7900E28603 /* 网络请求 */ = {
 			isa = PBXGroup;
 			children = (
-				C561CF492AAC7E7900E28603 /* ZBNetworking */,
+				C520F5B22AB3919500142DCC /* NetworkingConstant.h */,
+				C520F5A02AB390EF00142DCC /* ZBNetworking */,
 			);
 			path = "网络请求";
-			sourceTree = "<group>";
-		};
-		C561CF492AAC7E7900E28603 /* ZBNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				C561CF4A2AAC7E7900E28603 /* ZBRequestConst.h */,
-				C561CF4B2AAC7E7900E28603 /* ZBURLRequest.m */,
-				C561CF4C2AAC7E7900E28603 /* NSString+Check.m */,
-				C561CF4D2AAC7E7900E28603 /* NetworkingConstant.h */,
-				C561CF4E2AAC7E7900E28603 /* ZBRequestEngine.m */,
-				C561CF4F2AAC7E7900E28603 /* ZBRequestManager.m */,
-				C561CF502AAC7E7900E28603 /* NSString+ZBUTF8Encoding.h */,
-				C561CF512AAC7E7900E28603 /* ZBCacheManager.m */,
-				C561CF522AAC7E7900E28603 /* NSString+Check.h */,
-				C561CF532AAC7E7900E28603 /* ZBURLRequest.h */,
-				C561CF542AAC7E7900E28603 /* NSString+ZBUTF8Encoding.m */,
-				C561CF552AAC7E7900E28603 /* ZBRequestManager.h */,
-				C561CF562AAC7E7900E28603 /* ZBRequestEngine.h */,
-				C561CF572AAC7E7900E28603 /* ZBNetworking.h */,
-				C561CF582AAC7E7900E28603 /* ZBCacheManager.h */,
-			);
-			path = ZBNetworking;
 			sourceTree = "<group>";
 		};
 		C561CF592AAC7E7900E28603 /* 播放器控制层 */ = {
@@ -9261,9 +9401,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C561D3322AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_6.m in Sources */,
+				C520F2672AB38DC100142DCC /* UIImageView+AFNetworking.m in Sources */,
 				C561D4372AAC7E7B00E28603 /* UITableView+RegisterClass.m in Sources */,
 				C561D4522AAC7E7B00E28603 /* NSCache+Extra.m in Sources */,
 				C561D4422AAC7E7B00E28603 /* NSArray+Tools.m in Sources */,
+				C520F2652AB38DC100142DCC /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C561D6762AAC862000E28603 /* JobsBaseConfigTestPopupView.m in Sources */,
 				C561D3522AAC7E7A00E28603 /* BWItemModel.m in Sources */,
 				C561D9222AAC8D8000E28603 /* BaiShaETProjRuleTBVCell.m in Sources */,
@@ -9290,7 +9432,6 @@
 				C5CFE5362AB0547600D0F225 /* MSProdSelectVC.m in Sources */,
 				C5FB566B2AB31F1300C873B7 /* MSHomePopupView.m in Sources */,
 				C561D3212AAC7E7A00E28603 /* TLTabBarAnimation.m in Sources */,
-				C561D3622AAC7E7A00E28603 /* ZBCacheManager.m in Sources */,
 				C561D4032AAC7E7B00E28603 /* UIDevice+XMUtils.m in Sources */,
 				C561D31D2AAC7E7A00E28603 /* TransitionAnimation.m in Sources */,
 				C561D48A2AAC7E7B00E28603 /* KeychainHelper.m in Sources */,
@@ -9331,6 +9472,7 @@
 				C561D6A02AAC862000E28603 /* BaiShaETProjTipsView05.m in Sources */,
 				C561D4322AAC7E7B00E28603 /* LOTAnimationMJRefreshFooter.m in Sources */,
 				C561D2FD2AAC7E7A00E28603 /* ImageCodeView.m in Sources */,
+				C520F2662AB38DC100142DCC /* WKWebView+AFNetworking.m in Sources */,
 				C561D4462AAC7E7B00E28603 /* BaseTableViewHeaderFooterView.m in Sources */,
 				C561D3F12AAC7E7B00E28603 /* UIView+BackgroundImage.m in Sources */,
 				C561D6842AAC862000E28603 /* CasinoUpgradeContentView.m in Sources */,
@@ -9358,6 +9500,7 @@
 				C561D6602AAC862000E28603 /* DDNetworkingAPI+Test.m in Sources */,
 				C5E017682AAF3684005ABE09 /* MSChuBaoView2.m in Sources */,
 				C561D4602AAC7E7B00E28603 /* JobsFormatTime.m in Sources */,
+				C520F26B2AB38DC100142DCC /* AFImageDownloader.m in Sources */,
 				C561D6692AAC862000E28603 /* BaiShaETProjPopupView05.m in Sources */,
 				C561D4502AAC7E7B00E28603 /* NSUserDefaults+Swizzle.m in Sources */,
 				C561D3252AAC7E7A00E28603 /* JobsAppDoorModel.m in Sources */,
@@ -9373,6 +9516,7 @@
 				C561D32A2AAC7E7A00E28603 /* JobsAppDoorVC.m in Sources */,
 				C561CE532AAC7CE200E28603 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
 				C561CE542AAC7CE200E28603 /* XHLaunchAdConfiguration.m in Sources */,
+				C520F26F2AB38DC100142DCC /* AFURLRequestSerialization.m in Sources */,
 				C561D3F22AAC7E7B00E28603 /* UIView+ViewController.m in Sources */,
 				C561D45B2AAC7E7B00E28603 /* UITextModel.m in Sources */,
 				C561D3A52AAC7E7A00E28603 /* JobsBasePopupView.m in Sources */,
@@ -9402,6 +9546,7 @@
 				C561D42A2AAC7E7B00E28603 /* UIViewController+GifImageView.m in Sources */,
 				C561D38B2AAC7E7A00E28603 /* JobsUpDownLabModel.m in Sources */,
 				C561D5372AAC840F00E28603 /* MSHomeVC.m in Sources */,
+				C520F23D2AB38CF700142DCC /* WMZBannerFadeLayout.m in Sources */,
 				C561D4B92AAC7ECE00E28603 /* SceneDelegate+UISceneDelegate.m in Sources */,
 				C561D31C2AAC7E7A00E28603 /* JobsPullListAutoSizeView.m in Sources */,
 				C561D4622AAC7E7B00E28603 /* UIViewModel.m in Sources */,
@@ -9416,20 +9561,21 @@
 				C561D3AB2AAC7E7A00E28603 /* JobsShowObjInfoVC.m in Sources */,
 				C561D6A22AAC862000E28603 /* BaiShaETProjTipsView06.m in Sources */,
 				C561D3E32AAC7E7B00E28603 /* SoundBtn.m in Sources */,
+				C520F5AE2AB390EF00142DCC /* ZBURLRequest.m in Sources */,
 				C561D6662AAC862000E28603 /* BaiShaETProjPopupView04.m in Sources */,
+				C520F23B2AB38CF700142DCC /* WMZBannerView.m in Sources */,
 				C561D4042AAC7E7B00E28603 /* UICollectionView+Func.m in Sources */,
 				C561D4172AAC7E7B00E28603 /* NSString+Judgment.m in Sources */,
 				C561D92C2AAC8D8000E28603 /* BaiShaETProjMembersSection1View.m in Sources */,
 				C561CE502AAC7CE200E28603 /* XHLaunchAd.m in Sources */,
-				C561D3612AAC7E7A00E28603 /* ZBRequestManager.m in Sources */,
 				C561CE042AAC7CE200E28603 /* EmptyView.m in Sources */,
+				C520F23A2AB38CF700142DCC /* WMZBannerParam.m in Sources */,
 				C561D3F32AAC7E7B00E28603 /* UIView+UIBackgroundConfig.m in Sources */,
 				C561D42E2AAC7E7B00E28603 /* MJRefreshConfigModel.m in Sources */,
 				C5E015CB2AAE1DD9005ABE09 /* LunarFormatter.m in Sources */,
 				C561D3BC2AAC7E7A00E28603 /* UIScrollView+AnimationKit.m in Sources */,
 				C561CE1A2AAC7CE200E28603 /* JXCategoryTimelineCell.m in Sources */,
 				C561D3C22AAC7E7B00E28603 /* UILabel+Gesture.m in Sources */,
-				C561D35E2AAC7E7A00E28603 /* ZBURLRequest.m in Sources */,
 				C561CE152AAC7CE200E28603 /* JXCategoryTitleBackgroundCellModel.m in Sources */,
 				C561D3242AAC7E7A00E28603 /* JobsTabBar.m in Sources */,
 				C561D40C2AAC7E7B00E28603 /* BaseCollectionViewCell.m in Sources */,
@@ -9468,15 +9614,16 @@
 				C561D9252AAC8D8000E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVHeader.m in Sources */,
 				C561D3B12AAC7E7A00E28603 /* UIScrollView+FDFullscreenPopGesture.m in Sources */,
 				C561D6A92AAC862000E28603 /* BaiShaETProjGetiOSNewestVersionModel.m in Sources */,
+				C520F26D2AB38DC100142DCC /* AFHTTPSessionManager.m in Sources */,
 				C561D4252AAC7E7B00E28603 /* UIViewController+Lottie.m in Sources */,
 				C561D65B2AAC862000E28603 /* NSObject+BaiShaETProjCheck.m in Sources */,
 				C561D4742AAC7E7B00E28603 /* NSObject+SPAlertController.m in Sources */,
 				C561D3002AAC7E7A00E28603 /* JobsTabBarItem.m in Sources */,
 				C561D32E2AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_8.m in Sources */,
 				C561D46A2AAC7E7B00E28603 /* TouchID.m in Sources */,
-				C561D35F2AAC7E7A00E28603 /* NSString+Check.m in Sources */,
 				C561D3AF2AAC7E7A00E28603 /* JobsDropDownListView.m in Sources */,
 				C561D4002AAC7E7B00E28603 /* UITextView+IndicateWordLimit.m in Sources */,
+				C520F5AD2AB390EF00142DCC /* NSString+ZBURLEncoding.m in Sources */,
 				C561D6792AAC862000E28603 /* BaiShaETProjDataShowBackView.m in Sources */,
 				C561D4A22AAC7E7B00E28603 /* ZYTextField.m in Sources */,
 				C561D3382AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_7.m in Sources */,
@@ -9524,6 +9671,7 @@
 				C561D49C2AAC7E7B00E28603 /* UITextField+Animation.m in Sources */,
 				C561D3672AAC7E7A00E28603 /* JobsTitleView01.m in Sources */,
 				C561D4722AAC7E7B00E28603 /* NSObject+Measure.m in Sources */,
+				C520F2692AB38DC100142DCC /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				C561D3DF2AAC7E7B00E28603 /* BaseButton.m in Sources */,
 				C561D9442AAC8D8000E28603 /* BaiShaETProjVIPSubCVCell_01.m in Sources */,
 				C561D5762AAC84DF00E28603 /* JobsBaseConfigNotificationManager.m in Sources */,
@@ -9537,7 +9685,9 @@
 				C561D3B62AAC7E7A00E28603 /* UIImage+SYS.m in Sources */,
 				C561D35C2AAC7E7A00E28603 /* JobsHotLabelWithSingleLine.m in Sources */,
 				C561D4202AAC7E7B00E28603 /* XLBubbleTransition.m in Sources */,
+				C520F2632AB38DC100142DCC /* UIProgressView+AFNetworking.m in Sources */,
 				C561D4222AAC7E7B00E28603 /* UIViewController+BWShareView.m in Sources */,
+				C520F26E2AB38DC100142DCC /* AFURLSessionManager.m in Sources */,
 				C561CE262AAC7CE200E28603 /* ECPrivacyCheckPhotos.m in Sources */,
 				C561D46E2AAC7E7B00E28603 /* CLLanguageManager.m in Sources */,
 				C561D42F2AAC7E7B00E28603 /* LOTAnimationMJRefreshHeader.m in Sources */,
@@ -9552,6 +9702,7 @@
 				C561D42D2AAC7E7B00E28603 /* UIViewController+SuspendBtn.m in Sources */,
 				C561D6832AAC862000E28603 /* CasinoUpgradePopupView.m in Sources */,
 				C561CE552AAC7CE200E28603 /* XHLaunchAdCache.m in Sources */,
+				C520F23C2AB38CF700142DCC /* WMZBannerControl.m in Sources */,
 				C561CE002AAC7CE200E28603 /* ZWPullMenuConfig.m in Sources */,
 				C561D4862AAC7E7B00E28603 /* NSObject+RunrtimeGet.m in Sources */,
 				C561D4092AAC7E7B00E28603 /* UICollectionViewCell+Default.m in Sources */,
@@ -9565,6 +9716,7 @@
 				C561D3C82AAC7E7B00E28603 /* UITableViewCell+WhiteArrows.m in Sources */,
 				C561D91C2AAC8D8000E28603 /* BaiShaETProjCollectionHeaderView.m in Sources */,
 				C5CFE6772AB081D800D0F225 /* MSTopUpVC.m in Sources */,
+				C520F5AF2AB390EF00142DCC /* ZBRequestEngine.m in Sources */,
 				C561CE172AAC7CE200E28603 /* JXCategoryTitleBackgroundView.m in Sources */,
 				C561D4142AAC7E7B00E28603 /* NSString+Statistics.m in Sources */,
 				C561D3962AAC7E7A00E28603 /* JobsWelcomeVC.m in Sources */,
@@ -9575,6 +9727,7 @@
 				C561D3D62AAC7E7B00E28603 /* UIButton+Timer.m in Sources */,
 				C561D3A02AAC7E7A00E28603 /* ZLGestureLockViewController.m in Sources */,
 				C561D4352AAC7E7B00E28603 /* UINavigationController+SafeTransition.m in Sources */,
+				C520F2642AB38DC100142DCC /* UIRefreshControl+AFNetworking.m in Sources */,
 				C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */,
 				C561D6772AAC862000E28603 /* BaiShaETProjPopupView07.m in Sources */,
 				C561D47A2AAC7E7B00E28603 /* NSObject+DataSave.m in Sources */,
@@ -9593,6 +9746,7 @@
 				C561D4B22AAC7EC200E28603 /* AppDelegate+Networking.m in Sources */,
 				C561D44D2AAC7E7B00E28603 /* KFZShopCatoryFlowLayput.m in Sources */,
 				C561D3C12AAC7E7B00E28603 /* UILabel+Extra.m in Sources */,
+				C520F23E2AB38CF700142DCC /* WMZBannerOverLayout.m in Sources */,
 				C561CE582AAC7CE200E28603 /* RACEXTRuntimeExtensions.m in Sources */,
 				C561D49A2AAC7E7B00E28603 /* NSObject+CallBackInfoByBlock.m in Sources */,
 				C561D35B2AAC7E7A00E28603 /* JobsHotLabelWithMultiLineHeaderFooterView.m in Sources */,
@@ -9606,15 +9760,17 @@
 				C561D3F42AAC7E7B00E28603 /* UIView+JHGestureBlock.m in Sources */,
 				C561D46D2AAC7E7B00E28603 /* JobsTimeModel.m in Sources */,
 				C561D95F2AAC910900E28603 /* BaiShaETProjSettingGestureVC.m in Sources */,
-				C561D3602AAC7E7A00E28603 /* ZBRequestEngine.m in Sources */,
+				C520F2702AB38DC100142DCC /* AFNetworkReachabilityManager.m in Sources */,
 				C561CE242AAC7CE200E28603 /* ECPrivacyCheckMotionAndFitness.m in Sources */,
 				C561CE4B2AAC7CE200E28603 /* XHLaunchAdView.m in Sources */,
 				C561D48C2AAC7E7B00E28603 /* NSObject+UDID.m in Sources */,
 				C561D9632AAC914300E28603 /* BaiShaETProjMembersSubsBaseVC.m in Sources */,
+				C520F2682AB38DC100142DCC /* UIButton+AFNetworking.m in Sources */,
 				C561D4922AAC7E7B00E28603 /* NSObject+Extras.m in Sources */,
 				C561D4432AAC7E7B00E28603 /* UITableViewHeaderFooterView+BaseTableViewHeaderFooterViewProtocol.m in Sources */,
 				C561D3D02AAC7E7B00E28603 /* NSBundle+CLLanguage.m in Sources */,
 				C561D94E2AAC8D8000E28603 /* BaiShaETProjFiltrationView.m in Sources */,
+				C520F2712AB38DC100142DCC /* AFSecurityPolicy.m in Sources */,
 				C561D3FD2AAC7E7B00E28603 /* NSMutableDictionary+Ordered.m in Sources */,
 				C561D4632AAC7E7B00E28603 /* JobsHeaderFooterViewModel.m in Sources */,
 				C561D49E2AAC7E7B00E28603 /* UITextField+Extend.m in Sources */,
@@ -9628,12 +9784,14 @@
 				C561D3D12AAC7E7B00E28603 /* UIButton+Extra.m in Sources */,
 				C561D3482AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle.m in Sources */,
 				C561D6AF2AAC862000E28603 /* BaseModel.m in Sources */,
+				C520F26A2AB38DC100142DCC /* AFAutoPurgingImageCache.m in Sources */,
 				C561D4332AAC7E7B00E28603 /* BaseViewController.m in Sources */,
 				C561D9292AAC8D8000E28603 /* BaiShaETProjChoiceHeaderIconView.m in Sources */,
 				C561D4992AAC7E7B00E28603 /* NSObject+DefConfig.m in Sources */,
 				C561D3BD2AAC7E7B00E28603 /* JobsAnimationLabel.m in Sources */,
 				C561D3012AAC7E7A00E28603 /* UITabBarItem+TLAnimation.m in Sources */,
 				C561D3D22AAC7E7B00E28603 /* UIButton+Animation.m in Sources */,
+				C520F5B12AB390EF00142DCC /* ZBCacheManager.m in Sources */,
 				C561D4A12AAC7E7B00E28603 /* CJTextField.m in Sources */,
 				C561D53D2AAC845600E28603 /* MSOrderVC.m in Sources */,
 				C5CFE91A2AB237BD00D0F225 /* MSSearchView.m in Sources */,
@@ -9648,12 +9806,15 @@
 				C561D4882AAC7E7B00E28603 /* NSObject+AFNReachability.m in Sources */,
 				C561D4342AAC7E7B00E28603 /* UINavigationController+Extra.m in Sources */,
 				C561D3BF2AAC7E7B00E28603 /* BaseLabel.m in Sources */,
+				C520F5B02AB390EF00142DCC /* ZBRequestManager.m in Sources */,
 				C561D3A72AAC7E7A00E28603 /* JobsSuspendBtn.m in Sources */,
 				C5CFE5392AB054CC00D0F225 /* MSTransactionRecordVC.m in Sources */,
 				C561D3C42AAC7E7B00E28603 /* UITableViewCell+BaseCellProtocol.m in Sources */,
 				C561D38C2AAC7E7A00E28603 /* JobsLabBaseModel.m in Sources */,
 				C561D6922AAC862000E28603 /* BaiShaETProjCVCellStyle1.m in Sources */,
 				C5BD5E702AAC76740048F36B /* SceneDelegate.m in Sources */,
+				C520F2392AB38CF700142DCC /* WMZBannerFlowLayout.m in Sources */,
+				C520F26C2AB38DC100142DCC /* AFURLResponseSerialization.m in Sources */,
 				C5CFE71E2AB08AE200D0F225 /* MSInterestSettleRecordCVC.m in Sources */,
 				C561D2FE2AAC7E7A00E28603 /* JobsBitsMonitorSuspendLab.m in Sources */,
 				C561CE4C2AAC7CE200E28603 /* XHLaunchAdButton.m in Sources */,
@@ -9662,7 +9823,6 @@
 				C561D4292AAC7E7B00E28603 /* UIViewController+BaseVC.m in Sources */,
 				C561D6902AAC862000E28603 /* BaiShaETProjMyWalletCVCell.m in Sources */,
 				C561D46C2AAC7E7B00E28603 /* JobsMonitorNetwoking.m in Sources */,
-				C561D3632AAC7E7A00E28603 /* NSString+ZBUTF8Encoding.m in Sources */,
 				C561D4782AAC7E7B00E28603 /* NSObject+PopViewToLogOut.m in Sources */,
 				C561D4972AAC7E7B00E28603 /* NSObject+Class.m in Sources */,
 				C561D94A2AAC8D8000E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVCell.m in Sources */,

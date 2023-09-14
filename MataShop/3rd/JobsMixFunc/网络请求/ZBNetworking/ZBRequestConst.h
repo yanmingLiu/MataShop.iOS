@@ -8,6 +8,11 @@
 
 #ifndef ZBRequestConst_h
 #define ZBRequestConst_h
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#elif TARGET_OS_MAC
+#endif
+
 @class ZBURLRequest,ZBBatchRequest;
 
 /**
@@ -64,7 +69,9 @@ typedef NS_ENUM(NSInteger,ZBMethodType) {
     /**PATCH请求*/
     ZBMethodTypePATCH,
     /**DELETE请求*/
-    ZBMethodTypeDELETE
+    ZBMethodTypeDELETE,
+    /**HEAD请求*/
+    ZBMethodTypeHEAD
 };
 /**
  请求参数的格式.
@@ -87,7 +94,7 @@ typedef NS_ENUM(NSUInteger, ZBResponseSerializerType) {
     ZBHTTPResponseSerializer
 };
 /**
- 操作状态
+ 下载请求的 操作状态
  */
 typedef NS_ENUM(NSUInteger, ZBDownloadState) {
     /** 开始请求*/

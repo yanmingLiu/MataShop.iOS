@@ -40,7 +40,7 @@ def appCommon
   pod 'XYColorOC' # https://github.com/RayJiang16/XYColor 适配iOS 13夜间模式/深色外观(Dark Mode)
   pod 'IQKeyboardManager' # https://github.com/hackiftekhar/IQKeyboardManager Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
   pod 'Masonry' # https://github.com/SnapKit/Masonry NO_SMP
-  pod 'AFNetworking' , '~> 4.0' # https://github.com/AFNetworking/AFNetworking YES_SMP
+#  pod 'AFNetworking' , '~> 4.0' # https://github.com/AFNetworking/AFNetworking YES_SMP ⚠️作者停止维护
   pod 'Reachability'  # https://github.com/tonymillion/Reachability 检查联网情况 NO_SMP
   pod 'ReactiveObjC' # https://github.com/ReactiveCocoa/ReactiveObjC NO_SMP
   pod 'MJRefresh' # https://github.com/CoderMJLee/MJRefresh NO_SMP
@@ -71,7 +71,7 @@ def ui
 #  pod 'QMUIKit' # https://github.com/Tencent/QMUI_iOS QMUI iOS 是一个致力于提高项目 UI 开发效率的解决方案，其设计目的是用于辅助快速搭建一个具备基本设计还原效果的 iOS 项目，同时利用自身提供的丰富控件及兼容处理， 让开发者能专注于业务需求而无需耗费精力在基础代码的设计上。不管是新项目的创建，或是已有项目的维护，均可使开发效率和项目质量得到大幅度提升。
   pod 'ZMJGanttChart' # https://github.com/keshiim/ZMJGanttChart excel
   pod 'LMJDropdownMenu' # https://github.com/JerryLMJ/LMJDropdownMenu 下拉菜单
-  pod 'WMZBanner' # https://github.com/wwmz/WMZBanner 轻量级轮播图+卡片样式+自定义样式
+#  pod 'WMZBanner' # https://github.com/wwmz/WMZBanner 轻量级轮播图+卡片样式+自定义样式 ⚠️作者停止维护
   pod 'MGSwipeTableCell' # https://github.com/MortimerGoro/MGSwipeTableCell 滑动tableViewCell
   pod 'Shimmer' # Facebook 推出的一款具有闪烁效果的第三方控件
   pod 'RQShineLabel'  # https://github.com/zipme/RQShineLabel 一个类似Secret文字渐变效果的开源库
@@ -95,7 +95,7 @@ def ui
   end
 # 视频相关
 def videoFunc
-  pod 'ZFPlayer'
+  pod 'ZFPlayer' # https://github.com/renzifeng/ZFPlayer 视频播放器
   pod 'ZFPlayer/ControlView'
   pod 'ZFPlayer/AVPlayer'
   pod 'ZFPlayer/ijkplayer'

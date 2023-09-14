@@ -13,6 +13,9 @@
     if (!self) {
         return nil;
     }
+    _url=@"";
+    _server=@"";
+    _path=@"";
     _requestSerializer=ZBJSONRequestSerializer;
     _responseSerializer=ZBJSONResponseSerializer;
     _methodType=ZBMethodTypeGET;
@@ -34,6 +37,11 @@
 - (void)setResponseSerializer:(ZBResponseSerializerType)responseSerializer{
     _responseSerializer=responseSerializer;
     _isResponseSerializer=YES;
+}
+
+- (void)setMethodType:(ZBMethodType)methodType{
+    _methodType=methodType;
+    _isMethodType=YES;
 }
 
 - (void)cleanAllCallback{
@@ -82,14 +90,6 @@
         _uploadDatas = [[NSMutableArray alloc]init];
     }
     return _uploadDatas;
-}
-
--(NSString *)server{
-    return _server.urlProtect;
-}
-
--(NSString *)url{
-    return _url.urlProtect;
 }
 
 @end
@@ -194,8 +194,8 @@
     _isResponseSerializer=YES;
 }
 
--(NSString *)baseServer{
-    return _baseServer.urlProtect;
+- (void)setDefaultMethodType:(ZBMethodType)defaultMethodType{
+    _defaultMethodType=defaultMethodType;
+    _isDefaultMethodType=YES;
 }
-
 @end
