@@ -71,9 +71,11 @@
 #pragma mark —— UICollectionViewCell 部署策略
 //见 @interface NSObject (JobsDeployCellConfig)
 #pragma mark —— UICollectionViewDataSource
-- (NSInteger)numberOfItemsInSection:(NSInteger)section{
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section {
     MSPromotionIncentiveModel *promotionIncentiveModel = (MSPromotionIncentiveModel *)self.dataMutArr[section].data;
-    return promotionIncentiveModel.incentiveDetailModelMutArr.count + 1;
+    return 1;
+//    return promotionIncentiveModel.incentiveDetailModelMutArr.count + 1;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -96,12 +98,6 @@
         incentiveDetailModel.indexPath = indexPath;
         [cell richElementsInCellWithModel:promotionIncentiveModel.incentiveDetailModelMutArr[indexPath.row]];
     }return cell;
-}
-
-- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView
-     numberOfItemsInSection:(NSInteger)section {
-    MSPromotionIncentiveModel *promotionIncentiveModel = (MSPromotionIncentiveModel *)self.dataMutArr[section].data;
-    return promotionIncentiveModel.incentiveDetailModelMutArr.count + 1;
 }
 #pragma mark —— UICollectionViewDelegate
 /// 允许选中时，高亮

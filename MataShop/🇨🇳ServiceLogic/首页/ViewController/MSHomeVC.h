@@ -21,6 +21,7 @@
 #import "BaiShaETProjMarqueeView.h"
 #import "MSSearchBoardView.h"
 #import "MS3rdShopLinkView.h"
+#import "MSHomePopupView.h"
 
 #import "BaseViewController.h"
 

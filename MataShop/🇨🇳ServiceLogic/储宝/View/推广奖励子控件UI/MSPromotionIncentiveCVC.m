@@ -25,6 +25,22 @@
 
     }return self;
 }
+
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    
+//    [self outline:UIBorderSideTypeTop | UIBorderSideTypeLeft | UIBorderSideTypeRight
+//      borderColor:JobsBlueColor
+//      borderWidth:1];
+
+    [self outlineByBezierPath:UIBorderSideTypeTop
+            cellBackgroundCor:JobsGrayColor
+                  borderColor:JobsBlackColor
+                  borderWidth:1
+             cornerRadiusSize:CGSizeMake(JobsWidth(8), JobsWidth(8))
+              roundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight];
+
+}
 #pragma mark —— UICollectionViewCellProtocol
 +(instancetype)cellWithCollectionView:(nonnull UICollectionView *)collectionView
                          forIndexPath:(nonnull NSIndexPath *)indexPath{
@@ -33,6 +49,8 @@
         [collectionView registerCollectionViewCellClass:MSPromotionIncentiveCVC.class];
         cell = (MSPromotionIncentiveCVC *)[collectionView collectionViewCellClass:MSPromotionIncentiveCVC.class forIndexPath:indexPath];
     }
+    
+//    [cell layerBorderColour:RGBA_COLOR(225, 225, 144, 1) andBorderWidth:1];
     
     // UICollectionViewCell圆切角
 //    cell.contentView.layer.cornerRadius = cell.layer.cornerRadius = JobsWidth(8);

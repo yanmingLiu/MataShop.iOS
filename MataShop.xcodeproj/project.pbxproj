@@ -888,6 +888,7 @@
 		C5E0176E2AAF4B49005ABE09 /* MSChuBaoAdMarqueeView.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */; };
 		C5FB56612AB31B5E00C873B7 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */; };
 		C5FB56622AB31B5E00C873B7 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */; };
+		C5FB566B2AB31F1300C873B7 /* MSHomePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */; };
 		F032FB3B280C586AF1EFA7DC /* Pods_MataShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */; };
 		F91CCF44732E8C50C8BB2479 /* Pods_MataShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD29B03F9AE25E4A547369B7 /* Pods_MataShopUITests.framework */; };
 /* End PBXBuildFile section */
@@ -2411,6 +2412,9 @@
 		C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSChuBaoAdMarqueeView.jpg; sourceTree = "<group>"; };
 		C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
 		C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
+		C5FB56672AB31E2300C873B7 /* MSHomePopupView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSHomePopupView.jpg; sourceTree = "<group>"; };
+		C5FB56692AB31F1300C873B7 /* MSHomePopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomePopupView.h; sourceTree = "<group>"; };
+		C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomePopupView.m; sourceTree = "<group>"; };
 		D9F4E560DCFD78A2DE92A1BF /* Pods-MataShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-MataShopUITests/Pods-MataShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -7949,6 +7953,7 @@
 		C561D9922AAC9A6B00E28603 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5FB56632AB31DA600C873B7 /* MSHomePopupView */,
 				C5CFEA0E2AB2559500D0F225 /* MS3rdShopLinkView */,
 				C5CFE9172AB237A100D0F225 /* MSSearchView */,
 				C5371E532AACDD37008988CE /* MSSearchBoardView */,
@@ -8564,6 +8569,16 @@
 				C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */,
 			);
 			path = "储宝跑马灯广告";
+			sourceTree = "<group>";
+		};
+		C5FB56632AB31DA600C873B7 /* MSHomePopupView */ = {
+			isa = PBXGroup;
+			children = (
+				C5FB56672AB31E2300C873B7 /* MSHomePopupView.jpg */,
+				C5FB56692AB31F1300C873B7 /* MSHomePopupView.h */,
+				C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */,
+			);
+			path = MSHomePopupView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -9273,6 +9288,7 @@
 				C561D3502AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_11.m in Sources */,
 				C561D3D32AAC7E7B00E28603 /* UIButton+UI.m in Sources */,
 				C5CFE5362AB0547600D0F225 /* MSProdSelectVC.m in Sources */,
+				C5FB566B2AB31F1300C873B7 /* MSHomePopupView.m in Sources */,
 				C561D3212AAC7E7A00E28603 /* TLTabBarAnimation.m in Sources */,
 				C561D3622AAC7E7A00E28603 /* ZBCacheManager.m in Sources */,
 				C561D4032AAC7E7B00E28603 /* UIDevice+XMUtils.m in Sources */,

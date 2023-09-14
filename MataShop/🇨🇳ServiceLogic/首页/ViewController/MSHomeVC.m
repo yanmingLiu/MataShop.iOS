@@ -17,6 +17,7 @@ BOOL ISLogin;
 @property(nonatomic,strong)UIImageView *adIMGV1;
 @property(nonatomic,strong)UIImageView *adIMGV2;
 @property(nonatomic,strong)UIImageView *adIMGV3;
+@property(nonatomic,strong)MSHomePopupView *popupView;
 /// Data
 @property(nonatomic,strong)WMZBannerParam *bannerParam;
 @property(nonatomic,strong)NSMutableArray <UIImage *>*dataMutArr;
@@ -272,6 +273,5 @@ BOOL ISLogin;
         [_dataMutArr addObject:JobsIMG(@"创业招募令")];
     }return _dataMutArr;
 }
-
 
 @end
