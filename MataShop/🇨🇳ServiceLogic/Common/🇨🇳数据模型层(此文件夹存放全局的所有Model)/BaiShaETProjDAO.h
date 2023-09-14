@@ -17,7 +17,7 @@
 // App 的所有网络请求Api
 #import "DDNetworkingAPI.h"
 // 请求的公共配置文件
-#import "RequestTool.h"
+//#import "RequestTool.h"
 
 #import "BaiShaETProjModelHeader.h"
 

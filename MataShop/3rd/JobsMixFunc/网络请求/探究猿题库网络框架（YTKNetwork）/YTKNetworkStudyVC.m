@@ -28,7 +28,7 @@
 
     /// 下列配置一般体现在Appdelegate
     YTKNetworkConfig *config = YTKNetworkConfig.sharedConfig;
-    config.baseUrl = self.BaseUrl;
+//    config.baseUrl = self.BaseUrl;
     config.cdnUrl = @"";
     //config.urlFilters = nil;
     //config.cacheDirPathFilters = nil;

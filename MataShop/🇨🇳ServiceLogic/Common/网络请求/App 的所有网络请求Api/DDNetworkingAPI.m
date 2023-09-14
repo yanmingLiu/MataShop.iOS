@@ -126,24 +126,24 @@ uploadVideosParamArr:(NSArray *_Nullable)uploadVideosParamArr
              paramarrays:paramMutArr];
 }
 /// 请求成功的处理代码
-+(void)networkingSuccessHandleWithData:(DDResponseModel *_Nullable)responseObject
-                               request:(ZBURLRequest *_Nullable)request
-                          successBlock:(jobsByIDBlock _Nullable)successBlock
-                          failureBlock:(jobsByIDBlock _Nullable)failureBlock{
-
-    if ([responseObject isKindOfClass:DDResponseModel.class]) {
-        // 公共请求错误直接抛出
-        if (responseObject.code == HTTPResponseCodeSuccess) {
-            NSLog(@"请求成功");
-            if (successBlock) successBlock(responseObject);
-        }else{// 请求成功但是因为未登录、被踢线下等涉及到用户token的原因导致的失败
-            [DDNetworkingAPI handleError:responseObject];
-            if (failureBlock) failureBlock(responseObject);
-        }
-    }else{
-        NSLog(@"responseObject 不是 DDResponseModel类型");
-    }
-}
+//+(void)networkingSuccessHandleWithData:(DDResponseModel *_Nullable)responseObject
+//                               request:(ZBURLRequest *_Nullable)request
+//                          successBlock:(jobsByIDBlock _Nullable)successBlock
+//                          failureBlock:(jobsByIDBlock _Nullable)failureBlock{
+//
+//    if ([responseObject isKindOfClass:DDResponseModel.class]) {
+//        // 公共请求错误直接抛出
+//        if (responseObject.code == HTTPResponseCodeSuccess) {
+//            NSLog(@"请求成功");
+//            if (successBlock) successBlock(responseObject);
+//        }else{// 请求成功但是因为未登录、被踢线下等涉及到用户token的原因导致的失败
+//            [DDNetworkingAPI handleError:responseObject];
+//            if (failureBlock) failureBlock(responseObject);
+//        }
+//    }else{
+//        NSLog(@"responseObject 不是 DDResponseModel类型");
+//    }
+//}
 #pragma mark —— 错误处理
 +(void)handleError:(id)error{
     if ([error isKindOfClass:NSError.class]) {

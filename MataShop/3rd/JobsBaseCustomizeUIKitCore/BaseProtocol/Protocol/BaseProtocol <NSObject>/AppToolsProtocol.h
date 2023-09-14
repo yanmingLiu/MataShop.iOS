@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "BaseProtocol.h"
 #import "JobsAppDoorConfig.h"
-#import "RequestTool.h"
+#import "NetworkingConstant.h"
 #import "BaiShaETProjGetiOSNewestVersionModel.h"
 
 @class JobsHotLabelWithSingleLine;

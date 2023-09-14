@@ -26,6 +26,7 @@
 #import "BaiShaETProjTipsViewHeader.h"// 本App相关的各种提示视图
 #import "UICollectionViewCellHeader.h"// 
 #import "BaiShaProjDoorHeader.h"// 登录、注册、忘记密码
+#import "JobsCommentVC.h"// 评论模块
 
 #import "MSHomeVC.h"// 首页
 #import "MSMomentsVC.h"// 圈子

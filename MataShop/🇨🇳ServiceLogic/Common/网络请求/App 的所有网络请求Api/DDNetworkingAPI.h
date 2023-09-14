@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "JobsBlock.h"
-#import "RequestTool.h"
+//#import "RequestTool.h"
 #import "NSObject+Extras.h"
 #import "DDResponseModel.h"
 
@@ -44,10 +44,10 @@ uploadVideosParamArr:(NSArray *_Nullable)uploadVideosParamArr
      successBlock:(jobsByIDBlock _Nullable)successBlock
      failureBlock:(jobsByIDBlock _Nullable)failureBlock;
 /// 请求成功的处理代码
-+(void)networkingSuccessHandleWithData:(DDResponseModel *_Nullable)responseObject
-                               request:(ZBURLRequest *_Nullable)request
-                          successBlock:(jobsByIDBlock _Nullable)successBlock
-                          failureBlock:(jobsByIDBlock _Nullable)failureBlock;
+//+(void)networkingSuccessHandleWithData:(DDResponseModel *_Nullable)responseObject
+//                               request:(ZBURLRequest *_Nullable)request
+//                          successBlock:(jobsByIDBlock _Nullable)successBlock
+//                          failureBlock:(jobsByIDBlock _Nullable)failureBlock;
 #pragma mark —— 错误处理
 +(void)handleError:(id)error;
 
