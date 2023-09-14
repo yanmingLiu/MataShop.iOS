@@ -54,6 +54,10 @@
 		C520F63A2AB3975800142DCC /* YTKAnimatingRequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F6282AB3975800142DCC /* YTKAnimatingRequestAccessory.m */; };
 		C520F63B2AB3975800142DCC /* YTKRequest+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F62B2AB3975800142DCC /* YTKRequest+Custom.m */; };
 		C520F63C2AB3975800142DCC /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F62F2AB3975800142DCC /* BaseRequest.m */; };
+		C520FC142AB3C36D00142DCC /* UserData.json in Resources */ = {isa = PBXBuildFile; fileRef = C520FC102AB3C36D00142DCC /* UserData.json */; };
+		C520FC152AB3C36D00142DCC /* CommentData.json in Resources */ = {isa = PBXBuildFile; fileRef = C520FC112AB3C36D00142DCC /* CommentData.json */; };
+		C520FC162AB3C36D00142DCC /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C520FC122AB3C36D00142DCC /* data.json */; };
+		C520FC172AB3C36D00142DCC /* 假数据.json in Resources */ = {isa = PBXBuildFile; fileRef = C520FC132AB3C36D00142DCC /* 假数据.json */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
 		C561CDFD2AAC7CE200E28603 /* CasinoFlowDetailsVC_h in Resources */ = {isa = PBXBuildFile; fileRef = C561CD4A2AAC7CDD00E28603 /* CasinoFlowDetailsVC_h */; };
@@ -1024,6 +1028,10 @@
 		C520F62C2AB3975800142DCC /* YTKNetworkToolsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKNetworkToolsHeader.h; sourceTree = "<group>"; };
 		C520F62E2AB3975800142DCC /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
 		C520F62F2AB3975800142DCC /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
+		C520FC102AB3C36D00142DCC /* UserData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserData.json; sourceTree = "<group>"; };
+		C520FC112AB3C36D00142DCC /* CommentData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CommentData.json; sourceTree = "<group>"; };
+		C520FC122AB3C36D00142DCC /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		C520FC132AB3C36D00142DCC /* 假数据.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "假数据.json"; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -2871,6 +2879,17 @@
 			path = BaseRequest;
 			sourceTree = "<group>";
 		};
+		C520FC0F2AB3C36D00142DCC /* Json文件 */ = {
+			isa = PBXGroup;
+			children = (
+				C520FC102AB3C36D00142DCC /* UserData.json */,
+				C520FC112AB3C36D00142DCC /* CommentData.json */,
+				C520FC122AB3C36D00142DCC /* data.json */,
+				C520FC132AB3C36D00142DCC /* 假数据.json */,
+			);
+			path = "Json文件";
+			sourceTree = "<group>";
+		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3211,6 +3230,7 @@
 		C561CE5E2AAC7D6500E28603 /* 资源文件管理 */ = {
 			isa = PBXGroup;
 			children = (
+				C520FC0F2AB3C36D00142DCC /* Json文件 */,
 				C561CE732AAC7DD600E28603 /* 国际化桥接数据 */,
 				C561CE702AAC7DC000E28603 /* 视频资源文件 */,
 				C561CE612AAC7D7D00E28603 /* 图片资源文件 */,
@@ -3297,7 +3317,6 @@
 		C561CE752AAC7E7900E28603 /* JobsMixFunc */ = {
 			isa = PBXGroup;
 			children = (
-				C520F5C62AB396F400142DCC /* JobsComment */,
 				C561CF392AAC7E7900E28603 /* JobsMixFunc.h */,
 				C561CF592AAC7E7900E28603 /* 播放器控制层 */,
 				C561CF252AAC7E7900E28603 /* 分享控件 */,
@@ -3311,6 +3330,7 @@
 				C561CEC72AAC7E7900E28603 /* JobsAppDoor */,
 				C561CFC62AAC7E7900E28603 /* JobsBasePopupView */,
 				C561CE792AAC7E7900E28603 /* JobsBitsMonitor */,
+				C520F5C62AB396F400142DCC /* JobsComment */,
 				C561CFE62AAC7E7900E28603 /* JobsDropDownListView */,
 				C561CF3A2AAC7E7900E28603 /* JobsHotLabel */,
 				C561CF6F2AAC7E7900E28603 /* JobsImageNumberView */,
@@ -9096,6 +9116,7 @@
 				C561D97F2AAC917900E28603 /* 登录异常验证.png in Resources */,
 				C561D46F2AAC7E7B00E28603 /* 如何理解iOS的Runtime？ - 掘金.mht in Resources */,
 				C5E012032AADE1CD005ABE09 /* 13@2x.gif in Resources */,
+				C520FC172AB3C36D00142DCC /* 假数据.json in Resources */,
 				C561CE352AAC7CE200E28603 /* 提醒事项@2x.png in Resources */,
 				C5E011DE2AADE1CD005ABE09 /* 27@2x.gif in Resources */,
 				C561D6752AAC862000E28603 /* 测试弹窗的确定按钮@2x.png in Resources */,
@@ -9161,12 +9182,14 @@
 				C5E011722AADE1CD005ABE09 /* 206@2x.gif in Resources */,
 				C5E0114B2AADE1CD005ABE09 /* 267@2x.gif in Resources */,
 				C5E012042AADE1CD005ABE09 /* 208@2x.gif in Resources */,
+				C520FC152AB3C36D00142DCC /* CommentData.json in Resources */,
 				C5E011B42AADE1CD005ABE09 /* 192@2x.gif in Resources */,
 				C561D3CF2AAC7E7B00E28603 /* UITableViewCellStyleDefault.png in Resources */,
 				C561D39D2AAC7E7A00E28603 /* 灰色椭圆.png in Resources */,
 				C5E011E42AADE1CD005ABE09 /* 86@2x.gif in Resources */,
 				C5E0114A2AADE1CD005ABE09 /* 271@2x.gif in Resources */,
 				C561D3712AAC7E7A00E28603 /* 7@2x.png in Resources */,
+				C520FC142AB3C36D00142DCC /* UserData.json in Resources */,
 				C561D3742AAC7E7A00E28603 /* 9@3x.png in Resources */,
 				C5E0117B2AADE1CD005ABE09 /* 194@2x.gif in Resources */,
 				C561D99E2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png in Resources */,
@@ -9304,6 +9327,7 @@
 				C561D3752AAC7E7A00E28603 /* 9@2x.png in Resources */,
 				C561D3182AAC7E7A00E28603 /* tab_message_animate.json in Resources */,
 				C5E011CE2AADE1CD005ABE09 /* 149@2x.gif in Resources */,
+				C520FC162AB3C36D00142DCC /* data.json in Resources */,
 				C561D3922AAC7E7A00E28603 /* 启动页_02.png in Resources */,
 				C561D3CC2AAC7E7B00E28603 /* UITableViewCellStyleSubtitle.png in Resources */,
 				C5E011842AADE1CD005ABE09 /* 193@2x.gif in Resources */,
