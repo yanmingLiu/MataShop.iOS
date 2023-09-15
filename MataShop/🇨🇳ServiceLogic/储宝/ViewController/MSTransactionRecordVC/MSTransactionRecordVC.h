@@ -6,7 +6,7 @@
 //
 
 #import "BaseViewController.h"
-#import "MSTransactionRecordCVC.h"
+#import "MSTransactionRecordCVCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 /// 交易记录

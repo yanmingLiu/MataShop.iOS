@@ -87,7 +87,7 @@
     @jobs_weakify(self)
     MSPromotionIncentiveModel *promotionIncentiveModel = (MSPromotionIncentiveModel *)self.dataMutArr[indexPath.section].data;
     promotionIncentiveModel.indexPath = indexPath;
-    MSPromotionIncentiveCVC *cell = [MSPromotionIncentiveCVC cellWithCollectionView:collectionView forIndexPath:indexPath];
+    MSPromotionIncentiveCVCell *cell = [MSPromotionIncentiveCVCell cellWithCollectionView:collectionView forIndexPath:indexPath];
     
     if(indexPath.row){
         MSPromotionIncentiveDetailModel *incentiveDetailModel = (MSPromotionIncentiveDetailModel *)[promotionIncentiveModel.incentiveDetailModelMutArr objectAtIndex:indexPath.row - 1];
@@ -147,7 +147,7 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [MSPromotionIncentiveCVC cellSizeWithModel:nil];
+    return [MSPromotionIncentiveCVCell cellSizeWithModel:nil];
 }
 /// 定义的是元素垂直之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView

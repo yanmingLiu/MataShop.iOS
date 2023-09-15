@@ -58,6 +58,9 @@
 		C520FC152AB3C36D00142DCC /* CommentData.json in Resources */ = {isa = PBXBuildFile; fileRef = C520FC112AB3C36D00142DCC /* CommentData.json */; };
 		C520FC162AB3C36D00142DCC /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = C520FC122AB3C36D00142DCC /* data.json */; };
 		C520FC172AB3C36D00142DCC /* 假数据.json in Resources */ = {isa = PBXBuildFile; fileRef = C520FC132AB3C36D00142DCC /* 假数据.json */; };
+		C527BD852AB46F2A00DFC90A /* MSProdShowCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C527BD842AB46F2A00DFC90A /* MSProdShowCVCell.m */; };
+		C527BE022AB4754B00DFC90A /* MSProdShowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C527BE012AB4754B00DFC90A /* MSProdShowModel.m */; };
+		C527BE052AB4807100DFC90A /* MSHomeCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C527BE042AB4807100DFC90A /* MSHomeCollectionReusableView.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
 		C561CDFD2AAC7CE200E28603 /* CasinoFlowDetailsVC_h in Resources */ = {isa = PBXBuildFile; fileRef = C561CD4A2AAC7CDD00E28603 /* CasinoFlowDetailsVC_h */; };
@@ -674,11 +677,11 @@
 		C5CFE67D2AB082FE00D0F225 /* MSBankCardTopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE67C2AB082FE00D0F225 /* MSBankCardTopUpVC.m */; };
 		C5CFE6802AB0830D00D0F225 /* MSAlipayTopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE67F2AB0830D00D0F225 /* MSAlipayTopUpVC.m */; };
 		C5CFE6832AB0831800D0F225 /* MSWechatTopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE6822AB0831800D0F225 /* MSWechatTopUpVC.m */; };
-		C5CFE7142AB0892500D0F225 /* MSProdSelectCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7132AB0892500D0F225 /* MSProdSelectCVC.m */; };
+		C5CFE7142AB0892500D0F225 /* MSProdSelectCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7132AB0892500D0F225 /* MSProdSelectCVCell.m */; };
 		C5CFE7182AB089A300D0F225 /* MSInterestSettleRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7172AB089A300D0F225 /* MSInterestSettleRecordVC.m */; };
-		C5CFE71B2AB08A4900D0F225 /* MSPromotionIncentiveCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE71A2AB08A4900D0F225 /* MSPromotionIncentiveCVC.m */; };
-		C5CFE71E2AB08AE200D0F225 /* MSInterestSettleRecordCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE71D2AB08AE200D0F225 /* MSInterestSettleRecordCVC.m */; };
-		C5CFE7212AB08B4200D0F225 /* MSTransactionRecordCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVC.m */; };
+		C5CFE71B2AB08A4900D0F225 /* MSPromotionIncentiveCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE71A2AB08A4900D0F225 /* MSPromotionIncentiveCVCell.m */; };
+		C5CFE71E2AB08AE200D0F225 /* MSInterestSettleRecordCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE71D2AB08AE200D0F225 /* MSInterestSettleRecordCVCell.m */; };
+		C5CFE7212AB08B4200D0F225 /* MSTransactionRecordCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVCell.m */; };
 		C5CFE7242AB0934F00D0F225 /* MSProdSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE7232AB0934F00D0F225 /* MSProdSelectModel.m */; };
 		C5CFE79F2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE79E2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m */; };
 		C5CFE8962AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE8952AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m */; };
@@ -1032,6 +1035,12 @@
 		C520FC112AB3C36D00142DCC /* CommentData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CommentData.json; sourceTree = "<group>"; };
 		C520FC122AB3C36D00142DCC /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		C520FC132AB3C36D00142DCC /* 假数据.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "假数据.json"; sourceTree = "<group>"; };
+		C527BD832AB46F2A00DFC90A /* MSProdShowCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdShowCVCell.h; sourceTree = "<group>"; };
+		C527BD842AB46F2A00DFC90A /* MSProdShowCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdShowCVCell.m; sourceTree = "<group>"; };
+		C527BE002AB4754B00DFC90A /* MSProdShowModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdShowModel.h; sourceTree = "<group>"; };
+		C527BE012AB4754B00DFC90A /* MSProdShowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdShowModel.m; sourceTree = "<group>"; };
+		C527BE032AB4807100DFC90A /* MSHomeCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeCollectionReusableView.h; sourceTree = "<group>"; };
+		C527BE042AB4807100DFC90A /* MSHomeCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeCollectionReusableView.m; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -2235,16 +2244,16 @@
 		C5CFE7042AB0878700D0F225 /* 结息记录子控件UI003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI003.jpg"; sourceTree = "<group>"; };
 		C5CFE7092AB087D800D0F225 /* 推广奖励子控件UI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "推广奖励子控件UI.jpg"; sourceTree = "<group>"; };
 		C5CFE70B2AB0882500D0F225 /* 交易记录子控件UI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "交易记录子控件UI.jpg"; sourceTree = "<group>"; };
-		C5CFE7122AB0892500D0F225 /* MSProdSelectCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdSelectCVC.h; sourceTree = "<group>"; };
-		C5CFE7132AB0892500D0F225 /* MSProdSelectCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdSelectCVC.m; sourceTree = "<group>"; };
+		C5CFE7122AB0892500D0F225 /* MSProdSelectCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdSelectCVCell.h; sourceTree = "<group>"; };
+		C5CFE7132AB0892500D0F225 /* MSProdSelectCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdSelectCVCell.m; sourceTree = "<group>"; };
 		C5CFE7162AB089A300D0F225 /* MSInterestSettleRecordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInterestSettleRecordVC.h; sourceTree = "<group>"; };
 		C5CFE7172AB089A300D0F225 /* MSInterestSettleRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInterestSettleRecordVC.m; sourceTree = "<group>"; };
-		C5CFE7192AB08A4900D0F225 /* MSPromotionIncentiveCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPromotionIncentiveCVC.h; sourceTree = "<group>"; };
-		C5CFE71A2AB08A4900D0F225 /* MSPromotionIncentiveCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPromotionIncentiveCVC.m; sourceTree = "<group>"; };
-		C5CFE71C2AB08AE200D0F225 /* MSInterestSettleRecordCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInterestSettleRecordCVC.h; sourceTree = "<group>"; };
-		C5CFE71D2AB08AE200D0F225 /* MSInterestSettleRecordCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInterestSettleRecordCVC.m; sourceTree = "<group>"; };
-		C5CFE71F2AB08B4200D0F225 /* MSTransactionRecordCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSTransactionRecordCVC.h; sourceTree = "<group>"; };
-		C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTransactionRecordCVC.m; sourceTree = "<group>"; };
+		C5CFE7192AB08A4900D0F225 /* MSPromotionIncentiveCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPromotionIncentiveCVCell.h; sourceTree = "<group>"; };
+		C5CFE71A2AB08A4900D0F225 /* MSPromotionIncentiveCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPromotionIncentiveCVCell.m; sourceTree = "<group>"; };
+		C5CFE71C2AB08AE200D0F225 /* MSInterestSettleRecordCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInterestSettleRecordCVCell.h; sourceTree = "<group>"; };
+		C5CFE71D2AB08AE200D0F225 /* MSInterestSettleRecordCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInterestSettleRecordCVCell.m; sourceTree = "<group>"; };
+		C5CFE71F2AB08B4200D0F225 /* MSTransactionRecordCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSTransactionRecordCVCell.h; sourceTree = "<group>"; };
+		C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTransactionRecordCVCell.m; sourceTree = "<group>"; };
 		C5CFE7222AB0934F00D0F225 /* MSProdSelectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdSelectModel.h; sourceTree = "<group>"; };
 		C5CFE7232AB0934F00D0F225 /* MSProdSelectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdSelectModel.m; sourceTree = "<group>"; };
 		C5CFE79D2AB0FEF600D0F225 /* MSInterestSettleRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInterestSettleRecordModel.h; sourceTree = "<group>"; };
@@ -2888,6 +2897,26 @@
 				C520FC132AB3C36D00142DCC /* 假数据.json */,
 			);
 			path = "Json文件";
+			sourceTree = "<group>";
+		};
+		C527BD822AB46E7900DFC90A /* MSProdShowCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C527BD832AB46F2A00DFC90A /* MSProdShowCVCell.h */,
+				C527BD842AB46F2A00DFC90A /* MSProdShowCVCell.m */,
+				C527BE002AB4754B00DFC90A /* MSProdShowModel.h */,
+				C527BE012AB4754B00DFC90A /* MSProdShowModel.m */,
+			);
+			path = MSProdShowCVCell;
+			sourceTree = "<group>";
+		};
+		C527BE062AB4807600DFC90A /* MSHomeCollectionReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				C527BE032AB4807100DFC90A /* MSHomeCollectionReusableView.h */,
+				C527BE042AB4807100DFC90A /* MSHomeCollectionReusableView.m */,
+			);
+			path = MSHomeCollectionReusableView;
 			sourceTree = "<group>";
 		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
@@ -8354,6 +8383,8 @@
 		C561D9922AAC9A6B00E28603 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C527BE062AB4807600DFC90A /* MSHomeCollectionReusableView */,
+				C527BD822AB46E7900DFC90A /* MSProdShowCVCell */,
 				C5FB56632AB31DA600C873B7 /* MSHomePopupView */,
 				C5CFEA0E2AB2559500D0F225 /* MS3rdShopLinkView */,
 				C5CFE9172AB237A100D0F225 /* MSSearchView */,
@@ -8527,8 +8558,8 @@
 			isa = PBXGroup;
 			children = (
 				C5CFE6882AB086FB00D0F225 /* 产品选购子控件UI.jpg */,
-				C5CFE7122AB0892500D0F225 /* MSProdSelectCVC.h */,
-				C5CFE7132AB0892500D0F225 /* MSProdSelectCVC.m */,
+				C5CFE7122AB0892500D0F225 /* MSProdSelectCVCell.h */,
+				C5CFE7132AB0892500D0F225 /* MSProdSelectCVCell.m */,
 			);
 			path = "产品选购子控件UI";
 			sourceTree = "<group>";
@@ -8540,8 +8571,8 @@
 				C5CFE7022AB0878700D0F225 /* 结息记录子控件UI002.jpg */,
 				C5CFE7042AB0878700D0F225 /* 结息记录子控件UI003.jpg */,
 				C5CFE7032AB0878700D0F225 /* 结息记录子控件UI004.jpg */,
-				C5CFE71C2AB08AE200D0F225 /* MSInterestSettleRecordCVC.h */,
-				C5CFE71D2AB08AE200D0F225 /* MSInterestSettleRecordCVC.m */,
+				C5CFE71C2AB08AE200D0F225 /* MSInterestSettleRecordCVCell.h */,
+				C5CFE71D2AB08AE200D0F225 /* MSInterestSettleRecordCVCell.m */,
 			);
 			path = "结息记录子控件UI";
 			sourceTree = "<group>";
@@ -8550,8 +8581,8 @@
 			isa = PBXGroup;
 			children = (
 				C5CFE7092AB087D800D0F225 /* 推广奖励子控件UI.jpg */,
-				C5CFE7192AB08A4900D0F225 /* MSPromotionIncentiveCVC.h */,
-				C5CFE71A2AB08A4900D0F225 /* MSPromotionIncentiveCVC.m */,
+				C5CFE7192AB08A4900D0F225 /* MSPromotionIncentiveCVCell.h */,
+				C5CFE71A2AB08A4900D0F225 /* MSPromotionIncentiveCVCell.m */,
 			);
 			path = "推广奖励子控件UI";
 			sourceTree = "<group>";
@@ -8560,8 +8591,8 @@
 			isa = PBXGroup;
 			children = (
 				C5CFE70B2AB0882500D0F225 /* 交易记录子控件UI.jpg */,
-				C5CFE71F2AB08B4200D0F225 /* MSTransactionRecordCVC.h */,
-				C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVC.m */,
+				C5CFE71F2AB08B4200D0F225 /* MSTransactionRecordCVCell.h */,
+				C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVCell.m */,
 			);
 			path = "交易记录子控件UI";
 			sourceTree = "<group>";
@@ -9722,6 +9753,7 @@
 				C561CE202AAC7CE200E28603 /* ECPrivacyCheckLocationServices.m in Sources */,
 				C561CE032AAC7CE200E28603 /* ZWPullMenuCell.m in Sources */,
 				C561D3B82AAC7E7A00E28603 /* UIImage+Tailor.m in Sources */,
+				C527BE022AB4754B00DFC90A /* MSProdShowModel.m in Sources */,
 				C561D4562AAC7E7B00E28603 /* AppDelegate+Extra.m in Sources */,
 				C561D4822AAC7E7B00E28603 /* NSObject+JobsDeployCellConfig.m in Sources */,
 				C561D3E82AAC7E7B00E28603 /* UIView+SuspendView.m in Sources */,
@@ -9736,7 +9768,7 @@
 				C561D3C32AAC7E7B00E28603 /* UILabel+Measure.m in Sources */,
 				C561D3C02AAC7E7B00E28603 /* UILabel+AutoScroll.m in Sources */,
 				C561D94F2AAC8D8000E28603 /* BaiShaETProjChoiceVenuesView.m in Sources */,
-				C5CFE7142AB0892500D0F225 /* MSProdSelectCVC.m in Sources */,
+				C5CFE7142AB0892500D0F225 /* MSProdSelectCVCell.m in Sources */,
 				C561D47B2AAC7E7B00E28603 /* DynamicInvoke.m in Sources */,
 				C561D3B92AAC7E7A00E28603 /* UIImage+Overlay.m in Sources */,
 				C561D4242AAC7E7B00E28603 /* UIViewController+JPImageresizerView.m in Sources */,
@@ -9749,7 +9781,7 @@
 				C561D4462AAC7E7B00E28603 /* BaseTableViewHeaderFooterView.m in Sources */,
 				C561D3F12AAC7E7B00E28603 /* UIView+BackgroundImage.m in Sources */,
 				C561D6842AAC862000E28603 /* CasinoUpgradeContentView.m in Sources */,
-				C5CFE71B2AB08A4900D0F225 /* MSPromotionIncentiveCVC.m in Sources */,
+				C5CFE71B2AB08A4900D0F225 /* MSPromotionIncentiveCVCell.m in Sources */,
 				C561D9802AAC917900E28603 /* BaiShaETProjVerifyLoginVC.m in Sources */,
 				C561D38E2AAC7E7A00E28603 /* JobsLeftRightLabModel.m in Sources */,
 				C561CE222AAC7CE200E28603 /* ECPrivacyCheckCalendars.m in Sources */,
@@ -9802,7 +9834,7 @@
 				C561D40D2AAC7E7B00E28603 /* UIBezierPath+TextPath.m in Sources */,
 				C561D3E62AAC7E7B00E28603 /* UIColor+Hex.m in Sources */,
 				C561D32B2AAC7E7A00E28603 /* JobsAppDoorConfig.m in Sources */,
-				C5CFE7212AB08B4200D0F225 /* MSTransactionRecordCVC.m in Sources */,
+				C5CFE7212AB08B4200D0F225 /* MSTransactionRecordCVCell.m in Sources */,
 				C561CE232AAC7CE200E28603 /* ECPrivacyCheckSpeechRecognition.m in Sources */,
 				C561D4102AAC7E7B00E28603 /* BaseNavigationBar.m in Sources */,
 				C561D3B32AAC7E7A00E28603 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
@@ -9881,6 +9913,7 @@
 				C561D4812AAC7E7B00E28603 /* NSObject+CurrentDevice.m in Sources */,
 				C561D3EE2AAC7E7B00E28603 /* UIView+Chain.m in Sources */,
 				C561D4612AAC7E7B00E28603 /* JobsSEL_IMP.m in Sources */,
+				C527BE052AB4807100DFC90A /* MSHomeCollectionReusableView.m in Sources */,
 				C561D3292AAC7E7A00E28603 /* JobsAppDoorContentView.m in Sources */,
 				C561D45D2AAC7E7B00E28603 /* NSTimerManager.m in Sources */,
 				C561D32C2AAC7E7A00E28603 /* JobsAppDoorLogoContentView.m in Sources */,
@@ -10053,6 +10086,7 @@
 				C561D3482AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle.m in Sources */,
 				C561D6AF2AAC862000E28603 /* BaseModel.m in Sources */,
 				C561D4332AAC7E7B00E28603 /* BaseViewController.m in Sources */,
+				C527BD852AB46F2A00DFC90A /* MSProdShowCVCell.m in Sources */,
 				C561D9292AAC8D8000E28603 /* BaiShaETProjChoiceHeaderIconView.m in Sources */,
 				C561D4992AAC7E7B00E28603 /* NSObject+DefConfig.m in Sources */,
 				C561D3BD2AAC7E7B00E28603 /* JobsAnimationLabel.m in Sources */,
@@ -10081,7 +10115,7 @@
 				C5BD5E702AAC76740048F36B /* SceneDelegate.m in Sources */,
 				C520F5F52AB396F400142DCC /* JobsLoadMoreTBVCell.m in Sources */,
 				C520F2392AB38CF700142DCC /* WMZBannerFlowLayout.m in Sources */,
-				C5CFE71E2AB08AE200D0F225 /* MSInterestSettleRecordCVC.m in Sources */,
+				C5CFE71E2AB08AE200D0F225 /* MSInterestSettleRecordCVCell.m in Sources */,
 				C561D2FE2AAC7E7A00E28603 /* JobsBitsMonitorSuspendLab.m in Sources */,
 				C561CE4C2AAC7CE200E28603 /* XHLaunchAdButton.m in Sources */,
 				C561D3EA2AAC7E7B00E28603 /* UIView+Gesture.m in Sources */,

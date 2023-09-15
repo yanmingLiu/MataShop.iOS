@@ -6,7 +6,7 @@
 //
 
 #import "BaseViewController.h"
-#import "MSInterestSettleRecordCVC.h"
+#import "MSInterestSettleRecordCVCell.h"
 #import "MSInterestSettleRecordModel.h"
 
 NS_ASSUME_NONNULL_BEGIN

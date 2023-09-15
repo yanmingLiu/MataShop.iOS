@@ -6,7 +6,7 @@
 //
 
 #import "BaseViewController.h"
-#import "MSPromotionIncentiveCVC.h"
+#import "MSPromotionIncentiveCVCell.h"
 #import "BaseCollectionReusableView.h"
 
 #import "MSPromotionIncentiveModel.h"

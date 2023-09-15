@@ -32,7 +32,7 @@
     //3.将NSData传递给滤镜（通过KVC的方式，设置inputMessage）
     [filter setValue:data forKey:@"inputMessage"];
     //4.由filter输出图像
-    CIImage *outputImage = [filter outputImage];
+    CIImage *outputImage = filter.outputImage;
     //5.将CIImage转换为UIImage
     UIImage *qrImage = [UIImage imageWithCIImage:outputImage];
     //6.返回二维码图像
@@ -46,18 +46,6 @@
         tempStr = [tempStr stringByReplacingOccurrencesOfString:@"/" withString:@""];//去除字符 /
         [resultStr stringByAppendingString:[NSString stringWithFormat:@"/%@",tempStr]];
     }return resultStr;
-}
-/// ？？？
--(NSString *)formatDecimalNumber{
-    if (!self || self.length == 0) {
-        return self;
-    }
-    NSNumber *number = @(self.doubleValue);
-    NSNumberFormatter *formatter = NSNumberFormatter.new;
-    formatter.numberStyle = kCFNumberFormatterDecimalStyle;
-    formatter.positiveFormat = @"###,##0.00";
-    NSString *amountString = [formatter stringFromNumber:number];
-    return amountString;
 }
 
 -(NSString *)getAnonymousString{
@@ -75,15 +63,6 @@
     NSString *anonymousString = [self stringByReplacingCharactersInRange:NSMakeRange(1, self.length - 2)
                                                               withString:string];
     return anonymousString;
-}
-/**
- 问题：直接其他地方复制过来的中文字进行网页搜索、或者中文字识别排序等情况的，会出现搜索不到的情况。
- 解决方法：可能存在复制源里面的文字带了空白url编码%E2%80%8B，空白编码没有宽度，虽然看不到但是会影响结果无法正确匹配对应的中文字。可以把文字重新url编码即可。
- */
--(NSString *)urlProtect{
-    if ([self containsString:@"\u200B"]) {
-        return [self stringByReplacingOccurrencesOfString:@"\u200B" withString:@""];
-    }else return self;
 }
 /// 系统的stringByAppendingString方法在参数为nil的时候会崩溃
 -(NSString *)jobsStringByAppendingString:(NSString *_Nullable)str{
@@ -103,6 +82,19 @@
 /// 去除最后一个字符
 -(NSString *)removeLastChars{
     return [self substringToIndex:self.length - 1];
+}
+/// 返回NSURL *
+-(NSURL *)jobsUrl{
+    return [NSURL URLWithString:self];
+}
+/**
+ 问题：直接其他地方复制过来的中文字进行网页搜索、或者中文字识别排序等情况的，会出现搜索不到的情况。
+ 解决方法：可能存在复制源里面的文字带了空白url编码%E2%80%8B，空白编码没有宽度，虽然看不到但是会影响结果无法正确匹配对应的中文字。可以把文字重新url编码即可。
+ */
+-(NSString *)urlProtect{
+    if ([self containsString:@"\u200B"]) {
+        return [self stringByReplacingOccurrencesOfString:@"\u200B" withString:@""];
+    }else return self;
 }
 /// 将某个字符串进行限定字符个数，二次包装以后对外输出。【截取完了以后添加替换字符】
 /// @param replaceStr 多余的字符串用replaceStr进行占位表示，一般的这里是用"."来进行替换
@@ -141,16 +133,12 @@
         }else{}
     }return resultStr;
 }
-/**
- 文本改变方向
-
- @param aView 文本的控件
- @param aRect 控件的尺寸
- @param aFont 文字的字号
- @param aColor 文字的颜色
- @param directionStr 文字显示的方向
- @return layer
- */
+/// 文本改变方向
+/// @param aView 文本的控件
+/// @param aRect 控件的尺寸
+/// @param aFont 文字的字号
+/// @param aColor 文字的颜色
+/// @param directionStr  文字显示的方向
 - (CAShapeLayer *)animateOnView:(UIView *)aView
                          atRect:(CGRect)aRect
                         forFont:(UIFont *)aFont
@@ -167,8 +155,8 @@
     pathLayer.bounds = CGPathGetBoundingBox(path.CGPath);
     pathLayer.geometryFlipped = NO;
     pathLayer.path = path.CGPath;
-    pathLayer.strokeColor = [aColor CGColor];
-    pathLayer.fillColor = [aColor CGColor];
+    pathLayer.strokeColor = aColor.CGColor;
+    pathLayer.fillColor = aColor.CGColor;
     pathLayer.lineWidth = 1.0f;
     pathLayer.lineJoin = kCALineJoinBevel;
     [aView.layer addSublayer:pathLayer];

@@ -76,7 +76,7 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView
                                    cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     @jobs_weakify(self)
-    MSInterestSettleRecordCVC *cell = [MSInterestSettleRecordCVC cellWithCollectionView:collectionView forIndexPath:indexPath];
+    MSInterestSettleRecordCVCell *cell = [MSInterestSettleRecordCVCell cellWithCollectionView:collectionView forIndexPath:indexPath];
     [cell richElementsInCellWithModel:self.dataMutArr[indexPath.section]];
     return cell;
 }
@@ -133,7 +133,7 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [MSInterestSettleRecordCVC cellSizeWithModel:nil];
+    return [MSInterestSettleRecordCVCell cellSizeWithModel:nil];
 }
 /// 定义的是元素垂直之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView
