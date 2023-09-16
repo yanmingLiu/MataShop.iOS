@@ -195,10 +195,10 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 
             MJRefreshConfigModel *refreshConfigFooter = MJRefreshConfigModel.new;
             refreshConfigFooter.stateIdleTitle = Internationalization(@"");
-            refreshConfigFooter.pullingTitle = Internationalization(@"");;
-            refreshConfigFooter.refreshingTitle = Internationalization(@"");;
-            refreshConfigFooter.willRefreshTitle = Internationalization(@"");;
-            refreshConfigFooter.noMoreDataTitle = Internationalization(@"");;
+            refreshConfigFooter.pullingTitle = Internationalization(@"");
+            refreshConfigFooter.refreshingTitle = Internationalization(@"");
+            refreshConfigFooter.willRefreshTitle = Internationalization(@"");
+            refreshConfigFooter.noMoreDataTitle = Internationalization(@"");
 
             self.refreshConfigHeader = refreshConfigHeader;
             self.refreshConfigFooter = refreshConfigFooter;

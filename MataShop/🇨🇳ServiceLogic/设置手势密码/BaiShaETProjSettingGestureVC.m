@@ -27,7 +27,7 @@
         self.viewModel = (UIViewModel *)self.requestParams;
     }
     self.setupNavigationBarHidden = YES;
-    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");;
+    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");
     self.viewModel.textModel.textCor = HEXCOLOR(0x3D4A58);
     self.viewModel.textModel.font = [UIFont systemFontOfSize:JobsWidth(16) weight:UIFontWeightMedium];
     self.viewModel.textModel.text = Internationalization(@"設置手勢密碼");

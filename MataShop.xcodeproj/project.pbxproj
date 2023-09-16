@@ -365,8 +365,6 @@
 		C561D3E22AAC7E7B00E28603 /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C561D07A2AAC7E7900E28603 /* Sound.wav */; };
 		C561D3E32AAC7E7B00E28603 /* SoundBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D07B2AAC7E7900E28603 /* SoundBtn.m */; };
 		C561D3E42AAC7E7B00E28603 /* SoundBtn.md in Resources */ = {isa = PBXBuildFile; fileRef = C561D07C2AAC7E7900E28603 /* SoundBtn.md */; };
-		C561D3E52AAC7E7B00E28603 /* UIColor+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0812AAC7E7900E28603 /* UIColor+Gradient.m */; };
-		C561D3E62AAC7E7B00E28603 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0842AAC7E7900E28603 /* UIColor+Hex.m */; };
 		C561D3E72AAC7E7B00E28603 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0892AAC7E7900E28603 /* BaseView.m */; };
 		C561D3E82AAC7E7B00E28603 /* UIView+SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D08D2AAC7E7900E28603 /* UIView+SuspendView.m */; };
 		C561D3E92AAC7E7B00E28603 /* UIView+ZFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0912AAC7E7900E28603 /* UIView+ZFPlayer.m */; };
@@ -658,6 +656,12 @@
 		C561D99E2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D99A2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png */; };
 		C561DA142AACA62900E28603 /* 首页.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C561DA132AACA62900E28603 /* 首页.xcassets */; };
 		C561DA8A2AACA95A00E28603 /* 临时的占位图.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */; };
+		C5729A972AB591E10084EAFC /* MSInternalRecruitmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729A962AB591E10084EAFC /* MSInternalRecruitmentVC.m */; };
+		C5729AA12AB593B00084EAFC /* MSBODVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729AA02AB593B00084EAFC /* MSBODVC.m */; };
+		C5729AA42AB593CD0084EAFC /* MSMDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729AA32AB593CD0084EAFC /* MSMDVC.m */; };
+		C5729AA72AB594320084EAFC /* MSSalesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729AA62AB594320084EAFC /* MSSalesVC.m */; };
+		C5729B992AB59E240084EAFC /* 内部招聘.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5729B982AB59E240084EAFC /* 内部招聘.xcassets */; };
+		C5729B9F2AB5AE2B0084EAFC /* UIColor+Other.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729B9E2AB5AE2B0084EAFC /* UIColor+Other.m */; };
 		C5BD5E6D2AAC76740048F36B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6C2AAC76740048F36B /* AppDelegate.m */; };
 		C5BD5E702AAC76740048F36B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6F2AAC76740048F36B /* SceneDelegate.m */; };
 		C5BD5E762AAC76740048F36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BD5E742AAC76740048F36B /* Main.storyboard */; };
@@ -1531,10 +1535,6 @@
 		C561D07B2AAC7E7900E28603 /* SoundBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBtn.m; sourceTree = "<group>"; };
 		C561D07C2AAC7E7900E28603 /* SoundBtn.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = SoundBtn.md; sourceTree = "<group>"; };
 		C561D07D2AAC7E7900E28603 /* SoundBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBtn.h; sourceTree = "<group>"; };
-		C561D0812AAC7E7900E28603 /* UIColor+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Gradient.m"; sourceTree = "<group>"; };
-		C561D0822AAC7E7900E28603 /* UIColor+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Gradient.h"; sourceTree = "<group>"; };
-		C561D0842AAC7E7900E28603 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
-		C561D0852AAC7E7900E28603 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		C561D0862AAC7E7900E28603 /* JobsColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsColor.h; sourceTree = "<group>"; };
 		C561D0892AAC7E7900E28603 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		C561D08A2AAC7E7900E28603 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -2202,6 +2202,18 @@
 		C561D99A2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjMarqueeView.png; sourceTree = "<group>"; };
 		C561DA132AACA62900E28603 /* 首页.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "首页.xcassets"; sourceTree = "<group>"; };
 		C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "临时的占位图.xcassets"; sourceTree = "<group>"; };
+		C5729A952AB591E10084EAFC /* MSInternalRecruitmentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInternalRecruitmentVC.h; sourceTree = "<group>"; };
+		C5729A962AB591E10084EAFC /* MSInternalRecruitmentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInternalRecruitmentVC.m; sourceTree = "<group>"; };
+		C5729A982AB592420084EAFC /* 内部招聘.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "内部招聘.jpg"; sourceTree = "<group>"; };
+		C5729A9F2AB593B00084EAFC /* MSBODVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSBODVC.h; sourceTree = "<group>"; };
+		C5729AA02AB593B00084EAFC /* MSBODVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSBODVC.m; sourceTree = "<group>"; };
+		C5729AA22AB593CD0084EAFC /* MSMDVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMDVC.h; sourceTree = "<group>"; };
+		C5729AA32AB593CD0084EAFC /* MSMDVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMDVC.m; sourceTree = "<group>"; };
+		C5729AA52AB594320084EAFC /* MSSalesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSalesVC.h; sourceTree = "<group>"; };
+		C5729AA62AB594320084EAFC /* MSSalesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSalesVC.m; sourceTree = "<group>"; };
+		C5729B982AB59E240084EAFC /* 内部招聘.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "内部招聘.xcassets"; sourceTree = "<group>"; };
+		C5729B9D2AB5AE2B0084EAFC /* UIColor+Other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Other.h"; sourceTree = "<group>"; };
+		C5729B9E2AB5AE2B0084EAFC /* UIColor+Other.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Other.m"; sourceTree = "<group>"; };
 		C5BD5E682AAC76740048F36B /* MataShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD5E6B2AAC76740048F36B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5BD5E6C2AAC76740048F36B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -3297,6 +3309,7 @@
 		C561CE622AAC7D8500E28603 /* xcassets */ = {
 			isa = PBXGroup;
 			children = (
+				C5729B982AB59E240084EAFC /* 内部招聘.xcassets */,
 				C5E017582AAF2F15005ABE09 /* 储宝.xcassets */,
 				C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */,
 				C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */,
@@ -4936,28 +4949,9 @@
 		C561D07F2AAC7E7900E28603 /* UIColor+Category */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0802AAC7E7900E28603 /* UIColor+Gradient */,
-				C561D0832AAC7E7900E28603 /* UIColor+Hex */,
+				C5729BA02AB5AE340084EAFC /* UIColor+Other */,
 			);
 			path = "UIColor+Category";
-			sourceTree = "<group>";
-		};
-		C561D0802AAC7E7900E28603 /* UIColor+Gradient */ = {
-			isa = PBXGroup;
-			children = (
-				C561D0812AAC7E7900E28603 /* UIColor+Gradient.m */,
-				C561D0822AAC7E7900E28603 /* UIColor+Gradient.h */,
-			);
-			path = "UIColor+Gradient";
-			sourceTree = "<group>";
-		};
-		C561D0832AAC7E7900E28603 /* UIColor+Hex */ = {
-			isa = PBXGroup;
-			children = (
-				C561D0842AAC7E7900E28603 /* UIColor+Hex.m */,
-				C561D0852AAC7E7900E28603 /* UIColor+Hex.h */,
-			);
-			path = "UIColor+Hex";
 			sourceTree = "<group>";
 		};
 		C561D0872AAC7E7900E28603 /* UIView */ = {
@@ -5524,8 +5518,8 @@
 		C561D1202AAC7E7900E28603 /* NSString+Others */ = {
 			isa = PBXGroup;
 			children = (
-				C561D1212AAC7E7900E28603 /* NSString+Others.m */,
 				C561D1222AAC7E7900E28603 /* NSString+Others.h */,
+				C561D1212AAC7E7900E28603 /* NSString+Others.m */,
 			);
 			path = "NSString+Others";
 			sourceTree = "<group>";
@@ -7105,6 +7099,7 @@
 		C561D4A52AAC7EA600E28603 /* 🇨🇳ServiceLogic */ = {
 			isa = PBXGroup;
 			children = (
+				C5729A942AB591B30084EAFC /* 内部招聘 */,
 				C5E017572AAF2D77005ABE09 /* 储宝 */,
 				C5E0174F2AAF1F95005ABE09 /* 签到 */,
 				C561D5302AAC83CD00E28603 /* 首页 */,
@@ -8404,6 +8399,95 @@
 			path = BaiShaETProjMarqueeView;
 			sourceTree = "<group>";
 		};
+		C5729A942AB591B30084EAFC /* 内部招聘 */ = {
+			isa = PBXGroup;
+			children = (
+				C5729A982AB592420084EAFC /* 内部招聘.jpg */,
+				C5729A9D2AB593110084EAFC /* View */,
+				C5729A9C2AB5930D0084EAFC /* ViewController */,
+			);
+			path = "内部招聘";
+			sourceTree = "<group>";
+		};
+		C5729A992AB592F30084EAFC /* 销售部 */ = {
+			isa = PBXGroup;
+			children = (
+				C5729AA52AB594320084EAFC /* MSSalesVC.h */,
+				C5729AA62AB594320084EAFC /* MSSalesVC.m */,
+			);
+			path = "销售部";
+			sourceTree = "<group>";
+		};
+		C5729A9A2AB592FE0084EAFC /* 市场部 */ = {
+			isa = PBXGroup;
+			children = (
+				C5729AA22AB593CD0084EAFC /* MSMDVC.h */,
+				C5729AA32AB593CD0084EAFC /* MSMDVC.m */,
+			);
+			path = "市场部";
+			sourceTree = "<group>";
+		};
+		C5729A9B2AB593040084EAFC /* 董事会 */ = {
+			isa = PBXGroup;
+			children = (
+				C5729A9F2AB593B00084EAFC /* MSBODVC.h */,
+				C5729AA02AB593B00084EAFC /* MSBODVC.m */,
+			);
+			path = "董事会";
+			sourceTree = "<group>";
+		};
+		C5729A9C2AB5930D0084EAFC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5729A992AB592F30084EAFC /* 销售部 */,
+				C5729A9A2AB592FE0084EAFC /* 市场部 */,
+				C5729A9B2AB593040084EAFC /* 董事会 */,
+				C5729A9E2AB5931A0084EAFC /* MSInternalRecruitmentVC */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C5729A9D2AB593110084EAFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5729B9B2AB59E980084EAFC /* 内部招聘CollectionViewCell样式2 */,
+				C5729B9A2AB59E7D0084EAFC /* 内部招聘CollectionViewCell样式1 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5729A9E2AB5931A0084EAFC /* MSInternalRecruitmentVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5729A952AB591E10084EAFC /* MSInternalRecruitmentVC.h */,
+				C5729A962AB591E10084EAFC /* MSInternalRecruitmentVC.m */,
+			);
+			path = MSInternalRecruitmentVC;
+			sourceTree = "<group>";
+		};
+		C5729B9A2AB59E7D0084EAFC /* 内部招聘CollectionViewCell样式1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "内部招聘CollectionViewCell样式1";
+			sourceTree = "<group>";
+		};
+		C5729B9B2AB59E980084EAFC /* 内部招聘CollectionViewCell样式2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "内部招聘CollectionViewCell样式2";
+			sourceTree = "<group>";
+		};
+		C5729BA02AB5AE340084EAFC /* UIColor+Other */ = {
+			isa = PBXGroup;
+			children = (
+				C5729B9D2AB5AE2B0084EAFC /* UIColor+Other.h */,
+				C5729B9E2AB5AE2B0084EAFC /* UIColor+Other.m */,
+			);
+			path = "UIColor+Other";
+			sourceTree = "<group>";
+		};
 		C5BD5E5F2AAC76740048F36B = {
 			isa = PBXGroup;
 			children = (
@@ -9237,6 +9321,7 @@
 				C5E011372AADE1CD005ABE09 /* 138@2x.gif in Resources */,
 				C561D46B2AAC7E7B00E28603 /* MonitorNetwoking.md in Resources */,
 				C561D3CD2AAC7E7B00E28603 /* UITableViewCellStyleValue2.png in Resources */,
+				C5729B992AB59E240084EAFC /* 内部招聘.xcassets in Resources */,
 				C5E011B62AADE1CD005ABE09 /* 154@2x.gif in Resources */,
 				C561D3702AAC7E7A00E28603 /* JobsImageNumberView.png in Resources */,
 				C5E011342AADE1CD005ABE09 /* 113@2x.gif in Resources */,
@@ -9832,12 +9917,12 @@
 				C561D3A42AAC7E7A00E28603 /* JobsPageView.m in Sources */,
 				C561D9882AAC92CC00E28603 /* CasinoBoundBankCardModel.m in Sources */,
 				C561D40D2AAC7E7B00E28603 /* UIBezierPath+TextPath.m in Sources */,
-				C561D3E62AAC7E7B00E28603 /* UIColor+Hex.m in Sources */,
 				C561D32B2AAC7E7A00E28603 /* JobsAppDoorConfig.m in Sources */,
 				C5CFE7212AB08B4200D0F225 /* MSTransactionRecordCVCell.m in Sources */,
 				C561CE232AAC7CE200E28603 /* ECPrivacyCheckSpeechRecognition.m in Sources */,
 				C561D4102AAC7E7B00E28603 /* BaseNavigationBar.m in Sources */,
 				C561D3B32AAC7E7A00E28603 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				C5729B9F2AB5AE2B0084EAFC /* UIColor+Other.m in Sources */,
 				C5CFE8962AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m in Sources */,
 				C561D6802AAC862000E28603 /* BaiShaETProjPopupView08.m in Sources */,
 				C520F5F22AB396F400142DCC /* JobsCommentVC.m in Sources */,
@@ -9896,7 +9981,7 @@
 				C561D2FF2AAC7E7A00E28603 /* JobsBitsMonitorCore.m in Sources */,
 				C561D6952AAC862000E28603 /* CasinoHasAddedBankCardCVCell.m in Sources */,
 				C561D4B32AAC7EC200E28603 /* AppDelegate+UIApplicationDelegate.m in Sources */,
-				C561D3E52AAC7E7B00E28603 /* UIColor+Gradient.m in Sources */,
+				C5729AA72AB594320084EAFC /* MSSalesVC.m in Sources */,
 				C561CE292AAC7CE200E28603 /* ECPrivacyCheckReminders.m in Sources */,
 				C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */,
 				C561D3B42AAC7E7A00E28603 /* UIImage+Extras.m in Sources */,
@@ -9948,6 +10033,7 @@
 				C561D43A2AAC7E7B00E28603 /* UITableView+Expand.m in Sources */,
 				C561D92A2AAC8D8000E28603 /* BaiShaETProjChoiceStadiumView.m in Sources */,
 				C520F63A2AB3975800142DCC /* YTKAnimatingRequestAccessory.m in Sources */,
+				C5729A972AB591E10084EAFC /* MSInternalRecruitmentVC.m in Sources */,
 				C561D4192AAC7E7B00E28603 /* NSString+Replace.m in Sources */,
 				C561D4122AAC7E7B00E28603 /* NSString+Others.m in Sources */,
 				C561D3572AAC7E7A00E28603 /* JobsUserHeaderDataViewTBVCell.m in Sources */,
@@ -9960,6 +10046,7 @@
 				C561CE212AAC7CE200E28603 /* ECPrivacyCheckFilesAndFolders.m in Sources */,
 				C5E0175D2AAF2F90005ABE09 /* MSChuBaoVC.m in Sources */,
 				C561D4712AAC7E7B00E28603 /* NSObject+OpenURL.m in Sources */,
+				C5729AA12AB593B00084EAFC /* MSBODVC.m in Sources */,
 				C561D4112AAC7E7B00E28603 /* NSString+Conversion.m in Sources */,
 				C561D4442AAC7E7B00E28603 /* UITableViewHeaderFooterView+Attribute.m in Sources */,
 				C561D4672AAC7E7B00E28603 /* DeleteSystemUITabBarButton.m in Sources */,
@@ -10141,6 +10228,7 @@
 				C561D31F2AAC7E7A00E28603 /* TransitionController.m in Sources */,
 				C561D4772AAC7E7B00E28603 /* NSObject+HXPhotoPicker.m in Sources */,
 				C561D6702AAC862000E28603 /* BaiShaETProjPopupView10.m in Sources */,
+				C5729AA42AB593CD0084EAFC /* MSMDVC.m in Sources */,
 				C561D48E2AAC7E7B00E28603 /* NSObject+DeviceID.m in Sources */,
 				C561D3CA2AAC7E7B00E28603 /* UITableViewCell+Margin.m in Sources */,
 				C561D6942AAC862000E28603 /* CasinoBannerCell.m in Sources */,

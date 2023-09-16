@@ -128,7 +128,7 @@
             jobsPageViewModel.textModel.text = @"+87";
             jobsPageViewModel.textModel.textCor = HEXCOLOR(0xC4C4C4);
             jobsPageViewModel.bgCor = JobsClearColor;
-            jobsPageViewModel.textModel.font = UIFontWeightRegularSize(16);;
+            jobsPageViewModel.textModel.font = UIFontWeightRegularSize(16);
             [_jobsPageViewDataMutArr addObject:jobsPageViewModel];
         }
         
@@ -137,7 +137,7 @@
             jobsPageViewModel.textModel.text = @"+88";
             jobsPageViewModel.textModel.textCor = HEXCOLOR(0xC4C4C4);
             jobsPageViewModel.bgCor = JobsClearColor;
-            jobsPageViewModel.textModel.font = UIFontWeightRegularSize(16);;
+            jobsPageViewModel.textModel.font = UIFontWeightRegularSize(16);
             [_jobsPageViewDataMutArr addObject:jobsPageViewModel];
         }
         

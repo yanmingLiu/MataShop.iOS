@@ -37,7 +37,7 @@
     }
     self.setupNavigationBarHidden = YES;
     
-    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");;
+    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");
     self.viewModel.textModel.textCor = RGBA_COLOR(51, 51, 51, 1);
     self.viewModel.textModel.text = Internationalization(@"储宝");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);
@@ -202,7 +202,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     if (!_categoryView) {
         _categoryView = JXCategoryTitleView.new;
         _categoryView.delegate = self;
-        _categoryView.backgroundColor = RGBA_COLOR(210, 213, 224, 0.2);;
+        _categoryView.backgroundColor = RGBA_COLOR(210, 213, 224, 0.2);
         _categoryView.titleSelectedColor = RGBA_COLOR(51, 51, 51, 1);
         _categoryView.titleColor = RGBA_COLOR(102, 102, 102, 1);
         _categoryView.titleFont = UIFontWeightRegularSize(14);

@@ -33,7 +33,7 @@
     }
     self.setupNavigationBarHidden = YES;
     
-    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");;
+    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");
     self.viewModel.textModel.textCor = RGBA_COLOR(51, 51, 51, 1);
     self.viewModel.textModel.text = Internationalization(@"充值");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);

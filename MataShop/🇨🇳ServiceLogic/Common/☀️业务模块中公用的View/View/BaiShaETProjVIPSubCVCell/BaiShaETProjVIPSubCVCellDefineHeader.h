@@ -8,7 +8,7 @@
 #ifndef BaiShaETProjVIPSubCVCellDefineHeader_h
 #define BaiShaETProjVIPSubCVCellDefineHeader_h
 
-static inline CGSize activeJoinBtnSize(){
+static inline CGSize activeJoinBtnSize(void){
     return CGSizeMake(JobsWidth(343), JobsWidth(40));
 }
 
