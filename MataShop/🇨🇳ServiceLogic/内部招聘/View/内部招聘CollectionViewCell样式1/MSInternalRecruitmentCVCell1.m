@@ -1,17 +1,17 @@
 //
-//  MSTransactionRecordCVC.m
+//  MSInternalRecruitmentCVCell1.m
 //  MataShop
 //
-//  Created by Jobs Hi on 9/12/23.
+//  Created by Jobs Hi on 9/16/23.
 //
 
-#import "MSTransactionRecordCVCell.h"
+#import "MSInternalRecruitmentCVCell1.h"
 
-@interface MSTransactionRecordCVCell ()
+@interface MSInternalRecruitmentCVCell1 ()
 
 @end
 
-@implementation MSTransactionRecordCVCell
+@implementation MSInternalRecruitmentCVCell1
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -21,10 +21,10 @@
 #pragma mark —— UICollectionViewCellProtocol
 +(instancetype)cellWithCollectionView:(nonnull UICollectionView *)collectionView
                          forIndexPath:(nonnull NSIndexPath *)indexPath{
-    [collectionView registerCollectionViewCellClass:MSTransactionRecordCVCell.class];
-    MSTransactionRecordCVCell *cell = (MSTransactionRecordCVCell *)[collectionView collectionViewCellClass:MSTransactionRecordCVCell.class forIndexPath:indexPath];
+    [collectionView registerCollectionViewCellClass:MSInternalRecruitmentCVCell1.class];
+    MSInternalRecruitmentCVCell1 *cell = (MSInternalRecruitmentCVCell1 *)[collectionView collectionViewCellClass:MSInternalRecruitmentCVCell1.class forIndexPath:indexPath];
     if (!cell) {
-        cell = (MSTransactionRecordCVCell *)[collectionView collectionViewCellClass:MSTransactionRecordCVCell.class forIndexPath:indexPath];
+        cell = (MSInternalRecruitmentCVCell1 *)[collectionView collectionViewCellClass:MSInternalRecruitmentCVCell1.class forIndexPath:indexPath];
     }
     cell.indexPath = indexPath;
     return cell;
@@ -36,7 +36,7 @@
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)cellSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsWidth(343), JobsWidth(64));
+    return CGSizeMake(JobsWidth(343), JobsWidth(48));
 }
 #pragma mark —— lazyLoad
 

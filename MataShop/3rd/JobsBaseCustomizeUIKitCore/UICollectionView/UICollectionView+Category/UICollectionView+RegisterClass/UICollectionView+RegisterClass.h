@@ -46,6 +46,8 @@
 #import "MSProdSelectCVCell.h"// 储宝-产品选购子控件UI
 #import "MSProdShowCVCell.h"// 商品展示UI
 #import "MSHomeCollectionReusableView.h"
+#import "MSInternalRecruitmentCVCell1.h"// 内部招聘Cell1
+#import "MSInternalRecruitmentCVCell2.h"// 内部招聘Cell2
 
 NS_ASSUME_NONNULL_BEGIN
 

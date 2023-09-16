@@ -33,8 +33,8 @@
     [self registerCollectionViewCellClass:MSInterestSettleRecordCVCell.class];// 储宝-结息记录子控件UI
     [self registerCollectionViewCellClass:MSProdSelectCVCell.class];// 储宝-产品选购子控件UI
     [self registerCollectionViewCellClass:MSProdShowCVCell.class];// 商品展示UI
-    
-
+    [self registerCollectionViewCellClass:MSInternalRecruitmentCVCell1.class];// 内部招聘Cell1
+    [self registerCollectionViewCellClass:MSInternalRecruitmentCVCell2.class];// 内部招聘Cell2
 }
 /// 注册 UICollectionViewCell 及其子类
 -(void)registerCollectionViewCellClass:(Class)cls{

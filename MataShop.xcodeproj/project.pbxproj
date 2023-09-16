@@ -662,6 +662,9 @@
 		C5729AA72AB594320084EAFC /* MSSalesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729AA62AB594320084EAFC /* MSSalesVC.m */; };
 		C5729B992AB59E240084EAFC /* 内部招聘.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5729B982AB59E240084EAFC /* 内部招聘.xcassets */; };
 		C5729B9F2AB5AE2B0084EAFC /* UIColor+Other.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729B9E2AB5AE2B0084EAFC /* UIColor+Other.m */; };
+		C5729EF22AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EF12AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.m */; };
+		C5729EFC2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EFB2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.m */; };
+		C5729EFF2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EFE2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m */; };
 		C5BD5E6D2AAC76740048F36B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6C2AAC76740048F36B /* AppDelegate.m */; };
 		C5BD5E702AAC76740048F36B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6F2AAC76740048F36B /* SceneDelegate.m */; };
 		C5BD5E762AAC76740048F36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BD5E742AAC76740048F36B /* Main.storyboard */; };
@@ -2214,6 +2217,16 @@
 		C5729B982AB59E240084EAFC /* 内部招聘.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "内部招聘.xcassets"; sourceTree = "<group>"; };
 		C5729B9D2AB5AE2B0084EAFC /* UIColor+Other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Other.h"; sourceTree = "<group>"; };
 		C5729B9E2AB5AE2B0084EAFC /* UIColor+Other.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Other.m"; sourceTree = "<group>"; };
+		C5729EF02AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInternalRecruitmentDetailModel.h; sourceTree = "<group>"; };
+		C5729EF12AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInternalRecruitmentDetailModel.m; sourceTree = "<group>"; };
+		C5729EF42AB5C8CC0084EAFC /* MSInternalRecruitmentVC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSInternalRecruitmentVC.jpg; sourceTree = "<group>"; };
+		C5729EF52AB5CB420084EAFC /* 内部招聘CollectionViewCell样式1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "内部招聘CollectionViewCell样式1.jpg"; sourceTree = "<group>"; };
+		C5729EF62AB5CB480084EAFC /* 内部招聘CollectionViewCell样式2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "内部招聘CollectionViewCell样式2.jpg"; sourceTree = "<group>"; };
+		C5729EFA2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInternalRecruitmentCVCell2.h; sourceTree = "<group>"; };
+		C5729EFB2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInternalRecruitmentCVCell2.m; sourceTree = "<group>"; };
+		C5729EFD2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInternalRecruitmentCVCell1.h; sourceTree = "<group>"; };
+		C5729EFE2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInternalRecruitmentCVCell1.m; sourceTree = "<group>"; };
+		C5729FF12AB649DE0084EAFC /* 关于WMZBanner的怪异写法探究.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "关于WMZBanner的怪异写法探究.md"; sourceTree = "<group>"; };
 		C5BD5E682AAC76740048F36B /* MataShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD5E6B2AAC76740048F36B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5BD5E6C2AAC76740048F36B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2574,19 +2587,20 @@
 		C520F22B2AB38CF700142DCC /* WMZBanner */ = {
 			isa = PBXGroup;
 			children = (
-				C520F22C2AB38CF700142DCC /* WMZBannerFlowLayout.m */,
-				C520F22D2AB38CF700142DCC /* WMZBannerControl.h */,
-				C520F22E2AB38CF700142DCC /* WMZBannerFadeLayout.h */,
-				C520F22F2AB38CF700142DCC /* WMZBannerParam.m */,
-				C520F2302AB38CF700142DCC /* WMZBannerOverLayout.h */,
-				C520F2312AB38CF700142DCC /* WMZBannerView.m */,
-				C520F2322AB38CF700142DCC /* WMZBannerControl.m */,
-				C520F2332AB38CF700142DCC /* WMZBannerFlowLayout.h */,
-				C520F2342AB38CF700142DCC /* WMZBannerFadeLayout.m */,
 				C520F2352AB38CF700142DCC /* WMZBannerConfig.h */,
-				C520F2362AB38CF700142DCC /* WMZBannerParam.h */,
-				C520F2372AB38CF700142DCC /* WMZBannerView.h */,
+				C520F22D2AB38CF700142DCC /* WMZBannerControl.h */,
+				C520F2322AB38CF700142DCC /* WMZBannerControl.m */,
+				C520F22E2AB38CF700142DCC /* WMZBannerFadeLayout.h */,
+				C520F2342AB38CF700142DCC /* WMZBannerFadeLayout.m */,
+				C520F2332AB38CF700142DCC /* WMZBannerFlowLayout.h */,
+				C520F22C2AB38CF700142DCC /* WMZBannerFlowLayout.m */,
+				C520F2302AB38CF700142DCC /* WMZBannerOverLayout.h */,
 				C520F2382AB38CF700142DCC /* WMZBannerOverLayout.m */,
+				C520F2362AB38CF700142DCC /* WMZBannerParam.h */,
+				C520F22F2AB38CF700142DCC /* WMZBannerParam.m */,
+				C520F2372AB38CF700142DCC /* WMZBannerView.h */,
+				C520F2312AB38CF700142DCC /* WMZBannerView.m */,
+				C5729FF12AB649DE0084EAFC /* 关于WMZBanner的怪异写法探究.md */,
 			);
 			path = WMZBanner;
 			sourceTree = "<group>";
@@ -6089,8 +6103,7 @@
 		C561D1C62AAC7E7A00E28603 /* NSMutableArray */ = {
 			isa = PBXGroup;
 			children = (
-				C561D1C72AAC7E7A00E28603 /* NSMutableArray+Extra.m */,
-				C561D1C82AAC7E7A00E28603 /* NSMutableArray+Extra.h */,
+				C5729F002AB5D6490084EAFC /* NSMutableArray+Extra */,
 			);
 			path = NSMutableArray;
 			sourceTree = "<group>";
@@ -8439,6 +8452,7 @@
 		C5729A9C2AB5930D0084EAFC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C5729EF32AB5C7380084EAFC /* MSInternalRecruitmentDetailModel */,
 				C5729A992AB592F30084EAFC /* 销售部 */,
 				C5729A9A2AB592FE0084EAFC /* 市场部 */,
 				C5729A9B2AB593040084EAFC /* 董事会 */,
@@ -8450,8 +8464,8 @@
 		C5729A9D2AB593110084EAFC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C5729B9B2AB59E980084EAFC /* 内部招聘CollectionViewCell样式2 */,
 				C5729B9A2AB59E7D0084EAFC /* 内部招聘CollectionViewCell样式1 */,
+				C5729B9B2AB59E980084EAFC /* 内部招聘CollectionViewCell样式2 */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -8459,6 +8473,7 @@
 		C5729A9E2AB5931A0084EAFC /* MSInternalRecruitmentVC */ = {
 			isa = PBXGroup;
 			children = (
+				C5729EF42AB5C8CC0084EAFC /* MSInternalRecruitmentVC.jpg */,
 				C5729A952AB591E10084EAFC /* MSInternalRecruitmentVC.h */,
 				C5729A962AB591E10084EAFC /* MSInternalRecruitmentVC.m */,
 			);
@@ -8468,6 +8483,9 @@
 		C5729B9A2AB59E7D0084EAFC /* 内部招聘CollectionViewCell样式1 */ = {
 			isa = PBXGroup;
 			children = (
+				C5729EF52AB5CB420084EAFC /* 内部招聘CollectionViewCell样式1.jpg */,
+				C5729EFD2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.h */,
+				C5729EFE2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m */,
 			);
 			path = "内部招聘CollectionViewCell样式1";
 			sourceTree = "<group>";
@@ -8475,6 +8493,9 @@
 		C5729B9B2AB59E980084EAFC /* 内部招聘CollectionViewCell样式2 */ = {
 			isa = PBXGroup;
 			children = (
+				C5729EF62AB5CB480084EAFC /* 内部招聘CollectionViewCell样式2.jpg */,
+				C5729EFA2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.h */,
+				C5729EFB2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.m */,
 			);
 			path = "内部招聘CollectionViewCell样式2";
 			sourceTree = "<group>";
@@ -8486,6 +8507,24 @@
 				C5729B9E2AB5AE2B0084EAFC /* UIColor+Other.m */,
 			);
 			path = "UIColor+Other";
+			sourceTree = "<group>";
+		};
+		C5729EF32AB5C7380084EAFC /* MSInternalRecruitmentDetailModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5729EF02AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.h */,
+				C5729EF12AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.m */,
+			);
+			path = MSInternalRecruitmentDetailModel;
+			sourceTree = "<group>";
+		};
+		C5729F002AB5D6490084EAFC /* NSMutableArray+Extra */ = {
+			isa = PBXGroup;
+			children = (
+				C561D1C82AAC7E7A00E28603 /* NSMutableArray+Extra.h */,
+				C561D1C72AAC7E7A00E28603 /* NSMutableArray+Extra.m */,
+			);
+			path = "NSMutableArray+Extra";
 			sourceTree = "<group>";
 		};
 		C5BD5E5F2AAC76740048F36B = {
@@ -9829,6 +9868,7 @@
 				C561D3F92AAC7E7B00E28603 /* UIView+MJRefresh.m in Sources */,
 				C561CE1D2AAC7CE200E28603 /* ECPrivacyCheckHomeKit.m in Sources */,
 				C561D4B42AAC7EC200E28603 /* AppDelegate+Func.m in Sources */,
+				C5729EFC2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.m in Sources */,
 				C561CE482AAC7CE200E28603 /* ECPrivacyCheckGatherTool.m in Sources */,
 				C5CFE7242AB0934F00D0F225 /* MSProdSelectModel.m in Sources */,
 				C561D4572AAC7E7B00E28603 /* NSNumber+Extra.m in Sources */,
@@ -10024,6 +10064,7 @@
 				C561CDFF2AAC7CE200E28603 /* FMDatabase+Manager.m in Sources */,
 				C561D3682AAC7E7A00E28603 /* JobsNoticePopupView.m in Sources */,
 				C561D47E2AAC7E7B00E28603 /* NSObject+RegularExpression.m in Sources */,
+				C5729EFF2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m in Sources */,
 				C561D41D2AAC7E7B00E28603 /* UIViewController+JXPagerViewListViewDelegate.m in Sources */,
 				C561D9792AAC917900E28603 /* BaiShaETProjAccPasswordLoginVC.m in Sources */,
 				C561D43B2AAC7E7B00E28603 /* BaseTableView.m in Sources */,
@@ -10216,6 +10257,7 @@
 				C5CFE79F2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m in Sources */,
 				C561D4362AAC7E7B00E28603 /* BaseNavigationVC.m in Sources */,
 				C561D3A82AAC7E7A00E28603 /* JobsSuspendLab.m in Sources */,
+				C5729EF22AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.m in Sources */,
 				C561D3F72AAC7E7B00E28603 /* UIView+Masonry.m in Sources */,
 				C561D44B2AAC7E7B00E28603 /* LMHWaterFallLayout.m in Sources */,
 				C561CE192AAC7CE200E28603 /* JXCategoryTimelineCellModel.m in Sources */,
