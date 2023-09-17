@@ -340,10 +340,6 @@
 		C561D3C82AAC7E7B00E28603 /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D03C2AAC7E7900E28603 /* UITableViewCell+WhiteArrows.m */; };
 		C561D3CA2AAC7E7B00E28603 /* UITableViewCell+Margin.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0402AAC7E7900E28603 /* UITableViewCell+Margin.m */; };
 		C561D3CB2AAC7E7B00E28603 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0422AAC7E7900E28603 /* BaseTableViewCell.m */; };
-		C561D3CC2AAC7E7B00E28603 /* UITableViewCellStyleSubtitle.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D0442AAC7E7900E28603 /* UITableViewCellStyleSubtitle.png */; };
-		C561D3CD2AAC7E7B00E28603 /* UITableViewCellStyleValue2.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D0452AAC7E7900E28603 /* UITableViewCellStyleValue2.png */; };
-		C561D3CE2AAC7E7B00E28603 /* UITableViewCellStyleValue1.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D0462AAC7E7900E28603 /* UITableViewCellStyleValue1.png */; };
-		C561D3CF2AAC7E7B00E28603 /* UITableViewCellStyleDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D0472AAC7E7900E28603 /* UITableViewCellStyleDefault.png */; };
 		C561D3D02AAC7E7B00E28603 /* NSBundle+CLLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D04D2AAC7E7900E28603 /* NSBundle+CLLanguage.m */; };
 		C561D3D12AAC7E7B00E28603 /* UIButton+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0532AAC7E7900E28603 /* UIButton+Extra.m */; };
 		C561D3D22AAC7E7B00E28603 /* UIButton+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0562AAC7E7900E28603 /* UIButton+Animation.m */; };
@@ -662,7 +658,7 @@
 		C5729AA72AB594320084EAFC /* MSSalesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729AA62AB594320084EAFC /* MSSalesVC.m */; };
 		C5729B992AB59E240084EAFC /* 内部招聘.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5729B982AB59E240084EAFC /* 内部招聘.xcassets */; };
 		C5729B9F2AB5AE2B0084EAFC /* UIColor+Other.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729B9E2AB5AE2B0084EAFC /* UIColor+Other.m */; };
-		C5729EF22AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EF12AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.m */; };
+		C5729EF22AB5C7330084EAFC /* MSInternalRecruitmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EF12AB5C7330084EAFC /* MSInternalRecruitmentModel.m */; };
 		C5729EFC2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EFB2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.m */; };
 		C5729EFF2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EFE2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m */; };
 		C5BD5E6D2AAC76740048F36B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6C2AAC76740048F36B /* AppDelegate.m */; };
@@ -2217,8 +2213,8 @@
 		C5729B982AB59E240084EAFC /* 内部招聘.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "内部招聘.xcassets"; sourceTree = "<group>"; };
 		C5729B9D2AB5AE2B0084EAFC /* UIColor+Other.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Other.h"; sourceTree = "<group>"; };
 		C5729B9E2AB5AE2B0084EAFC /* UIColor+Other.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Other.m"; sourceTree = "<group>"; };
-		C5729EF02AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInternalRecruitmentDetailModel.h; sourceTree = "<group>"; };
-		C5729EF12AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInternalRecruitmentDetailModel.m; sourceTree = "<group>"; };
+		C5729EF02AB5C7330084EAFC /* MSInternalRecruitmentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInternalRecruitmentModel.h; sourceTree = "<group>"; };
+		C5729EF12AB5C7330084EAFC /* MSInternalRecruitmentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInternalRecruitmentModel.m; sourceTree = "<group>"; };
 		C5729EF42AB5C8CC0084EAFC /* MSInternalRecruitmentVC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSInternalRecruitmentVC.jpg; sourceTree = "<group>"; };
 		C5729EF52AB5CB420084EAFC /* 内部招聘CollectionViewCell样式1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "内部招聘CollectionViewCell样式1.jpg"; sourceTree = "<group>"; };
 		C5729EF62AB5CB480084EAFC /* 内部招聘CollectionViewCell样式2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "内部招聘CollectionViewCell样式2.jpg"; sourceTree = "<group>"; };
@@ -4763,9 +4759,9 @@
 		C561D0412AAC7E7900E28603 /* BaseTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				C561D0482AAC7E7900E28603 /* BaseTableViewCell.h */,
 				C561D0422AAC7E7900E28603 /* BaseTableViewCell.m */,
 				C561D0432AAC7E7900E28603 /* iOS UITableView中Cell的自带样式 */,
-				C561D0482AAC7E7900E28603 /* BaseTableViewCell.h */,
 			);
 			path = BaseTableViewCell;
 			sourceTree = "<group>";
@@ -8452,7 +8448,7 @@
 		C5729A9C2AB5930D0084EAFC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C5729EF32AB5C7380084EAFC /* MSInternalRecruitmentDetailModel */,
+				C5729EF32AB5C7380084EAFC /* MSInternalRecruitmentModel */,
 				C5729A992AB592F30084EAFC /* 销售部 */,
 				C5729A9A2AB592FE0084EAFC /* 市场部 */,
 				C5729A9B2AB593040084EAFC /* 董事会 */,
@@ -8509,13 +8505,13 @@
 			path = "UIColor+Other";
 			sourceTree = "<group>";
 		};
-		C5729EF32AB5C7380084EAFC /* MSInternalRecruitmentDetailModel */ = {
+		C5729EF32AB5C7380084EAFC /* MSInternalRecruitmentModel */ = {
 			isa = PBXGroup;
 			children = (
-				C5729EF02AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.h */,
-				C5729EF12AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.m */,
+				C5729EF02AB5C7330084EAFC /* MSInternalRecruitmentModel.h */,
+				C5729EF12AB5C7330084EAFC /* MSInternalRecruitmentModel.m */,
 			);
-			path = MSInternalRecruitmentDetailModel;
+			path = MSInternalRecruitmentModel;
 			sourceTree = "<group>";
 		};
 		C5729F002AB5D6490084EAFC /* NSMutableArray+Extra */ = {
@@ -9338,7 +9334,6 @@
 				C5E012042AADE1CD005ABE09 /* 208@2x.gif in Resources */,
 				C520FC152AB3C36D00142DCC /* CommentData.json in Resources */,
 				C5E011B42AADE1CD005ABE09 /* 192@2x.gif in Resources */,
-				C561D3CF2AAC7E7B00E28603 /* UITableViewCellStyleDefault.png in Resources */,
 				C561D39D2AAC7E7A00E28603 /* 灰色椭圆.png in Resources */,
 				C5E011E42AADE1CD005ABE09 /* 86@2x.gif in Resources */,
 				C5E0114A2AADE1CD005ABE09 /* 271@2x.gif in Resources */,
@@ -9359,7 +9354,6 @@
 				C5E011A92AADE1CD005ABE09 /* 272@2x.gif in Resources */,
 				C5E011372AADE1CD005ABE09 /* 138@2x.gif in Resources */,
 				C561D46B2AAC7E7B00E28603 /* MonitorNetwoking.md in Resources */,
-				C561D3CD2AAC7E7B00E28603 /* UITableViewCellStyleValue2.png in Resources */,
 				C5729B992AB59E240084EAFC /* 内部招聘.xcassets in Resources */,
 				C5E011B62AADE1CD005ABE09 /* 154@2x.gif in Resources */,
 				C561D3702AAC7E7A00E28603 /* JobsImageNumberView.png in Resources */,
@@ -9484,7 +9478,6 @@
 				C5E011CE2AADE1CD005ABE09 /* 149@2x.gif in Resources */,
 				C520FC162AB3C36D00142DCC /* data.json in Resources */,
 				C561D3922AAC7E7A00E28603 /* 启动页_02.png in Resources */,
-				C561D3CC2AAC7E7B00E28603 /* UITableViewCellStyleSubtitle.png in Resources */,
 				C5E011842AADE1CD005ABE09 /* 193@2x.gif in Resources */,
 				C5E0113A2AADE1CD005ABE09 /* newemoji_005.gif in Resources */,
 				C520F6002AB396F500142DCC /* JobsComment【OutLines 05】.png in Resources */,
@@ -9505,7 +9498,6 @@
 				C5E0118E2AADE1CD005ABE09 /* 33@2x.gif in Resources */,
 				C561D4A32AAC7E7B00E28603 /* ZYTextField.bundle in Resources */,
 				C5E0112E2AADE1CD005ABE09 /* newemoji_004.gif in Resources */,
-				C561D3CE2AAC7E7B00E28603 /* UITableViewCellStyleValue1.png in Resources */,
 				C5E0116F2AADE1CD005ABE09 /* 43@2x.gif in Resources */,
 				C5E011AC2AADE1CD005ABE09 /* 22@2x.gif in Resources */,
 				C506259B2AAF5DAB00F14680 /* 828x1792.png in Resources */,
@@ -10257,7 +10249,7 @@
 				C5CFE79F2AB0FEF600D0F225 /* MSInterestSettleRecordModel.m in Sources */,
 				C561D4362AAC7E7B00E28603 /* BaseNavigationVC.m in Sources */,
 				C561D3A82AAC7E7A00E28603 /* JobsSuspendLab.m in Sources */,
-				C5729EF22AB5C7330084EAFC /* MSInternalRecruitmentDetailModel.m in Sources */,
+				C5729EF22AB5C7330084EAFC /* MSInternalRecruitmentModel.m in Sources */,
 				C561D3F72AAC7E7B00E28603 /* UIView+Masonry.m in Sources */,
 				C561D44B2AAC7E7B00E28603 /* LMHWaterFallLayout.m in Sources */,
 				C561CE192AAC7CE200E28603 /* JXCategoryTimelineCellModel.m in Sources */,

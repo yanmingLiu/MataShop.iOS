@@ -74,7 +74,8 @@ numberOfRowsInSection:(NSInteger)section{
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    BaseTableViewCell *cell = [BaseTableViewCell cellStyleValue1WithTableView:self.tableView];
+    BaseTableViewCell *cell = [BaseTableViewCell tableViewCellClass:BaseTableViewCell.class
+                                           styleValue1WithTableView:tableView];
     [cell richElementsInCellWithModel:self.dataMutArr[indexPath.row]];
     return cell;
 }

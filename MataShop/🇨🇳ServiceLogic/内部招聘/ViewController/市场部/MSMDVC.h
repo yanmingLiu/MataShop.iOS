@@ -8,7 +8,7 @@
 #import "MSInternalRecruitmentCVCell1.h"// 内部招聘Cell1
 #import "MSInternalRecruitmentCVCell2.h"// 内部招聘Cell2
 
-#import "MSInternalRecruitmentDetailModel.h"
+#import "MSInternalRecruitmentModel.h"
 
 #import "BaseViewController.h"
 

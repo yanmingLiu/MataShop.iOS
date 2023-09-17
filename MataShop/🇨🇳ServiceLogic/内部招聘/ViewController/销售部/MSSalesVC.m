@@ -11,14 +11,8 @@
 /// UI
 @property(nonatomic,strong)UICollectionViewFlowLayout *layout;
 @property(nonatomic,strong)UICollectionView *collectionView;
-
-//#define JobsInterface(className,propertyModifier,propertyPointerType,propertyName) \
-//@property(nonatomic,propertyModifier)propertyPointerType  propertyName; \
-//-(className *(^)(propertyPointerType propertyName)) propertyName##Set;
-
-//JobsInterface(<#className#>, strong, UILabel, label)
 /// Data
-@property(nonatomic,strong)NSMutableArray <MSInternalRecruitmentDetailModel *>*dataMutArr;
+@property(nonatomic,strong)NSMutableArray <MSInternalRecruitmentModel *>*dataMutArr;
 
 @end
 
@@ -81,7 +75,6 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView
                                    cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    @jobs_weakify(self)
     UICollectionViewCell *CVCell = nil;
     if(indexPath.row){
         MSInternalRecruitmentCVCell2 *cell = [MSInternalRecruitmentCVCell2 cellWithCollectionView:collectionView forIndexPath:indexPath];
@@ -146,7 +139,9 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [MSInterestSettleRecordCVCell cellSizeWithModel:nil];
+    if(indexPath.row){
+        return [MSInternalRecruitmentCVCell2 cellSizeWithModel:self.dataMutArr[indexPath.row]];
+    }else return [MSInternalRecruitmentCVCell1 cellSizeWithModel:self.dataMutArr[indexPath.row]];
 }
 /// 定义的是元素垂直之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView
@@ -223,13 +218,141 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     }return _collectionView;
 }
 
--(NSMutableArray<MSInternalRecruitmentDetailModel *> *)dataMutArr{
+-(NSMutableArray<MSInternalRecruitmentModel *> *)dataMutArr{
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
         {
-            MSInternalRecruitmentDetailModel *model = MSInternalRecruitmentDetailModel.new;
+            MSInternalRecruitmentModel *model = MSInternalRecruitmentModel.new;
+            model.titleName = Internationalization(@"销售员");/// 职位名称
+            NSMutableArray *detailMutArr = NSMutableArray.array;
+            {
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"职位（数字资产）");
+                    detailModel.value = Internationalization(@"300");
+                    [detailMutArr addObject:detailModel];
+                }
+
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"直招补贴奖励");
+                    detailModel.value = Internationalization(@"16%");
+                    [detailMutArr addObject:detailModel];
+                }
+                
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"红包助力返点比例");
+                    detailModel.value = Internationalization(@"100%");
+                    [detailMutArr addObject:detailModel];
+                }
+                
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"助力红包金额");
+                    detailModel.value = Internationalization(@"10元");
+                    [detailMutArr addObject:detailModel];
+                }
+                
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"间招补贴奖励");
+                    detailModel.value = Internationalization(@"递减至50%");
+                    [detailMutArr addObject:detailModel];
+                }
+
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"数字资产释放期限（5年）");
+                    detailModel.value = Internationalization(@"每日0.58%");
+                    [detailMutArr addObject:detailModel];
+                }
+
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"职别招聘Mata值（锁仓配额）");
+                    detailModel.value = Internationalization(@"6000Mata值");
+                    [detailMutArr addObject:detailModel];
+                }
+                
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"KPI招聘考核标准（60Mata值）");
+                    detailModel.value = Internationalization(@"90/日");
+                    [detailMutArr addObject:detailModel];
+                }
+            }
+            model.detailMutArr = detailMutArr;
             [_dataMutArr addObject:model];
         }
+        
+        {
+            MSInternalRecruitmentModel *model = MSInternalRecruitmentModel.new;
+            model.titleName = Internationalization(@"销售主管");/// 职位名称
+            NSMutableArray *detailMutArr = NSMutableArray.array;
+            {
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"职位（数字资产）");
+                    detailModel.value = Internationalization(@"300");
+                    [detailMutArr addObject:detailModel];
+                }
+
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"直招补贴奖励");
+                    detailModel.value = Internationalization(@"16%");
+                    [detailMutArr addObject:detailModel];
+                }
+                
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"红包助力返点比例");
+                    detailModel.value = Internationalization(@"100%");
+                    [detailMutArr addObject:detailModel];
+                }
+                
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"助力红包金额");
+                    detailModel.value = Internationalization(@"10元");
+                    [detailMutArr addObject:detailModel];
+                }
+                
+                {
+                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+                    detailModel.title = Internationalization(@"间招补贴奖励");
+                    detailModel.value = Internationalization(@"递减至50%");
+                    [detailMutArr addObject:detailModel];
+                }
+
+//                {
+//                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+//                    detailModel.title = Internationalization(@"数字资产释放期限（5年）");
+//                    detailModel.value = Internationalization(@"每日0.58%");
+//                    [detailMutArr addObject:detailModel];
+//                }
+//
+//                {
+//                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+//                    detailModel.title = Internationalization(@"职别招聘Mata值（锁仓配额）");
+//                    detailModel.value = Internationalization(@"6000Mata值");
+//                    [detailMutArr addObject:detailModel];
+//                }
+//
+//                {
+//                    MSInternalRecruitmentDetailModel *detailModel = MSInternalRecruitmentDetailModel.new;
+//                    detailModel.title = Internationalization(@"KPI招聘考核标准（60Mata值）");
+//                    detailModel.value = Internationalization(@"90/日");
+//                    [detailMutArr addObject:detailModel];
+//                }
+            }
+            model.detailMutArr = detailMutArr;
+            [_dataMutArr addObject:model];
+        }
+      
+        
+        
     }return _dataMutArr;
 }
 

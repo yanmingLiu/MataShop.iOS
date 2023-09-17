@@ -6,6 +6,7 @@
 //
 
 #import "BaseCollectionViewCell.h"
+#import "MSInternalRecruitmentModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
