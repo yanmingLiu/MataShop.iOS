@@ -9,19 +9,20 @@
 #define MacroDef_Strong_Weak_h
 
 /** 强弱引用
- 
- Uses
- 
-     UIView *view;
-     UIButton *btn;
+    Uses
+    UIView *view;
+    UIButton *btn;
      
-     @jobs_weakify(view)
-     weak_view.size;
-     @jobs_weakify(btn)
-     weak_btn.frame
+    @jobs_weakify(view)
+    weak_view.size;
+    @jobs_weakify(btn)
+    weak_btn.frame
  
+ # 能用@符号进行调用的根本原因：来自GPT-3.5的回答
+    在如下的宏定义中：
+    @符号可以用于调用的原因是因为宏内部实际上不包含Objective-C代码块，而是包含了一个函数调用，
+    这个函数调用是Objective-C代码中的一个有效表达式。
  */
-
 #ifndef jobs_weakify
 #if DEBUG
 #if __has_feature(objc_arc)

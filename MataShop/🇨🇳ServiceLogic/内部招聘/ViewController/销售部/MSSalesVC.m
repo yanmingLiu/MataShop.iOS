@@ -11,6 +11,12 @@
 /// UI
 @property(nonatomic,strong)UICollectionViewFlowLayout *layout;
 @property(nonatomic,strong)UICollectionView *collectionView;
+
+//#define JobsInterface(className,propertyModifier,propertyPointerType,propertyName) \
+//@property(nonatomic,propertyModifier)propertyPointerType  propertyName; \
+//-(className *(^)(propertyPointerType propertyName)) propertyName##Set;
+
+//JobsInterface(<#className#>, strong, UILabel, label)
 /// Data
 @property(nonatomic,strong)NSMutableArray <MSInternalRecruitmentDetailModel *>*dataMutArr;
 
