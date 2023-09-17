@@ -109,6 +109,23 @@
                     context:nil];
 }
 #pragma mark —— 功能性的
+/// 打印YTKBaseRequest
+-(void)checkRequest:(YTKBaseRequest *_Nonnull)request{
+    NSLog(@"request.error = %@\n",request.error);
+    NSLog(@"request.requestArgument = %@\n",request.requestArgument);
+    NSLog(@"request.requestUrl = %@\n",request.requestUrl);
+    NSLog(@"request.baseUrl = %@\n",request.baseUrl);
+}
+/// 判空【是空返回YES】
+-(BOOL)nullString{
+    if (self.isKindOfClassBlock(NSString.class)) {
+        NSString *string = (NSString *)self;
+        return [NSString isNullString:string];
+    }else{
+        NSCAssert(self.isKindOfClassBlock(NSString.class), Internationalization(@"目标对象不是字符串类型"));
+        return YES;
+    }
+}
 /// 此功能的必要性：如果外界传入的数组是空，那么拿到的count是0，做-1操作就是-1，直接用for循环就会进入死循环
 -(void)jobsSafetyCycleFunc:(int)ceiling cycleBlock:(jobsByIntBlock _Nullable)cycleBlock{
     if (ceiling > 0) {
@@ -139,13 +156,21 @@
         [imageModelArr addObject:imageModel];
     }return imageModelArr;
 }
-
+/**
+ 
+ NSMutableArray <UIViewModel *>*dataMutArr = popupView.valueForKeyBlock(@"dataMutArr");
+ [dataMutArr removeAllObjects];
+ [dataMutArr addObjectsFromArray:self.createDataMutArr2];
+ 
+ // dataMutArr = self.createDataMutArr2; 这一段无效
+ 
+ */
 -(JobsReturnIDByIDBlock _Nonnull)valueForKeyBlock{
     return ^(NSString *data) {
         return [data isKindOfClass:NSString.class] ? [self valueForKey:data] : nil;
     };
 }
-
+// if (idToObject(data).isKindOfClassBlock(UIViewModel.class))
 -(JobsReturnBOOLByIDBlock _Nonnull)isKindOfClassBlock{
     return ^(Class cls) {
         return [self isKindOfClass:cls];
