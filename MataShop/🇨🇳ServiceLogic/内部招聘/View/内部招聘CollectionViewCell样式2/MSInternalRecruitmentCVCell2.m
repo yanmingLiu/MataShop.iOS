@@ -78,7 +78,7 @@ numberOfRowsInSection:(NSInteger)section{
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [UITableViewCell tableViewCellClass:UITableViewCell.class styleValue2WithTableView:tableView];
+    UITableViewCell *cell = [UITableViewCell cellStyleValue2WithTableView:tableView];
     MSInternalRecruitmentDetailModel *model = self.model.detailMutArr[indexPath.row];
     
     cell.textLabel.text = model.title;
