@@ -176,8 +176,8 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _listContainerView.defaultSelectedIndex = 1;// 默认从第二个开始显示
         [self.view addSubview:_listContainerView];
         [_listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.equalTo(self.view);
-            make.top.equalTo(self.view).offset(listContainerViewDefaultOffset);
+//            make.top.equalTo(self.view).offset(listContainerViewDefaultOffset);// JobsStatusBarHeightByAppleIncData()
+            make.top.equalTo(self.gk_navigationBar.mas_bottom).offset(listContainerViewDefaultOffset);
             make.left.right.bottom.equalTo(self.view);
             
         }];

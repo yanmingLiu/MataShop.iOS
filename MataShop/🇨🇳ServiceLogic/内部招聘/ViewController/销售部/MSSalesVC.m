@@ -147,7 +147,7 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (CGFloat)collectionView:(UICollectionView *)collectionView
                    layout:(UICollectionViewLayout *)collectionViewLayout
 minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return JobsWidth(12);
+    return JobsWidth(0);
 }
 /// 定义的是元素水平之间的间距。Api自动计算一行的Cell个数，只有当间距小于此定义的最小值时才会换行，最小执行单元是Section（每个section里面的样式是统一的）
 - (CGFloat)collectionView:(UICollectionView *)collectionView
@@ -350,9 +350,6 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             model.detailMutArr = detailMutArr;
             [_dataMutArr addObject:model];
         }
-      
-        
-        
     }return _dataMutArr;
 }
 

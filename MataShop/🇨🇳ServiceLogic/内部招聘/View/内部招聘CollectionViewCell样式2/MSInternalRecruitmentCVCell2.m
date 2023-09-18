@@ -78,26 +78,27 @@ numberOfRowsInSection:(NSInteger)section{
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [UITableViewCell cellStyleValue2WithTableView:tableView];
+    UITableViewCell *cell = [UITableViewCell cellStyleValue1WithTableView:tableView];
+    cell.accessoryType = UITableViewCellAccessoryNone;
     MSInternalRecruitmentDetailModel *model = self.model.detailMutArr[indexPath.row];
     
     cell.textLabel.text = model.title;
-    cell.textLabel.textColor = self.viewModel.textModel.textCor;
-    cell.textLabel.font = self.viewModel.textModel.font;
+    cell.textLabel.textColor = RGB_SAMECOLOR(109);
+    cell.textLabel.font = UIFontWeightRegularSize(JobsWidth(14));
 
     cell.detailTextLabel.text = model.value;
-    cell.detailTextLabel.textColor = self.viewModel.subTextModel.textCor;
-    cell.detailTextLabel.font = self.viewModel.subTextModel.font;
-    [cell.detailTextLabel makeLabelByShowingType:UILabelShowingType_05];
+    cell.detailTextLabel.textColor = RGB_SAMECOLOR(51);
+    cell.detailTextLabel.font = UIFontWeightRegularSize(JobsWidth(14));
+    [cell.detailTextLabel makeLabelByShowingType:UILabelShowingType_03];
     
     return cell;
 }
 #pragma mark —— lazyLoad
 -(UITableView *)tableView{
     if (!_tableView) {
-        _tableView = UITableView.initWithStyleGrouped;
+        _tableView = UITableView.initWithStylePlain;
         _tableView.backgroundColor = AppMainCor_02;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.separatorColor = HEXCOLOR(0xEEE2C8);
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.scrollEnabled = YES;
