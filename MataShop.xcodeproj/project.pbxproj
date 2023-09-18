@@ -917,6 +917,7 @@
 		C5E017682AAF3684005ABE09 /* MSChuBaoView2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E017672AAF3684005ABE09 /* MSChuBaoView2.m */; };
 		C5E0176C2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */; };
 		C5E0176E2AAF4B49005ABE09 /* MSChuBaoAdMarqueeView.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */; };
+		C5EE35D82AB8351D0020BDB8 /* MSPersonalDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE35D72AB8351D0020BDB8 /* MSPersonalDataVC.m */; };
 		C5FB56612AB31B5E00C873B7 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */; };
 		C5FB56622AB31B5E00C873B7 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */; };
 		C5FB566B2AB31F1300C873B7 /* MSHomePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */; };
@@ -2521,6 +2522,8 @@
 		C5E0176A2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoAdMarqueeView.h; sourceTree = "<group>"; };
 		C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoAdMarqueeView.m; sourceTree = "<group>"; };
 		C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSChuBaoAdMarqueeView.jpg; sourceTree = "<group>"; };
+		C5EE35D62AB8351D0020BDB8 /* MSPersonalDataVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPersonalDataVC.h; sourceTree = "<group>"; };
+		C5EE35D72AB8351D0020BDB8 /* MSPersonalDataVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPersonalDataVC.m; sourceTree = "<group>"; };
 		C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
 		C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
 		C5FB56672AB31E2300C873B7 /* MSHomePopupView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSHomePopupView.jpg; sourceTree = "<group>"; };
@@ -7108,6 +7111,7 @@
 		C561D4A52AAC7EA600E28603 /* 🇨🇳ServiceLogic */ = {
 			isa = PBXGroup;
 			children = (
+				C5EE35D52AB834E90020BDB8 /* 个人资料 */,
 				C5729A942AB591B30084EAFC /* 内部招聘 */,
 				C5E017572AAF2D77005ABE09 /* 储宝 */,
 				C5E0174F2AAF1F95005ABE09 /* 签到 */,
@@ -9122,6 +9126,39 @@
 			path = "储宝跑马灯广告";
 			sourceTree = "<group>";
 		};
+		C5EE35D52AB834E90020BDB8 /* 个人资料 */ = {
+			isa = PBXGroup;
+			children = (
+				C5EE35DB2AB8358C0020BDB8 /* View */,
+				C5EE35D92AB835800020BDB8 /* ViewController */,
+			);
+			path = "个人资料";
+			sourceTree = "<group>";
+		};
+		C5EE35D92AB835800020BDB8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5EE35DA2AB835850020BDB8 /* MSPersonalDataVC */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C5EE35DA2AB835850020BDB8 /* MSPersonalDataVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5EE35D62AB8351D0020BDB8 /* MSPersonalDataVC.h */,
+				C5EE35D72AB8351D0020BDB8 /* MSPersonalDataVC.m */,
+			);
+			path = MSPersonalDataVC;
+			sourceTree = "<group>";
+		};
+		C5EE35DB2AB8358C0020BDB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C5FB56632AB31DA600C873B7 /* MSHomePopupView */ = {
 			isa = PBXGroup;
 			children = (
@@ -10158,6 +10195,7 @@
 				C561D3E92AAC7E7B00E28603 /* UIView+ZFPlayer.m in Sources */,
 				C561D3D72AAC7E7B00E28603 /* ButtonTimerConfigModel.m in Sources */,
 				C561D4452AAC7E7B00E28603 /* JobsTBVHeaderFooterView.m in Sources */,
+				C5EE35D82AB8351D0020BDB8 /* MSPersonalDataVC.m in Sources */,
 				C561D4082AAC7E7B00E28603 /* UICollectionViewCell+ShakeAnimation.m in Sources */,
 				C561CE1F2AAC7CE200E28603 /* ECPrivacyCheckCamera.m in Sources */,
 				C561D5402AAC846300E28603 /* MSMsgVC.m in Sources */,

@@ -72,7 +72,8 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self forceComingToPushVC:JobsCommentVC.new requestParams:nil];
+//    [self forceComingToPushVC:JobsCommentVC.new requestParams:nil];
+    [self forceComingToPushVC:MSPersonalDataVC.new requestParams:nil];
 }
 #pragma mark —— lazyLoad
 

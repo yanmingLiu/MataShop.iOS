@@ -48,7 +48,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = RGBA_COLOR(245, 245, 245, 1);
+    self.view.backgroundColor = RGB_SAMECOLOR(245);
     [self setGKNav];
     [self setGKNavBackBtn];
     
@@ -60,7 +60,6 @@
     self.marqueeView.alpha = 1;
     
     self.categoryView.alpha = 1;
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{

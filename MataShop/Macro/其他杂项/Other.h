@@ -37,6 +37,7 @@
 #import "MSChuBaoVC.h"// 储宝
 #import "MSTopUpVC.h"// 充值
 #import "MSInternalRecruitmentVC.h"// 内部招聘
+#import "MSPersonalDataVC.h"// 个人资料
 /// 首页相关子控制器
 
 /// 个人中心相关子控制器
