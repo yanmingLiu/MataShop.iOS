@@ -47,12 +47,6 @@
 
 #pragma mark —— UITableViewDelegate,UITableViewDataSource
 - (void)tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
-
-- (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }

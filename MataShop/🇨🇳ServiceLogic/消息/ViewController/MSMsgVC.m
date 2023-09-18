@@ -71,7 +71,8 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self forceComingToPushVC:MSSignInVC.new requestParams:@""];
+//    [self forceComingToPushVC:MSSignInVC.new requestParams:@""];
+    [self forceComingToPushVC:MSRedEnvelopeDetailVC.new requestParams:@""];
 }
 #pragma mark —— lazyLoad
 

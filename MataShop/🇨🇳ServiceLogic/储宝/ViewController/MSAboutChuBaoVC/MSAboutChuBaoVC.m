@@ -32,13 +32,14 @@
     self.viewModel.textModel.textCor = RGBA_COLOR(51, 51, 51, 1);
     self.viewModel.textModel.text = Internationalization(@"关于储宝");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);
+    self.viewModel.bgImage = JobsIMG(@"储宝导航栏背景图");
     self.bgImage = nil;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = JobsRandomColor;
+    self.view.backgroundColor = RGB_SAMECOLOR(245);
     [self setGKNav];
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = YES;
