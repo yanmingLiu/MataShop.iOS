@@ -81,7 +81,6 @@ static dispatch_once_t static_homeGoodsViewOnceToken;
                                                            UIPanGestureRecognizer *_Nullable sender) {
         @jobs_strongify(self)
         CGPoint translation = [sender translationInView:self.superview];
-//        NSLog(@"translation = %f",translation.y);// 向上为负、向下为正
         self.jobsPoint = translation;
         
         if (sender.state == UIGestureRecognizerStateBegan) {
@@ -89,20 +88,18 @@ static dispatch_once_t static_homeGoodsViewOnceToken;
         }
 
         if (sender.state == UIGestureRecognizerStateChanged) {
-            
-            // 更新视图的位置，让它跟随手指移动
-            self.center = CGPointMake(self.initialTouchPoint.x,
-                                      self.initialTouchPoint.y + translation.y);
-            
-//            // 计算新的位置
-//            CGFloat newY = self.initialTouchPoint.y + translation.y;
-//            // 限制在 minY 和 maxY 之间  -292 430
-//            newY = MAX(-292, newY);
-//            newY = MIN(430, newY);
-//            self.center = CGPointMake(self.initialTouchPoint.x, newY);
+            CGFloat maxH = JobsMainScreen_HEIGHT() / 2 + 初始位置;
+            CGFloat minH = JobsMainScreen_HEIGHT() / 2 + 终点位置;
+            // 计算新的位置
+            CGFloat newY = self.initialTouchPoint.y + translation.y;
+            // 限制在 minY 和 maxY 之间
+            newY = MAX(minH, newY);
+            newY = MIN(maxH, newY);
+            self.center = CGPointMake(self.initialTouchPoint.x, newY);
         }
         if (sender.state == UIGestureRecognizerStateEnded) {
             NSLog(@"translation = %f",translation.y);// 向上为负、向下为正
+            NSLog(@"fdfd = %f",self.center.y);//541.333328 703.666672
             // 在手势结束时，检查视图的位置并执行你想要的操作
             if(self.objectBlock) self.objectBlock(self);
         }

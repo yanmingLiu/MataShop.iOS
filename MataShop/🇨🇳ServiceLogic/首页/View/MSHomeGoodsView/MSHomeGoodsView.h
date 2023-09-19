@@ -7,6 +7,18 @@
 
 #import "BaseView.h"
 
+/// 锚点1（最低点）
+#define 初始位置 \
+JobsStatusBarHeightByAppleIncData() + \
+[MSSearchBoardView viewSizeWithModel:nil].height + \
+[CasinoBannerCell cellSizeWithModel:nil].height + \
+JobsWidth(10) + \
+[BaiShaETProjMarqueeView viewSizeWithModel:nil].height + JobsWidth(16) \
+/// 锚点2（最高点）
+#define 终点位置 \
+JobsStatusBarHeightByAppleIncData() + \
+[MSSearchBoardView viewSizeWithModel:nil].height \
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MSHomeGoodsView : BaseView

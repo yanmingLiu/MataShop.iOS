@@ -302,12 +302,6 @@ BOOL ISLogin;
         _homeGoodsView.size = [_homeGoodsView viewSizeWithModel:nil];
         [_homeGoodsView richElementsInViewWithModel:nil];
         
-        CGFloat dp = self.marqueeView.bottom + JobsWidth(16);// 锚点1（最低点） 372.000000
-        CGFloat er = self.searchBoardView.bottom;// 锚点2（最高点） 110.000000
-        
-        NSLog(@"dp = %f",dp);
-        NSLog(@"er = %f",er);
-        
         @jobs_weakify(self)
         [_homeGoodsView actionObjectBlock:^(MSHomeGoodsView *data) {
             NSLog(@"sss = %f",self->_homeGoodsView.y);/// 372.000000
