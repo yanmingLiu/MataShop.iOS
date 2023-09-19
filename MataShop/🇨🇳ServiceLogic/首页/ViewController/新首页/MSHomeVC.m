@@ -298,41 +298,41 @@ BOOL ISLogin;
         
         [self.view layoutIfNeeded];
         _homeGoodsView.x = 0;
-        _homeGoodsView.y = self.marqueeView.bottom + JobsWidth(16);// 锚点1（最低点）
+        _homeGoodsView.y = 初始位置;// 锚点1（最低点）
         _homeGoodsView.size = [_homeGoodsView viewSizeWithModel:nil];
         [_homeGoodsView richElementsInViewWithModel:nil];
         
         @jobs_weakify(self)
         [_homeGoodsView actionObjectBlock:^(MSHomeGoodsView *data) {
-            NSLog(@"sss = %f",self->_homeGoodsView.y);/// 372.000000
+            NSLog(@"sss = %f",self->_homeGoodsView.y);
             @jobs_strongify(self)
             /// 向下滑动为正
             if(data.jobsPoint.y > 0){
                 /// 滑动向下 + y超过下限 = 回到原点（没有动画）
-                if(self->_homeGoodsView.y >= self.marqueeView.bottom + JobsWidth(16)){
-                    self->_homeGoodsView.y = self.marqueeView.bottom + JobsWidth(16);
+                if(self->_homeGoodsView.y >= 初始位置){
+                    self->_homeGoodsView.y = 初始位置;
                 }
                 /// 滑动向下 + y在上下限之间  = 回到原点（最低点）
-                if(self->_homeGoodsView.y <= self.marqueeView.bottom + JobsWidth(16) &&
-                    self->_homeGoodsView.y >= self.searchBoardView.bottom){
+                if(self->_homeGoodsView.y <= 初始位置 &&
+                    self->_homeGoodsView.y >= 终点位置){
                     [UIView animateWithDuration:0.3
                                      animations:^{
-                        self->_homeGoodsView.y = self.marqueeView.bottom + JobsWidth(16);
+                        self->_homeGoodsView.y = 初始位置;
                     }];
                 }
             }
             /// 向上滑动为负
             if(data.jobsPoint.y < 0){
                 /// 滑动向上 + y在上下限之间 = 抵达顶点（最高点）
-                if(self->_homeGoodsView.y <= self.marqueeView.bottom + JobsWidth(16) && self->_homeGoodsView.y >= self.searchBoardView.bottom){
+                if(self->_homeGoodsView.y <= 初始位置 && self->_homeGoodsView.y >= 终点位置){
                     [UIView animateWithDuration:0.3
                                      animations:^{
-                        self->_homeGoodsView.y = self.searchBoardView.bottom;// 锚点2（最高点）
+                        self->_homeGoodsView.y = 终点位置;// 锚点2（最高点）
                     }];
                 }
                 /// 滑动向上 + y超过上限 = 抵达顶点（最高点）（没有动画）
-                if(self->_homeGoodsView.y < self.searchBoardView.bottom){
-                    self->_homeGoodsView.y = self.searchBoardView.bottom;// 锚点2（最高点）
+                if(self->_homeGoodsView.y < 终点位置){
+                    self->_homeGoodsView.y = 终点位置;// 锚点2（最高点）
                 }
             }
         }];

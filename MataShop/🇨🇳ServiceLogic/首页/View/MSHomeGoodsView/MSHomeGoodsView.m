@@ -10,8 +10,6 @@
 @interface MSHomeGoodsView ()
 
 @property(nonatomic,assign)CGPoint initialTouchPoint;
-@property(nonatomic,assign)CGFloat minY; // 最小的 Y 坐标
-@property(nonatomic,assign)CGFloat maxY; // 最大的 Y 坐标
 
 @end
 
