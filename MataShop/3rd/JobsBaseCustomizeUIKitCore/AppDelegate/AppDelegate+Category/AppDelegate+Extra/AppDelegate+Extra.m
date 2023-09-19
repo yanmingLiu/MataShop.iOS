@@ -72,7 +72,7 @@ static char *AppDelegate_Extra_tabBarVC = "AppDelegate_Extra_tabBarVC";
 //        TabBarVC.noNeedLoginArr = @[@0];// 在某些页面不需要弹出登录，其优先级高于needLoginArr
         
 //        TabBarVC.isShakerAnimation = YES;
-//        TabBarVC.isOpenScrollTabbar = NO;
+        TabBarVC.isOpenScrollTabbar = NO;
 
         for (JobsTabBarControllerConfig *config in self.configMutArr) {
             [TabBarVC.tabBarControllerConfigMutArr addObject:config];

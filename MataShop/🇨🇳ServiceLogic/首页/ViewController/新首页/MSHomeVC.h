@@ -18,6 +18,7 @@
 #import "MSHomePopupView.h"
 #import "MSProdShowCVCell.h"
 #import "MSHomeCollectionReusableView.h"
+#import "MSHomeGoodsView.h"
 
 #import "MSProdShowModel.h"
 
@@ -26,11 +27,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MSHomeVC : BaseViewController
-<
-UICollectionViewDataSource
-,UICollectionViewDelegate
-,UICollectionViewDelegateFlowLayout
->
 
 @end
 

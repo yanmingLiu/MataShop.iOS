@@ -41,7 +41,6 @@
 		C520F5FB2AB396F500142DCC /* JobsPopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5E42AB396F400142DCC /* JobsPopUpVC.m */; };
 		C520F5FC2AB396F500142DCC /* PopUpVC.md in Resources */ = {isa = PBXBuildFile; fileRef = C520F5E62AB396F400142DCC /* PopUpVC.md */; };
 		C520F5FD2AB396F500142DCC /* JobsCommentCoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5E92AB396F400142DCC /* JobsCommentCoreVC.m */; };
-		C520F5FE2AB396F500142DCC /* JobsComment.md in Resources */ = {isa = PBXBuildFile; fileRef = C520F5EA2AB396F400142DCC /* JobsComment.md */; };
 		C520F5FF2AB396F500142DCC /* JobsComment【OutLines 01】.png in Resources */ = {isa = PBXBuildFile; fileRef = C520F5ED2AB396F400142DCC /* JobsComment【OutLines 01】.png */; };
 		C520F6002AB396F500142DCC /* JobsComment【OutLines 05】.png in Resources */ = {isa = PBXBuildFile; fileRef = C520F5EE2AB396F400142DCC /* JobsComment【OutLines 05】.png */; };
 		C520F6012AB396F500142DCC /* JobsComment【OutLines 04】.png in Resources */ = {isa = PBXBuildFile; fileRef = C520F5EF2AB396F400142DCC /* JobsComment【OutLines 04】.png */; };
@@ -923,6 +922,8 @@
 		C5EE37B42AB875740020BDB8 /* MSRedEnvelopeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE37B32AB875740020BDB8 /* MSRedEnvelopeDetailModel.m */; };
 		C5EE37B72AB8785A0020BDB8 /* MSMSRedEnvelopeDetailTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE37B62AB8785A0020BDB8 /* MSMSRedEnvelopeDetailTBVCell.m */; };
 		C5EE38342AB98B8D0020BDB8 /* MSHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE38332AB9862B0020BDB8 /* MSHomeVC.m */; };
+		C5EE3CD32AB9D1060020BDB8 /* BaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE3CD22AB9D1060020BDB8 /* BaseScrollView.m */; };
+		C5EE3D4F2AB9D1E60020BDB8 /* MSHomeGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE3D4E2AB9D1E60020BDB8 /* MSHomeGoodsView.m */; };
 		C5FB56612AB31B5E00C873B7 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */; };
 		C5FB56622AB31B5E00C873B7 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */; };
 		C5FB566B2AB31F1300C873B7 /* MSHomePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */; };
@@ -2542,6 +2543,11 @@
 		C5EE37B62AB8785A0020BDB8 /* MSMSRedEnvelopeDetailTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMSRedEnvelopeDetailTBVCell.m; sourceTree = "<group>"; };
 		C5EE38322AB9862A0020BDB8 /* MSHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeVC.h; sourceTree = "<group>"; };
 		C5EE38332AB9862B0020BDB8 /* MSHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeVC.m; sourceTree = "<group>"; };
+		C5EE3CC82AB9CEF70020BDB8 /* MSHomeGoodsView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSHomeGoodsView.jpg; sourceTree = "<group>"; };
+		C5EE3CD12AB9D1060020BDB8 /* BaseScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseScrollView.h; sourceTree = "<group>"; };
+		C5EE3CD22AB9D1060020BDB8 /* BaseScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseScrollView.m; sourceTree = "<group>"; };
+		C5EE3D4D2AB9D1E60020BDB8 /* MSHomeGoodsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeGoodsView.h; sourceTree = "<group>"; };
+		C5EE3D4E2AB9D1E60020BDB8 /* MSHomeGoodsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeGoodsView.m; sourceTree = "<group>"; };
 		C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
 		C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
 		C5FB56672AB31E2300C873B7 /* MSHomePopupView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSHomePopupView.jpg; sourceTree = "<group>"; };
@@ -4599,6 +4605,7 @@
 			isa = PBXGroup;
 			children = (
 				C561D00F2AAC7E7900E28603 /* JobsScrollView.h */,
+				C5EE3CD42AB9D10A0020BDB8 /* BaseScrollView */,
 				C561D0102AAC7E7900E28603 /* UIScrollView+Category */,
 			);
 			path = UIScrollView;
@@ -8410,6 +8417,7 @@
 		C561D9922AAC9A6B00E28603 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5EE3CCC2AB9D01D0020BDB8 /* MSHomeGoodsView */,
 				C527BE062AB4807600DFC90A /* MSHomeCollectionReusableView */,
 				C527BD822AB46E7900DFC90A /* MSProdShowCVCell */,
 				C5FB56632AB31DA600C873B7 /* MSHomePopupView */,
@@ -9254,6 +9262,25 @@
 			path = "老首页";
 			sourceTree = "<group>";
 		};
+		C5EE3CCC2AB9D01D0020BDB8 /* MSHomeGoodsView */ = {
+			isa = PBXGroup;
+			children = (
+				C5EE3CC82AB9CEF70020BDB8 /* MSHomeGoodsView.jpg */,
+				C5EE3D4D2AB9D1E60020BDB8 /* MSHomeGoodsView.h */,
+				C5EE3D4E2AB9D1E60020BDB8 /* MSHomeGoodsView.m */,
+			);
+			path = MSHomeGoodsView;
+			sourceTree = "<group>";
+		};
+		C5EE3CD42AB9D10A0020BDB8 /* BaseScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				C5EE3CD12AB9D1060020BDB8 /* BaseScrollView.h */,
+				C5EE3CD22AB9D1060020BDB8 /* BaseScrollView.m */,
+			);
+			path = BaseScrollView;
+			sourceTree = "<group>";
+		};
 		C5FB56632AB31DA600C873B7 /* MSHomePopupView */ = {
 			isa = PBXGroup;
 			children = (
@@ -9420,7 +9447,6 @@
 				C5E011D72AADE1CD005ABE09 /* 190@2x.gif in Resources */,
 				C561D3D52AAC7E7B00E28603 /* UIButton+ImageTitleSpacing.md in Resources */,
 				C561D39B2AAC7E7A00E28603 /* gesture_normal@2x.png in Resources */,
-				C520F5FE2AB396F500142DCC /* JobsComment.md in Resources */,
 				C5E0115B2AADE1CD005ABE09 /* 32@2x.gif in Resources */,
 				C5E011DC2AADE1CD005ABE09 /* 122@2x.gif in Resources */,
 				C561D3932AAC7E7A00E28603 /* 启动页_03.png in Resources */,
@@ -10308,6 +10334,7 @@
 				C561CE582AAC7CE200E28603 /* RACEXTRuntimeExtensions.m in Sources */,
 				C561D49A2AAC7E7B00E28603 /* NSObject+CallBackInfoByBlock.m in Sources */,
 				C561D35B2AAC7E7A00E28603 /* JobsHotLabelWithMultiLineHeaderFooterView.m in Sources */,
+				C5EE3D4F2AB9D1E60020BDB8 /* MSHomeGoodsView.m in Sources */,
 				C561D4262AAC7E7B00E28603 /* UIViewController+BackBtn.m in Sources */,
 				C561D69A2AAC862000E28603 /* BaiShaETProjTipsView04.m in Sources */,
 				C520F6392AB3975800142DCC /* YTKChainRequest+AnimatingAccessory.m in Sources */,
@@ -10389,6 +10416,7 @@
 				C561D3F72AAC7E7B00E28603 /* UIView+Masonry.m in Sources */,
 				C5EE38342AB98B8D0020BDB8 /* MSHomeVC.m in Sources */,
 				C561D44B2AAC7E7B00E28603 /* LMHWaterFallLayout.m in Sources */,
+				C5EE3CD32AB9D1060020BDB8 /* BaseScrollView.m in Sources */,
 				C561CE192AAC7CE200E28603 /* JXCategoryTimelineCellModel.m in Sources */,
 				C561D6642AAC862000E28603 /* BaiShaETProjPopupView03.m in Sources */,
 				C561D3E12AAC7E7B00E28603 /* IrregularBtn.m in Sources */,

@@ -14,15 +14,17 @@ BOOL ISLogin;
 @property(nonatomic,strong)WMZBannerView *bannerView;
 @property(nonatomic,strong)BaiShaETProjMarqueeView *marqueeView;
 @property(nonatomic,strong)MS3rdShopLinkView *shopLinkView;
+@property(nonatomic,strong)MSHomeGoodsView *homeGoodsView;
 
 @property(nonatomic,strong)MSHomePopupView *popupView;
-@property(nonatomic,strong)UICollectionViewFlowLayout *layout;
-@property(nonatomic,strong)UICollectionView *collectionView;
+//@property(nonatomic,strong)UICollectionViewFlowLayout *layout;
+//@property(nonatomic,strong)UICollectionView *collectionView;
 @property(nonatomic,strong)WMZBannerParam *bannerParam;
 @property(nonatomic,strong)NSMutableArray <UIImage *>*dataMutArr;
 /// Data
-@property(nonatomic,strong)NSMutableArray <MSProdShowModel *>*cvCellDataMutArr;
+//@property(nonatomic,strong)NSMutableArray <MSProdShowModel *>*cvCellDataMutArr;
 @property(nonatomic,strong)NSArray *__block dataArr;
+//@property(nonatomic,assign)CGFloat __block ddfd;
 
 @end
 
@@ -31,6 +33,7 @@ BOOL ISLogin;
 - (void)dealloc{
     NSLog(@"%@",JobsLocalFunc);
     //    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
 }
 
 -(void)loadView{
@@ -51,6 +54,7 @@ BOOL ISLogin;
     self.bannerParam.wDataSet(self.dataMutArr);
     [self.bannerView updateUI];
     self.marqueeView.alpha = 1;
+    self.homeGoodsView.alpha = 1;
 //    self.shopLinkView.alpha = 1;
 //
 //    self.collectionView.alpha = 1;
@@ -191,6 +195,7 @@ BOOL ISLogin;
             make.centerX.equalTo(self.view);
             make.top.equalTo(self.view).offset(JobsStatusBarHeightByAppleIncData());
         }];
+        [self.view layoutIfNeeded];
     }return _searchBoardView;
 }
 
@@ -284,7 +289,62 @@ BOOL ISLogin;
         }];
     }return _marqueeView;
 }
-//
+
+-(MSHomeGoodsView *)homeGoodsView{
+    if(!_homeGoodsView){
+        _homeGoodsView = MSHomeGoodsView.new;
+        _homeGoodsView.backgroundColor = JobsGreenColor;
+        [self.view addSubview:_homeGoodsView];
+        
+        [self.view layoutIfNeeded];
+        _homeGoodsView.x = 0;
+        _homeGoodsView.y = self.marqueeView.bottom + JobsWidth(16);// 锚点1（最低点）
+        _homeGoodsView.size = [_homeGoodsView viewSizeWithModel:nil];
+        [_homeGoodsView richElementsInViewWithModel:nil];
+        
+        CGFloat dp = self.marqueeView.bottom + JobsWidth(16);// 锚点1（最低点） 372.000000
+        CGFloat er = self.searchBoardView.bottom;// 锚点2（最高点） 110.000000
+        
+        NSLog(@"dp = %f",dp);
+        NSLog(@"er = %f",er);
+        
+        @jobs_weakify(self)
+        [_homeGoodsView actionObjectBlock:^(MSHomeGoodsView *data) {
+            NSLog(@"sss = %f",self->_homeGoodsView.y);/// 372.000000
+            @jobs_strongify(self)
+            /// 向下滑动为正
+            if(data.jobsPoint.y > 0){
+                /// 滑动向下 + y超过下限 = 回到原点（没有动画）
+                if(self->_homeGoodsView.y >= self.marqueeView.bottom + JobsWidth(16)){
+                    self->_homeGoodsView.y = self.marqueeView.bottom + JobsWidth(16);
+                }
+                /// 滑动向下 + y在上下限之间  = 回到原点（最低点）
+                if(self->_homeGoodsView.y <= self.marqueeView.bottom + JobsWidth(16) &&
+                    self->_homeGoodsView.y >= self.searchBoardView.bottom){
+                    [UIView animateWithDuration:0.3
+                                     animations:^{
+                        self->_homeGoodsView.y = self.marqueeView.bottom + JobsWidth(16);
+                    }];
+                }
+            }
+            /// 向上滑动为负
+            if(data.jobsPoint.y < 0){
+                /// 滑动向上 + y在上下限之间 = 抵达顶点（最高点）
+                if(self->_homeGoodsView.y <= self.marqueeView.bottom + JobsWidth(16) && self->_homeGoodsView.y >= self.searchBoardView.bottom){
+                    [UIView animateWithDuration:0.3
+                                     animations:^{
+                        self->_homeGoodsView.y = self.searchBoardView.bottom;// 锚点2（最高点）
+                    }];
+                }
+                /// 滑动向上 + y超过上限 = 抵达顶点（最高点）（没有动画）
+                if(self->_homeGoodsView.y < self.searchBoardView.bottom){
+                    self->_homeGoodsView.y = self.searchBoardView.bottom;// 锚点2（最高点）
+                }
+            }
+        }];
+    }return _homeGoodsView;
+}
+
 //-(MS3rdShopLinkView *)shopLinkView{
 //    if(!_shopLinkView){
 //        _shopLinkView = MS3rdShopLinkView.new;
@@ -297,7 +357,7 @@ BOOL ISLogin;
 //        }];
 //    }return _shopLinkView;
 //}
-//
+
 //-(UICollectionViewFlowLayout *)layout{
 //    if (!_layout) {
 //        _layout = UICollectionViewFlowLayout.new;
@@ -305,7 +365,7 @@ BOOL ISLogin;
 //    }return _layout;
 //}
 //
-//-(UICollectionView *)collectionView{
+//-(MSHomeCollectionView *)collectionView{
 //    if (!_collectionView) {
 //        _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero
 //                                           collectionViewLayout:self.layout];
@@ -379,7 +439,7 @@ BOOL ISLogin;
 //        }];
 //    }return _collectionView;
 //}
-//
+
 //-(NSMutableArray<MSProdShowModel *> *)cvCellDataMutArr{
 //    if (!_cvCellDataMutArr) {
 //        _cvCellDataMutArr = NSMutableArray.array;
@@ -423,3 +483,5 @@ BOOL ISLogin;
 //}
 
 @end
+
+

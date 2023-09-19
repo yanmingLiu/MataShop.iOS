@@ -316,10 +316,9 @@ static char *UIView_Measure_x = "UIView_Measure_x";
                              [NSNumber numberWithFloat:x],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGFloat y
 static char *UIView_Measure_y = "UIView_Measure_y";
 @dynamic y;
-#pragma mark —— @property(nonatomic,assign)CGFloat y
 -(CGFloat)y{
     if (objc_getAssociatedObject(self, UIView_Measure_y)) {
         return [objc_getAssociatedObject(self, UIView_Measure_y) floatValue];
@@ -337,10 +336,9 @@ static char *UIView_Measure_y = "UIView_Measure_y";
                              [NSNumber numberWithFloat:y],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGFloat width
 static char *UIView_Measure_width = "UIView_Measure_width";
 @dynamic width;
-#pragma mark —— @property(nonatomic,assign)CGFloat width
 -(CGFloat)width{
     if (objc_getAssociatedObject(self, UIView_Measure_width)) {
         return [objc_getAssociatedObject(self, UIView_Measure_width) floatValue];
@@ -358,10 +356,9 @@ static char *UIView_Measure_width = "UIView_Measure_width";
                              [NSNumber numberWithFloat:width],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGFloat height
 static char *UIView_Measure_height = "UIView_Measure_height";
 @dynamic height;
-#pragma mark —— @property(nonatomic,assign)CGFloat height
 -(CGFloat)height{
     if (objc_getAssociatedObject(self, UIView_Measure_height)) {
         return [objc_getAssociatedObject(self, UIView_Measure_height) floatValue];
@@ -379,10 +376,9 @@ static char *UIView_Measure_height = "UIView_Measure_height";
                              [NSNumber numberWithFloat:height],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGFloat centerX
 static char *UIView_Measure_centerX = "UIView_Measure_centerX";
 @dynamic centerX;
-#pragma mark —— @property(nonatomic,assign)CGFloat centerX
 -(CGFloat)centerX{
     if (objc_getAssociatedObject(self, UIView_Measure_centerX)) {
         return [objc_getAssociatedObject(self, UIView_Measure_centerX) floatValue];
@@ -400,10 +396,9 @@ static char *UIView_Measure_centerX = "UIView_Measure_centerX";
                              [NSNumber numberWithFloat:centerX],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGFloat centerY
 static char *UIView_Measure_centerY = "UIView_Measure_centerY";
 @dynamic centerY;
-#pragma mark —— @property(nonatomic,assign)CGFloat centerY
 -(CGFloat)centerY{
     if (objc_getAssociatedObject(self, UIView_Measure_centerY)) {
         return [objc_getAssociatedObject(self, UIView_Measure_centerY) floatValue];
@@ -421,10 +416,9 @@ static char *UIView_Measure_centerY = "UIView_Measure_centerY";
                              [NSNumber numberWithFloat:centerY],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGFloat left
 static char *UIView_Measure_left = "UIView_Measure_left";
 @dynamic left;
-#pragma mark —— @property(nonatomic,assign)CGFloat left
 -(CGFloat)left{
     if (objc_getAssociatedObject(self, UIView_Measure_left)) {
         return [objc_getAssociatedObject(self, UIView_Measure_left) floatValue];
@@ -442,10 +436,9 @@ static char *UIView_Measure_left = "UIView_Measure_left";
                              [NSNumber numberWithFloat:left],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGFloat right
 static char *UIView_Measure_right = "UIView_Measure_right";
 @dynamic right;
-#pragma mark —— @property(nonatomic,assign)CGFloat right
 -(CGFloat)right{
     if (objc_getAssociatedObject(self, UIView_Measure_right)) {
         return [objc_getAssociatedObject(self, UIView_Measure_right) floatValue];
@@ -463,10 +456,9 @@ static char *UIView_Measure_right = "UIView_Measure_right";
                              [NSNumber numberWithFloat:right],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGFloat top
 static char *UIView_Measure_top = "UIView_Measure_top";
 @dynamic top;
-#pragma mark —— @property(nonatomic,assign)CGFloat top
 -(CGFloat)top{
     if (objc_getAssociatedObject(self, UIView_Measure_top)) {
         return [objc_getAssociatedObject(self, UIView_Measure_top) floatValue];
@@ -484,10 +476,9 @@ static char *UIView_Measure_top = "UIView_Measure_top";
                              [NSNumber numberWithFloat:top],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGFloat bottom
 static char *UIView_Measure_bottom = "UIView_Measure_bottom";
 @dynamic bottom;
-#pragma mark —— @property(nonatomic,assign)CGFloat bottom
 -(CGFloat)bottom{
     if (objc_getAssociatedObject(self, UIView_Measure_bottom)) {
         return [objc_getAssociatedObject(self, UIView_Measure_bottom) floatValue];
@@ -505,10 +496,9 @@ static char *UIView_Measure_bottom = "UIView_Measure_bottom";
                              [NSNumber numberWithFloat:bottom],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGSize size
 static char *UIView_Measure_size = "UIView_Measure_size";
 @dynamic size;
-#pragma mark —— @property(nonatomic,assign)CGSize size
 -(CGSize)size{
     if (objc_getAssociatedObject(self, UIView_Measure_size)) {
         return [objc_getAssociatedObject(self, UIView_Measure_size) CGSizeValue];
@@ -526,10 +516,9 @@ static char *UIView_Measure_size = "UIView_Measure_size";
                              [NSValue valueWithCGSize:size],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+/// @property(nonatomic,assign)CGPoint origin
 static char *NSObject_Extras_origin = "NSObject_Extras_origin";
 @dynamic origin;
-#pragma mark —— @property(nonatomic,assign)CGPoint origin
 -(CGPoint)origin{
     if (objc_getAssociatedObject(self, NSObject_Extras_origin)) {
         return [objc_getAssociatedObject(self, NSObject_Extras_origin) CGPointValue];
