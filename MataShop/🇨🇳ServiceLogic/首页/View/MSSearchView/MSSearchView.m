@@ -92,12 +92,13 @@ static dispatch_once_t static_searchViewOnceToken;
         _textField.returnKeyType = UIReturnKeyDefault;
         _textField.keyboardAppearance = UIKeyboardAppearanceDefault;
         _textField.keyboardType = UIKeyboardTypeDefault;
-        _textField.leftView = [UIImageView.alloc initWithImage:JobsIMG(@"搜索放大镜")];
+//        _textField.leftView = [UIImageView.alloc initWithImage:JobsIMG(@"搜索放大镜")];
+        _textField.leftView = [UIImageView.alloc initWithImage:JobsIMG(@"新首页的搜索放大镜")];
         _textField.leftViewMode = UITextFieldViewModeAlways;
         _textField.leftViewOffsetX = JobsWidth(0);
         _textField.placeholdAnimationable = NO;
         _textField.offset = JobsWidth(24);
-        _textField.placeholder = Internationalization(@"      搜索关键词");
+        _textField.placeholder = Internationalization(@"        搜索关键词");
         _textField.placeholderColor = JobsGrayColor;
         _textField.placeholderFont = UIFontWeightRegularSize(14);
         @jobs_weakify(self)
@@ -124,8 +125,10 @@ static dispatch_once_t static_searchViewOnceToken;
         _searchBtn = BaseButton.new;
         [_searchBtn handelAdjustsImageWhenHighlighted];
         _searchBtn.normalTitle = Internationalization(@"搜索");
-        _searchBtn.backgroundColor = RGBA_COLOR(255, 231, 18, 1);
-        _searchBtn.normalTitleColor = RGBA_COLOR(20, 17, 38, 1);
+//        _searchBtn.backgroundColor = RGBA_COLOR(255, 231, 18, 1);
+        _searchBtn.backgroundColor = RGBA_COLOR(234, 41, 24, 1);
+//        _searchBtn.normalTitleColor = RGBA_COLOR(20, 17, 38, 1);
+        _searchBtn.normalTitleColor = RGB_SAMECOLOR(255);
         _searchBtn.titleFont = UIFontWeightBoldSize(JobsWidth(16));
         [_searchBtn makeBtnLabelByShowingType:UILabelShowingType_01];
         @jobs_weakify(self)
@@ -138,7 +141,8 @@ static dispatch_once_t static_searchViewOnceToken;
         }];
         [self addSubview:_searchBtn];
         [_searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(80), JobsWidth(36)));
+//            make.size.mas_equalTo(CGSizeMake(JobsWidth(80), JobsWidth(36)));
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(60), JobsWidth(32)));
             make.centerY.equalTo(self);
             make.right.equalTo(self);
         }];

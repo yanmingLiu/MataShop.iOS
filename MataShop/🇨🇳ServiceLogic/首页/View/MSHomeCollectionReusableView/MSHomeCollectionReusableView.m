@@ -199,9 +199,9 @@
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
         [_dataMutArr addObject:JobsIMG(@"创业招募令")];
+        [_dataMutArr addObject:JobsIMG(@"商品广告图4")];
         [_dataMutArr addObject:JobsIMG(@"创业招募令")];
-        [_dataMutArr addObject:JobsIMG(@"创业招募令")];
-        [_dataMutArr addObject:JobsIMG(@"创业招募令")];
+        [_dataMutArr addObject:JobsIMG(@"商品广告图4")];
     }return _dataMutArr;
 }
 

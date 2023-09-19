@@ -25,7 +25,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MSHomeVC : BaseViewController<
+@interface MSHomeVCOld : BaseViewController<
 UICollectionViewDataSource
 ,UICollectionViewDelegate
 ,UICollectionViewDelegateFlowLayout

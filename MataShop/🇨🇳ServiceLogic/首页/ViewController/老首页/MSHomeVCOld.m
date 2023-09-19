@@ -5,10 +5,10 @@
 //  Created by Jobs Hi on 9/9/23.
 //
 
-#import "MSHomeVC.h"
+#import "MSHomeVCOld.h"
 
 BOOL ISLogin;
-@interface MSHomeVC ()
+@interface MSHomeVCOld ()
 /// UI
 @property(nonatomic,strong)MSSearchBoardView *searchBoardView;
 @property(nonatomic,strong)BaiShaETProjMarqueeView *marqueeView;
@@ -18,14 +18,12 @@ BOOL ISLogin;
 @property(nonatomic,strong)UICollectionViewFlowLayout *layout;
 @property(nonatomic,strong)UICollectionView *collectionView;
 /// Data
-
-
 @property(nonatomic,strong)NSMutableArray <MSProdShowModel *>*cvCellDataMutArr;
 @property(nonatomic,strong)NSArray *__block dataArr;
 
 @end
 
-@implementation MSHomeVC
+@implementation MSHomeVCOld
 
 - (void)dealloc{
     NSLog(@"%@",JobsLocalFunc);
@@ -34,8 +32,8 @@ BOOL ISLogin;
 
 -(void)loadView{
     [super loadView];
-    self.bgImage = nil;
     ISLogin = self.isLogin;
+    self.bgImage = nil;
     if ([self.requestParams isKindOfClass:UIViewModel.class]) {
         self.viewModel = (UIViewModel *)self.requestParams;
     }
@@ -60,7 +58,7 @@ BOOL ISLogin;
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     /// 首页弹框
-//    [getMainWindow() popupWithView:[self jobsPopView:BaiShaETProjPopupView11.class
+//    [jobsGetMainWindow() popupWithView:[self jobsPopView:BaiShaETProjPopupView11.class
 //                                           viewModel:UIViewModel.new]];
 }
 

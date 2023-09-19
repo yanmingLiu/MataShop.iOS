@@ -548,7 +548,6 @@
 		C561D4B42AAC7EC200E28603 /* AppDelegate+Func.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D4AD2AAC7EC100E28603 /* AppDelegate+Func.m */; };
 		C561D4B52AAC7EC200E28603 /* AppDelegate+XHLaunchAdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D4B12AAC7EC200E28603 /* AppDelegate+XHLaunchAdDelegate.m */; };
 		C561D4B92AAC7ECE00E28603 /* SceneDelegate+UISceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D4B72AAC7ECE00E28603 /* SceneDelegate+UISceneDelegate.m */; };
-		C561D5372AAC840F00E28603 /* MSHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D5362AAC840F00E28603 /* MSHomeVC.m */; };
 		C561D53A2AAC844700E28603 /* MSMomentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D5392AAC844700E28603 /* MSMomentsVC.m */; };
 		C561D53D2AAC845600E28603 /* MSOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D53C2AAC845600E28603 /* MSOrderVC.m */; };
 		C561D5402AAC846300E28603 /* MSMsgVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D53F2AAC846300E28603 /* MSMsgVC.m */; };
@@ -923,6 +922,7 @@
 		C5EE37382AB871540020BDB8 /* MSDisburseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE37372AB871540020BDB8 /* MSDisburseVC.m */; };
 		C5EE37B42AB875740020BDB8 /* MSRedEnvelopeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE37B32AB875740020BDB8 /* MSRedEnvelopeDetailModel.m */; };
 		C5EE37B72AB8785A0020BDB8 /* MSMSRedEnvelopeDetailTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE37B62AB8785A0020BDB8 /* MSMSRedEnvelopeDetailTBVCell.m */; };
+		C5EE38342AB98B8D0020BDB8 /* MSHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE38332AB9862B0020BDB8 /* MSHomeVC.m */; };
 		C5FB56612AB31B5E00C873B7 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */; };
 		C5FB56622AB31B5E00C873B7 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */; };
 		C5FB566B2AB31F1300C873B7 /* MSHomePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */; };
@@ -1948,8 +1948,8 @@
 		C561D4B12AAC7EC200E28603 /* AppDelegate+XHLaunchAdDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XHLaunchAdDelegate.m"; sourceTree = "<group>"; };
 		C561D4B72AAC7ECE00E28603 /* SceneDelegate+UISceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SceneDelegate+UISceneDelegate.m"; sourceTree = "<group>"; };
 		C561D4B82AAC7ECE00E28603 /* SceneDelegate+UISceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SceneDelegate+UISceneDelegate.h"; sourceTree = "<group>"; };
-		C561D5352AAC840F00E28603 /* MSHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeVC.h; sourceTree = "<group>"; };
-		C561D5362AAC840F00E28603 /* MSHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeVC.m; sourceTree = "<group>"; };
+		C561D5352AAC840F00E28603 /* MSHomeVCOld.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeVCOld.h; sourceTree = "<group>"; };
+		C561D5362AAC840F00E28603 /* MSHomeVCOld.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeVCOld.m; sourceTree = "<group>"; };
 		C561D5382AAC844700E28603 /* MSMomentsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMomentsVC.h; sourceTree = "<group>"; };
 		C561D5392AAC844700E28603 /* MSMomentsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMomentsVC.m; sourceTree = "<group>"; };
 		C561D53B2AAC845600E28603 /* MSOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrderVC.h; sourceTree = "<group>"; };
@@ -2540,6 +2540,8 @@
 		C5EE37B32AB875740020BDB8 /* MSRedEnvelopeDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSRedEnvelopeDetailModel.m; sourceTree = "<group>"; };
 		C5EE37B52AB8785A0020BDB8 /* MSMSRedEnvelopeDetailTBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMSRedEnvelopeDetailTBVCell.h; sourceTree = "<group>"; };
 		C5EE37B62AB8785A0020BDB8 /* MSMSRedEnvelopeDetailTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMSRedEnvelopeDetailTBVCell.m; sourceTree = "<group>"; };
+		C5EE38322AB9862A0020BDB8 /* MSHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeVC.h; sourceTree = "<group>"; };
+		C5EE38332AB9862B0020BDB8 /* MSHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeVC.m; sourceTree = "<group>"; };
 		C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
 		C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
 		C5FB56672AB31E2300C873B7 /* MSHomePopupView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSHomePopupView.jpg; sourceTree = "<group>"; };
@@ -8363,8 +8365,8 @@
 		C561D98D2AAC9A4100E28603 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C561D5352AAC840F00E28603 /* MSHomeVC.h */,
-				C561D5362AAC840F00E28603 /* MSHomeVC.m */,
+				C5EE38312AB986090020BDB8 /* 老首页 */,
+				C5EE38302AB986000020BDB8 /* 新首页 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -9234,6 +9236,24 @@
 			path = MSDisburseVC;
 			sourceTree = "<group>";
 		};
+		C5EE38302AB986000020BDB8 /* 新首页 */ = {
+			isa = PBXGroup;
+			children = (
+				C5EE38322AB9862A0020BDB8 /* MSHomeVC.h */,
+				C5EE38332AB9862B0020BDB8 /* MSHomeVC.m */,
+			);
+			path = "新首页";
+			sourceTree = "<group>";
+		};
+		C5EE38312AB986090020BDB8 /* 老首页 */ = {
+			isa = PBXGroup;
+			children = (
+				C561D5352AAC840F00E28603 /* MSHomeVCOld.h */,
+				C561D5362AAC840F00E28603 /* MSHomeVCOld.m */,
+			);
+			path = "老首页";
+			sourceTree = "<group>";
+		};
 		C5FB56632AB31DA600C873B7 /* MSHomePopupView */ = {
 			isa = PBXGroup;
 			children = (
@@ -10082,7 +10102,6 @@
 				C561D42A2AAC7E7B00E28603 /* UIViewController+GifImageView.m in Sources */,
 				C561D38B2AAC7E7A00E28603 /* JobsUpDownLabModel.m in Sources */,
 				C520F5FB2AB396F500142DCC /* JobsPopUpVC.m in Sources */,
-				C561D5372AAC840F00E28603 /* MSHomeVC.m in Sources */,
 				C520F23D2AB38CF700142DCC /* WMZBannerFadeLayout.m in Sources */,
 				C561D4B92AAC7ECE00E28603 /* SceneDelegate+UISceneDelegate.m in Sources */,
 				C561D31C2AAC7E7A00E28603 /* JobsPullListAutoSizeView.m in Sources */,
@@ -10368,6 +10387,7 @@
 				C561D3A82AAC7E7A00E28603 /* JobsSuspendLab.m in Sources */,
 				C5729EF22AB5C7330084EAFC /* MSInternalRecruitmentModel.m in Sources */,
 				C561D3F72AAC7E7B00E28603 /* UIView+Masonry.m in Sources */,
+				C5EE38342AB98B8D0020BDB8 /* MSHomeVC.m in Sources */,
 				C561D44B2AAC7E7B00E28603 /* LMHWaterFallLayout.m in Sources */,
 				C561CE192AAC7CE200E28603 /* JXCategoryTimelineCellModel.m in Sources */,
 				C561D6642AAC862000E28603 /* BaiShaETProjPopupView03.m in Sources */,
