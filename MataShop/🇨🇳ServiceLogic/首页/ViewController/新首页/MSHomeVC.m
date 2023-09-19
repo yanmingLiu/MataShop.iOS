@@ -59,10 +59,6 @@ BOOL ISLogin;
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-//    [self updateStatusBarStyleIsWhite:YES];
-    // 手动触发 preferredStatusBarStyle 更新状态栏颜色
-//    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -74,33 +70,8 @@ BOOL ISLogin;
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    //恢复webView状态栏为白色
-//    if (@available(iOS 13.0, *)) {
-//        if ([UIApplication.sharedApplication.keyWindow.subviews containsObject:self.statusBar]) {
-//            [self.statusBar removeFromSuperview];
-//        }
-//    } else {
-//        UIView *statusBar = [[UIApplication.sharedApplication valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-//        if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-//            statusBar.backgroundColor = UIColor.clearColor;
-//        }
-//    }
 }
 #pragma mark —— 一些私有方法
-///// 更新状态栏颜色
-//- (void)updateStatusBarStyleIsWhite:(BOOL)isWhite{
-//    if (@available(iOS 13.0, *)) {
-//        if (![[UIApplication sharedApplication].keyWindow.subviews containsObject:self.statusBar]) {
-//            [[UIApplication sharedApplication].keyWindow addSubview:self.statusBar];
-//        }
-//        self.statusBar.backgroundColor = JobsRedColor;
-//    } else {
-//        UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-//        if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-//            statusBar.backgroundColor = JobsRedColor;
-//        }
-//    }
-//}
 #pragma mark —— UICollectionViewCell 部署策略
 ////见 @interface NSObject (JobsDeployCellConfig)
 //#pragma mark —— UICollectionViewDataSource
