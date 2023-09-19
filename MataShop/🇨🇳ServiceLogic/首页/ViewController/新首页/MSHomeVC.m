@@ -50,8 +50,7 @@ BOOL ISLogin;
     self.searchBoardView.alpha = 1;
     self.bannerParam.wDataSet(self.dataMutArr);
     [self.bannerView updateUI];
-    
-//    self.marqueeView.alpha = 1;
+    self.marqueeView.alpha = 1;
 //    self.shopLinkView.alpha = 1;
 //
 //    self.collectionView.alpha = 1;
@@ -59,6 +58,7 @@ BOOL ISLogin;
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+//    [self updateStatusBarCor:JobsOrangeColor];/// 在具体子类实现，不要写在父类
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -197,6 +197,7 @@ BOOL ISLogin;
 -(WMZBannerView *)bannerView{
     if (!_bannerView) {
         _bannerView = [WMZBannerView.alloc initConfigureWithModel:self.bannerParam];
+        [_bannerView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
         [self.view addSubview:_bannerView];
     }return _bannerView;
 }
@@ -226,7 +227,10 @@ BOOL ISLogin;
         .wEventClickSet(^(id anyID, NSInteger index) {
             NSLog(@"点击 %@ %ld",anyID,index);
         })
-        .wEventCenterClickSet(^(id anyID, NSInteger index,BOOL isCenter,UICollectionViewCell *cell) {
+        .wEventCenterClickSet(^(id anyID,
+                                NSInteger index,
+                                BOOL isCenter,
+                                UICollectionViewCell *cell) {
             NSLog(@"判断居中点击");
         })
         .wFrameSet(CGRectMake((JobsMainScreen_WIDTH() - [CasinoBannerCell cellSizeWithModel:nil].width) / 2,
@@ -268,18 +272,18 @@ BOOL ISLogin;
     }return _dataMutArr;
 }
 
-//-(BaiShaETProjMarqueeView *)marqueeView{
-//    if (!_marqueeView) {
-//        _marqueeView = [BaiShaETProjMarqueeView.alloc initWithSize:[BaiShaETProjMarqueeView viewSizeWithModel:nil]];
-//        [_marqueeView richElementsInViewWithModel:nil];
-//        [self.view addSubview:_marqueeView];
-//        [_marqueeView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo([BaiShaETProjMarqueeView viewSizeWithModel:nil]);
-//            make.centerX.equalTo(self.view);
-//            make.top.equalTo(self.searchBoardView.mas_bottom).offset(JobsWidth(10));
-//        }];
-//    }return _marqueeView;
-//}
+-(BaiShaETProjMarqueeView *)marqueeView{
+    if (!_marqueeView) {
+        _marqueeView = [BaiShaETProjMarqueeView.alloc initWithSize:[BaiShaETProjMarqueeView viewSizeWithModel:nil]];
+        [_marqueeView richElementsInViewWithModel:nil];
+        [self.view addSubview:_marqueeView];
+        [_marqueeView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo([BaiShaETProjMarqueeView viewSizeWithModel:nil]);
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.bannerView.mas_bottom).offset(JobsWidth(10));
+        }];
+    }return _marqueeView;
+}
 //
 //-(MS3rdShopLinkView *)shopLinkView{
 //    if(!_shopLinkView){

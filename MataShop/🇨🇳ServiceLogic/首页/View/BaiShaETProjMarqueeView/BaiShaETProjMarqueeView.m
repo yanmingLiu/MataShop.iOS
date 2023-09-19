@@ -10,7 +10,8 @@
 @interface BaiShaETProjMarqueeView ()
 /// UI
 @property(nonatomic,strong)WMZBannerView *bannerView;
-@property(nonatomic,strong)UIImageView *hornIMGV;
+//@property(nonatomic,strong)UIImageView *hornIMGV;
+@property(nonatomic,strong)BaseButton *hornBtn;
 /// Data
 @property(nonatomic,strong)WMZBannerParam *bannerParam;
 @property(nonatomic,strong)NSMutableArray <NSString *>*dataMutArr;
@@ -18,7 +19,6 @@
 @end
 
 @implementation BaiShaETProjMarqueeView
-
 #pragma mark —— BaseProtocol
 /// 单例化和销毁
 +(void)destroySingleton{
@@ -62,15 +62,15 @@ static dispatch_once_t static_marqueeViewOnceToken;
 #pragma mark —— BaseViewProtocol
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
-    self.viewModel = model ? : UIViewModel.new;
-    MakeDataNull
-    self.hornIMGV.alpha = 1;
+    self.backgroundColor = HEXCOLOR(0xF27650);
+//    self.hornIMGV.alpha = 1;
+    self.hornBtn.alpha = 1;
     self.bannerParam.wDataSet(self.dataMutArr);
     [self.bannerView updateUI];
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)viewSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsMainScreen_WIDTH() - JobsWidth(30), JobsWidth(20));
+    return CGSizeMake(JobsWidth(355), JobsWidth(36));
 }
 #pragma mark —— 网络请求
 -(void)netWorking{
@@ -78,17 +78,41 @@ static dispatch_once_t static_marqueeViewOnceToken;
 
 }
 #pragma mark —— lazyLoad
--(UIImageView *)hornIMGV{
-    if (!_hornIMGV) {
-        _hornIMGV = UIImageView.new;
-        _hornIMGV.image = JobsIMG(@"系统公告");
-        [self addSubview:_hornIMGV];
-        [_hornIMGV mas_makeConstraints:^(MASConstraintMaker *make) {
+//-(UIImageView *)hornIMGV{
+//    if (!_hornIMGV) {
+//        _hornIMGV = UIImageView.new;
+//        _hornIMGV.image = JobsIMG(@"系统公告");
+//        [self addSubview:_hornIMGV];
+//        [_hornIMGV mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.size.mas_equalTo(CGSizeMake(JobsWidth(62), JobsWidth(20)));
+//            make.centerY.equalTo(self.mas_centerY);
+//            make.left.equalTo(self).offset(JobsWidth(0));
+//        }];
+//    }return _hornIMGV;
+//}
+
+-(BaseButton *)hornBtn{
+    if (!_hornBtn) {
+        _hornBtn = BaseButton.new;
+        [self addSubview:_hornBtn];
+        [_hornBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(62), JobsWidth(20)));
             make.centerY.equalTo(self.mas_centerY);
             make.left.equalTo(self).offset(JobsWidth(0));
         }];
-    }return _hornIMGV;
+    }
+    
+    _hornBtn.normalImage = self.viewModel.image;
+    _hornBtn.normalTitle = Internationalization(@"  系统公告 | ");
+    _hornBtn.normalTitleColor = RGB_SAMECOLOR(255);
+    _hornBtn.normalAttributedTitle = self.viewModel.subTextModel.attributedText;
+    
+    _hornBtn.titleFont = UIFontWeightBoldSize(JobsWidth(14));
+    
+    [_hornBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+    [_hornBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft
+                              imageTitleSpace:JobsWidth(1)];
+    return _hornBtn;
 }
 
 -(WMZBannerView *)bannerView{
@@ -113,14 +137,17 @@ static dispatch_once_t static_marqueeViewOnceToken;
                                                                    forIndexPath:indexPath];
 //            cell.backgroundColor = JobsRandomColor;
             cell.backgroundLabel.text = self.dataMutArr[indexPath.item];
-            cell.backgroundLabel.textColor = HEXCOLOR(0x524740);
-            cell.backgroundLabel.font = [UIFont systemFontOfSize:JobsWidth(12) weight:UIFontWeightRegular];
+            cell.backgroundLabel.textColor = UIColor.whiteColor;
+            cell.backgroundLabel.font = UIFontWeightRegularSize(JobsWidth(12));
             return cell;
         })
         .wEventClickSet(^(id anyID, NSInteger index) {
             NSLog(@"点击 %@ %ld",anyID,index);
         })
-        .wEventCenterClickSet(^(id anyID, NSInteger index,BOOL isCenter,UICollectionViewCell *cell) {
+        .wEventCenterClickSet(^(id anyID,
+                                NSInteger index,
+                                BOOL isCenter,
+                                UICollectionViewCell *cell) {
             NSLog(@"判断居中点击");
         })
         .wFrameSet(CGRectMake(JobsWidth(70),
@@ -165,7 +192,7 @@ static dispatch_once_t static_marqueeViewOnceToken;
         _dataMutArr = NSMutableArray.array;
 #warning 文字过长会出现UI问题
 //        [_dataMutArr addObject:Internationalization(@"本公司為自營平台且無任何合作授權網站，勿輕信來路不明的")];
-        [_dataMutArr addObject:Internationalization(@"本公司")];
+        [_dataMutArr addObject:Internationalization(@"今日特价更多详情点击查询")];
     }return _dataMutArr;
 }
 

@@ -144,7 +144,7 @@ static dispatch_once_t static_searchViewOnceToken;
 //            make.size.mas_equalTo(CGSizeMake(JobsWidth(80), JobsWidth(36)));
             make.size.mas_equalTo(CGSizeMake(JobsWidth(60), JobsWidth(32)));
             make.centerY.equalTo(self);
-            make.right.equalTo(self);
+            make.right.equalTo(self).offset(JobsWidth(-2));
         }];
         [_searchBtn cornerCutToCircleWithCornerRadius:JobsWidth(18)];
     }return _searchBtn;

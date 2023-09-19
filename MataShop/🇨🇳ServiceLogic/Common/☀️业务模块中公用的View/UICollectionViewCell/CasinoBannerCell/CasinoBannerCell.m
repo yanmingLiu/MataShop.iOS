@@ -34,7 +34,7 @@
 }
 
 +(CGSize)cellSizeWithModel:(id _Nullable)model{
-    return CGSizeMake(JobsWidth(345), JobsWidth(152));
+    return CGSizeMake(JobsWidth(351), JobsWidth(200));
 }
 
 @end

@@ -98,7 +98,10 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
         .wEventClickSet(^(id anyID, NSInteger index) {
             NSLog(@"点击 %@ %ld",anyID,index);
         })
-        .wEventCenterClickSet(^(id anyID, NSInteger index,BOOL isCenter,UICollectionViewCell *cell) {
+        .wEventCenterClickSet(^(id anyID,
+                                NSInteger index,
+                                BOOL isCenter,
+                                UICollectionViewCell *cell) {
             NSLog(@"判断居中点击");
         })
         .wFrameSet(CGRectMake(self.hornBtn.x + self.hornBtn.width + JobsWidth(110),
