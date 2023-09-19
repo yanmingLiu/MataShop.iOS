@@ -312,9 +312,12 @@ BOOL ISLogin;
                 if(self->_homeGoodsView.y >= 初始位置){
                     self->_homeGoodsView.y = 初始位置;
                 }
+                NSLog(@"jjj = %f",初始位置);///
+                NSLog(@"mmm = %f",self->_homeGoodsView.y);///
+                NSLog(@"uuu = %f",终点位置);///
                 /// 滑动向下 + y在上下限之间  = 回到原点（最低点）
-                if(self->_homeGoodsView.y <= 初始位置 &&
-                    self->_homeGoodsView.y >= 终点位置){
+                if(self->_homeGoodsView.y <= 初始位置){
+//                if(self->_homeGoodsView.y <= 初始位置 && self->_homeGoodsView.y >= 终点位置){
                     [UIView animateWithDuration:0.3
                                      animations:^{
                         self->_homeGoodsView.y = 初始位置;
@@ -323,8 +326,12 @@ BOOL ISLogin;
             }
             /// 向上滑动为负
             if(data.jobsPoint.y < 0){
+                NSLog(@"ddd = %f",初始位置);/// 320.480000
+                NSLog(@"fff = %f",self->_homeGoodsView.y);/// 320.480011
+                NSLog(@"ggg = %f",终点位置);/// 96.906667
                 /// 滑动向上 + y在上下限之间 = 抵达顶点（最高点）
-                if(self->_homeGoodsView.y <= 初始位置 && self->_homeGoodsView.y >= 终点位置){
+                if(self->_homeGoodsView.y >= 终点位置){
+//                if(self->_homeGoodsView.y <= 初始位置 && self->_homeGoodsView.y >= 终点位置){
                     [UIView animateWithDuration:0.3
                                      animations:^{
                         self->_homeGoodsView.y = 终点位置;// 锚点2（最高点）
