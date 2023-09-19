@@ -36,7 +36,7 @@ BOOL ISLogin;
 -(void)loadView{
     [super loadView];
     ISLogin = self.isLogin;
-    self.bgImage = JobsIMG(@"新首页的底图");
+    self.viewModel.bgImage = JobsIMG(@"新首页的底图");
     if ([self.requestParams isKindOfClass:UIViewModel.class]) {
         self.viewModel = (UIViewModel *)self.requestParams;
     }
@@ -45,7 +45,7 @@ BOOL ISLogin;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.whiteColor;
+//    self.view.backgroundColor = UIColor.redColor;
 
     self.searchBoardView.alpha = 1;
     self.bannerParam.wDataSet(self.dataMutArr);
