@@ -243,7 +243,6 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
 //            make.edges.equalTo(self.view);
             make.top.equalTo(self.marqueeView.mas_bottom).offset(listContainerViewDefaultOffset);
             make.left.right.bottom.equalTo(self.view);
-            
         }];
         [self.view layoutIfNeeded];
     }return _listContainerView;

@@ -114,8 +114,8 @@
         [self addSubview:_adIMGV1];
         [_adIMGV1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(JobsWidth(110));
-            make.left.equalTo(self).offset(12);
-            make.right.equalTo(self).offset(-12);
+            make.left.equalTo(self).offset(JobsWidth(12));
+            make.right.equalTo(self).offset(JobsWidth(-12));
             make.top.equalTo(self.bannerView.mas_bottom).offset(JobsWidth(16));
         }];
         
@@ -128,7 +128,8 @@
             _adIMGV1.userInteractionEnabled = YES;
             @jobs_weakify(self)
             _adIMGV1.target = weak_self;
-            _adIMGV1.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target, UITapGestureRecognizer *_Nullable arg) {
+            _adIMGV1.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target,
+                                                                       UITapGestureRecognizer *_Nullable arg) {
                 @jobs_strongify(self)
                 [WHToast toastErrMsg:Internationalization(@"超值折扣区")];
             }];
@@ -158,7 +159,8 @@
             _adIMGV2.userInteractionEnabled = YES;
             @jobs_weakify(self)
             _adIMGV2.target = weak_self;
-            _adIMGV2.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target, UITapGestureRecognizer *_Nullable arg) {
+            _adIMGV2.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target,
+                                                                       UITapGestureRecognizer *_Nullable arg) {
                 @jobs_strongify(self)
                 [WHToast toastErrMsg:Internationalization(@"超值")];
             }];
@@ -188,7 +190,8 @@
             _adIMGV3.userInteractionEnabled = YES;
             @jobs_weakify(self)
             _adIMGV3.target = weak_self;
-            _adIMGV3.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target, UITapGestureRecognizer *_Nullable arg) {
+            _adIMGV3.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target,
+                                                                       UITapGestureRecognizer *_Nullable arg) {
                 @jobs_strongify(self)
                 [WHToast toastErrMsg:Internationalization(@"火爆")];
             }];

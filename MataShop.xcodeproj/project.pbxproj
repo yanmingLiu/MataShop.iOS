@@ -659,6 +659,7 @@
 		C5729EF22AB5C7330084EAFC /* MSInternalRecruitmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EF12AB5C7330084EAFC /* MSInternalRecruitmentModel.m */; };
 		C5729EFC2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EFB2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.m */; };
 		C5729EFF2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EFE2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m */; };
+		C578EBC02ABB026900832A07 /* MSHomeGoodsBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C578EBBF2ABB026800832A07 /* MSHomeGoodsBaseVC.m */; };
 		C5BD5E6D2AAC76740048F36B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6C2AAC76740048F36B /* AppDelegate.m */; };
 		C5BD5E702AAC76740048F36B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6F2AAC76740048F36B /* SceneDelegate.m */; };
 		C5BD5E762AAC76740048F36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BD5E742AAC76740048F36B /* Main.storyboard */; };
@@ -2230,6 +2231,10 @@
 		C5729EFD2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInternalRecruitmentCVCell1.h; sourceTree = "<group>"; };
 		C5729EFE2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInternalRecruitmentCVCell1.m; sourceTree = "<group>"; };
 		C5729FF12AB649DE0084EAFC /* 关于WMZBanner的怪异写法探究.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "关于WMZBanner的怪异写法探究.md"; sourceTree = "<group>"; };
+		C578EBBE2ABB026800832A07 /* MSHomeGoodsBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeGoodsBaseVC.h; sourceTree = "<group>"; };
+		C578EBBF2ABB026800832A07 /* MSHomeGoodsBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeGoodsBaseVC.m; sourceTree = "<group>"; };
+		C578ED1E2ABB243200832A07 /* MS3rdShopLinkView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MS3rdShopLinkView.jpg; sourceTree = "<group>"; };
+		C578ED1F2ABB246600832A07 /* MS3rdShopLinkView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MS3rdShopLinkView.jpg; sourceTree = "<group>"; };
 		C5BD5E682AAC76740048F36B /* MataShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD5E6B2AAC76740048F36B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5BD5E6C2AAC76740048F36B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2543,7 +2548,6 @@
 		C5EE37B62AB8785A0020BDB8 /* MSMSRedEnvelopeDetailTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMSRedEnvelopeDetailTBVCell.m; sourceTree = "<group>"; };
 		C5EE38322AB9862A0020BDB8 /* MSHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeVC.h; sourceTree = "<group>"; };
 		C5EE38332AB9862B0020BDB8 /* MSHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeVC.m; sourceTree = "<group>"; };
-		C5EE3CC82AB9CEF70020BDB8 /* MSHomeGoodsView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSHomeGoodsView.jpg; sourceTree = "<group>"; };
 		C5EE3CD12AB9D1060020BDB8 /* BaseScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseScrollView.h; sourceTree = "<group>"; };
 		C5EE3CD22AB9D1060020BDB8 /* BaseScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseScrollView.m; sourceTree = "<group>"; };
 		C5EE3D4D2AB9D1E60020BDB8 /* MSHomeGoodsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeGoodsView.h; sourceTree = "<group>"; };
@@ -5013,27 +5017,27 @@
 		C561D08B2AAC7E7900E28603 /* UIView+Category */ = {
 			isa = PBXGroup;
 			children = (
-				C561D08C2AAC7E7900E28603 /* UIView+SuspendView */,
-				C561D08F2AAC7E7900E28603 /* UIView+ZFPlayer */,
-				C561D0922AAC7E7900E28603 /* UIView+Gesture */,
-				C561D0952AAC7E7900E28603 /* UIView+Measure */,
-				C561D0982AAC7E7900E28603 /* UIView+BRPickerView */,
-				C561D09B2AAC7E7900E28603 /* UIView+Gradient */,
-				C561D09E2AAC7E7900E28603 /* UIView+Chain */,
-				C561D0A12AAC7E7900E28603 /* UIView+BackgroundLabel */,
-				C561D0A42AAC7E7900E28603 /* UIView+EmptyData */,
-				C561D0A72AAC7E7900E28603 /* UIView+BackgroundImage */,
-				C561D0AA2AAC7E7900E28603 /* UIView+ViewController */,
-				C561D0AD2AAC7E7900E28603 /* UIView+UIBackgroundConfig */,
-				C561D0B02AAC7E7900E28603 /* UIView+JHGestureBlock */,
 				C561D0B32AAC7E7900E28603 /* JobsView.h */,
 				C561D0B42AAC7E7900E28603 /* UIView+Category.h */,
 				C561D0B52AAC7E7900E28603 /* UIView+Animation */,
-				C561D0B82AAC7E7900E28603 /* UIView+AutoSelfAdaptionSize */,
-				C561D0BB2AAC7E7900E28603 /* UIView+Masonry */,
 				C561D0BE2AAC7E7900E28603 /* UIView+AOP */,
-				C561D0C12AAC7E7900E28603 /* UIView+MJRefresh */,
+				C561D0B82AAC7E7900E28603 /* UIView+AutoSelfAdaptionSize */,
+				C561D0A72AAC7E7900E28603 /* UIView+BackgroundImage */,
+				C561D0A12AAC7E7900E28603 /* UIView+BackgroundLabel */,
+				C561D0982AAC7E7900E28603 /* UIView+BRPickerView */,
+				C561D09E2AAC7E7900E28603 /* UIView+Chain */,
+				C561D0A42AAC7E7900E28603 /* UIView+EmptyData */,
 				C561D0C42AAC7E7900E28603 /* UIView+Extras */,
+				C561D0922AAC7E7900E28603 /* UIView+Gesture */,
+				C561D09B2AAC7E7900E28603 /* UIView+Gradient */,
+				C561D0B02AAC7E7900E28603 /* UIView+JHGestureBlock */,
+				C561D0BB2AAC7E7900E28603 /* UIView+Masonry */,
+				C561D0952AAC7E7900E28603 /* UIView+Measure */,
+				C561D0C12AAC7E7900E28603 /* UIView+MJRefresh */,
+				C561D08C2AAC7E7900E28603 /* UIView+SuspendView */,
+				C561D0AD2AAC7E7900E28603 /* UIView+UIBackgroundConfig */,
+				C561D0AA2AAC7E7900E28603 /* UIView+ViewController */,
+				C561D08F2AAC7E7900E28603 /* UIView+ZFPlayer */,
 			);
 			path = "UIView+Category";
 			sourceTree = "<group>";
@@ -5194,8 +5198,8 @@
 		C561D0C12AAC7E7900E28603 /* UIView+MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0C22AAC7E7900E28603 /* UIView+MJRefresh.m */,
 				C561D0C32AAC7E7900E28603 /* UIView+MJRefresh.h */,
+				C561D0C22AAC7E7900E28603 /* UIView+MJRefresh.m */,
 			);
 			path = "UIView+MJRefresh";
 			sourceTree = "<group>";
@@ -5820,11 +5824,11 @@
 			isa = PBXGroup;
 			children = (
 				C561D1712AAC7E7A00E28603 /* ConfigModel */,
+				C561D1782AAC7E7A00E28603 /* JsonRes.bundle */,
+				C561D17A2AAC7E7A00E28603 /* LOTAnimationMJRefreshFooter */,
 				C561D1742AAC7E7A00E28603 /* LOTAnimationMJRefreshHeader */,
 				C561D1772AAC7E7A00E28603 /* UIViewController+MJRefresh.h */,
-				C561D1782AAC7E7A00E28603 /* JsonRes.bundle */,
 				C561D1792AAC7E7A00E28603 /* UIViewController+MJRefresh.m */,
-				C561D17A2AAC7E7A00E28603 /* LOTAnimationMJRefreshFooter */,
 			);
 			path = "UIViewController+MJRefresh";
 			sourceTree = "<group>";
@@ -5841,8 +5845,8 @@
 		C561D1742AAC7E7A00E28603 /* LOTAnimationMJRefreshHeader */ = {
 			isa = PBXGroup;
 			children = (
-				C561D1752AAC7E7A00E28603 /* LOTAnimationMJRefreshHeader.m */,
 				C561D1762AAC7E7A00E28603 /* LOTAnimationMJRefreshHeader.h */,
+				C561D1752AAC7E7A00E28603 /* LOTAnimationMJRefreshHeader.m */,
 			);
 			path = LOTAnimationMJRefreshHeader;
 			sourceTree = "<group>";
@@ -5850,8 +5854,8 @@
 		C561D17A2AAC7E7A00E28603 /* LOTAnimationMJRefreshFooter */ = {
 			isa = PBXGroup;
 			children = (
-				C561D17B2AAC7E7A00E28603 /* LOTAnimationMJRefreshFooter.m */,
 				C561D17C2AAC7E7A00E28603 /* LOTAnimationMJRefreshFooter.h */,
+				C561D17B2AAC7E7A00E28603 /* LOTAnimationMJRefreshFooter.m */,
 			);
 			path = LOTAnimationMJRefreshFooter;
 			sourceTree = "<group>";
@@ -8372,6 +8376,7 @@
 		C561D98D2AAC9A4100E28603 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C578EBBD2ABB024800832A07 /* MSHomeGoodsBaseVC */,
 				C5EE38312AB986090020BDB8 /* 老首页 */,
 				C5EE38302AB986000020BDB8 /* 新首页 */,
 			);
@@ -8552,6 +8557,15 @@
 				C561D1C72AAC7E7A00E28603 /* NSMutableArray+Extra.m */,
 			);
 			path = "NSMutableArray+Extra";
+			sourceTree = "<group>";
+		};
+		C578EBBD2ABB024800832A07 /* MSHomeGoodsBaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				C578EBBE2ABB026800832A07 /* MSHomeGoodsBaseVC.h */,
+				C578EBBF2ABB026800832A07 /* MSHomeGoodsBaseVC.m */,
+			);
+			path = MSHomeGoodsBaseVC;
 			sourceTree = "<group>";
 		};
 		C5BD5E5F2AAC76740048F36B = {
@@ -8771,6 +8785,7 @@
 		C5CFEA0E2AB2559500D0F225 /* MS3rdShopLinkView */ = {
 			isa = PBXGroup;
 			children = (
+				C578ED1F2ABB246600832A07 /* MS3rdShopLinkView.jpg */,
 				C5CFEA0F2AB255B500D0F225 /* MS3rdShopLinkView.h */,
 				C5CFEA102AB255B500D0F225 /* MS3rdShopLinkView.m */,
 			);
@@ -9265,7 +9280,7 @@
 		C5EE3CCC2AB9D01D0020BDB8 /* MSHomeGoodsView */ = {
 			isa = PBXGroup;
 			children = (
-				C5EE3CC82AB9CEF70020BDB8 /* MSHomeGoodsView.jpg */,
+				C578ED1E2ABB243200832A07 /* MS3rdShopLinkView.jpg */,
 				C5EE3D4D2AB9D1E60020BDB8 /* MSHomeGoodsView.h */,
 				C5EE3D4E2AB9D1E60020BDB8 /* MSHomeGoodsView.m */,
 			);
@@ -10143,6 +10158,7 @@
 				C561D3562AAC7E7A00E28603 /* JobsUserHeaderDataView.m in Sources */,
 				C561D3AB2AAC7E7A00E28603 /* JobsShowObjInfoVC.m in Sources */,
 				C561D6A22AAC862000E28603 /* BaiShaETProjTipsView06.m in Sources */,
+				C578EBC02ABB026900832A07 /* MSHomeGoodsBaseVC.m in Sources */,
 				C561D3E32AAC7E7B00E28603 /* SoundBtn.m in Sources */,
 				C561D6662AAC862000E28603 /* BaiShaETProjPopupView04.m in Sources */,
 				C520F63B2AB3975800142DCC /* YTKRequest+Custom.m in Sources */,

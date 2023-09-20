@@ -174,10 +174,8 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _listContainerView.defaultSelectedIndex = 1;// 默认从第二个开始显示
         [self.view addSubview:_listContainerView];
         [_listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.equalTo(self.view);
             make.top.equalTo(self.gk_navigationBar.mas_bottom).offset(listContainerViewDefaultOffset);
             make.left.right.bottom.equalTo(self.view);
-            
         }];
         [self.view layoutIfNeeded];
     }return _listContainerView;
@@ -198,6 +196,5 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [_titleMutArr addObject:Internationalization(@"支出")];
     }return _titleMutArr;
 }
-
 
 @end

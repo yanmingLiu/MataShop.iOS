@@ -178,7 +178,6 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [_listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.gk_navigationBar.mas_bottom).offset(listContainerViewDefaultOffset);
             make.left.right.bottom.equalTo(self.view);
-            
         }];
         [self.view layoutIfNeeded];
     }return _listContainerView;

@@ -55,7 +55,7 @@
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)cellSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsWidth(165), JobsWidth(165 + 50));
+    return CGSizeMake(JobsWidth(172), JobsWidth(172 + 50));
 }
 #pragma mark —— lazyLoad
 -(UIImageView *)imageView{
