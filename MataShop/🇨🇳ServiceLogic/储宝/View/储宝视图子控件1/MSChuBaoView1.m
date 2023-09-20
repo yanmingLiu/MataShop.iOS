@@ -144,7 +144,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
             make.right.equalTo(self).offset(JobsWidth(-104));
         }];
         [_rechargeBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
-        [_rechargeBtn layerBorderColour:RGBA_COLOR(136, 79, 2, 1) andBorderWidth:1];
+        [_rechargeBtn layerBorderCor:RGBA_COLOR(136, 79, 2, 1) andBorderWidth:1];
         @jobs_weakify(self)
         [_rechargeBtn btnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)

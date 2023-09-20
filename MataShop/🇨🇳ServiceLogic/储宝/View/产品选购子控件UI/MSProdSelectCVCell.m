@@ -186,7 +186,7 @@
             make.bottom.equalTo(self.contentView).offset(JobsWidth(-16));
         }];
         [_recommendedBuyBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
-        [_recommendedBuyBtn layerBorderColour:RGBA_COLOR(136, 79, 2, 1) andBorderWidth:JobsWidth(1)];
+        [_recommendedBuyBtn layerBorderCor:RGBA_COLOR(136, 79, 2, 1) andBorderWidth:JobsWidth(1)];
         @jobs_weakify(self)
         [_recommendedBuyBtn btnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)

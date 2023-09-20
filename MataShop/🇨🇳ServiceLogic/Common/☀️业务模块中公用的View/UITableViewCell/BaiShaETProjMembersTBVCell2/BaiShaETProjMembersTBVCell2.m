@@ -125,7 +125,7 @@ UITableViewCellProtocol_synthesize
         }];
         
         [_entryWalletBtn makeBtnLabelByShowingType:UILabelShowingType_01];
-        [_entryWalletBtn layerBorderColour:HEXCOLOR(0xFFFFFF) andBorderWidth:JobsWidth(1)];
+        [_entryWalletBtn layerBorderCor:HEXCOLOR(0xFFFFFF) andBorderWidth:JobsWidth(1)];
         [_entryWalletBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleRight imageTitleSpace:JobsWidth(9)];
         @jobs_weakify(self)
         [_entryWalletBtn btnClickEventBlock:^(UIButton *x) {
@@ -188,7 +188,7 @@ UITableViewCellProtocol_synthesize
         }];
         [_取 makeBtnLabelByShowingType:UILabelShowingType_01];
         [_取 cornerCutToCircleWithCornerRadius:JobsWidth(8)];
-        [_取 layerBorderColour:HEXCOLOR(0xFFFFFF) andBorderWidth:JobsWidth(1)];
+        [_取 layerBorderCor:HEXCOLOR(0xFFFFFF) andBorderWidth:JobsWidth(1)];
         [_取 layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft imageTitleSpace:JobsWidth(9)];
         [_取 btnClickEventBlock:^(UIButton *x) {
             x.selected = !x.selected;
@@ -212,7 +212,7 @@ UITableViewCellProtocol_synthesize
         }];
         [_存 makeBtnLabelByShowingType:UILabelShowingType_01];
         [_存 cornerCutToCircleWithCornerRadius:JobsWidth(8)];
-        [_存 layerBorderColour:HEXCOLOR(0xFFFFFF) andBorderWidth:JobsWidth(1)];
+        [_存 layerBorderCor:HEXCOLOR(0xFFFFFF) andBorderWidth:JobsWidth(1)];
         [_存 layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft imageTitleSpace:JobsWidth(9)];
         [_存 btnClickEventBlock:^(UIButton *x) {
             x.selected = !x.selected;
@@ -236,7 +236,7 @@ UITableViewCellProtocol_synthesize
         }];
         [_转 makeBtnLabelByShowingType:UILabelShowingType_01];
         [_转 cornerCutToCircleWithCornerRadius:JobsWidth(8)];
-        [_转 layerBorderColour:HEXCOLOR(0xFFFFFF) andBorderWidth:JobsWidth(1)];
+        [_转 layerBorderCor:HEXCOLOR(0xFFFFFF) andBorderWidth:JobsWidth(1)];
         [_转 layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft imageTitleSpace:JobsWidth(9)];
         @jobs_weakify(self)
         [_转 btnClickEventBlock:^(UIButton *x) {

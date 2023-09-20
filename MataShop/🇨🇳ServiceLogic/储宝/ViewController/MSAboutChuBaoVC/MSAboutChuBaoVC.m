@@ -87,7 +87,7 @@
             make.top.equalTo(self.gk_navigationBar.mas_bottom).offset(JobsWidth(5));
         }];
         [_textView cornerCutToCircleWithCornerRadius:8];
-        [_textView layerBorderColour:RGBA_COLOR(255, 255, 144, 1) andBorderWidth:0.5f];
+        [_textView layerBorderCor:RGBA_COLOR(255, 255, 144, 1) andBorderWidth:0.5f];
     }return _textView;
 }
 

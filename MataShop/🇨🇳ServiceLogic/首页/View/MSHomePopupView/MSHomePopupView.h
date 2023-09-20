@@ -8,7 +8,7 @@
 #import "BaseView.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+///  首页弹窗
 @interface MSHomePopupView : BaseView
 
 @end

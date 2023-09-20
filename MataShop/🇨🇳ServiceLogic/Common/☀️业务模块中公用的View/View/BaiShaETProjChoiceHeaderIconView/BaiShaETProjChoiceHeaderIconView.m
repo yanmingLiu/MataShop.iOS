@@ -131,14 +131,14 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
 
     for (BaiShaETProjHeaderIconCVCell *cell in collectionView.visibleCells) {
-        [cell layerBorderColour:UIColor.clearColor andBorderWidth:JobsWidth(1)];
+        [cell layerBorderCor:UIColor.clearColor andBorderWidth:JobsWidth(1)];
     }
     
     if (indexPath.item == self.dataMutArr.count - 1) {
         if (self.voidBlock) self.voidBlock();
     }else{
         BaiShaETProjHeaderIconCVCell *cell = (BaiShaETProjHeaderIconCVCell *)[collectionView cellForItemAtIndexPath:indexPath];
-        [cell layerBorderColour:UIColor.redColor andBorderWidth:JobsWidth(1)];
+        [cell layerBorderCor:UIColor.redColor andBorderWidth:JobsWidth(1)];
     }
     
 }

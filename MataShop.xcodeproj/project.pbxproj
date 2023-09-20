@@ -2235,6 +2235,7 @@
 		C578EBBF2ABB026800832A07 /* MSHomeGoodsBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeGoodsBaseVC.m; sourceTree = "<group>"; };
 		C578ED1E2ABB243200832A07 /* MS3rdShopLinkView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MS3rdShopLinkView.jpg; sourceTree = "<group>"; };
 		C578ED1F2ABB246600832A07 /* MS3rdShopLinkView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MS3rdShopLinkView.jpg; sourceTree = "<group>"; };
+		C578EF6D2ABB7D5900832A07 /* MSHomePopupView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSHomePopupView.jpg; sourceTree = "<group>"; };
 		C5BD5E682AAC76740048F36B /* MataShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD5E6B2AAC76740048F36B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5BD5E6C2AAC76740048F36B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -2554,7 +2555,6 @@
 		C5EE3D4E2AB9D1E60020BDB8 /* MSHomeGoodsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeGoodsView.m; sourceTree = "<group>"; };
 		C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
 		C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
-		C5FB56672AB31E2300C873B7 /* MSHomePopupView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSHomePopupView.jpg; sourceTree = "<group>"; };
 		C5FB56692AB31F1300C873B7 /* MSHomePopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomePopupView.h; sourceTree = "<group>"; };
 		C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomePopupView.m; sourceTree = "<group>"; };
 		D9F4E560DCFD78A2DE92A1BF /* Pods-MataShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-MataShopUITests/Pods-MataShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -9299,7 +9299,7 @@
 		C5FB56632AB31DA600C873B7 /* MSHomePopupView */ = {
 			isa = PBXGroup;
 			children = (
-				C5FB56672AB31E2300C873B7 /* MSHomePopupView.jpg */,
+				C578EF6D2ABB7D5900832A07 /* MSHomePopupView.jpg */,
 				C5FB56692AB31F1300C873B7 /* MSHomePopupView.h */,
 				C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */,
 			);

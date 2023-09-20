@@ -50,7 +50,7 @@
         cell = (MSPromotionIncentiveCVCell *)[collectionView collectionViewCellClass:MSPromotionIncentiveCVCell.class forIndexPath:indexPath];
     }
     
-//    [cell layerBorderColour:RGBA_COLOR(225, 225, 144, 1) andBorderWidth:1];
+//    [cell layerBorderCor:RGBA_COLOR(225, 225, 144, 1) andBorderWidth:1];
     
     // UICollectionViewCell圆切角
 //    cell.contentView.layer.cornerRadius = cell.layer.cornerRadius = JobsWidth(8);

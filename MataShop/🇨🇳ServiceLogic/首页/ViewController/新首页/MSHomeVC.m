@@ -186,10 +186,6 @@ BOOL ISLogin;
             make.top.equalTo(self.marqueeView.mas_bottom).offset(JobsWidth(16));
         }];
         [_shopLinkView richElementsInViewWithModel:nil];
-//        [_shopLinkView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
-        /// 有问题
-//        [_shopLinkView appointCornerCutToCircleByRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
-//                                                     cornerRadii:CGSizeMake(JobsWidth(8), JobsWidth(8))];
     }return _shopLinkView;
 }
 
