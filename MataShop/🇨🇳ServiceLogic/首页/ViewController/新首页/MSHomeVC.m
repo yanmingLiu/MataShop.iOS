@@ -60,8 +60,8 @@ BOOL ISLogin;
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     /// 首页弹框
-//    [jobsGetMainWindow() popupWithView:[self jobsPopView:BaiShaETProjPopupView11.class
-//                                           viewModel:UIViewModel.new]];
+    [jobsGetMainWindow() popupWithView:[self jobsPopView:MSHomePopupView.class
+                                               viewModel:UIViewModel.new]];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

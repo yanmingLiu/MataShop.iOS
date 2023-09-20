@@ -137,7 +137,6 @@ static dispatch_once_t static_searchViewOnceToken;
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
 //            [WHToast toastErrMsg:Internationalization(@"获取节日事件需要权限呀大宝贝!")];
-            [self forceComingToPushVC:MSInternalRecruitmentVC.new requestParams:nil];
         }];
         [self addSubview:_searchBtn];
         [_searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
