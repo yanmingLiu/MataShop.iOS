@@ -14,6 +14,12 @@
 @property(nonatomic,strong)JXCategoryTitleView *categoryView;
 @property(nonatomic,strong)JXCategoryIndicatorLineView *lineView;/// 跟随的指示器
 @property(nonatomic,strong)JXCategoryListContainerView *listContainerView;/// 此属性决定依附于此的viewController
+@property(nonatomic,strong)UIButton *registerBtn;
+@property(nonatomic,strong)UIButton *loginBtn;
+@property(nonatomic,strong)UIButton *agreeBtn;/// 阅读并同意
+@property(nonatomic,strong)UIButton *privacyBtn;/// 隐私政策
+@property(nonatomic,strong)UILabel *label;/// 和
+@property(nonatomic,strong)UIButton *userAgreementBtn;/// 用户协议
 /// Data
 @property(nonatomic,strong)NSMutableArray <JobsBtnModel *>*btnModelMutArr;
 @property(nonatomic,strong)NSMutableArray <NSString *>*titleMutArr;
@@ -51,6 +57,13 @@
     self.logoImageView.alpha = 1;
     self.titleLab.alpha = 1;
     self.categoryView.alpha = 1;
+    self.registerBtn.alpha = 1;
+    self.loginBtn.alpha = 1;
+    
+    self.agreeBtn.alpha = 1;
+    self.privacyBtn.alpha = 1;
+    self.label.alpha = 1;
+    self.userAgreementBtn.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -209,6 +222,137 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [self.view layoutIfNeeded];
     }return _listContainerView;
+}
+
+-(UIButton *)registerBtn{
+    if(!_registerBtn){
+        _registerBtn = UIButton.new;
+        _registerBtn.normalTitle = Internationalization(@"注册账号");
+        _registerBtn.normalTitleColor = JobsCor(@"#333333");
+        _registerBtn.titleFont = UIFontWeightRegularSize(JobsWidth(14));
+        [self.view addSubview:_registerBtn];
+        [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.size.mas_equalTo(CGSizeMake(JobsWidth(56), JobsWidth(14)));
+            make.height.mas_equalTo(JobsWidth(14));
+            make.left.equalTo(self.view).offset(JobsWidth(40));
+            make.top.equalTo(self.listContainerView.mas_bottom);
+        }];
+        [_registerBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+        @jobs_weakify(self)
+        [_registerBtn btnClickEventBlock:^(UIButton *x) {
+            @jobs_strongify(self)
+            NSLog(@"注册账号");
+        }];
+    }return _registerBtn;
+}
+
+-(UIButton *)loginBtn{
+    if(!_loginBtn){
+        _loginBtn = UIButton.new;
+        _loginBtn.normalTitle = Internationalization(@"登录");
+        _loginBtn.titleFont = UIFontWeightRegularSize(JobsWidth(14));
+        _loginBtn.normalTitleColor = JobsWhiteColor;
+        _loginBtn.backgroundColor = JobsCor(@"#DD0000");
+        [self.view addSubview:_loginBtn];
+        [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(315), JobsWidth(48)));
+            make.left.equalTo(self.view).offset(JobsWidth(40));
+            make.top.equalTo(self.registerBtn.mas_bottom).offset(JobsWidth(50));
+        }];
+        [_loginBtn cornerCutToCircleWithCornerRadius:JobsWidth(24)];
+        @jobs_weakify(self)
+        [_loginBtn btnClickEventBlock:^(UIButton *x) {
+            @jobs_strongify(self)
+            NSLog(@"登录账号");
+        }];
+    }return _loginBtn;
+}
+
+-(UIButton *)agreeBtn{
+    if(!_agreeBtn){
+        _agreeBtn = UIButton.new;
+        _agreeBtn.normalTitle = Internationalization(@"阅读并同意");
+        _agreeBtn.normalTitleColor = JobsCor(@"#333333");
+        _agreeBtn.titleFont = UIFontWeightRegularSize(JobsWidth(12));
+        _agreeBtn.normalImage = JobsIMG(@"登录-未同意");
+        _agreeBtn.backgroundColor = UIColor.clearColor;
+        [self.view addSubview:_agreeBtn];
+        [_agreeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(JobsWidth(12));
+            make.left.equalTo(self.loginBtn);
+            make.top.equalTo(self.loginBtn.mas_bottom).offset(JobsWidth(20));
+        }];
+        [_agreeBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+        [self.view layoutIfNeeded];
+        [_agreeBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft
+                                   imageTitleSpace:JobsWidth(4)];
+        @jobs_weakify(self)
+        [_agreeBtn btnClickEventBlock:^(UIButton *x) {
+            @jobs_strongify(self)
+            NSLog(@"阅读并同意");
+            x.selected = !x.selected;
+        }];
+    }return _agreeBtn;
+}
+
+-(UIButton *)privacyBtn{
+    if(!_privacyBtn){
+        _privacyBtn = UIButton.new;
+        _privacyBtn.normalTitle = Internationalization(@"《隐私政策》");
+        _privacyBtn.normalTitleColor = JobsCor(@"#DD0000");
+        _privacyBtn.titleFont = UIFontWeightRegularSize(JobsWidth(12));
+        _privacyBtn.backgroundColor = UIColor.clearColor;
+        [self.view addSubview:_privacyBtn];
+        [_privacyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(JobsWidth(12));
+            make.top.equalTo(self.agreeBtn);
+            make.left.equalTo(self.agreeBtn.mas_right);
+        }];
+        [_privacyBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+        @jobs_weakify(self)
+        [_privacyBtn btnClickEventBlock:^(UIButton *x) {
+            @jobs_strongify(self)
+            NSLog(@"隐私政策");
+        }];
+    }return _privacyBtn;
+}
+
+-(UILabel *)label{
+    if(!_label){
+        _label = UILabel.new;
+        _label.text = Internationalization(@" 和 ");
+        _label.textColor = JobsCor(@"#333333");
+        _label.font = UIFontWeightRegularSize(JobsWidth(12));
+        _label.backgroundColor = UIColor.clearColor;
+        [self.view addSubview:_label];
+        [_label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(JobsWidth(12));
+            make.top.equalTo(self.agreeBtn);
+            make.left.equalTo(self.privacyBtn.mas_right);
+        }];
+    }return _label;
+}
+
+-(UIButton *)userAgreementBtn{
+    if(!_userAgreementBtn){
+        _userAgreementBtn = UIButton.new;
+        _userAgreementBtn.normalTitle = Internationalization(@"《用户协议》");
+        _userAgreementBtn.normalTitleColor = JobsCor(@"#DD0000");
+        _userAgreementBtn.titleFont = UIFontWeightRegularSize(JobsWidth(12));
+        _userAgreementBtn.backgroundColor = UIColor.clearColor;
+        [self.view addSubview:_userAgreementBtn];
+        [_userAgreementBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(JobsWidth(12));
+            make.top.equalTo(self.agreeBtn);
+            make.left.equalTo(self.label.mas_right);
+        }];
+        [_userAgreementBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+        @jobs_weakify(self)
+        [_userAgreementBtn btnClickEventBlock:^(UIButton *x) {
+            @jobs_strongify(self)
+            NSLog(@"用户协议");
+        }];
+    }return _userAgreementBtn;
 }
 
 -(NSMutableArray<UIViewController *> *)childVCMutArr{

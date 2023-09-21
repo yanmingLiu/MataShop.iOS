@@ -341,7 +341,6 @@
 		C561D3D22AAC7E7B00E28603 /* UIButton+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0562AAC7E7900E28603 /* UIButton+Animation.m */; };
 		C561D3D32AAC7E7B00E28603 /* UIButton+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0592AAC7E7900E28603 /* UIButton+UI.m */; };
 		C561D3D42AAC7E7B00E28603 /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D05D2AAC7E7900E28603 /* UIButton+ImageTitleSpacing.m */; };
-		C561D3D52AAC7E7B00E28603 /* UIButton+ImageTitleSpacing.md in Resources */ = {isa = PBXBuildFile; fileRef = C561D05E2AAC7E7900E28603 /* UIButton+ImageTitleSpacing.md */; };
 		C561D3D62AAC7E7B00E28603 /* UIButton+Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0612AAC7E7900E28603 /* UIButton+Timer.m */; };
 		C561D3D72AAC7E7B00E28603 /* ButtonTimerConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0642AAC7E7900E28603 /* ButtonTimerConfigModel.m */; };
 		C561D3D82AAC7E7B00E28603 /* RBCLikeButton.md in Resources */ = {isa = PBXBuildFile; fileRef = C561D0692AAC7E7900E28603 /* RBCLikeButton.md */; };
@@ -4722,8 +4721,8 @@
 		C561D0522AAC7E7900E28603 /* UIButton+Extra */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0532AAC7E7900E28603 /* UIButton+Extra.m */,
 				C561D0542AAC7E7900E28603 /* UIButton+Extra.h */,
+				C561D0532AAC7E7900E28603 /* UIButton+Extra.m */,
 			);
 			path = "UIButton+Extra";
 			sourceTree = "<group>";
@@ -4731,8 +4730,8 @@
 		C561D0552AAC7E7900E28603 /* UIButton+Animation */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0562AAC7E7900E28603 /* UIButton+Animation.m */,
 				C561D0572AAC7E7900E28603 /* UIButton+Animation.h */,
+				C561D0562AAC7E7900E28603 /* UIButton+Animation.m */,
 			);
 			path = "UIButton+Animation";
 			sourceTree = "<group>";
@@ -4740,8 +4739,8 @@
 		C561D0582AAC7E7900E28603 /* UIButton+UI */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0592AAC7E7900E28603 /* UIButton+UI.m */,
 				C561D05A2AAC7E7900E28603 /* UIButton+UI.h */,
+				C561D0592AAC7E7900E28603 /* UIButton+UI.m */,
 			);
 			path = "UIButton+UI";
 			sourceTree = "<group>";
@@ -4823,9 +4822,9 @@
 		C561D0752AAC7E7900E28603 /* IrregularBtn */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0762AAC7E7900E28603 /* IrregularBtn.md */,
-				C561D0772AAC7E7900E28603 /* IrregularBtn.m */,
 				C561D0782AAC7E7900E28603 /* IrregularBtn.h */,
+				C561D0772AAC7E7900E28603 /* IrregularBtn.m */,
+				C561D0762AAC7E7900E28603 /* IrregularBtn.md */,
 			);
 			path = IrregularBtn;
 			sourceTree = "<group>";
@@ -4834,9 +4833,9 @@
 			isa = PBXGroup;
 			children = (
 				C561D07A2AAC7E7900E28603 /* Sound.wav */,
+				C561D07D2AAC7E7900E28603 /* SoundBtn.h */,
 				C561D07B2AAC7E7900E28603 /* SoundBtn.m */,
 				C561D07C2AAC7E7900E28603 /* SoundBtn.md */,
-				C561D07D2AAC7E7900E28603 /* SoundBtn.h */,
 			);
 			path = SoundBtn;
 			sourceTree = "<group>";
@@ -9053,7 +9052,6 @@
 				C5E011682AADE1CD005ABE09 /* 152@2x.gif in Resources */,
 				C5E0112C2AADE1CD005ABE09 /* 170@2x.gif in Resources */,
 				C5E011D72AADE1CD005ABE09 /* 190@2x.gif in Resources */,
-				C561D3D52AAC7E7B00E28603 /* UIButton+ImageTitleSpacing.md in Resources */,
 				C561D39B2AAC7E7A00E28603 /* gesture_normal@2x.png in Resources */,
 				C5E0115B2AADE1CD005ABE09 /* 32@2x.gif in Resources */,
 				C5E011DC2AADE1CD005ABE09 /* 122@2x.gif in Resources */,
