@@ -121,6 +121,7 @@
 -(JobsUpDownLab *)prodDailyRateLab{
     if(!_prodDailyRateLab){
         _prodDailyRateLab = JobsUpDownLab.new;
+//        _prodDailyRateLab.jobsHeight
         [self.contentView addSubview:_prodDailyRateLab];
         [_prodDailyRateLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(112));

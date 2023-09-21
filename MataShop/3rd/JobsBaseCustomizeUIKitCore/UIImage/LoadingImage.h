@@ -50,9 +50,9 @@ static inline NSString *__nullable JobsPathForResource(NSString *__nullable blue
 /// @param bundle_folderName 如果在此自定义Bundle下还存在文件夹，不管几级都在此写，属于中间路径，函数内部是进行字符串拼接；如果不存在可以传nil 或者@""
 /// @param fileFullNameWithSuffix 目标图片的名字。如果不带后缀名，则默认@".png" 后缀；如果是其他格式资源请自带后缀名
 static inline NSString *__nullable JobsPathForBuddleIMG(NSString *__nullable blueFolderName,
-                                                    NSString *__nullable pathForResource,
-                                                    NSString *__nullable bundle_folderName,
-                                                    NSString *__nonnull fileFullNameWithSuffix){
+                                                        NSString *__nullable pathForResource,
+                                                        NSString *__nullable bundle_folderName,
+                                                        NSString *__nonnull fileFullNameWithSuffix){
     NSString *filePath = JobsPathForResource(blueFolderName,
                                              pathForResource,
                                              bundle_folderName,
@@ -108,14 +108,12 @@ static inline UIImage *__nullable JobsIMGByDataFromBuddleIMG(NSString *__nullabl
                                                              NSString *__nullable bundle_folderName,
                                                              NSString *__nonnull fileFullNameWithSuffix){
     UIImage *image = [UIImage imageWithData:JobsDataByBuddleIMG(blueFolderName,
-                                                             pathForResource,
-                                                             bundle_folderName,
-                                                             fileFullNameWithSuffix)];
+                                                                pathForResource,
+                                                                bundle_folderName,
+                                                                fileFullNameWithSuffix)];
     return image;
 }
-
-/*
- *
+/**
  1、imageNamed,其参数为图片的名字。
     这个方法用一个指定的名字在系统缓存中查找并返回一个图片对象如果它存在的话。
     如果缓存中没有找到相应的图片，这个方法从指定的文档中加载然后缓存并返回这个对象。
@@ -132,6 +130,4 @@ static inline UIImage *__nullable JobsIMGByDataFromBuddleIMG(NSString *__nullabl
  2、imageWithContentsOfFile，其参数也是图片文件的路径。
     仅加载图片，图像数据不会缓存。
     因此对于较大的图片以及使用情况较少时，那就可以用该方法，降低内存消耗。
- *
  */
-

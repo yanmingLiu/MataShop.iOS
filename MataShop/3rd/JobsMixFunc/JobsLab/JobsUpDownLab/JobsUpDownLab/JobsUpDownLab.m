@@ -23,7 +23,7 @@
 
 -(instancetype)init{
     if (self = [super init]) {
-        
+
     }return self;
 }
 
@@ -40,18 +40,20 @@
     [_downBtn removeFromSuperview];
     _downBtn = nil;
     
-    self.upDownLabModel = model ? : JobsUpDownLabModel.new;
-    [self textHeight];
+    self.upDownLabModel = model;
     if (self.upDownLabModel) {
+        /// 计算高度
+        [self textHeight];
+        
         self.upBtn.normalTitle = self.upDownLabModel.upLabText;
-        /// 单行ByWidth  多行ByFont
-        if (self.upDownLabModel.isUpLabMultiLineShows) {
+        if (self.upDownLabModel.isUpLabMultiLineShows) {/// 单行ByWidth  多行ByFont
             [self.upBtn makeBtnLabelByShowingType:UILabelShowingType_05];
         }else{
             [self.upBtn buttonAutoFontByWidth];
         }
+        
         self.downBtn.normalTitle = self.upDownLabModel.downLabText;
-        if (self.upDownLabModel.isDownLabMultiLineShows) {
+        if (self.upDownLabModel.isDownLabMultiLineShows) {/// 单行ByWidth  多行ByFont
             [self.downBtn makeBtnLabelByShowingType:UILabelShowingType_05];
         }else{
             [self.downBtn buttonAutoFontByWidth];
@@ -60,27 +62,72 @@
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)viewSizeWithModel:(JobsUpDownLabModel *_Nullable)model{
-    CGFloat w = [model.upLabText getContentHeightOrWidthWithParagraphStyleLineSpacing:0
-                                                                calcLabelHeight_Width:CalcLabelWidth
-                                                                                 font:model.upLabFont
-                                                         boundingRectWithHeight_Width:(JobsWidth(35) + model.space)];
-    return CGSizeMake(w, JobsWidth(35) + model.space);
+#pragma mark —— 计算高
+    CGFloat upLabTextHeight = 0.f;
+    /// 如果没有自定义的宽，那么就按照单行处理
+    if(model.upLabWidth){
+        upLabTextHeight = [model.upLabText jobsTextHeightWithFont:model.upLabFont
+                                                       lineHeight:0
+                                                     controlWidth:model.upLabWidth].textHeight;
+    }else{
+        /// 单行
+        upLabTextHeight = model.upLabFont.lineHeight;
+    }
+    
+    CGFloat downLabTextHeight = 0.f;
+    /// 如果没有自定义的宽，那么就按照单行处理
+    if(model.downLabWidth){
+        downLabTextHeight = [model.downLabText jobsTextHeightWithFont:model.downLabFont
+                                                           lineHeight:0
+                                                         controlWidth:model.downLabWidth].textHeight;
+    }else{
+        /// 单行
+        downLabTextHeight = model.downLabFont.lineHeight;
+    }
+    
+    CGFloat height1 = upLabTextHeight + downLabTextHeight + model.space;/// 计算值
+    CGFloat height2 = model.upLabHeight + model.downLabHeight + model.space;/// 自己定义的值
+
+#pragma mark —— 计算宽
+    CGFloat upLabTextWidth = 0.f;
+    if(model.upLabNumberOfLines){//
+        
+    }
+    
+
+    
+    CGFloat width1 ;/// 计算值
+    CGFloat width2 = model.upLabWidth + model.downLabWidth + model.space;/// 自己定义的值
+    
+    return CGSizeMake(MAX(width1, width2), MAX(height1, height2));
+    
+    /// 只是想得出：这个文本的Size
+    
+//    CGFloat textHeight = [model.upLabText sizeWithAttributes:@{NSFontAttributeName: model.upLabFont}].height;
+    
+//    CGFloat w = [model.upLabText getContentHeightOrWidthWithParagraphStyleLineSpacing:0
+//                                                                calcLabelHeight_Width:CalcLabelWidth
+//                                                                                 font:model.upLabFont
+//                                                         boundingRectWithHeight_Width:(textHeight + model.space)];
+//    return CGSizeMake(w,
+//                      textHeight + model.space);
 }
 #pragma mark —— 一些私有方法
+/// 根据字符串以及其对应的行宽（行高）、行高和字体字号，计算该文本占用的高度（宽度）
 -(void)textHeight{
-    leftTextHeight = [self.upDownLabModel.upLabText getContentHeightOrWidthWithParagraphStyleLineSpacing:0
-                                                                                   calcLabelHeight_Width:CalcLabelHeight
-                                                                                                    font:self.upDownLabModel.upLabFont
-                                                                            boundingRectWithHeight_Width:[JobsUpDownLab viewSizeWithModel:nil].width];
-    
-    rightTextHeight = [self.upDownLabModel.downLabText getContentHeightOrWidthWithParagraphStyleLineSpacing:0
-                                                                                      calcLabelHeight_Width:CalcLabelHeight
-                                                                                                       font:self.upDownLabModel.downLabFont
-                                                                               boundingRectWithHeight_Width:[JobsUpDownLab viewSizeWithModel:nil].width];
-    
-    leftTextHeight = self.upDownLabModel.rate == 0.5 ? leftTextHeight : [JobsUpDownLab viewSizeWithModel:nil].height * self.upDownLabModel.rate;
-    rightTextHeight = self.upDownLabModel.rate == 0.5 ? rightTextHeight : [JobsUpDownLab viewSizeWithModel:nil].height * (1 - self.upDownLabModel.rate);
-    NSLog(@"");
+//    leftTextHeight = [self.upDownLabModel.upLabText getContentHeightOrWidthWithParagraphStyleLineSpacing:0
+//                                                                                   calcLabelHeight_Width:CalcLabelHeight
+//                                                                                                    font:self.upDownLabModel.upLabFont
+//                                                                            boundingRectWithHeight_Width:[JobsUpDownLab viewSizeWithModel:nil].width];
+//    
+//    rightTextHeight = [self.upDownLabModel.downLabText getContentHeightOrWidthWithParagraphStyleLineSpacing:0
+//                                                                                      calcLabelHeight_Width:CalcLabelHeight
+//                                                                                                       font:self.upDownLabModel.downLabFont
+//                                                                               boundingRectWithHeight_Width:[JobsUpDownLab viewSizeWithModel:nil].width];
+//    
+//    leftTextHeight = self.upDownLabModel.rate == 0.5 ? leftTextHeight : [JobsUpDownLab viewSizeWithModel:nil].height * self.upDownLabModel.rate;
+//    rightTextHeight = self.upDownLabModel.rate == 0.5 ? rightTextHeight : [JobsUpDownLab viewSizeWithModel:nil].height * (1 - self.upDownLabModel.rate);
+//    NSLog(@"");
 }
 #pragma mark —— 一些公有方法
 -(UIButton *)getUpBtn{
@@ -94,6 +141,8 @@
 -(UIButton *)upBtn{
     if (!_upBtn) {
         _upBtn = UIButton.new;
+        
+    
         
         if (self.upDownLabModel.upLabAttributedText) {
             _upBtn.normalAttributedTitle = self.upDownLabModel.upLabAttributedText;
