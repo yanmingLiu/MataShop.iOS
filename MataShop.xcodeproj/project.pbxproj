@@ -63,6 +63,8 @@
 		C53295662ABCD78E004294E0 /* JobsBtnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C532955F2ABCD78E004294E0 /* JobsBtnModel.m */; };
 		C53295672ABCD78E004294E0 /* JobsContainerViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C53295622ABCD78E004294E0 /* JobsContainerViewDemoVC.m */; };
 		C53295682ABCD78E004294E0 /* JobsContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53295642ABCD78E004294E0 /* JobsContainerView.m */; };
+		C532965D2ABCE56E004294E0 /* MSPasswordLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C532965C2ABCE56E004294E0 /* MSPasswordLoginVC.m */; };
+		C53296602ABCE58C004294E0 /* MSMessageLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C532965F2ABCE58C004294E0 /* MSMessageLoginVC.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
@@ -1020,6 +1022,10 @@
 		C53295622ABCD78E004294E0 /* JobsContainerViewDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsContainerViewDemoVC.m; sourceTree = "<group>"; };
 		C53295642ABCD78E004294E0 /* JobsContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsContainerView.m; sourceTree = "<group>"; };
 		C53295652ABCD78E004294E0 /* JobsContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsContainerView.h; sourceTree = "<group>"; };
+		C532965B2ABCE56E004294E0 /* MSPasswordLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPasswordLoginVC.h; sourceTree = "<group>"; };
+		C532965C2ABCE56E004294E0 /* MSPasswordLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPasswordLoginVC.m; sourceTree = "<group>"; };
+		C532965E2ABCE58C004294E0 /* MSMessageLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMessageLoginVC.h; sourceTree = "<group>"; };
+		C532965F2ABCE58C004294E0 /* MSMessageLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMessageLoginVC.m; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -2885,6 +2891,24 @@
 				C53295642ABCD78E004294E0 /* JobsContainerView.m */,
 			);
 			path = JobsContainerView;
+			sourceTree = "<group>";
+		};
+		C53296592ABCE53D004294E0 /* 密码登录 */ = {
+			isa = PBXGroup;
+			children = (
+				C532965B2ABCE56E004294E0 /* MSPasswordLoginVC.h */,
+				C532965C2ABCE56E004294E0 /* MSPasswordLoginVC.m */,
+			);
+			path = "密码登录";
+			sourceTree = "<group>";
+		};
+		C532965A2ABCE544004294E0 /* 短信登录 */ = {
+			isa = PBXGroup;
+			children = (
+				C532965E2ABCE58C004294E0 /* MSMessageLoginVC.h */,
+				C532965F2ABCE58C004294E0 /* MSMessageLoginVC.m */,
+			);
+			path = "短信登录";
 			sourceTree = "<group>";
 		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
@@ -8116,6 +8140,8 @@
 		C578F0532ABB8CA100832A07 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C532965A2ABCE544004294E0 /* 短信登录 */,
+				C53296592ABCE53D004294E0 /* 密码登录 */,
 				C578F0582ABB8CD000832A07 /* MSDoorVC */,
 			);
 			path = ViewController;
@@ -9830,6 +9856,7 @@
 				C561D4202AAC7E7B00E28603 /* XLBubbleTransition.m in Sources */,
 				C561D4222AAC7E7B00E28603 /* UIViewController+BWShareView.m in Sources */,
 				C561CE262AAC7CE200E28603 /* ECPrivacyCheckPhotos.m in Sources */,
+				C53296602ABCE58C004294E0 /* MSMessageLoginVC.m in Sources */,
 				C561D46E2AAC7E7B00E28603 /* CLLanguageManager.m in Sources */,
 				C561D42F2AAC7E7B00E28603 /* LOTAnimationMJRefreshHeader.m in Sources */,
 				C561D69C2AAC862000E28603 /* BaiShaETProjTipsView03.m in Sources */,
@@ -9973,6 +10000,7 @@
 				C561D3272AAC7E7A00E28603 /* BaseContentView.m in Sources */,
 				C561D6A42AAC862000E28603 /* BaiShaETProjTipsView01.m in Sources */,
 				C561D4832AAC7E7B00E28603 /* NSObject+Popup.m in Sources */,
+				C532965D2ABCE56E004294E0 /* MSPasswordLoginVC.m in Sources */,
 				C561D31F2AAC7E7A00E28603 /* TransitionController.m in Sources */,
 				C561D4772AAC7E7B00E28603 /* NSObject+HXPhotoPicker.m in Sources */,
 				C5729AA42AB593CD0084EAFC /* MSMDVC.m in Sources */,
