@@ -16,7 +16,7 @@
 @implementation BaiShaETProjGestureLoginVC
 
 - (void)dealloc{
-    NSLog(@"%@",JobsLocalFunc);
+//    NSLog(@"%@",JobsLocalFunc);
     //    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
@@ -37,7 +37,7 @@
 //    [self setGKNav];
 //    [self setGKNavBackBtn];
     
-    self.titleLab.alpha = 1;
+//    self.titleLab.alpha = 1;
     [self 重定义父类控件的距离];
     self.accAndPasswordEntryBtn.alpha = 1;
 }
@@ -79,7 +79,7 @@
         [_accAndPasswordEntryBtn btnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"账号密码登录");
-            [self JobsTestPopView:@"账号密码登录"];
+//            [self JobsTestPopView:@"账号密码登录"];
         }];
         [self.view addSubview:_accAndPasswordEntryBtn];
         [_accAndPasswordEntryBtn mas_makeConstraints:^(MASConstraintMaker *make) {

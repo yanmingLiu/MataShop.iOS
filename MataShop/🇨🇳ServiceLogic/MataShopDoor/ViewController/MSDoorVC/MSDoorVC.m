@@ -10,9 +10,9 @@
 @interface MSDoorVC ()
 /// UI
 @property(nonatomic,strong)UIImageView *logoImageView;
-@property(nonatomic,strong)JobsUpDownLab *titleLab;
+//@property(nonatomic,strong)JobsUpDownLab *titleLab;
 /// Data
-@property(nonatomic,strong)JobsUpDownLabModel *titleModel;
+//@property(nonatomic,strong)JobsUpDownLabModel *titleModel;
 
 @end
 
@@ -45,7 +45,7 @@
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = YES;
     self.logoImageView.alpha = 1;
-    self.titleLab.alpha = 1;
+//    self.titleLab.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -94,46 +94,46 @@
         }];
     }return _logoImageView;
 }
-
--(JobsUpDownLab *)titleLab{
-    if(!_titleLab){
-        _titleLab = JobsUpDownLab.new;
-        _titleLab.backgroundColor = JobsRedColor;
-        [self.view addSubview:_titleLab];
-        [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(self.view);
-            make.top.equalTo(self.logoImageView.mas_bottom).offset(JobsWidth(20));
-        }];
-        [self.view layoutIfNeeded];
-        [_titleLab richElementsInViewWithModel:self.titleModel];
-    }return _titleLab;
-}
-
--(JobsUpDownLabModel *)titleModel{
-    if (!_titleModel) {
-        _titleModel = JobsUpDownLabModel.new;
-    }
-    
-    _titleModel.upLabText = Internationalization(@"欢迎来到Mata商城") ;
-    _titleModel.upLabTextAlignment = NSTextAlignmentCenter;
-    _titleModel.upLabFont = JobsFontBold(26);
-    _titleModel.upLabTextCor = JobsCor(@"#333333");
-    _titleModel.upLabBgCor = JobsClearColor;
-    
-    _titleModel.downLabText = Internationalization(@"登陆探索更多潮玩惊喜");
-    _titleModel.downLabTextAlignment = NSTextAlignmentCenter;
-    _titleModel.downLabFont = JobsFontRegular(12);
-    _titleModel.downLabTextCor = JobsCor(@"#666666");
-    _titleModel.downLabBgCor = JobsClearColor;
-
-    _titleModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _titleModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    _titleModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _titleModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    
-    _titleModel.space = JobsWidth(10);
-    
-    return _titleModel;
-}
+//
+//-(JobsUpDownLab *)titleLab{
+//    if(!_titleLab){
+//        _titleLab = JobsUpDownLab.new;
+//        _titleLab.backgroundColor = JobsRedColor;
+//        [self.view addSubview:_titleLab];
+//        [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.centerX.equalTo(self.view);
+//            make.top.equalTo(self.logoImageView.mas_bottom).offset(JobsWidth(20));
+//        }];
+//        [self.view layoutIfNeeded];
+//        [_titleLab richElementsInViewWithModel:self.titleModel];
+//    }return _titleLab;
+//}
+//
+//-(JobsUpDownLabModel *)titleModel{
+//    if (!_titleModel) {
+//        _titleModel = JobsUpDownLabModel.new;
+//    }
+//
+//    _titleModel.upLabText = Internationalization(@"欢迎来到Mata商城") ;
+//    _titleModel.upLabTextAlignment = NSTextAlignmentCenter;
+//    _titleModel.upLabFont = JobsFontBold(26);
+//    _titleModel.upLabTextCor = JobsCor(@"#333333");
+//    _titleModel.upLabBgCor = JobsClearColor;
+//
+//    _titleModel.downLabText = Internationalization(@"登陆探索更多潮玩惊喜");
+//    _titleModel.downLabTextAlignment = NSTextAlignmentCenter;
+//    _titleModel.downLabFont = JobsFontRegular(12);
+//    _titleModel.downLabTextCor = JobsCor(@"#666666");
+//    _titleModel.downLabBgCor = JobsClearColor;
+//
+//    _titleModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _titleModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    _titleModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _titleModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//
+//    _titleModel.space = JobsWidth(10);
+//
+//    return _titleModel;
+//}
 
 @end

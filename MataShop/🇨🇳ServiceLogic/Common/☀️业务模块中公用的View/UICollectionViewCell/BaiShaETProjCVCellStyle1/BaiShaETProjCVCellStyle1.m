@@ -92,7 +92,7 @@
         @jobs_weakify(self)
         [_btn btnClickEventBlock:^(id data) {
             @jobs_strongify(self)
-            [self JobsTestPopView:@"立即開始"];
+//            [self JobsTestPopView:@"立即開始"];
         }];
     }return _btn;
 }

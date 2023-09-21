@@ -53,7 +53,7 @@
     PopupParameter.dragEnable = YES;
     PopupParameter.offset = CGPointMake(0,-JobsTabBarHeightByBottomSafeArea(self.tabBarVC));
     PopupParameter.disuseBackgroundTouchHide = YES;
-    PopupParameter.popupSize = [CasinoCustomerServiceView viewSizeWithModel:nil];
+//    PopupParameter.popupSize = [CasinoCustomerServiceView viewSizeWithModel:nil];
     return PopupParameter;
 }
 static char *AppDelegate_Extra_tabBarVC = "AppDelegate_Extra_tabBarVC";

@@ -9,7 +9,7 @@
 #define JobsMixFunc_h
 
 #pragma mark —— JobsMixFunc
-//#import "ZBNetworking.h"/// 网络请求
+
 #import "JobsNoticePopupView.h"
 #import "JobsHotLabelWithSingleLine.h"
 #import "JobsHotLabelWithMultiLine.h"
@@ -27,8 +27,8 @@
 #import "CustomZFPlayerControlView.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"/// 手势滑动返回
 #import "JobsCommentVC.h"
+#import "JobsContainerView.h"
 /// FOR TEST
 #import "JobsShowObjInfoVC.h"
-#import "JobsLab.h"
 
 #endif /* JobsMixFunc_h */

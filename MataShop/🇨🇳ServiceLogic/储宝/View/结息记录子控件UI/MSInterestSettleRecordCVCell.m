@@ -9,18 +9,18 @@
 
 @interface MSInterestSettleRecordCVCell ()
 /// UI
-@property(nonatomic,strong)JobsUpDownLab *prodNameLab;/// 产品名
-@property(nonatomic,strong)JobsUpDownLab *prodDailyRateLab;/// 日利率 或者 昨日结息
-@property(nonatomic,strong)JobsUpDownLab *prodInterestSettledAllLab;/// 总结息 或 预计收益
-@property(nonatomic,strong)JobsUpDownLab *prodEarnedIncomeLab;/// 已获收益
+//@property(nonatomic,strong)JobsUpDownLab *prodNameLab;/// 产品名
+//@property(nonatomic,strong)JobsUpDownLab *prodDailyRateLab;/// 日利率 或者 昨日结息
+//@property(nonatomic,strong)JobsUpDownLab *prodInterestSettledAllLab;/// 总结息 或 预计收益
+//@property(nonatomic,strong)JobsUpDownLab *prodEarnedIncomeLab;/// 已获收益
 @property(nonatomic,strong)UILabel *lineLab;
 @property(nonatomic,strong)UITextView *prodTipsTextView;
 @property(nonatomic,strong)BaseButton *moneyBackBtn;/// 我要提现  或者 我要赎回
 /// Data
-@property(nonatomic,strong)JobsUpDownLabModel *prodNameModel;/// 产品名
-@property(nonatomic,strong)JobsUpDownLabModel *prodDailyRateModel;/// 日利率 或者 昨日结息
-@property(nonatomic,strong)JobsUpDownLabModel *prodInterestSettledAllModel;/// 总结息 或 预计收益
-@property(nonatomic,strong)JobsUpDownLabModel *prodEarnedIncomeLabModel;/// 已获收益
+//@property(nonatomic,strong)JobsUpDownLabModel *prodNameModel;/// 产品名
+//@property(nonatomic,strong)JobsUpDownLabModel *prodDailyRateModel;/// 日利率 或者 昨日结息
+//@property(nonatomic,strong)JobsUpDownLabModel *prodInterestSettledAllModel;/// 总结息 或 预计收益
+//@property(nonatomic,strong)JobsUpDownLabModel *prodEarnedIncomeLabModel;/// 已获收益
 @property(nonatomic,strong)MSInterestSettleRecordModel *interestSettleRecordModel;
 
 @end
@@ -58,32 +58,32 @@
     if([model isKindOfClass:UIViewModel.class]){
         self.interestSettleRecordModel = model.data;
         
-        self.prodNameModel.upLabText = self.interestSettleRecordModel.prodName;/// 产品名
-        self.prodNameModel.downLabText = self.interestSettleRecordModel.prodPrice;/// 产品价格
+//        self.prodNameModel.upLabText = self.interestSettleRecordModel.prodName;/// 产品名
+//        self.prodNameModel.downLabText = self.interestSettleRecordModel.prodPrice;/// 产品价格
         
         switch (self.interestSettleRecordModel.prodStyle) {
             case ProdStyle01:{/// 产品已到期
-                self.prodDailyRateModel.upLabText = Internationalization(@"昨日结息：");
-                self.prodDailyRateModel.downLabText = self.interestSettleRecordModel.prodInterestSettledYesterday;/// 昨日结息
+//                self.prodDailyRateModel.upLabText = Internationalization(@"昨日结息：");
+//                self.prodDailyRateModel.downLabText = self.interestSettleRecordModel.prodInterestSettledYesterday;/// 昨日结息
                 
-                self.prodInterestSettledAllModel.upLabText = Internationalization(@"总结息：");
-                self.prodInterestSettledAllModel.downLabText = self.interestSettleRecordModel.prodInterestSettledAll;/// 总结息
+//                self.prodInterestSettledAllModel.upLabText = Internationalization(@"总结息：");
+//                self.prodInterestSettledAllModel.downLabText = self.interestSettleRecordModel.prodInterestSettledAll;/// 总结息
             } break;
             case ProdStyle02:{/// 产品未到期（可赎回）
-                self.prodDailyRateModel.upLabText = Internationalization(@"日利率：");
-                self.prodDailyRateModel.downLabText = self.interestSettleRecordModel.prodDailyRate;/// 日利率
+//                self.prodDailyRateModel.upLabText = Internationalization(@"日利率：");
+//                self.prodDailyRateModel.downLabText = self.interestSettleRecordModel.prodDailyRate;/// 日利率
                 
-                self.prodInterestSettledAllModel.upLabText = Internationalization(@"预计收益：");
-                self.prodInterestSettledAllModel.downLabText = self.interestSettleRecordModel.prodExpectedIncome;/// 预计收益
+//                self.prodInterestSettledAllModel.upLabText = Internationalization(@"预计收益：");
+//                self.prodInterestSettledAllModel.downLabText = self.interestSettleRecordModel.prodExpectedIncome;/// 预计收益
             } break;
             case ProdStyle03:{/// 产品未到期（不可赎回）
-                self.prodDailyRateModel.upLabText = Internationalization(@"日利率：");
-                self.prodDailyRateModel.downLabText = self.interestSettleRecordModel.prodDailyRate;/// 日利率
+//                self.prodDailyRateModel.upLabText = Internationalization(@"日利率：");
+//                self.prodDailyRateModel.downLabText = self.interestSettleRecordModel.prodDailyRate;/// 日利率
+//
+//                self.prodInterestSettledAllModel.upLabText = Internationalization(@"预计收益：");
+//                self.prodInterestSettledAllModel.downLabText = self.interestSettleRecordModel.prodExpectedIncome;/// 预计收益
                 
-                self.prodInterestSettledAllModel.upLabText = Internationalization(@"预计收益：");
-                self.prodInterestSettledAllModel.downLabText = self.interestSettleRecordModel.prodExpectedIncome;/// 预计收益
-                
-                self.prodEarnedIncomeLabModel.downLabText = self.interestSettleRecordModel.prodEarnedIncome;/// 已获收益
+//                self.prodEarnedIncomeLabModel.downLabText = self.interestSettleRecordModel.prodEarnedIncome;/// 已获收益
             } break;
                 
             default:
@@ -91,10 +91,10 @@
         }
     }
     
-    self.prodNameLab.alpha = 1;
-    self.prodDailyRateLab.alpha = 1;
-    self.prodInterestSettledAllLab.alpha = 1;
-    self.prodEarnedIncomeLab.alpha = self.interestSettleRecordModel.prodStyle == ProdStyle03;
+//    self.prodNameLab.alpha = 1;
+//    self.prodDailyRateLab.alpha = 1;
+//    self.prodInterestSettledAllLab.alpha = 1;
+//    self.prodEarnedIncomeLab.alpha = self.interestSettleRecordModel.prodStyle == ProdStyle03;
     
     self.lineLab.alpha = 1;
     self.prodTipsTextView.alpha = 1;
@@ -105,58 +105,58 @@
     return CGSizeMake(JobsWidth(343), JobsWidth(124));
 }
 #pragma mark —— lazyLoad
--(JobsUpDownLab *)prodNameLab{
-    if(!_prodNameLab){
-        _prodNameLab = JobsUpDownLab.new;
-        [self.contentView addSubview:_prodNameLab];
-        [_prodNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(JobsWidth(20));
-            make.top.equalTo(self.contentView).offset(JobsWidth(12));
-        }];
-        [_prodNameLab richElementsInViewWithModel:self.prodNameModel];
-        [self layoutIfNeeded];
-    }return _prodNameLab;
-}
-
--(JobsUpDownLab *)prodDailyRateLab{
-    if(!_prodDailyRateLab){
-        _prodDailyRateLab = JobsUpDownLab.new;
-//        _prodDailyRateLab.jobsHeight
-        [self.contentView addSubview:_prodDailyRateLab];
-        [_prodDailyRateLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(JobsWidth(112));
-            make.top.equalTo(self.contentView).offset(JobsWidth(12));
-        }];
-        [_prodDailyRateLab richElementsInViewWithModel:self.prodDailyRateModel];
-        [self layoutIfNeeded];
-    }return _prodDailyRateLab;
-}
-
--(JobsUpDownLab *)prodInterestSettledAllLab{
-    if(!_prodInterestSettledAllLab){
-        _prodInterestSettledAllLab = JobsUpDownLab.new;
-        [self.contentView addSubview:_prodInterestSettledAllLab];
-        [_prodInterestSettledAllLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(JobsWidth(192));
-            make.top.equalTo(self.contentView).offset(JobsWidth(12));
-        }];
-        [_prodInterestSettledAllLab richElementsInViewWithModel:self.prodInterestSettledAllModel];
-        [self layoutIfNeeded];
-    }return _prodInterestSettledAllLab;
-}
-
--(JobsUpDownLab *)prodEarnedIncomeLab{
-    if(!_prodEarnedIncomeLab){
-        _prodEarnedIncomeLab = JobsUpDownLab.new;
-        [self.contentView addSubview:_prodEarnedIncomeLab];
-        [_prodEarnedIncomeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(JobsWidth(263));
-            make.top.equalTo(self.contentView).offset(JobsWidth(12));
-        }];
-        [_prodEarnedIncomeLab richElementsInViewWithModel:self.prodEarnedIncomeLabModel];
-        [self layoutIfNeeded];
-    }return _prodEarnedIncomeLab;
-}
+//-(JobsUpDownLab *)prodNameLab{
+//    if(!_prodNameLab){
+//        _prodNameLab = JobsUpDownLab.new;
+//        [self.contentView addSubview:_prodNameLab];
+//        [_prodNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.contentView).offset(JobsWidth(20));
+//            make.top.equalTo(self.contentView).offset(JobsWidth(12));
+//        }];
+//        [_prodNameLab richElementsInViewWithModel:self.prodNameModel];
+//        [self layoutIfNeeded];
+//    }return _prodNameLab;
+//}
+//
+//-(JobsUpDownLab *)prodDailyRateLab{
+//    if(!_prodDailyRateLab){
+//        _prodDailyRateLab = JobsUpDownLab.new;
+////        _prodDailyRateLab.jobsHeight
+//        [self.contentView addSubview:_prodDailyRateLab];
+//        [_prodDailyRateLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.contentView).offset(JobsWidth(112));
+//            make.top.equalTo(self.contentView).offset(JobsWidth(12));
+//        }];
+//        [_prodDailyRateLab richElementsInViewWithModel:self.prodDailyRateModel];
+//        [self layoutIfNeeded];
+//    }return _prodDailyRateLab;
+//}
+//
+//-(JobsUpDownLab *)prodInterestSettledAllLab{
+//    if(!_prodInterestSettledAllLab){
+//        _prodInterestSettledAllLab = JobsUpDownLab.new;
+//        [self.contentView addSubview:_prodInterestSettledAllLab];
+//        [_prodInterestSettledAllLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.contentView).offset(JobsWidth(192));
+//            make.top.equalTo(self.contentView).offset(JobsWidth(12));
+//        }];
+//        [_prodInterestSettledAllLab richElementsInViewWithModel:self.prodInterestSettledAllModel];
+//        [self layoutIfNeeded];
+//    }return _prodInterestSettledAllLab;
+//}
+//
+//-(JobsUpDownLab *)prodEarnedIncomeLab{
+//    if(!_prodEarnedIncomeLab){
+//        _prodEarnedIncomeLab = JobsUpDownLab.new;
+//        [self.contentView addSubview:_prodEarnedIncomeLab];
+//        [_prodEarnedIncomeLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.contentView).offset(JobsWidth(263));
+//            make.top.equalTo(self.contentView).offset(JobsWidth(12));
+//        }];
+//        [_prodEarnedIncomeLab richElementsInViewWithModel:self.prodEarnedIncomeLabModel];
+//        [self layoutIfNeeded];
+//    }return _prodEarnedIncomeLab;
+//}
 
 -(UILabel *)lineLab{
     if(!_lineLab){
@@ -234,112 +234,112 @@
     }return _moneyBackBtn;
 }
 
--(JobsUpDownLabModel *)prodNameModel{
-    if (!_prodNameModel) {
-        _prodNameModel = JobsUpDownLabModel.new;
-    }
+//-(JobsUpDownLabModel *)prodNameModel{
+//    if (!_prodNameModel) {
+//        _prodNameModel = JobsUpDownLabModel.new;
+//    }
+//
+////    _prodNameModel.upLabText = Internationalization(@"暂无数据");/// 产品名
+//    _prodNameModel.upLabTextAlignment = NSTextAlignmentCenter;
+//    _prodNameModel.upLabFont = JobsFontRegular(12);
+//    _prodNameModel.upLabTextCor = JobsBlackColor;
+//    _prodNameModel.upLabBgCor = JobsClearColor;
+//
+////    _prodNameModel.downLabText = Internationalization(@"暂无数据");
+//    _prodNameModel.downLabTextAlignment = NSTextAlignmentCenter;
+//    _prodNameModel.downLabFont = JobsFontBold(16);
+//    _prodNameModel.downLabTextCor = RGBA_COLOR(236, 86, 40, 1);
+//    _prodNameModel.downLabBgCor = JobsClearColor;
+//
+//    _prodNameModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodNameModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodNameModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodNameModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//
+//    _prodNameModel.space = JobsWidth(3);
+//
+//    return _prodNameModel;
+//}
 
-//    _prodNameModel.upLabText = Internationalization(@"暂无数据");/// 产品名
-    _prodNameModel.upLabTextAlignment = NSTextAlignmentCenter;
-    _prodNameModel.upLabFont = JobsFontRegular(12);
-    _prodNameModel.upLabTextCor = JobsBlackColor;
-    _prodNameModel.upLabBgCor = JobsClearColor;
-    
-//    _prodNameModel.downLabText = Internationalization(@"暂无数据");
-    _prodNameModel.downLabTextAlignment = NSTextAlignmentCenter;
-    _prodNameModel.downLabFont = JobsFontBold(16);
-    _prodNameModel.downLabTextCor = RGBA_COLOR(236, 86, 40, 1);
-    _prodNameModel.downLabBgCor = JobsClearColor;
-
-    _prodNameModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodNameModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    _prodNameModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodNameModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    
-    _prodNameModel.space = JobsWidth(3);
-    
-    return _prodNameModel;
-}
-
--(JobsUpDownLabModel *)prodDailyRateModel{
-    if (!_prodDailyRateModel) {
-        _prodDailyRateModel = JobsUpDownLabModel.new;
-    }
-    
-//    _prodDailyRateModel.upLabText = Internationalization(@"日利率：") ;
-    _prodDailyRateModel.upLabTextAlignment = NSTextAlignmentCenter;
-    _prodDailyRateModel.upLabFont = JobsFontRegular(12);
-    _prodDailyRateModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
-    _prodDailyRateModel.upLabBgCor = JobsClearColor;
-    
-//    _prodDailyRateModel.downLabText = Internationalization(@"暂无数据");
-    _prodDailyRateModel.downLabTextAlignment = NSTextAlignmentCenter;
-    _prodDailyRateModel.downLabFont = JobsFontBold(16);
-    _prodDailyRateModel.downLabTextCor = JobsBlackColor;
-    _prodDailyRateModel.downLabBgCor = JobsClearColor;
-
-    _prodDailyRateModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodDailyRateModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    _prodDailyRateModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodDailyRateModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    
-    _prodDailyRateModel.space = JobsWidth(3);
-    
-    return _prodDailyRateModel;
-}
-
--(JobsUpDownLabModel *)prodInterestSettledAllModel{
-    if (!_prodInterestSettledAllModel) {
-        _prodInterestSettledAllModel = JobsUpDownLabModel.new;
-    }
-    
-//    _prodInterestSettledAllModel.upLabText = Internationalization(@"剩余:");
-    _prodInterestSettledAllModel.upLabTextAlignment = NSTextAlignmentCenter;
-    _prodInterestSettledAllModel.upLabFont = JobsFontRegular(12);
-    _prodInterestSettledAllModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
-    _prodInterestSettledAllModel.upLabBgCor = JobsClearColor;
-    
-//    _prodInterestSettledAllModel.downLabText = Internationalization(@"暂无数据");
-    _prodInterestSettledAllModel.downLabTextAlignment = NSTextAlignmentCenter;
-    _prodInterestSettledAllModel.downLabFont = JobsFontBold(16);
-    _prodInterestSettledAllModel.downLabTextCor = JobsBlackColor;
-    _prodInterestSettledAllModel.downLabBgCor = JobsClearColor;
-
-    _prodInterestSettledAllModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodInterestSettledAllModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    _prodInterestSettledAllModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodInterestSettledAllModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    
-    _prodInterestSettledAllModel.space = JobsWidth(3);
-    
-    return _prodInterestSettledAllModel;
-}
-
--(JobsUpDownLabModel *)prodEarnedIncomeLabModel{
-    if (!_prodEarnedIncomeLabModel) {
-        _prodEarnedIncomeLabModel = JobsUpDownLabModel.new;
-    }
-    
-    _prodEarnedIncomeLabModel.upLabText = Internationalization(@"已获收益:") ;
-    _prodEarnedIncomeLabModel.upLabTextAlignment = NSTextAlignmentCenter;
-    _prodEarnedIncomeLabModel.upLabFont = JobsFontRegular(12);
-    _prodEarnedIncomeLabModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
-    _prodEarnedIncomeLabModel.upLabBgCor = JobsClearColor;
-    
-//    _prodEarnedIncomeLabModel.downLabText = Internationalization(@"暂无数据");
-    _prodEarnedIncomeLabModel.downLabTextAlignment = NSTextAlignmentCenter;
-    _prodEarnedIncomeLabModel.downLabFont = JobsFontBold(16);
-    _prodEarnedIncomeLabModel.downLabTextCor = JobsBlackColor;
-    _prodEarnedIncomeLabModel.downLabBgCor = JobsClearColor;
-
-    _prodEarnedIncomeLabModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodEarnedIncomeLabModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    _prodEarnedIncomeLabModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodEarnedIncomeLabModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    
-    _prodEarnedIncomeLabModel.space = JobsWidth(3);
-    
-    return _prodEarnedIncomeLabModel;
-}
+//-(JobsUpDownLabModel *)prodDailyRateModel{
+//    if (!_prodDailyRateModel) {
+//        _prodDailyRateModel = JobsUpDownLabModel.new;
+//    }
+//
+////    _prodDailyRateModel.upLabText = Internationalization(@"日利率：") ;
+//    _prodDailyRateModel.upLabTextAlignment = NSTextAlignmentCenter;
+//    _prodDailyRateModel.upLabFont = JobsFontRegular(12);
+//    _prodDailyRateModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
+//    _prodDailyRateModel.upLabBgCor = JobsClearColor;
+//
+////    _prodDailyRateModel.downLabText = Internationalization(@"暂无数据");
+//    _prodDailyRateModel.downLabTextAlignment = NSTextAlignmentCenter;
+//    _prodDailyRateModel.downLabFont = JobsFontBold(16);
+//    _prodDailyRateModel.downLabTextCor = JobsBlackColor;
+//    _prodDailyRateModel.downLabBgCor = JobsClearColor;
+//
+//    _prodDailyRateModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodDailyRateModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodDailyRateModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodDailyRateModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//
+//    _prodDailyRateModel.space = JobsWidth(3);
+//
+//    return _prodDailyRateModel;
+//}
+//
+//-(JobsUpDownLabModel *)prodInterestSettledAllModel{
+//    if (!_prodInterestSettledAllModel) {
+//        _prodInterestSettledAllModel = JobsUpDownLabModel.new;
+//    }
+//
+////    _prodInterestSettledAllModel.upLabText = Internationalization(@"剩余:");
+//    _prodInterestSettledAllModel.upLabTextAlignment = NSTextAlignmentCenter;
+//    _prodInterestSettledAllModel.upLabFont = JobsFontRegular(12);
+//    _prodInterestSettledAllModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
+//    _prodInterestSettledAllModel.upLabBgCor = JobsClearColor;
+//
+////    _prodInterestSettledAllModel.downLabText = Internationalization(@"暂无数据");
+//    _prodInterestSettledAllModel.downLabTextAlignment = NSTextAlignmentCenter;
+//    _prodInterestSettledAllModel.downLabFont = JobsFontBold(16);
+//    _prodInterestSettledAllModel.downLabTextCor = JobsBlackColor;
+//    _prodInterestSettledAllModel.downLabBgCor = JobsClearColor;
+//
+//    _prodInterestSettledAllModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodInterestSettledAllModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodInterestSettledAllModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodInterestSettledAllModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//
+//    _prodInterestSettledAllModel.space = JobsWidth(3);
+//
+//    return _prodInterestSettledAllModel;
+//}
+//
+//-(JobsUpDownLabModel *)prodEarnedIncomeLabModel{
+//    if (!_prodEarnedIncomeLabModel) {
+//        _prodEarnedIncomeLabModel = JobsUpDownLabModel.new;
+//    }
+//
+//    _prodEarnedIncomeLabModel.upLabText = Internationalization(@"已获收益:") ;
+//    _prodEarnedIncomeLabModel.upLabTextAlignment = NSTextAlignmentCenter;
+//    _prodEarnedIncomeLabModel.upLabFont = JobsFontRegular(12);
+//    _prodEarnedIncomeLabModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
+//    _prodEarnedIncomeLabModel.upLabBgCor = JobsClearColor;
+//
+////    _prodEarnedIncomeLabModel.downLabText = Internationalization(@"暂无数据");
+//    _prodEarnedIncomeLabModel.downLabTextAlignment = NSTextAlignmentCenter;
+//    _prodEarnedIncomeLabModel.downLabFont = JobsFontBold(16);
+//    _prodEarnedIncomeLabModel.downLabTextCor = JobsBlackColor;
+//    _prodEarnedIncomeLabModel.downLabBgCor = JobsClearColor;
+//
+//    _prodEarnedIncomeLabModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodEarnedIncomeLabModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodEarnedIncomeLabModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodEarnedIncomeLabModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//
+//    _prodEarnedIncomeLabModel.space = JobsWidth(3);
+//
+//    return _prodEarnedIncomeLabModel;
+//}
 
 @end

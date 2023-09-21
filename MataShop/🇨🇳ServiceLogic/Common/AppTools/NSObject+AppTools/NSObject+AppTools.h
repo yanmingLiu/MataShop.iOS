@@ -17,8 +17,6 @@
 #import "AppInternationalizationVC.h"
 //#import "CasinoUpgradePopupView.h"
 #import "JobsHotLabelWithSingleLine.h"
-#import "JobsUpDownLab.h"
-#import "JobsBaseConfigTestPopupView.h"
 
 #import "DDNetworkingHeader.h"
 #import "UIViewModel.h"
@@ -31,7 +29,6 @@ AppToolsProtocol
 ,UITextViewDelegate
 >
 /// UI
-@property(nonatomic,strong)JobsUpDownLab *titleLab;
 @property(nonatomic,strong)UIButton *联系客服;
 @property(nonatomic,strong)UIButton *立即注册;
 @property(nonatomic,strong)UILabel *separateLab;/// 分割线
@@ -45,9 +42,9 @@ AppToolsProtocol
 @property(nonatomic,strong)NSMutableArray <RichTextConfig *>*richTextConfigMutArr;
 #pragma mark —— 弹出框。为了防止业务层的变化，弹出框定义在NSObject层
 /// Debug模式下的弹出框 及其相关的数据封装。在外层进行调用，[ 需要被展现的视图 popupWithView:popupView];
--(JobsBaseConfigTestPopupView *)JobsTestPopView:(NSString *)string;
+//-(JobsBaseConfigTestPopupView *)JobsTestPopView:(NSString *)string;
 /// 在外层进行调用，[ 需要被展现的视图 popupWithView:popupView];
--(JobsBaseConfigTestPopupView *)jobsTestPopView:(UIViewModel *_Nullable)viewModel;
+//-(JobsBaseConfigTestPopupView *)jobsTestPopView:(UIViewModel *_Nullable)viewModel;
 /// 测试和业务密切相关的弹窗 ：在外层进行调用，[ 需要被展现的视图 popupWithView:popupView];
 /// @param popViewClass 被测试的弹窗视图
 /// @param viewModel 此视图所绑定的数据。传nil则使用testPopViewData的数据、传UIViewModel.new则使用popViewClass预埋的数据

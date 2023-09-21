@@ -16,16 +16,18 @@ static inline CGSize inputSize_02(void){
     return CGSizeMake(JobsWidth(303 - 50), JobsWidth(36));
 }
 
-//// 登录异常验证
-//#import "BaiShaETProjVerifyLoginVC.h"
-//// 忘记密码
-//// 注册
-//#import "BaiShaETProjRegisterVC.h"
-//// 登录
-///// 手势登录
-//#import "BaiShaETProjGestureLoginVC.h"
-///// 账密登录
-//#import "BaiShaETProjAccPasswordLoginVC.h"
+/// 登录异常验证
+
+/// 忘记密码
+
+/// 注册
+
+/// 登录
+
+/// 手势登录
+
+/// 账密登录
+
 
 #import "MSDoorVC.h"
 

@@ -16,10 +16,9 @@
 //#import "BaiShaETProjMywalletCRView.h"
 //#import "BaiShaETProjCVCellStyle1.h"
 //#import "BaseCollectionViewCell.h"
-//#import "BaiShaETProjMyWalletCVCell.h"
+
 #import "BaiShaETProjHeaderIconCVCell.h"
-//
-//#import "BaiShaETProjVIPSubCVCell_01.h"
+
 //#import "BaiShaETProjVIPSubCVCell_02.h"
 //#import "BaiShaETProjVIPSubCVCell_03.h"
 //#import "BaiShaETProjVIPSubCVCell_04.h"

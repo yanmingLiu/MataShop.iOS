@@ -9,17 +9,17 @@
 
 @interface MSProdSelectCVCell ()
 /// UI
-@property(nonatomic,strong)JobsUpDownLab *prodNameLab;
-@property(nonatomic,strong)JobsUpDownLab *prodDailyRateLab;
-@property(nonatomic,strong)JobsUpDownLab *prodRemainsLab;
+//@property(nonatomic,strong)JobsUpDownLab *prodNameLab;
+//@property(nonatomic,strong)JobsUpDownLab *prodDailyRateLab;
+//@property(nonatomic,strong)JobsUpDownLab *prodRemainsLab;
 @property(nonatomic,strong)UILabel *lineLab;
 @property(nonatomic,strong)UITextView *prodTipsTextView;
 @property(nonatomic,strong)BaseButton *recommendedBuyBtn;
 @property(nonatomic,strong)BaseButton *buyBtn;
 /// Data
-@property(nonatomic,strong)JobsUpDownLabModel *prodNameModel;//
-@property(nonatomic,strong)JobsUpDownLabModel *prodDailyRateModel;//
-@property(nonatomic,strong)JobsUpDownLabModel *prodRemainsModel;//
+//@property(nonatomic,strong)JobsUpDownLabModel *prodNameModel;//
+//@property(nonatomic,strong)JobsUpDownLabModel *prodDailyRateModel;//
+//@property(nonatomic,strong)JobsUpDownLabModel *prodRemainsModel;//
 @property(nonatomic,strong)MSProdSelectModel *prodSelectModel;
 
 @end
@@ -56,16 +56,17 @@
     self.backgroundColor = self.contentView.backgroundColor = RGBA_COLOR(210, 213, 224, 0.2);
     if([model isKindOfClass:UIViewModel.class]){
         self.prodSelectModel = model.data;
-        self.prodNameModel.upLabText = self.prodSelectModel.prodName;/// 产品名
-        self.prodNameModel.downLabText = self.prodSelectModel.prodPrice;/// 产品价格
-        self.prodDailyRateModel.downLabText = self.prodSelectModel.prodDailyRate;/// 产品日利率
-        self.prodRemainsModel.downLabText = self.prodSelectModel.prodNum;/// 产品剩余
+//        self.prodNameModel.upLabText = self.prodSelectModel.prodName;/// 产品名
+//        self.prodNameModel.downLabText = self.prodSelectModel.prodPrice;/// 产品价格
+//        self.prodDailyRateModel.downLabText = self.prodSelectModel.prodDailyRate;/// 产品日利率
+//        self.prodRemainsModel.downLabText = self.prodSelectModel.prodNum;/// 产品剩余
+        
 //        self.prodTipsLab.text = self.prodSelectModel.prodTips;/// 产品细节说明
     }
     
-    self.prodNameLab.alpha = 1;
-    self.prodRemainsLab.alpha = 1;
-    self.prodDailyRateLab.alpha = 1;
+//    self.prodNameLab.alpha = 1;
+//    self.prodRemainsLab.alpha = 1;
+//    self.prodDailyRateLab.alpha = 1;
     self.lineLab.alpha = 1;
     self.prodTipsTextView.alpha = 1;
     self.buyBtn.alpha = 1;
@@ -76,47 +77,47 @@
     return CGSizeMake(JobsWidth(343), JobsWidth(124));
 }
 #pragma mark —— lazyLoad
--(JobsUpDownLab *)prodNameLab{
-    if(!_prodNameLab){
-        _prodNameLab = JobsUpDownLab.new;
-        [self.contentView addSubview:_prodNameLab];
-        [_prodNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(JobsWidth(20));
-            make.top.equalTo(self.contentView).offset(JobsWidth(12));
-        }];
-    }
-    [_prodNameLab richElementsInViewWithModel:self.prodNameModel];
-    [self layoutIfNeeded];
-    return _prodNameLab;
-}
+//-(JobsUpDownLab *)prodNameLab{
+//    if(!_prodNameLab){
+//        _prodNameLab = JobsUpDownLab.new;
+//        [self.contentView addSubview:_prodNameLab];
+//        [_prodNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.contentView).offset(JobsWidth(20));
+//            make.top.equalTo(self.contentView).offset(JobsWidth(12));
+//        }];
+//    }
+//    [_prodNameLab richElementsInViewWithModel:self.prodNameModel];
+//    [self layoutIfNeeded];
+//    return _prodNameLab;
+//}
 
--(JobsUpDownLab *)prodRemainsLab{
-    if(!_prodRemainsLab){
-        _prodRemainsLab = JobsUpDownLab.new;
-        [self.contentView addSubview:_prodRemainsLab];
-        [_prodRemainsLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(JobsWidth(192));
-            make.top.equalTo(self.contentView).offset(JobsWidth(12));
-        }];
-    }
-    [_prodRemainsLab richElementsInViewWithModel:self.prodRemainsModel];
-    [self layoutIfNeeded];
-    return _prodRemainsLab;
-}
-
--(JobsUpDownLab *)prodDailyRateLab{
-    if(!_prodDailyRateLab){
-        _prodDailyRateLab = JobsUpDownLab.new;
-        [self.contentView addSubview:_prodDailyRateLab];
-        [_prodDailyRateLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.contentView).offset(JobsWidth(112));
-            make.top.equalTo(self.contentView).offset(JobsWidth(12));
-        }];
-    }
-    [_prodDailyRateLab richElementsInViewWithModel:self.prodDailyRateModel];
-    [self layoutIfNeeded];
-    return _prodDailyRateLab;
-}
+//-(JobsUpDownLab *)prodRemainsLab{
+//    if(!_prodRemainsLab){
+//        _prodRemainsLab = JobsUpDownLab.new;
+//        [self.contentView addSubview:_prodRemainsLab];
+//        [_prodRemainsLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.contentView).offset(JobsWidth(192));
+//            make.top.equalTo(self.contentView).offset(JobsWidth(12));
+//        }];
+//    }
+//    [_prodRemainsLab richElementsInViewWithModel:self.prodRemainsModel];
+//    [self layoutIfNeeded];
+//    return _prodRemainsLab;
+//}
+//
+//-(JobsUpDownLab *)prodDailyRateLab{
+//    if(!_prodDailyRateLab){
+//        _prodDailyRateLab = JobsUpDownLab.new;
+//        [self.contentView addSubview:_prodDailyRateLab];
+//        [_prodDailyRateLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.contentView).offset(JobsWidth(112));
+//            make.top.equalTo(self.contentView).offset(JobsWidth(12));
+//        }];
+//    }
+//    [_prodDailyRateLab richElementsInViewWithModel:self.prodDailyRateModel];
+//    [self layoutIfNeeded];
+//    return _prodDailyRateLab;
+//}
 
 -(UILabel *)lineLab{
     if(!_lineLab){
@@ -197,85 +198,85 @@
     }return _recommendedBuyBtn;
 }
 
--(JobsUpDownLabModel *)prodNameModel{
-    if (!_prodNameModel) {
-        _prodNameModel = JobsUpDownLabModel.new;
-    }
-
-//    _prodNameModel.upLabText = Internationalization(@"暂无数据");/// 产品名
-    _prodNameModel.upLabTextAlignment = NSTextAlignmentCenter;
-    _prodNameModel.upLabFont = JobsFontRegular(12);
-    _prodNameModel.upLabTextCor = JobsBlackColor;
-    _prodNameModel.upLabBgCor = JobsClearColor;
-    
-//    _prodNameModel.downLabText = Internationalization(@"暂无数据");
-    _prodNameModel.downLabTextAlignment = NSTextAlignmentCenter;
-    _prodNameModel.downLabFont = JobsFontBold(16);
-    _prodNameModel.downLabTextCor = RGBA_COLOR(236, 86, 40, 1);
-    _prodNameModel.downLabBgCor = JobsClearColor;
-
-    _prodNameModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodNameModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    _prodNameModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodNameModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    
-    _prodNameModel.space = JobsWidth(3);
-    
-    return _prodNameModel;
-}
-
--(JobsUpDownLabModel *)prodDailyRateModel{
-    if (!_prodDailyRateModel) {
-        _prodDailyRateModel = JobsUpDownLabModel.new;
-    }
-    
-    _prodDailyRateModel.upLabText = Internationalization(@"日利率：") ;
-    _prodDailyRateModel.upLabTextAlignment = NSTextAlignmentCenter;
-    _prodDailyRateModel.upLabFont = JobsFontRegular(12);
-    _prodDailyRateModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
-    _prodDailyRateModel.upLabBgCor = JobsClearColor;
-    
-//    _prodDailyRateModel.downLabText = Internationalization(@"暂无数据");
-    _prodDailyRateModel.downLabTextAlignment = NSTextAlignmentCenter;
-    _prodDailyRateModel.downLabFont = JobsFontBold(16);
-    _prodDailyRateModel.downLabTextCor = JobsBlackColor;
-    _prodDailyRateModel.downLabBgCor = JobsClearColor;
-
-    _prodDailyRateModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodDailyRateModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    _prodDailyRateModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodDailyRateModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    
-    _prodDailyRateModel.space = JobsWidth(3);
-    
-    return _prodDailyRateModel;
-}
-
--(JobsUpDownLabModel *)prodRemainsModel{
-    if (!_prodRemainsModel) {
-        _prodRemainsModel = JobsUpDownLabModel.new;
-    }
-    
-    _prodRemainsModel.upLabText = Internationalization(@"剩余:") ;
-    _prodRemainsModel.upLabTextAlignment = NSTextAlignmentCenter;
-    _prodRemainsModel.upLabFont = JobsFontRegular(12);
-    _prodRemainsModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
-    _prodRemainsModel.upLabBgCor = JobsClearColor;
-    
-//    _prodRemainsModel.downLabText = Internationalization(@"暂无数据");
-    _prodRemainsModel.downLabTextAlignment = NSTextAlignmentCenter;
-    _prodRemainsModel.downLabFont = JobsFontBold(16);
-    _prodRemainsModel.downLabTextCor = JobsBlackColor;
-    _prodRemainsModel.downLabBgCor = JobsClearColor;
-
-    _prodRemainsModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodRemainsModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    _prodRemainsModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _prodRemainsModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    
-    _prodRemainsModel.space = JobsWidth(3);
-    
-    return _prodRemainsModel;
-}
+//-(JobsUpDownLabModel *)prodNameModel{
+//    if (!_prodNameModel) {
+//        _prodNameModel = JobsUpDownLabModel.new;
+//    }
+//
+////    _prodNameModel.upLabText = Internationalization(@"暂无数据");/// 产品名
+//    _prodNameModel.upLabTextAlignment = NSTextAlignmentCenter;
+//    _prodNameModel.upLabFont = JobsFontRegular(12);
+//    _prodNameModel.upLabTextCor = JobsBlackColor;
+//    _prodNameModel.upLabBgCor = JobsClearColor;
+//    
+////    _prodNameModel.downLabText = Internationalization(@"暂无数据");
+//    _prodNameModel.downLabTextAlignment = NSTextAlignmentCenter;
+//    _prodNameModel.downLabFont = JobsFontBold(16);
+//    _prodNameModel.downLabTextCor = RGBA_COLOR(236, 86, 40, 1);
+//    _prodNameModel.downLabBgCor = JobsClearColor;
+//
+//    _prodNameModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodNameModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodNameModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodNameModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    
+//    _prodNameModel.space = JobsWidth(3);
+//    
+//    return _prodNameModel;
+//}
+//
+//-(JobsUpDownLabModel *)prodDailyRateModel{
+//    if (!_prodDailyRateModel) {
+//        _prodDailyRateModel = JobsUpDownLabModel.new;
+//    }
+//    
+//    _prodDailyRateModel.upLabText = Internationalization(@"日利率：") ;
+//    _prodDailyRateModel.upLabTextAlignment = NSTextAlignmentCenter;
+//    _prodDailyRateModel.upLabFont = JobsFontRegular(12);
+//    _prodDailyRateModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
+//    _prodDailyRateModel.upLabBgCor = JobsClearColor;
+//    
+////    _prodDailyRateModel.downLabText = Internationalization(@"暂无数据");
+//    _prodDailyRateModel.downLabTextAlignment = NSTextAlignmentCenter;
+//    _prodDailyRateModel.downLabFont = JobsFontBold(16);
+//    _prodDailyRateModel.downLabTextCor = JobsBlackColor;
+//    _prodDailyRateModel.downLabBgCor = JobsClearColor;
+//
+//    _prodDailyRateModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodDailyRateModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodDailyRateModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodDailyRateModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    
+//    _prodDailyRateModel.space = JobsWidth(3);
+//    
+//    return _prodDailyRateModel;
+//}
+//
+//-(JobsUpDownLabModel *)prodRemainsModel{
+//    if (!_prodRemainsModel) {
+//        _prodRemainsModel = JobsUpDownLabModel.new;
+//    }
+//    
+//    _prodRemainsModel.upLabText = Internationalization(@"剩余:") ;
+//    _prodRemainsModel.upLabTextAlignment = NSTextAlignmentCenter;
+//    _prodRemainsModel.upLabFont = JobsFontRegular(12);
+//    _prodRemainsModel.upLabTextCor = RGBA_COLOR(102, 102, 102, 1);
+//    _prodRemainsModel.upLabBgCor = JobsClearColor;
+//    
+////    _prodRemainsModel.downLabText = Internationalization(@"暂无数据");
+//    _prodRemainsModel.downLabTextAlignment = NSTextAlignmentCenter;
+//    _prodRemainsModel.downLabFont = JobsFontBold(16);
+//    _prodRemainsModel.downLabTextCor = JobsBlackColor;
+//    _prodRemainsModel.downLabBgCor = JobsClearColor;
+//
+//    _prodRemainsModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodRemainsModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodRemainsModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _prodRemainsModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    
+//    _prodRemainsModel.space = JobsWidth(3);
+//    
+//    return _prodRemainsModel;
+//}
 
 @end

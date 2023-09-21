@@ -8,7 +8,7 @@
 #ifndef BaiShaETProjTipsViewHeader_h
 #define BaiShaETProjTipsViewHeader_h
 
-static inline CGSize BaiShaETProjTipsViewSize(){
+static inline CGSize BaiShaETProjTipsViewSize(void){
     return CGSizeMake(JobsMainScreen_WIDTH(), JobsWidth(100 + 28 + 199));
 }
 

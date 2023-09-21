@@ -19,8 +19,6 @@
 #import "NSObject+UserInfo.h"
 #import "NSObject+AppTools.h"
 
-#import "CasinoCustomerServiceView.h" // 客服弹出小窗
-#import "CasinoUpgradePopupView.h" // 升级弹窗
 #import "NSObject+BaiShaETProjCheck.h"// 数据检验
 #import "BaiShaETProjPopupViewHeader.h"// 本App相关的自定义弹出框
 #import "BaiShaETProjTipsViewHeader.h"// 本App相关的各种提示视图

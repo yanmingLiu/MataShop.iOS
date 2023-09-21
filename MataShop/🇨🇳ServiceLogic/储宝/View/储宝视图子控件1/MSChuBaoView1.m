@@ -10,11 +10,11 @@
 @interface MSChuBaoView1 ()
 /// UI
 @property(nonatomic,strong)UIImageView *imgV;
-@property(nonatomic,strong)JobsUpDownLab *titleLab;// 我的余额
+//@property(nonatomic,strong)JobsUpDownLab *titleLab;// 我的余额
 @property(nonatomic,strong)BaseButton *rechargeBtn;// 充值
 @property(nonatomic,strong)BaseButton *withdrawBtn;// 提现
 /// Data
-@property(nonatomic,strong)JobsUpDownLabModel *titleLabModel;// 我的余额Data
+//@property(nonatomic,strong)JobsUpDownLabModel *titleLabModel;// 我的余额Data
 
 @end
 
@@ -69,7 +69,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
     MakeDataNull
     self.imgV.alpha = 1;
-    self.titleLab.alpha = 1;
+//    self.titleLab.alpha = 1;
     self.withdrawBtn.alpha = 1;
     self.rechargeBtn.alpha = 1;
 }
@@ -91,18 +91,18 @@ static dispatch_once_t static_chuBaoView1OnceToken;
     }return _imgV;
 }
 
--(JobsUpDownLab *)titleLab{
-    if(!_titleLab){
-        _titleLab = JobsUpDownLab.new;
-        [self addSubview:_titleLab];
-        [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.imgV.mas_right).offset(JobsWidth(8));
-            make.top.equalTo(self).offset(JobsWidth(24));
-        }];
-        [_titleLab richElementsInViewWithModel:self.titleLabModel];
-        [self layoutIfNeeded];
-    }return _titleLab;
-}
+//-(JobsUpDownLab *)titleLab{
+//    if(!_titleLab){
+//        _titleLab = JobsUpDownLab.new;
+//        [self addSubview:_titleLab];
+//        [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.imgV.mas_right).offset(JobsWidth(8));
+//            make.top.equalTo(self).offset(JobsWidth(24));
+//        }];
+//        [_titleLab richElementsInViewWithModel:self.titleLabModel];
+//        [self layoutIfNeeded];
+//    }return _titleLab;
+//}
 
 -(BaseButton *)withdrawBtn{
     if (!_withdrawBtn) {
@@ -156,31 +156,31 @@ static dispatch_once_t static_chuBaoView1OnceToken;
     }return _rechargeBtn;
 }
 
--(JobsUpDownLabModel *)titleLabModel{
-    if (!_titleLabModel) {
-        _titleLabModel = JobsUpDownLabModel.new;
-    }
-    
-    _titleLabModel.upLabText = Internationalization(@"我的余额") ;
-    _titleLabModel.upLabTextAlignment = NSTextAlignmentCenter;
-    _titleLabModel.upLabFont = JobsFontRegular(12);
-    _titleLabModel.upLabTextCor = RGBA_COLOR(51, 51, 51, 1);
-    _titleLabModel.upLabBgCor = JobsClearColor;
-    
-    _titleLabModel.downLabText = Internationalization(@"324324");
-    _titleLabModel.downLabTextAlignment = NSTextAlignmentCenter;
-    _titleLabModel.downLabFont = JobsFontBold(16);
-    _titleLabModel.downLabTextCor = RGBA_COLOR(236, 86, 40, 1);
-    _titleLabModel.downLabBgCor = JobsClearColor;
-
-    _titleLabModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _titleLabModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    _titleLabModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-    _titleLabModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-    
-    _titleLabModel.space = JobsWidth(3);
-    
-    return _titleLabModel;
-}
+//-(JobsUpDownLabModel *)titleLabModel{
+//    if (!_titleLabModel) {
+//        _titleLabModel = JobsUpDownLabModel.new;
+//    }
+//    
+//    _titleLabModel.upLabText = Internationalization(@"我的余额") ;
+//    _titleLabModel.upLabTextAlignment = NSTextAlignmentCenter;
+//    _titleLabModel.upLabFont = JobsFontRegular(12);
+//    _titleLabModel.upLabTextCor = RGBA_COLOR(51, 51, 51, 1);
+//    _titleLabModel.upLabBgCor = JobsClearColor;
+//    
+//    _titleLabModel.downLabText = Internationalization(@"324324");
+//    _titleLabModel.downLabTextAlignment = NSTextAlignmentCenter;
+//    _titleLabModel.downLabFont = JobsFontBold(16);
+//    _titleLabModel.downLabTextCor = RGBA_COLOR(236, 86, 40, 1);
+//    _titleLabModel.downLabBgCor = JobsClearColor;
+//
+//    _titleLabModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _titleLabModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    _titleLabModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
+//    _titleLabModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
+//    
+//    _titleLabModel.space = JobsWidth(3);
+//    
+//    return _titleLabModel;
+//}
 
 @end

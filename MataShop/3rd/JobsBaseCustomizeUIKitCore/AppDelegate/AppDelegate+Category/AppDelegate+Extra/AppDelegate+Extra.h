@@ -13,8 +13,6 @@
 #import "JobsTabbarVC.h"
 #import "JobsTabBarControllerConfig.h"
 
-#import "CasinoCustomerServiceView.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppDelegate (Extra)

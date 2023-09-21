@@ -58,7 +58,7 @@ static dispatch_once_t static_tipsView03OnceToken;
     @jobs_weakify(self)
     [self.submitBtn btnClickEventBlock:^(id data) {
         @jobs_strongify(self)
-        [self JobsTestPopView:@"点我刷新"];
+//        [self JobsTestPopView:@"点我刷新"];
     }];
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】

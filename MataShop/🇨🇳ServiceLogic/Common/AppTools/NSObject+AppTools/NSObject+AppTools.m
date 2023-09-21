@@ -181,33 +181,33 @@ languageSwitchNotificationWithSelector:(SEL)aSelector{
     }
     return viewModel;
 }
-/// Debug模式下的弹出框 及其相关的数据封装。在外层进行调用，[ 需要被展现的视图 popupWithView:popupView];
--(JobsBaseConfigTestPopupView *)JobsTestPopView:(NSString *)string{
-    UIViewModel *viewModel = UIViewModel.new;
-    UITextModel *textModel = UITextModel.new;
-    textModel.text = [NSString isNullString:string] ? Internationalization(@"登入按钮") : string;
-    viewModel.textModel = textModel;
-    return [self jobsTestPopView:viewModel];
-}
-/// 在外层进行调用，[ 需要被展现的视图 popupWithView:popupView];
--(JobsBaseConfigTestPopupView *)jobsTestPopView:(UIViewModel *_Nullable)viewModel{
-    
-#ifdef DEBUG
-    JobsBaseConfigTestPopupView *testPopupView = JobsBaseConfigTestPopupView.sharedInstance;
-    testPopupView.size = [CasinoUpgradePopupView viewSizeWithModel:nil];
-    [testPopupView richElementsInViewWithModel:viewModel ? : self.testPopViewData];
-    
-    [testPopupView actionObjectBlock:^(UIButton *data) {
-        if ([[data titleForNormalState] isEqualToString:Internationalization(@"Cancel")]) {
-            
-        }else if ([[data titleForNormalState] isEqualToString:Internationalization(@"Sure")]){
-            
-        }else{}
-        [testPopupView tf_hide];
-        [JobsBaseConfigTestPopupView destroySingleton];
-    }];return testPopupView;
-#endif
-}
+///// Debug模式下的弹出框 及其相关的数据封装。在外层进行调用，[ 需要被展现的视图 popupWithView:popupView];
+//-(JobsBaseConfigTestPopupView *)JobsTestPopView:(NSString *)string{
+//    UIViewModel *viewModel = UIViewModel.new;
+//    UITextModel *textModel = UITextModel.new;
+//    textModel.text = [NSString isNullString:string] ? Internationalization(@"登入按钮") : string;
+//    viewModel.textModel = textModel;
+//    return [self jobsTestPopView:viewModel];
+//}
+///// 在外层进行调用，[ 需要被展现的视图 popupWithView:popupView];
+//-(JobsBaseConfigTestPopupView *)jobsTestPopView:(UIViewModel *_Nullable)viewModel{
+//    
+//#ifdef DEBUG
+//    JobsBaseConfigTestPopupView *testPopupView = JobsBaseConfigTestPopupView.sharedInstance;
+//    testPopupView.size = [CasinoUpgradePopupView viewSizeWithModel:nil];
+//    [testPopupView richElementsInViewWithModel:viewModel ? : self.testPopViewData];
+//    
+//    [testPopupView actionObjectBlock:^(UIButton *data) {
+//        if ([[data titleForNormalState] isEqualToString:Internationalization(@"Cancel")]) {
+//            
+//        }else if ([[data titleForNormalState] isEqualToString:Internationalization(@"Sure")]){
+//            
+//        }else{}
+//        [testPopupView tf_hide];
+//        [JobsBaseConfigTestPopupView destroySingleton];
+//    }];return testPopupView;
+//#endif
+//}
 /// 测试和业务密切相关的弹窗 ：在外层进行调用，[ 需要被展现的视图 popupWithView:popupView];
 /// @param popViewClass 被测试的弹窗视图
 /// @param viewModel 此视图所绑定的数据。传nil则使用testPopViewData的数据、传UIViewModel.new则使用popViewClass预埋的数据
@@ -519,56 +519,6 @@ static char *NSObject_AppTools_hotLabelDataMutArr = "NSObject_AppTools_hotLabelD
                              hotLabelDataMutArr,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_AppTools_titleLab = "NSObject_AppTools_titleLab";
-@dynamic titleLab;
-#pragma mark —— @property(nonatomic,strong)JobsUpDownLab *titleLab;
--(JobsUpDownLab *)titleLab{
-    JobsUpDownLab *TitleLab = objc_getAssociatedObject(self, NSObject_AppTools_titleLab);
-    if ([self isKindOfClass:UIViewController.class] && !TitleLab) {
-        TitleLab = JobsUpDownLab.new;
-        
-        UIViewController *viewController = (UIViewController *)self;
-        [viewController.view addSubview:TitleLab];
-        [TitleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(viewController.view).offset(JobsWidth(120));
-            make.left.equalTo(viewController.view).offset(JobsWidth(16));
-        }];
-        
-        {
-            JobsUpDownLabModel *upDownLabModel = JobsUpDownLabModel.new;
-            upDownLabModel.upLabText = Internationalization(@"登入獲得更多精彩");
-            upDownLabModel.upLabFont = [UIFont systemFontOfSize:JobsWidth(24)
-                                                weight:UIFontWeightBold];
-            upDownLabModel.upLabTextCor = UIColor.blackColor;
-            upDownLabModel.upLabBgCor = UIColor.clearColor;
-            upDownLabModel.upLabTextAlignment = NSTextAlignmentLeft;
-            
-            upDownLabModel.downLabText = Internationalization(@"在這裡，體驗專業平台");
-            upDownLabModel.downLabFont = [UIFont systemFontOfSize:JobsWidth(16)
-                                                  weight:UIFontWeightRegular];
-            upDownLabModel.downLabTextCor = HEXCOLOR(0xB0B0B0);
-            upDownLabModel.downLabBgCor = UIColor.clearColor;
-            upDownLabModel.downLabTextAlignment = NSTextAlignmentLeft;
-            
-            upDownLabModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-            upDownLabModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-            upDownLabModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-            upDownLabModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-            
-            upDownLabModel.space = JobsWidth(12);
-            
-            [TitleLab richElementsInViewWithModel:upDownLabModel];
-        }
-        [self setTitleLab:TitleLab];
-    }return TitleLab;
-}
-
--(void)setTitleLab:(JobsUpDownLab *)titleLab{
-    objc_setAssociatedObject(self,
-                             NSObject_AppTools_titleLab,
-                             titleLab,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
 static char *NSObject_AppTools_separateLab = "NSObject_AppTools_separateLab";
 @dynamic separateLab;
 #pragma mark —— @property(nonatomic,strong)UILabel *separateLab;/// 分割线
@@ -616,7 +566,7 @@ static char *NSObject_AppTools_立即注册 = "NSObject_AppTools_立即注册";
         [_立即注册 btnClickEventBlock:^(id data) {
             @jobs_strongify(self)
             NSLog(@"立即注册")
-            [self JobsTestPopView:@"立即注册"];
+//            [self JobsTestPopView:@"立即注册"];
         }];
         [_立即注册 makeBtnLabelByShowingType:UILabelShowingType_03];
         [self set立即注册:_立即注册];
@@ -651,7 +601,7 @@ static char *NSObject_AppTools_联系客服 = "NSObject_AppTools_联系客服";
         [_联系客服 btnClickEventBlock:^(id data) {
             @jobs_strongify(self)
             NSLog(@"联系客服");
-            [self JobsTestPopView:@"联系客服"];
+//            [self JobsTestPopView:@"联系客服"];
         }];
         [_联系客服 makeBtnLabelByShowingType:UILabelShowingType_03];
         [self set联系客服:_联系客服];

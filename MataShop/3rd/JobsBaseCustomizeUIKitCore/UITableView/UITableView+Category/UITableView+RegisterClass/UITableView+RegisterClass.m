@@ -11,7 +11,7 @@
 
 -(void)registerTableViewClass{
 #warning initTableViewCellWithStyle:UITableViewCellStyleSubtitle 怎么设置？！
-//    [self registerClass:BaiShaETProjMsgTBVCell.class forCellReuseIdentifier:BaiShaETProjMsgTBVCell.class.description];
+
 }
 /// 注册 HeaderFooterView 及其子类
 -(void)registerHeaderFooterViewClass:(Class)cls{
