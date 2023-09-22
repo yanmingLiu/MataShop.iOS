@@ -65,6 +65,7 @@
     self.privacyBtn.alpha = 1;
     self.label.alpha = 1;
     self.userAgreementBtn.alpha = 1;
+    self.thirdPartyShortcutLoginPanelView.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -359,7 +360,13 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
 
 -(MSThirdPartyShortcutLoginPanelView *)thirdPartyShortcutLoginPanelView{
     if(!_thirdPartyShortcutLoginPanelView){
-        
+        _thirdPartyShortcutLoginPanelView = MSThirdPartyShortcutLoginPanelView.new;
+        [self.view addSubview:_thirdPartyShortcutLoginPanelView];
+        [_thirdPartyShortcutLoginPanelView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo([MSThirdPartyShortcutLoginPanelView viewSizeWithModel:nil]);
+            make.centerX.equalTo(self.view);
+            make.bottom.equalTo(self.view);
+        }];
     }return _thirdPartyShortcutLoginPanelView;
 }
 

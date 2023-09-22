@@ -69,6 +69,7 @@
 		C532984E2ABD9AF4004294E0 /* MSInputStyle2View.m in Sources */ = {isa = PBXBuildFile; fileRef = C532984D2ABD9AF4004294E0 /* MSInputStyle2View.m */; };
 		C53298512ABD9AFF004294E0 /* MSInputStyle3View.m in Sources */ = {isa = PBXBuildFile; fileRef = C53298502ABD9AFF004294E0 /* MSInputStyle3View.m */; };
 		C53298CE2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53298CD2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m */; };
+		C53299B42ABE2BE7004294E0 /* MSInputTextFieldLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53299B32ABE2BE7004294E0 /* MSInputTextFieldLeftView.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
@@ -1041,6 +1042,8 @@
 		C53298CB2ABE1C6D004294E0 /* 第三方快捷登录面板.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "第三方快捷登录面板.jpg"; sourceTree = "<group>"; };
 		C53298CC2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSThirdPartyShortcutLoginPanelView.h; sourceTree = "<group>"; };
 		C53298CD2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSThirdPartyShortcutLoginPanelView.m; sourceTree = "<group>"; };
+		C53299B22ABE2BE7004294E0 /* MSInputTextFieldLeftView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInputTextFieldLeftView.h; sourceTree = "<group>"; };
+		C53299B32ABE2BE7004294E0 /* MSInputTextFieldLeftView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInputTextFieldLeftView.m; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -2964,6 +2967,15 @@
 				C53298CD2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m */,
 			);
 			path = "第三方快捷登录面板";
+			sourceTree = "<group>";
+		};
+		C53299B12ABE2B93004294E0 /* MSInputTextFieldLeftView */ = {
+			isa = PBXGroup;
+			children = (
+				C53299B22ABE2BE7004294E0 /* MSInputTextFieldLeftView.h */,
+				C53299B32ABE2BE7004294E0 /* MSInputTextFieldLeftView.m */,
+			);
+			path = MSInputTextFieldLeftView;
 			sourceTree = "<group>";
 		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
@@ -8195,9 +8207,9 @@
 		C578F0532ABB8CA100832A07 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C532965A2ABCE544004294E0 /* 短信登录 */,
-				C53296592ABCE53D004294E0 /* 密码登录 */,
 				C578F0582ABB8CD000832A07 /* MSDoorVC */,
+				C53296592ABCE53D004294E0 /* 密码登录 */,
+				C532965A2ABCE544004294E0 /* 短信登录 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -8205,6 +8217,7 @@
 		C578F0542ABB8CA700832A07 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C53299B12ABE2B93004294E0 /* MSInputTextFieldLeftView */,
 				C53298CA2ABE1C40004294E0 /* 第三方快捷登录面板 */,
 				C53298432ABD9A57004294E0 /* 输入框样式1 */,
 				C53298452ABD9A72004294E0 /* 输入框样式2 */,
@@ -9878,6 +9891,7 @@
 				C561D4312AAC7E7B00E28603 /* UIViewController+MJRefresh.m in Sources */,
 				C561D3DE2AAC7E7B00E28603 /* LGiOSBtn.m in Sources */,
 				C561D3AD2AAC7E7A00E28603 /* AppInternationalizationVC.m in Sources */,
+				C53299B42ABE2BE7004294E0 /* MSInputTextFieldLeftView.m in Sources */,
 				C561D3EC2AAC7E7B00E28603 /* UIView+BRPickerView.m in Sources */,
 				C561D3F82AAC7E7B00E28603 /* UIView+AOP.m in Sources */,
 				C561CE212AAC7CE200E28603 /* ECPrivacyCheckFilesAndFolders.m in Sources */,

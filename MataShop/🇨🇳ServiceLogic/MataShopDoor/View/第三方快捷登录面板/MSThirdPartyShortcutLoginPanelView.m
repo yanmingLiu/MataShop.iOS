@@ -134,6 +134,7 @@ static dispatch_once_t static_thirdPartyShortcutLoginPanelViewOnceToken;
         @jobs_weakify(self)
         [_qqLoginBtn jobsBtnClickEventBlock:^(id data) {
             @jobs_strongify(self)
+            [WHToast toastErrMsg:Internationalization(@"微信登录")];
         }];
     }return _qqLoginBtn;
 }
@@ -147,6 +148,11 @@ static dispatch_once_t static_thirdPartyShortcutLoginPanelViewOnceToken;
             make.size.mas_equalTo(CGSizeMake(JobsWidth(36), JobsWidth(36)));
             make.top.equalTo(self.titleLab.mas_bottom).offset(JobsWidth(17));
             make.right.equalTo(self).offset(JobsWidth(-96.3));
+        }];
+        @jobs_weakify(self)
+        [_wechatLoginBtn jobsBtnClickEventBlock:^(id data) {
+            @jobs_strongify(self)
+            [WHToast toastErrMsg:Internationalization(@"QQ登录")];
         }];
     }return _wechatLoginBtn;
 }

@@ -8,6 +8,9 @@
 #import "MSPasswordLoginVC.h"
 
 @interface MSPasswordLoginVC ()
+/// UI
+@property(nonatomic,strong)MSInputStyle1View *iPhInputView;
+@property(nonatomic,strong)MSInputStyle1View *codeInputView;
 
 @end
 
@@ -34,6 +37,8 @@
     [self setGKNav];
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
+    self.iPhInputView.alpha = 1;
+    self.codeInputView.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -60,5 +65,42 @@
     [super viewDidDisappear:animated];
 }
 #pragma mark —— lazyLoad
+-(MSInputStyle1View *)iPhInputView{
+    if(!_iPhInputView){
+        _iPhInputView = MSInputStyle1View.new;
+        
+        UIViewModel *viewModel = UIViewModel.new;
+        viewModel.image = JobsIMG(@"手机号码登录");
+        viewModel.textModel.text = Internationalization(@"          请输入手机号");
+        
+        [_iPhInputView richElementsInViewWithModel:viewModel];
+        [self.view addSubview:_iPhInputView];
+        [_iPhInputView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo([MSInputStyle1View viewSizeWithModel:nil]);
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.view).offset(JobsWidth(20));
+        }];
+        [_iPhInputView cornerCutToCircleWithCornerRadius:[MSInputStyle1View viewSizeWithModel:nil].height / 2];
+    }return _iPhInputView;
+}
+
+-(MSInputStyle1View *)codeInputView{
+    if(!_codeInputView){
+        _codeInputView = MSInputStyle1View.new;
+        
+        UIViewModel *viewModel = UIViewModel.new;
+        viewModel.image = JobsIMG(@"登录密码");
+        viewModel.textModel.text = Internationalization(@"         密码");
+        
+        [_codeInputView richElementsInViewWithModel:viewModel];
+        [self.view addSubview:_codeInputView];
+        [_codeInputView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo([MSInputStyle3View viewSizeWithModel:nil]);
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.iPhInputView.mas_bottom).offset(JobsWidth(8));
+        }];
+        [_codeInputView cornerCutToCircleWithCornerRadius:[MSInputStyle1View viewSizeWithModel:nil].height / 2];
+    }return _codeInputView;
+}
 
 @end
