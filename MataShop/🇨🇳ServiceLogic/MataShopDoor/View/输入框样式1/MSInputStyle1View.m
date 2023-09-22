@@ -106,7 +106,7 @@ static dispatch_once_t static_inputStyle1OnceToken;
         }];
         [self addSubview:_textField];
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(220 - 80 - 12), JobsWidth(28)));
+            make.size.mas_equalTo(CGSizeMake([MSInputStyle1View viewSizeWithModel:nil].width - JobsWidth(32 + 12), JobsWidth(28)));
             make.centerY.equalTo(self);
             make.left.equalTo(self).offset(JobsWidth(12));
         }];

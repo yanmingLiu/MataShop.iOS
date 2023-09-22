@@ -15,6 +15,7 @@
 @end
 
 @implementation MSInputStyle2View
+@synthesize viewModel = _viewModel;
 #pragma mark —— BaseProtocol
 /// 单例化和销毁
 +(void)destroySingleton{
@@ -61,6 +62,7 @@ static dispatch_once_t static_inputStyle2ViewOnceToken;
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
     self.backgroundColor = JobsCor(@"#F9F9F9");
+    self.viewModel = model;
     self.textField.alpha = 1;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
@@ -90,7 +92,7 @@ static dispatch_once_t static_inputStyle2ViewOnceToken;
         _textField.leftViewMode = UITextFieldViewModeAlways;
         _textField.leftViewOffsetX = JobsWidth(0);
         _textField.placeholdAnimationable = NO;
-        _textField.offset = JobsWidth(24);
+        _textField.offset = JobsWidth(24 + 43 + 15);
         _textField.placeholder = self.viewModel.textModel.text;
         _textField.placeholderColor = JobsGrayColor;
         _textField.placeholderFont = UIFontWeightRegularSize(14);
@@ -105,11 +107,22 @@ static dispatch_once_t static_inputStyle2ViewOnceToken;
         }];
         [self addSubview:_textField];
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(220 - 80 - 12), JobsWidth(28)));
+            make.size.mas_equalTo(CGSizeMake([MSInputStyle2View viewSizeWithModel:nil].width - JobsWidth(32 + 12), JobsWidth(28)));
             make.centerY.equalTo(self);
             make.left.equalTo(self).offset(JobsWidth(12));
         }];
     }return _textField;
+}
+
+-(MSInputTextFieldLeftView *)inputTextFieldLeftView{
+    if(!_inputTextFieldLeftView){
+        _inputTextFieldLeftView = MSInputTextFieldLeftView.new;
+        [self addSubview:_inputTextFieldLeftView];
+        [_inputTextFieldLeftView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo([MSInputTextFieldLeftView viewSizeWithModel:nil]);
+        }];
+        [_inputTextFieldLeftView richElementsInViewWithModel:nil];
+    }return _inputTextFieldLeftView;
 }
 
 @end

@@ -1,20 +1,20 @@
 //
-//  MSMessageLoginVC.m
+//  MSPasswordLoginVC.m
 //  MataShop
 //
 //  Created by Jobs Hi on 9/22/23.
 //
 
-#import "MSMessageLoginVC.h"
+#import "MSPasswordLoginVC.h"
 
-@interface MSMessageLoginVC ()
+@interface MSPasswordLoginVC ()
 /// UI
 @property(nonatomic,strong)MSInputStyle1View *iPhInputView;
-@property(nonatomic,strong)MSInputStyle3View *codeInputView;
+@property(nonatomic,strong)MSInputStyle1View *codeInputView;
 
 @end
 
-@implementation MSMessageLoginVC
+@implementation MSPasswordLoginVC
 
 - (void)dealloc{
     [NSNotificationCenter.defaultCenter removeObserver:self];
@@ -84,9 +84,9 @@
     }return _iPhInputView;
 }
 
--(MSInputStyle3View *)codeInputView{
+-(MSInputStyle1View *)codeInputView{
     if(!_codeInputView){
-        _codeInputView = MSInputStyle3View.new;
+        _codeInputView = MSInputStyle1View.new;
         
         UIViewModel *viewModel = UIViewModel.new;
         viewModel.image = JobsIMG(@"登录密码");
@@ -97,7 +97,7 @@
         [_codeInputView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo([MSInputStyle3View viewSizeWithModel:nil]);
             make.centerX.equalTo(self.view);
-            make.top.equalTo(self.iPhInputView.mas_bottom).offset(JobsWidth(8));
+            make.top.equalTo(self.iPhInputView.mas_bottom).offset(JobsWidth(15));
         }];
         [_codeInputView cornerCutToCircleWithCornerRadius:[MSInputStyle1View viewSizeWithModel:nil].height / 2];
     }return _codeInputView;

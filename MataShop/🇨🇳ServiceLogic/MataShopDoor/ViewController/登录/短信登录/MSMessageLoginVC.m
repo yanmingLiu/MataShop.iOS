@@ -1,20 +1,20 @@
 //
-//  MSPasswordLoginVC.m
+//  MSMessageLoginVC.m
 //  MataShop
 //
 //  Created by Jobs Hi on 9/22/23.
 //
 
-#import "MSPasswordLoginVC.h"
+#import "MSMessageLoginVC.h"
 
-@interface MSPasswordLoginVC ()
+@interface MSMessageLoginVC ()
 /// UI
 @property(nonatomic,strong)MSInputStyle1View *iPhInputView;
-@property(nonatomic,strong)MSInputStyle1View *codeInputView;
+@property(nonatomic,strong)MSInputStyle3View *msgCodeInputView;
 
 @end
 
-@implementation MSPasswordLoginVC
+@implementation MSMessageLoginVC
 
 - (void)dealloc{
     [NSNotificationCenter.defaultCenter removeObserver:self];
@@ -38,7 +38,7 @@
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
     self.iPhInputView.alpha = 1;
-    self.codeInputView.alpha = 1;
+    self.msgCodeInputView.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -84,23 +84,23 @@
     }return _iPhInputView;
 }
 
--(MSInputStyle1View *)codeInputView{
-    if(!_codeInputView){
-        _codeInputView = MSInputStyle1View.new;
+-(MSInputStyle3View *)msgCodeInputView{
+    if(!_msgCodeInputView){
+        _msgCodeInputView = MSInputStyle3View.new;
         
         UIViewModel *viewModel = UIViewModel.new;
         viewModel.image = JobsIMG(@"登录密码");
         viewModel.textModel.text = Internationalization(@"         密码");
         
-        [_codeInputView richElementsInViewWithModel:viewModel];
-        [self.view addSubview:_codeInputView];
-        [_codeInputView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_msgCodeInputView richElementsInViewWithModel:viewModel];
+        [self.view addSubview:_msgCodeInputView];
+        [_msgCodeInputView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo([MSInputStyle3View viewSizeWithModel:nil]);
             make.centerX.equalTo(self.view);
-            make.top.equalTo(self.iPhInputView.mas_bottom).offset(JobsWidth(8));
+            make.top.equalTo(self.iPhInputView.mas_bottom).offset(JobsWidth(15));
         }];
-        [_codeInputView cornerCutToCircleWithCornerRadius:[MSInputStyle1View viewSizeWithModel:nil].height / 2];
-    }return _codeInputView;
+        [_msgCodeInputView cornerCutToCircleWithCornerRadius:[MSInputStyle1View viewSizeWithModel:nil].height / 2];
+    }return _msgCodeInputView;
 }
 
 @end

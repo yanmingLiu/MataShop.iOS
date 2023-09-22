@@ -244,6 +244,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [_registerBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"注册账号");
+            [self forceComingToPushVC:MSRegisterVC.new requestParams:nil];
         }];
     }return _registerBtn;
 }

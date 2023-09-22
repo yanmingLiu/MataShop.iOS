@@ -125,7 +125,7 @@ static dispatch_once_t static_inputStyle3OnceToken;
         }];
         [self addSubview:_textField];
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(220 - 80 - 12), JobsWidth(28)));
+            make.height.mas_equalTo([MSInputStyle3View viewSizeWithModel:nil].height);
             make.centerY.equalTo(self);
             make.left.equalTo(self).offset(JobsWidth(12));
             make.right.equalTo(self.countDownBtn.mas_left);
@@ -140,7 +140,7 @@ static dispatch_once_t static_inputStyle3OnceToken;
         [_countDownBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(JobsWidth(14));
             make.centerY.equalTo(self);
-            make.right.equalTo(self).offset(JobsWidth(-20));
+            make.right.equalTo(self).offset(JobsWidth(-10));
         }];
         [_countDownBtn makeBtnLabelByShowingType:UILabelShowingType_03];
         

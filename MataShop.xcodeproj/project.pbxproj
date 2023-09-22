@@ -70,6 +70,7 @@
 		C53298512ABD9AFF004294E0 /* MSInputStyle3View.m in Sources */ = {isa = PBXBuildFile; fileRef = C53298502ABD9AFF004294E0 /* MSInputStyle3View.m */; };
 		C53298CE2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53298CD2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m */; };
 		C53299B42ABE2BE7004294E0 /* MSInputTextFieldLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53299B32ABE2BE7004294E0 /* MSInputTextFieldLeftView.m */; };
+		C5329AA92ABE3B1F004294E0 /* MSRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329AA82ABE3B1F004294E0 /* MSRegisterVC.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
@@ -1044,6 +1045,8 @@
 		C53298CD2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSThirdPartyShortcutLoginPanelView.m; sourceTree = "<group>"; };
 		C53299B22ABE2BE7004294E0 /* MSInputTextFieldLeftView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInputTextFieldLeftView.h; sourceTree = "<group>"; };
 		C53299B32ABE2BE7004294E0 /* MSInputTextFieldLeftView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInputTextFieldLeftView.m; sourceTree = "<group>"; };
+		C5329AA72ABE3B1F004294E0 /* MSRegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSRegisterVC.h; sourceTree = "<group>"; };
+		C5329AA82ABE3B1F004294E0 /* MSRegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSRegisterVC.m; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -2976,6 +2979,25 @@
 				C53299B32ABE2BE7004294E0 /* MSInputTextFieldLeftView.m */,
 			);
 			path = MSInputTextFieldLeftView;
+			sourceTree = "<group>";
+		};
+		C5329A2D2ABE3AE9004294E0 /* MSDoorVC */ = {
+			isa = PBXGroup;
+			children = (
+				C578F0592ABB8E3000832A07 /* MSDoorVC.jpg */,
+				C578F0552ABB8CCA00832A07 /* MSDoorVC.h */,
+				C578F0562ABB8CCA00832A07 /* MSDoorVC.m */,
+			);
+			path = MSDoorVC;
+			sourceTree = "<group>";
+		};
+		C5329AA62ABE3B02004294E0 /* 注册 */ = {
+			isa = PBXGroup;
+			children = (
+				C5329AA72ABE3B1F004294E0 /* MSRegisterVC.h */,
+				C5329AA82ABE3B1F004294E0 /* MSRegisterVC.m */,
+			);
+			path = "注册";
 			sourceTree = "<group>";
 		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
@@ -8207,9 +8229,8 @@
 		C578F0532ABB8CA100832A07 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C578F0582ABB8CD000832A07 /* MSDoorVC */,
-				C53296592ABCE53D004294E0 /* 密码登录 */,
-				C532965A2ABCE544004294E0 /* 短信登录 */,
+				C5329AA62ABE3B02004294E0 /* 注册 */,
+				C578F0582ABB8CD000832A07 /* 登录 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -8226,14 +8247,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C578F0582ABB8CD000832A07 /* MSDoorVC */ = {
+		C578F0582ABB8CD000832A07 /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
-				C578F0592ABB8E3000832A07 /* MSDoorVC.jpg */,
-				C578F0552ABB8CCA00832A07 /* MSDoorVC.h */,
-				C578F0562ABB8CCA00832A07 /* MSDoorVC.m */,
+				C5329A2D2ABE3AE9004294E0 /* MSDoorVC */,
+				C53296592ABCE53D004294E0 /* 密码登录 */,
+				C532965A2ABCE544004294E0 /* 短信登录 */,
 			);
-			path = MSDoorVC;
+			path = "登录";
 			sourceTree = "<group>";
 		};
 		C5BD5E5F2AAC76740048F36B = {
@@ -9829,6 +9850,7 @@
 				C561D45E2AAC7E7B00E28603 /* Nanosecond_TimerManager.m in Sources */,
 				C561D41A2AAC7E7B00E28603 /* UIViewController+TFPopupView.m in Sources */,
 				C561D2FF2AAC7E7A00E28603 /* JobsBitsMonitorCore.m in Sources */,
+				C5329AA92ABE3B1F004294E0 /* MSRegisterVC.m in Sources */,
 				C561D6952AAC862000E28603 /* CasinoHasAddedBankCardCVCell.m in Sources */,
 				C561D4B32AAC7EC200E28603 /* AppDelegate+UIApplicationDelegate.m in Sources */,
 				C5729AA72AB594320084EAFC /* MSSalesVC.m in Sources */,
