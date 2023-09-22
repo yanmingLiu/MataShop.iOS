@@ -33,7 +33,7 @@ static dispatch_once_t static_choiceUserHeaderDataViewOnceToken;
         static_choiceUserHeaderDataView = JobsUserHeaderDataView.new;
     });return static_choiceUserHeaderDataView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;

@@ -324,7 +324,7 @@ numberOfEventsForDate:(NSDate *)date{
         _signBtn.backgroundColor = JobsYellowColor;
         _signBtn.normalTitle = Internationalization(@"签到");
         @jobs_weakify(self)
-        [_signBtn btnClickEventBlock:^(UIButton *x) {
+        [_signBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);

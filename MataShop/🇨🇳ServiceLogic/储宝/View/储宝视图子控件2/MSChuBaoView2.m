@@ -40,7 +40,7 @@ static dispatch_once_t static_chuBaoView2OnceToken;
         static_chuBaoView2 = MSChuBaoView2.new;
     });return static_chuBaoView2;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = JobsWhiteColor;

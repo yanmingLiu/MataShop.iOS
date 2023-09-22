@@ -34,7 +34,7 @@ static dispatch_once_t static_shopLinkViewOnceToken;
         static_shopLinkView = MS3rdShopLinkView.new;
     });return static_shopLinkView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
     }return self;

@@ -165,7 +165,7 @@
         }];
         [_buyBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
         @jobs_weakify(self)
-        [_buyBtn btnClickEventBlock:^(UIButton *x) {
+        [_buyBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
@@ -189,7 +189,7 @@
         [_recommendedBuyBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
         [_recommendedBuyBtn layerBorderCor:RGBA_COLOR(136, 79, 2, 1) andBorderWidth:JobsWidth(1)];
         @jobs_weakify(self)
-        [_recommendedBuyBtn btnClickEventBlock:^(UIButton *x) {
+        [_recommendedBuyBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);

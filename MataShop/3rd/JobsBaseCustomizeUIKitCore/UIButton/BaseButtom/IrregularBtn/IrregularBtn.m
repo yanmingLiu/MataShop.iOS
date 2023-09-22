@@ -17,7 +17,7 @@
 
 static dispatch_once_t irregularBtnDispatchOnce;
 @implementation IrregularBtn
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         irregularBtnDispatchOnce = 0;

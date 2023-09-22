@@ -30,7 +30,7 @@ static dispatch_once_t static_searchBoardViewOnceToken;
         searchBoardView = MSSearchBoardView.new;
     });return searchBoardView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = JobsWhiteColor;

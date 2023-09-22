@@ -81,7 +81,7 @@
         }];
         [_joinBtn cornerCutToCircleWithCornerRadius:JobsWidth(14)];
         @jobs_weakify(self)
-        [_joinBtn btnClickEventBlock:^(UIButton *x) {
+        [_joinBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             [WHToast toastErrMsg:Internationalization(@"我要加入")];

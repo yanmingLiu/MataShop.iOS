@@ -20,7 +20,7 @@ static dispatch_once_t JobsAppDoorLogoContentViewDispatchOnce;
 - (void)dealloc {
     NSLog(@"%@",JobsLocalFunc);
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         JobsAppDoorLogoContentViewDispatchOnce = 0;

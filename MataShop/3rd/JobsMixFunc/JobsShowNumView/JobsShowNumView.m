@@ -33,7 +33,7 @@ static dispatch_once_t static_showNumViewOnceToken;
         static_showNumView = JobsShowNumView.new;
     });return static_showNumView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.clearColor;
@@ -74,7 +74,7 @@ static dispatch_once_t static_showNumViewOnceToken;
         btn.titleFont = UIFontWeightBoldSize(40);
         btn.normalTitleColor = HEXCOLOR(0xAE8330);
         @jobs_weakify(self)
-        [btn btnClickEventBlock:^(id data) {
+        [btn jobsBtnClickEventBlock:^(id data) {
             @jobs_strongify(self)
             NSLog(@"%@",btn.titleForNormalState)
         }];

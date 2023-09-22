@@ -32,7 +32,7 @@ static dispatch_once_t static_choiceVenuesViewOnceToken;
         static_choiceVenuesView = BaiShaETProjChoiceVenuesView.new;
     });return static_choiceVenuesView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;

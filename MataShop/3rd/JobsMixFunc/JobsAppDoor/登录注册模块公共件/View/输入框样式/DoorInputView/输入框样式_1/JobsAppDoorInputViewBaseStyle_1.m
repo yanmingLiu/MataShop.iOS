@@ -72,8 +72,8 @@
     _textField.fieldEditorOffset = self.doorInputViewBaseStyleModel.fieldEditorOffset ? : JobsWidth(50);
 }
 
--(void)block:(JobsMagicTextField *)textField
-       value:(NSString *)value{
+-(void)textFieldBlock:(JobsMagicTextField *)textField
+       textFieldValue:(NSString *)value{
     
     self.textFieldInputModel.resString = value;
     self.textFieldInputModel.PlaceHolder = self.doorInputViewBaseStyleModel.placeHolderStr;
@@ -148,7 +148,7 @@
     if (!_countDownBtn) {
         _countDownBtn = [UIButton.alloc initWithConfig:self.btnTimerConfigModel];
         @jobs_weakify(self)
-        [_countDownBtn btnClickEventBlock:^(UIButton *x) {
+        [_countDownBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             [x startTimer];//选择时机、触发启动
 //            NSLog(@"SSSSS = 获取验证码");
@@ -205,8 +205,8 @@
         }] subscribeNext:^(NSString * _Nullable x) {
             @jobs_strongify(self)
             NSLog(@"MMM = %@",x);
-            [self block:self->_textField
-                  value:x];
+            [self textFieldBlock:self.textField
+                  textFieldValue:x];
         }];
         
         [self addSubview:_textField];

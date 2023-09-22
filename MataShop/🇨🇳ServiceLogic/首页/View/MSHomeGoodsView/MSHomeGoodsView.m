@@ -36,7 +36,7 @@ static dispatch_once_t static_homeGoodsViewOnceToken;
         static_homeGoodsView = MSHomeGoodsView.new;
     });return static_homeGoodsView;
 }
-#pragma mark —— 系统初始化方法
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         

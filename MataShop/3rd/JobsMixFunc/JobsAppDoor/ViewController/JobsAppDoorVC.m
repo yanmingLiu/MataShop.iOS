@@ -53,7 +53,7 @@ static dispatch_once_t static_jobsAppDoorOnceToken;
         static_appDoorVC = JobsAppDoorVC.new;
     });return static_appDoorVC;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         
@@ -414,7 +414,7 @@ static dispatch_once_t static_jobsAppDoorOnceToken;
         _customerServiceBtn.centerX = JobsMainScreen_WIDTH() / 2;
         _customerServiceBtn.top = self.jobsAppDoorContentView.top + self.jobsAppDoorContentView.height + 20;
         self.customerServiceBtnY = _customerServiceBtn.y;
-        [_customerServiceBtn btnClickEventBlock:^(id data) {
+        [_customerServiceBtn jobsBtnClickEventBlock:^(id data) {
             NSLog(@"点击客服按钮");
         }];
         [_customerServiceBtn cornerCutToCircleWithCornerRadius:_customerServiceBtn.height / 2];

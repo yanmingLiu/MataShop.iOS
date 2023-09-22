@@ -43,7 +43,7 @@ static dispatch_once_t static_customViewOnceToken;
         static_customView = BaiShaETProjCustomView.new;
     });return static_customView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;
@@ -181,7 +181,7 @@ static dispatch_once_t static_customViewOnceToken;
             make.left.equalTo(self).offset(JobsWidth(16));
         }];
         [_cancelBtn cornerCutToCircleWithCornerRadius:self.btnSize.height / 2];
-        [_cancelBtn btnClickEventBlock:^(UIButton *x) {
+        [_cancelBtn jobsBtnClickEventBlock:^(UIButton *x) {
             toast(x.titleForNormalState);
         }];
     }return _cancelBtn;
@@ -200,7 +200,7 @@ static dispatch_once_t static_customViewOnceToken;
             make.right.equalTo(self).offset(JobsWidth(-16));
         }];
         [_sureBtn cornerCutToCircleWithCornerRadius:self.btnSize.height / 2];
-        [_sureBtn btnClickEventBlock:^(UIButton *x) {
+        [_sureBtn jobsBtnClickEventBlock:^(UIButton *x) {
             toast(x.titleForNormalState);
         }];
     }return _sureBtn;

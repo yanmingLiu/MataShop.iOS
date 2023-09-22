@@ -32,7 +32,7 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
         static_chuBaoAdMarqueeView = MSChuBaoAdMarqueeView.new;
     });return static_chuBaoAdMarqueeView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = JobsBlackColor;

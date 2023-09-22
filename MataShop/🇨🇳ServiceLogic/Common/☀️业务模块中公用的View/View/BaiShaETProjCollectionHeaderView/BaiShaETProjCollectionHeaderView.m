@@ -45,7 +45,7 @@ static dispatch_once_t static_collectionHeaderViewOnceToken;
         static_collectionHeaderView = BaiShaETProjCollectionHeaderView.new;
     });return static_collectionHeaderView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;

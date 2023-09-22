@@ -32,7 +32,7 @@ static dispatch_once_t static_tipsView03OnceToken;
         static_tipsView03 = BaiShaETProjTipsView03.new;
     });return static_tipsView03;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;
@@ -56,7 +56,7 @@ static dispatch_once_t static_tipsView03OnceToken;
     self.subTitleIMGV.alpha = 1;
     self.tipsLab.text = [NSString isNullString:self.viewModel.textModel.text] ? Internationalization(@"您的網絡出現異常，請檢杳網絡是\n否正常或刷新試試 "): self.viewModel.textModel.text;
     @jobs_weakify(self)
-    [self.submitBtn btnClickEventBlock:^(id data) {
+    [self.submitBtn jobsBtnClickEventBlock:^(id data) {
         @jobs_strongify(self)
 //        [self JobsTestPopView:@"点我刷新"];
     }];

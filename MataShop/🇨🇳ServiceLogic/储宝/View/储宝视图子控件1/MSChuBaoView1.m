@@ -33,7 +33,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
         static_chuBaoView1 = MSChuBaoView1.new;
     });return static_chuBaoView1;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = JobsWhiteColor;
@@ -120,7 +120,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
         [_withdrawBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
         
         @jobs_weakify(self)
-        [_withdrawBtn btnClickEventBlock:^(UIButton *x) {
+        [_withdrawBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
@@ -146,7 +146,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
         [_rechargeBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
         [_rechargeBtn layerBorderCor:RGBA_COLOR(136, 79, 2, 1) andBorderWidth:1];
         @jobs_weakify(self)
-        [_rechargeBtn btnClickEventBlock:^(UIButton *x) {
+        [_rechargeBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);

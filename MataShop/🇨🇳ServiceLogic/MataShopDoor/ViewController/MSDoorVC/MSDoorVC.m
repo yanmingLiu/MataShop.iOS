@@ -20,6 +20,7 @@
 @property(nonatomic,strong)UIButton *privacyBtn;/// 隐私政策
 @property(nonatomic,strong)UILabel *label;/// 和
 @property(nonatomic,strong)UIButton *userAgreementBtn;/// 用户协议
+@property(nonatomic,strong)MSThirdPartyShortcutLoginPanelView *thirdPartyShortcutLoginPanelView;
 /// Data
 @property(nonatomic,strong)NSMutableArray <JobsBtnModel *>*btnModelMutArr;
 @property(nonatomic,strong)NSMutableArray <NSString *>*titleMutArr;
@@ -218,7 +219,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [_listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.titleLab.mas_bottom).offset(listContainerViewDefaultOffset + JobsWidth(83));
             make.left.right.equalTo(self.view);
-            make.height.mas_equalTo(JobsWidth(132));
+            make.height.mas_equalTo(JobsWidth(132 + 30));
         }];
         [self.view layoutIfNeeded];
     }return _listContainerView;
@@ -239,7 +240,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [_registerBtn makeBtnLabelByShowingType:UILabelShowingType_03];
         @jobs_weakify(self)
-        [_registerBtn btnClickEventBlock:^(UIButton *x) {
+        [_registerBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"注册账号");
         }];
@@ -261,7 +262,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [_loginBtn cornerCutToCircleWithCornerRadius:JobsWidth(24)];
         @jobs_weakify(self)
-        [_loginBtn btnClickEventBlock:^(UIButton *x) {
+        [_loginBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"登录账号");
         }];
@@ -275,6 +276,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _agreeBtn.normalTitleColor = JobsCor(@"#333333");
         _agreeBtn.titleFont = UIFontWeightRegularSize(JobsWidth(12));
         _agreeBtn.normalImage = JobsIMG(@"登录-未同意");
+        _agreeBtn.selectedImage = JobsIMG(@"登录-同意");
         _agreeBtn.backgroundColor = UIColor.clearColor;
         [self.view addSubview:_agreeBtn];
         [_agreeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -287,7 +289,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [_agreeBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft
                                    imageTitleSpace:JobsWidth(4)];
         @jobs_weakify(self)
-        [_agreeBtn btnClickEventBlock:^(UIButton *x) {
+        [_agreeBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"阅读并同意");
             x.selected = !x.selected;
@@ -310,7 +312,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [_privacyBtn makeBtnLabelByShowingType:UILabelShowingType_03];
         @jobs_weakify(self)
-        [_privacyBtn btnClickEventBlock:^(UIButton *x) {
+        [_privacyBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"隐私政策");
         }];
@@ -348,26 +350,32 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [_userAgreementBtn makeBtnLabelByShowingType:UILabelShowingType_03];
         @jobs_weakify(self)
-        [_userAgreementBtn btnClickEventBlock:^(UIButton *x) {
+        [_userAgreementBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"用户协议");
         }];
     }return _userAgreementBtn;
 }
 
+-(MSThirdPartyShortcutLoginPanelView *)thirdPartyShortcutLoginPanelView{
+    if(!_thirdPartyShortcutLoginPanelView){
+        
+    }return _thirdPartyShortcutLoginPanelView;
+}
+
 -(NSMutableArray<UIViewController *> *)childVCMutArr{
     if (!_childVCMutArr) {
         _childVCMutArr = NSMutableArray.array;
-        [_childVCMutArr addObject:MSMessageLoginVC.new];/// 短信登录
         [_childVCMutArr addObject:MSPasswordLoginVC.new];/// 密码登录
+        [_childVCMutArr addObject:MSMessageLoginVC.new];/// 短信登录
     }return _childVCMutArr;
 }
 
 -(NSMutableArray<NSString *> *)titleMutArr{
     if (!_titleMutArr) {
         _titleMutArr = NSMutableArray.array;
-        [_titleMutArr addObject:Internationalization(@"短信登录")];
         [_titleMutArr addObject:Internationalization(@"密码登录")];
+        [_titleMutArr addObject:Internationalization(@"短信登录")];
     }return _titleMutArr;
 }
 

@@ -76,7 +76,7 @@
         _accAndPasswordEntryBtn.titleFont = UIFontWeightBoldSize(16);
         _accAndPasswordEntryBtn.normalTitleColor = HEXCOLOR(0xAE8330);
         @jobs_weakify(self)
-        [_accAndPasswordEntryBtn btnClickEventBlock:^(UIButton *x) {
+        [_accAndPasswordEntryBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"账号密码登录");
 //            [self JobsTestPopView:@"账号密码登录"];

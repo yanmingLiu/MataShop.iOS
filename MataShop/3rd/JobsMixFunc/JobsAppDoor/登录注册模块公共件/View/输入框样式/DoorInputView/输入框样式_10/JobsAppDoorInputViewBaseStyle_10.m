@@ -71,8 +71,8 @@
     _textField.fieldEditorOffset = self.doorInputViewBaseStyleModel.fieldEditorOffset ? : JobsWidth(0);
 }
 
--(void)block:(ZYTextField *)textField
-       value:(NSString *)value{
+-(void)textFieldBlock:(ZYTextField *)textField
+       textFieldValue:(NSString *)value{
     
     self.textFieldInputModel.resString = value;
     self.textFieldInputModel.PlaceHolder = self.doorInputViewBaseStyleModel.placeHolderStr;
@@ -112,8 +112,8 @@
             return YES;
         } subscribeNextBlock:^(id x) {
             @jobs_strongify(self)
-            [self block:self->_textField
-                  value:x];
+            [self textFieldBlock:self->_textField
+                  textFieldValue:x];
         }];
         
         [self addSubview:_textField];

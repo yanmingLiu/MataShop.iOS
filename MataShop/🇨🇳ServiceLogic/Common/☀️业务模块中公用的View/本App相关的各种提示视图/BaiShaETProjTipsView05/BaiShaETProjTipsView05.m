@@ -30,7 +30,7 @@ static dispatch_once_t static_tipsView05OnceToken;
         static_tipsView05 = BaiShaETProjTipsView05.new;
     });return static_tipsView05;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;
@@ -49,7 +49,7 @@ static dispatch_once_t static_tipsView05OnceToken;
     self.tipsLab.text = Internationalization(@"暫無可用的存款渠道，請聯繫客服\n諮詢");
 
     @jobs_weakify(self)
-    [self.submitBtn btnClickEventBlock:^(id data) {
+    [self.submitBtn jobsBtnClickEventBlock:^(id data) {
         @jobs_strongify(self)
 //        [self JobsTestPopView:@"联系客服"];
     }];

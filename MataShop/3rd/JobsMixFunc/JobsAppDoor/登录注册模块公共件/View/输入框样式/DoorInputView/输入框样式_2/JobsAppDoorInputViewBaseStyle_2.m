@@ -68,8 +68,8 @@
     _textField.fieldEditorOffset = self.doorInputViewBaseStyleModel.fieldEditorOffset ? : JobsWidth(50);
 }
 
--(void)block:(JobsMagicTextField *)textField
-       value:(NSString *)value{
+-(void)textFieldBlock:(JobsMagicTextField *)textField
+       textFieldValue:(NSString *)value{
     
     self.textFieldInputModel.resString = value;
     self.textFieldInputModel.PlaceHolder = self.doorInputViewBaseStyleModel.placeHolderStr;
@@ -129,8 +129,8 @@
         }]subscribeNext:^(NSString * _Nullable x) {
             @jobs_strongify(self)
             NSLog(@"MMM = %@",x);
-            [self block:self->_textField
-                  value:x];
+            [self textFieldBlock:self.textField
+                  textFieldValue:x];
         }];
         
         [self addSubview:_textField];

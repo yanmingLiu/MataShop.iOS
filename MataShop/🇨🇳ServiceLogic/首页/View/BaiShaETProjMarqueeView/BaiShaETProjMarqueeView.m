@@ -33,7 +33,7 @@ static dispatch_once_t static_marqueeViewOnceToken;
         static_marqueeView = BaiShaETProjMarqueeView.new;
     });return static_marqueeView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;

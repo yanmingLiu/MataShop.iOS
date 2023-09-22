@@ -148,7 +148,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _aboutBtn.normalTitleColor = RGBA_COLOR(51, 51, 51, 1);
         _aboutBtn.titleFont = UIFontWeightRegularSize(14);
         @jobs_weakify(self)
-        [_aboutBtn btnClickEventBlock:^(id data) {
+        [_aboutBtn jobsBtnClickEventBlock:^(id data) {
             @jobs_strongify(self)
             [self forceComingToPushVC:MSAboutChuBaoVC.new requestParams:@""];
         }];

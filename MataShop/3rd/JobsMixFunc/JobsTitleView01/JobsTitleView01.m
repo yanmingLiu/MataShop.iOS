@@ -34,7 +34,7 @@ static dispatch_once_t static_titleView01OnceToken;
         static_titleView01 = JobsTitleView01.new;
     });return static_titleView01;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;

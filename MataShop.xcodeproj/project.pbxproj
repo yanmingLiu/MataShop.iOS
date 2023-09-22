@@ -65,6 +65,10 @@
 		C53295682ABCD78E004294E0 /* JobsContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53295642ABCD78E004294E0 /* JobsContainerView.m */; };
 		C532965D2ABCE56E004294E0 /* MSPasswordLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C532965C2ABCE56E004294E0 /* MSPasswordLoginVC.m */; };
 		C53296602ABCE58C004294E0 /* MSMessageLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C532965F2ABCE58C004294E0 /* MSMessageLoginVC.m */; };
+		C532984B2ABD9AE3004294E0 /* MSInputStyle1View.m in Sources */ = {isa = PBXBuildFile; fileRef = C532984A2ABD9AE3004294E0 /* MSInputStyle1View.m */; };
+		C532984E2ABD9AF4004294E0 /* MSInputStyle2View.m in Sources */ = {isa = PBXBuildFile; fileRef = C532984D2ABD9AF4004294E0 /* MSInputStyle2View.m */; };
+		C53298512ABD9AFF004294E0 /* MSInputStyle3View.m in Sources */ = {isa = PBXBuildFile; fileRef = C53298502ABD9AFF004294E0 /* MSInputStyle3View.m */; };
+		C53298CE2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53298CD2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
@@ -1025,6 +1029,18 @@
 		C532965C2ABCE56E004294E0 /* MSPasswordLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPasswordLoginVC.m; sourceTree = "<group>"; };
 		C532965E2ABCE58C004294E0 /* MSMessageLoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMessageLoginVC.h; sourceTree = "<group>"; };
 		C532965F2ABCE58C004294E0 /* MSMessageLoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMessageLoginVC.m; sourceTree = "<group>"; };
+		C53298442ABD9A6B004294E0 /* 输入框样式1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "输入框样式1.jpg"; sourceTree = "<group>"; };
+		C53298462ABD9A7C004294E0 /* 输入框样式2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "输入框样式2.jpg"; sourceTree = "<group>"; };
+		C53298482ABD9A95004294E0 /* 输入框样式3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "输入框样式3.jpg"; sourceTree = "<group>"; };
+		C53298492ABD9AE3004294E0 /* MSInputStyle1View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInputStyle1View.h; sourceTree = "<group>"; };
+		C532984A2ABD9AE3004294E0 /* MSInputStyle1View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInputStyle1View.m; sourceTree = "<group>"; };
+		C532984C2ABD9AF4004294E0 /* MSInputStyle2View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInputStyle2View.h; sourceTree = "<group>"; };
+		C532984D2ABD9AF4004294E0 /* MSInputStyle2View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInputStyle2View.m; sourceTree = "<group>"; };
+		C532984F2ABD9AFF004294E0 /* MSInputStyle3View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInputStyle3View.h; sourceTree = "<group>"; };
+		C53298502ABD9AFF004294E0 /* MSInputStyle3View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInputStyle3View.m; sourceTree = "<group>"; };
+		C53298CB2ABE1C6D004294E0 /* 第三方快捷登录面板.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "第三方快捷登录面板.jpg"; sourceTree = "<group>"; };
+		C53298CC2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSThirdPartyShortcutLoginPanelView.h; sourceTree = "<group>"; };
+		C53298CD2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSThirdPartyShortcutLoginPanelView.m; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -2908,6 +2924,46 @@
 				C532965F2ABCE58C004294E0 /* MSMessageLoginVC.m */,
 			);
 			path = "短信登录";
+			sourceTree = "<group>";
+		};
+		C53298432ABD9A57004294E0 /* 输入框样式1 */ = {
+			isa = PBXGroup;
+			children = (
+				C53298442ABD9A6B004294E0 /* 输入框样式1.jpg */,
+				C53298492ABD9AE3004294E0 /* MSInputStyle1View.h */,
+				C532984A2ABD9AE3004294E0 /* MSInputStyle1View.m */,
+			);
+			path = "输入框样式1";
+			sourceTree = "<group>";
+		};
+		C53298452ABD9A72004294E0 /* 输入框样式2 */ = {
+			isa = PBXGroup;
+			children = (
+				C53298462ABD9A7C004294E0 /* 输入框样式2.jpg */,
+				C532984C2ABD9AF4004294E0 /* MSInputStyle2View.h */,
+				C532984D2ABD9AF4004294E0 /* MSInputStyle2View.m */,
+			);
+			path = "输入框样式2";
+			sourceTree = "<group>";
+		};
+		C53298472ABD9A87004294E0 /* 输入框样式3 */ = {
+			isa = PBXGroup;
+			children = (
+				C53298482ABD9A95004294E0 /* 输入框样式3.jpg */,
+				C532984F2ABD9AFF004294E0 /* MSInputStyle3View.h */,
+				C53298502ABD9AFF004294E0 /* MSInputStyle3View.m */,
+			);
+			path = "输入框样式3";
+			sourceTree = "<group>";
+		};
+		C53298CA2ABE1C40004294E0 /* 第三方快捷登录面板 */ = {
+			isa = PBXGroup;
+			children = (
+				C53298CB2ABE1C6D004294E0 /* 第三方快捷登录面板.jpg */,
+				C53298CC2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.h */,
+				C53298CD2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m */,
+			);
+			path = "第三方快捷登录面板";
 			sourceTree = "<group>";
 		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
@@ -8149,6 +8205,10 @@
 		C578F0542ABB8CA700832A07 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C53298CA2ABE1C40004294E0 /* 第三方快捷登录面板 */,
+				C53298432ABD9A57004294E0 /* 输入框样式1 */,
+				C53298452ABD9A72004294E0 /* 输入框样式2 */,
+				C53298472ABD9A87004294E0 /* 输入框样式3 */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -9669,6 +9729,7 @@
 				C561D6602AAC862000E28603 /* DDNetworkingAPI+Test.m in Sources */,
 				C520F5FD2AB396F500142DCC /* JobsCommentCoreVC.m in Sources */,
 				C5E017682AAF3684005ABE09 /* MSChuBaoView2.m in Sources */,
+				C53298512ABD9AFF004294E0 /* MSInputStyle3View.m in Sources */,
 				C561D4602AAC7E7B00E28603 /* JobsFormatTime.m in Sources */,
 				C561D4502AAC7E7B00E28603 /* NSUserDefaults+Swizzle.m in Sources */,
 				C561D3252AAC7E7A00E28603 /* JobsAppDoorModel.m in Sources */,
@@ -9705,6 +9766,7 @@
 				C5CFE8962AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m in Sources */,
 				C520F5F22AB396F400142DCC /* JobsCommentVC.m in Sources */,
 				C561D3A92AAC7E7A00E28603 /* JobsSuspendView.m in Sources */,
+				C532984B2ABD9AE3004294E0 /* MSInputStyle1View.m in Sources */,
 				C561D6632AAC862000E28603 /* BaiShaETProjMembersBoardView.m in Sources */,
 				C561D3A22AAC7E7A00E28603 /* JobsPageTBVCell.m in Sources */,
 				C561D47F2AAC7E7B00E28603 /* NSObject+Time.m in Sources */,
@@ -9848,6 +9910,7 @@
 				C561D49D2AAC7E7B00E28603 /* UITextField+ReRect.m in Sources */,
 				C561D4482AAC7E7B00E28603 /* HQCollectionViewFlowLayout.m in Sources */,
 				C5CFE5452AB0638A00D0F225 /* MSAboutChuBaoVC.m in Sources */,
+				C53298CE2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m in Sources */,
 				C561D43E2AAC7E7B00E28603 /* UIControl+XY.m in Sources */,
 				C561D3B62AAC7E7A00E28603 /* UIImage+SYS.m in Sources */,
 				C561D35C2AAC7E7A00E28603 /* JobsHotLabelWithSingleLine.m in Sources */,
@@ -9946,6 +10009,7 @@
 				C561D3482AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle.m in Sources */,
 				C561D6AF2AAC862000E28603 /* BaseModel.m in Sources */,
 				C561D4332AAC7E7B00E28603 /* BaseViewController.m in Sources */,
+				C532984E2ABD9AF4004294E0 /* MSInputStyle2View.m in Sources */,
 				C527BD852AB46F2A00DFC90A /* MSProdShowCVCell.m in Sources */,
 				C561D9292AAC8D8000E28603 /* BaiShaETProjChoiceHeaderIconView.m in Sources */,
 				C561D4992AAC7E7B00E28603 /* NSObject+DefConfig.m in Sources */,

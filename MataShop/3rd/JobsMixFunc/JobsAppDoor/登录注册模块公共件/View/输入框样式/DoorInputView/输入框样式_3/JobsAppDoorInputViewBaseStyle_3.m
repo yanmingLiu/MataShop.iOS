@@ -70,8 +70,8 @@
     self.textFieldInputModel.PlaceHolder = _textField.placeholder;
 }
 
--(void)block:(JobsMagicTextField *)textField
-       value:(NSString *)value{
+-(void)textFieldBlock:(JobsMagicTextField *)textField
+       textFieldValue:(NSString *)value{
 
     self.textFieldInputModel.resString = value;
     self.textFieldInputModel.PlaceHolder = self.doorInputViewBaseStyleModel.placeHolderStr;
@@ -120,7 +120,7 @@
         _securityModeBtn.selectedImage = self.doorInputViewBaseStyleModel.selectedSecurityBtnIMG ? : [UIImage imageWithColor:JobsRedColor];
         _securityModeBtn.normalImage = self.doorInputViewBaseStyleModel.unSelectedSecurityBtnIMG ? : [UIImage imageWithColor:JobsBlueColor];
         @jobs_weakify(self)
-        [_securityModeBtn btnClickEventBlock:^(UIButton *x) {
+        [_securityModeBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             self.textField.secureTextEntry = !x.selected;
@@ -173,8 +173,8 @@
             if ([x isContainsSpecialSymbolsString:nil]) {
                 [WHToast toastMsg:Internationalization(@"Do not enter special characters")];
             }else{
-                [self block:self->_textField
-                      value:x];
+                [self textFieldBlock:self.textField
+                      textFieldValue:x];
             }
         }];
         

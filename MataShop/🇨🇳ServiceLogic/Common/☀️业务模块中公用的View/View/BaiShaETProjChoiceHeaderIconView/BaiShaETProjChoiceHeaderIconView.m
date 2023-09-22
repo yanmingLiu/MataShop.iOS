@@ -35,7 +35,7 @@ static dispatch_once_t static_choiceHeaderIconViewOnceToken;
         static_choiceHeaderIconView = BaiShaETProjChoiceHeaderIconView.new;
     });return static_choiceHeaderIconView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;

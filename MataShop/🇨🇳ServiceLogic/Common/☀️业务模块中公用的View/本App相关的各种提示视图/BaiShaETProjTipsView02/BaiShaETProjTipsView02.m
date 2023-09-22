@@ -29,7 +29,7 @@ static dispatch_once_t static_tipsView02OnceToken;
         static_tipsView02 = BaiShaETProjTipsView02.new;
     });return static_tipsView02;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;

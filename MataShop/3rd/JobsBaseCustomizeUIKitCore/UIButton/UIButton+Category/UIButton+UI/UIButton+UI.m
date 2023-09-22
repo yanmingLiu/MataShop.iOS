@@ -9,7 +9,8 @@
 
 @implementation UIButton (UI)
 #pragma mark —— 一些功能性
--(void)btnClickEventBlock:(jobsByIDBlock)subscribeNextBlock{
+/// RAC 点击事件2次封装
+-(void)jobsBtnClickEventBlock:(jobsByIDBlock)subscribeNextBlock{
     [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
         if(subscribeNextBlock) subscribeNextBlock(x);
     }];

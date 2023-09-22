@@ -31,7 +31,7 @@ static dispatch_once_t static_collectionHeaderFooterViewOnceToken;
         static_collectionHeaderFooterView = UICollectionHeaderFooterView.new;
     });return static_collectionHeaderFooterView;
 }
-
+#pragma mark —— SysMethod
 - (instancetype)init{
     if (self = [super init]) {
         

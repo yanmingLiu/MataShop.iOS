@@ -33,7 +33,7 @@ static dispatch_once_t static_homePopupViewOnceToken;
         static_homePopupView = MSHomePopupView.new;
     });return static_homePopupView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         
@@ -143,7 +143,7 @@ static dispatch_once_t static_homePopupViewOnceToken;
         [_leftBtn cornerCutToCircleWithCornerRadius:JobsWidth(14)];
         [_leftBtn layerBorderCor:JobsCor(@"#EAECEF") andBorderWidth:1];
         @jobs_weakify(self)
-        [_leftBtn btnClickEventBlock:^(UIButton *x) {
+        [_leftBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
 //            [WHToast toastErrMsg:Internationalization(@"关注招聘资讯")];
@@ -168,7 +168,7 @@ static dispatch_once_t static_homePopupViewOnceToken;
         }];
         [_rightBtn cornerCutToCircleWithCornerRadius:JobsWidth(14)];
         @jobs_weakify(self)
-        [_rightBtn btnClickEventBlock:^(UIButton *x) {
+        [_rightBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
 //            [WHToast toastErrMsg:Internationalization(@"进入Mata商城")];

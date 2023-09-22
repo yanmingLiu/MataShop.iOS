@@ -30,7 +30,7 @@ static dispatch_once_t static_membersSection1ViewOnceToken;
         static_membersSection1View = BaiShaETProjMembersSection1View.new;
     });return static_membersSection1View;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = UIColor.whiteColor;

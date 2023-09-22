@@ -31,7 +31,7 @@ static dispatch_once_t static_searchViewOnceToken;
         static_searchView = MSSearchView.new;
     });return static_searchView;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = JobsWhiteColor;
@@ -56,8 +56,8 @@ static dispatch_once_t static_searchViewOnceToken;
     [super layoutSubviews];
 }
 #pragma mark —— 一些私有方法
--(void)block:(JobsMagicTextField *)textField
-       value:(NSString *)value{
+-(void)textFieldBlock:(JobsMagicTextField *)textField
+       textFieldValue:(NSString *)value{
     
 //    self.textFieldInputModel.resString = value;
 //    self.textFieldInputModel.PlaceHolder = self.doorInputViewBaseStyleModel.placeHolderStr;
@@ -108,8 +108,8 @@ static dispatch_once_t static_searchViewOnceToken;
         }] subscribeNext:^(NSString * _Nullable x) {
             @jobs_strongify(self)
             NSLog(@"MMM = %@",x);
-            [self block:self->_textField
-                  value:x];
+            [self textFieldBlock:self->_textField
+                  textFieldValue:x];
         }];
         [self addSubview:_textField];
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -132,7 +132,7 @@ static dispatch_once_t static_searchViewOnceToken;
         _searchBtn.titleFont = UIFontWeightBoldSize(JobsWidth(16));
         [_searchBtn makeBtnLabelByShowingType:UILabelShowingType_01];
         @jobs_weakify(self)
-        [_searchBtn btnClickEventBlock:^(UIButton *x) {
+        [_searchBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);

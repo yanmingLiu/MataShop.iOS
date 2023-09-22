@@ -214,7 +214,7 @@
         [_settingDefaultBtn normalTitleColor:HEXCOLOR(0x502600)];
         _settingDefaultBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
         @jobs_weakify(self)
-        [_settingDefaultBtn btnClickEventBlock:^(id data) {
+        [_settingDefaultBtn jobsBtnClickEventBlock:^(id data) {
             @jobs_strongify(self)
             [self bankcardSetDefaultBankCardById];
         }];

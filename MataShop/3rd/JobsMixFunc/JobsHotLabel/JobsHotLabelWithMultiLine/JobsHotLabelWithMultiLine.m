@@ -32,7 +32,7 @@ static dispatch_once_t static_hotLabelWithMultiLineOnceToken;
         static_hotLabelWithMultiLine = JobsHotLabelWithMultiLine.new;
     });return static_hotLabelWithMultiLine;
 }
-
+#pragma mark —— SysMethod
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = HEXCOLOR(0xFFFFFF);

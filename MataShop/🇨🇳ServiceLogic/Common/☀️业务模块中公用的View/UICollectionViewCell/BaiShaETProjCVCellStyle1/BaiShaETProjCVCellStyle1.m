@@ -90,7 +90,7 @@
             make.bottom.equalTo(self.contentView).offset(JobsWidth(-12));
         }];
         @jobs_weakify(self)
-        [_btn btnClickEventBlock:^(id data) {
+        [_btn jobsBtnClickEventBlock:^(id data) {
             @jobs_strongify(self)
 //            [self JobsTestPopView:@"立即開始"];
         }];

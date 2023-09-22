@@ -7,6 +7,9 @@
 
 #import "BaseViewController.h"
 
+#import "MSInputStyle1View.h"
+#import "MSInputStyle3View.h"
+
 NS_ASSUME_NONNULL_BEGIN
 /// 短信登录
 @interface MSMessageLoginVC : BaseViewController

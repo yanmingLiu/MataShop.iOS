@@ -225,7 +225,7 @@
         }];
         [_moneyBackBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
         @jobs_weakify(self)
-        [_moneyBackBtn btnClickEventBlock:^(UIButton *x) {
+        [_moneyBackBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);

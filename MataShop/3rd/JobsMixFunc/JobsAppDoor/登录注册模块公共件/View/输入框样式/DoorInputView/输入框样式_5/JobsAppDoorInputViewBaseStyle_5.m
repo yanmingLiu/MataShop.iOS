@@ -138,7 +138,7 @@
         _securityModeBtn.selectedImage = self.doorInputViewBaseStyleModel.selectedSecurityBtnIMG ? : [UIImage imageWithColor:JobsRedColor];
         _securityModeBtn.normalImage = self.doorInputViewBaseStyleModel.unSelectedSecurityBtnIMG ? : [UIImage imageWithColor:JobsBlueColor];
         @jobs_weakify(self)
-        [_securityModeBtn btnClickEventBlock:^(UIButton *x) {
+        [_securityModeBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             self.textField.secureTextEntry = x.selected;
@@ -175,7 +175,7 @@
         _authCodeBtn = [UIButton.alloc initWithConfig:self.btnTimerConfigModel];
         _authCodeBtn.normalTitle = Internationalization(@"獲取驗證碼");
 //        @jobs_weakify(self)
-        [_authCodeBtn btnClickEventBlock:^(UIButton *x) {
+        [_authCodeBtn jobsBtnClickEventBlock:^(UIButton *x) {
 //            @jobs_strongify(self)
             [x startTimer];
         }];
@@ -214,7 +214,7 @@
             make.left.equalTo(self).offset(JobsWidth(0));
         }];
         @jobs_weakify(self)
-        [_chooseBtn btnClickEventBlock:^(UIButton *x) {
+        [_chooseBtn jobsBtnClickEventBlock:^(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (x.selected) {
