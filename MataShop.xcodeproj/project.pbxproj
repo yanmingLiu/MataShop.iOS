@@ -59,7 +59,6 @@
 		C520FC172AB3C36D00142DCC /* 假数据.json in Resources */ = {isa = PBXBuildFile; fileRef = C520FC132AB3C36D00142DCC /* 假数据.json */; };
 		C527BD852AB46F2A00DFC90A /* MSProdShowCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C527BD842AB46F2A00DFC90A /* MSProdShowCVCell.m */; };
 		C527BE022AB4754B00DFC90A /* MSProdShowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C527BE012AB4754B00DFC90A /* MSProdShowModel.m */; };
-		C527BE052AB4807100DFC90A /* MSHomeCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C527BE042AB4807100DFC90A /* MSHomeCollectionReusableView.m */; };
 		C53295662ABCD78E004294E0 /* JobsBtnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C532955F2ABCD78E004294E0 /* JobsBtnModel.m */; };
 		C53295672ABCD78E004294E0 /* JobsContainerViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C53295622ABCD78E004294E0 /* JobsContainerViewDemoVC.m */; };
 		C53295682ABCD78E004294E0 /* JobsContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53295642ABCD78E004294E0 /* JobsContainerView.m */; };
@@ -71,6 +70,12 @@
 		C53298CE2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53298CD2ABE1CAF004294E0 /* MSThirdPartyShortcutLoginPanelView.m */; };
 		C53299B42ABE2BE7004294E0 /* MSInputTextFieldLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53299B32ABE2BE7004294E0 /* MSInputTextFieldLeftView.m */; };
 		C5329AA92ABE3B1F004294E0 /* MSRegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329AA82ABE3B1F004294E0 /* MSRegisterVC.m */; };
+		C5329B192ABECE20004294E0 /* MSFindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329B182ABECE20004294E0 /* MSFindVC.m */; };
+		C5329B1C2ABECE3B004294E0 /* MSMySocialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329B1B2ABECE3B004294E0 /* MSMySocialVC.m */; };
+		C5329B202ABED4A7004294E0 /* MSFindCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329B1F2ABED4A7004294E0 /* MSFindCVCell.m */; };
+		C5329C192ABED9DF004294E0 /* JobsImageViewStyleCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329C182ABED9DF004294E0 /* JobsImageViewStyleCVCell.m */; };
+		C5329DE72ABEDD04004294E0 /* MSHomeCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329DE62ABEDD04004294E0 /* MSHomeCollectionReusableView.m */; };
+		C5329DEA2ABEDE5E004294E0 /* 爱拍.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5329DE92ABEDE5E004294E0 /* 爱拍.xcassets */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
@@ -397,7 +402,7 @@
 		C561D4072AAC7E7B00E28603 /* BaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0F52AAC7E7900E28603 /* BaseCollectionView.m */; };
 		C561D4082AAC7E7B00E28603 /* UICollectionViewCell+ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0FB2AAC7E7900E28603 /* UICollectionViewCell+ShakeAnimation.m */; };
 		C561D4092AAC7E7B00E28603 /* UICollectionViewCell+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0FE2AAC7E7900E28603 /* UICollectionViewCell+Default.m */; };
-		C561D40A2AAC7E7B00E28603 /* JobsCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1022AAC7E7900E28603 /* JobsCVCell.m */; };
+		C561D40A2AAC7E7B00E28603 /* JobsBtnStyleCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1022AAC7E7900E28603 /* JobsBtnStyleCVCell.m */; };
 		C561D40C2AAC7E7B00E28603 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1062AAC7E7900E28603 /* BaseCollectionViewCell.m */; };
 		C561D40D2AAC7E7B00E28603 /* UIBezierPath+TextPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D10B2AAC7E7900E28603 /* UIBezierPath+TextPath.m */; };
 		C561D40E2AAC7E7B00E28603 /* BaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1102AAC7E7900E28603 /* BaseImageView.m */; };
@@ -1019,8 +1024,6 @@
 		C527BD842AB46F2A00DFC90A /* MSProdShowCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdShowCVCell.m; sourceTree = "<group>"; };
 		C527BE002AB4754B00DFC90A /* MSProdShowModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdShowModel.h; sourceTree = "<group>"; };
 		C527BE012AB4754B00DFC90A /* MSProdShowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdShowModel.m; sourceTree = "<group>"; };
-		C527BE032AB4807100DFC90A /* MSHomeCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeCollectionReusableView.h; sourceTree = "<group>"; };
-		C527BE042AB4807100DFC90A /* MSHomeCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeCollectionReusableView.m; sourceTree = "<group>"; };
 		C532955E2ABCD78E004294E0 /* JobsBtnModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBtnModel.h; sourceTree = "<group>"; };
 		C532955F2ABCD78E004294E0 /* JobsBtnModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsBtnModel.m; sourceTree = "<group>"; };
 		C53295612ABCD78E004294E0 /* JobsContainerViewDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsContainerViewDemoVC.h; sourceTree = "<group>"; };
@@ -1047,6 +1050,20 @@
 		C53299B32ABE2BE7004294E0 /* MSInputTextFieldLeftView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInputTextFieldLeftView.m; sourceTree = "<group>"; };
 		C5329AA72ABE3B1F004294E0 /* MSRegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSRegisterVC.h; sourceTree = "<group>"; };
 		C5329AA82ABE3B1F004294E0 /* MSRegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSRegisterVC.m; sourceTree = "<group>"; };
+		C5329B142ABECD33004294E0 /* 发现.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "发现.jpg"; sourceTree = "<group>"; };
+		C5329B172ABECE20004294E0 /* MSFindVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSFindVC.h; sourceTree = "<group>"; };
+		C5329B182ABECE20004294E0 /* MSFindVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSFindVC.m; sourceTree = "<group>"; };
+		C5329B1A2ABECE3B004294E0 /* MSMySocialVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMySocialVC.h; sourceTree = "<group>"; };
+		C5329B1B2ABECE3B004294E0 /* MSMySocialVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMySocialVC.m; sourceTree = "<group>"; };
+		C5329B1E2ABED4A7004294E0 /* MSFindCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSFindCVCell.h; sourceTree = "<group>"; };
+		C5329B1F2ABED4A7004294E0 /* MSFindCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSFindCVCell.m; sourceTree = "<group>"; };
+		C5329B222ABED4CC004294E0 /* MSFindCVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSFindCVCell.jpg; sourceTree = "<group>"; };
+		C5329C162ABED98E004294E0 /* JobsImageViewStyleCVCell.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = JobsImageViewStyleCVCell.md; sourceTree = "<group>"; };
+		C5329C172ABED9DF004294E0 /* JobsImageViewStyleCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobsImageViewStyleCVCell.h; sourceTree = "<group>"; };
+		C5329C182ABED9DF004294E0 /* JobsImageViewStyleCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobsImageViewStyleCVCell.m; sourceTree = "<group>"; };
+		C5329DE52ABEDD04004294E0 /* MSHomeCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeCollectionReusableView.h; sourceTree = "<group>"; };
+		C5329DE62ABEDD04004294E0 /* MSHomeCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeCollectionReusableView.m; sourceTree = "<group>"; };
+		C5329DE92ABEDE5E004294E0 /* 爱拍.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "爱拍.xcassets"; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -1600,9 +1617,9 @@
 		C561D0FB2AAC7E7900E28603 /* UICollectionViewCell+ShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+ShakeAnimation.m"; sourceTree = "<group>"; };
 		C561D0FD2AAC7E7900E28603 /* UICollectionViewCell+Default.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Default.h"; sourceTree = "<group>"; };
 		C561D0FE2AAC7E7900E28603 /* UICollectionViewCell+Default.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Default.m"; sourceTree = "<group>"; };
-		C561D1012AAC7E7900E28603 /* JobsCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsCVCell.h; sourceTree = "<group>"; };
-		C561D1022AAC7E7900E28603 /* JobsCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsCVCell.m; sourceTree = "<group>"; };
-		C561D1032AAC7E7900E28603 /* JobsCVCell.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = JobsCVCell.md; sourceTree = "<group>"; };
+		C561D1012AAC7E7900E28603 /* JobsBtnStyleCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBtnStyleCVCell.h; sourceTree = "<group>"; };
+		C561D1022AAC7E7900E28603 /* JobsBtnStyleCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsBtnStyleCVCell.m; sourceTree = "<group>"; };
+		C561D1032AAC7E7900E28603 /* JobsBtnStyleCVCell.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = JobsBtnStyleCVCell.md; sourceTree = "<group>"; };
 		C561D1052AAC7E7900E28603 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
 		C561D1062AAC7E7900E28603 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
 		C561D1082AAC7E7900E28603 /* JobsBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBezierPath.h; sourceTree = "<group>"; };
@@ -2868,15 +2885,6 @@
 			path = MSProdShowCVCell;
 			sourceTree = "<group>";
 		};
-		C527BE062AB4807600DFC90A /* MSHomeCollectionReusableView */ = {
-			isa = PBXGroup;
-			children = (
-				C527BE032AB4807100DFC90A /* MSHomeCollectionReusableView.h */,
-				C527BE042AB4807100DFC90A /* MSHomeCollectionReusableView.m */,
-			);
-			path = MSHomeCollectionReusableView;
-			sourceTree = "<group>";
-		};
 		C532955C2ABCD78E004294E0 /* JobsContainerViewDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -2998,6 +3006,71 @@
 				C5329AA82ABE3B1F004294E0 /* MSRegisterVC.m */,
 			);
 			path = "注册";
+			sourceTree = "<group>";
+		};
+		C5329B152ABECE00004294E0 /* 发现 */ = {
+			isa = PBXGroup;
+			children = (
+				C5329B172ABECE20004294E0 /* MSFindVC.h */,
+				C5329B182ABECE20004294E0 /* MSFindVC.m */,
+			);
+			path = "发现";
+			sourceTree = "<group>";
+		};
+		C5329B162ABECE0B004294E0 /* 我的交际圈 */ = {
+			isa = PBXGroup;
+			children = (
+				C5329B1A2ABECE3B004294E0 /* MSMySocialVC.h */,
+				C5329B1B2ABECE3B004294E0 /* MSMySocialVC.m */,
+			);
+			path = "我的交际圈";
+			sourceTree = "<group>";
+		};
+		C5329B1D2ABED45B004294E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5329B212ABED4AB004294E0 /* MSFindCVCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5329B212ABED4AB004294E0 /* MSFindCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5329B222ABED4CC004294E0 /* MSFindCVCell.jpg */,
+				C5329B1E2ABED4A7004294E0 /* MSFindCVCell.h */,
+				C5329B1F2ABED4A7004294E0 /* MSFindCVCell.m */,
+			);
+			path = MSFindCVCell;
+			sourceTree = "<group>";
+		};
+		C5329B232ABED4E7004294E0 /* MSOrderVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5329B142ABECD33004294E0 /* 发现.jpg */,
+				C561D53B2AAC845600E28603 /* MSOrderVC.h */,
+				C561D53C2AAC845600E28603 /* MSOrderVC.m */,
+			);
+			path = MSOrderVC;
+			sourceTree = "<group>";
+		};
+		C5329C152ABED957004294E0 /* JobsImageViewStyleCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5329C162ABED98E004294E0 /* JobsImageViewStyleCVCell.md */,
+				C5329C172ABED9DF004294E0 /* JobsImageViewStyleCVCell.h */,
+				C5329C182ABED9DF004294E0 /* JobsImageViewStyleCVCell.m */,
+			);
+			path = JobsImageViewStyleCVCell;
+			sourceTree = "<group>";
+		};
+		C5329DE42ABEDD04004294E0 /* （老首页专用）MSHomeCollectionReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				C5329DE52ABEDD04004294E0 /* MSHomeCollectionReusableView.h */,
+				C5329DE62ABEDD04004294E0 /* MSHomeCollectionReusableView.m */,
+			);
+			path = "（老首页专用）MSHomeCollectionReusableView";
 			sourceTree = "<group>";
 		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
@@ -3387,6 +3460,7 @@
 		C561CE622AAC7D8500E28603 /* xcassets */ = {
 			isa = PBXGroup;
 			children = (
+				C5329DE92ABEDE5E004294E0 /* 爱拍.xcassets */,
 				C5729B982AB59E240084EAFC /* 内部招聘.xcassets */,
 				C5E017582AAF2F15005ABE09 /* 储宝.xcassets */,
 				C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */,
@@ -5377,20 +5451,21 @@
 		C561D0FF2AAC7E7900E28603 /* BaseCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C561D1002AAC7E7900E28603 /* JobsCVCell */,
+				C5329C152ABED957004294E0 /* JobsImageViewStyleCVCell */,
+				C561D1002AAC7E7900E28603 /* JobsBtnStyleCVCell */,
 				C561D1042AAC7E7900E28603 /* BaseCollectionViewCell */,
 			);
 			path = BaseCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		C561D1002AAC7E7900E28603 /* JobsCVCell */ = {
+		C561D1002AAC7E7900E28603 /* JobsBtnStyleCVCell */ = {
 			isa = PBXGroup;
 			children = (
-				C561D1012AAC7E7900E28603 /* JobsCVCell.h */,
-				C561D1022AAC7E7900E28603 /* JobsCVCell.m */,
-				C561D1032AAC7E7900E28603 /* JobsCVCell.md */,
+				C561D1012AAC7E7900E28603 /* JobsBtnStyleCVCell.h */,
+				C561D1022AAC7E7900E28603 /* JobsBtnStyleCVCell.m */,
+				C561D1032AAC7E7900E28603 /* JobsBtnStyleCVCell.md */,
 			);
-			path = JobsCVCell;
+			path = JobsBtnStyleCVCell;
 			sourceTree = "<group>";
 		};
 		C561D1042AAC7E7900E28603 /* BaseCollectionViewCell */ = {
@@ -7174,6 +7249,7 @@
 		C561D5322AAC83DF00E28603 /* ➕（视频拍摄并上传） */ = {
 			isa = PBXGroup;
 			children = (
+				C5329B1D2ABED45B004294E0 /* View */,
 				C561D98F2AAC9A4E00E28603 /* ViewController */,
 			);
 			path = "➕（视频拍摄并上传）";
@@ -8044,8 +8120,9 @@
 		C561D98F2AAC9A4E00E28603 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C561D53B2AAC845600E28603 /* MSOrderVC.h */,
-				C561D53C2AAC845600E28603 /* MSOrderVC.m */,
+				C5329B232ABED4E7004294E0 /* MSOrderVC */,
+				C5329B162ABECE0B004294E0 /* 我的交际圈 */,
+				C5329B152ABECE00004294E0 /* 发现 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -8071,8 +8148,8 @@
 		C561D9922AAC9A6B00E28603 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5329DE42ABEDD04004294E0 /* （老首页专用）MSHomeCollectionReusableView */,
 				C5EE3CCC2AB9D01D0020BDB8 /* MSHomeGoodsView */,
-				C527BE062AB4807600DFC90A /* MSHomeCollectionReusableView */,
 				C527BD822AB46E7900DFC90A /* MSProdShowCVCell */,
 				C5FB56632AB31DA600C873B7 /* MSHomePopupView */,
 				C5CFEA0E2AB2559500D0F225 /* MS3rdShopLinkView */,
@@ -9355,6 +9432,7 @@
 				C561D4A32AAC7E7B00E28603 /* ZYTextField.bundle in Resources */,
 				C5E0112E2AADE1CD005ABE09 /* newemoji_004.gif in Resources */,
 				C5E0116F2AADE1CD005ABE09 /* 43@2x.gif in Resources */,
+				C5329DEA2ABEDE5E004294E0 /* 爱拍.xcassets in Resources */,
 				C5E011AC2AADE1CD005ABE09 /* 22@2x.gif in Resources */,
 				C506259B2AAF5DAB00F14680 /* 828x1792.png in Resources */,
 				C5E011E32AADE1CD005ABE09 /* 78@2x.gif in Resources */,
@@ -9749,6 +9827,7 @@
 				C561D33A2AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_9.m in Sources */,
 				C561D68F2AAC862000E28603 /* BaiShaETProjHeaderIconCVCell.m in Sources */,
 				C561D3B02AAC7E7A00E28603 /* JobsDropDownListTBVCell.m in Sources */,
+				C5329B192ABECE20004294E0 /* MSFindVC.m in Sources */,
 				C561CE272AAC7CE200E28603 /* ECPrivacyCheckContacts.m in Sources */,
 				C561D4B52AAC7EC200E28603 /* AppDelegate+XHLaunchAdDelegate.m in Sources */,
 				C561D6AA2AAC862000E28603 /* DDResponseModel.m in Sources */,
@@ -9871,7 +9950,6 @@
 				C561D4812AAC7E7B00E28603 /* NSObject+CurrentDevice.m in Sources */,
 				C561D3EE2AAC7E7B00E28603 /* UIView+Chain.m in Sources */,
 				C561D4612AAC7E7B00E28603 /* JobsSEL_IMP.m in Sources */,
-				C527BE052AB4807100DFC90A /* MSHomeCollectionReusableView.m in Sources */,
 				C561D3292AAC7E7A00E28603 /* JobsAppDoorContentView.m in Sources */,
 				C561D45D2AAC7E7B00E28603 /* NSTimerManager.m in Sources */,
 				C561D32C2AAC7E7A00E28603 /* JobsAppDoorLogoContentView.m in Sources */,
@@ -9879,6 +9957,7 @@
 				C561D43F2AAC7E7B00E28603 /* UIControl+Extra.m in Sources */,
 				C561D9252AAC8D8000E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVHeader.m in Sources */,
 				C561D3B12AAC7E7A00E28603 /* UIScrollView+FDFullscreenPopGesture.m in Sources */,
+				C5329DE72ABEDD04004294E0 /* MSHomeCollectionReusableView.m in Sources */,
 				C561D6A92AAC862000E28603 /* BaiShaETProjGetiOSNewestVersionModel.m in Sources */,
 				C561D4252AAC7E7B00E28603 /* UIViewController+Lottie.m in Sources */,
 				C561D65B2AAC862000E28603 /* NSObject+BaiShaETProjCheck.m in Sources */,
@@ -9958,6 +10037,7 @@
 				C561D42F2AAC7E7B00E28603 /* LOTAnimationMJRefreshHeader.m in Sources */,
 				C561D69C2AAC862000E28603 /* BaiShaETProjTipsView03.m in Sources */,
 				C561D4792AAC7E7B00E28603 /* NSObject+UserNotifications.m in Sources */,
+				C5329B202ABED4A7004294E0 /* MSFindCVCell.m in Sources */,
 				C561D3BE2AAC7E7B00E28603 /* JobsBaseLabel.m in Sources */,
 				C561D3F62AAC7E7B00E28603 /* UIView+AutoSelfAdaptionSize.m in Sources */,
 				C561CE4E2AAC7CE200E28603 /* XHLaunchAdConst.m in Sources */,
@@ -9991,6 +10071,7 @@
 				C561D3A02AAC7E7A00E28603 /* ZLGestureLockViewController.m in Sources */,
 				C561D4352AAC7E7B00E28603 /* UINavigationController+SafeTransition.m in Sources */,
 				C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */,
+				C5329B1C2ABECE3B004294E0 /* MSMySocialVC.m in Sources */,
 				C561D47A2AAC7E7B00E28603 /* NSObject+DataSave.m in Sources */,
 				C561D69E2AAC862000E28603 /* BaiShaETProjTipsView02.m in Sources */,
 				C561D3E92AAC7E7B00E28603 /* UIView+ZFPlayer.m in Sources */,
@@ -10034,10 +10115,11 @@
 				C561D3FD2AAC7E7B00E28603 /* NSMutableDictionary+Ordered.m in Sources */,
 				C561D4632AAC7E7B00E28603 /* JobsHeaderFooterViewModel.m in Sources */,
 				C561D49E2AAC7E7B00E28603 /* UITextField+Extend.m in Sources */,
-				C561D40A2AAC7E7B00E28603 /* JobsCVCell.m in Sources */,
+				C561D40A2AAC7E7B00E28603 /* JobsBtnStyleCVCell.m in Sources */,
 				C561D68E2AAC862000E28603 /* CasinoMarqueeCell.m in Sources */,
 				C561D3222AAC7E7A00E28603 /* UITabBar+TLAnimation.m in Sources */,
 				C561D3532AAC7E7A00E28603 /* BWShareView.m in Sources */,
+				C5329C192ABED9DF004294E0 /* JobsImageViewStyleCVCell.m in Sources */,
 				C561D4902AAC7E7B00E28603 /* NSObject+IDFV.m in Sources */,
 				C5BD5E7E2AAC76750048F36B /* main.m in Sources */,
 				C561D3652AAC7E7A00E28603 /* ZFCustomControlView.m in Sources */,

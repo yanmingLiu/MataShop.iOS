@@ -42,8 +42,6 @@ BOOL ISLogin;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.view.backgroundColor = UIColor.redColor;
-
     self.searchBoardView.alpha = 1;
     self.bannerParam.wDataSet(self.dataMutArr);
     [self.bannerView updateUI];

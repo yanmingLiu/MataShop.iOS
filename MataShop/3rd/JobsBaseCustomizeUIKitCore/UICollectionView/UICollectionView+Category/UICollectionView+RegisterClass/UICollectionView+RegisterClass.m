@@ -26,8 +26,9 @@
     [self registerCollectionViewCellClass:UICollectionViewCell.class];
     [self registerCollectionViewCellClass:BaseCollectionViewCell.class];
     [self registerCollectionViewCellClass:JobsHotLabelWithMultiLineCVCell.class];
-    [self registerCollectionViewCellClass:JobsCVCell.class];
-    
+    [self registerCollectionViewCellClass:JobsBtnStyleCVCell.class];
+    [self registerCollectionViewCellClass:JobsImageViewStyleCVCell.class];
+
     [self registerCollectionViewCellClass:MSTransactionRecordCVCell.class];// 储宝-交易记录子控件UI
     [self registerCollectionViewCellClass:MSPromotionIncentiveCVCell.class];// 储宝-推广奖励子控件UI
     [self registerCollectionViewCellClass:MSInterestSettleRecordCVCell.class];// 储宝-结息记录子控件UI

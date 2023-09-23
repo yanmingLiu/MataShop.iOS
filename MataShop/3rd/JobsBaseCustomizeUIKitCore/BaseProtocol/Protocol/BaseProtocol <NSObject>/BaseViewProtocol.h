@@ -26,6 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol BaseViewProtocol <BaseProtocol>
 
 @optional
+/// 作用于-(void)layoutSubviews的圆切角参数
+@property(nonatomic,assign)UIRectCorner layoutSubviewsRectCorner;
+@property(nonatomic,assign)CGSize layoutSubviewsRectCornerSize;
 /// 记录该View的Masonry约束情况
 @property(nonatomic,strong)NSMutableArray <MASConstraint *>*constraintMutArr;
 /// 视图长、宽、高的定义
@@ -108,6 +111,9 @@ NS_ASSUME_NONNULL_END
 #ifndef BaseViewProtocol_synthesize
 #define BaseViewProtocol_synthesize \
 \
+@synthesize layoutSubviewsRectCorner = _layoutSubviewsRectCorner;\
+@synthesize layoutSubviewsRectCornerSize = _layoutSubviewsRectCornerSize;\
+@synthesize constraintMutArr = _constraintMutArr;\
 @synthesize thisViewSize = _thisViewSize;\
 @synthesize headerFooterViewStyle = _headerFooterViewStyle;\
 
@@ -117,6 +123,9 @@ NS_ASSUME_NONNULL_END
 #ifndef BaseViewProtocol_dynamic
 #define BaseViewProtocol_dynamic \
 \
+@dynamic layoutSubviewsRectCorner;\
+@dynamic layoutSubviewsRectCornerSize;\
+@dynamic constraintMutArr;\
 @dynamic thisViewSize;\
 @dynamic headerFooterViewStyle;\
 

@@ -62,7 +62,7 @@ AppDelegate *appDelegate;
         config.title = self.tabBarTitleMutArr[ConfigMutArr.count];
         config.imageSelected = JobsIMG(@"加号图片");
         config.imageUnselected = JobsIMG(@"加号图片");
-        config.humpOffsetY = JobsWidth(22);
+        config.humpOffsetY = JobsWidth(44);
         config.lottieName = nil;
         config.tag = ConfigMutArr.count + 1;
         [ConfigMutArr addObject:config];

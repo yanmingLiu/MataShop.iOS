@@ -12,7 +12,8 @@
 //#import "BaiShaETProjUSDTWithdrawalCRView.h"
 
 #import "JobsHotLabelWithMultiLineCVCell.h"
-#import "JobsCVCell.h"
+#import "JobsBtnStyleCVCell.h"
+#import "JobsImageViewStyleCVCell.h"
 //#import "BaiShaETProjMywalletCRView.h"
 //#import "BaiShaETProjCVCellStyle1.h"
 //#import "BaseCollectionViewCell.h"

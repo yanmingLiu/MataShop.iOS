@@ -1,19 +1,19 @@
 //
-//  MSOrderVC.m
+//  MSMySocialVC.m
 //  MataShop
 //
-//  Created by Jobs Hi on 9/9/23.
+//  Created by Jobs Hi on 9/23/23.
 //
 
-#import "MSOrderVC.h"
+#import "MSMySocialVC.h"
 
-@interface MSOrderVC ()
+@interface MSMySocialVC ()
 
 @end
 
-@implementation MSOrderVC
+@implementation MSMySocialVC
 
-- (void)dealloc{
+-(void)dealloc{
     [NSNotificationCenter.defaultCenter removeObserver:self];
     NSLog(@"%@",JobsLocalFunc);
 }
@@ -25,19 +25,12 @@
         self.viewModel = (UIViewModel *)self.requestParams;
     }
     self.setupNavigationBarHidden = YES;
-    
-    //    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");
-    //    self.viewModel.textModel.textCor = HEXCOLOR(0x3D4A58);
-    //    self.viewModel.textModel.text = Internationalization(@"消息详情页");
-    //    self.viewModel.textModel.font = notoSansBold(16);
-    //
-    //    self.bgImage = nil;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = JobsYellowColor;
+    self.view.backgroundColor = JobsRandomColor;
     [self setGKNav];
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
@@ -45,17 +38,14 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
 }
 
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    NSLog(@"");
 }
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    NSLog(@"");
 }
 
 -(void)viewDidAppear:(BOOL)animated{

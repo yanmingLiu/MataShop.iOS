@@ -1,15 +1,15 @@
 //
-//  MSOrderVC.h
+//  MSMySocialVC.h
 //  MataShop
 //
-//  Created by Jobs Hi on 9/9/23.
+//  Created by Jobs Hi on 9/23/23.
 //
 
 #import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MSOrderVC : BaseViewController
+@interface MSMySocialVC : BaseViewController
 
 @end
 
