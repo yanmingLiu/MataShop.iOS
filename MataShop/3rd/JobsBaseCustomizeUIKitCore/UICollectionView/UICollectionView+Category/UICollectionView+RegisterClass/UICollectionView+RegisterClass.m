@@ -36,6 +36,8 @@
     [self registerCollectionViewCellClass:MSProdShowCVCell.class];// 商品展示UI
     [self registerCollectionViewCellClass:MSInternalRecruitmentCVCell1.class];// 内部招聘Cell1
     [self registerCollectionViewCellClass:MSInternalRecruitmentCVCell2.class];// 内部招聘Cell2
+    [self registerCollectionViewCellClass:MSFindCVCell.class];//
+    [self registerCollectionViewCellClass:MSVedioCVCell.class];// 
 }
 /// 注册 UICollectionViewCell 及其子类
 -(void)registerCollectionViewCellClass:(Class)cls{

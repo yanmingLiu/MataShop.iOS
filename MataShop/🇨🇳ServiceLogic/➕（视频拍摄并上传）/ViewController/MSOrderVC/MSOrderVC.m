@@ -180,22 +180,6 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
             make.left.right.bottom.equalTo(self.view);
         }];
         [self.view layoutIfNeeded];
-
-//        {
-//            Ivar ivar = class_getInstanceVariable(JXCategoryListContainerView.class, "_containerVC");//必须是下划线接属性
-//            UIViewController *jxCategoryListContainerViewController = object_getIvar(self->_listContainerView, ivar);
-//            jxCategoryListContainerViewController.view.backgroundColor = JobsYellowColor;
-//        }
-//
-//        {
-//            Ivar ivar = class_getInstanceVariable(JXCategoryListContainerView.class, "_collectionView");//必须是下划线接属性
-//            UICollectionView *collectionView = object_getIvar(self->_listContainerView, ivar);
-//            collectionView.backgroundColor = JobsYellowColor;
-//            for (UICollectionViewCell *cell in collectionView.visibleCells) {
-//                cell.contentView.backgroundColor = JobsYellowColor;
-//            }
-//        }
-        
     }return _listContainerView;
 }
 

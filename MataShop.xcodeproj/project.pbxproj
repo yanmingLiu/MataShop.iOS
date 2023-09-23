@@ -76,6 +76,8 @@
 		C5329C192ABED9DF004294E0 /* JobsImageViewStyleCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329C182ABED9DF004294E0 /* JobsImageViewStyleCVCell.m */; };
 		C5329DE72ABEDD04004294E0 /* MSHomeCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329DE62ABEDD04004294E0 /* MSHomeCollectionReusableView.m */; };
 		C5329DEA2ABEDE5E004294E0 /* 爱拍.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5329DE92ABEDE5E004294E0 /* 爱拍.xcassets */; };
+		C5329F582ABEFE9E004294E0 /* MSVedioSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329F572ABEFE9E004294E0 /* MSVedioSubVC.m */; };
+		C5329FD42ABF0551004294E0 /* MSVedioCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FD32ABF0551004294E0 /* MSVedioCVCell.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
@@ -1064,6 +1066,10 @@
 		C5329DE52ABEDD04004294E0 /* MSHomeCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeCollectionReusableView.h; sourceTree = "<group>"; };
 		C5329DE62ABEDD04004294E0 /* MSHomeCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeCollectionReusableView.m; sourceTree = "<group>"; };
 		C5329DE92ABEDE5E004294E0 /* 爱拍.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "爱拍.xcassets"; sourceTree = "<group>"; };
+		C5329F562ABEFE9E004294E0 /* MSVedioSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVedioSubVC.h; sourceTree = "<group>"; };
+		C5329F572ABEFE9E004294E0 /* MSVedioSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVedioSubVC.m; sourceTree = "<group>"; };
+		C5329FD22ABF0551004294E0 /* MSVedioCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVedioCVCell.h; sourceTree = "<group>"; };
+		C5329FD32ABF0551004294E0 /* MSVedioCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVedioCVCell.m; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -3029,6 +3035,7 @@
 		C5329B1D2ABED45B004294E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5329FD12ABF0510004294E0 /* MSVedioCVCell */,
 				C5329B212ABED4AB004294E0 /* MSFindCVCell */,
 			);
 			path = View;
@@ -3071,6 +3078,24 @@
 				C5329DE62ABEDD04004294E0 /* MSHomeCollectionReusableView.m */,
 			);
 			path = "（老首页专用）MSHomeCollectionReusableView";
+			sourceTree = "<group>";
+		};
+		C5329F552ABEFE7D004294E0 /* MSVedioSubVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5329F562ABEFE9E004294E0 /* MSVedioSubVC.h */,
+				C5329F572ABEFE9E004294E0 /* MSVedioSubVC.m */,
+			);
+			path = MSVedioSubVC;
+			sourceTree = "<group>";
+		};
+		C5329FD12ABF0510004294E0 /* MSVedioCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5329FD22ABF0551004294E0 /* MSVedioCVCell.h */,
+				C5329FD32ABF0551004294E0 /* MSVedioCVCell.m */,
+			);
+			path = MSVedioCVCell;
 			sourceTree = "<group>";
 		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
@@ -8120,6 +8145,7 @@
 		C561D98F2AAC9A4E00E28603 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C5329F552ABEFE7D004294E0 /* MSVedioSubVC */,
 				C5329B232ABED4E7004294E0 /* MSOrderVC */,
 				C5329B162ABECE0B004294E0 /* 我的交际圈 */,
 				C5329B152ABECE00004294E0 /* 发现 */,
@@ -9994,6 +10020,7 @@
 				C561D3AD2AAC7E7A00E28603 /* AppInternationalizationVC.m in Sources */,
 				C53299B42ABE2BE7004294E0 /* MSInputTextFieldLeftView.m in Sources */,
 				C561D3EC2AAC7E7B00E28603 /* UIView+BRPickerView.m in Sources */,
+				C5329FD42ABF0551004294E0 /* MSVedioCVCell.m in Sources */,
 				C561D3F82AAC7E7B00E28603 /* UIView+AOP.m in Sources */,
 				C561CE212AAC7CE200E28603 /* ECPrivacyCheckFilesAndFolders.m in Sources */,
 				C5E0175D2AAF2F90005ABE09 /* MSChuBaoVC.m in Sources */,
@@ -10065,6 +10092,7 @@
 				C561D4142AAC7E7B00E28603 /* NSString+Statistics.m in Sources */,
 				C561D3962AAC7E7A00E28603 /* JobsWelcomeVC.m in Sources */,
 				C5BD5E6D2AAC76740048F36B /* AppDelegate.m in Sources */,
+				C5329F582ABEFE9E004294E0 /* MSVedioSubVC.m in Sources */,
 				C561CE4D2AAC7CE200E28603 /* XHLaunchImageView.m in Sources */,
 				C561D4152AAC7E7B00E28603 /* NSString+Decoration.m in Sources */,
 				C561D3D62AAC7E7B00E28603 /* UIButton+Timer.m in Sources */,
