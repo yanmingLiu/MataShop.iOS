@@ -3680,10 +3680,10 @@
 		C561CEBE2AAC7E7900E28603 /* UITabBar+Category */ = {
 			isa = PBXGroup;
 			children = (
-				C561CEBF2AAC7E7900E28603 /* UITabBar+TLAnimation.m */,
+				C561CEC22AAC7E7900E28603 /* UITabBar+Ex.h */,
 				C561CEC02AAC7E7900E28603 /* UITabBar+Ex.m */,
 				C561CEC12AAC7E7900E28603 /* UITabBar+TLAnimation.h */,
-				C561CEC22AAC7E7900E28603 /* UITabBar+Ex.h */,
+				C561CEBF2AAC7E7900E28603 /* UITabBar+TLAnimation.m */,
 			);
 			path = "UITabBar+Category";
 			sourceTree = "<group>";

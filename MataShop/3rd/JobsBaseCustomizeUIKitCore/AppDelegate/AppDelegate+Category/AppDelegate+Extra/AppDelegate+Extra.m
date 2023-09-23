@@ -13,7 +13,7 @@
     if (tabBarTitleMutArr) {
         [tabBarTitleMutArr addObject:Internationalization(@"首页")];
         [tabBarTitleMutArr addObject:Internationalization(@"圈子")];
-        [tabBarTitleMutArr addObject:Internationalization(@"爱拍")];
+        [tabBarTitleMutArr addObject:Internationalization(@"")];
         [tabBarTitleMutArr addObject:Internationalization(@"消息")];
         [tabBarTitleMutArr addObject:Internationalization(@"我的")];
         objc_setAssociatedObject(self,
