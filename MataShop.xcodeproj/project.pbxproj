@@ -78,6 +78,12 @@
 		C5329DEA2ABEDE5E004294E0 /* 爱拍.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5329DE92ABEDE5E004294E0 /* 爱拍.xcassets */; };
 		C5329F582ABEFE9E004294E0 /* MSVedioSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329F572ABEFE9E004294E0 /* MSVedioSubVC.m */; };
 		C5329FD42ABF0551004294E0 /* MSVedioCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FD32ABF0551004294E0 /* MSVedioCVCell.m */; };
+		C5329FD62ABF0C29004294E0 /* 个人中心.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5329FD52ABF0C29004294E0 /* 个人中心.xcassets */; };
+		C5329FE42ABF10C1004294E0 /* MSMineView1.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FE32ABF10C1004294E0 /* MSMineView1.m */; };
+		C5329FE72ABF10CB004294E0 /* MSMineView2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FE62ABF10CB004294E0 /* MSMineView2.m */; };
+		C5329FEA2ABF10D5004294E0 /* MSMineView3.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FE92ABF10D5004294E0 /* MSMineView3.m */; };
+		C5329FED2ABF10DE004294E0 /* MSMineView4.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FEC2ABF10DE004294E0 /* MSMineView4.m */; };
+		C5329FF02ABF10E7004294E0 /* MSMineView5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FEF2ABF10E7004294E0 /* MSMineView5.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
@@ -1070,6 +1076,22 @@
 		C5329F572ABEFE9E004294E0 /* MSVedioSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVedioSubVC.m; sourceTree = "<group>"; };
 		C5329FD22ABF0551004294E0 /* MSVedioCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVedioCVCell.h; sourceTree = "<group>"; };
 		C5329FD32ABF0551004294E0 /* MSVedioCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVedioCVCell.m; sourceTree = "<group>"; };
+		C5329FD52ABF0C29004294E0 /* 个人中心.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "个人中心.xcassets"; sourceTree = "<group>"; };
+		C5329FD92ABF106C004294E0 /* MSMineView1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView1.jpg; sourceTree = "<group>"; };
+		C5329FDB2ABF1079004294E0 /* MSMineView2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView2.jpg; sourceTree = "<group>"; };
+		C5329FDD2ABF1083004294E0 /* MSMineView3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView3.jpg; sourceTree = "<group>"; };
+		C5329FDF2ABF108F004294E0 /* MSMineView4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView4.jpg; sourceTree = "<group>"; };
+		C5329FE12ABF1099004294E0 /* MSMineView5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView5.jpg; sourceTree = "<group>"; };
+		C5329FE22ABF10C1004294E0 /* MSMineView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineView1.h; sourceTree = "<group>"; };
+		C5329FE32ABF10C1004294E0 /* MSMineView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView1.m; sourceTree = "<group>"; };
+		C5329FE52ABF10CB004294E0 /* MSMineView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineView2.h; sourceTree = "<group>"; };
+		C5329FE62ABF10CB004294E0 /* MSMineView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView2.m; sourceTree = "<group>"; };
+		C5329FE82ABF10D5004294E0 /* MSMineView3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineView3.h; sourceTree = "<group>"; };
+		C5329FE92ABF10D5004294E0 /* MSMineView3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView3.m; sourceTree = "<group>"; };
+		C5329FEB2ABF10DE004294E0 /* MSMineView4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineView4.h; sourceTree = "<group>"; };
+		C5329FEC2ABF10DE004294E0 /* MSMineView4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView4.m; sourceTree = "<group>"; };
+		C5329FEE2ABF10E7004294E0 /* MSMineView5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineView5.h; sourceTree = "<group>"; };
+		C5329FEF2ABF10E7004294E0 /* MSMineView5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView5.m; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -3098,6 +3120,68 @@
 			path = MSVedioCVCell;
 			sourceTree = "<group>";
 		};
+		C5329FD72ABF0FB7004294E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5329FD82ABF1066004294E0 /* MSMineView1 */,
+				C5329FDA2ABF1070004294E0 /* MSMineView2 */,
+				C5329FDC2ABF107B004294E0 /* MSMineView3 */,
+				C5329FDE2ABF1085004294E0 /* MSMineView4 */,
+				C5329FE02ABF1091004294E0 /* MSMineView5 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5329FD82ABF1066004294E0 /* MSMineView1 */ = {
+			isa = PBXGroup;
+			children = (
+				C5329FD92ABF106C004294E0 /* MSMineView1.jpg */,
+				C5329FE22ABF10C1004294E0 /* MSMineView1.h */,
+				C5329FE32ABF10C1004294E0 /* MSMineView1.m */,
+			);
+			path = MSMineView1;
+			sourceTree = "<group>";
+		};
+		C5329FDA2ABF1070004294E0 /* MSMineView2 */ = {
+			isa = PBXGroup;
+			children = (
+				C5329FDB2ABF1079004294E0 /* MSMineView2.jpg */,
+				C5329FE52ABF10CB004294E0 /* MSMineView2.h */,
+				C5329FE62ABF10CB004294E0 /* MSMineView2.m */,
+			);
+			path = MSMineView2;
+			sourceTree = "<group>";
+		};
+		C5329FDC2ABF107B004294E0 /* MSMineView3 */ = {
+			isa = PBXGroup;
+			children = (
+				C5329FDD2ABF1083004294E0 /* MSMineView3.jpg */,
+				C5329FE82ABF10D5004294E0 /* MSMineView3.h */,
+				C5329FE92ABF10D5004294E0 /* MSMineView3.m */,
+			);
+			path = MSMineView3;
+			sourceTree = "<group>";
+		};
+		C5329FDE2ABF1085004294E0 /* MSMineView4 */ = {
+			isa = PBXGroup;
+			children = (
+				C5329FDF2ABF108F004294E0 /* MSMineView4.jpg */,
+				C5329FEB2ABF10DE004294E0 /* MSMineView4.h */,
+				C5329FEC2ABF10DE004294E0 /* MSMineView4.m */,
+			);
+			path = MSMineView4;
+			sourceTree = "<group>";
+		};
+		C5329FE02ABF1091004294E0 /* MSMineView5 */ = {
+			isa = PBXGroup;
+			children = (
+				C5329FE12ABF1099004294E0 /* MSMineView5.jpg */,
+				C5329FEE2ABF10E7004294E0 /* MSMineView5.h */,
+				C5329FEF2ABF10E7004294E0 /* MSMineView5.m */,
+			);
+			path = MSMineView5;
+			sourceTree = "<group>";
+		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3485,6 +3569,7 @@
 		C561CE622AAC7D8500E28603 /* xcassets */ = {
 			isa = PBXGroup;
 			children = (
+				C5329FD52ABF0C29004294E0 /* 个人中心.xcassets */,
 				C5329DE92ABEDE5E004294E0 /* 爱拍.xcassets */,
 				C5729B982AB59E240084EAFC /* 内部招聘.xcassets */,
 				C5E017582AAF2F15005ABE09 /* 储宝.xcassets */,
@@ -7292,6 +7377,7 @@
 		C561D5342AAC83E800E28603 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				C5329FD72ABF0FB7004294E0 /* View */,
 				C561D9912AAC9A5900E28603 /* ViewController */,
 			);
 			path = "我的";
@@ -9611,6 +9697,7 @@
 				C506259A2AAF5DAB00F14680 /* 720x1242.png in Resources */,
 				C520F6032AB396F500142DCC /* JobsComment【OutLines 02】.png in Resources */,
 				C561D30D2AAC7E7A00E28603 /* upgrade.json in Resources */,
+				C5329FD62ABF0C29004294E0 /* 个人中心.xcassets in Resources */,
 				C5E011DF2AADE1CD005ABE09 /* 37@2x.gif in Resources */,
 				C561D3942AAC7E7A00E28603 /* 启动页_04.png in Resources */,
 				C5E011DA2AADE1CD005ABE09 /* 212@2x.gif in Resources */,
@@ -9889,6 +9976,7 @@
 				C561D4132AAC7E7B00E28603 /* NSString+Eomji.m in Sources */,
 				C561D4212AAC7E7B00E28603 /* UIViewController+XLBubbleTransition.m in Sources */,
 				C561D65C2AAC862000E28603 /* URLManagerModel.m in Sources */,
+				C5329FE72ABF10CB004294E0 /* MSMineView2.m in Sources */,
 				C5EE37B42AB875740020BDB8 /* MSRedEnvelopeDetailModel.m in Sources */,
 				C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */,
 				C561D98C2AAC954400E28603 /* BaiShaETProjHeaderIconModel.m in Sources */,
@@ -10013,6 +10101,7 @@
 				C5729A972AB591E10084EAFC /* MSInternalRecruitmentVC.m in Sources */,
 				C561D4192AAC7E7B00E28603 /* NSString+Replace.m in Sources */,
 				C561D4122AAC7E7B00E28603 /* NSString+Others.m in Sources */,
+				C5329FE42ABF10C1004294E0 /* MSMineView1.m in Sources */,
 				C561D3572AAC7E7A00E28603 /* JobsUserHeaderDataViewTBVCell.m in Sources */,
 				C561D65F2AAC862000E28603 /* DDNetworkingAPI.m in Sources */,
 				C561D4312AAC7E7B00E28603 /* UIViewController+MJRefresh.m in Sources */,
@@ -10069,6 +10158,7 @@
 				C561D3F62AAC7E7B00E28603 /* UIView+AutoSelfAdaptionSize.m in Sources */,
 				C561CE4E2AAC7CE200E28603 /* XHLaunchAdConst.m in Sources */,
 				C561D47C2AAC7E7B00E28603 /* NSObject+DynamicInvoke.m in Sources */,
+				C5329FEA2ABF10D5004294E0 /* MSMineView3.m in Sources */,
 				C561D31B2AAC7E7A00E28603 /* JobsPullListTBVCell.m in Sources */,
 				C561D3EF2AAC7E7B00E28603 /* UIView+BackgroundLabel.m in Sources */,
 				C561D42D2AAC7E7B00E28603 /* UIViewController+SuspendBtn.m in Sources */,
@@ -10124,6 +10214,7 @@
 				C561D4262AAC7E7B00E28603 /* UIViewController+BackBtn.m in Sources */,
 				C561D69A2AAC862000E28603 /* BaiShaETProjTipsView04.m in Sources */,
 				C520F6392AB3975800142DCC /* YTKChainRequest+AnimatingAccessory.m in Sources */,
+				C5329FED2ABF10DE004294E0 /* MSMineView4.m in Sources */,
 				C561D3362AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_1.m in Sources */,
 				C561D99D2AAC9A8400E28603 /* BaiShaETProjMarqueeView.m in Sources */,
 				C561D4382AAC7E7B00E28603 /* UITableView+WWFoldableTableView.m in Sources */,
@@ -10209,6 +10300,7 @@
 				C561D6A42AAC862000E28603 /* BaiShaETProjTipsView01.m in Sources */,
 				C561D4832AAC7E7B00E28603 /* NSObject+Popup.m in Sources */,
 				C532965D2ABCE56E004294E0 /* MSPasswordLoginVC.m in Sources */,
+				C5329FF02ABF10E7004294E0 /* MSMineView5.m in Sources */,
 				C561D31F2AAC7E7A00E28603 /* TransitionController.m in Sources */,
 				C561D4772AAC7E7B00E28603 /* NSObject+HXPhotoPicker.m in Sources */,
 				C5729AA42AB593CD0084EAFC /* MSMDVC.m in Sources */,
