@@ -205,6 +205,8 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 
             _collectionView.mj_header = self.mjRefreshNormalHeader;
             _collectionView.mj_header.automaticallyChangeAlpha = YES;//根据拖拽比例自动切换透明度
+            
+            _collectionView.mj_footer = self.mjRefreshAutoNormalFooter;
         }
         
         {

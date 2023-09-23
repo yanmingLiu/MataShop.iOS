@@ -169,6 +169,7 @@ insetForSectionAtIndex:(NSInteger)section {
         _collectionView.backgroundColor = JobsWhiteColor;
         [self dataLinkByCollectionView:_collectionView];
         _collectionView.showsVerticalScrollIndicator = NO;
+        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, JobsWidth(160), 0);
         [_collectionView registerCollectionViewClass];
         
         [_collectionView registerCollectionViewCellClass:MSVedioCVCell.class];
@@ -193,6 +194,8 @@ insetForSectionAtIndex:(NSInteger)section {
             
             _collectionView.mj_header = self.mjRefreshNormalHeader;
             _collectionView.mj_header.automaticallyChangeAlpha = YES;//根据拖拽比例自动切换透明度
+            
+            _collectionView.mj_footer = self.mjRefreshAutoNormalFooter;
         }
         
         {
@@ -229,7 +232,7 @@ insetForSectionAtIndex:(NSInteger)section {
         [self.view addSubview:_collectionView];
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.right.equalTo(self.view);
-            make.height.mas_equalTo(JobsWidth(368));
+            make.height.mas_equalTo(JobsWidth(376));
         }];
         
 //        [_collectionView cornerCutToCircleWithCornerRadius:JobsWidth(16)];

@@ -228,7 +228,6 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [self dataLinkByCollectionView:_collectionView];
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.scrollEnabled = NO;
-//        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, JobsWidth(1288), 0);
         [_collectionView registerCollectionViewClass];
         
         [_collectionView registerCollectionViewCellClass:MSFindCVCell.class];
@@ -253,6 +252,8 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
             
             _collectionView.mj_header = self.mjRefreshNormalHeader;
             _collectionView.mj_header.automaticallyChangeAlpha = YES;//根据拖拽比例自动切换透明度
+            
+            _collectionView.mj_footer = self.mjRefreshAutoNormalFooter;
         }
         
         {
