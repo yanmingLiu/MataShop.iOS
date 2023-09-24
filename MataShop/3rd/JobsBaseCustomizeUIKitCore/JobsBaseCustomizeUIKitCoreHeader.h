@@ -44,6 +44,8 @@
 #import "JobsControl.h"
 #pragma mark —— CALayer
 #import "JobsCALayer.h"
+#pragma mark —— NSNotificationCenter
+#import "NSNotificationCenter.h"
 
 #pragma mark —— UIScrollView
 #import "JobsScrollView.h"

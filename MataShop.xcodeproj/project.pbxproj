@@ -59,6 +59,7 @@
 		C520FC172AB3C36D00142DCC /* 假数据.json in Resources */ = {isa = PBXBuildFile; fileRef = C520FC132AB3C36D00142DCC /* 假数据.json */; };
 		C527BD852AB46F2A00DFC90A /* MSProdShowCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C527BD842AB46F2A00DFC90A /* MSProdShowCVCell.m */; };
 		C527BE022AB4754B00DFC90A /* MSProdShowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C527BE012AB4754B00DFC90A /* MSProdShowModel.m */; };
+		C52F30572AC036B200BB5549 /* NSNotificationCenter+JobsBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C52F30542AC036B200BB5549 /* NSNotificationCenter+JobsBlock.m */; };
 		C53295662ABCD78E004294E0 /* JobsBtnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C532955F2ABCD78E004294E0 /* JobsBtnModel.m */; };
 		C53295672ABCD78E004294E0 /* JobsContainerViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C53295622ABCD78E004294E0 /* JobsContainerViewDemoVC.m */; };
 		C53295682ABCD78E004294E0 /* JobsContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C53295642ABCD78E004294E0 /* JobsContainerView.m */; };
@@ -1032,6 +1033,9 @@
 		C527BD842AB46F2A00DFC90A /* MSProdShowCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdShowCVCell.m; sourceTree = "<group>"; };
 		C527BE002AB4754B00DFC90A /* MSProdShowModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdShowModel.h; sourceTree = "<group>"; };
 		C527BE012AB4754B00DFC90A /* MSProdShowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdShowModel.m; sourceTree = "<group>"; };
+		C52F30542AC036B200BB5549 /* NSNotificationCenter+JobsBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+JobsBlock.m"; sourceTree = "<group>"; };
+		C52F30552AC036B200BB5549 /* NSNotificationCenter+JobsBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+JobsBlock.h"; sourceTree = "<group>"; };
+		C52F30562AC036B200BB5549 /* NSNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNotificationCenter.h; sourceTree = "<group>"; };
 		C532955E2ABCD78E004294E0 /* JobsBtnModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBtnModel.h; sourceTree = "<group>"; };
 		C532955F2ABCD78E004294E0 /* JobsBtnModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsBtnModel.m; sourceTree = "<group>"; };
 		C53295612ABCD78E004294E0 /* JobsContainerViewDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsContainerViewDemoVC.h; sourceTree = "<group>"; };
@@ -2913,6 +2917,24 @@
 			path = MSProdShowCVCell;
 			sourceTree = "<group>";
 		};
+		C52F30522AC036B200BB5549 /* NSNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				C52F30532AC036B200BB5549 /* NSNotificationCenter+JobsBlock */,
+				C52F30562AC036B200BB5549 /* NSNotificationCenter.h */,
+			);
+			path = NSNotificationCenter;
+			sourceTree = "<group>";
+		};
+		C52F30532AC036B200BB5549 /* NSNotificationCenter+JobsBlock */ = {
+			isa = PBXGroup;
+			children = (
+				C52F30542AC036B200BB5549 /* NSNotificationCenter+JobsBlock.m */,
+				C52F30552AC036B200BB5549 /* NSNotificationCenter+JobsBlock.h */,
+			);
+			path = "NSNotificationCenter+JobsBlock";
+			sourceTree = "<group>";
+		};
 		C532955C2ABCD78E004294E0 /* JobsContainerViewDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -4595,6 +4617,7 @@
 			isa = PBXGroup;
 			children = (
 				C561D0D02AAC7E7900E28603 /* JobsBaseCustomizeUIKitCoreHeader.h */,
+				C52F30522AC036B200BB5549 /* NSNotificationCenter */,
 				C561D1FA2AAC7E7A00E28603 /* AppDelegate */,
 				C561D2C52AAC7E7A00E28603 /* BaseProtocol */,
 				C561D1F12AAC7E7A00E28603 /* CALayer */,
@@ -10130,6 +10153,7 @@
 				C561D34A2AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_4.m in Sources */,
 				C561CE1C2AAC7CE200E28603 /* ECPrivacyCheckMicrophone.m in Sources */,
 				C561CE022AAC7CE200E28603 /* ZWPullMenuView.m in Sources */,
+				C52F30572AC036B200BB5549 /* NSNotificationCenter+JobsBlock.m in Sources */,
 				C561D35A2AAC7E7A00E28603 /* JobsHotLabelWithMultiLine.m in Sources */,
 				C561D40F2AAC7E7B00E28603 /* UIImageView+GIF.m in Sources */,
 				C561D49C2AAC7E7B00E28603 /* UITextField+Animation.m in Sources */,
