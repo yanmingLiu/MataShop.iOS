@@ -16,8 +16,8 @@
 }
 /// App更改图标核心代码
 -(void)setAppIconWithName:(NSString *_Nullable)iconName{
-    if (AvailableSysVersion(10.3)) {
-        if ([UIApplication.sharedApplication supportsAlternateIcons]) {
+    if (JobsAvailableSysVersion(10.3)) {
+        if (UIApplication.sharedApplication.supportsAlternateIcons) {
             [UIApplication.sharedApplication setAlternateIconName:iconName
                                                 completionHandler:^(NSError * _Nullable error) {
                 if (error) {
