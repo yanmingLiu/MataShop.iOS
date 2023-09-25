@@ -96,6 +96,7 @@ shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 -(void)collectionView:(UICollectionView *)collectionView
 didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
+    [self forceComingToPushVC:Douyin_ZFPlayerVC_2.new requestParams:nil];
 }
 /// 由高亮转成非高亮完成时的回调
 -(void)collectionView:(UICollectionView *)collectionView

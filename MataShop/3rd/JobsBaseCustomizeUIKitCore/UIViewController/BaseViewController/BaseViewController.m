@@ -26,13 +26,13 @@ BaseViewControllerProtocol_synthesize
         PrintRetainCount(self)
     }
 }
-
+/// new方法触发
 - (instancetype)init{
     if (self = [super init]) {
         
     }return self;
 }
-
+/// new方法触发
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil
                          bundle:(NSBundle *)nibBundleOrNil {
     if(self = [super initWithNibName:nibNameOrNil
@@ -47,12 +47,29 @@ BaseViewControllerProtocol_synthesize
     self.setupNavigationBarHidden = YES;
     self.currentPage = 1;
     self.modalInPresentation = NO;/// 禁用下拉手势dismiss画面需要将此属性设置为YES
-    if (self.vcLifeCycleBlock) self.vcLifeCycleBlock(JobsLocalFunc,nil);
+    [self UIViewControllerLifeCycle:JobsLocalFunc];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    /**
+     NOTE:
+     View controllers presented with custom presentation controllers
+     do not assume control of the status bar appearance by default
+     (their -preferredStatusBarStyle and -prefersStatusBarHidden
+     methods are not called).  You can override this behavior by
+     setting the value of the presented view controller's
+     modalPresentationCapturesStatusBarAppearance property to YES.
+     
+     self.modalPresentationCapturesStatusBarAppearance = YES;
+     */
+    [self updatePreferredContentSizeWithTraitCollection:self.traitCollection];
+    
     [self setBackGround];
+//    self.gk_navRightBarButtonItems = @[[UIBarButtonItem.alloc initWithCustomView:self.msgBtn],
+//                                       [UIBarButtonItem.alloc initWithCustomView:self.customerServiceBtn]];
+//    self.gk_navLeftBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:self.userHeadBtn];
     self.gk_statusBarHidden = NO;
     /*
      *  #pragma mark —— 全局配置 GKNavigationBar -(void)makeGKNavigationBarConfigure
@@ -69,7 +86,7 @@ BaseViewControllerProtocol_synthesize
                     @selector(languageSwitchNotification:),
                     LanguageSwitchNotification,
                     nil);
-    if (self.vcLifeCycleBlock) self.vcLifeCycleBlock(JobsLocalFunc,nil);
+    [self UIViewControllerLifeCycle:JobsLocalFunc];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -78,14 +95,14 @@ BaseViewControllerProtocol_synthesize
     NSLog(@"%d",self.setupNavigationBarHidden);
     self.isHiddenNavigationBar = self.setupNavigationBarHidden;
     [self.navigationController setNavigationBarHidden:self.setupNavigationBarHidden animated:animated];
-    if (self.vcLifeCycleBlock) self.vcLifeCycleBlock(JobsLocalFunc,nil);
+    [self UIViewControllerLifeCycle:JobsLocalFunc];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     /// 只有是在Tabbar管理的，不含导航的根控制器才开启手势（点语法会有 Property access result unused警告）
     self.isRootVC ? [self tabBarOpenPan] : [self tabBarClosePan];
-    if (self.vcLifeCycleBlock) self.vcLifeCycleBlock(JobsLocalFunc,nil);
+    [self UIViewControllerLifeCycle:JobsLocalFunc];
 #ifdef DEBUG
     /// 网络异步数据刷新UI会在viewDidAppear以后执行viewWillLayoutSubviews、viewDidLayoutSubviews
 //    [self ifEmptyData];
@@ -94,8 +111,8 @@ BaseViewControllerProtocol_synthesize
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self restoreStatusBarCor];// 
-    if (self.vcLifeCycleBlock) self.vcLifeCycleBlock(JobsLocalFunc,nil);
+    [self restoreStatusBarCor];
+    [self UIViewControllerLifeCycle:JobsLocalFunc];
     NSLog(@"%d",self.setupNavigationBarHidden);
     self.isHiddenNavigationBar = self.setupNavigationBarHidden;
     [self.navigationController setNavigationBarHidden:self.setupNavigationBarHidden animated:animated];
@@ -103,21 +120,21 @@ BaseViewControllerProtocol_synthesize
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    if (self.vcLifeCycleBlock) self.vcLifeCycleBlock(JobsLocalFunc,nil);
+    [self UIViewControllerLifeCycle:JobsLocalFunc];
 }
 
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    if (self.vcLifeCycleBlock) self.vcLifeCycleBlock(JobsLocalFunc,nil);
+    [self UIViewControllerLifeCycle:JobsLocalFunc];
 }
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     self.view.mjRefreshTargetView.mj_footer.y = self.view.mjRefreshTargetView.contentSize.height;
-    if (self.vcLifeCycleBlock) self.vcLifeCycleBlock(JobsLocalFunc,nil);
+    [self UIViewControllerLifeCycle:JobsLocalFunc];
 }
 /**
- #  iOS 状态栏颜色的修改
+ iOS 状态栏颜色的修改
  【全局修改】
   1、在Info.plist里面加入如下键值对：
      1.1、View controller-based status bar appearance : NO
@@ -144,6 +161,13 @@ BaseViewControllerProtocol_synthesize
     return UIStatusBarStyleLightContent;
 }
 #pragma mark —— 一些私有方法
+/// 用于检测UIViewController的生命周期
+-(void)UIViewControllerLifeCycle:(NSString *)lifeCycle{
+    UIViewModel *viewModel = UIViewModel.new;
+    viewModel.data = nil;
+    viewModel.requestParams = lifeCycle;
+    if(self.objectBlock) self.objectBlock(viewModel);
+}
 /// 更新状态栏颜色为自定义的颜色
 - (void)updateStatusBarCor:(UIColor *)cor{
     if(!cor)cor = JobsRedColor;
@@ -201,6 +225,20 @@ BaseViewControllerProtocol_synthesize
         return;
     }
 }
+#pragma mark —— 自定义模态动画推出ViewController
+- (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection
+              withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
+    // When the current trait collection changes (e.g. the device rotates),
+    // update the preferredContentSize.
+    [self updatePreferredContentSizeWithTraitCollection:newCollection];
+}
+
+- (void)updatePreferredContentSizeWithTraitCollection:(UITraitCollection *)traitCollection{
+    NSLog(@"%f",self.presentUpHeight);
+    self.preferredContentSize = CGSizeMake(self.view.bounds.size.width,
+                                           traitCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact ? 270 : self.presentUpHeight);/// 上升的高度
+}
 #pragma mark —— UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
 shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
@@ -210,15 +248,6 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 /// 接收通知相应的方法【在分类或者基类中实现会屏蔽具体子类的相关实现】
 -(void)languageSwitchNotification:(nonnull NSNotification *)notification{
     NSLog(@"通知传递过来的 = %@",notification.object);
-}
-#pragma mark —— BaseViewControllerProtocol
--(void)actionVCLifeCycleBlock:(JobsViewControllerLifeCycleBlock)vcLifeCycleBlock{
-    self.vcLifeCycleBlock = vcLifeCycleBlock;
-}
-#pragma mark —— Set方法
-@synthesize modalPresentationStyle = _modalPresentationStyle;
--(void)setModalPresentationStyle:(UIModalPresentationStyle)modalPresentationStyle{
-    _modalPresentationStyle = UIModalPresentationPopover;
 }
 #pragma mark —— lazyLoad
 - (UIView *)statusBar{

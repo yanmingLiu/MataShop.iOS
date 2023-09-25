@@ -85,6 +85,8 @@
 		C5329FEA2ABF10D5004294E0 /* MSMineView3.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FE92ABF10D5004294E0 /* MSMineView3.m */; };
 		C5329FED2ABF10DE004294E0 /* MSMineView4.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FEC2ABF10DE004294E0 /* MSMineView4.m */; };
 		C5329FF02ABF10E7004294E0 /* MSMineView5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FEF2ABF10E7004294E0 /* MSMineView5.m */; };
+		C536CE0E2AC23AE1005D1FCD /* UIWindow+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C536CE0D2AC23AE1005D1FCD /* UIWindow+Extra.m */; };
+		C536CE152AC23B40005D1FCD /* UISlider+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C536CE142AC23B40005D1FCD /* UISlider+Extra.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
@@ -672,6 +674,57 @@
 		C5CFE8962AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE8952AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m */; };
 		C5CFE91A2AB237BD00D0F225 /* MSSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFE9192AB237BD00D0F225 /* MSSearchView.m */; };
 		C5CFEA112AB255B500D0F225 /* MS3rdShopLinkView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CFEA102AB255B500D0F225 /* MS3rdShopLinkView.m */; };
+		C5D71EA02AC22BDF00DD8938 /* JobsPresentationCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71E9F2AC22BDE00DD8938 /* JobsPresentationCtrl.m */; };
+		C5D71EA42AC22C5200DD8938 /* Douyin_ZFPlayerVC@2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EA32AC22C5200DD8938 /* Douyin_ZFPlayerVC@2.m */; };
+		C5D71EA92AC22CA100DD8938 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EA82AC22CA100DD8938 /* VideoModel.m */; };
+		C5D71EAE2AC22CB000DD8938 /* JobsVideoTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EAB2AC22CB000DD8938 /* JobsVideoTBVCell.m */; };
+		C5D71EB42AC22CC700DD8938 /* ZFDouYinControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EB32AC22CC700DD8938 /* ZFDouYinControlView.m */; };
+		C5D71EBE2AC22DAE00DD8938 /* JobsRightBtnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EBB2AC22DAE00DD8938 /* JobsRightBtnsView.m */; };
+		C5D71F2D2AC22EE800DD8938 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EC32AC22EE800DD8938 /* GCDAsyncSocket.m */; };
+		C5D71F2E2AC22EE800DD8938 /* KTVHCPathTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EC92AC22EE800DD8938 /* KTVHCPathTool.m */; };
+		C5D71F2F2AC22EE800DD8938 /* KTVHCURLTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71ECC2AC22EE800DD8938 /* KTVHCURLTool.m */; };
+		C5D71F302AC22EE800DD8938 /* KTVHCHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71ED02AC22EE800DD8938 /* KTVHCHTTPConnection.m */; };
+		C5D71F312AC22EE800DD8938 /* KTVHCHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71ED22AC22EE800DD8938 /* KTVHCHTTPResponse.m */; };
+		C5D71F322AC22EE800DD8938 /* KTVHCHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71ED32AC22EE800DD8938 /* KTVHCHTTPServer.m */; };
+		C5D71F332AC22EE800DD8938 /* KTVHCDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71ED62AC22EE800DD8938 /* KTVHCDataResponse.m */; };
+		C5D71F342AC22EE800DD8938 /* KTVHCDataUnitPool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71ED72AC22EE800DD8938 /* KTVHCDataUnitPool.m */; };
+		C5D71F352AC22EE800DD8938 /* KTVHCDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EDC2AC22EE800DD8938 /* KTVHCDataStorage.m */; };
+		C5D71F362AC22EE800DD8938 /* KTVHCDataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EDD2AC22EE800DD8938 /* KTVHCDataReader.m */; };
+		C5D71F372AC22EE800DD8938 /* KTVHCDataFileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EDE2AC22EE800DD8938 /* KTVHCDataFileSource.m */; };
+		C5D71F382AC22EE800DD8938 /* KTVHCDataUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EE12AC22EE800DD8938 /* KTVHCDataUnit.m */; };
+		C5D71F392AC22EE800DD8938 /* KTVHCDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EE22AC22EE800DD8938 /* KTVHCDataRequest.m */; };
+		C5D71F3A2AC22EE800DD8938 /* KTVHCDataCacheItemZone.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EE32AC22EE800DD8938 /* KTVHCDataCacheItemZone.m */; };
+		C5D71F3B2AC22EE800DD8938 /* KTVHCDataUnitItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EE42AC22EE800DD8938 /* KTVHCDataUnitItem.m */; };
+		C5D71F3C2AC22EE800DD8938 /* KTVHCDataNetworkSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EE72AC22EE800DD8938 /* KTVHCDataNetworkSource.m */; };
+		C5D71F3D2AC22EE800DD8938 /* KTVHCDataSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EEA2AC22EE800DD8938 /* KTVHCDataSourceManager.m */; };
+		C5D71F3E2AC22EE800DD8938 /* KTVHCDataCacheItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EEB2AC22EE800DD8938 /* KTVHCDataCacheItem.m */; };
+		C5D71F3F2AC22EE800DD8938 /* KTVHCDataUnitQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EEC2AC22EE800DD8938 /* KTVHCDataUnitQueue.m */; };
+		C5D71F402AC22EE800DD8938 /* KTVHCDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EEF2AC22EE800DD8938 /* KTVHCDataLoader.m */; };
+		C5D71F412AC22EE800DD8938 /* KTVHCDataCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EF02AC22EE800DD8938 /* KTVHCDataCallback.m */; };
+		C5D71F422AC22EE800DD8938 /* KTVHCLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EF72AC22EE800DD8938 /* KTVHCLog.m */; };
+		C5D71F432AC22EE800DD8938 /* KTVHCRange.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EF82AC22EE800DD8938 /* KTVHCRange.m */; };
+		C5D71F442AC22EE800DD8938 /* KTVHCError.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71EF92AC22EE800DD8938 /* KTVHCError.m */; };
+		C5D71F452AC22EE800DD8938 /* KTVHCDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F002AC22EE800DD8938 /* KTVHCDownload.m */; };
+		C5D71F462AC22EE800DD8938 /* KTVHTTPCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F012AC22EE800DD8938 /* KTVHTTPCache.m */; };
+		C5D71F472AC22EE800DD8938 /* HTTPErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F0B2AC22EE800DD8938 /* HTTPErrorResponse.m */; };
+		C5D71F482AC22EE800DD8938 /* HTTPDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F0C2AC22EE800DD8938 /* HTTPDataResponse.m */; };
+		C5D71F492AC22EE800DD8938 /* HTTPDynamicFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F0E2AC22EE800DD8938 /* HTTPDynamicFileResponse.m */; };
+		C5D71F4A2AC22EE800DD8938 /* HTTPFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F0F2AC22EE800DD8938 /* HTTPFileResponse.m */; };
+		C5D71F4B2AC22EE800DD8938 /* HTTPAsyncFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F102AC22EE800DD8938 /* HTTPAsyncFileResponse.m */; };
+		C5D71F4C2AC22EE800DD8938 /* HTTPRedirectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F112AC22EE800DD8938 /* HTTPRedirectResponse.m */; };
+		C5D71F4D2AC22EE800DD8938 /* HTTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F172AC22EE800DD8938 /* HTTPMessage.m */; };
+		C5D71F4E2AC22EE800DD8938 /* HTTPLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F182AC22EE800DD8938 /* HTTPLogging.m */; };
+		C5D71F4F2AC22EE800DD8938 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F192AC22EE800DD8938 /* HTTPConnection.m */; };
+		C5D71F502AC22EE800DD8938 /* WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F1A2AC22EE800DD8938 /* WebSocket.m */; };
+		C5D71F512AC22EE800DD8938 /* MultipartMessageHeaderField.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F1F2AC22EE800DD8938 /* MultipartMessageHeaderField.m */; };
+		C5D71F522AC22EE800DD8938 /* MultipartFormDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F202AC22EE800DD8938 /* MultipartFormDataParser.m */; };
+		C5D71F532AC22EE800DD8938 /* MultipartMessageHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F212AC22EE800DD8938 /* MultipartMessageHeader.m */; };
+		C5D71F542AC22EE800DD8938 /* HTTPAuthenticationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F232AC22EE800DD8938 /* HTTPAuthenticationRequest.m */; };
+		C5D71F552AC22EE800DD8938 /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F252AC22EE800DD8938 /* DDNumber.m */; };
+		C5D71F562AC22EE800DD8938 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F262AC22EE800DD8938 /* DDData.m */; };
+		C5D71F572AC22EE800DD8938 /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F292AC22EE800DD8938 /* DDRange.m */; };
+		C5D71F582AC22EE800DD8938 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D71F2B2AC22EE800DD8938 /* HTTPServer.m */; };
+		C5D722062AC234C600DD8938 /* 视频模块.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D722052AC234C600DD8938 /* 视频模块.xcassets */; };
 		C5E00CE52AADDEF6005ABE09 /* MataShopLib.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */; };
 		C5E011292AADE1CD005ABE09 /* 164@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E0104D2AADE1B5005ABE09 /* 164@2x.gif */; };
 		C5E0112A2AADE1CD005ABE09 /* newemoji_007.gif in Resources */ = {isa = PBXBuildFile; fileRef = C5E0104E2AADE1B5005ABE09 /* newemoji_007.gif */; };
@@ -1096,6 +1149,11 @@
 		C5329FEC2ABF10DE004294E0 /* MSMineView4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView4.m; sourceTree = "<group>"; };
 		C5329FEE2ABF10E7004294E0 /* MSMineView5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineView5.h; sourceTree = "<group>"; };
 		C5329FEF2ABF10E7004294E0 /* MSMineView5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView5.m; sourceTree = "<group>"; };
+		C536CE0C2AC23AE1005D1FCD /* UIWindow+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extra.h"; sourceTree = "<group>"; };
+		C536CE0D2AC23AE1005D1FCD /* UIWindow+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extra.m"; sourceTree = "<group>"; };
+		C536CE102AC23B40005D1FCD /* JobsSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsSlider.h; sourceTree = "<group>"; };
+		C536CE132AC23B40005D1FCD /* UISlider+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISlider+Extra.h"; sourceTree = "<group>"; };
+		C536CE142AC23B40005D1FCD /* UISlider+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+Extra.m"; sourceTree = "<group>"; };
 		C5371E502AACDD2F008988CE /* MSSearchBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSearchBoardView.h; sourceTree = "<group>"; };
 		C5371E512AACDD2F008988CE /* MSSearchBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSearchBoardView.m; sourceTree = "<group>"; };
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
@@ -2253,6 +2311,116 @@
 		C5CFE91B2AB237FB00D0F225 /* MSSearchView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSSearchView.jpg; sourceTree = "<group>"; };
 		C5CFEA0F2AB255B500D0F225 /* MS3rdShopLinkView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MS3rdShopLinkView.h; sourceTree = "<group>"; };
 		C5CFEA102AB255B500D0F225 /* MS3rdShopLinkView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MS3rdShopLinkView.m; sourceTree = "<group>"; };
+		C5D71E9E2AC22BDE00DD8938 /* JobsPresentationCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsPresentationCtrl.h; sourceTree = "<group>"; };
+		C5D71E9F2AC22BDE00DD8938 /* JobsPresentationCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsPresentationCtrl.m; sourceTree = "<group>"; };
+		C5D71EA22AC22C5200DD8938 /* Douyin_ZFPlayerVC@2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Douyin_ZFPlayerVC@2.h"; sourceTree = "<group>"; };
+		C5D71EA32AC22C5200DD8938 /* Douyin_ZFPlayerVC@2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Douyin_ZFPlayerVC@2.m"; sourceTree = "<group>"; };
+		C5D71EA72AC22CA100DD8938 /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		C5D71EA82AC22CA100DD8938 /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		C5D71EAB2AC22CB000DD8938 /* JobsVideoTBVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsVideoTBVCell.m; sourceTree = "<group>"; };
+		C5D71EAC2AC22CB000DD8938 /* For_Douyin_ZFPlayerVC_2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = For_Douyin_ZFPlayerVC_2.md; sourceTree = "<group>"; };
+		C5D71EAD2AC22CB000DD8938 /* JobsVideoTBVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsVideoTBVCell.h; sourceTree = "<group>"; };
+		C5D71EB12AC22CC700DD8938 /* 原作者的.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "原作者的.h"; sourceTree = "<group>"; };
+		C5D71EB22AC22CC700DD8938 /* ZFDouYinControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFDouYinControlView.h; sourceTree = "<group>"; };
+		C5D71EB32AC22CC700DD8938 /* ZFDouYinControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFDouYinControlView.m; sourceTree = "<group>"; };
+		C5D71EBB2AC22DAE00DD8938 /* JobsRightBtnsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsRightBtnsView.m; sourceTree = "<group>"; };
+		C5D71EBC2AC22DAE00DD8938 /* For_Douyin_ZFPlayerVC_2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = For_Douyin_ZFPlayerVC_2.md; sourceTree = "<group>"; };
+		C5D71EBD2AC22DAE00DD8938 /* JobsRightBtnsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsRightBtnsView.h; sourceTree = "<group>"; };
+		C5D71EC32AC22EE800DD8938 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		C5D71EC42AC22EE800DD8938 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		C5D71EC62AC22EE800DD8938 /* KTVHTTPCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHTTPCache.h; sourceTree = "<group>"; };
+		C5D71EC92AC22EE800DD8938 /* KTVHCPathTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCPathTool.m; sourceTree = "<group>"; };
+		C5D71ECA2AC22EE800DD8938 /* KTVHCURLTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCURLTool.h; sourceTree = "<group>"; };
+		C5D71ECB2AC22EE800DD8938 /* KTVHCPathTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCPathTool.h; sourceTree = "<group>"; };
+		C5D71ECC2AC22EE800DD8938 /* KTVHCURLTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCURLTool.m; sourceTree = "<group>"; };
+		C5D71ECE2AC22EE800DD8938 /* KTVHCHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCHTTPResponse.h; sourceTree = "<group>"; };
+		C5D71ECF2AC22EE800DD8938 /* KTVHCHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCHTTPServer.h; sourceTree = "<group>"; };
+		C5D71ED02AC22EE800DD8938 /* KTVHCHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCHTTPConnection.m; sourceTree = "<group>"; };
+		C5D71ED12AC22EE800DD8938 /* KTVHCHTTPHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCHTTPHeader.h; sourceTree = "<group>"; };
+		C5D71ED22AC22EE800DD8938 /* KTVHCHTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCHTTPResponse.m; sourceTree = "<group>"; };
+		C5D71ED32AC22EE800DD8938 /* KTVHCHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCHTTPServer.m; sourceTree = "<group>"; };
+		C5D71ED42AC22EE800DD8938 /* KTVHCHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCHTTPConnection.h; sourceTree = "<group>"; };
+		C5D71ED62AC22EE800DD8938 /* KTVHCDataResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataResponse.m; sourceTree = "<group>"; };
+		C5D71ED72AC22EE800DD8938 /* KTVHCDataUnitPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataUnitPool.m; sourceTree = "<group>"; };
+		C5D71ED82AC22EE800DD8938 /* KTVHCDataNetworkSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataNetworkSource.h; sourceTree = "<group>"; };
+		C5D71ED92AC22EE800DD8938 /* KTVHCDataUnitQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataUnitQueue.h; sourceTree = "<group>"; };
+		C5D71EDA2AC22EE800DD8938 /* KTVHCDataCacheItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataCacheItem.h; sourceTree = "<group>"; };
+		C5D71EDB2AC22EE800DD8938 /* KTVHCDataSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataSourceManager.h; sourceTree = "<group>"; };
+		C5D71EDC2AC22EE800DD8938 /* KTVHCDataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataStorage.m; sourceTree = "<group>"; };
+		C5D71EDD2AC22EE800DD8938 /* KTVHCDataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataReader.m; sourceTree = "<group>"; };
+		C5D71EDE2AC22EE800DD8938 /* KTVHCDataFileSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataFileSource.m; sourceTree = "<group>"; };
+		C5D71EDF2AC22EE800DD8938 /* KTVHCDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataLoader.h; sourceTree = "<group>"; };
+		C5D71EE02AC22EE800DD8938 /* KTVHCDataCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataCallback.h; sourceTree = "<group>"; };
+		C5D71EE12AC22EE800DD8938 /* KTVHCDataUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataUnit.m; sourceTree = "<group>"; };
+		C5D71EE22AC22EE800DD8938 /* KTVHCDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataRequest.m; sourceTree = "<group>"; };
+		C5D71EE32AC22EE800DD8938 /* KTVHCDataCacheItemZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataCacheItemZone.m; sourceTree = "<group>"; };
+		C5D71EE42AC22EE800DD8938 /* KTVHCDataUnitItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataUnitItem.m; sourceTree = "<group>"; };
+		C5D71EE52AC22EE800DD8938 /* KTVHCDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataSource.h; sourceTree = "<group>"; };
+		C5D71EE62AC22EE800DD8938 /* KTVHCDataUnitPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataUnitPool.h; sourceTree = "<group>"; };
+		C5D71EE72AC22EE800DD8938 /* KTVHCDataNetworkSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataNetworkSource.m; sourceTree = "<group>"; };
+		C5D71EE82AC22EE800DD8938 /* KTVHCDataResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataResponse.h; sourceTree = "<group>"; };
+		C5D71EE92AC22EE800DD8938 /* KTVHCData+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KTVHCData+Internal.h"; sourceTree = "<group>"; };
+		C5D71EEA2AC22EE800DD8938 /* KTVHCDataSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataSourceManager.m; sourceTree = "<group>"; };
+		C5D71EEB2AC22EE800DD8938 /* KTVHCDataCacheItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataCacheItem.m; sourceTree = "<group>"; };
+		C5D71EEC2AC22EE800DD8938 /* KTVHCDataUnitQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataUnitQueue.m; sourceTree = "<group>"; };
+		C5D71EED2AC22EE800DD8938 /* KTVHCDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataRequest.h; sourceTree = "<group>"; };
+		C5D71EEE2AC22EE800DD8938 /* KTVHCDataUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataUnit.h; sourceTree = "<group>"; };
+		C5D71EEF2AC22EE800DD8938 /* KTVHCDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataLoader.m; sourceTree = "<group>"; };
+		C5D71EF02AC22EE800DD8938 /* KTVHCDataCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDataCallback.m; sourceTree = "<group>"; };
+		C5D71EF12AC22EE800DD8938 /* KTVHCDataFileSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataFileSource.h; sourceTree = "<group>"; };
+		C5D71EF22AC22EE800DD8938 /* KTVHCDataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataReader.h; sourceTree = "<group>"; };
+		C5D71EF32AC22EE800DD8938 /* KTVHCDataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataStorage.h; sourceTree = "<group>"; };
+		C5D71EF42AC22EE800DD8938 /* KTVHCDataCacheItemZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataCacheItemZone.h; sourceTree = "<group>"; };
+		C5D71EF52AC22EE800DD8938 /* KTVHCDataUnitItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDataUnitItem.h; sourceTree = "<group>"; };
+		C5D71EF72AC22EE800DD8938 /* KTVHCLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCLog.m; sourceTree = "<group>"; };
+		C5D71EF82AC22EE800DD8938 /* KTVHCRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCRange.m; sourceTree = "<group>"; };
+		C5D71EF92AC22EE800DD8938 /* KTVHCError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCError.m; sourceTree = "<group>"; };
+		C5D71EFA2AC22EE800DD8938 /* KTVHCMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCMacro.h; sourceTree = "<group>"; };
+		C5D71EFB2AC22EE800DD8938 /* KTVHCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCLog.h; sourceTree = "<group>"; };
+		C5D71EFC2AC22EE800DD8938 /* KTVHCError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCError.h; sourceTree = "<group>"; };
+		C5D71EFD2AC22EE800DD8938 /* KTVHCRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCRange.h; sourceTree = "<group>"; };
+		C5D71EFF2AC22EE800DD8938 /* KTVHCDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVHCDownload.h; sourceTree = "<group>"; };
+		C5D71F002AC22EE800DD8938 /* KTVHCDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHCDownload.m; sourceTree = "<group>"; };
+		C5D71F012AC22EE800DD8938 /* KTVHTTPCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVHTTPCache.m; sourceTree = "<group>"; };
+		C5D71F042AC22EE800DD8938 /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnection.h; sourceTree = "<group>"; };
+		C5D71F052AC22EE800DD8938 /* HTTPLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPLogging.h; sourceTree = "<group>"; };
+		C5D71F062AC22EE800DD8938 /* HTTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPMessage.h; sourceTree = "<group>"; };
+		C5D71F072AC22EE800DD8938 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
+		C5D71F082AC22EE800DD8938 /* HTTPAuthenticationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPAuthenticationRequest.h; sourceTree = "<group>"; };
+		C5D71F0A2AC22EE800DD8938 /* HTTPAsyncFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPAsyncFileResponse.h; sourceTree = "<group>"; };
+		C5D71F0B2AC22EE800DD8938 /* HTTPErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPErrorResponse.m; sourceTree = "<group>"; };
+		C5D71F0C2AC22EE800DD8938 /* HTTPDataResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDataResponse.m; sourceTree = "<group>"; };
+		C5D71F0D2AC22EE800DD8938 /* HTTPRedirectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRedirectResponse.h; sourceTree = "<group>"; };
+		C5D71F0E2AC22EE800DD8938 /* HTTPDynamicFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDynamicFileResponse.m; sourceTree = "<group>"; };
+		C5D71F0F2AC22EE800DD8938 /* HTTPFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPFileResponse.m; sourceTree = "<group>"; };
+		C5D71F102AC22EE800DD8938 /* HTTPAsyncFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPAsyncFileResponse.m; sourceTree = "<group>"; };
+		C5D71F112AC22EE800DD8938 /* HTTPRedirectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRedirectResponse.m; sourceTree = "<group>"; };
+		C5D71F122AC22EE800DD8938 /* HTTPDataResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDataResponse.h; sourceTree = "<group>"; };
+		C5D71F132AC22EE800DD8938 /* HTTPErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPErrorResponse.h; sourceTree = "<group>"; };
+		C5D71F142AC22EE800DD8938 /* HTTPFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPFileResponse.h; sourceTree = "<group>"; };
+		C5D71F152AC22EE800DD8938 /* HTTPDynamicFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDynamicFileResponse.h; sourceTree = "<group>"; };
+		C5D71F162AC22EE800DD8938 /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
+		C5D71F172AC22EE800DD8938 /* HTTPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPMessage.m; sourceTree = "<group>"; };
+		C5D71F182AC22EE800DD8938 /* HTTPLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPLogging.m; sourceTree = "<group>"; };
+		C5D71F192AC22EE800DD8938 /* HTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnection.m; sourceTree = "<group>"; };
+		C5D71F1A2AC22EE800DD8938 /* WebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocket.m; sourceTree = "<group>"; };
+		C5D71F1B2AC22EE800DD8938 /* HTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponse.h; sourceTree = "<group>"; };
+		C5D71F1D2AC22EE800DD8938 /* MultipartFormDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartFormDataParser.h; sourceTree = "<group>"; };
+		C5D71F1E2AC22EE800DD8938 /* MultipartMessageHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartMessageHeader.h; sourceTree = "<group>"; };
+		C5D71F1F2AC22EE800DD8938 /* MultipartMessageHeaderField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartMessageHeaderField.m; sourceTree = "<group>"; };
+		C5D71F202AC22EE800DD8938 /* MultipartFormDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartFormDataParser.m; sourceTree = "<group>"; };
+		C5D71F212AC22EE800DD8938 /* MultipartMessageHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartMessageHeader.m; sourceTree = "<group>"; };
+		C5D71F222AC22EE800DD8938 /* MultipartMessageHeaderField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartMessageHeaderField.h; sourceTree = "<group>"; };
+		C5D71F232AC22EE800DD8938 /* HTTPAuthenticationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPAuthenticationRequest.m; sourceTree = "<group>"; };
+		C5D71F252AC22EE800DD8938 /* DDNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNumber.m; sourceTree = "<group>"; };
+		C5D71F262AC22EE800DD8938 /* DDData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDData.m; sourceTree = "<group>"; };
+		C5D71F272AC22EE800DD8938 /* DDRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRange.h; sourceTree = "<group>"; };
+		C5D71F282AC22EE800DD8938 /* DDNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNumber.h; sourceTree = "<group>"; };
+		C5D71F292AC22EE800DD8938 /* DDRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRange.m; sourceTree = "<group>"; };
+		C5D71F2A2AC22EE800DD8938 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
+		C5D71F2B2AC22EE800DD8938 /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
+		C5D71F2C2AC22EE800DD8938 /* KTVCocoaHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVCocoaHTTPServer.h; sourceTree = "<group>"; };
+		C5D722052AC234C600DD8938 /* 视频模块.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "视频模块.xcassets"; sourceTree = "<group>"; };
 		C5E00CE42AADDEF6005ABE09 /* MataShopLib.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MataShopLib.xcassets; sourceTree = "<group>"; };
 		C5E0104D2AADE1B5005ABE09 /* 164@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "164@2x.gif"; sourceTree = "<group>"; };
 		C5E0104E2AADE1B5005ABE09 /* newemoji_007.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = newemoji_007.gif; sourceTree = "<group>"; };
@@ -3204,6 +3372,41 @@
 			path = MSMineView5;
 			sourceTree = "<group>";
 		};
+		C536CE0B2AC23AE1005D1FCD /* UIWindow */ = {
+			isa = PBXGroup;
+			children = (
+				C536CE0C2AC23AE1005D1FCD /* UIWindow+Extra.h */,
+				C536CE0D2AC23AE1005D1FCD /* UIWindow+Extra.m */,
+			);
+			path = UIWindow;
+			sourceTree = "<group>";
+		};
+		C536CE0F2AC23B40005D1FCD /* UISlider */ = {
+			isa = PBXGroup;
+			children = (
+				C536CE102AC23B40005D1FCD /* JobsSlider.h */,
+				C536CE112AC23B40005D1FCD /* UISlider+Category */,
+			);
+			path = UISlider;
+			sourceTree = "<group>";
+		};
+		C536CE112AC23B40005D1FCD /* UISlider+Category */ = {
+			isa = PBXGroup;
+			children = (
+				C536CE122AC23B40005D1FCD /* UISlider+Extra */,
+			);
+			path = "UISlider+Category";
+			sourceTree = "<group>";
+		};
+		C536CE122AC23B40005D1FCD /* UISlider+Extra */ = {
+			isa = PBXGroup;
+			children = (
+				C536CE132AC23B40005D1FCD /* UISlider+Extra.h */,
+				C536CE142AC23B40005D1FCD /* UISlider+Extra.m */,
+			);
+			path = "UISlider+Extra";
+			sourceTree = "<group>";
+		};
 		C5371E532AACDD37008988CE /* MSSearchBoardView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3226,6 +3429,7 @@
 		C561CD462AAC7CC500E28603 /* PodsManual */ = {
 			isa = PBXGroup;
 			children = (
+				C5D71EC02AC22EE800DD8938 /* KTV */,
 				C520F22B2AB38CF700142DCC /* WMZBanner */,
 				C561CD972AAC7CE100E28603 /* ECPrivacyCheckTools */,
 				C561CD4D2AAC7CDD00E28603 /* FMDatabase+Manager */,
@@ -3591,6 +3795,7 @@
 		C561CE622AAC7D8500E28603 /* xcassets */ = {
 			isa = PBXGroup;
 			children = (
+				C5D722052AC234C600DD8938 /* 视频模块.xcassets */,
 				C5329FD52ABF0C29004294E0 /* 个人中心.xcassets */,
 				C5329DE92ABEDE5E004294E0 /* 爱拍.xcassets */,
 				C5729B982AB59E240084EAFC /* 内部招聘.xcassets */,
@@ -3644,6 +3849,7 @@
 			isa = PBXGroup;
 			children = (
 				C561CF392AAC7E7900E28603 /* JobsMixFunc.h */,
+				C5D71E9D2AC22BDE00DD8938 /* JobsPresentationCtrl */,
 				C532955C2ABCD78E004294E0 /* JobsContainerViewDemo */,
 				C561CF592AAC7E7900E28603 /* 播放器控制层 */,
 				C561CF252AAC7E7900E28603 /* 分享控件 */,
@@ -4617,7 +4823,6 @@
 			isa = PBXGroup;
 			children = (
 				C561D0D02AAC7E7900E28603 /* JobsBaseCustomizeUIKitCoreHeader.h */,
-				C52F30522AC036B200BB5549 /* NSNotificationCenter */,
 				C561D1FA2AAC7E7A00E28603 /* AppDelegate */,
 				C561D2C52AAC7E7A00E28603 /* BaseProtocol */,
 				C561D1F12AAC7E7A00E28603 /* CALayer */,
@@ -4626,6 +4831,7 @@
 				C561D1E62AAC7E7A00E28603 /* NSCache */,
 				C561D1C62AAC7E7A00E28603 /* NSMutableArray */,
 				C561D0D12AAC7E7900E28603 /* NSMutableDictionary */,
+				C52F30522AC036B200BB5549 /* NSNotificationCenter */,
 				C561D2002AAC7E7A00E28603 /* NSNumber */,
 				C561D2052AAC7E7A00E28603 /* NSObject */,
 				C561D11A2AAC7E7900E28603 /* NSString */,
@@ -4648,6 +4854,7 @@
 				C561D1812AAC7E7A00E28603 /* UINavigationController */,
 				C561D1A82AAC7E7A00E28603 /* UIProgressView */,
 				C561D00E2AAC7E7900E28603 /* UIScrollView */,
+				C536CE0F2AC23B40005D1FCD /* UISlider */,
 				C561D0082AAC7E7900E28603 /* UISwitch */,
 				C561D18D2AAC7E7A00E28603 /* UITableView */,
 				C561D0312AAC7E7900E28603 /* UITableViewCell */,
@@ -4656,6 +4863,7 @@
 				C561D0D82AAC7E7900E28603 /* UITextView */,
 				C561D0872AAC7E7900E28603 /* UIView */,
 				C561D1382AAC7E7900E28603 /* UIViewController */,
+				C536CE0B2AC23AE1005D1FCD /* UIWindow */,
 			);
 			path = JobsBaseCustomizeUIKitCore;
 			sourceTree = "<group>";
@@ -7570,6 +7778,7 @@
 		C561D57A2AAC862000E28603 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C5D71EA12AC22C4000DD8938 /* 播放模块 */,
 				C561D9642AAC917900E28603 /* BaiShaProjDoor */,
 				C561D9602AAC914300E28603 /* BaiShaETProjMembersSubsBaseVC */,
 				C561D57B2AAC862000E28603 /* BaiShaETProjCheck */,
@@ -8153,9 +8362,9 @@
 		C561D9642AAC917900E28603 /* BaiShaProjDoor */ = {
 			isa = PBXGroup;
 			children = (
+				C561D9732AAC917900E28603 /* BaiShaProjDoorHeader.h */,
 				C561D9652AAC917900E28603 /* 注册 */,
 				C561D9682AAC917900E28603 /* 登录 */,
-				C561D9732AAC917900E28603 /* BaiShaProjDoorHeader.h */,
 				C561D9742AAC917900E28603 /* 登录异常验证 */,
 			);
 			path = BaiShaProjDoor;
@@ -8691,6 +8900,296 @@
 				C5CFEA102AB255B500D0F225 /* MS3rdShopLinkView.m */,
 			);
 			path = MS3rdShopLinkView;
+			sourceTree = "<group>";
+		};
+		C5D71E9D2AC22BDE00DD8938 /* JobsPresentationCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71E9E2AC22BDE00DD8938 /* JobsPresentationCtrl.h */,
+				C5D71E9F2AC22BDE00DD8938 /* JobsPresentationCtrl.m */,
+			);
+			path = JobsPresentationCtrl;
+			sourceTree = "<group>";
+		};
+		C5D71EA12AC22C4000DD8938 /* 播放模块 */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EB92AC22D4900DD8938 /* VideoModel */,
+				C5D71EA62AC22C8B00DD8938 /* View */,
+				C5D71EA52AC22C7A00DD8938 /* ViewController */,
+			);
+			path = "播放模块";
+			sourceTree = "<group>";
+		};
+		C5D71EA52AC22C7A00DD8938 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EA22AC22C5200DD8938 /* Douyin_ZFPlayerVC@2.h */,
+				C5D71EA32AC22C5200DD8938 /* Douyin_ZFPlayerVC@2.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C5D71EA62AC22C8B00DD8938 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EBA2AC22DAE00DD8938 /* JobsRightBtnsView */,
+				C5D71EB02AC22CC700DD8938 /* ZFDouYinControlView */,
+				C5D71EAA2AC22CB000DD8938 /* JobsVideoTBVCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5D71EAA2AC22CB000DD8938 /* JobsVideoTBVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EAB2AC22CB000DD8938 /* JobsVideoTBVCell.m */,
+				C5D71EAC2AC22CB000DD8938 /* For_Douyin_ZFPlayerVC_2.md */,
+				C5D71EAD2AC22CB000DD8938 /* JobsVideoTBVCell.h */,
+			);
+			path = JobsVideoTBVCell;
+			sourceTree = "<group>";
+		};
+		C5D71EB02AC22CC700DD8938 /* ZFDouYinControlView */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EB12AC22CC700DD8938 /* 原作者的.h */,
+				C5D71EB22AC22CC700DD8938 /* ZFDouYinControlView.h */,
+				C5D71EB32AC22CC700DD8938 /* ZFDouYinControlView.m */,
+			);
+			path = ZFDouYinControlView;
+			sourceTree = "<group>";
+		};
+		C5D71EB92AC22D4900DD8938 /* VideoModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EA72AC22CA100DD8938 /* VideoModel.h */,
+				C5D71EA82AC22CA100DD8938 /* VideoModel.m */,
+			);
+			path = VideoModel;
+			sourceTree = "<group>";
+		};
+		C5D71EBA2AC22DAE00DD8938 /* JobsRightBtnsView */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EBC2AC22DAE00DD8938 /* For_Douyin_ZFPlayerVC_2.md */,
+				C5D71EBD2AC22DAE00DD8938 /* JobsRightBtnsView.h */,
+				C5D71EBB2AC22DAE00DD8938 /* JobsRightBtnsView.m */,
+			);
+			path = JobsRightBtnsView;
+			sourceTree = "<group>";
+		};
+		C5D71EC02AC22EE800DD8938 /* KTV */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EC12AC22EE800DD8938 /* Vendors */,
+				C5D71EC52AC22EE800DD8938 /* KTVHTTPCache */,
+				C5D71F022AC22EE800DD8938 /* KTVCocoaHTTPServer */,
+			);
+			path = KTV;
+			sourceTree = "<group>";
+		};
+		C5D71EC12AC22EE800DD8938 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EC22AC22EE800DD8938 /* CocoaAsyncSocket */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		C5D71EC22AC22EE800DD8938 /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EC32AC22EE800DD8938 /* GCDAsyncSocket.m */,
+				C5D71EC42AC22EE800DD8938 /* GCDAsyncSocket.h */,
+			);
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		C5D71EC52AC22EE800DD8938 /* KTVHTTPCache */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EC62AC22EE800DD8938 /* KTVHTTPCache.h */,
+				C5D71EC72AC22EE800DD8938 /* Classes */,
+				C5D71F012AC22EE800DD8938 /* KTVHTTPCache.m */,
+			);
+			path = KTVHTTPCache;
+			sourceTree = "<group>";
+		};
+		C5D71EC72AC22EE800DD8938 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EC82AC22EE800DD8938 /* KTVHCTools */,
+				C5D71ECD2AC22EE800DD8938 /* KTVHCHTTPServer */,
+				C5D71ED52AC22EE800DD8938 /* KTVHCDataStorage */,
+				C5D71EF62AC22EE800DD8938 /* KTVHCCommon */,
+				C5D71EFE2AC22EE800DD8938 /* KTVHCDownload */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C5D71EC82AC22EE800DD8938 /* KTVHCTools */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EC92AC22EE800DD8938 /* KTVHCPathTool.m */,
+				C5D71ECA2AC22EE800DD8938 /* KTVHCURLTool.h */,
+				C5D71ECB2AC22EE800DD8938 /* KTVHCPathTool.h */,
+				C5D71ECC2AC22EE800DD8938 /* KTVHCURLTool.m */,
+			);
+			path = KTVHCTools;
+			sourceTree = "<group>";
+		};
+		C5D71ECD2AC22EE800DD8938 /* KTVHCHTTPServer */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71ECE2AC22EE800DD8938 /* KTVHCHTTPResponse.h */,
+				C5D71ECF2AC22EE800DD8938 /* KTVHCHTTPServer.h */,
+				C5D71ED02AC22EE800DD8938 /* KTVHCHTTPConnection.m */,
+				C5D71ED12AC22EE800DD8938 /* KTVHCHTTPHeader.h */,
+				C5D71ED22AC22EE800DD8938 /* KTVHCHTTPResponse.m */,
+				C5D71ED32AC22EE800DD8938 /* KTVHCHTTPServer.m */,
+				C5D71ED42AC22EE800DD8938 /* KTVHCHTTPConnection.h */,
+			);
+			path = KTVHCHTTPServer;
+			sourceTree = "<group>";
+		};
+		C5D71ED52AC22EE800DD8938 /* KTVHCDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71ED62AC22EE800DD8938 /* KTVHCDataResponse.m */,
+				C5D71ED72AC22EE800DD8938 /* KTVHCDataUnitPool.m */,
+				C5D71ED82AC22EE800DD8938 /* KTVHCDataNetworkSource.h */,
+				C5D71ED92AC22EE800DD8938 /* KTVHCDataUnitQueue.h */,
+				C5D71EDA2AC22EE800DD8938 /* KTVHCDataCacheItem.h */,
+				C5D71EDB2AC22EE800DD8938 /* KTVHCDataSourceManager.h */,
+				C5D71EDC2AC22EE800DD8938 /* KTVHCDataStorage.m */,
+				C5D71EDD2AC22EE800DD8938 /* KTVHCDataReader.m */,
+				C5D71EDE2AC22EE800DD8938 /* KTVHCDataFileSource.m */,
+				C5D71EDF2AC22EE800DD8938 /* KTVHCDataLoader.h */,
+				C5D71EE02AC22EE800DD8938 /* KTVHCDataCallback.h */,
+				C5D71EE12AC22EE800DD8938 /* KTVHCDataUnit.m */,
+				C5D71EE22AC22EE800DD8938 /* KTVHCDataRequest.m */,
+				C5D71EE32AC22EE800DD8938 /* KTVHCDataCacheItemZone.m */,
+				C5D71EE42AC22EE800DD8938 /* KTVHCDataUnitItem.m */,
+				C5D71EE52AC22EE800DD8938 /* KTVHCDataSource.h */,
+				C5D71EE62AC22EE800DD8938 /* KTVHCDataUnitPool.h */,
+				C5D71EE72AC22EE800DD8938 /* KTVHCDataNetworkSource.m */,
+				C5D71EE82AC22EE800DD8938 /* KTVHCDataResponse.h */,
+				C5D71EE92AC22EE800DD8938 /* KTVHCData+Internal.h */,
+				C5D71EEA2AC22EE800DD8938 /* KTVHCDataSourceManager.m */,
+				C5D71EEB2AC22EE800DD8938 /* KTVHCDataCacheItem.m */,
+				C5D71EEC2AC22EE800DD8938 /* KTVHCDataUnitQueue.m */,
+				C5D71EED2AC22EE800DD8938 /* KTVHCDataRequest.h */,
+				C5D71EEE2AC22EE800DD8938 /* KTVHCDataUnit.h */,
+				C5D71EEF2AC22EE800DD8938 /* KTVHCDataLoader.m */,
+				C5D71EF02AC22EE800DD8938 /* KTVHCDataCallback.m */,
+				C5D71EF12AC22EE800DD8938 /* KTVHCDataFileSource.h */,
+				C5D71EF22AC22EE800DD8938 /* KTVHCDataReader.h */,
+				C5D71EF32AC22EE800DD8938 /* KTVHCDataStorage.h */,
+				C5D71EF42AC22EE800DD8938 /* KTVHCDataCacheItemZone.h */,
+				C5D71EF52AC22EE800DD8938 /* KTVHCDataUnitItem.h */,
+			);
+			path = KTVHCDataStorage;
+			sourceTree = "<group>";
+		};
+		C5D71EF62AC22EE800DD8938 /* KTVHCCommon */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EF72AC22EE800DD8938 /* KTVHCLog.m */,
+				C5D71EF82AC22EE800DD8938 /* KTVHCRange.m */,
+				C5D71EF92AC22EE800DD8938 /* KTVHCError.m */,
+				C5D71EFA2AC22EE800DD8938 /* KTVHCMacro.h */,
+				C5D71EFB2AC22EE800DD8938 /* KTVHCLog.h */,
+				C5D71EFC2AC22EE800DD8938 /* KTVHCError.h */,
+				C5D71EFD2AC22EE800DD8938 /* KTVHCRange.h */,
+			);
+			path = KTVHCCommon;
+			sourceTree = "<group>";
+		};
+		C5D71EFE2AC22EE800DD8938 /* KTVHCDownload */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71EFF2AC22EE800DD8938 /* KTVHCDownload.h */,
+				C5D71F002AC22EE800DD8938 /* KTVHCDownload.m */,
+			);
+			path = KTVHCDownload;
+			sourceTree = "<group>";
+		};
+		C5D71F022AC22EE800DD8938 /* KTVCocoaHTTPServer */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71F032AC22EE800DD8938 /* Classes */,
+				C5D71F2C2AC22EE800DD8938 /* KTVCocoaHTTPServer.h */,
+			);
+			path = KTVCocoaHTTPServer;
+			sourceTree = "<group>";
+		};
+		C5D71F032AC22EE800DD8938 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71F042AC22EE800DD8938 /* HTTPConnection.h */,
+				C5D71F052AC22EE800DD8938 /* HTTPLogging.h */,
+				C5D71F062AC22EE800DD8938 /* HTTPMessage.h */,
+				C5D71F072AC22EE800DD8938 /* WebSocket.h */,
+				C5D71F082AC22EE800DD8938 /* HTTPAuthenticationRequest.h */,
+				C5D71F092AC22EE800DD8938 /* Responses */,
+				C5D71F162AC22EE800DD8938 /* HTTPServer.h */,
+				C5D71F172AC22EE800DD8938 /* HTTPMessage.m */,
+				C5D71F182AC22EE800DD8938 /* HTTPLogging.m */,
+				C5D71F192AC22EE800DD8938 /* HTTPConnection.m */,
+				C5D71F1A2AC22EE800DD8938 /* WebSocket.m */,
+				C5D71F1B2AC22EE800DD8938 /* HTTPResponse.h */,
+				C5D71F1C2AC22EE800DD8938 /* Mime */,
+				C5D71F232AC22EE800DD8938 /* HTTPAuthenticationRequest.m */,
+				C5D71F242AC22EE800DD8938 /* Categories */,
+				C5D71F2B2AC22EE800DD8938 /* HTTPServer.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C5D71F092AC22EE800DD8938 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71F0A2AC22EE800DD8938 /* HTTPAsyncFileResponse.h */,
+				C5D71F0B2AC22EE800DD8938 /* HTTPErrorResponse.m */,
+				C5D71F0C2AC22EE800DD8938 /* HTTPDataResponse.m */,
+				C5D71F0D2AC22EE800DD8938 /* HTTPRedirectResponse.h */,
+				C5D71F0E2AC22EE800DD8938 /* HTTPDynamicFileResponse.m */,
+				C5D71F0F2AC22EE800DD8938 /* HTTPFileResponse.m */,
+				C5D71F102AC22EE800DD8938 /* HTTPAsyncFileResponse.m */,
+				C5D71F112AC22EE800DD8938 /* HTTPRedirectResponse.m */,
+				C5D71F122AC22EE800DD8938 /* HTTPDataResponse.h */,
+				C5D71F132AC22EE800DD8938 /* HTTPErrorResponse.h */,
+				C5D71F142AC22EE800DD8938 /* HTTPFileResponse.h */,
+				C5D71F152AC22EE800DD8938 /* HTTPDynamicFileResponse.h */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		C5D71F1C2AC22EE800DD8938 /* Mime */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71F1D2AC22EE800DD8938 /* MultipartFormDataParser.h */,
+				C5D71F1E2AC22EE800DD8938 /* MultipartMessageHeader.h */,
+				C5D71F1F2AC22EE800DD8938 /* MultipartMessageHeaderField.m */,
+				C5D71F202AC22EE800DD8938 /* MultipartFormDataParser.m */,
+				C5D71F212AC22EE800DD8938 /* MultipartMessageHeader.m */,
+				C5D71F222AC22EE800DD8938 /* MultipartMessageHeaderField.h */,
+			);
+			path = Mime;
+			sourceTree = "<group>";
+		};
+		C5D71F242AC22EE800DD8938 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C5D71F252AC22EE800DD8938 /* DDNumber.m */,
+				C5D71F262AC22EE800DD8938 /* DDData.m */,
+				C5D71F272AC22EE800DD8938 /* DDRange.h */,
+				C5D71F282AC22EE800DD8938 /* DDNumber.h */,
+				C5D71F292AC22EE800DD8938 /* DDRange.m */,
+				C5D71F2A2AC22EE800DD8938 /* DDData.h */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		C5E00CE62AADDFF4005ABE09 /* Gif */ = {
@@ -9512,6 +10011,7 @@
 				C5E011932AADE1CD005ABE09 /* 98@2x.gif in Resources */,
 				C561D3142AAC7E7A00E28603 /* huiyuan.json in Resources */,
 				C5E011332AADE1CD005ABE09 /* 89@2x.gif in Resources */,
+				C5D722062AC234C600DD8938 /* 视频模块.xcassets in Resources */,
 				C561CE422AAC7CE200E28603 /* 照片@2x.png in Resources */,
 				C561D3982AAC7E7A00E28603 /* gesture_headIcon@2x.png in Resources */,
 				C5E011EF2AADE1CD005ABE09 /* 181@2x.gif in Resources */,
@@ -9883,9 +10383,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C561D3322AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_6.m in Sources */,
+				C5D71F502AC22EE800DD8938 /* WebSocket.m in Sources */,
 				C561D4372AAC7E7B00E28603 /* UITableView+RegisterClass.m in Sources */,
 				C561D4522AAC7E7B00E28603 /* NSCache+Extra.m in Sources */,
 				C561D4422AAC7E7B00E28603 /* NSArray+Tools.m in Sources */,
+				C5D71F3D2AC22EE800DD8938 /* KTVHCDataSourceManager.m in Sources */,
 				C561D3522AAC7E7A00E28603 /* BWItemModel.m in Sources */,
 				C561D9222AAC8D8000E28603 /* BaiShaETProjRuleTBVCell.m in Sources */,
 				C561CE522AAC7CE200E28603 /* XHLaunchAdDownloader.m in Sources */,
@@ -9914,8 +10416,10 @@
 				C561D3E72AAC7E7B00E28603 /* BaseView.m in Sources */,
 				C561D3DA2AAC7E7B00E28603 /* RBCLikeButton.m in Sources */,
 				C5EE37B72AB8785A0020BDB8 /* MSMSRedEnvelopeDetailTBVCell.m in Sources */,
+				C5D71F442AC22EE800DD8938 /* KTVHCError.m in Sources */,
 				C561D3592AAC7E7A00E28603 /* JobsUserHeaderDataViewForHeaderInSection.m in Sources */,
 				C561D3F92AAC7E7B00E28603 /* UIView+MJRefresh.m in Sources */,
+				C5D71F342AC22EE800DD8938 /* KTVHCDataUnitPool.m in Sources */,
 				C561CE1D2AAC7CE200E28603 /* ECPrivacyCheckHomeKit.m in Sources */,
 				C561D4B42AAC7EC200E28603 /* AppDelegate+Func.m in Sources */,
 				C5729EFC2AB5CBED0084EAFC /* MSInternalRecruitmentCVCell2.m in Sources */,
@@ -9928,6 +10432,7 @@
 				C561CE202AAC7CE200E28603 /* ECPrivacyCheckLocationServices.m in Sources */,
 				C561CE032AAC7CE200E28603 /* ZWPullMenuCell.m in Sources */,
 				C561D3B82AAC7E7A00E28603 /* UIImage+Tailor.m in Sources */,
+				C5D71F4E2AC22EE800DD8938 /* HTTPLogging.m in Sources */,
 				C527BE022AB4754B00DFC90A /* MSProdShowModel.m in Sources */,
 				C561D4562AAC7E7B00E28603 /* AppDelegate+Extra.m in Sources */,
 				C561D4822AAC7E7B00E28603 /* NSObject+JobsDeployCellConfig.m in Sources */,
@@ -9990,10 +10495,14 @@
 				C561D65D2AAC862000E28603 /* NSObject+URLManager.m in Sources */,
 				C561CE1B2AAC7CE200E28603 /* LMJDropdownMenu+Extra.m in Sources */,
 				C561CE012AAC7CE200E28603 /* ZWPullMenuModel.m in Sources */,
+				C5D71F2F2AC22EE800DD8938 /* KTVHCURLTool.m in Sources */,
 				C561D32A2AAC7E7A00E28603 /* JobsAppDoorVC.m in Sources */,
+				C5D71F2E2AC22EE800DD8938 /* KTVHCPathTool.m in Sources */,
 				C561CE532AAC7CE200E28603 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
+				C5D71F562AC22EE800DD8938 /* DDData.m in Sources */,
 				C561CE542AAC7CE200E28603 /* XHLaunchAdConfiguration.m in Sources */,
 				C561D3F22AAC7E7B00E28603 /* UIView+ViewController.m in Sources */,
+				C5D71F572AC22EE800DD8938 /* DDRange.m in Sources */,
 				C561D45B2AAC7E7B00E28603 /* UITextModel.m in Sources */,
 				C561D3A52AAC7E7A00E28603 /* JobsBasePopupView.m in Sources */,
 				C561D4132AAC7E7B00E28603 /* NSString+Eomji.m in Sources */,
@@ -10009,11 +10518,14 @@
 				C561D40D2AAC7E7B00E28603 /* UIBezierPath+TextPath.m in Sources */,
 				C561D32B2AAC7E7A00E28603 /* JobsAppDoorConfig.m in Sources */,
 				C5CFE7212AB08B4200D0F225 /* MSTransactionRecordCVCell.m in Sources */,
+				C5D71F472AC22EE800DD8938 /* HTTPErrorResponse.m in Sources */,
+				C5D71EAE2AC22CB000DD8938 /* JobsVideoTBVCell.m in Sources */,
 				C561CE232AAC7CE200E28603 /* ECPrivacyCheckSpeechRecognition.m in Sources */,
 				C561D4102AAC7E7B00E28603 /* BaseNavigationBar.m in Sources */,
 				C561D3B32AAC7E7A00E28603 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				C5729B9F2AB5AE2B0084EAFC /* UIColor+Other.m in Sources */,
 				C5CFE8962AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m in Sources */,
+				C5D71F432AC22EE800DD8938 /* KTVHCRange.m in Sources */,
 				C520F5F22AB396F400142DCC /* JobsCommentVC.m in Sources */,
 				C561D3A92AAC7E7A00E28603 /* JobsSuspendView.m in Sources */,
 				C532984B2ABD9AE3004294E0 /* MSInputStyle1View.m in Sources */,
@@ -10029,12 +10541,15 @@
 				C561D4B92AAC7ECE00E28603 /* SceneDelegate+UISceneDelegate.m in Sources */,
 				C561D31C2AAC7E7A00E28603 /* JobsPullListAutoSizeView.m in Sources */,
 				C561D4622AAC7E7B00E28603 /* UIViewModel.m in Sources */,
+				C5D71F512AC22EE800DD8938 /* MultipartMessageHeaderField.m in Sources */,
 				C561D4402AAC7E7B00E28603 /* UIProgressView+Extra.m in Sources */,
 				C5E017562AAF1FE9005ABE09 /* MSSignInVC.m in Sources */,
 				C5E0176C2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m in Sources */,
 				C561D33F2AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_2.m in Sources */,
 				C520F63C2AB3975800142DCC /* BaseRequest.m in Sources */,
+				C5D71EA42AC22C5200DD8938 /* Douyin_ZFPlayerVC@2.m in Sources */,
 				C561D3972AAC7E7A00E28603 /* ZLGestureLockView.m in Sources */,
+				C5D71F4F2AC22EE800DD8938 /* HTTPConnection.m in Sources */,
 				C561D4072AAC7E7B00E28603 /* BaseCollectionView.m in Sources */,
 				C561D6A82AAC862000E28603 /* NSObject+UserInfo.m in Sources */,
 				C561D3562AAC7E7A00E28603 /* JobsUserHeaderDataView.m in Sources */,
@@ -10061,6 +10576,7 @@
 				C561D40C2AAC7E7B00E28603 /* BaseCollectionViewCell.m in Sources */,
 				C561D4532AAC7E7B00E28603 /* BaseCollectionReusableView.m in Sources */,
 				C561CE282AAC7CE200E28603 /* ECPrivacyCheckHealth.m in Sources */,
+				C5D71F4A2AC22EE800DD8938 /* HTTPFileResponse.m in Sources */,
 				C561D34E2AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_3.m in Sources */,
 				C561D36E2AAC7E7A00E28603 /* JobsImageNumberViewCVCell.m in Sources */,
 				C561D45E2AAC7E7B00E28603 /* Nanosecond_TimerManager.m in Sources */,
@@ -10072,6 +10588,7 @@
 				C5729AA72AB594320084EAFC /* MSSalesVC.m in Sources */,
 				C561CE292AAC7CE200E28603 /* ECPrivacyCheckReminders.m in Sources */,
 				C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */,
+				C5D71F582AC22EE800DD8938 /* HTTPServer.m in Sources */,
 				C561D3B42AAC7E7A00E28603 /* UIImage+Extras.m in Sources */,
 				C561D35D2AAC7E7A00E28603 /* JobsHotLabelWithMultiLineCVCell.m in Sources */,
 				C561D6A62AAC862000E28603 /* NSObject+AppTools.m in Sources */,
@@ -10081,18 +10598,23 @@
 				C5CFE53E2AB0550700D0F225 /* MSPromotionIncentiveVC.m in Sources */,
 				C561D4272AAC7E7B00E28603 /* UIViewController+EmptyData.m in Sources */,
 				C561D4872AAC7E7B00E28603 /* NSObject+Sound.m in Sources */,
+				C5D71F3A2AC22EE800DD8938 /* KTVHCDataCacheItemZone.m in Sources */,
 				C561D9842AAC929000E28603 /* BaiShaETProjVIPSubModel.m in Sources */,
 				C561D3CB2AAC7E7B00E28603 /* BaseTableViewCell.m in Sources */,
 				C561D4842AAC7E7B00E28603 /* NSObject+Random.m in Sources */,
 				C561D4812AAC7E7B00E28603 /* NSObject+CurrentDevice.m in Sources */,
 				C561D3EE2AAC7E7B00E28603 /* UIView+Chain.m in Sources */,
+				C5D71F4B2AC22EE800DD8938 /* HTTPAsyncFileResponse.m in Sources */,
 				C561D4612AAC7E7B00E28603 /* JobsSEL_IMP.m in Sources */,
 				C561D3292AAC7E7A00E28603 /* JobsAppDoorContentView.m in Sources */,
 				C561D45D2AAC7E7B00E28603 /* NSTimerManager.m in Sources */,
 				C561D32C2AAC7E7A00E28603 /* JobsAppDoorLogoContentView.m in Sources */,
 				C561D4A02AAC7E7B00E28603 /* HQTextField.m in Sources */,
 				C561D43F2AAC7E7B00E28603 /* UIControl+Extra.m in Sources */,
+				C5D71EA02AC22BDF00DD8938 /* JobsPresentationCtrl.m in Sources */,
+				C5D71F322AC22EE800DD8938 /* KTVHCHTTPServer.m in Sources */,
 				C561D9252AAC8D8000E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVHeader.m in Sources */,
+				C5D71F302AC22EE800DD8938 /* KTVHCHTTPConnection.m in Sources */,
 				C561D3B12AAC7E7A00E28603 /* UIScrollView+FDFullscreenPopGesture.m in Sources */,
 				C5329DE72ABEDD04004294E0 /* MSHomeCollectionReusableView.m in Sources */,
 				C561D6A92AAC862000E28603 /* BaiShaETProjGetiOSNewestVersionModel.m in Sources */,
@@ -10112,18 +10634,23 @@
 				C5CFE6802AB0830D00D0F225 /* MSAlipayTopUpVC.m in Sources */,
 				C561CDFF2AAC7CE200E28603 /* FMDatabase+Manager.m in Sources */,
 				C561D3682AAC7E7A00E28603 /* JobsNoticePopupView.m in Sources */,
+				C5D71F492AC22EE800DD8938 /* HTTPDynamicFileResponse.m in Sources */,
 				C561D47E2AAC7E7B00E28603 /* NSObject+RegularExpression.m in Sources */,
 				C5729EFF2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m in Sources */,
 				C561D41D2AAC7E7B00E28603 /* UIViewController+JXPagerViewListViewDelegate.m in Sources */,
 				C561D43B2AAC7E7B00E28603 /* BaseTableView.m in Sources */,
 				C561CE252AAC7CE200E28603 /* ECPrivacyCheckMediaAndAppleMusic.m in Sources */,
+				C5D71F542AC22EE800DD8938 /* HTTPAuthenticationRequest.m in Sources */,
 				C561D9552AAC8ECB00E28603 /* BaiShaETProjUserInfoModel.m in Sources */,
 				C561D43A2AAC7E7B00E28603 /* UITableView+Expand.m in Sources */,
 				C561D92A2AAC8D8000E28603 /* BaiShaETProjChoiceStadiumView.m in Sources */,
 				C520F63A2AB3975800142DCC /* YTKAnimatingRequestAccessory.m in Sources */,
 				C5729A972AB591E10084EAFC /* MSInternalRecruitmentVC.m in Sources */,
 				C561D4192AAC7E7B00E28603 /* NSString+Replace.m in Sources */,
+				C5D71F352AC22EE800DD8938 /* KTVHCDataStorage.m in Sources */,
+				C5D71F3F2AC22EE800DD8938 /* KTVHCDataUnitQueue.m in Sources */,
 				C561D4122AAC7E7B00E28603 /* NSString+Others.m in Sources */,
+				C5D71F312AC22EE800DD8938 /* KTVHCHTTPResponse.m in Sources */,
 				C5329FE42ABF10C1004294E0 /* MSMineView1.m in Sources */,
 				C561D3572AAC7E7A00E28603 /* JobsUserHeaderDataViewTBVCell.m in Sources */,
 				C561D65F2AAC862000E28603 /* DDNetworkingAPI.m in Sources */,
@@ -10152,8 +10679,10 @@
 				C561D36B2AAC7E7A00E28603 /* JobsShowNumView.m in Sources */,
 				C561D34A2AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_4.m in Sources */,
 				C561CE1C2AAC7CE200E28603 /* ECPrivacyCheckMicrophone.m in Sources */,
+				C5D71F3B2AC22EE800DD8938 /* KTVHCDataUnitItem.m in Sources */,
 				C561CE022AAC7CE200E28603 /* ZWPullMenuView.m in Sources */,
 				C52F30572AC036B200BB5549 /* NSNotificationCenter+JobsBlock.m in Sources */,
+				C5D71F462AC22EE800DD8938 /* KTVHTTPCache.m in Sources */,
 				C561D35A2AAC7E7A00E28603 /* JobsHotLabelWithMultiLine.m in Sources */,
 				C561D40F2AAC7E7B00E28603 /* UIImageView+GIF.m in Sources */,
 				C561D49C2AAC7E7B00E28603 /* UITextField+Animation.m in Sources */,
@@ -10162,6 +10691,7 @@
 				C561D3DF2AAC7E7B00E28603 /* BaseButton.m in Sources */,
 				C561D5762AAC84DF00E28603 /* JobsBaseConfigNotificationManager.m in Sources */,
 				C561D47D2AAC7E7B00E28603 /* NSObject+Shake.m in Sources */,
+				C5D71F532AC22EE800DD8938 /* MultipartMessageHeader.m in Sources */,
 				C561D49D2AAC7E7B00E28603 /* UITextField+ReRect.m in Sources */,
 				C561D4482AAC7E7B00E28603 /* HQCollectionViewFlowLayout.m in Sources */,
 				C5CFE5452AB0638A00D0F225 /* MSAboutChuBaoVC.m in Sources */,
@@ -10176,12 +10706,14 @@
 				C561D46E2AAC7E7B00E28603 /* CLLanguageManager.m in Sources */,
 				C561D42F2AAC7E7B00E28603 /* LOTAnimationMJRefreshHeader.m in Sources */,
 				C561D69C2AAC862000E28603 /* BaiShaETProjTipsView03.m in Sources */,
+				C5D71F452AC22EE800DD8938 /* KTVHCDownload.m in Sources */,
 				C561D4792AAC7E7B00E28603 /* NSObject+UserNotifications.m in Sources */,
 				C5329B202ABED4A7004294E0 /* MSFindCVCell.m in Sources */,
 				C561D3BE2AAC7E7B00E28603 /* JobsBaseLabel.m in Sources */,
 				C561D3F62AAC7E7B00E28603 /* UIView+AutoSelfAdaptionSize.m in Sources */,
 				C561CE4E2AAC7CE200E28603 /* XHLaunchAdConst.m in Sources */,
 				C561D47C2AAC7E7B00E28603 /* NSObject+DynamicInvoke.m in Sources */,
+				C5D71F4C2AC22EE800DD8938 /* HTTPRedirectResponse.m in Sources */,
 				C5329FEA2ABF10D5004294E0 /* MSMineView3.m in Sources */,
 				C561D31B2AAC7E7A00E28603 /* JobsPullListTBVCell.m in Sources */,
 				C561D3EF2AAC7E7B00E28603 /* UIView+BackgroundLabel.m in Sources */,
@@ -10200,6 +10732,8 @@
 				C561D9242AAC8D8000E28603 /* BaiShaETProjVIPSubCVFooterView.m in Sources */,
 				C561D45C2AAC7E7B00E28603 /* DispatchTimerManager.m in Sources */,
 				C561D3C82AAC7E7B00E28603 /* UITableViewCell+WhiteArrows.m in Sources */,
+				C5D71F2D2AC22EE800DD8938 /* GCDAsyncSocket.m in Sources */,
+				C5D71F482AC22EE800DD8938 /* HTTPDataResponse.m in Sources */,
 				C561D91C2AAC8D8000E28603 /* BaiShaETProjCollectionHeaderView.m in Sources */,
 				C5CFE6772AB081D800D0F225 /* MSTopUpVC.m in Sources */,
 				C561CE172AAC7CE200E28603 /* JXCategoryTitleBackgroundView.m in Sources */,
@@ -10211,10 +10745,12 @@
 				C561D4152AAC7E7B00E28603 /* NSString+Decoration.m in Sources */,
 				C561D3D62AAC7E7B00E28603 /* UIButton+Timer.m in Sources */,
 				C561D3A02AAC7E7A00E28603 /* ZLGestureLockViewController.m in Sources */,
+				C5D71EBE2AC22DAE00DD8938 /* JobsRightBtnsView.m in Sources */,
 				C561D4352AAC7E7B00E28603 /* UINavigationController+SafeTransition.m in Sources */,
 				C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */,
 				C5329B1C2ABECE3B004294E0 /* MSMySocialVC.m in Sources */,
 				C561D47A2AAC7E7B00E28603 /* NSObject+DataSave.m in Sources */,
+				C536CE0E2AC23AE1005D1FCD /* UIWindow+Extra.m in Sources */,
 				C561D69E2AAC862000E28603 /* BaiShaETProjTipsView02.m in Sources */,
 				C561D3E92AAC7E7B00E28603 /* UIView+ZFPlayer.m in Sources */,
 				C561D3D72AAC7E7B00E28603 /* ButtonTimerConfigModel.m in Sources */,
@@ -10237,6 +10773,7 @@
 				C5EE3D4F2AB9D1E60020BDB8 /* MSHomeGoodsView.m in Sources */,
 				C561D4262AAC7E7B00E28603 /* UIViewController+BackBtn.m in Sources */,
 				C561D69A2AAC862000E28603 /* BaiShaETProjTipsView04.m in Sources */,
+				C5D71F3E2AC22EE800DD8938 /* KTVHCDataCacheItem.m in Sources */,
 				C520F6392AB3975800142DCC /* YTKChainRequest+AnimatingAccessory.m in Sources */,
 				C5329FED2ABF10DE004294E0 /* MSMineView4.m in Sources */,
 				C561D3362AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_1.m in Sources */,
@@ -10246,6 +10783,8 @@
 				C561D3F42AAC7E7B00E28603 /* UIView+JHGestureBlock.m in Sources */,
 				C561D46D2AAC7E7B00E28603 /* JobsTimeModel.m in Sources */,
 				C561D95F2AAC910900E28603 /* BaiShaETProjSettingGestureVC.m in Sources */,
+				C5D71F522AC22EE800DD8938 /* MultipartFormDataParser.m in Sources */,
+				C5D71F392AC22EE800DD8938 /* KTVHCDataRequest.m in Sources */,
 				C561CE242AAC7CE200E28603 /* ECPrivacyCheckMotionAndFitness.m in Sources */,
 				C561CE4B2AAC7CE200E28603 /* XHLaunchAdView.m in Sources */,
 				C561D48C2AAC7E7B00E28603 /* NSObject+UDID.m in Sources */,
@@ -10257,11 +10796,13 @@
 				C561D94E2AAC8D8000E28603 /* BaiShaETProjFiltrationView.m in Sources */,
 				C561D3FD2AAC7E7B00E28603 /* NSMutableDictionary+Ordered.m in Sources */,
 				C561D4632AAC7E7B00E28603 /* JobsHeaderFooterViewModel.m in Sources */,
+				C5D71F402AC22EE800DD8938 /* KTVHCDataLoader.m in Sources */,
 				C561D49E2AAC7E7B00E28603 /* UITextField+Extend.m in Sources */,
 				C561D40A2AAC7E7B00E28603 /* JobsBtnStyleCVCell.m in Sources */,
 				C561D68E2AAC862000E28603 /* CasinoMarqueeCell.m in Sources */,
 				C561D3222AAC7E7A00E28603 /* UITabBar+TLAnimation.m in Sources */,
 				C561D3532AAC7E7A00E28603 /* BWShareView.m in Sources */,
+				C5D71F332AC22EE800DD8938 /* KTVHCDataResponse.m in Sources */,
 				C5329C192ABED9DF004294E0 /* JobsImageViewStyleCVCell.m in Sources */,
 				C561D4902AAC7E7B00E28603 /* NSObject+IDFV.m in Sources */,
 				C5BD5E7E2AAC76750048F36B /* main.m in Sources */,
@@ -10283,11 +10824,13 @@
 				C561D3282AAC7E7A00E28603 /* JobsAppDoorForgotCodeContentView.m in Sources */,
 				C5EE37342AB871250020BDB8 /* MSIncomeVC.m in Sources */,
 				C561D4182AAC7E7B00E28603 /* NSString+FilteringSpecialCharacters.m in Sources */,
+				C5D71F372AC22EE800DD8938 /* KTVHCDataFileSource.m in Sources */,
 				C561D3B72AAC7E7A00E28603 /* UIImage+YBGIF.m in Sources */,
 				C5CFE67D2AB082FE00D0F225 /* MSBankCardTopUpVC.m in Sources */,
 				C520F5F62AB396F400142DCC /* JobsInfoTBVCell.m in Sources */,
 				C561D4062AAC7E7B00E28603 /* UICollectionView+RegisterClass.m in Sources */,
 				C561D4942AAC7E7B00E28603 /* NSObject+ChangeAppicon.m in Sources */,
+				C5D71F3C2AC22EE800DD8938 /* KTVHCDataNetworkSource.m in Sources */,
 				C561D3D42AAC7E7B00E28603 /* UIButton+ImageTitleSpacing.m in Sources */,
 				C561D4702AAC7E7B00E28603 /* NSObject+Swizzling.m in Sources */,
 				C561D4882AAC7E7B00E28603 /* NSObject+AFNReachability.m in Sources */,
@@ -10302,11 +10845,14 @@
 				C520F2392AB38CF700142DCC /* WMZBannerFlowLayout.m in Sources */,
 				C5CFE71E2AB08AE200D0F225 /* MSInterestSettleRecordCVCell.m in Sources */,
 				C561D2FE2AAC7E7A00E28603 /* JobsBitsMonitorSuspendLab.m in Sources */,
+				C5D71F412AC22EE800DD8938 /* KTVHCDataCallback.m in Sources */,
 				C561CE4C2AAC7CE200E28603 /* XHLaunchAdButton.m in Sources */,
 				C561D3EA2AAC7E7B00E28603 /* UIView+Gesture.m in Sources */,
+				C536CE152AC23B40005D1FCD /* UISlider+Extra.m in Sources */,
 				C561D3642AAC7E7A00E28603 /* CustomZFPlayerControlView.m in Sources */,
 				C561D4292AAC7E7B00E28603 /* UIViewController+BaseVC.m in Sources */,
 				C561D46C2AAC7E7B00E28603 /* JobsMonitorNetwoking.m in Sources */,
+				C5D71F382AC22EE800DD8938 /* KTVHCDataUnit.m in Sources */,
 				C561D4782AAC7E7B00E28603 /* NSObject+PopViewToLogOut.m in Sources */,
 				C561D4972AAC7E7B00E28603 /* NSObject+Class.m in Sources */,
 				C561D94A2AAC8D8000E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVCell.m in Sources */,
@@ -10318,7 +10864,9 @@
 				C5EE38342AB98B8D0020BDB8 /* MSHomeVC.m in Sources */,
 				C561D44B2AAC7E7B00E28603 /* LMHWaterFallLayout.m in Sources */,
 				C5EE3CD32AB9D1060020BDB8 /* BaseScrollView.m in Sources */,
+				C5D71F552AC22EE800DD8938 /* DDNumber.m in Sources */,
 				C561CE192AAC7CE200E28603 /* JXCategoryTimelineCellModel.m in Sources */,
+				C5D71EB42AC22CC700DD8938 /* ZFDouYinControlView.m in Sources */,
 				C561D3E12AAC7E7B00E28603 /* IrregularBtn.m in Sources */,
 				C561D3272AAC7E7A00E28603 /* BaseContentView.m in Sources */,
 				C561D6A42AAC862000E28603 /* BaiShaETProjTipsView01.m in Sources */,
@@ -10331,7 +10879,11 @@
 				C561D48E2AAC7E7B00E28603 /* NSObject+DeviceID.m in Sources */,
 				C561D3CA2AAC7E7B00E28603 /* UITableViewCell+Margin.m in Sources */,
 				C561D6942AAC862000E28603 /* CasinoBannerCell.m in Sources */,
+				C5D71F422AC22EE800DD8938 /* KTVHCLog.m in Sources */,
+				C5D71EA92AC22CA100DD8938 /* VideoModel.m in Sources */,
+				C5D71F362AC22EE800DD8938 /* KTVHCDataReader.m in Sources */,
 				C561D4802AAC7E7B00E28603 /* NSObject+DataBinding.m in Sources */,
+				C5D71F4D2AC22EE800DD8938 /* HTTPMessage.m in Sources */,
 				C561D3A12AAC7E7A00E28603 /* ZLGestureLockIndicator.m in Sources */,
 				C561D6982AAC862000E28603 /* CasinoNoAddBankCardCVCell.m in Sources */,
 				C5EE372D2AB870260020BDB8 /* MSRedEnvelopeDetailVC.m in Sources */,

@@ -44,4 +44,10 @@
 #import "XHLaunchAd.h"
 #endif
 
+#if __has_include(<KTVHTTPCache/KTVHTTPCache.h>)
+#import <KTVHTTPCache/KTVHTTPCache.h>
+#else
+#import "KTVHTTPCache.h"
+#endif
+
 #endif /* BaiShaETProjPodsManual_h */

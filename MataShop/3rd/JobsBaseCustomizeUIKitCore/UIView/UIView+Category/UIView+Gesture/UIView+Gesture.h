@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_END
 
 
 /**
- 示例代码：设置长按手势和点击手势 
+ 示例代码：设置长按手势和点击手势
  {
      _collectionView.numberOfTouchesRequired = 1;
      _collectionView.numberOfTapsRequired = 1;/// ⚠️注意：如果要设置长按手势，此属性必须设置为0⚠️
@@ -107,7 +107,7 @@ NS_ASSUME_NONNULL_END
      _collectionView.numberOfTouchesRequired = 1;
      _collectionView.allowableMovement = 1;
      _collectionView.userInteractionEnabled = YES;
-     _collectionView.target = self;
+     _collectionView.target = self;/// ⚠️注意：任何手势这一句都要写
      _collectionView.longPressGR_SelImp.selector = [self jobsSelectorBlock:^(id  _Nullable weakSelf, id  _Nullable arg) {
          NSLog(@"");
      }];

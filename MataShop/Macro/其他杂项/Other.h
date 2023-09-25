@@ -37,6 +37,7 @@
 #import "MSInternalRecruitmentVC.h"// 内部招聘
 #import "MSPersonalDataVC.h"// 个人资料
 #import "MSRedEnvelopeDetailVC.h"// 助力红包详情
+#import "Douyin_ZFPlayerVC@2.h"// 播放模块
 /// 首页相关子控制器
 
 /// 个人中心相关子控制器

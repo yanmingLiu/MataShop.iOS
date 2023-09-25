@@ -20,7 +20,6 @@
 #import "JobsMutableDictionary.h"
 #pragma mark —— NSArray
 #import "JobsArray.h"
-#pragma mark —— NSMutableArray
 #import "NSMutableArray+Extra.h"
 #pragma mark —— NSBundle
 #import "JobsBundle.h"
@@ -85,6 +84,8 @@
 #import "JobsButton.h"
 #pragma mark —— UISwitch
 #import "JobsSwitch.h"
+#pragma mark —— JobsSlider
+#import "JobsSlider.h"
 #pragma mark —— UIViewController
 #import "JobsViewController.h"
 
@@ -92,5 +93,7 @@
 #import "JobsNavigationController.h"
 #pragma mark —— UINavigationBar
 #import "JobsNavigationBar.h"
+#pragma mark —— UIWindow
+#import "UIWindow+Extra.h"
 
 #endif /* JobsBaseCustomizeUIKitCoreHeader_h */
