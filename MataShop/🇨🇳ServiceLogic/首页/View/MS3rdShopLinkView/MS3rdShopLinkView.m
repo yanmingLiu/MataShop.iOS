@@ -98,7 +98,7 @@ static dispatch_once_t static_shopLinkViewOnceToken;
             btn.normalTitle = self.btnTitleMutArr[i];
             btn.normalImage = self.btnIMGMutArr[i];
             btn.normalTitleColor = RGBA_COLOR(20, 17, 38, 1);
-            btn.titleFont = UIFontWeightRegularSize(JobsWidth(14));
+            btn.titleFont = UIFontWeightRegularSize(14);
             btn.imageViewSize = CGSizeMake(JobsWidth(36), JobsWidth(36));
             [btn makeBtnLabelByShowingType:UILabelShowingType_03];
             [btn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop

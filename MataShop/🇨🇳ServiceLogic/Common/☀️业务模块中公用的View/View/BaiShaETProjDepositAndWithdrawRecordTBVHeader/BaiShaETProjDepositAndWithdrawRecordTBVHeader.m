@@ -43,7 +43,7 @@
     if (!_timeLab) {
         _timeLab = UILabel.new;
         _timeLab.textColor = HEXCOLOR(0x757575);
-        _timeLab.font = UIFontWeightRegularSize(JobsWidth(14));
+        _timeLab.font = UIFontWeightRegularSize(14);
         [self.contentView addSubview:_timeLab];
         [_timeLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView).insets(UIEdgeInsetsMake(JobsWidth(6), JobsWidth(12), JobsWidth(6), JobsWidth(12)));

@@ -187,8 +187,8 @@ ratio:(CGFloat)ratio {
         
         _categoryView.timeTitleSelectedColor = UIColor.blackColor;
         _categoryView.timeTitleNormalColor = RGB_SAMECOLOR(108);
-        _categoryView.timeTitleFont = UIFontWeightBoldSize(JobsWidth(16));
-        _categoryView.timeTitleSelectedFont = UIFontWeightBoldSize(JobsWidth(16));
+        _categoryView.timeTitleFont = UIFontWeightBoldSize(16);
+        _categoryView.timeTitleSelectedFont = UIFontWeightBoldSize(16);
         
         _categoryView.titleColorGradientEnabled = YES;
         _categoryView.indicators = @[self.lineView];//

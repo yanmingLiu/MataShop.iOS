@@ -84,7 +84,7 @@ static dispatch_once_t static_thirdPartyShortcutLoginPanelViewOnceToken;
         _titleLab = UILabel.new;
         _titleLab.text = Internationalization(@"使用第三方帐号快捷登录");
         _titleLab.textColor = JobsCor(@"#333333");
-        _titleLab.font = UIFontWeightRegularSize(JobsWidth(14));
+        _titleLab.font = UIFontWeightRegularSize(14);
         _titleLab.backgroundColor = JobsGrayColor;
         [self addSubview:_titleLab];
         [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {

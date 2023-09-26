@@ -92,7 +92,7 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
                                                                    forIndexPath:indexPath];
             cell.backgroundLabel.text = self.dataMutArr[indexPath.item];
             cell.backgroundLabel.textColor = JobsWhiteColor;
-            cell.backgroundLabel.font = UIFontWeightRegularSize(JobsWidth(12));
+            cell.backgroundLabel.font = UIFontWeightRegularSize(12);
             return cell;
         })
         .wEventClickSet(^(id anyID, NSInteger index) {

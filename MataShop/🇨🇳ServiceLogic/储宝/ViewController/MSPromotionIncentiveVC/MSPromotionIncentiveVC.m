@@ -216,7 +216,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             
             _collectionView.ly_emptyView.titleLabTextColor = JobsLightGrayColor;
             _collectionView.ly_emptyView.contentViewOffset = JobsWidth(-180);
-            _collectionView.ly_emptyView.titleLabFont = UIFontWeightRegularSize(JobsWidth(16));
+            _collectionView.ly_emptyView.titleLabFont = UIFontWeightRegularSize(16);
         }
         
         [self.view addSubview:_collectionView];

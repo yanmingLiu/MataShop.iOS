@@ -136,7 +136,7 @@
     if(!_prodTipsTextView){
         _prodTipsTextView = UITextView.new;
         _prodTipsTextView.backgroundColor = self.backgroundColor;
-        _prodTipsTextView.font = UIFontWeightRegularSize(JobsWidth(9));
+        _prodTipsTextView.font = UIFontWeightRegularSize(9);
         _prodTipsTextView.textColor = RGBA_COLOR(102, 102, 102, 1);
         _prodTipsTextView.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_prodTipsTextView];

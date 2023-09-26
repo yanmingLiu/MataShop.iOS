@@ -91,7 +91,7 @@ static dispatch_once_t static_inputTextFieldLeftViewOnceToken;
     if(!_label){
         _label = UILabel.new;
         _label.text = Internationalization(@"+86 |");
-        _label.font = UIFontWeightRegularSize(JobsWidth(16));
+        _label.font = UIFontWeightRegularSize(16);
         _label.textColor = JobsGrayColor;
         _label.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_label];

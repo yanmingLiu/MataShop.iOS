@@ -58,7 +58,7 @@
     if(!_titleLab){
         _titleLab = UILabel.new;
         _titleLab.textColor = JobsWhiteColor;
-        _titleLab.font = UIFontWeightRegularSize(JobsWidth(12));
+        _titleLab.font = UIFontWeightRegularSize(12);
         [self.contentView addSubview:_titleLab];
         [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(JobsWidth(14));

@@ -84,7 +84,7 @@
     if(!_titleLab){
         _titleLab = UILabel.new;
         _titleLab.textColor = RGBA_COLOR(51, 51, 51, 1);
-        _titleLab.font = UIFontWeightBoldSize(JobsWidth(16));
+        _titleLab.font = UIFontWeightBoldSize(16);
         [self.contentView addSubview:_titleLab];
         [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(20));
@@ -101,7 +101,7 @@
     if(!_myIncentiveDetailNameLab){
         _myIncentiveDetailNameLab = UILabel.new;
         _myIncentiveDetailNameLab.textColor = RGBA_COLOR(136, 79, 2, 1);
-        _myIncentiveDetailNameLab.font = UIFontWeightRegularSize(JobsWidth(12));
+        _myIncentiveDetailNameLab.font = UIFontWeightRegularSize(12);
         [self.contentView addSubview:_myIncentiveDetailNameLab];
         [_myIncentiveDetailNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(20));
@@ -118,7 +118,7 @@
     if(!_userNameLab){
         _userNameLab = UILabel.new;
         _userNameLab.textColor = RGBA_COLOR(153, 153, 153, 1);
-        _userNameLab.font = UIFontWeightRegularSize(JobsWidth(12));
+        _userNameLab.font = UIFontWeightRegularSize(12);
         [self.contentView addSubview:_userNameLab];
         [_userNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(20));
@@ -134,7 +134,7 @@
     if(!_timeLab){
         _timeLab = UILabel.new;
         _timeLab.textColor = RGBA_COLOR(153, 153, 153, 1);
-        _timeLab.font = UIFontWeightRegularSize(JobsWidth(12));
+        _timeLab.font = UIFontWeightRegularSize(12);
         [self.contentView addSubview:_timeLab];
         [_timeLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.contentView).offset(JobsWidth(-20));

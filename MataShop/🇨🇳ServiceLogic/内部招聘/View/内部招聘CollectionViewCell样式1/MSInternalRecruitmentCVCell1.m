@@ -71,7 +71,7 @@
         _joinBtn = BaseButton.new;
         _joinBtn.normalTitle = Internationalization(@"我要加入");
         _joinBtn.normalTitleColor = RGB_SAMECOLOR(255);
-        _joinBtn.titleFont = UIFontWeightBoldSize(JobsWidth(14));
+        _joinBtn.titleFont = UIFontWeightBoldSize(14);
         _joinBtn.backgroundColor = RGBA_COLOR(255, 89, 12, 1);
         [self.contentView addSubview:_joinBtn];
         [_joinBtn mas_makeConstraints:^(MASConstraintMaker *make) {

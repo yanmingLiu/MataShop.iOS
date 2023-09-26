@@ -78,11 +78,11 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     cell.textLabel.text = model.title;
     cell.textLabel.textColor = RGB_SAMECOLOR(109);
-    cell.textLabel.font = UIFontWeightRegularSize(JobsWidth(14));
+    cell.textLabel.font = UIFontWeightRegularSize(14);
 
     cell.detailTextLabel.text = model.value;
     cell.detailTextLabel.textColor = RGB_SAMECOLOR(51);
-    cell.detailTextLabel.font = UIFontWeightRegularSize(JobsWidth(14));
+    cell.detailTextLabel.font = UIFontWeightRegularSize(14);
     [cell.detailTextLabel makeLabelByShowingType:UILabelShowingType_03];
     
     return cell;
@@ -109,7 +109,7 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath{
             
             _tableView.ly_emptyView.titleLabTextColor = JobsLightGrayColor;
             _tableView.ly_emptyView.contentViewOffset = JobsWidth(-180);
-            _tableView.ly_emptyView.titleLabFont = UIFontWeightMediumSize(JobsWidth(16));
+            _tableView.ly_emptyView.titleLabFont = UIFontWeightMediumSize(16);
         }
     
         [self.contentView addSubview:_tableView];

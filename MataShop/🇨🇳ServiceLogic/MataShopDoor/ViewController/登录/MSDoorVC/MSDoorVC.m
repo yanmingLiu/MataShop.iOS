@@ -231,7 +231,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _registerBtn = UIButton.new;
         _registerBtn.normalTitle = Internationalization(@"注册账号");
         _registerBtn.normalTitleColor = JobsCor(@"#333333");
-        _registerBtn.titleFont = UIFontWeightRegularSize(JobsWidth(14));
+        _registerBtn.titleFont = UIFontWeightRegularSize(14);
         [self.view addSubview:_registerBtn];
         [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.size.mas_equalTo(CGSizeMake(JobsWidth(56), JobsWidth(14)));
@@ -253,7 +253,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     if(!_loginBtn){
         _loginBtn = UIButton.new;
         _loginBtn.normalTitle = Internationalization(@"登录");
-        _loginBtn.titleFont = UIFontWeightRegularSize(JobsWidth(14));
+        _loginBtn.titleFont = UIFontWeightRegularSize(14);
         _loginBtn.normalTitleColor = JobsWhiteColor;
         _loginBtn.backgroundColor = JobsCor(@"#DD0000");
         [self.view addSubview:_loginBtn];
@@ -276,7 +276,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _agreeBtn = UIButton.new;
         _agreeBtn.normalTitle = Internationalization(@"阅读并同意");
         _agreeBtn.normalTitleColor = JobsCor(@"#333333");
-        _agreeBtn.titleFont = UIFontWeightRegularSize(JobsWidth(12));
+        _agreeBtn.titleFont = UIFontWeightRegularSize(12);
         _agreeBtn.normalImage = JobsIMG(@"登录-未同意");
         _agreeBtn.selectedImage = JobsIMG(@"登录-同意");
         _agreeBtn.backgroundColor = UIColor.clearColor;
@@ -304,7 +304,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _privacyBtn = UIButton.new;
         _privacyBtn.normalTitle = Internationalization(@"《隐私政策》");
         _privacyBtn.normalTitleColor = JobsCor(@"#DD0000");
-        _privacyBtn.titleFont = UIFontWeightRegularSize(JobsWidth(12));
+        _privacyBtn.titleFont = UIFontWeightRegularSize(12);
         _privacyBtn.backgroundColor = UIColor.clearColor;
         [self.view addSubview:_privacyBtn];
         [_privacyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -326,7 +326,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _label = UILabel.new;
         _label.text = Internationalization(@" 和 ");
         _label.textColor = JobsCor(@"#333333");
-        _label.font = UIFontWeightRegularSize(JobsWidth(12));
+        _label.font = UIFontWeightRegularSize(12);
         _label.backgroundColor = UIColor.clearColor;
         [self.view addSubview:_label];
         [_label mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -342,7 +342,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _userAgreementBtn = UIButton.new;
         _userAgreementBtn.normalTitle = Internationalization(@"《用户协议》");
         _userAgreementBtn.normalTitleColor = JobsCor(@"#DD0000");
-        _userAgreementBtn.titleFont = UIFontWeightRegularSize(JobsWidth(12));
+        _userAgreementBtn.titleFont = UIFontWeightRegularSize(12);
         _userAgreementBtn.backgroundColor = UIColor.clearColor;
         [self.view addSubview:_userAgreementBtn];
         [_userAgreementBtn mas_makeConstraints:^(MASConstraintMaker *make) {

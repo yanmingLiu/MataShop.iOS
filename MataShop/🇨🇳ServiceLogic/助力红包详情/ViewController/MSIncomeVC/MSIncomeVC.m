@@ -121,7 +121,7 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath{
             
             _tableView.ly_emptyView.titleLabTextColor = JobsLightGrayColor;
             _tableView.ly_emptyView.contentViewOffset = JobsWidth(-180);
-            _tableView.ly_emptyView.titleLabFont = UIFontWeightMediumSize(JobsWidth(16));
+            _tableView.ly_emptyView.titleLabFont = UIFontWeightMediumSize(16);
         }
     
         [self.view addSubview:_tableView];

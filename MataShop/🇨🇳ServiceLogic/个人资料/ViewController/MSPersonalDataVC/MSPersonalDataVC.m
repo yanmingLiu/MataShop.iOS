@@ -116,10 +116,10 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BaseTableViewCell *cell = [BaseTableViewCell cellStyleValue1WithTableView:tableView];
     cell.textLabel.text = self.dataMutArr[indexPath.row].textModel.text;
     cell.textLabel.textColor = RGB_SAMECOLOR(109);
-    cell.textLabel.font = UIFontWeightRegularSize(JobsWidth(16));
+    cell.textLabel.font = UIFontWeightRegularSize(16);
     
     cell.detailTextLabel.text = self.dataMutArr[indexPath.row].subTextModel.text;
-    cell.detailTextLabel.font = UIFontWeightRegularSize(JobsWidth(16));
+    cell.detailTextLabel.font = UIFontWeightRegularSize(16);
     [cell.detailTextLabel makeLabelByShowingType:UILabelShowingType_03];
     
     if(indexPath.row){

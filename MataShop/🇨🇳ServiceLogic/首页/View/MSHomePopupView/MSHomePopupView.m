@@ -84,7 +84,7 @@ static dispatch_once_t static_homePopupViewOnceToken;
         _titleLab = UILabel.new;
         _titleLab.textAlignment = NSTextAlignmentCenter;
         _titleLab.textColor = JobsCor(@"#686868");
-        _titleLab.font = UIFontWeightLightSize(JobsWidth(20));
+        _titleLab.font = UIFontWeightLightSize(20);
         [self addSubview:_titleLab];
         [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self).offset(JobsWidth(24));
@@ -132,7 +132,7 @@ static dispatch_once_t static_homePopupViewOnceToken;
         _leftBtn = BaseButton.new;
         _leftBtn.normalTitle = Internationalization(@"关注招聘资讯");
         _leftBtn.normalTitleColor = JobsBlackColor;
-        _leftBtn.titleFont = UIFontWeightRegularSize(JobsWidth(16));
+        _leftBtn.titleFont = UIFontWeightRegularSize(16);
         _leftBtn.backgroundColor = HEXCOLOR(0xEAECEF);
         [self addSubview:_leftBtn];
         [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -158,7 +158,7 @@ static dispatch_once_t static_homePopupViewOnceToken;
         _rightBtn = BaseButton.new;
         _rightBtn.normalTitle = Internationalization(@"进入Mata商城");
         _rightBtn.normalTitleColor = JobsWhiteColor;
-        _rightBtn.titleFont = UIFontWeightRegularSize(JobsWidth(16));
+        _rightBtn.titleFont = UIFontWeightRegularSize(16);
         _rightBtn.backgroundColor = JobsCor(@"#EA0000");
         [self addSubview:_rightBtn];
         [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {

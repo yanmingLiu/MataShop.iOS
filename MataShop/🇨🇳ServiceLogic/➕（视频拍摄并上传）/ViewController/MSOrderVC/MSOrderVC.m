@@ -36,7 +36,7 @@
     self.viewModel.backBtnTitleModel.text = Internationalization(@"");
     self.viewModel.textModel.textCor = JobsClearColor;
     self.viewModel.textModel.text = Internationalization(@"");
-    self.viewModel.textModel.font = UIFontWeightRegularSize(JobsWidth(16));
+    self.viewModel.textModel.font = UIFontWeightRegularSize(16);
     
     // 使用原则：底图有 + 底色有 = 优先使用底图数据
     // 以下2个属性的设置，涉及到的UI结论 请参阅父类（BaseViewController）的私有方法：-(void)setBackGround

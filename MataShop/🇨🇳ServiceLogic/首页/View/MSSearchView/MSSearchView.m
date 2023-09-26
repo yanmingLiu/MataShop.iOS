@@ -129,7 +129,7 @@ static dispatch_once_t static_searchViewOnceToken;
         _searchBtn.backgroundColor = RGBA_COLOR(234, 41, 24, 1);
 //        _searchBtn.normalTitleColor = RGBA_COLOR(20, 17, 38, 1);
         _searchBtn.normalTitleColor = RGB_SAMECOLOR(255);
-        _searchBtn.titleFont = UIFontWeightBoldSize(JobsWidth(16));
+        _searchBtn.titleFont = UIFontWeightBoldSize(16);
         [_searchBtn makeBtnLabelByShowingType:UILabelShowingType_01];
         @jobs_weakify(self)
         [_searchBtn jobsBtnClickEventBlock:^(UIButton *x) {

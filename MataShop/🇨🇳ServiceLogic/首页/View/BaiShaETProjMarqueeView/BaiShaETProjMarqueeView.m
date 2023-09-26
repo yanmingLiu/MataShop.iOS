@@ -107,7 +107,7 @@ static dispatch_once_t static_marqueeViewOnceToken;
     _hornBtn.normalTitleColor = RGB_SAMECOLOR(255);
     _hornBtn.normalAttributedTitle = self.viewModel.subTextModel.attributedText;
     
-    _hornBtn.titleFont = UIFontWeightBoldSize(JobsWidth(14));
+    _hornBtn.titleFont = UIFontWeightBoldSize(14);
     
     [_hornBtn makeBtnLabelByShowingType:UILabelShowingType_03];
     [_hornBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft
@@ -138,7 +138,7 @@ static dispatch_once_t static_marqueeViewOnceToken;
 //            cell.backgroundColor = JobsRandomColor;
             cell.backgroundLabel.text = self.dataMutArr[indexPath.item];
             cell.backgroundLabel.textColor = UIColor.whiteColor;
-            cell.backgroundLabel.font = UIFontWeightRegularSize(JobsWidth(12));
+            cell.backgroundLabel.font = UIFontWeightRegularSize(12);
             return cell;
         })
         .wEventClickSet(^(id anyID, NSInteger index) {
