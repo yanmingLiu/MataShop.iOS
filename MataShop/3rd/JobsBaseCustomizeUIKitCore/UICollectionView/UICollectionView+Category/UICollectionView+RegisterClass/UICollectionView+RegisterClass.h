@@ -14,6 +14,7 @@
 #import "JobsHotLabelWithMultiLineCVCell.h"
 #import "JobsBtnStyleCVCell.h"
 #import "JobsImageViewStyleCVCell.h"
+#import "MSMineView6CVCell.h"
 //#import "BaiShaETProjMywalletCRView.h"
 //#import "BaiShaETProjCVCellStyle1.h"
 //#import "BaseCollectionViewCell.h"

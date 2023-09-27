@@ -12,9 +12,68 @@
 
 -(void)layoutButtonWithEdgeInsetsStyle:(GLButtonEdgeInsetsStyle)style
                        imageTitleSpace:(CGFloat)imageTitleSpace{
+    if (self.deviceSystemVersion.floatValue >= 15.0) {
+/**
+ 利用 UIButtonConfiguration 来解决问题，示例：
+ -(UIButtonConfiguration *)btnConfig{
+     if(!_btnConfig){
+         _btnConfig = UIButtonConfiguration.plainButtonConfiguration;
+         {// 图片
+             _btnConfig.image = JobsIMG(@"入职Mata"); // 替换为你的图像名称
+             _btnConfig.imagePlacement = NSDirectionalRectEdgeLeading;// 这里将图像放置在标题的前面
+             _btnConfig.imagePadding = 10;// 设置图像与标题之间的间距
+         }
+         
+         {// 一般的文字
+             _btnConfig.title = Internationalization(@"入职Mata");
+             _btnConfig.subtitle = @"";
+             _btnConfig.baseForegroundColor = UIColor.blackColor;// 前景颜色（= 文字颜色）
+         }
+         
+         {// 富文本
+             // 设置按钮标题的文本属性
+             _btnConfig.titleTextAttributesTransformer = ^NSDictionary<NSAttributedStringKey, id> *(NSDictionary<NSAttributedStringKey, id> *textAttributes) {
+                 NSMutableDictionary<NSAttributedStringKey, id> *newTextAttributes = textAttributes.mutableCopy;
+                 [newTextAttributes addEntriesFromDictionary:@{
+                     NSFontAttributeName:UIFontWeightRegularSize(14), // 替换为你想要的字体和大小
+                     NSForegroundColorAttributeName: UIColor.blackColor // 替换为你想要的文本颜色
+                 }];
+                 return newTextAttributes.copy;
+             };
+             _btnConfig.attributedTitle = [NSAttributedString.alloc initWithString:Internationalization(@"入职Mata") attributes:@{NSForegroundColorAttributeName:UIColor.blackColor}];
+         }
+         
+         {// 其他
+             _btnConfig.baseBackgroundColor = UIColor.whiteColor;// 背景颜色
+             _btnConfig.contentInsets = NSDirectionalEdgeInsetsMake(0, 0, 0, 0); // 内边距
+         }
+     }return _btnConfig;
+ }
 
-    if (HDDeviceSystemVersion.floatValue >= 15.0) {
-#warning UIButtonConfiguration 怎么适配使用？
+ -(UIButton *)btn1{
+     if(!_btn1){
+         if(self.deviceSystemVersion.floatValue >= 15.0){
+             _btn1 = [UIButton buttonWithConfiguration:self.btnConfig primaryAction:nil];
+         }else{
+             _btn1 = UIButton.new;
+             _btn1.normalImage = JobsIMG(@"入职Mata");
+             _btn1.titleFont = UIFontWeightRegularSize(14);
+             _btn1.normalTitle = Internationalization(@"入职Mata");
+             _btn1.normalTitleColor = JobsBlackColor;
+         }
+         // 添加按钮到视图中
+         [self addSubview:_btn1];
+         [_btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+             make.size.mas_equalTo(CGSizeMake(JobsWidth(85), JobsWidth(16)));
+             make.centerY.equalTo(self);
+             make.left.equalTo(self).offset(JobsWidth(6));
+         }];
+         if(self.deviceSystemVersion.floatValue < 15.0){
+             [_btn1 layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft imageTitleSpace:JobsWidth(8)];
+         }
+     }return _btn1;
+ }
+ */    
     }
     SuppressWdeprecatedDeclarationsWarning(
                                            /**

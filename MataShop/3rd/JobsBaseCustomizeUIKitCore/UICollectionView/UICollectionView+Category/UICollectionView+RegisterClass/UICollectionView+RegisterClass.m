@@ -38,6 +38,7 @@
     [self registerCollectionViewCellClass:MSInternalRecruitmentCVCell2.class];// 内部招聘Cell2
     [self registerCollectionViewCellClass:MSFindCVCell.class];//
     [self registerCollectionViewCellClass:MSVedioCVCell.class];// 
+    [self registerCollectionViewCellClass:MSMineView6CVCell.class];//
 }
 /// 注册 UICollectionViewCell 及其子类
 -(void)registerCollectionViewCellClass:(Class)cls{

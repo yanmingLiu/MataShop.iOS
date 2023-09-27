@@ -71,7 +71,6 @@ static dispatch_once_t static_mineView1OnceToken;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)viewSizeWithModel:(UIViewModel *_Nullable)model{
-//    return CGSizeMake(JobsMainScreen_WIDTH(), JobsWidth(182) - JobsStatusBarHeightByAppleIncData());
     return CGSizeMake(JobsMainScreen_WIDTH(), JobsWidth(182));
 }
 #pragma mark —— lazyLoad
@@ -90,11 +89,11 @@ static dispatch_once_t static_mineView1OnceToken;
 
 -(JobsContainerView *)userInfoView{
     if(!_userInfoView){
-        _userInfoView = [JobsContainerView.alloc initWithWidth:JobsWidth(90)
+        _userInfoView = [JobsContainerView.alloc initWithWidth:JobsWidth(120)
                                                   buttonModels:self.btnModelMutArr];
         [self addSubview:_userInfoView];
         [_userInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(90), JobsWidth(43)));
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(120), JobsWidth(43)));
             make.centerY.equalTo(self.avatarIMGV);
             make.left.equalTo(self.avatarIMGV.mas_right).offset(JobsWidth(16));
         }];
@@ -114,7 +113,7 @@ static dispatch_once_t static_mineView1OnceToken;
         @jobs_weakify(self)
         [_leftArrowBtn jobsBtnClickEventBlock:^(id data) {
             @jobs_strongify(self)
-            [WHToast toastErrMsg:Internationalization(@"编辑个人资料")];
+            [WHToast toastMsg:Internationalization(@"编辑个人资料")];
         }];
     }return _leftArrowBtn;
 }
@@ -129,10 +128,9 @@ static dispatch_once_t static_mineView1OnceToken;
             model.font = UIFontWeightBoldSize(18);
             model.titleColor = JobsWhiteColor;
             model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            model.contentEdgeInsets = UIEdgeInsetsMake(0, JobsWidth(-25), 0, 0);
             model.contentSpacing = JobsWidth(8);
             model.lineBreakMode = NSLineBreakByWordWrapping;
-            model.btnWidth = JobsWidth(252);
+//            model.btnWidth = JobsWidth(160);
             [_btnModelMutArr addObject:model];
         }
 //
@@ -142,10 +140,10 @@ static dispatch_once_t static_mineView1OnceToken;
             model.title = Internationalization(@"138****8888");
             model.font = UIFontWeightRegularSize(14);
             model.titleColor = JobsWhiteColor;
-            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
             model.contentSpacing = JobsWidth(10);
             model.lineBreakMode = NSLineBreakByWordWrapping;
-            model.btnWidth = JobsWidth(145);
+//            model.btnWidth = JobsWidth(252);
 
             [_btnModelMutArr addObject:model];
         }

@@ -85,6 +85,7 @@
 		C5329FEA2ABF10D5004294E0 /* MSMineView3.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FE92ABF10D5004294E0 /* MSMineView3.m */; };
 		C5329FED2ABF10DE004294E0 /* MSMineView4.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FEC2ABF10DE004294E0 /* MSMineView4.m */; };
 		C5329FF02ABF10E7004294E0 /* MSMineView5.m in Sources */ = {isa = PBXBuildFile; fileRef = C5329FEF2ABF10E7004294E0 /* MSMineView5.m */; };
+		C536866E2AC3A4B900A6AF05 /* MSMineView6CVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C536866D2AC3A4B900A6AF05 /* MSMineView6CVCell.m */; };
 		C536CE0E2AC23AE1005D1FCD /* UIWindow+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C536CE0D2AC23AE1005D1FCD /* UIWindow+Extra.m */; };
 		C536CE152AC23B40005D1FCD /* UISlider+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C536CE142AC23B40005D1FCD /* UISlider+Extra.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
@@ -1149,6 +1150,9 @@
 		C5329FEC2ABF10DE004294E0 /* MSMineView4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView4.m; sourceTree = "<group>"; };
 		C5329FEE2ABF10E7004294E0 /* MSMineView5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineView5.h; sourceTree = "<group>"; };
 		C5329FEF2ABF10E7004294E0 /* MSMineView5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView5.m; sourceTree = "<group>"; };
+		C536866B2AC3A48D00A6AF05 /* MSMineView6CVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView6CVCell.jpg; sourceTree = "<group>"; };
+		C536866C2AC3A4B900A6AF05 /* MSMineView6CVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineView6CVCell.h; sourceTree = "<group>"; };
+		C536866D2AC3A4B900A6AF05 /* MSMineView6CVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView6CVCell.m; sourceTree = "<group>"; };
 		C536CE0C2AC23AE1005D1FCD /* UIWindow+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extra.h"; sourceTree = "<group>"; };
 		C536CE0D2AC23AE1005D1FCD /* UIWindow+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extra.m"; sourceTree = "<group>"; };
 		C536CE102AC23B40005D1FCD /* JobsSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsSlider.h; sourceTree = "<group>"; };
@@ -3318,6 +3322,7 @@
 				C5329FDC2ABF107B004294E0 /* MSMineView3 */,
 				C5329FDE2ABF1085004294E0 /* MSMineView4 */,
 				C5329FE02ABF1091004294E0 /* MSMineView5 */,
+				C536866A2AC3A47E00A6AF05 /* MSMineView6CVCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3370,6 +3375,16 @@
 				C5329FEF2ABF10E7004294E0 /* MSMineView5.m */,
 			);
 			path = MSMineView5;
+			sourceTree = "<group>";
+		};
+		C536866A2AC3A47E00A6AF05 /* MSMineView6CVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C536866B2AC3A48D00A6AF05 /* MSMineView6CVCell.jpg */,
+				C536866C2AC3A4B900A6AF05 /* MSMineView6CVCell.h */,
+				C536866D2AC3A4B900A6AF05 /* MSMineView6CVCell.m */,
+			);
+			path = MSMineView6CVCell;
 			sourceTree = "<group>";
 		};
 		C536CE0B2AC23AE1005D1FCD /* UIWindow */ = {
@@ -10496,6 +10511,7 @@
 				C561CE1B2AAC7CE200E28603 /* LMJDropdownMenu+Extra.m in Sources */,
 				C561CE012AAC7CE200E28603 /* ZWPullMenuModel.m in Sources */,
 				C5D71F2F2AC22EE800DD8938 /* KTVHCURLTool.m in Sources */,
+				C536866E2AC3A4B900A6AF05 /* MSMineView6CVCell.m in Sources */,
 				C561D32A2AAC7E7A00E28603 /* JobsAppDoorVC.m in Sources */,
 				C5D71F2E2AC22EE800DD8938 /* KTVHCPathTool.m in Sources */,
 				C561CE532AAC7CE200E28603 /* XHLaunchAdImageView+XHLaunchAdCache.m in Sources */,
