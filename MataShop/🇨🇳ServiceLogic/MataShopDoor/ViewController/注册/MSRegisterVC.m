@@ -200,9 +200,9 @@
         {
             JobsBtnModel *model = JobsBtnModel.new;
             model.backgroundColor = UIColor.clearColor;
-            model.title = Internationalization(@"欢迎来到Mata商城");
-            model.font = UIFontWeightBoldSize(26);
-            model.titleColor = JobsCor(@"#333333");
+            model.normalTitle = Internationalization(@"欢迎来到Mata商城");
+            model.titleFont = UIFontWeightBoldSize(26);
+            model.normalTitleColor = JobsCor(@"#333333");
             model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             model.contentSpacing = JobsWidth(8);
             model.lineBreakMode = NSLineBreakByWordWrapping;
@@ -214,9 +214,9 @@
         {
             JobsBtnModel *model = JobsBtnModel.new;
             model.backgroundColor = UIColor.clearColor;
-            model.title = Internationalization(@"登陆探索更多潮玩惊喜");
-            model.font = UIFontWeightRegularSize(16);
-            model.titleColor = JobsCor(@"#666666");
+            model.normalTitle = Internationalization(@"登陆探索更多潮玩惊喜");
+            model.titleFont = UIFontWeightRegularSize(16);
+            model.normalTitleColor = JobsCor(@"#666666");
             model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             model.contentSpacing = JobsWidth(10);
             model.lineBreakMode = NSLineBreakByWordWrapping;

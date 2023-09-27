@@ -125,9 +125,12 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row){
         cell.detailTextLabel.textColor = RGB_SAMECOLOR(51);
     }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
         cell.imageView.image = self.dataMutArr[indexPath.row].image;
         cell.imageViewFrameOffsetX = JobsWidth(250);
-        cell.textLabelFrameOffsetX = JobsWidth(-55);
+        cell.textLabelFrameOffsetX = JobsWidth(-65);
+        cell.imageViewFrameOffsetWidth = JobsWidth(-5);
+        cell.imageViewFrameOffsetHeight = JobsWidth(-5);
         cell.detailTextLabel.textColor = JobsClearColor;
     }return cell;
 }

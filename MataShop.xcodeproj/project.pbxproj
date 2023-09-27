@@ -953,6 +953,7 @@
 		C5E017682AAF3684005ABE09 /* MSChuBaoView2.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E017672AAF3684005ABE09 /* MSChuBaoView2.m */; };
 		C5E0176C2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */; };
 		C5E0176E2AAF4B49005ABE09 /* MSChuBaoAdMarqueeView.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */; };
+		C5E7BC5D2AC3EEB300236FC6 /* MSPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E7BC5C2AC3EEB300236FC6 /* MSPayView.m */; };
 		C5EE35D82AB8351D0020BDB8 /* MSPersonalDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE35D72AB8351D0020BDB8 /* MSPersonalDataVC.m */; };
 		C5EE372D2AB870260020BDB8 /* MSRedEnvelopeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE372C2AB870260020BDB8 /* MSRedEnvelopeDetailVC.m */; };
 		C5EE37342AB871250020BDB8 /* MSIncomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE37332AB871250020BDB8 /* MSIncomeVC.m */; };
@@ -2660,6 +2661,9 @@
 		C5E0176A2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoAdMarqueeView.h; sourceTree = "<group>"; };
 		C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoAdMarqueeView.m; sourceTree = "<group>"; };
 		C5E0176D2AAF4B48005ABE09 /* MSChuBaoAdMarqueeView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSChuBaoAdMarqueeView.jpg; sourceTree = "<group>"; };
+		C5E7BBE22AC3EE8200236FC6 /* 支付弹窗.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "支付弹窗.jpg"; sourceTree = "<group>"; };
+		C5E7BC5B2AC3EEB300236FC6 /* MSPayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPayView.h; sourceTree = "<group>"; };
+		C5E7BC5C2AC3EEB300236FC6 /* MSPayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPayView.m; sourceTree = "<group>"; };
 		C5EE35D62AB8351D0020BDB8 /* MSPersonalDataVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPersonalDataVC.h; sourceTree = "<group>"; };
 		C5EE35D72AB8351D0020BDB8 /* MSPersonalDataVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPersonalDataVC.m; sourceTree = "<group>"; };
 		C5EE372B2AB870260020BDB8 /* MSRedEnvelopeDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSRedEnvelopeDetailVC.h; sourceTree = "<group>"; };
@@ -8948,6 +8952,7 @@
 		C5D71EA62AC22C8B00DD8938 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5E7BBE12AC3EE5800236FC6 /* 支付弹窗 */,
 				C5D71EBA2AC22DAE00DD8938 /* JobsRightBtnsView */,
 				C5D71EB02AC22CC700DD8938 /* ZFDouYinControlView */,
 				C5D71EAA2AC22CB000DD8938 /* JobsVideoTBVCell */,
@@ -9581,6 +9586,16 @@
 				C5E0176B2AAF4A73005ABE09 /* MSChuBaoAdMarqueeView.m */,
 			);
 			path = "储宝跑马灯广告";
+			sourceTree = "<group>";
+		};
+		C5E7BBE12AC3EE5800236FC6 /* 支付弹窗 */ = {
+			isa = PBXGroup;
+			children = (
+				C5E7BBE22AC3EE8200236FC6 /* 支付弹窗.jpg */,
+				C5E7BC5B2AC3EEB300236FC6 /* MSPayView.h */,
+				C5E7BC5C2AC3EEB300236FC6 /* MSPayView.m */,
+			);
+			path = "支付弹窗";
 			sourceTree = "<group>";
 		};
 		C5EE35D52AB834E90020BDB8 /* 个人资料 */ = {
@@ -10401,6 +10416,7 @@
 				C5D71F502AC22EE800DD8938 /* WebSocket.m in Sources */,
 				C561D4372AAC7E7B00E28603 /* UITableView+RegisterClass.m in Sources */,
 				C561D4522AAC7E7B00E28603 /* NSCache+Extra.m in Sources */,
+				C5E7BC5D2AC3EEB300236FC6 /* MSPayView.m in Sources */,
 				C561D4422AAC7E7B00E28603 /* NSArray+Tools.m in Sources */,
 				C5D71F3D2AC22EE800DD8938 /* KTVHCDataSourceManager.m in Sources */,
 				C561D3522AAC7E7A00E28603 /* BWItemModel.m in Sources */,

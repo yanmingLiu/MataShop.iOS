@@ -94,15 +94,46 @@ static dispatch_once_t static_shopLinkViewOnceToken;
     if (!_btnMutArr) {
         _btnMutArr = NSMutableArray.array;
         for (int i = 0; i < self.btnIMGMutArr.count; i++) {
-            BaseButton *btn = BaseButton.new;
-            btn.normalTitle = self.btnTitleMutArr[i];
-            btn.normalImage = self.btnIMGMutArr[i];
-            btn.normalTitleColor = RGBA_COLOR(20, 17, 38, 1);
-            btn.titleFont = UIFontWeightRegularSize(14);
-            btn.imageViewSize = CGSizeMake(JobsWidth(36), JobsWidth(36));
-            [btn makeBtnLabelByShowingType:UILabelShowingType_03];
-            [btn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop
-                                 imageTitleSpace:JobsWidth(10)];
+            BaseButton *btn = nil;
+            if(self.deviceSystemVersion.floatValue >= 15.0){
+                UIButtonConfiguration *_btnConfig = UIButtonConfiguration.plainButtonConfiguration;
+                {// 图片
+                    _btnConfig.image = self.btnIMGMutArr[i]; // 替换为你的图像名称
+                    _btnConfig.imagePlacement = NSDirectionalRectEdgeTop;// 这里将图像放置在标题的前面
+                    _btnConfig.imagePadding = JobsWidth(10);// 设置图像与标题之间的间距
+                }
+                
+                {// 一般的文字
+                    _btnConfig.title = self.btnTitleMutArr[i];
+                    _btnConfig.subtitle = @"";
+                    _btnConfig.baseForegroundColor = RGBA_COLOR(20, 17, 38, 1);// 前景颜色（= 文字颜色）
+                }
+                
+                {// 富文本
+                    // 设置按钮标题的文本属性
+                    _btnConfig.titleTextAttributesTransformer = ^NSDictionary<NSAttributedStringKey, id> *(NSDictionary<NSAttributedStringKey, id> *textAttributes) {
+                        NSMutableDictionary<NSAttributedStringKey, id> *newTextAttributes = textAttributes.mutableCopy;
+                        [newTextAttributes addEntriesFromDictionary:@{
+                            NSFontAttributeName:UIFontWeightRegularSize(14), // 替换为你想要的字体和大小
+                            NSForegroundColorAttributeName:RGBA_COLOR(20, 17, 38, 1) // 替换为你想要的文本颜色
+                        }];
+                        return newTextAttributes.copy;
+                    };
+                    _btnConfig.attributedTitle = [NSAttributedString.alloc initWithString:self.btnTitleMutArr[i] attributes:@{NSForegroundColorAttributeName:RGBA_COLOR(20, 17, 38, 1)}];
+                }
+                
+                btn = [BaseButton buttonWithConfiguration:_btnConfig primaryAction:nil];
+            }else{
+                btn = BaseButton.new;
+                btn.normalTitle = self.btnTitleMutArr[i];
+                btn.normalImage = self.btnIMGMutArr[i];
+                btn.normalTitleColor = RGBA_COLOR(20, 17, 38, 1);
+                btn.titleFont = UIFontWeightRegularSize(14);
+                btn.imageViewSize = CGSizeMake(JobsWidth(36), JobsWidth(36));
+                [btn makeBtnLabelByShowingType:UILabelShowingType_03];
+                [btn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop
+                                     imageTitleSpace:JobsWidth(10)];
+            }
             [self addSubview:btn];
             [_btnMutArr addObject:btn];
         }

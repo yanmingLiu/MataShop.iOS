@@ -70,9 +70,17 @@
     [super viewDidDisappear:animated];
 }
 
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+////    [self forceComingToPushVC:MSSignInVC.new requestParams:@""];
+////    [self forceComingToPushVC:MSRedEnvelopeDetailVC.new requestParams:@""];
+//    [jobsGetMainWindow() popupWithView:[self jobsPopView:MSPayView.class
+//                                               viewModel:UIViewModel.new]];
+//}
+
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [self forceComingToPushVC:MSSignInVC.new requestParams:@""];
-    [self forceComingToPushVC:MSRedEnvelopeDetailVC.new requestParams:@""];
+//    [self forceComingToPushVC:JobsCommentVC.new requestParams:nil];
+    [self forceComingToPushVC:MSPersonalDataVC.new requestParams:nil];
+//    [self forceComingToPushVC:MSDoorVC.new requestParams:nil];
 }
 #pragma mark —— lazyLoad
 

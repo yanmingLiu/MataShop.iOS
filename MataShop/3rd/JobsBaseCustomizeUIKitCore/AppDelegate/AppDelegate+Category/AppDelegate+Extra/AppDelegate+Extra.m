@@ -15,7 +15,7 @@
         [tabBarTitleMutArr addObject:Internationalization(@"圈子")];
         [tabBarTitleMutArr addObject:Internationalization(@"")];
         [tabBarTitleMutArr addObject:Internationalization(@"消息")];
-        [tabBarTitleMutArr addObject:Internationalization(@"我的")];
+        [tabBarTitleMutArr addObject:Internationalization(@"未登录")];
         objc_setAssociatedObject(self,
                                  AppDelegate_Extra_tabBarTitleMutArr,
                                  tabBarTitleMutArr,

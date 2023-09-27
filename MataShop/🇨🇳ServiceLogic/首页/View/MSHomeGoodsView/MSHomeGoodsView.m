@@ -200,7 +200,7 @@ ratio:(CGFloat)ratio {
         [self addSubview:_categoryView];
         [_categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.right.equalTo(self);
-            make.height.mas_equalTo(listContainerViewDefaultOffset);
+            make.height.mas_equalTo(listContainerViewDefaultOffset + JobsWidth(10));
         }];
         [self layoutIfNeeded];
     }return _categoryView;
@@ -223,9 +223,9 @@ ratio:(CGFloat)ratio {
         _listContainerView.defaultSelectedIndex = 1;// 默认从第二个开始显示
         [self addSubview:_listContainerView];
         [_listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self).offset(listContainerViewDefaultOffset);
+            make.top.equalTo(self).offset(listContainerViewDefaultOffset + JobsWidth(10));
             make.left.right.equalTo(self);
-            make.height.mas_equalTo(JobsMainScreen_HEIGHT() - 终点位置 - listContainerViewDefaultOffset);
+            make.height.mas_equalTo(JobsMainScreen_HEIGHT() - 终点位置 - listContainerViewDefaultOffset - JobsWidth(10));
         }];
         [self layoutIfNeeded];
         /// ❤️在需要的地方写❤️

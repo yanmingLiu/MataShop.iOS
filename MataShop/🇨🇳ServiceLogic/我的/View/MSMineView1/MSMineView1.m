@@ -124,9 +124,9 @@ static dispatch_once_t static_mineView1OnceToken;
         {
             JobsBtnModel *model = JobsBtnModel.new;
             model.backgroundColor = UIColor.clearColor;
-            model.title = Internationalization(@"赵露思");
-            model.font = UIFontWeightBoldSize(18);
-            model.titleColor = JobsWhiteColor;
+            model.normalTitle = Internationalization(@"赵露思");
+            model.titleFont = UIFontWeightBoldSize(18);
+            model.normalTitleColor = JobsWhiteColor;
             model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
             model.contentSpacing = JobsWidth(8);
             model.lineBreakMode = NSLineBreakByWordWrapping;
@@ -137,9 +137,9 @@ static dispatch_once_t static_mineView1OnceToken;
         {
             JobsBtnModel *model = JobsBtnModel.new;
             model.backgroundColor = UIColor.clearColor;
-            model.title = Internationalization(@"138****8888");
-            model.font = UIFontWeightRegularSize(14);
-            model.titleColor = JobsWhiteColor;
+            model.normalTitle = Internationalization(@"138****8888");
+            model.titleFont = UIFontWeightRegularSize(14);
+            model.normalTitleColor = JobsWhiteColor;
             model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
             model.contentSpacing = JobsWidth(10);
             model.lineBreakMode = NSLineBreakByWordWrapping;

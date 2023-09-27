@@ -47,4 +47,6 @@
 #import "JobsShowObjInfoVC.h"// 查看对象
 #import "AppInternationalizationVC.h"// 国际化
 
+#import "MSPayView.h"
+
 #endif /* Other_h */

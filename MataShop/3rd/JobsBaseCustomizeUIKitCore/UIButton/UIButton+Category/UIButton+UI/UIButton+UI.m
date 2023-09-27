@@ -36,12 +36,9 @@
     return ^(NSString * _Nonnull methodName,
              id _Nonnull targetObj){
         SEL selector = NSSelectorFromString(methodName);
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
+        SuppressWarcPerformSelectorLeaksWarning([self jobsBtnClickEventBlock:^(id data) {
             [targetObj performSelector:selector withObject:nil];
-        }];
-#pragma clang diagnostic pop
+        }];);
     };
 }
 /// 代码触发点击调用
@@ -87,8 +84,7 @@
     return ^(BOOL enabled) {
         @jobs_strongify(self)
         self.enabled = enabled;
-        self.endableNormalTitleColor = self.endableNormalTitleColor ? : self.normalTitleColor;
-        self.normalTitleColor = self.enabled ? self.endableNormalTitleColor : HEXCOLOR(0xB0B0B0);
+        self.normalTitleColor = self.enabled ? self.normalTitleColor : HEXCOLOR(0xB0B0B0);
     };
 }
 #pragma mark —— Common
@@ -383,34 +379,34 @@ static char *UIButton_UI_titleAlignment = "UIButton_UI_titleAlignment";
                              [NSNumber numberWithInteger:titleAlignment],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_makeNewLineShows = "UIButton_UI_makeNewLineShows";
-@dynamic makeNewLineShows;
-//@property(nonatomic,assign)BOOL makeNewLineShows;
--(BOOL)makeNewLineShows{
-    BOOL MakeNewLineShows = [objc_getAssociatedObject(self, UIButton_UI_makeNewLineShows) booLValue];
-    return MakeNewLineShows;
-}
-
--(void)setMakeNewLineShows:(BOOL)makeNewLineShows{
-    self.titleLabel.numberOfLines = !makeNewLineShows;
-    objc_setAssociatedObject(self,
-                             UIButton_UI_makeNewLineShows,
-                             [NSNumber numberWithBool:makeNewLineShows],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-static char *UIButton_UI_endableNormalTitleColor = "UIButton_UI_endableNormalTitleColor";
-@dynamic endableNormalTitleColor;
-//@property(nonatomic,strong)UIColor *endableNormalTitleColor;
--(UIColor *)endableNormalTitleColor{
-    return objc_getAssociatedObject(self, UIButton_UI_endableNormalTitleColor);
-}
-
--(void)setEndableNormalTitleColor:(UIColor *)endableNormalTitleColor{
-    objc_setAssociatedObject(self,
-                             UIButton_UI_endableNormalTitleColor,
-                             endableNormalTitleColor,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
+//static char *UIButton_UI_makeNewLineShows = "UIButton_UI_makeNewLineShows";
+//@dynamic makeNewLineShows;
+////@property(nonatomic,assign)BOOL makeNewLineShows;
+//-(BOOL)makeNewLineShows{
+//    BOOL MakeNewLineShows = [objc_getAssociatedObject(self, UIButton_UI_makeNewLineShows) booLValue];
+//    return MakeNewLineShows;
+//}
+//
+//-(void)setMakeNewLineShows:(BOOL)makeNewLineShows{
+//    self.titleLabel.numberOfLines = !makeNewLineShows;
+//    objc_setAssociatedObject(self,
+//                             UIButton_UI_makeNewLineShows,
+//                             [NSNumber numberWithBool:makeNewLineShows],
+//                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//}
+//static char *UIButton_UI_endableNormalTitleColor = "UIButton_UI_endableNormalTitleColor";
+//@dynamic endableNormalTitleColor;
+////@property(nonatomic,strong)UIColor *endableNormalTitleColor;
+//-(UIColor *)endableNormalTitleColor{
+//    return objc_getAssociatedObject(self, UIButton_UI_endableNormalTitleColor);
+//}
+//
+//-(void)setEndableNormalTitleColor:(UIColor *)endableNormalTitleColor{
+//    objc_setAssociatedObject(self,
+//                             UIButton_UI_endableNormalTitleColor,
+//                             endableNormalTitleColor,
+//                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//}
 static char *UIButton_UI_racDisposable = "UIButton_UI_racDisposable";
 @dynamic racDisposable;
 #pragma mark —— @property(nonatomic,strong)RACDisposable *racDisposable;

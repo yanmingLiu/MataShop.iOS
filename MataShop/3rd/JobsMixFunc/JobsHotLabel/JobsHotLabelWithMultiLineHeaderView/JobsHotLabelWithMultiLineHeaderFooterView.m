@@ -89,7 +89,7 @@
     
     _subTitleBtn.titleFont = self.viewModel.subTextModel.font;
     _subTitleBtn.titleAlignment = self.viewModel.subTextModel.textAlignment;
-    _subTitleBtn.makeNewLineShows = self.viewModel.subTextModel.lineBreakMode;
+    _subTitleBtn.lineBreakMode = self.viewModel.subTextModel.lineBreakMode;
     
     [_subTitleBtn makeBtnLabelByShowingType:self.viewModel.labelShowingType];
     [_subTitleBtn layoutButtonWithEdgeInsetsStyle:self.viewModel.buttonEdgeInsetsStyle

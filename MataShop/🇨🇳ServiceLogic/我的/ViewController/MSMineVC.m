@@ -73,12 +73,6 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
 }
-
-//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-////    [self forceComingToPushVC:JobsCommentVC.new requestParams:nil];
-////    [self forceComingToPushVC:MSPersonalDataVC.new requestParams:nil];
-//    [self forceComingToPushVC:MSDoorVC.new requestParams:nil];
-//}
 #pragma mark —— lazyLoad
 -(MSMineView1 *)view1{
     if(!_view1){

@@ -15,6 +15,8 @@
 @property(nonatomic,strong)BaseButton *leftBtn;
 @property(nonatomic,strong)BaseButton *rightBtn;
 /// Data
+@property(nonatomic,strong)UIButtonConfiguration *leftBtnConfig;
+@property(nonatomic,strong)UIButtonConfiguration *rightBtnConfig;
 
 @end
 
@@ -111,7 +113,6 @@ static dispatch_once_t static_homePopupViewOnceToken;
             make.top.equalTo(self.titleLab.mas_bottom).offset(JobsWidth(20));
         }];
         [_textView cornerCutToCircleWithCornerRadius:8];
-        [_textView layerBorderCor:RGBA_COLOR(255, 255, 144, 1) andBorderWidth:0.5f];
     }return _textView;
 }
 
@@ -129,11 +130,15 @@ static dispatch_once_t static_homePopupViewOnceToken;
 
 -(BaseButton *)leftBtn{
     if(!_leftBtn){
-        _leftBtn = BaseButton.new;
-        _leftBtn.normalTitle = Internationalization(@"关注招聘资讯");
-        _leftBtn.normalTitleColor = JobsBlackColor;
-        _leftBtn.titleFont = UIFontWeightRegularSize(16);
-        _leftBtn.backgroundColor = HEXCOLOR(0xEAECEF);
+        if(self.deviceSystemVersion.floatValue >= 15.0){
+            _leftBtn = [BaseButton buttonWithConfiguration:self.leftBtnConfig primaryAction:nil];
+        }else{
+            _leftBtn = BaseButton.new;
+            _leftBtn.normalTitle = Internationalization(@"关注招聘资讯");
+            _leftBtn.normalTitleColor = JobsBlackColor;
+            _leftBtn.titleFont = UIFontWeightRegularSize(16);
+            _leftBtn.backgroundColor = HEXCOLOR(0xEAECEF);
+        }
         [self addSubview:_leftBtn];
         [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(140), JobsWidth(40)));
@@ -155,11 +160,18 @@ static dispatch_once_t static_homePopupViewOnceToken;
 
 -(BaseButton *)rightBtn{
     if(!_rightBtn){
-        _rightBtn = BaseButton.new;
-        _rightBtn.normalTitle = Internationalization(@"进入Mata商城");
-        _rightBtn.normalTitleColor = JobsWhiteColor;
-        _rightBtn.titleFont = UIFontWeightRegularSize(16);
-        _rightBtn.backgroundColor = JobsCor(@"#EA0000");
+        if(self.deviceSystemVersion.floatValue >= 15.0){
+            _rightBtn = BaseButton.new;
+//            [BaseButton buttonWithConfiguration:self.rightBtnConfig primaryAction:nil];
+            _rightBtn.configuration = self.rightBtnConfig;
+        }else{
+            _rightBtn = BaseButton.new;
+            _rightBtn.normalTitle = Internationalization(@"进入Mata商城");
+            _rightBtn.normalTitleColor = JobsWhiteColor;
+            _rightBtn.titleFont = UIFontWeightRegularSize(16);
+            _rightBtn.backgroundColor = JobsCor(@"#EA0000");
+        }
+        
         [self addSubview:_rightBtn];
         [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(140), JobsWidth(40)));
@@ -175,6 +187,65 @@ static dispatch_once_t static_homePopupViewOnceToken;
             [self cancelBtnActionForPopView:x];
         }];
     }return _rightBtn;
+}
+
+-(UIButtonConfiguration *)leftBtnConfig{
+    if(!_leftBtnConfig){
+        _leftBtnConfig = UIButtonConfiguration.filledButtonConfiguration;
+        
+        {// 一般的文字
+            _leftBtnConfig.title = Internationalization(@"关注招聘资讯");
+            _leftBtnConfig.subtitle = @"";
+            _leftBtnConfig.baseForegroundColor = UIColor.blackColor;// 前景颜色（= 文字颜色）
+        }
+        
+        {// 富文本
+            // 设置按钮标题的文本属性
+            _leftBtnConfig.titleTextAttributesTransformer = ^NSDictionary<NSAttributedStringKey, id> *(NSDictionary<NSAttributedStringKey, id> *textAttributes) {
+                NSMutableDictionary<NSAttributedStringKey, id> *newTextAttributes = textAttributes.mutableCopy;
+                [newTextAttributes addEntriesFromDictionary:@{
+                    NSFontAttributeName:UIFontWeightRegularSize(16), // 替换为你想要的字体和大小
+                    NSForegroundColorAttributeName: UIColor.blackColor // 替换为你想要的文本颜色
+                }];
+                return newTextAttributes.copy;
+            };
+            _leftBtnConfig.attributedTitle = [NSAttributedString.alloc initWithString:Internationalization(@"关注招聘资讯") attributes:@{NSForegroundColorAttributeName:UIColor.blackColor}];
+        }
+        
+        {// 其他
+            _leftBtnConfig.baseBackgroundColor = HEXCOLOR(0xEAECEF);// 背景颜色
+            _leftBtnConfig.contentInsets = NSDirectionalEdgeInsetsMake(0, 0, 0, 0); // 内边距
+        }
+    }return _leftBtnConfig;
+}
+
+-(UIButtonConfiguration *)rightBtnConfig{
+    if(!_rightBtnConfig){
+        _rightBtnConfig = UIButtonConfiguration.filledButtonConfiguration;
+
+        {// 一般的文字
+            _rightBtnConfig.title = Internationalization(@"入职Mata");
+            _rightBtnConfig.subtitle = @"";
+            _rightBtnConfig.baseForegroundColor = UIColor.whiteColor;// 前景颜色（= 文字颜色）
+        }
+        
+        {// 富文本
+            // 设置按钮标题的文本属性
+            _rightBtnConfig.titleTextAttributesTransformer = ^NSDictionary<NSAttributedStringKey, id> *(NSDictionary<NSAttributedStringKey, id> *textAttributes) {
+                NSMutableDictionary<NSAttributedStringKey, id> *newTextAttributes = textAttributes.mutableCopy;
+                [newTextAttributes addEntriesFromDictionary:@{
+                    NSFontAttributeName:UIFontWeightRegularSize(16), // 替换为你想要的字体和大小
+                    NSForegroundColorAttributeName: UIColor.whiteColor // 替换为你想要的文本颜色
+                }];return newTextAttributes.copy;
+            };
+            _rightBtnConfig.attributedTitle = [NSAttributedString.alloc initWithString:Internationalization(@"入职Mata") attributes:@{NSForegroundColorAttributeName:UIColor.redColor}];
+        }
+        
+        {// 其他
+            _rightBtnConfig.baseBackgroundColor = JobsCor(@"#EA0000");// 背景颜色
+            _rightBtnConfig.contentInsets = NSDirectionalEdgeInsetsMake(0, 0, 0, 0); // 内边距
+        }
+    }return _rightBtnConfig;
 }
 
 @end

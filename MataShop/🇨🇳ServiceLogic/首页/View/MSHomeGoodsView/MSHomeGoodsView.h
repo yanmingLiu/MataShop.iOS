@@ -26,7 +26,7 @@
 JobsStatusBarHeightByAppleIncData() + \
 [MSSearchBoardView viewSizeWithModel:nil].height + \
 [CasinoBannerCell cellSizeWithModel:nil].height + \
-JobsWidth(10) + \
+JobsWidth(-10) + \
 [BaiShaETProjMarqueeView viewSizeWithModel:nil].height + JobsWidth(16) + \
 [MS3rdShopLinkView viewSizeWithModel:nil].height\
 /// 锚点2（最高点）
