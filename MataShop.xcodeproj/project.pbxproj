@@ -966,6 +966,7 @@
 		C5FB56612AB31B5E00C873B7 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */; };
 		C5FB56622AB31B5E00C873B7 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */; };
 		C5FB566B2AB31F1300C873B7 /* MSHomePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */; };
+		C5FF92322AC493E300D3A386 /* MSMyInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FF92312AC493E300D3A386 /* MSMyInfoVC.m */; };
 		F032FB3B280C586AF1EFA7DC /* Pods_MataShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */; };
 		F91CCF44732E8C50C8BB2479 /* Pods_MataShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD29B03F9AE25E4A547369B7 /* Pods_MataShopUITests.framework */; };
 /* End PBXBuildFile section */
@@ -2687,6 +2688,8 @@
 		C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
 		C5FB56692AB31F1300C873B7 /* MSHomePopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomePopupView.h; sourceTree = "<group>"; };
 		C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomePopupView.m; sourceTree = "<group>"; };
+		C5FF92302AC493E300D3A386 /* MSMyInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyInfoVC.h; sourceTree = "<group>"; };
+		C5FF92312AC493E300D3A386 /* MSMyInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyInfoVC.m; sourceTree = "<group>"; };
 		D9F4E560DCFD78A2DE92A1BF /* Pods-MataShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-MataShopUITests/Pods-MataShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -8502,8 +8505,8 @@
 		C561D9912AAC9A5900E28603 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C561D5412AAC847400E28603 /* MSMineVC.h */,
-				C561D5422AAC847400E28603 /* MSMineVC.m */,
+				C5FF922F2AC493C500D3A386 /* MSMyInfoVC */,
+				C5FF922E2AC493B000D3A386 /* MSMineVC */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -9736,6 +9739,24 @@
 			path = MSHomePopupView;
 			sourceTree = "<group>";
 		};
+		C5FF922E2AC493B000D3A386 /* MSMineVC */ = {
+			isa = PBXGroup;
+			children = (
+				C561D5412AAC847400E28603 /* MSMineVC.h */,
+				C561D5422AAC847400E28603 /* MSMineVC.m */,
+			);
+			path = MSMineVC;
+			sourceTree = "<group>";
+		};
+		C5FF922F2AC493C500D3A386 /* MSMyInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5FF92302AC493E300D3A386 /* MSMyInfoVC.h */,
+				C5FF92312AC493E300D3A386 /* MSMyInfoVC.m */,
+			);
+			path = MSMyInfoVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -10718,6 +10739,7 @@
 				C561D35A2AAC7E7A00E28603 /* JobsHotLabelWithMultiLine.m in Sources */,
 				C561D40F2AAC7E7B00E28603 /* UIImageView+GIF.m in Sources */,
 				C561D49C2AAC7E7B00E28603 /* UITextField+Animation.m in Sources */,
+				C5FF92322AC493E300D3A386 /* MSMyInfoVC.m in Sources */,
 				C561D3672AAC7E7A00E28603 /* JobsTitleView01.m in Sources */,
 				C561D4722AAC7E7B00E28603 /* NSObject+Measure.m in Sources */,
 				C561D3DF2AAC7E7B00E28603 /* BaseButton.m in Sources */,
