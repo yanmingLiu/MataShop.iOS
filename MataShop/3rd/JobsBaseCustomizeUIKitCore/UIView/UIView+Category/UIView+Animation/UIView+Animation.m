@@ -151,15 +151,14 @@
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     [self.layer addAnimation:animation forKey:@"kViewShakerAnimationKey"];
 }
-static char *UIView_Rotate_rotateChangeAngle = "UIView_Rotate_rotateChangeAngle";
-@dynamic rotateChangeAngle;
 #pragma mark —— @property(nonatomic,assign)CGFloat rotateChangeAngle;
+@dynamic rotateChangeAngle;
 -(CGFloat)rotateChangeAngle{
-    CGFloat RotateChangeAngle = [objc_getAssociatedObject(self, UIView_Rotate_rotateChangeAngle) floatValue];
+    CGFloat RotateChangeAngle = [objc_getAssociatedObject(self, _cmd) floatValue];
     if (RotateChangeAngle == 0) {
         RotateChangeAngle = 20;
         objc_setAssociatedObject(self,
-                                 UIView_Rotate_rotateChangeAngle,
+                                 _cmd,
                                  [NSNumber numberWithFloat:RotateChangeAngle],
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return RotateChangeAngle;
@@ -167,28 +166,26 @@ static char *UIView_Rotate_rotateChangeAngle = "UIView_Rotate_rotateChangeAngle"
 
 -(void)setRotateChangeAngle:(CGFloat)rotateChangeAngle{
     objc_setAssociatedObject(self,
-                             UIView_Rotate_rotateChangeAngle,
+                             _cmd,
                              [NSNumber numberWithFloat:rotateChangeAngle],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIView_Rotate_currentAngle = "UIView_Rotate_currentAngle";
-@dynamic currentAngle;
 #pragma mark —— @property(nonatomic,assign)__block CGFloat currentAngle;
+@dynamic currentAngle;
 -(CGFloat)currentAngle{
-    return [objc_getAssociatedObject(self, UIView_Rotate_currentAngle) floatValue];
+    return [objc_getAssociatedObject(self, _cmd) floatValue];
 }
 
 -(void)setCurrentAngle:(CGFloat)currentAngle{
     objc_setAssociatedObject(self,
-                             UIView_Rotate_currentAngle,
+                             _cmd,
                              [NSNumber numberWithFloat:currentAngle],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIView_Rotate_durationTime = "UIView_Rotate_durationTime";
-@dynamic durationTime;
 #pragma mark —— @property(nonatomic,assign)CGFloat durationTime;
+@dynamic durationTime;
 -(CGFloat)durationTime{
-    CGFloat DurationTime = [objc_getAssociatedObject(self, UIView_Rotate_durationTime) floatValue];
+    CGFloat DurationTime = [objc_getAssociatedObject(self, _cmd) floatValue];
     if (DurationTime == 0) {
         DurationTime = 0.1;//缺省值
     }return DurationTime;
@@ -196,15 +193,14 @@ static char *UIView_Rotate_durationTime = "UIView_Rotate_durationTime";
 
 -(void)setDurationTime:(CGFloat)durationTime{
     objc_setAssociatedObject(self,
-                             UIView_Rotate_durationTime,
+                             _cmd,
                              [NSNumber numberWithFloat:durationTime],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIView_Rotate_delayTime = "UIView_Rotate_delayTime";
-@dynamic delayTime;
 #pragma mark —— @property(nonatomic,assign)CGFloat delayTime;
+@dynamic delayTime;
 -(CGFloat)delayTime{
-    CGFloat DelayTime = [objc_getAssociatedObject(self, UIView_Rotate_delayTime) floatValue];
+    CGFloat DelayTime = [objc_getAssociatedObject(self, _cmd) floatValue];
     if (DelayTime == 0) {
         DelayTime = 0.01;//缺省值
         [self setDelayTime:DelayTime];
@@ -213,28 +209,26 @@ static char *UIView_Rotate_delayTime = "UIView_Rotate_delayTime";
 
 -(void)setDelayTime:(CGFloat)delayTime{
     objc_setAssociatedObject(self,
-                             UIView_Rotate_delayTime,
+                             _cmd,
                              [NSNumber numberWithFloat:delayTime],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIView_Animation_isStopRotateAnimation = "UIView_Animation_isStopRotateAnimation";
-@dynamic isStopRotateAnimation;
 #pragma mark —— @property(nonatomic,assign)BOOL isStopRotateAnimation;//默认值为NO（一直旋转）
+@dynamic isStopRotateAnimation;
 -(BOOL)isStopRotateAnimation{
-    return [objc_getAssociatedObject(self, UIView_Animation_isStopRotateAnimation) boolValue];
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
 -(void)setIsStopRotateAnimation:(BOOL)isStopRotateAnimation{
     objc_setAssociatedObject(self,
-                             UIView_Animation_isStopRotateAnimation,
+                             _cmd,
                              [NSNumber numberWithBool:isStopRotateAnimation],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIView_Animation_shakeAnim = "UIView_Animation_shakeAnim";
-@dynamic shakeAnim;
 #pragma mark —— @property(nonatomic,strong)CAKeyframeAnimation *shakeAnim;
+@dynamic shakeAnim;
 -(CAKeyframeAnimation *)shakeAnim{
-    CAKeyframeAnimation *ShakeAnim = objc_getAssociatedObject(self, UIView_Animation_shakeAnim);
+    CAKeyframeAnimation *ShakeAnim = objc_getAssociatedObject(self, _cmd);
     if (!ShakeAnim) {
         #define Angle2Radian(angle) ((angle) / 180.0 * M_PI)
         ShakeAnim = CAKeyframeAnimation.animation;
@@ -252,7 +246,7 @@ static char *UIView_Animation_shakeAnim = "UIView_Animation_shakeAnim";
 
 -(void)setShakeAnim:(CAKeyframeAnimation *)shakeAnim{
     objc_setAssociatedObject(self,
-                             UIView_Animation_shakeAnim,
+                             _cmd,
                              shakeAnim,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

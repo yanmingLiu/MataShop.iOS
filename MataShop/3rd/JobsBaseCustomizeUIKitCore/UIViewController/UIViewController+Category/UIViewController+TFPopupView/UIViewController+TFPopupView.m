@@ -8,21 +8,6 @@
 #import "UIViewController+TFPopupView.h"
 
 @implementation UIViewController (TFPopupView)
-
-//#pragma mark —— TFPopupDelegate
-///// 在 tf_hide 之后执行
-//- (BOOL)tf_popupViewWillHide:(UIView *)popup{
-//    if (self.filterBtn.selected) {
-//        [self.filterBtn changeAction: 0];
-//        self.filterBtn.selected = !self.filterBtn.selected;
-//    }return YES;
-//}
-//
-//- (BOOL)tf_popupViewWillShow:(UIView *)popup{
-//    [self.popUpFiltrationView showDefaultBackground];
-//    return YES;
-//}
-
 /// 弹出筛选视图
 -(UIView *)popUpFiltrationView{
     self.popupParameter.disuseBackgroundTouchHide = NO;
@@ -55,50 +40,39 @@
 -(void)hidePopupView:(UIView *)popupView{
     [popupView tf_hide];
 }
-static char *UIViewController_TFPopupView_filtrationView = "UIViewController_TFPopupView_filtrationView";
-@dynamic filtrationView;
 #pragma mark —— @property(nonatomic,strong)BaiShaETProjFiltrationView *filtrationView;/// 过滤
+@dynamic filtrationView;
 -(BaiShaETProjFiltrationView *)filtrationView{
-    BaiShaETProjFiltrationView *FiltrationView = objc_getAssociatedObject(self, UIViewController_TFPopupView_filtrationView);
+    BaiShaETProjFiltrationView *FiltrationView = objc_getAssociatedObject(self, _cmd);
     if (!FiltrationView) {
         FiltrationView = BaiShaETProjFiltrationView.new;
         FiltrationView.size = [BaiShaETProjFiltrationView viewSizeWithModel:nil];
         [FiltrationView richElementsInViewWithModel:nil];
-        
-        objc_setAssociatedObject(self,
-                                 UIViewController_TFPopupView_filtrationView,
-                                 FiltrationView,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setFiltrationView:FiltrationView];
     }return FiltrationView;
 }
 
 -(void)setFiltrationView:(BaiShaETProjFiltrationView *)filtrationView{
     objc_setAssociatedObject(self,
-                             UIViewController_TFPopupView_filtrationView,
+                             _cmd,
                              filtrationView,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIViewController_TFPopupView_customView = "UIViewController_TFPopupView_customView";
-@dynamic customView;
 #pragma mark —— @property(nonatomic,strong)BaiShaETProjCustomView *customView;/// 自定义
+@dynamic customView;
 -(BaiShaETProjCustomView *)customView{
-    BaiShaETProjCustomView *CustomView = objc_getAssociatedObject(self, UIViewController_TFPopupView_customView);
+    BaiShaETProjCustomView *CustomView = objc_getAssociatedObject(self, _cmd);
     if (!CustomView) {
         CustomView = BaiShaETProjCustomView.new;
         CustomView.size = [BaiShaETProjFiltrationView viewSizeWithModel:nil];
         [CustomView richElementsInViewWithModel:nil];
-        
-        objc_setAssociatedObject(self,
-                                 UIViewController_TFPopupView_customView,
-                                 CustomView,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        
+        [self setCustomView:CustomView];
     }return CustomView;
 }
 
 -(void)setCustomView:(BaiShaETProjCustomView *)customView{
     objc_setAssociatedObject(self,
-                             UIViewController_TFPopupView_customView,
+                             _cmd,
                              customView,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

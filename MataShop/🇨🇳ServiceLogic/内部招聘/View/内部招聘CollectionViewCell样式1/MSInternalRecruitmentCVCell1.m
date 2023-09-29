@@ -81,10 +81,11 @@
         }];
         [_joinBtn cornerCutToCircleWithCornerRadius:JobsWidth(14)];
         @jobs_weakify(self)
-        [_joinBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_joinBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             [WHToast toastErrMsg:Internationalization(@"我要加入")];
+            return nil;
         }];
     }return _joinBtn;
 }

@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MacroDef_Font.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,15 +25,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (RichText)
 /// 整合输出富文本，作用于lable.attributedText
-/// @param richTextMutArr 富文本的纯文本字符串
-/// @param richTextConfigMutArr 富文本的配置集合,对该纯文本字符串的释义
+/// @param richTextDataConfigMutArr 富文本的配置集合,对该纯文本字符串的释义
 /// @param paragraphStyle 段落样式
--(NSMutableAttributedString *)makeAttributedStringWithRichTextMutArr:(NSArray <NSString *>*)richTextMutArr
-                                                richTextConfigMutArr:(NSMutableArray <RichTextConfig *>*)richTextConfigMutArr
-                                                      paragraphStyle:(NSMutableParagraphStyle *_Nullable)paragraphStyle;
+-(NSMutableAttributedString *_Nullable)richTextWithDataConfigMutArr:(NSArray <RichTextConfig *>*_Nonnull)richTextDataConfigMutArr
+                                                     paragraphStyle:(NSMutableParagraphStyle *_Nullable)paragraphStyle;
 /// 利用 NSArray <RichTextConfig *>* 形成富文本
 /// @param richTextDataConfigMutArr 富文本的配置集合,对该纯文本字符串的释义
--(NSMutableAttributedString *)richTextWithDataConfigMutArr:(NSArray <RichTextConfig *>*_Nonnull)richTextDataConfigMutArr;
+-(NSMutableAttributedString *_Nullable)richTextWithDataConfigMutArr:(NSArray <RichTextConfig *>*_Nonnull)richTextDataConfigMutArr;
 
 @end
 
@@ -86,9 +85,7 @@ NS_ASSUME_NONNULL_END
 
  -(NSMutableAttributedString *)attributedStringData{
      if (!_attributedStringData) {
-         _attributedStringData = [self makeAttributedStringWithRichTextMutArr:self.richTextMutArr
-                                                         richTextConfigMutArr:self.richTextConfigMutArr
-                                                               paragraphStyle:nil];
+         _attributedStringData = [self richTextWithDataConfigMutArr:self.richTextConfigMutArr];
      }return _attributedStringData;
  }
 
@@ -105,13 +102,13 @@ NS_ASSUME_NONNULL_END
          _richTextConfigMutArr = NSMutableArray.array;
          
          RichTextConfig *config_01 = RichTextConfig.new;
-         config_01.font = [UIFont systemFontOfSize:JobsWidth(12) weight:UIFontWeightRegular];
+         config_01.font = UIFontWeightRegularSize(14);
          config_01.textCor = HEXCOLOR(0x757575);
          config_01.targetString = self.richTextMutArr[0];
          [_richTextConfigMutArr addObject:config_01];
 
          RichTextConfig *config_02 = RichTextConfig.new;
-         config_02.font = [UIFont systemFontOfSize:JobsWidth(12) weight:UIFontWeightMedium];
+         config_02.font = UIFontWeightRegularSize(14);
          config_02.textCor = HEXCOLOR(0xAE8330);
          config_02.targetString = self.richTextMutArr[1];
          config_02.urlStr = @"click://"; /// 根据这个属性加链接,点击进行跳转

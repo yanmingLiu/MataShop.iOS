@@ -16,9 +16,7 @@
 #import "UIView+Chain.h"
 #import "UIView+EmptyData.h"
 #import "UIView+Extras.h"
-#import "UIView+Gesture.h"
 #import "UIView+Gradient.h"
-#import "UIView+JHGestureBlock.h"
 #import "UIView+Measure.h"
 #import "UIView+MJRefresh.h"
 #import "UIView+SuspendView.h"
@@ -27,5 +25,8 @@
 #import "UIView+UIBackgroundConfig.h"
 #import "UIView+Masonry.h"
 #import "UIView+BRPickerView.h"
+
+#import "UIView+Gesture.h"
+#import "UIView+JHGestureBlock.h"
 
 #endif /* UIView_Category_h */

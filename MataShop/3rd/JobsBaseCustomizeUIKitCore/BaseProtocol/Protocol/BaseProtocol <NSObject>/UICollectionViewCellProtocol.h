@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol UICollectionViewCellProtocol <BaseCellProtocol>
-
+@optional
 +(instancetype)cellWithCollectionView:(nonnull UICollectionView *)collectionView
                          forIndexPath:(nonnull NSIndexPath *)indexPath;
 -(UITextView *)getTextView;

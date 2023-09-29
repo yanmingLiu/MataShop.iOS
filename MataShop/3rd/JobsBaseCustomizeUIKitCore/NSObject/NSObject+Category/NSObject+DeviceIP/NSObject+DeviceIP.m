@@ -20,7 +20,7 @@
         while(temp_address != NULL) {
             if(temp_address->ifa_addr->sa_family == AF_INET) {
               if([[NSString stringWithUTF8String:temp_address->ifa_name] isEqualToString:@"en0"]) {
-         address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_address->ifa_addr)->sin_addr)];
+                  address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_address->ifa_addr)->sin_addr)];
                 }
             }
             temp_address = temp_address->ifa_next;
@@ -34,7 +34,9 @@
     //方式一：淘宝api
 //    NSURL *ipURL = [NSURL URLWithString:@"http://ip.taobao.com/service/getIpInfo.php?ip=myip"];
 //    NSData *data = [NSData dataWithContentsOfURL:ipURL];
-//    NSDictionary *ipDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//    NSDictionary *ipDic = [NSJSONSerialization JSONObjectWithData:data
+//                                                          options:NSJSONReadingMutableContainers
+//                                                            error:nil];
 //    NSString *ipStr = nil;
 //    if (ipDic && [ipDic[@"code"] integerValue] == 0) {
 //        //获取成功
@@ -44,19 +46,20 @@
     
     //方式二：新浪api
     NSError *error;
-    NSURL *ipURL = [NSURL URLWithString:@"http://pv.sohu.com/cityjson?ie=utf-8"];
-      
-    NSMutableString *ip = [NSMutableString stringWithContentsOfURL:ipURL encoding:NSUTF8StringEncoding error:&error];
+    NSMutableString *ip = [NSMutableString stringWithContentsOfURL:@"http://pv.sohu.com/cityjson?ie=utf-8".jobsUrl 
+                                                          encoding:NSUTF8StringEncoding
+                                                             error:&error];
     //判断返回字符串是否为所需数据
     if ([ip hasPrefix:@"var returnCitySN = "]) {
         //对字符串进行处理，然后进行json解析
         //删除字符串多余字符串
         NSRange range = NSMakeRange(0, 19);
         [ip deleteCharactersInRange:range];
-        NSString * nowIp =[ip substringToIndex:ip.length-1];
+        NSString * nowIp =[ip substringToIndex:ip.length - 1];
         //将字符串转换成二进制进行Json解析
         NSData * data = [nowIp dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data 
+                                                              options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"%@",dict);
         return dict[@"cip"] ? dict[@"cip"] : @"0.0.0.0";
     }return @"0.0.0.0";
@@ -67,13 +70,15 @@
     @[ IOS_VPN @"/" IP_ADDR_IPv4, IOS_VPN @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_WIFI @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6 ] :
     @[ IOS_VPN @"/" IP_ADDR_IPv6, IOS_VPN @"/" IP_ADDR_IPv4, IOS_WIFI @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4 ] ;
     
-    NSDictionary *addresses = [self getIPAddresses];
+    NSDictionary *addresses = self.getIPAddresses;
     NSLog(@"addresses: %@", addresses);
     
     __block NSString *address;
-    [searchArray enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
+    [searchArray enumerateObjectsUsingBlock:^(NSString *key, 
+                                              NSUInteger idx,
+                                              BOOL *stop) {
          address = addresses[key];
-         //筛选出IP地址格式
+         /// 筛选出IP地址格式
          if([self isValidatIP:address]) *stop = YES;
      } ];
     return address ? address : @"0.0.0.0";
@@ -89,10 +94,14 @@
     "([01]?\\d\\d?|2[0-4]\\d|25[0-5])$";
     
     NSError *error;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:urlRegEx options:0 error:&error];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:urlRegEx 
+                                                                           options:0
+                                                                             error:&error];
     
     if (regex != nil) {
-        NSTextCheckingResult *firstMatch=[regex firstMatchInString:ipAddress options:0 range:NSMakeRange(0, [ipAddress length])];
+        NSTextCheckingResult *firstMatch = [regex firstMatchInString:ipAddress
+                                                             options:0
+                                                               range:NSMakeRange(0, [ipAddress length])];
         
         if (firstMatch) {
             NSRange resultRange = [firstMatch rangeAtIndex:0];

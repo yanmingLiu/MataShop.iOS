@@ -9,22 +9,22 @@
 
 @implementation UIViewController (SuspendBtn)
 
-static char *UIViewController_SuspendBtn_suspendBtn = "UIViewController_SuspendBtn_suspendBtn";
 @dynamic suspendBtn;
 #pragma mark —— @property(nonatomic,strong)JobsSuspendBtn *suspendBtn;
 -(JobsSuspendBtn *)suspendBtn{
-    JobsSuspendBtn *SuspendBtn = objc_getAssociatedObject(self, UIViewController_SuspendBtn_suspendBtn);
+    JobsSuspendBtn *SuspendBtn = objc_getAssociatedObject(self, _cmd);
     if (!SuspendBtn) {
         SuspendBtn = JobsSuspendBtn.new;
         SuspendBtn.normalImage = JobsIMG(@"旋转");
         SuspendBtn.isAllowDrag = YES;//悬浮效果必须要的参数
         @jobs_weakify(self)
-        [SuspendBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [SuspendBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             NSLog(@"%@",x.selected ? Internationalization(@"开始旋转") : Internationalization(@"停止旋转"));
 //            [x rotateAnimation:x.selected];
             if (self.objectBlock) self.objectBlock(x);
+            return nil;
         }];
         self.view.vc = weak_self;
         [self.view addSubview:SuspendBtn];
@@ -40,7 +40,7 @@ static char *UIViewController_SuspendBtn_suspendBtn = "UIViewController_SuspendB
 
 -(void)setSuspendBtn:(JobsSuspendBtn *)suspendBtn{
     objc_setAssociatedObject(self,
-                             UIViewController_SuspendBtn_suspendBtn,
+                             _cmd,
                              suspendBtn,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

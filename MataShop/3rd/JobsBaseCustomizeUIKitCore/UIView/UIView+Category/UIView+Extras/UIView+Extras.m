@@ -48,10 +48,10 @@
 -(UIImage *_Nullable)lanuchScreenShot{
     NSString *name = NSBundle.mainBundle.infoDictionary.valueForKeyBlock(@"UILaunchStoryboardName");
     if(!name) return nil;
-    UIViewController *vc = [UIStoryboard storyboardWithName:name bundle:nil].instantiateInitialViewController;
+    UIViewController *vc = [self vcByStoryboardWithName:name storyboardBundle:nil];
     if(vc){
         UIView *view = vc.view;
-        UIWindow *window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
+        UIWindow *window = jobsGetMainWindow();
         view.frame = window.bounds;
         [window addSubview:view];
         [window layoutIfNeeded];
@@ -466,12 +466,10 @@
             break;
     }targetShadowview.layer.shadowPath = path.CGPath;
 }
-#pragma mark —— SET | GET
 /// 设置控件是否可见，对影响可视化的hidden 和 alpha属性进行操作
 /// 需要特别注意的是：这个地方的jobsVisible不能属性化，否则在某些情况下会出现异常（只会走子类方法不会走分类方法）
-static char *UIView_Extras_jobsVisible = "UIView_Extras_jobsVisible";
 -(BOOL)jobsVisible{
-    BOOL JobsVisible = [objc_getAssociatedObject(self, UIView_Extras_jobsVisible) boolValue];
+    BOOL JobsVisible = [objc_getAssociatedObject(self, _cmd) boolValue];
     return JobsVisible;
 }
 
@@ -479,7 +477,7 @@ static char *UIView_Extras_jobsVisible = "UIView_Extras_jobsVisible";
     self.hidden = !jobsVisible;
     self.alpha = jobsVisible;
     objc_setAssociatedObject(self,
-                             UIView_Extras_jobsVisible,
+                             _cmd,
                              [NSNumber numberWithBool:jobsVisible],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

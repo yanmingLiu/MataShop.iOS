@@ -25,9 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UICollectionViewCell (Default)<UICollectionViewCellProtocol>
 
-+(instancetype)defaultCellWithCollectionView:(nonnull UICollectionView *)collectionView
-                                forIndexPath:(nonnull NSIndexPath *)indexPath;
-
 @end
 
 NS_ASSUME_NONNULL_END

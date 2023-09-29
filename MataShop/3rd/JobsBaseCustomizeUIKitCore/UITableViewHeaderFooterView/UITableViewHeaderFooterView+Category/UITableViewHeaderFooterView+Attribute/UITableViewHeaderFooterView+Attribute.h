@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
-//https://github.com/Zydhjx/HeaderDemo
+///资料来源：https://github.com/Zydhjx/HeaderDemo
 @interface UITableViewHeaderFooterView (Attribute)
 
 @property(nonatomic,weak)UITableView *tableView;

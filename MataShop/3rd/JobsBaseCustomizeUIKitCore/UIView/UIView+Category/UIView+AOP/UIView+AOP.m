@@ -6,10 +6,7 @@
 //
 
 #import "UIView+AOP.h"
-
-/**
- * 文本选择器的自定义颜色，因为是内部类，所以需要用runtime来修改
- */
+/// 文本选择器的自定义颜色，因为是内部类，所以需要用runtime来修改
 @implementation UIView (AOP)
 
 + (void)load{

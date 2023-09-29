@@ -29,12 +29,6 @@
 #import "RACEXTKeyPathCoding.h"
 #endif
 
-//#if __has_include(<ReactiveObjC/RACEXTRuntimeExtensions.h>)
-//#import <ReactiveObjC/RACEXTRuntimeExtensions.h>
-//#else
-//#import "RACEXTRuntimeExtensions.h"
-//#endif
-
 #if __has_include(<MJRefresh/MJRefresh.h>)
 #import <MJRefresh/MJRefresh.h>
 #else
@@ -47,6 +41,12 @@
 #import "Lottie.h"
 #endif
 
+//#if __has_include(<ReactiveObjC/RACEXTRuntimeExtensions.h>)
+//#import <ReactiveObjC/RACEXTRuntimeExtensions.h>
+//#else
+//#import "RACEXTRuntimeExtensions.h"
+//#endif
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// 下拉刷新Lottie动画
@@ -54,8 +54,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)MJRefreshConfigModel *refreshConfigModel;
 @property(nonatomic,assign)CGSize lOTAnimationViewSize;
-
--(void)actionBlockRefreshHeader:(jobsByIDBlock)refreshHeaderBlock;//开始刷新和结束刷新可以做的动作
 
 @end
 

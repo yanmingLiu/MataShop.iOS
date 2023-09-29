@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewProtocol.h"
+#import "UILocationProtocol.h"
 #import "UIView+Extras.h"
 #import "UILabel+Extra.h"
 #import "NSString+Others.h"
@@ -20,17 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BaseLabel : UILabel
 <
 BaseViewProtocol,
+UILocationProtocol,
 UIGestureRecognizerDelegate
 >
 
 @property(nonatomic,assign)UIEdgeInsets edgeInsets;
-@property(nonatomic,assign)CGFloat offsetY;
-@property(nonatomic,assign)CGFloat offsetX;
 
 #pragma mark —— 一些公有方法
-/// 当实现手势方法方可激活
--(void)actionTapGRBlock:(JobsReturnIDByGestureRecognizerBlock _Nullable)tapGRBlock;
--(void)actionLongPressGRBlock:(JobsReturnIDByGestureRecognizerBlock _Nullable)longPressGRBlock;
 /// UILabel文字的复制
 -(void)copyText;
 

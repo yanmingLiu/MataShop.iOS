@@ -108,7 +108,7 @@
         _textField = ZYTextField.new;
         _textField.delegate = self;
         @jobs_weakify(self)
-        [_textField textFieldEventFilterBlock:^BOOL(id data) {
+        [_textField jobsTextFieldEventFilterBlock:^BOOL(id data) {
             return YES;
         } subscribeNextBlock:^(id x) {
             @jobs_strongify(self)

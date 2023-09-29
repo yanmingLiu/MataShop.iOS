@@ -117,7 +117,7 @@
                                                     self.width,
                                                     self.height);
         _placeholderAnimationLbl.backgroundColor = UIColor.clearColor;
-        _placeholderAnimationLbl.textAlignment = self.placeHolderAlignment;
+        _placeholderAnimationLbl.textAlignment = self.textAlignment;///❤️
         if (self.attributedPlaceholder && !self.placeholder) {
             _placeholderAnimationLbl.attributedText = self.attributedPlaceholder;
         }else{

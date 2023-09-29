@@ -324,7 +324,7 @@ numberOfEventsForDate:(NSDate *)date{
         _signBtn.backgroundColor = JobsYellowColor;
         _signBtn.normalTitle = Internationalization(@"签到");
         @jobs_weakify(self)
-        [_signBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_signBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
@@ -332,7 +332,7 @@ numberOfEventsForDate:(NSDate *)date{
             //假设在这里网络请求签到成功,成功后需要重新请求签到所有结果
             if (self.count > 31) {
                 NSLog(@"别点了");
-                return;
+                return nil;
             }else if (!self.count){
                 self.count = 1;
             }
@@ -340,6 +340,7 @@ numberOfEventsForDate:(NSDate *)date{
             self.count++;
             [self.signInList addObject:dateStr];
             [self getSign];
+            return nil;
         }];
         
         [_signBtn cornerCutToCircleWithCornerRadius:5];

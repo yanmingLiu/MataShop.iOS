@@ -40,8 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong,nullable)NSMutableDictionary __block *jobsDataMutDic;/// 绑定的数据源，数据类型NSMutableDictionary
 // Layer
 @property(nonatomic,strong,nullable)UIColor __block *layerBorderCor;
-@property(nonatomic,assign)CGFloat layerBorderWidth;
-@property(nonatomic,assign)CGFloat layerCornerRadius;
+@property(nonatomic,assign)CGFloat __block layerBorderWidth;
+@property(nonatomic,assign)CGFloat __block layerCornerRadius;
 
 @end
 

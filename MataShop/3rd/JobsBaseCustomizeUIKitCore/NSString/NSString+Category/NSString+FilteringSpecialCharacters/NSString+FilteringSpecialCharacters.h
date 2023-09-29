@@ -33,7 +33,6 @@ FOUNDATION_EXTERN NSString *const 日文平假名和片假名;
 
 /// 过滤特殊字符
 @interface NSString (FilteringSpecialCharacters)
-
 /// 外界灵活选择的特殊符号拼接成一个包含所有被选中特殊符号的字符串
 /// @param specialSymbolsStringMutArr 选择的特殊符号数组
 -(NSString *)specialSymbolsAction:(NSMutableArray <NSString *>*_Nullable)specialSymbolsStringMutArr;

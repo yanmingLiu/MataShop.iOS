@@ -11,12 +11,12 @@
 @implementation NSNotificationCenter (JobsBlock)
 
 -(void (^)(NSNotification *))jobsNotificationBlock {
-    return objc_getAssociatedObject(self, @selector(jobsNotificationBlock));
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 -(void)setJobsNotificationBlock:(void (^)(NSNotification *))jobsNotificationBlock {
     objc_setAssociatedObject(self,
-                             @selector(jobsNotificationBlock),
+                             _cmd,
                              jobsNotificationBlock,
                              OBJC_ASSOCIATION_COPY_NONATOMIC);
 }

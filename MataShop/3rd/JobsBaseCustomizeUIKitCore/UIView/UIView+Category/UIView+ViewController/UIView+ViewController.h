@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (ViewController)
 
-- (UIViewController *)currentController;
+-(UIViewController *_Nullable)currentController;
 
 @end
 

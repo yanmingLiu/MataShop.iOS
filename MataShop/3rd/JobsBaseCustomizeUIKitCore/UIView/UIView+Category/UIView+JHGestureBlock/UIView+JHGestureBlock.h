@@ -28,23 +28,17 @@
 //  SOFTWARE.
 
 #import <UIKit/UIKit.h>
-
-typedef void(^JHGestureBlock)(__kindof UIView *view, __kindof UIGestureRecognizer *gesture);
+#import <objc/runtime.h>
 
 typedef NS_ENUM(NSUInteger, JHGestureType) {
-    /// 点击
-    JHGestureType_Tap,
-    /// 长按
-    JHGestureType_LongPress,
-    /// 轻扫
-    JHGestureType_Swipe,
-    /// 移动
-    JHGestureType_Pan,
-    /// 旋转
-    JHGestureType_Rotate,
-    /// 缩放
-    JHGestureType_Pinch,
+    JHGestureType_Tap, /// 点击
+    JHGestureType_LongPress,/// 长按
+    JHGestureType_Swipe,/// 轻扫
+    JHGestureType_Pan,/// 移动
+    JHGestureType_Rotate, /// 旋转
+    JHGestureType_Pinch,/// 缩放
 };
+typedef void(^JHGestureBlock)(__kindof UIView *view, __kindof UIGestureRecognizer *gesture);
 
 @interface UIView (JHGestureBlock)
 

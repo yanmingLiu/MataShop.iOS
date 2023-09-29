@@ -13,18 +13,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSBundle (CLLanguage)
-
-/**
- 是否是中文
- */
-+ (BOOL)isChineseLanguage;
-
-/**
- 查询当前语言
-
- @return 当前语言
- */
-+ (NSString *)currentLanguage;
+/// 是否是中文
++(BOOL)isChineseLanguage;
+/// 查询当前语言
++(NSString *)currentLanguage;
 
 @end
 

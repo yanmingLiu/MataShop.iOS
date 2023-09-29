@@ -135,7 +135,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
             make.centerX.equalTo(self);
             make.top.equalTo(self).offset(JobsWidth(43));
         }];
-        [_userHeaderBtn.imageView cornerCutToCircleWithCornerRadius:_userHeaderBtn.imageView.image.height / 2];
+        [_userHeaderBtn.imageView cornerCutToCircleWithCornerRadius:_userHeaderBtn.imageView.image.jobsHeight / 2];
         [_userHeaderBtn.imageView layerBorderCor:HEXCOLOR(0xEEE2C8) andBorderWidth:JobsWidth(1)];
         
         _userHeaderBtn.imageTitleSpace = JobsWidth(12);
@@ -258,9 +258,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 -(NSMutableAttributedString *)attributedStringData{
     if (!_attributedStringData) {
-        _attributedStringData = [self makeAttributedStringWithRichTextMutArr:self.richTextMutArr
-                                                        richTextConfigMutArr:self.richTextConfigMutArr
-                                                              paragraphStyle:nil];
+        _attributedStringData = [self richTextWithDataConfigMutArr:self.richTextConfigMutArr];
     }return _attributedStringData;
 }
 
@@ -303,18 +301,15 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
         {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"當前存款");
-            viewModel.subTextModel.attributedText = [self makeAttributedStringWithRichTextMutArr:self.richTextMutArr2[0]
-                                                                            richTextConfigMutArr:self.richTextConfigMutArr2[0]
-                                                                                  paragraphStyle:nil];
+            
+            viewModel.subTextModel.attributedText = [self richTextWithDataConfigMutArr:self.richTextConfigMutArr2[0]];
             [_dataMutArr addObject:viewModel];
         }
         
         {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"當前流水");
-            viewModel.subTextModel.attributedText = [self makeAttributedStringWithRichTextMutArr:self.richTextMutArr2[1]
-                                                                            richTextConfigMutArr:self.richTextConfigMutArr2[1]
-                                                                                  paragraphStyle:nil];
+            viewModel.subTextModel.attributedText = [self richTextWithDataConfigMutArr:self.richTextConfigMutArr2[1]];
             [_dataMutArr addObject:viewModel];
         }
     }return _dataMutArr;

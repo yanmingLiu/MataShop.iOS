@@ -165,11 +165,12 @@
         }];
         [_buyBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
         @jobs_weakify(self)
-        [_buyBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_buyBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
             [WHToast toastErrMsg:Internationalization(@"我要购买")];
+            return nil;
         }];
     }return _recommendedBuyBtn;
 }
@@ -189,11 +190,12 @@
         [_recommendedBuyBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
         [_recommendedBuyBtn layerBorderCor:RGBA_COLOR(136, 79, 2, 1) andBorderWidth:JobsWidth(1)];
         @jobs_weakify(self)
-        [_recommendedBuyBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_recommendedBuyBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
             [WHToast toastErrMsg:Internationalization(@"推荐购买")];
+            return nil;
         }];
     }return _recommendedBuyBtn;
 }

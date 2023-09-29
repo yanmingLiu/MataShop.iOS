@@ -108,13 +108,14 @@
         [_securityModeBtn selectedImage:self.doorInputViewBaseStyleModel.selectedSecurityBtnIMG ? : [UIImage imageWithColor:JobsRedColor]];
         [_securityModeBtn normalImage:self.doorInputViewBaseStyleModel.unSelectedSecurityBtnIMG ? : [UIImage imageWithColor:JobsBlueColor]];
         @jobs_weakify(self)
-        [_securityModeBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_securityModeBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             self.textField.secureTextEntry = x.selected;
             if (x.selected && !self.textField.isEditing) {
                 self.textField.placeholder = self.doorInputViewBaseStyleModel.placeHolderStr;
             }
+            return nil;
         }];
 
         [self addSubview:_securityModeBtn];

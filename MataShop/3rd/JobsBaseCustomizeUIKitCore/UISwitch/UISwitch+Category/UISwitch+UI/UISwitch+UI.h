@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// iOS系统内置了UISwithch控件的size，所以通过代码调整UISwithch的大小无效。默认大小：宽51.0f 、高31.0f
 @interface UISwitch (UI)
 
--(void)jobsSwitchClickEventBlock:(jobsByIDBlock)subscribeNextBlock;
+-(RACDisposable *)jobsSwitchClickEventBlock:(jobsByIDBlock)subscribeNextBlock;
 
 @end
 

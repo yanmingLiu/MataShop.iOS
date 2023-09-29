@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <objc/runtime.h>
 #import "UIView+Measure.h"
 #import "MacroDef_Size.h"
 

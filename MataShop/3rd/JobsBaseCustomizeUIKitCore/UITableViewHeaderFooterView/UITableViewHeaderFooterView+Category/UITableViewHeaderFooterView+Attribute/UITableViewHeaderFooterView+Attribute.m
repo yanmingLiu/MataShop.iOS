@@ -9,23 +9,21 @@
 #import "UITableViewHeaderFooterView+Attribute.h"
 
 @implementation UITableViewHeaderFooterView (Attribute)
-
+#pragma mark —— tableView
 -(void)setTableView:(UITableView *)tableView{
-    SEL selector = @selector(tableView);
-    [self willChangeValueForKey:NSStringFromSelector(selector)];
-    objc_setAssociatedObject(self, selector, tableView, OBJC_ASSOCIATION_ASSIGN);
-    [self didChangeValueForKey:NSStringFromSelector(selector)];
+    [self willChangeValueForKey:NSStringFromSelector(_cmd)];
+    objc_setAssociatedObject(self, _cmd, tableView, OBJC_ASSOCIATION_ASSIGN);
+    [self didChangeValueForKey:NSStringFromSelector(_cmd)];
 }
 
 -(UITableView *)tableView{
     return objc_getAssociatedObject(self, _cmd);
 }
-
+#pragma mark —— section
 -(void)setSection:(NSUInteger)section{
-    SEL selector = @selector(section);
-    [self willChangeValueForKey:NSStringFromSelector(selector)];
-    objc_setAssociatedObject(self, selector, @(section), OBJC_ASSOCIATION_ASSIGN);
-    [self didChangeValueForKey:NSStringFromSelector(selector)];
+    [self willChangeValueForKey:NSStringFromSelector(_cmd)];
+    objc_setAssociatedObject(self, _cmd, @(section), OBJC_ASSOCIATION_ASSIGN);
+    [self didChangeValueForKey:NSStringFromSelector(_cmd)];
 }
 
 -(NSUInteger)section{

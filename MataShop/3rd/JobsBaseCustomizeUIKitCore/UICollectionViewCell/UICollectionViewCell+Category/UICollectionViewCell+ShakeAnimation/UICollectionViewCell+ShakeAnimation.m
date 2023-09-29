@@ -8,7 +8,7 @@
 #import "UICollectionViewCell+ShakeAnimation.h"
 
 @implementation UICollectionViewCell (ShakeAnimation)
-// 实现cell抖动方法
+/// 实现cell抖动方法
 -(void)beginShake{
     CAKeyframeAnimation *anim = CAKeyframeAnimation.animation;
     anim.keyPath = @"transform.rotation";
@@ -22,7 +22,7 @@
     [self.layer addAnimation:anim
                       forKey:@"shake"];
 }
-// 实现cell停止抖动方法
+/// 实现cell停止抖动方法
 -(void)stopShake{
     [self.layer removeAllAnimations];
 }

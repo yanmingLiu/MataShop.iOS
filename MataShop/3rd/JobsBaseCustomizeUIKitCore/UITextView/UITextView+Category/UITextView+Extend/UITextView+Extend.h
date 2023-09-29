@@ -18,10 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSString *replacementText;
 @property(nonatomic,strong)NSString *resStr;
 
--(void)jobsTextViewFilterBlock:(JobsReturnBOOLByIDBlock)filterBlock
-            subscribeNextBlock:(jobsByIDBlock)subscribeNextBlock;
-
--(void)jobsTextViewSubscribeNextBlock:(jobsByIDBlock)subscribeNextBlock;
+-(RACDisposable *)jobsTextViewSubscribeNextBlock:(jobsByIDBlock)subscribeNextBlock;
+-(RACDisposable *)jobsTextViewFilterBlock:(JobsReturnBOOLByIDBlock)filterBlock
+                       subscribeNextBlock:(jobsByIDBlock)subscribeNextBlock;
 /**
  IOS UITextView内容垂直居中方法 https://www.jianshu.com/p/5e4cf8488bfd
  原理：由于textView是继承自UIScrollview，所以会有ContentSize属性。

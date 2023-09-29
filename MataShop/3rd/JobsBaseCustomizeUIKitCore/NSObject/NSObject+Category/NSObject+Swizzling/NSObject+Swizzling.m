@@ -10,8 +10,8 @@
 
 @implementation NSObject (Swizzling)
 
--(void)swizzlingInstanceMethod:(SEL)originalSelector
-              swizzledSelector:(SEL)swizzledSelector {
+-(void)swizzlingInstanceMethod:(SEL _Nonnull)originalSelector
+              swizzledSelector:(SEL _Nonnull)swizzledSelector {
     Class class = [self class];
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
     Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
@@ -40,10 +40,10 @@
 
 @end
 /// 不同类的方法交换
-void TYFFSwizzleMethod(Class originalCls,
-                       SEL originalSelector,
-                       Class swizzledCls,
-                       SEL swizzledSelector) {
+void TYFFSwizzleMethod(Class _Nonnull originalCls,
+                       SEL _Nonnull originalSelector,
+                       Class _Nonnull swizzledCls,
+                       SEL _Nonnull swizzledSelector) {
     Method originalMethod = class_getInstanceMethod(originalCls, originalSelector);
     Method swizzledMethod = class_getInstanceMethod(swizzledCls, swizzledSelector);
     /**
@@ -69,9 +69,9 @@ void TYFFSwizzleMethod(Class originalCls,
     }
 }
 /// 同一个类的方法交换
-void MethodSwizzle(Class c,
-                   SEL orig,
-                   SEL new) {
+void MethodSwizzle(Class _Nonnull c,
+                   SEL _Nonnull orig,
+                   SEL _Nonnull new) {
     Method origMethod = class_getInstanceMethod(c, orig);
     Method newMethod = class_getInstanceMethod(c, new);
     /**

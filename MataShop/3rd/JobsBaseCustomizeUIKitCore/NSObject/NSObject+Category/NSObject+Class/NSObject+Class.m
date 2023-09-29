@@ -8,19 +8,19 @@
 #import "NSObject+Class.h"
 
 @implementation NSObject (Class)
-// 返回并打印成员变量列表
+/// 返回并打印成员变量列表
 -(NSMutableArray <NSString *>*)printIvarList{
     return printIvarList(self);
 }
-// 返回并打印属性列表
+/// 返回并打印属性列表
 -(NSMutableArray <NSString *>*)printPropertyList{
     return printPropertyList(self);
 }
-// 返回并打印方法列表
+/// 返回并打印方法列表
 -(NSMutableArray <NSString *>*)printMethodList{
     return printMethodList(self);
 }
-// 返回并打印协议列表
+/// 返回并打印协议列表
 -(NSMutableArray <NSString *>*)printProtocolList{
     return printProtocolList(self);
 }

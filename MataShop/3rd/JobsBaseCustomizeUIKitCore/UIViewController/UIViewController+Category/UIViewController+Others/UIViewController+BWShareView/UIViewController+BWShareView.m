@@ -6,47 +6,33 @@
 //
 
 #import "UIViewController+BWShareView.h"
-#import <objc/runtime.h>
 
 @implementation UIViewController (BWShareView)
-
-static char *BaseVC_BWShareView_shareView = "BaseVC_BWShareView_shareView";
-static char *BaseVC_BWShareView_shareViewDataMutArr = "BaseVC_BWShareView_shareViewDataMutArr";
-static char *BaseVC_BWShareView_shareViewDataMutSecArr = "BaseVC_BWShareView_shareViewDataMutSecArr";
-static char *BaseVC_BWShareView_bWShareViewStyle = "BaseVC_BWShareView_bWShareViewStyle";
-static char *BaseVC_BWShareView_shareTitle = "BaseVC_BWShareView_shareTitle";
 
 static char *originX = "originX";
 static char *originY = "originY";
 static char *sizeW = "sizeW";
 static char *sizeH = "sizeH";
 
-@dynamic shareView;
-@dynamic shareViewFrame;
-@dynamic shareViewDataMutArr;
-@dynamic bWShareViewStyle;
-@dynamic shareTitle;
-@dynamic shareViewDataMutSecArr;
-
-#pragma mark SET | GET
 #pragma mark —— @property(strong,nonatomic)BWShareView *shareView;
+@dynamic shareView;
 -(BWShareView *)shareView{
-    BWShareView *ShareView = objc_getAssociatedObject(self, BaseVC_BWShareView_shareView);
+    BWShareView *ShareView = objc_getAssociatedObject(self, _cmd);
     switch (self.bWShareViewStyle) {
         case BWShareViewStyle_1:{
             if (!ShareView) {
-                ShareView = [[BWShareView alloc] initWithFrame:self.shareViewFrame
-                                                    shareTitle:self.shareTitle
-                                                    shareArray:self.shareViewDataMutArr];
+                ShareView = [BWShareView.alloc initWithFrame:self.shareViewFrame
+                                                  shareTitle:self.shareTitle
+                                                  shareArray:self.shareViewDataMutArr];
             }
         }
             break;
         case BWShareViewStyle_2:{
             if (!ShareView) {
-                ShareView = [[BWShareView alloc] initWithFrame:self.shareViewFrame
-                                                    shareTitle:self.shareTitle
-                                                    firstArray:self.shareViewDataMutArr
-                                                   secondArray:self.shareViewDataMutSecArr];
+                ShareView = [BWShareView.alloc initWithFrame:self.shareViewFrame
+                                                  shareTitle:self.shareTitle
+                                                  firstArray:self.shareViewDataMutArr
+                                                 secondArray:self.shareViewDataMutSecArr];
             }
         }
         default:
@@ -55,7 +41,7 @@ static char *sizeH = "sizeH";
             break;
     }
     objc_setAssociatedObject(self,
-                             BaseVC_BWShareView_shareView,
+                             _cmd,
                              ShareView,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return ShareView;
@@ -63,11 +49,12 @@ static char *sizeH = "sizeH";
 
 -(void)setShareView:(BWShareView *)shareView{
     objc_setAssociatedObject(self,
-                             BaseVC_BWShareView_shareView,
+                             _cmd,
                              shareView,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(assign,nonatomic)CGRect shareViewFrame;
+@dynamic shareViewFrame;
 -(CGRect)shareViewFrame{
     CGFloat ShareViewFrameX = [objc_getAssociatedObject(self, originX) floatValue];
     CGFloat ShareViewFrameY = [objc_getAssociatedObject(self, originY) floatValue];
@@ -99,23 +86,25 @@ static char *sizeH = "sizeH";
 }
 
 #pragma mark —— @property(assign,nonatomic)BWShareViewStyle bWShareViewStyle;
+@dynamic bWShareViewStyle;
 -(BWShareViewStyle)bWShareViewStyle{
-    return [objc_getAssociatedObject(self, BaseVC_BWShareView_bWShareViewStyle) integerValue];
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 
 -(void)setBWShareViewStyle:(BWShareViewStyle)bWShareViewStyle{
     objc_setAssociatedObject(self,
-                             BaseVC_BWShareView_bWShareViewStyle,
+                             _cmd,
                              [NSNumber numberWithInteger:bWShareViewStyle],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(strong,nonatomic)NSMutableArray *shareViewDataMutArr;
+@dynamic shareViewDataMutArr;
 -(NSMutableArray *)shareViewDataMutArr{
-    NSMutableArray *ShareViewDataMutArr = objc_getAssociatedObject(self, BaseVC_BWShareView_shareViewDataMutArr);
+    NSMutableArray *ShareViewDataMutArr = objc_getAssociatedObject(self, _cmd);
     if (!ShareViewDataMutArr) {
         ShareViewDataMutArr = NSMutableArray.array;
         objc_setAssociatedObject(self,
-                                 BaseVC_BWShareView_shareViewDataMutArr,
+                                 _cmd,
                                  ShareViewDataMutArr,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
@@ -124,18 +113,19 @@ static char *sizeH = "sizeH";
 
 -(void)setShareViewDataMutArr:(NSMutableArray *)shareViewDataMutArr{
     objc_setAssociatedObject(self,
-                             BaseVC_BWShareView_shareViewDataMutArr,
+                             _cmd,
                              shareViewDataMutArr,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 #pragma mark —— @property(strong,nonatomic)NSMutableArray *shareViewDataMutSecArr;
+@dynamic shareViewDataMutSecArr;
 -(NSMutableArray *)shareViewDataMutSecArr{
-    NSMutableArray *ShareViewDataMutSecArr = objc_getAssociatedObject(self, BaseVC_BWShareView_shareViewDataMutSecArr);
+    NSMutableArray *ShareViewDataMutSecArr = objc_getAssociatedObject(self, _cmd);
     if (!ShareViewDataMutSecArr) {
         ShareViewDataMutSecArr = NSMutableArray.array;
         objc_setAssociatedObject(self,
-                                 BaseVC_BWShareView_shareViewDataMutSecArr,
+                                 _cmd,
                                  ShareViewDataMutSecArr,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
@@ -144,21 +134,21 @@ static char *sizeH = "sizeH";
 
 -(void)setShareViewDataMutSecArr:(NSMutableArray *)shareViewDataMutSecArr{
     objc_setAssociatedObject(self,
-                             BaseVC_BWShareView_shareViewDataMutSecArr,
+                             _cmd,
                              shareViewDataMutSecArr,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(strong,nonatomic)NSString *shareTitle;
+@dynamic shareTitle;
 -(NSString *)shareTitle{
-   return objc_getAssociatedObject(self, BaseVC_BWShareView_shareTitle);
+   return objc_getAssociatedObject(self, _cmd);
 }
 
 -(void)setShareTitle:(NSString *)shareTitle{
     objc_setAssociatedObject(self,
-                             BaseVC_BWShareView_shareTitle,
+                             _cmd,
                              shareTitle,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
 
 @end

@@ -22,17 +22,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (WHToast)
-/** 仅文字，展示在屏幕中间 */
+/// 仅文字，展示在屏幕中间
 +(void)toastMsg:(NSString *)msg;
-/** 失败图标和文字，展示在屏幕中间 */
+/// 失败图标和文字，展示在屏幕中间
 +(void)toastErrMsg:(NSString *)errMsg;
-/** 成功图标和文字，展示在屏幕中间 */
+/// 成功图标和文字，展示在屏幕中间
 +(void)toastSuccessMsg:(NSString *)successMsg;
-/** 延时操作 */
+/// 延时操作
 +(void)toastLoadingMsg:(NSString *)errMsg;
-/** 手动关闭WHToast，在主线程*/
+/// 手动关闭WHToast，在主线程
 +(void)toastHide;
-/** 当前进度 */
+/// 当前进度
 +(void)loadSchedule:(CGFloat)Schedule;
 
 @end

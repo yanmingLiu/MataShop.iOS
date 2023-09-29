@@ -9,17 +9,17 @@
 
 @implementation UITextView (Extend)
 
--(void)jobsTextViewFilterBlock:(JobsReturnBOOLByIDBlock)filterBlock
-            subscribeNextBlock:(jobsByIDBlock)subscribeNextBlock{
-    [[self.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
-        return filterBlock ? filterBlock(value) : YES;
-    }] subscribeNext:^(NSString * _Nullable x) {
+-(RACDisposable *)jobsTextViewSubscribeNextBlock:(jobsByIDBlock)subscribeNextBlock{
+    return [self.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
         if (subscribeNextBlock) subscribeNextBlock(x);
     }];
 }
 
--(void)jobsTextViewSubscribeNextBlock:(jobsByIDBlock)subscribeNextBlock{
-    [self.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
+-(RACDisposable *)jobsTextViewFilterBlock:(JobsReturnBOOLByIDBlock)filterBlock
+                       subscribeNextBlock:(jobsByIDBlock)subscribeNextBlock{
+    return [[self.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
+        return filterBlock ? filterBlock(value) : YES;
+    }] subscribeNext:^(NSString * _Nullable x) {
         if (subscribeNextBlock) subscribeNextBlock(x);
     }];
 }
@@ -99,7 +99,7 @@
         return NO;
     }else if([replacementText isEqualToString:@""]){//删除
         /**
-         删除操作是系统接收@“”作为指令内部进行删除操作
+        删除操作是系统接收@“”作为指令内部进行删除操作
          获取需要操作的字符，最后2位，如果是emoji则删除2个字符，否则删除一个字符
          截取 textView.text 最后2位
          */
@@ -159,30 +159,27 @@
         return self.currentWordNum < self.wordLimitNum;
     }
 }
-#pragma mark SET | GET
-static char *UITextView_Extend_replacementText = "UITextView_Extend_replacementText";
-@dynamic replacementText;
 #pragma mark —— @property(nonatomic,strong)NSString *replacementText;
+@dynamic replacementText;
 -(NSString *)replacementText{
-    return objc_getAssociatedObject(self, UITextView_Extend_replacementText);
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 -(void)setReplacementText:(NSString *)replacementText{
     objc_setAssociatedObject(self,
-                             UITextView_Extend_replacementText,
+                             _cmd,
                              replacementText,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UITextView_Extend_resStr = "UITextView_Extend_resStr";
-@dynamic resStr;
 #pragma mark —— @property(nonatomic,strong)NSString *resStr;
+@dynamic resStr;
 -(NSString *)resStr{
-    return objc_getAssociatedObject(self, UITextView_Extend_resStr);
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 -(void)setResStr:(NSString *)resStr{
     objc_setAssociatedObject(self,
-                             UITextView_Extend_resStr,
+                             _cmd,
                              resStr,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

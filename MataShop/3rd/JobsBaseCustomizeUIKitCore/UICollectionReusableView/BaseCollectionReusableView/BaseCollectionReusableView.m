@@ -14,9 +14,7 @@
 @end
 
 @implementation BaseCollectionReusableView
-
 @synthesize viewModel = _viewModel;
-
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
 //        [self richElementsInViewWithModel:nil];

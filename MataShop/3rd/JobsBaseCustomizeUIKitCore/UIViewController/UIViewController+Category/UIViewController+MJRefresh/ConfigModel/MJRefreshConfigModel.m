@@ -13,8 +13,7 @@
 /// Font
 -(UIFont *)font{
     if (!_font) {
-        _font = [UIFont systemFontOfSize:17
-                                  weight:UIFontWeightLight];
+        _font = UIFontWeightThinSize(17);
     }return _font;
 }
 /// TextColor
@@ -56,31 +55,31 @@
 /// title
 -(NSString *)stateIdleTitle{
     if (!_stateIdleTitle) {
-        _stateIdleTitle = @"普通闲置状态";
+        _stateIdleTitle = Internationalization(@"普通闲置状态");
     }return _stateIdleTitle;
 }
 
 -(NSString *)pullingTitle{
     if (!_pullingTitle) {
-        _pullingTitle = @"松开就可以进行刷新的状态";
+        _pullingTitle = Internationalization(@"松开就可以进行刷新的状态");
     }return _pullingTitle;
 }
 
 -(NSString *)refreshingTitle{
     if (!_refreshingTitle) {
-        _refreshingTitle = @"正在刷新中的状态";
+        _refreshingTitle = Internationalization(@"正在刷新中的状态");
     }return _refreshingTitle;
 }
 
 -(NSString *)willRefreshTitle{
     if (!_willRefreshTitle) {
-        _willRefreshTitle = @"即将刷新的状态";
+        _willRefreshTitle = Internationalization(@"即将刷新的状态");
     }return _willRefreshTitle;
 }
 
 -(NSString *)noMoreDataTitle{
     if (!_noMoreDataTitle) {
-        _noMoreDataTitle = @"所有数据加载完毕，没有更多的数据了";
+        _noMoreDataTitle = Internationalization(@"所有数据加载完毕，没有更多的数据了");
     }return _noMoreDataTitle;
 }
 /// 静态图内部拼接出的动效，而非Gif

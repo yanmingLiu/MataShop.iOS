@@ -18,9 +18,10 @@
         [self setTitleLabelConfigReadyPlay];
         // CountDownBtn 的点击事件回调
         @jobs_weakify(self)
-        [self jobsBtnClickEventBlock:^(id data) {
+        [self jobsBtnClickEventBlock:^id(id data) {
             @jobs_strongify(self)
             if (self.objectBlock) self.objectBlock(self);
+            return nil;
         }];
     }return self;
 }

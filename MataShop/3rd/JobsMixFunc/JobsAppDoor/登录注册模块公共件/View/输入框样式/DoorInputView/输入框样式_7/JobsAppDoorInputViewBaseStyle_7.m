@@ -164,7 +164,7 @@
         _textField = JobsMagicTextField.new;
         _textField.delegate = self;
         @jobs_weakify(self)
-        [_textField textFieldEventFilterBlock:^BOOL(NSString * _Nullable value) {
+        [_textField jobsTextFieldEventFilterBlock:^BOOL(NSString * _Nullable value) {
             @jobs_strongify(self)
             JobsAppDoorInputViewTFModel *textFieldInputModel = (JobsAppDoorInputViewTFModel *)self.textField.objBindingParams;
             if ([textFieldInputModel.PlaceHolder isEqualToString:Internationalization(@"Telephone")]) {// 手机号码

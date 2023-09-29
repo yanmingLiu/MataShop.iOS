@@ -12,18 +12,11 @@
 #import "MacroDef_SysWarning.h"
 
 @interface UITableView (WWFoldableTableView)
-
-/**
- *  设为YES，让tableView具备折叠功能
- */
+/// 设为YES，让tableView具备折叠功能
 @property(nonatomic,assign)BOOL ww_foldable;
-/**
- *  返回某个section的折叠状态。YES - 折叠中
- */
+/// 返回某个section的折叠状态。YES - 折叠中
 -(BOOL)ww_isSectionFolded:(NSInteger)section;
-/**
- *  设置指定section的折叠状态。
- */
+/// 设置指定section的折叠状态。
 -(void)ww_foldSection:(NSInteger)section
                  fold:(BOOL)fold;
 
@@ -37,7 +30,6 @@
                 withMethod:(SEL)methodNew;
 
 @end
-
 /*
  * 使用方法：
  *  _tableView.ww_foldable = YES;//设置可折叠

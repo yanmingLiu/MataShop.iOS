@@ -26,6 +26,12 @@
     MJRefreshFooter->MJRefreshComponent->UIView
  *
  */
+-(void)震动特效反馈{
+    [self addObserver:self
+           forKeyPath:@"state"
+              options:NSKeyValueObservingOptionNew
+              context:nil];
+}
 #pragma mark —— BaseViewProtocol
 ///下拉刷新 （子类要进行覆写）
 -(void)pullToRefresh{
@@ -57,44 +63,35 @@
         [NSObject feedbackGenerator];
     }else{}
 }
-#pragma mark —— SET | GET
 #pragma mark —— @property(nonatomic,strong)MJRefreshConfigModel *refreshConfigHeader;//头部的配置信息
-static char *UIViewController_MJRefresh_refreshConfigHeader = "UIViewController_MJRefresh_refreshConfigHeader";
 @dynamic refreshConfigHeader;
 -(MJRefreshConfigModel *)refreshConfigHeader{
-    MJRefreshConfigModel *RefreshConfigHeader = objc_getAssociatedObject(self, UIViewController_MJRefresh_refreshConfigHeader);
+    MJRefreshConfigModel *RefreshConfigHeader = objc_getAssociatedObject(self, _cmd);
     if (!RefreshConfigHeader) {
         RefreshConfigHeader = MJRefreshConfigModel.new;
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_refreshConfigHeader,
-                                 RefreshConfigHeader,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setRefreshConfigHeader:RefreshConfigHeader];
     }return RefreshConfigHeader;
 }
 
 -(void)setRefreshConfigHeader:(MJRefreshConfigModel *)refreshConfigHeader{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_refreshConfigHeader,
+                             _cmd,
                              refreshConfigHeader,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshConfigModel *refreshConfigFooter;//尾部的配置信息
-static char *UIViewController_MJRefresh_refreshConfigFooter = "UIViewController_MJRefresh_refreshConfigFooter";
 @dynamic refreshConfigFooter;
 -(MJRefreshConfigModel *)refreshConfigFooter{
-    MJRefreshConfigModel *RefreshConfigFooter = objc_getAssociatedObject(self, UIViewController_MJRefresh_refreshConfigFooter);
+    MJRefreshConfigModel *RefreshConfigFooter = objc_getAssociatedObject(self, _cmd);
     if (!RefreshConfigFooter) {
         RefreshConfigFooter = MJRefreshConfigModel.new;
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_refreshConfigFooter,
-                                 RefreshConfigFooter,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setRefreshConfigFooter:RefreshConfigFooter];
     }return RefreshConfigFooter;
 }
 
 -(void)setRefreshConfigFooter:(MJRefreshConfigModel *)refreshConfigFooter{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_refreshConfigFooter,
+                             _cmd,
                              refreshConfigFooter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -107,10 +104,9 @@ static char *UIViewController_MJRefresh_refreshConfigFooter = "UIViewController_
  */
 #pragma mark —— MJRefreshHeader
 #pragma mark —— @property(nonatomic,strong)LOTAnimationMJRefreshHeader *lotAnimMJRefreshHeader;
-static char *UIViewController_MJRefresh_lotAnimMJRefreshHeader = "UIViewController_MJRefresh_lotAnimMJRefreshHeader";
 @dynamic lotAnimMJRefreshHeader;
 -(LOTAnimationMJRefreshHeader *)lotAnimMJRefreshHeader{
-    LOTAnimationMJRefreshHeader *lotAnimMJRefreshHeader = objc_getAssociatedObject(self, UIViewController_MJRefresh_lotAnimMJRefreshHeader);
+    LOTAnimationMJRefreshHeader *lotAnimMJRefreshHeader = objc_getAssociatedObject(self, _cmd);
     NSLog(@"DDD = %@",lotAnimMJRefreshHeader);
     if (!lotAnimMJRefreshHeader) {
         @jobs_weakify(self)
@@ -163,32 +159,24 @@ static char *UIViewController_MJRefresh_lotAnimMJRefreshHeader = "UIViewControll
             lotAnimMJRefreshHeader.stateLabel.font = self.refreshConfigHeader.font;
             // 设置颜色
             lotAnimMJRefreshHeader.stateLabel.textColor = self.refreshConfigHeader.textColor;
-            //震动特效反馈
             if (self.refreshConfigHeader.isShake) {
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_lotAnimMJRefreshHeader,
-                                 lotAnimMJRefreshHeader,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setLotAnimMJRefreshHeader:lotAnimMJRefreshHeader];
     }return lotAnimMJRefreshHeader;
 }
 
 -(void)setLotAnimMJRefreshHeader:(LOTAnimationMJRefreshHeader *)lotAnimMJRefreshHeader{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_lotAnimMJRefreshHeader,
+                             _cmd,
                              lotAnimMJRefreshHeader,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshNormalHeader *mjRefreshNormalHeader;
-static char *UIViewController_MJRefresh_mjRefreshNormalHeader = "UIViewController_MJRefresh_mjRefreshNormalHeader";
 @dynamic mjRefreshNormalHeader;
 -(MJRefreshNormalHeader *)mjRefreshNormalHeader{
-    MJRefreshNormalHeader *MjRefreshNormalHeader = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshNormalHeader);
+    MJRefreshNormalHeader *MjRefreshNormalHeader = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshNormalHeader) {
         @jobs_weakify(self)
         MjRefreshNormalHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -219,32 +207,24 @@ static char *UIViewController_MJRefresh_mjRefreshNormalHeader = "UIViewControlle
             MjRefreshNormalHeader.stateLabel.font = self.refreshConfigHeader.font;
             // 设置颜色
             MjRefreshNormalHeader.stateLabel.textColor = self.refreshConfigHeader.textColor;
-            //震动特效反馈
             if (self.refreshConfigHeader.isShake) {
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshNormalHeader,
-                                 MjRefreshNormalHeader,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshNormalHeader:MjRefreshNormalHeader];
     }return MjRefreshNormalHeader;
 }
 
 -(void)setMjRefreshNormalHeader:(MJRefreshNormalHeader *)mjRefreshNormalHeader{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshNormalHeader,
+                             _cmd,
                              mjRefreshNormalHeader,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshStateHeader *mjRefreshStateHeader;
-static char *UIViewController_MJRefresh_mjRefreshStateHeader = "UIViewController_MJRefresh_mjRefreshStateHeader";
 @dynamic mjRefreshStateHeader;
 -(MJRefreshStateHeader *)mjRefreshStateHeader{
-    MJRefreshStateHeader *MjRefreshStateHeader = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshStateHeader);
+    MJRefreshStateHeader *MjRefreshStateHeader = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshStateHeader) {
         @jobs_weakify(self)
         MjRefreshStateHeader = [MJRefreshStateHeader headerWithRefreshingBlock:^{
@@ -275,32 +255,24 @@ static char *UIViewController_MJRefresh_mjRefreshStateHeader = "UIViewController
             MjRefreshStateHeader.stateLabel.font = self.refreshConfigHeader.font;
             // 设置颜色
             MjRefreshStateHeader.stateLabel.textColor = self.refreshConfigHeader.textColor;
-            //震动特效反馈
             if (self.refreshConfigHeader.isShake) {
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshStateHeader,
-                                 MjRefreshStateHeader,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshStateHeader:MjRefreshStateHeader];
     }return MjRefreshStateHeader;
 }
 
 -(void)setMjRefreshStateHeader:(MJRefreshStateHeader *)mjRefreshStateHeader{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshStateHeader,
+                             _cmd,
                              mjRefreshStateHeader,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshHeader *mjRefreshHeader;
-static char *UIViewController_MJRefresh_mjRefreshHeader = "UIViewController_MJRefresh_mjRefreshHeader";
 @dynamic mjRefreshHeader;
 -(MJRefreshHeader *)mjRefreshHeader{
-    MJRefreshHeader *MjRefreshHeader = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshHeader);
+    MJRefreshHeader *MjRefreshHeader = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshHeader) {
         @jobs_weakify(self)
         MjRefreshHeader = [MJRefreshHeader headerWithRefreshingBlock:^{
@@ -309,32 +281,24 @@ static char *UIViewController_MJRefresh_mjRefreshHeader = "UIViewController_MJRe
         }];
         //其他
         {
-            //震动特效反馈
             if (self.refreshConfigHeader.isShake) {
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshHeader,
-                                 MjRefreshHeader,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshHeader:MjRefreshHeader];
     }return MjRefreshHeader;
 }
 
 -(void)setMjRefreshHeader:(MJRefreshHeader *)mjRefreshHeader{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshHeader,
+                             _cmd,
                              mjRefreshHeader,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshGifHeader *mjRefreshGifHeader;
-static char *UIViewController_MJRefresh_mjRefreshGifHeader = "UIViewController_MJRefresh_mjRefreshGifHeader";
 @dynamic mjRefreshGifHeader;
 -(MJRefreshGifHeader *)mjRefreshGifHeader{
-    MJRefreshGifHeader *MjRefreshGifHeader = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshGifHeader);
+    MJRefreshGifHeader *MjRefreshGifHeader = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshGifHeader) {
         @jobs_weakify(self)
         MjRefreshGifHeader = [MJRefreshGifHeader headerWithRefreshingBlock:^{
@@ -384,33 +348,25 @@ static char *UIViewController_MJRefresh_mjRefreshGifHeader = "UIViewController_M
             MjRefreshGifHeader.stateLabel.font = self.refreshConfigHeader.font;
             // 设置颜色
             MjRefreshGifHeader.stateLabel.textColor = self.refreshConfigHeader.textColor;
-            //震动特效反馈
             if (self.refreshConfigHeader.isShake) {
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshGifHeader,
-                                 MjRefreshGifHeader,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshGifHeader:MjRefreshGifHeader];
     }return MjRefreshGifHeader;
 }
 
 -(void)setMjRefreshGifHeader:(MJRefreshGifHeader *)mjRefreshGifHeader{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshGifHeader,
+                             _cmd,
                              mjRefreshGifHeader,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— MJRefreshFooter
 #pragma mark —— @property(nonatomic,strong)MJRefreshAutoGifFooter *mjRefreshAutoGifFooter;
-static char *UIViewController_MJRefresh_mjRefreshAutoGifFooter = "UIViewController_MJRefresh_mjRefreshAutoGifFooter";
 @dynamic mjRefreshAutoGifFooter;
 -(MJRefreshAutoGifFooter *)mjRefreshAutoGifFooter{
-    MJRefreshAutoGifFooter *MjRefreshAutoGifFooter = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshAutoGifFooter);
+    MJRefreshAutoGifFooter *MjRefreshAutoGifFooter = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshAutoGifFooter) {
         @jobs_weakify(self)
         MjRefreshAutoGifFooter = [MJRefreshAutoGifFooter footerWithRefreshingBlock:^{
@@ -461,31 +417,23 @@ static char *UIViewController_MJRefresh_mjRefreshAutoGifFooter = "UIViewControll
             // 设置颜色
             MjRefreshAutoGifFooter.stateLabel.textColor = self.refreshConfigFooter.textColor;
             if (self.refreshConfigFooter.isShake) {
-                //震动特效反馈
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshAutoGifFooter,
-                                 MjRefreshAutoGifFooter,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshAutoGifFooter:MjRefreshAutoGifFooter];
     }return MjRefreshAutoGifFooter;
 }
 
 -(void)setMjRefreshAutoGifFooter:(MJRefreshAutoGifFooter *)mjRefreshAutoGifFooter{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshAutoGifFooter,
+                             _cmd,
                              mjRefreshAutoGifFooter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshBackNormalFooter *mjRefreshBackNormalFooter;
-static char *UIViewController_MJRefresh_mjRefreshBackNormalFooter = "UIViewController_MJRefresh_mjRefreshBackNormalFooter";
 @dynamic mjRefreshBackNormalFooter;
 -(MJRefreshBackNormalFooter *)mjRefreshBackNormalFooter{
-    MJRefreshBackNormalFooter *MjRefreshBackNormalFooter = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshBackNormalFooter);
+    MJRefreshBackNormalFooter *MjRefreshBackNormalFooter = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshBackNormalFooter) {
         @jobs_weakify(self)
         MjRefreshBackNormalFooter = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
@@ -517,31 +465,23 @@ static char *UIViewController_MJRefresh_mjRefreshBackNormalFooter = "UIViewContr
             // 设置颜色
             MjRefreshBackNormalFooter.stateLabel.textColor = self.refreshConfigFooter.textColor;
             if (self.refreshConfigFooter.isShake) {
-                //震动特效反馈
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshBackNormalFooter,
-                                 MjRefreshBackNormalFooter,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshBackNormalFooter:MjRefreshBackNormalFooter];
     }return MjRefreshBackNormalFooter;
 }
 
 -(void)setMjRefreshBackNormalFooter:(MJRefreshBackNormalFooter *)mjRefreshBackNormalFooter{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshBackNormalFooter,
+                             _cmd,
                              mjRefreshBackNormalFooter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshAutoNormalFooter *mjRefreshAutoNormalFooter;
-static char *UIViewController_MJRefresh_mjRefreshAutoNormalFooter = "UIViewController_MJRefresh_mjRefreshAutoNormalFooter";
 @dynamic mjRefreshAutoNormalFooter;
 -(MJRefreshAutoNormalFooter *)mjRefreshAutoNormalFooter{
-    MJRefreshAutoNormalFooter *MjRefreshAutoNormalFooter = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshAutoNormalFooter);
+    MJRefreshAutoNormalFooter *MjRefreshAutoNormalFooter = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshAutoNormalFooter) {
         @jobs_weakify(self)
         MjRefreshAutoNormalFooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -574,31 +514,23 @@ static char *UIViewController_MJRefresh_mjRefreshAutoNormalFooter = "UIViewContr
             // 设置颜色
             MjRefreshAutoNormalFooter.stateLabel.textColor = self.refreshConfigFooter.textColor;
             if (self.refreshConfigFooter.isShake) {
-                //震动特效反馈
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshAutoNormalFooter,
-                                 MjRefreshAutoNormalFooter,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshAutoNormalFooter:MjRefreshAutoNormalFooter];
     }return MjRefreshAutoNormalFooter;
 }
 
 -(void)setMjRefreshAutoNormalFooter:(MJRefreshAutoNormalFooter *)mjRefreshAutoNormalFooter{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshAutoNormalFooter,
+                             _cmd,
                              mjRefreshAutoNormalFooter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshAutoStateFooter *mjRefreshAutoStateFooter;
-static char *UIViewController_MJRefresh_mjRefreshAutoStateFooter = "UIViewController_MJRefresh_mjRefreshAutoStateFooter";
 @dynamic mjRefreshAutoStateFooter;
 -(MJRefreshAutoStateFooter *)mjRefreshAutoStateFooter{
-    MJRefreshAutoStateFooter *MjRefreshAutoStateFooter = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshAutoStateFooter);
+    MJRefreshAutoStateFooter *MjRefreshAutoStateFooter = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshAutoStateFooter) {
         @jobs_weakify(self)
         MjRefreshAutoStateFooter = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
@@ -630,55 +562,43 @@ static char *UIViewController_MJRefresh_mjRefreshAutoStateFooter = "UIViewContro
             // 设置颜色
             MjRefreshAutoStateFooter.stateLabel.textColor = self.refreshConfigFooter.textColor;
             if (self.refreshConfigFooter.isShake) {
-                //震动特效反馈
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshAutoStateFooter,
-                                 MjRefreshAutoStateFooter,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshAutoStateFooter:MjRefreshAutoStateFooter];
     }return MjRefreshAutoStateFooter;
 }
 
 -(void)setMjRefreshAutoStateFooter:(MJRefreshAutoStateFooter *)mjRefreshAutoStateFooter{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshAutoStateFooter,
+                             _cmd,
                              mjRefreshAutoStateFooter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshAutoFooter *mjRefreshAutoFooter;
-static char *UIViewController_MJRefresh_mjRefreshAutoFooter = "UIViewController_MJRefresh_mjRefreshAutoFooter";
 @dynamic mjRefreshAutoFooter;
 -(MJRefreshAutoFooter *)mjRefreshAutoFooter{
-    MJRefreshAutoFooter *MjRefreshAutoFooter = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshAutoFooter);
+    MJRefreshAutoFooter *MjRefreshAutoFooter = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshAutoFooter) {
         @jobs_weakify(self)
         MjRefreshAutoFooter = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
             @jobs_strongify(self)
             [self loadMoreRefresh];
         }];
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshAutoFooter,
-                                 MjRefreshAutoFooter,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshAutoFooter:MjRefreshAutoFooter];
     }return MjRefreshAutoFooter;
 }
 
 -(void)setMjRefreshAutoFooter:(MJRefreshAutoFooter *)mjRefreshAutoFooter{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshAutoFooter,
+                             _cmd,
                              mjRefreshAutoFooter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshBackGifFooter *mjRefreshBackGifFooter;
-static char *UIViewController_MJRefresh_mjRefreshBackGifFooter = "UIViewController_MJRefresh_mjRefreshBackGifFooter";
 @dynamic mjRefreshBackGifFooter;
 -(MJRefreshBackGifFooter *)mjRefreshBackGifFooter{
-    MJRefreshBackGifFooter *MjRefreshBackGifFooter = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshBackGifFooter);
+    MJRefreshBackGifFooter *MjRefreshBackGifFooter = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshBackGifFooter) {
         @jobs_weakify(self)
         MjRefreshBackGifFooter = [MJRefreshBackGifFooter footerWithRefreshingBlock:^{
@@ -729,31 +649,23 @@ static char *UIViewController_MJRefresh_mjRefreshBackGifFooter = "UIViewControll
             // 设置颜色
             MjRefreshBackGifFooter.stateLabel.textColor = self.refreshConfigFooter.textColor;
             if (self.refreshConfigFooter.isShake) {
-                //震动特效反馈
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshBackGifFooter,
-                                 MjRefreshBackGifFooter,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshBackGifFooter:MjRefreshBackGifFooter];
     }return MjRefreshBackGifFooter;
 }
 
 -(void)setMjRefreshBackGifFooter:(MJRefreshBackGifFooter *)mjRefreshBackGifFooter{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshBackGifFooter,
+                             _cmd,
                              mjRefreshBackGifFooter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshBackStateFooter *mjRefreshBackStateFooter;
-static char *UIViewController_MJRefresh_mjRefreshBackStateFooter = "UIViewController_MJRefresh_mjRefreshBackStateFooter";
 @dynamic mjRefreshBackStateFooter;
 -(MJRefreshBackStateFooter *)mjRefreshBackStateFooter{
-    MJRefreshBackStateFooter *MjRefreshBackStateFooter = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshBackStateFooter);
+    MJRefreshBackStateFooter *MjRefreshBackStateFooter = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshBackStateFooter) {
         @jobs_weakify(self)
         MjRefreshBackStateFooter = [MJRefreshBackStateFooter footerWithRefreshingBlock:^{
@@ -785,31 +697,23 @@ static char *UIViewController_MJRefresh_mjRefreshBackStateFooter = "UIViewContro
             // 设置颜色
             MjRefreshBackStateFooter.stateLabel.textColor = self.refreshConfigFooter.textColor;
             if (self.refreshConfigFooter.isShake) {
-                //震动特效反馈
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshBackStateFooter,
-                                 MjRefreshBackStateFooter,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshBackStateFooter:MjRefreshBackStateFooter];
     }return MjRefreshBackStateFooter;
 }
 
 -(void)setMjRefreshBackStateFooter:(MJRefreshBackStateFooter *)mjRefreshBackStateFooter{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshBackStateFooter,
+                             _cmd,
                              mjRefreshBackStateFooter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshBackFooter *mjRefreshBackFooter;
-static char *UIViewController_MJRefresh_mjRefreshBackFooter = "UIViewController_MJRefresh_mjRefreshBackFooter";
 @dynamic mjRefreshBackFooter;
 -(MJRefreshBackFooter *)mjRefreshBackFooter{
-    MJRefreshBackFooter *MjRefreshBackFooter = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshBackFooter);
+    MJRefreshBackFooter *MjRefreshBackFooter = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshBackFooter) {
         @jobs_weakify(self)
         MjRefreshBackFooter = [MJRefreshBackFooter footerWithRefreshingBlock:^{
@@ -819,31 +723,23 @@ static char *UIViewController_MJRefresh_mjRefreshBackFooter = "UIViewController_
         //其他
         {
             if (self.refreshConfigFooter.isShake) {
-                //震动特效反馈
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshBackFooter,
-                                 MjRefreshBackFooter,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshBackFooter:MjRefreshBackFooter];
     }return MjRefreshBackFooter;
 }
 
 -(void)setMjRefreshBackFooter:(MJRefreshBackFooter *)mjRefreshBackFooter{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshBackFooter,
+                             _cmd,
                              mjRefreshBackFooter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshFooter *mjRefreshFooter;
-static char *UIViewController_MJRefresh_mjRefreshFooter = "UIViewController_MJRefresh_mjRefreshFooter";
 @dynamic mjRefreshFooter;
 -(MJRefreshFooter *)mjRefreshFooter{
-    MJRefreshFooter *MjRefreshFooter = objc_getAssociatedObject(self, UIViewController_MJRefresh_mjRefreshFooter);
+    MJRefreshFooter *MjRefreshFooter = objc_getAssociatedObject(self, _cmd);
     if (!MjRefreshFooter) {
         @jobs_weakify(self)
         MjRefreshFooter = [MJRefreshFooter footerWithRefreshingBlock:^{
@@ -853,23 +749,16 @@ static char *UIViewController_MJRefresh_mjRefreshFooter = "UIViewController_MJRe
         //其他
         {
             if (self.refreshConfigFooter.isShake) {
-                //震动特效反馈
-                [self addObserver:self
-                       forKeyPath:@"state"
-                          options:NSKeyValueObservingOptionNew
-                          context:nil];
+                [self 震动特效反馈];
             }
         }
-        objc_setAssociatedObject(self,
-                                 UIViewController_MJRefresh_mjRefreshFooter,
-                                 MjRefreshFooter,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setMjRefreshFooter:MjRefreshFooter];
     }return MjRefreshFooter;
 }
 
 -(void)setMjRefreshFooter:(MJRefreshFooter *)mjRefreshFooter{
     objc_setAssociatedObject(self,
-                             UIViewController_MJRefresh_mjRefreshFooter,
+                             _cmd,
                              mjRefreshFooter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

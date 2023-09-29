@@ -21,7 +21,8 @@
 }
 ///【监听通知】设置App语言环境
 -(void)monitorAppLanguage{
-    [NSObject monitorNotification:LanguageSwitchNotification withSelector:@selector(languageSwitchNotification:)];
+    [NSObject monitorNotification:LanguageSwitchNotification 
+                     withSelector:@selector(languageSwitchNotification:)];
 }
 ///【发通知】设置App语言环境
 -(void)setAppLanguageAtIndexPath:(nonnull NSIndexPath *)indexPath

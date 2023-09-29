@@ -56,7 +56,7 @@
             [alertController addAction:okAction];
         }
     }else{
-        [WHToast toastMsg:@"参数配置错误，请检查"];
+        [WHToast toastMsg:Internationalization(@"参数配置错误，请检查")];
     }
     if (alertVCBlock) {
         alertVCBlock(alertController);
@@ -109,7 +109,7 @@
             [alertController addAction:okAction];
         }
     }else{
-        [WHToast toastMsg:@"参数配置错误，请检查"];
+        [WHToast toastMsg:Internationalization(@"参数配置错误，请检查")];
     }
 
     if (alertVCBlock) {
@@ -127,39 +127,39 @@
 }
 
 +(void)showLoginAlertViewWithTargetVC:(UIViewController *)targetVC{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Login"
-                                                                             message:@"Enter Your Account Info Below"
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:Internationalization(@"Login")
+                                                                             message:Internationalization(@"Enter Your Account Info Below")
                                                                       preferredStyle:UIAlertControllerStyleAlert];
     @jobs_weakify(self)
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         @jobs_strongify(self)
-        textField.placeholder = @"username";
+        textField.placeholder = Internationalization(@"username");
         [textField addTarget:self
                       action:@selector(alertUserAccountInfoDidChange:targetVC:)
             forControlEvents:UIControlEventEditingChanged];
     }];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         @jobs_strongify(self)
-        textField.placeholder = @"password";
+        textField.placeholder = Internationalization(@"password");
         textField.secureTextEntry = YES;
         [textField addTarget:self
                       action:@selector(alertUserAccountInfoDidChange:targetVC:)
             forControlEvents:UIControlEventEditingChanged];
     }];
 
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:Internationalization(@"Cancel")
                                                            style:UIAlertActionStyleCancel
                                                          handler:^(UIAlertAction * _Nonnull action) {
                                                              NSLog(@"Cancel Action");
                                                          }];
-    UIAlertAction *loginAction = [UIAlertAction actionWithTitle:@"Login"
+    UIAlertAction *loginAction = [UIAlertAction actionWithTitle:Internationalization(@"Login")
                                                           style:UIAlertActionStyleDefault
                                                         handler:^(UIAlertAction * _Nonnull action) {
                                                             UITextField *userName = alertController.textFields.firstObject;
                                                             UITextField *password = alertController.textFields.lastObject;
                                                             // 输出用户名 密码到控制台
                                                             NSLog(@"username is %@, password is %@",userName.text,password.text);
-                                                        }];
+    }];
     loginAction.enabled = NO;// 禁用Login按钮
     [alertController addAction:cancelAction];
     [alertController addAction:loginAction];

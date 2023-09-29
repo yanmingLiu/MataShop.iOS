@@ -6,13 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/// 排序方向
 typedef enum : NSInteger {
     /// 排序方向-正序
     SortingType_Positive = 0,
     /// 排序方向-倒序
     SortingType_Reverse
-} SortingType;/// 排序方向
+} SortingType;
 
 NS_ASSUME_NONNULL_BEGIN
 

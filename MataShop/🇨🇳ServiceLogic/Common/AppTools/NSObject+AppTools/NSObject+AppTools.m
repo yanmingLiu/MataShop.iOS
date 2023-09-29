@@ -552,7 +552,6 @@ static char *NSObject_AppTools_立即注册 = "NSObject_AppTools_立即注册";
     UIButton *_立即注册 = objc_getAssociatedObject(self, NSObject_AppTools_立即注册);
     if ([self isKindOfClass:UIViewController.class] && !_立即注册 ) {
         _立即注册 = UIButton.new;
-        [_立即注册 handelAdjustsImageWhenHighlighted];
         _立即注册.normalTitle = Internationalization(@"立即注册");
         _立即注册.normalTitleColor = HEXCOLOR(0x757575);
         _立即注册.titleFont = UIFontWeightRegularSize(14);
@@ -564,10 +563,11 @@ static char *NSObject_AppTools_立即注册 = "NSObject_AppTools_立即注册";
             make.left.equalTo(self.separateLab.mas_right).offset(JobsWidth(24));
         }];
         @jobs_weakify(self)
-        [_立即注册 jobsBtnClickEventBlock:^(id data) {
+        [_立即注册 jobsBtnClickEventBlock:^id(id data) {
             @jobs_strongify(self)
             NSLog(@"立即注册")
 //            [self JobsTestPopView:@"立即注册"];
+            return nil;
         }];
         [_立即注册 makeBtnLabelByShowingType:UILabelShowingType_03];
         [self set立即注册:_立即注册];
@@ -587,7 +587,6 @@ static char *NSObject_AppTools_联系客服 = "NSObject_AppTools_联系客服";
     UIButton *_联系客服 = objc_getAssociatedObject(self, NSObject_AppTools_联系客服);
     if ([self isKindOfClass:UIViewController.class] && !_联系客服) {
         _联系客服 = UIButton.new;
-        [_联系客服 handelAdjustsImageWhenHighlighted];
         _联系客服.normalTitle = Internationalization(@"联系客服");
         _联系客服.normalTitleColor = HEXCOLOR(0x757575);
         _联系客服.titleFont = UIFontWeightRegularSize(14);
@@ -599,10 +598,11 @@ static char *NSObject_AppTools_联系客服 = "NSObject_AppTools_联系客服";
             make.right.equalTo(viewController.separateLab.mas_left).offset(JobsWidth(-24));
         }];
         @jobs_weakify(self)
-        [_联系客服 jobsBtnClickEventBlock:^(id data) {
+        [_联系客服 jobsBtnClickEventBlock:^id(id data) {
             @jobs_strongify(self)
             NSLog(@"联系客服");
 //            [self JobsTestPopView:@"联系客服"];
+            return nil;
         }];
         [_联系客服 makeBtnLabelByShowingType:UILabelShowingType_03];
         [self set联系客服:_联系客服];
@@ -621,9 +621,7 @@ static char *NSObject_AppTools_attributedStringData = "NSObject_AppTools_attribu
 -(NSMutableAttributedString *)attributedStringData{
     NSMutableAttributedString *AttributedStringData = objc_getAssociatedObject(self, NSObject_AppTools_attributedStringData);
     if (!AttributedStringData) {
-        AttributedStringData = [self makeAttributedStringWithRichTextMutArr:self.richTextMutArr
-                                                       richTextConfigMutArr:self.richTextConfigMutArr
-                                                             paragraphStyle:nil];
+        AttributedStringData = [self richTextWithDataConfigMutArr:self.richTextConfigMutArr];
         [self setAttributedStringData:AttributedStringData];
     }return AttributedStringData;
 }

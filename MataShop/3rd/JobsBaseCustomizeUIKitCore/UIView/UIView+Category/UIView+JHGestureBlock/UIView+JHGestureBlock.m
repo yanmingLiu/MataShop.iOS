@@ -28,14 +28,11 @@
 //  SOFTWARE.
 
 #import "UIView+JHGestureBlock.h"
-#import <objc/runtime.h>
-
-static const char *JHGestureBlockKey;
 
 @implementation UIView (JHGestureBlock)
 
-- (__kindof UIGestureRecognizer *)addGestureRecognizer:(JHGestureType)type block:(JHGestureBlock)block
-{
+static const char *JHGestureBlockKey;
+- (__kindof UIGestureRecognizer *)addGestureRecognizer:(JHGestureType)type block:(JHGestureBlock)block{
     if (block) {
         NSDictionary *dic = @{@"0":@"UITapGestureRecognizer",
                               @"1":@"UILongPressGestureRecognizer",
@@ -45,7 +42,7 @@ static const char *JHGestureBlockKey;
                               @"5":@"UIPinchGestureRecognizer"};
         
         NSString *string = dic[@(type).stringValue];
-        UIGestureRecognizer *gesture = [[NSClassFromString(string) alloc] initWithTarget:self action:@selector(gestureAction:)];
+        UIGestureRecognizer *gesture = [NSClassFromString(string).alloc initWithTarget:self action:@selector(gestureAction:)];
         [self addGestureRecognizer:gesture];
         
         NSMutableDictionary *blockDic = objc_getAssociatedObject(self, JHGestureBlockKey);
@@ -56,18 +53,13 @@ static const char *JHGestureBlockKey;
         [blockDic setObject:block forKey:string];
     
         return gesture;
-    }
-    return nil;
+    }return nil;
 }
 
-- (void)gestureAction:(UIGestureRecognizer *)gesture
-{
+- (void)gestureAction:(UIGestureRecognizer *)gesture{
     NSMutableDictionary *blockDic = objc_getAssociatedObject(gesture.view, JHGestureBlockKey);
-    JHGestureBlock block = blockDic[NSStringFromClass([gesture class])];
-    
-    if (block) {
-        block(gesture.view, gesture);
-    }
+    JHGestureBlock block = blockDic[NSStringFromClass(gesture.class)];
+    if (block) block(gesture.view, gesture);
 }
 
 @end

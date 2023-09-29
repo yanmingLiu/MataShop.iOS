@@ -145,9 +145,10 @@ static dispatch_once_t static_mineView2OnceToken;
         }];
         [_btn2 cornerCutToCircleWithCornerRadius:JobsWidth(14)];
         @jobs_weakify(self)
-        [_btn2 jobsBtnClickEventBlock:^(id data) {
+        [_btn2 jobsBtnClickEventBlock:^id(id data) {
             @jobs_strongify(self)
             [self forceComingToPushVC:MSInternalRecruitmentVC.new requestParams:nil];
+            return nil;
         }];
     }return _btn2;
 }

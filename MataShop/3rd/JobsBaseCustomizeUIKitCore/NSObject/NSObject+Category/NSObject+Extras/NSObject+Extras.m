@@ -102,7 +102,12 @@
                                     storyboardBundle:(NSBundle *_Nullable)storyboardBundle
                                           identifier:(NSString *_Nonnull)identifier{
     UIStoryboard *story = [UIStoryboard storyboardWithName:storyboardWithName bundle:storyboardBundle];
-    return [story instantiateViewControllerWithIdentifier:identifier];;
+    return [story instantiateViewControllerWithIdentifier:identifier];
+}
+
+-(UIViewController *_Nullable)vcByStoryboardWithName:(NSString *_Nonnull)storyboardWithName
+                                    storyboardBundle:(NSBundle *_Nullable)storyboardBundle{
+    return [UIStoryboard storyboardWithName:storyboardWithName bundle:nil].instantiateInitialViewController;;
 }
 #pragma mark —— KVO
 /**
@@ -230,7 +235,6 @@
                              searchStrategy:(JobsSearchStrategy)searchStrategy
                                    keywords:(NSString *_Nonnull)keywords{
     NSMutableSet *__block resMutSet = NSMutableSet.set;
-    
     JobsReturnIDByIDBlock dimSearchBlock = ^(id data){
         for (id obj in data) {// 系统Api提供的基础对象元素
             if ([obj isKindOfClass:NSNumber.class] ||
@@ -245,7 +249,6 @@
                     switch (searchStrategy) {
                         case JobsSearchStrategy_Accurate:{
                             /// 精确查询
-                            
                             if ([[customObj.valueForKeyBlock(str) stringValue].lowercaseString containsString:keywords.lowercaseString]) {
                                 [resMutSet addObject:customObj];
                             }
@@ -256,7 +259,6 @@
                                 [resMutSet addObject:customObj];
                             }
                         }break;
-                            
                         default:
                             break;
                     }
@@ -845,7 +847,6 @@
     特别指出的是：
     1、除数为零的情况，被判定为不能被整除；
     2、num1 和 num2 必须为 NSNumber* 类型，否则判定为不能够被整除
- 
  */
 -(BOOL)judgementExactDivisionByNum1:(NSNumber *_Nonnull)num1
                                num2:(NSNumber *_Nonnull)num2{
@@ -1000,39 +1001,35 @@
     }
     contentView.mj_footer.hidden = !dataSource.count;
 }
-#pragma mark —— 属性的Set | GET
-static char *NSObject_Extras_lastPoint = "NSObject_Extras_lastPoint";
-@dynamic lastPoint;
 #pragma mark —— @property(nonatomic,assign)CGPoint lastPoint;
+@dynamic lastPoint;
 -(CGPoint)lastPoint{
-    CGPoint LastPoint = [objc_getAssociatedObject(self,NSObject_Extras_lastPoint) CGPointValue];
+    CGPoint LastPoint = [objc_getAssociatedObject(self,_cmd) CGPointValue];
     return LastPoint;
 }
 
 -(void)setLastPoint:(CGPoint)lastPoint{
     objc_setAssociatedObject(self,
-                             NSObject_Extras_lastPoint,
+                             _cmd,
                              [NSValue valueWithCGPoint:lastPoint],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_Extras_indexPath = "NSObject_Extras_indexPath";
-@dynamic indexPath;
 #pragma mark —— @property(nonatomic,strong)NSIndexPath *indexPath;
+@dynamic indexPath;
 -(NSIndexPath *)indexPath{
-    return objc_getAssociatedObject(self, NSObject_Extras_indexPath);
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 -(void)setIndexPath:(NSIndexPath *)indexPath{
     objc_setAssociatedObject(self,
-                             NSObject_Extras_indexPath,
+                             _cmd,
                              indexPath,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_Extras_currentPage = "NSObject_Extras_currentPage";
-@dynamic currentPage;
 #pragma mark —— @property(nonatomic,assign)NSInteger currentPage;
+@dynamic currentPage;
 -(NSInteger)currentPage{
-    NSInteger CurrentPage = [objc_getAssociatedObject(self, NSObject_Extras_currentPage) integerValue];
+    NSInteger CurrentPage = [objc_getAssociatedObject(self, _cmd) integerValue];
     if (CurrentPage == 0) {
         CurrentPage = 1;
         [self setCurrentPage:CurrentPage];
@@ -1041,15 +1038,14 @@ static char *NSObject_Extras_currentPage = "NSObject_Extras_currentPage";
 
 -(void)setCurrentPage:(NSInteger)currentPage{
     objc_setAssociatedObject(self,
-                             NSObject_Extras_currentPage,
+                             _cmd,
                              [NSNumber numberWithInteger:currentPage],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_Extras_pageSize = "NSObject_Extras_pageSize";
-@dynamic pageSize;
 #pragma mark —— @property(nonatomic,assign)NSInteger pageSize;
+@dynamic pageSize;
 -(NSInteger)pageSize{
-    NSInteger PageSize = [objc_getAssociatedObject(self, NSObject_Extras_pageSize) integerValue];
+    NSInteger PageSize = [objc_getAssociatedObject(self, _cmd) integerValue];
     if (PageSize == 0) {
         PageSize = 10;
         [self setPageSize:PageSize];
@@ -1058,29 +1054,27 @@ static char *NSObject_Extras_pageSize = "NSObject_Extras_pageSize";
 
 -(void)setPageSize:(NSInteger)pageSize{
     objc_setAssociatedObject(self,
-                             NSObject_Extras_pageSize,
+                             _cmd,
                              [NSNumber numberWithInteger:pageSize],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_Extras_index = "NSObject_Extras_index";
-@dynamic index;
 #pragma mark —— @property(nonatomic,assign)NSInteger index;
+@dynamic index;
 -(NSInteger)index{
-    NSInteger Index = [objc_getAssociatedObject(self, NSObject_Extras_index) integerValue];
+    NSInteger Index = [objc_getAssociatedObject(self, _cmd) integerValue];
     return Index;
 }
 
 -(void)setIndex:(NSInteger)index{
     objc_setAssociatedObject(self,
-                             NSObject_Extras_index,
+                             _cmd,
                              [NSNumber numberWithInteger:index],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_Extras_viewModel = "NSObject_Extras_viewModel";
-@dynamic viewModel;
 #pragma mark —— @property(nonatomic,strong)UIViewModel *viewModel;
+@dynamic viewModel;
 -(UIViewModel *)viewModel{
-    UIViewModel *ViewModel = objc_getAssociatedObject(self, NSObject_Extras_viewModel);
+    UIViewModel *ViewModel = objc_getAssociatedObject(self, _cmd);
     if (!ViewModel) {
         ViewModel = UIViewModel.new;
         [self setViewModel:ViewModel];
@@ -1089,34 +1083,32 @@ static char *NSObject_Extras_viewModel = "NSObject_Extras_viewModel";
 
 -(void)setViewModel:(UIViewModel *)viewModel{
     objc_setAssociatedObject(self,
-                             NSObject_Extras_viewModel,
+                             _cmd,
                              viewModel,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_Extras_internationalizationKEY = "NSObject_Extras_internationalizationKEY";
-@dynamic internationalizationKEY;
 #pragma mark —— @property(nonatomic,strong)NSString *internationalizationKEY;/// 国际化的key
+@dynamic internationalizationKEY;
 -(NSString *)internationalizationKEY{
-    NSString *InternationalizationKEY = objc_getAssociatedObject(self, NSObject_Extras_internationalizationKEY);
+    NSString *InternationalizationKEY = objc_getAssociatedObject(self, _cmd);
     return InternationalizationKEY;
 }
 
 -(void)setInternationalizationKEY:(NSString *)internationalizationKEY{
     objc_setAssociatedObject(self,
-                             NSObject_Extras_internationalizationKEY,
+                             _cmd,
                              internationalizationKEY,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_Extras_notificationBlock = "NSObject_Extras_notificationBlock";
-@dynamic notificationBlock;
 #pragma mark —— @property(nonatomic,copy)JobsReturnIDByIDBlock notificationBlock;
+@dynamic notificationBlock;
 -(JobsReturnIDByIDBlock)notificationBlock{
-    return objc_getAssociatedObject(self, NSObject_Extras_notificationBlock);
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 -(void)setNotificationBlock:(JobsReturnIDByIDBlock)notificationBlock{
     objc_setAssociatedObject(self,
-                             NSObject_Extras_notificationBlock,
+                             _cmd,
                              notificationBlock,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -1128,13 +1120,11 @@ static char *NSObject_Extras_notificationBlock = "NSObject_Extras_notificationBl
 @end
 
 @implementation NSNotificationKeyboardModel
-
 /**
  关于键盘弹起：
  1、建议用RAC进行键盘管理，因为过滤字符比如emoji字符会很难处理
-    1.1、关注：@implementation UITextField (Extend) -(void)textFieldEventFilterBlock:(JobsReturnBOOLByIDBlock)filterBlock subscribeNextBlock:(jobsByIDBlock)subscribeNextBlock；
+    1.1、关注：@implementation UITextField (Extend) -(void)jobsTextFieldEventFilterBlock:(JobsReturnBOOLByIDBlock)filterBlock subscribeNextBlock:(jobsByIDBlock)subscribeNextBlock；
     1.2、RAC 键盘管理当“注册键盘事件”的时候会执行一次RAC键盘监听方法
  2、键盘弹起会执行-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField；
  */
-
 @end

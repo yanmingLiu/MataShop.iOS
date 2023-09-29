@@ -25,43 +25,37 @@
     return isFolded ? 0 : [self ww__numberOfRowsInSection:section];
 }
 #pragma mark - getter/setter
-static const char WWFoldableKey = '\0';
 - (BOOL)ww_foldable{
-    return [objc_getAssociatedObject(self,
-                                     &WWFoldableKey) boolValue];
+    return [objc_getAssociatedObject(self,_cmd) boolValue];
 }
 
 - (void)setWw_foldable:(BOOL)ww_foldable{
     [self willChangeValueForKey:@"ww_foldable"];
     objc_setAssociatedObject(self,
-                             &WWFoldableKey,
+                             _cmd,
                              @(ww_foldable),
                              OBJC_ASSOCIATION_ASSIGN);
     [self didChangeValueForKey:@"ww_foldable"];
-    
     //initialize
     if(ww_foldable && !self.ww_foldState){
-        NSMutableSet *foldState = [NSMutableSet set];
+        NSMutableSet *foldState = NSMutableSet.set;
         self.ww_foldState = foldState;
     }
-    
     //clean up
     if(!ww_foldable){
         [self setWw_foldState:nil];
     }
 }
 
-static const char WWFoldStateKey = '\0';
 -(NSMutableSet *)ww_foldState{
-    return objc_getAssociatedObject(self,
-                                    &WWFoldStateKey);
+    return objc_getAssociatedObject(self,_cmd);
 }
 
 -(void)setWw_foldState:(NSMutableSet *)ww_foldState{
     if(self.ww_foldable && ww_foldState != self.ww_foldState){
         [self willChangeValueForKey:@"ww_foldState"];
         objc_setAssociatedObject(self,
-                                 &WWFoldStateKey,
+                                 _cmd,
                                  ww_foldState,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self didChangeValueForKey:@"ww_foldState"];
@@ -71,8 +65,7 @@ static const char WWFoldStateKey = '\0';
 -(BOOL)ww_isSectionFolded:(NSInteger)section{
     if(!self.ww_foldable || !self.ww_foldState){
         return NO;
-    }
-    return [self.ww_foldState containsObject:@(section)];
+    }return [self.ww_foldState containsObject:@(section)];
 }
 
 -(void)ww_foldSection:(NSInteger)section

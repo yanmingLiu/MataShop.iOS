@@ -8,21 +8,19 @@
 #import "NSObject+PopViewToLogOut.h"
 
 @implementation NSObject (PopViewToLogOut)
-
-static char *NSObject_PopViewToLogOut_logOutPopupVM = "NSObject_PopViewToLogOut_logOutPopupVM";
-@dynamic logOutPopupVM;
 #pragma mark —— @property(nonatomic,strong)UIViewModel *logOutPopupVM;
+@dynamic logOutPopupVM;
 -(UIViewModel *)logOutPopupVM{
-    UIViewModel *LogOutPopupVM = objc_getAssociatedObject(self, NSObject_PopViewToLogOut_logOutPopupVM);
+    UIViewModel *LogOutPopupVM = objc_getAssociatedObject(self, _cmd);
     if (!LogOutPopupVM) {
         LogOutPopupVM = UIViewModel.new;
         LogOutPopupVM.textModel.text = Internationalization(@"Confirm to exit ?");
-        LogOutPopupVM.textModel.font = [UIFont systemFontOfSize:JobsWidth(14) weight:UIFontWeightRegular];
+        LogOutPopupVM.textModel.font = UIFontWeightRegularSize(14);
         LogOutPopupVM.textModel.textAlignment = NSTextAlignmentCenter;
-        LogOutPopupVM.subTextModel.text = @"";
+        LogOutPopupVM.subTextModel.text = Internationalization(@"");
         LogOutPopupVM.bgCor = UIColor.whiteColor;
         objc_setAssociatedObject(self,
-                                 NSObject_PopViewToLogOut_logOutPopupVM,
+                                 _cmd,
                                  LogOutPopupVM,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return LogOutPopupVM;
@@ -30,21 +28,18 @@ static char *NSObject_PopViewToLogOut_logOutPopupVM = "NSObject_PopViewToLogOut_
 
 -(void)setLogOutPopupVM:(UIViewModel *)logOutPopupVM{
     objc_setAssociatedObject(self,
-                             NSObject_PopViewToLogOut_logOutPopupVM,
+                             _cmd,
                              logOutPopupVM,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_PopViewToLogOut_logOutPopupView = "NSObject_PopViewToLogOut_logOutPopupView";
-@dynamic logOutPopupView;
 #pragma mark —— @property(nonatomic,strong)JobsBasePopupView *logOutPopupView;
+@dynamic logOutPopupView;
 -(JobsBasePopupView *)logOutPopupView{
-    JobsBasePopupView *LogOutPopupView = objc_getAssociatedObject(self, NSObject_PopViewToLogOut_logOutPopupView);
+    JobsBasePopupView *LogOutPopupView = objc_getAssociatedObject(self, _cmd);
     if (!LogOutPopupView) {
         LogOutPopupView = JobsBasePopupView.new;
         LogOutPopupView.size = [JobsBasePopupView viewSizeWithModel:nil];
-        
         [LogOutPopupView richElementsInViewWithModel:self.logOutPopupVM];
-        
         @jobs_weakify(self)
         [LogOutPopupView actionObjectBlock:^(UIButton *data) {
             @jobs_strongify(self)
@@ -59,9 +54,8 @@ static char *NSObject_PopViewToLogOut_logOutPopupView = "NSObject_PopViewToLogOu
             }
             [LogOutPopupView tf_hide];
         }];
-        
         objc_setAssociatedObject(self,
-                                 NSObject_PopViewToLogOut_logOutPopupView,
+                                 _cmd,
                                  LogOutPopupView,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
@@ -70,7 +64,7 @@ static char *NSObject_PopViewToLogOut_logOutPopupView = "NSObject_PopViewToLogOu
 
 -(void)setLogOutPopupView:(JobsBasePopupView *)logOutPopupView{
     objc_setAssociatedObject(self,
-                             NSObject_PopViewToLogOut_logOutPopupView,
+                             _cmd,
                              logOutPopupView,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

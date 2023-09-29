@@ -26,9 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(instancetype)sharedInstance;
 
 @end
-/**
- 防止过多的presented模态推出ViewController
- */
+/// 防止过多的presented模态推出ViewController
 @interface UIViewController (SafeTransition)
 
 @end

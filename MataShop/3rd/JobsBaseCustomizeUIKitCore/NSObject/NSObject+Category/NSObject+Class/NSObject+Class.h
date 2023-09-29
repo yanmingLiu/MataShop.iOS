@@ -15,8 +15,7 @@
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
-
-// 返回并打印成员变量列表
+/// 返回并打印成员变量列表
 static inline NSMutableArray <NSString *>* printIvarList(id instanceObj){
     unsigned int count;
     NSMutableArray *tempDataMutArr = NSMutableArray.array;
@@ -29,7 +28,7 @@ static inline NSMutableArray <NSString *>* printIvarList(id instanceObj){
     }free(ivarList);
     return tempDataMutArr;
 }
-// 返回并打印属性列表
+/// 返回并打印属性列表
 static inline NSMutableArray <NSString *>* printPropertyList(id instanceObj){
     unsigned int count;
     NSMutableArray *tempDataMutArr = NSMutableArray.array;
@@ -41,7 +40,7 @@ static inline NSMutableArray <NSString *>* printPropertyList(id instanceObj){
     }free(propertyList);
     return tempDataMutArr;
 }
-// 返回并打印方法列表
+/// 返回并打印方法列表
 static inline NSMutableArray <NSString *>* printMethodList(id instanceObj){
     unsigned int count;
     NSMutableArray *tempDataMutArr = NSMutableArray.array;
@@ -53,7 +52,7 @@ static inline NSMutableArray <NSString *>* printMethodList(id instanceObj){
     }free(methodList);
     return tempDataMutArr;
 }
-// 返回并打印协议列表
+/// 返回并打印协议列表
 static inline NSMutableArray <NSString *>* printProtocolList(id instanceObj){
     unsigned int count;
     NSMutableArray *tempDataMutArr = NSMutableArray.array;
@@ -68,13 +67,13 @@ static inline NSMutableArray <NSString *>* printProtocolList(id instanceObj){
 }
 
 @interface NSObject (Class)
-// 返回并打印成员变量列表
+/// 返回并打印成员变量列表
 -(NSMutableArray <NSString *>*)printIvarList;
-// 返回并打印属性列表
+/// 返回并打印属性列表
 -(NSMutableArray <NSString *>*)printPropertyList;
-// 返回并打印方法列表
+/// 返回并打印方法列表
 -(NSMutableArray <NSString *>*)printMethodList;
-// 返回并打印协议列表
+/// 返回并打印协议列表
 -(NSMutableArray <NSString *>*)printProtocolList;
 /**
     1、字典是hash映射，是无序的，如果需要有序则需要避开字典，所以对模型进行操作是大前提

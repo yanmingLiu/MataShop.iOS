@@ -8,22 +8,22 @@
 
 #import "XLBubbleTransition.h"
 
-@interface XLBubbleTransition ()<CAAnimationDelegate>
-//锚点
+@interface XLBubbleTransition ()
+/// 锚点
 @property(nonatomic,assign)CGRect anchorRect;
-@property(nonatomic,strong)NSObject <UIViewControllerContextTransitioning>*transitionContext;
+@property(nonatomic,strong)id<UIViewControllerContextTransitioning> transitionContext;
 @property(nonatomic,strong)CAShapeLayer *maskLayer;
 
 @end
 
 @implementation XLBubbleTransition
-#pragma mark 初始化方法
+#pragma mark —— 初始化方法
 + (instancetype)transitionWithAnchorRect:(CGRect)anchorRect {
     XLBubbleTransition *transition = XLBubbleTransition.new;
     transition.anchorRect = anchorRect;
     return transition;
 }
-#pragma mark 转场动画代理方法
+#pragma mark —— 转场动画代理方法
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
     return 0.35f;
 }
@@ -37,7 +37,7 @@
         [self hideScaleAnimationTo:transitionContext];
     }
 }
-#pragma mark 显示/隐藏方法
+#pragma mark —— 显示/隐藏方法
 //显示圆形放大动画
 -(void)showBubbleMaskAnimationTo:(id<UIViewControllerContextTransitioning>)transitionContext{
     self.transitionContext = transitionContext;
@@ -144,10 +144,9 @@
     positionAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetMidX(fromView.bounds), CGRectGetMidY(fromView.bounds))];
     positionAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(CGRectGetMidX(self.anchorRect), CGRectGetMidY(self.anchorRect))];
     positionAnimation.duration = [self transitionDuration:transitionContext];
-    positionAnimation.timingFunction = [CAMediaTimingFunction  functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    positionAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     positionAnimation.delegate = self;
     [fromView.layer addAnimation:positionAnimation forKey:@"position"];
-    
     //缩放动画
     fromView.transform = CGAffineTransformMakeScale(0.0, 0.0);
     CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
@@ -157,16 +156,19 @@
     scaleAnimation.timingFunction = [CAMediaTimingFunction  functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     [fromView.layer addAnimation:scaleAnimation forKey:@"scale"];
 }
-//遍历view的四个角 获取最长的半径
+/// 遍历view的四个角 获取最长的半径
 -(CGFloat)radiusOfBubbleInView:(UIView*)view
                     startPoint:(CGPoint)startPoint{
-    //获取四个角所在的点
+    /// 获取四个角所在的点
     CGPoint point1 = CGPointMake(0, 0);
     CGPoint point2 = CGPointMake(view.bounds.size.width, 0);
     CGPoint point3 = CGPointMake(0 ,view.bounds.size.height);
     CGPoint point4 = CGPointMake(view.bounds.size.width,view.bounds.size.height);
-    NSArray *pointArrar = @[[NSValue valueWithCGPoint:point1],[NSValue valueWithCGPoint:point2],[NSValue valueWithCGPoint:point3],[NSValue valueWithCGPoint:point4]];
-    //做一个冒泡排序获得最长的半径
+    NSArray *pointArrar = @[[NSValue valueWithCGPoint:point1],
+                            [NSValue valueWithCGPoint:point2],
+                            [NSValue valueWithCGPoint:point3],
+                            [NSValue valueWithCGPoint:point4]];
+    /// 做一个冒泡排序获得最长的半径
     CGFloat radius = 0;
     for (NSValue *value in pointArrar) {
         CGPoint point = [value CGPointValue];
@@ -181,9 +183,9 @@
 
 - (void)animationDidStop:(CAAnimation *)anim
                 finished:(BOOL)flag{
-    //通知上下文 动画结束
-    [self.transitionContext completeTransition:![self.transitionContext transitionWasCancelled]];
-    //移除遮罩layer
+    /// 通知上下文 动画结束
+    [self.transitionContext completeTransition:!self.transitionContext.transitionWasCancelled];
+    /// 移除遮罩layer
     [self.maskLayer removeFromSuperlayer];
     self.maskLayer = nil;
     _transitionContext = nil;

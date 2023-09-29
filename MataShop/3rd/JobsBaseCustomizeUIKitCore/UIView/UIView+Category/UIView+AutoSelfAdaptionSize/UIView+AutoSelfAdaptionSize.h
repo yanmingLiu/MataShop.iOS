@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
 /**
+ 资料来源：
  https://github.com/zhuchenglong/LabelDemo
  https://www.jianshu.com/p/37b3e382dcab
  */
@@ -25,17 +26,17 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)buttonAutoWidthByFont;
 /// 确定Button的宽度，使字体大小自适应
 -(void)buttonAutoFontByWidth;
-/****自适应宽度****/
+/// 自适应宽度
 -(CGRect)getFrameWithFreeWidth:(CGPoint)origin
                       maxHight:(CGFloat)maxHight;
-/****自适应高度****/
+/// 自适应高度
 -(CGRect)getFrameWithFreeHight:(CGPoint)origin
                       maxWidth:(CGFloat)maxWidth;
-/****自适应宽度--->可调整字间距****/
+/// 自适应宽度--->可调整字间距
 -(CGRect)getFrameWithFreeWidth:(CGPoint)origin
                       maxHight:(CGFloat)maxHight
                      textSpace:(CGFloat)textSpace;
-/****自适应高度--->可调整字间距和行间距****/
+/// 自适应高度--->可调整字间距和行间距
 -(CGRect)getFrameWithFreeHight:(CGPoint)origin
                       maxWidth:(CGFloat)maxWidth
                      textSpace:(CGFloat)textSpace

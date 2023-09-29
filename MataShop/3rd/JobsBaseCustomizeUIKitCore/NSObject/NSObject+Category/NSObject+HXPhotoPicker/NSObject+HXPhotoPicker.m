@@ -17,7 +17,7 @@
 -(void)invokeSysPhotoAlbumSuccessBlock:(jobsByIDBlock _Nullable)successBlock
                              failBlock:(jobsByIDBlock _Nullable)failBlock{
     /// 请求相册权限
-    @jobs_weakify(self)
+//    @jobs_weakify(self)
     [ECPrivacyCheckGatherTool requestPhotosAuthorizationWithCompletionHandler:^(BOOL granted) {
         if (granted) {
             if ([self isKindOfClass:UIViewController.class]) {
@@ -56,7 +56,7 @@
                          failBlock:(jobsByIDBlock _Nullable)failBlock{
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         /// 请求相机📷权限
-        @jobs_weakify(self)
+//        @jobs_weakify(self)
         [ECPrivacyCheckGatherTool requestCameraAuthorizationWithCompletionHandler:^(BOOL granted) {
             if (granted) {
                 if ([self isKindOfClass:UIViewController.class]) {
@@ -85,11 +85,10 @@
         [WHToast toastMsg:Internationalization(@"此设备不支持相机!")];
     }
 }
-static char *NSObject_HXPhotoPicker_photoManager = "NSObject_HXPhotoPicker_photoManager";
-@dynamic photoManager;
 #pragma mark —— @property(nonatomic,strong)HXPhotoManager *photoManager;//选取图片的数据管理类
+@dynamic photoManager;
 -(HXPhotoManager *)photoManager{
-    HXPhotoManager *PhotoManager = objc_getAssociatedObject(self, NSObject_HXPhotoPicker_photoManager);
+    HXPhotoManager *PhotoManager = objc_getAssociatedObject(self, _cmd);
     if (!PhotoManager) {
         PhotoManager = [HXPhotoManager.alloc initWithType:HXPhotoManagerSelectedTypePhotoAndVideo];
         PhotoManager.configuration.localFileName = [self.appDisplayName stringByAppendingString:@"Models"];
@@ -110,9 +109,8 @@ static char *NSObject_HXPhotoPicker_photoManager = "NSObject_HXPhotoPicker_photo
             /// 只会影响 viewWillAppear 和 viewWillDisappear 两个生命周期
             [viewController.navigationController setNavigationBarHidden:NO animated:NO];
         };
-        
         objc_setAssociatedObject(self,
-                                 NSObject_HXPhotoPicker_photoManager,
+                                 _cmd,
                                  PhotoManager,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return PhotoManager;
@@ -120,15 +118,14 @@ static char *NSObject_HXPhotoPicker_photoManager = "NSObject_HXPhotoPicker_photo
 
 -(void)setPhotoManager:(HXPhotoManager *)photoManager{
     objc_setAssociatedObject(self,
-                             NSObject_HXPhotoPicker_photoManager,
+                             _cmd,
                              photoManager,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_HXPhotoPicker_historyPhotoDataMutArr = "NSObject_HXPhotoPicker_historyPhotoDataMutArr";
-@dynamic historyPhotoDataMutArr;
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <HXPhotoModel *>*__block historyPhotoDataMutArr;//与之相对应的是self.photoManager.afterSelectedArray
+@dynamic historyPhotoDataMutArr;
 -(NSMutableArray<HXPhotoModel *> *)historyPhotoDataMutArr{
-    NSMutableArray <HXPhotoModel *>*HistoryPhotoDataMutArr = objc_getAssociatedObject(self, NSObject_HXPhotoPicker_historyPhotoDataMutArr);
+    NSMutableArray <HXPhotoModel *>*HistoryPhotoDataMutArr = objc_getAssociatedObject(self, _cmd);
     if (!HistoryPhotoDataMutArr) {
         /// < 保存本地的方法 >
         /// 保存本地的方法都是在主线程调用
@@ -136,7 +133,7 @@ static char *NSObject_HXPhotoPicker_historyPhotoDataMutArr = "NSObject_HXPhotoPi
         /// @param addData 是否添加到manager的数据中
         HistoryPhotoDataMutArr = [NSMutableArray arrayWithArray:[self.photoManager getLocalModelsInFileWithAddData:YES]];
         objc_setAssociatedObject(self,
-                                 NSObject_HXPhotoPicker_historyPhotoDataMutArr,
+                                 _cmd,
                                  HistoryPhotoDataMutArr,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return HistoryPhotoDataMutArr;
@@ -144,19 +141,18 @@ static char *NSObject_HXPhotoPicker_historyPhotoDataMutArr = "NSObject_HXPhotoPi
 
 -(void)setHistoryPhotoDataMutArr:(NSMutableArray<HXPhotoModel *> *)historyPhotoDataMutArr{
     objc_setAssociatedObject(self,
-                             NSObject_HXPhotoPicker_historyPhotoDataMutArr,
+                             _cmd,
                              historyPhotoDataMutArr,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_HXPhotoPicker_photosDataMutArr = "NSObject_HXPhotoPicker_photosDataMutArr";
-@dynamic photosDataMutArr;
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <HXPhotoModel *>*__block photosDataMutArr;
+@dynamic photosDataMutArr;
 -(NSMutableArray<HXPhotoModel *> *)photosDataMutArr{
-    NSMutableArray <HXPhotoModel *>*PhotosDataMutArr = objc_getAssociatedObject(self, NSObject_HXPhotoPicker_photosDataMutArr);
+    NSMutableArray <HXPhotoModel *>*PhotosDataMutArr = objc_getAssociatedObject(self, _cmd);
     if (!PhotosDataMutArr) {
         PhotosDataMutArr = NSMutableArray.array;
         objc_setAssociatedObject(self,
-                                 NSObject_HXPhotoPicker_photosDataMutArr,
+                                 _cmd,
                                  PhotosDataMutArr,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return PhotosDataMutArr;
@@ -164,19 +160,18 @@ static char *NSObject_HXPhotoPicker_photosDataMutArr = "NSObject_HXPhotoPicker_p
 
 -(void)setPhotosDataMutArr:(NSMutableArray<HXPhotoModel *> *)photosDataMutArr{
     objc_setAssociatedObject(self,
-                             NSObject_HXPhotoPicker_photosDataMutArr,
+                             _cmd,
                              photosDataMutArr,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_HXPhotoPicker_videosDataMutArr = "NSObject_HXPhotoPicker_videosDataMutArr";
-@dynamic videosDataMutArr;
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <HXPhotoModel *>*__block videosDataMutArr;
+@dynamic videosDataMutArr;
 -(NSMutableArray<HXPhotoModel *> *)videosDataMutArr{
-    NSMutableArray <HXPhotoModel *>*VideosDataMutArr = objc_getAssociatedObject(self, NSObject_HXPhotoPicker_videosDataMutArr);
+    NSMutableArray <HXPhotoModel *>*VideosDataMutArr = objc_getAssociatedObject(self, _cmd);
     if (!VideosDataMutArr) {
         VideosDataMutArr = NSMutableArray.array;
         objc_setAssociatedObject(self,
-                                 NSObject_HXPhotoPicker_videosDataMutArr,
+                                 _cmd,
                                  VideosDataMutArr,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return VideosDataMutArr;
@@ -184,7 +179,7 @@ static char *NSObject_HXPhotoPicker_videosDataMutArr = "NSObject_HXPhotoPicker_v
 
 -(void)setVideosDataMutArr:(NSMutableArray<HXPhotoModel *> *)videosDataMutArr{
     objc_setAssociatedObject(self,
-                             NSObject_HXPhotoPicker_videosDataMutArr,
+                             _cmd,
                              videosDataMutArr,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

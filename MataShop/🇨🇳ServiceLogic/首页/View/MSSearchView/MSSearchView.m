@@ -123,7 +123,6 @@ static dispatch_once_t static_searchViewOnceToken;
 -(BaseButton *)searchBtn{
     if (!_searchBtn) {
         _searchBtn = BaseButton.new;
-        [_searchBtn handelAdjustsImageWhenHighlighted];
         _searchBtn.normalTitle = Internationalization(@"搜索");
 //        _searchBtn.backgroundColor = RGBA_COLOR(255, 231, 18, 1);
         _searchBtn.backgroundColor = RGBA_COLOR(234, 41, 24, 1);
@@ -132,11 +131,12 @@ static dispatch_once_t static_searchViewOnceToken;
         _searchBtn.titleFont = UIFontWeightBoldSize(16);
         [_searchBtn makeBtnLabelByShowingType:UILabelShowingType_01];
         @jobs_weakify(self)
-        [_searchBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_searchBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
 //            [WHToast toastErrMsg:Internationalization(@"获取节日事件需要权限呀大宝贝!")];
+            return nil;
         }];
         [self addSubview:_searchBtn];
         [_searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {

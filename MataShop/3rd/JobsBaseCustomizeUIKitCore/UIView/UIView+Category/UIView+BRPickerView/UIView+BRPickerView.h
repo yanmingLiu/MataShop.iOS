@@ -28,12 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)BRDatePickerView *datePickerView;/// 时间选择器
 @property(nonatomic,strong)BRAddressPickerView *addressPickerView;/// 地址选择器
 /// Data
-@property(nonatomic,copy)jobsByIDBlock brStringPickerViewBlock;
 @property(nonatomic,assign)BRStringPickerMode brStringPickerMode;
 @property(nonatomic,strong)NSMutableArray *BRStringPickerViewDataMutArr;
 @property(nonatomic,strong)BRPickerStyle *customStyle;
-
--(void)BRStringPickerViewBlock:(jobsByIDBlock)block;
 /// 时间选择器
 -(void)makeDatePickerDoneBlock:(BRDoneClickBlock)clickDoneBlock
                    resultBlock:(BRDateResultBlock)clickResultBlock;

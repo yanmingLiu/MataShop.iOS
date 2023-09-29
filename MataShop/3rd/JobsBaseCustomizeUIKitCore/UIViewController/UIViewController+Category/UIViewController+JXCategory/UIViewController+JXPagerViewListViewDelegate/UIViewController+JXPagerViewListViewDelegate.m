@@ -32,23 +32,21 @@
 - (UIView *)listView {
     return self.view;
 }
-static char *UIViewController_JXPagingViewListViewDelegate_scrollViewClass = "UIViewController_JXPagingViewListViewDelegate_scrollViewClass";
-@dynamic scrollViewClass;
 #pragma mark —— @property(nonatomic,strong)Class scrollViewClass;
+@dynamic scrollViewClass;
 -(Class)scrollViewClass{
-    Class ScrollViewClass = objc_getAssociatedObject(self, UIViewController_JXPagingViewListViewDelegate_scrollViewClass);
+    Class ScrollViewClass = objc_getAssociatedObject(self, _cmd);
     return ScrollViewClass;
 }
 
 -(void)setScrollViewClass:(Class)scrollViewClass{
     objc_setAssociatedObject(self,
-                             UIViewController_JXPagingViewListViewDelegate_scrollViewClass,
+                             _cmd,
                              scrollViewClass,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIViewController_JXPagingViewListViewDelegate_scrollView = "UIViewController_JXPagingViewListViewDelegate_scrollView";
-@dynamic scrollView;
 #pragma mark —— @property(nonatomic,strong)UIScrollView *scrollView;
+@dynamic scrollView;
 /**
  1、Masonry约束必须以self.scrollView为锚点，不能以self.view。否则无法拖动
  [self.scrollView addSubview:_tableView];
@@ -63,13 +61,13 @@ static char *UIViewController_JXPagingViewListViewDelegate_scrollView = "UIViewC
  3、加在scrollView上的内容物的相关长度比如超出scrollView容器的相关长度。否则无法拖动
  */
 -(UIScrollView *)scrollView{
-    UIScrollView *ScrollView = objc_getAssociatedObject(self, UIViewController_JXPagingViewListViewDelegate_scrollView);
+    UIScrollView *ScrollView = objc_getAssociatedObject(self, _cmd);
     if (!ScrollView) {
         ScrollView = UIScrollView.new;
         ScrollView.delegate = self;
         [self.view addSubview:ScrollView];
         objc_setAssociatedObject(self,
-                                 UIViewController_JXPagingViewListViewDelegate_scrollView,
+                                 _cmd,
                                  ScrollView,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [ScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -80,22 +78,21 @@ static char *UIViewController_JXPagingViewListViewDelegate_scrollView = "UIViewC
 
 -(void)setScrollView:(UIScrollView *)scrollView{
     objc_setAssociatedObject(self,
-                             UIViewController_JXPagingViewListViewDelegate_scrollView,
+                             _cmd,
                              scrollView,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIViewController_JXPagingViewListViewDelegate_scrollCallback = "UIViewController_JXPagingViewListViewDelegate_scrollCallback";
-@dynamic scrollCallback;
 #pragma mark —— @property(nonatomic,copy)void(^scrollCallback)(UIScrollView *scrollView);
+@dynamic scrollCallback;
 -(void)setScrollCallback:(void (^)(UIScrollView * _Nonnull))scrollCallback{
     objc_setAssociatedObject(self,
-                             UIViewController_JXPagingViewListViewDelegate_scrollCallback,
+                             _cmd,
                              scrollCallback,
                              OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 -(void (^)(UIScrollView * _Nonnull))scrollCallback{
-    return objc_getAssociatedObject(self, UIViewController_JXPagingViewListViewDelegate_scrollCallback);
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 @end

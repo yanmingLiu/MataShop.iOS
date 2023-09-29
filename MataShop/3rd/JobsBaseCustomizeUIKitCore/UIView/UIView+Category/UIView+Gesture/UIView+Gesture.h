@@ -66,6 +66,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (Gesture)
 // config
 @property(nonatomic,weak,nullable)id target;
+@property(nonatomic,assign)NSUInteger minimumNumberOfTouches API_UNAVAILABLE(tvos);
+@property(nonatomic,assign)NSUInteger maximumNumberOfTouches API_UNAVAILABLE(tvos);
 @property(nonatomic,assign)NSUInteger numberOfTapsRequired;/// 设置轻拍次数【UILongPressGestureRecognizer】【UITapGestureRecognizer】⚠️注意：如果要设置长按手势，此属性必须设置为0⚠️
 @property(nonatomic,assign)NSUInteger numberOfTouchesRequired;/// 设置手指字数【UILongPressGestureRecognizer】【UITapGestureRecognizer】
 @property(nonatomic,assign)NSTimeInterval minimumPressDuration;/// longPressGR最小长按时间【UILongPressGestureRecognizer】
@@ -108,12 +110,14 @@ NS_ASSUME_NONNULL_END
      _collectionView.allowableMovement = 1;
      _collectionView.userInteractionEnabled = YES;
      _collectionView.target = self;/// ⚠️注意：任何手势这一句都要写
-     _collectionView.longPressGR_SelImp.selector = [self jobsSelectorBlock:^(id  _Nullable weakSelf, id  _Nullable arg) {
+     _collectionView.longPressGR_SelImp.selector = [self jobsSelectorBlock:^(id  _Nullable weakSelf,
+                                        UILongPressGestureRecognizer *  _Nullable arg) {
          NSLog(@"");
      }];
      _collectionView.longPressGR.enabled = YES;/// 必须在设置完Target和selector以后方可开启执行
      
-     _collectionView.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id  _Nullable weakSelf, id  _Nullable arg) {
+     _collectionView.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id  _Nullable target,
+                                        UITapGestureRecognizer *_Nullable arg) {
          NSLog(@"");
      }];
      _collectionView.tapGR.enabled = YES;/// 必须在设置完Target和selector以后方可开启执行

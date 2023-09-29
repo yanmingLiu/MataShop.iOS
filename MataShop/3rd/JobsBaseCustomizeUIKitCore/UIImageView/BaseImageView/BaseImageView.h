@@ -14,12 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseImageView : UIImageView<BaseViewProtocol>
 
-@property(nonatomic,copy)jobsByIDBlock baseImageViewBlock;
-/*
-    用于以此为基类的UIImageView的具体子类层所有数据的回调,当然也可以用NSObject分类的方法定位于：@interface NSObject (CallBackInfoByBlock)
- */
--(void)actionBlockBaseImageView:(jobsByIDBlock)baseImageViewBlock;
-
 @end
 
 NS_ASSUME_NONNULL_END

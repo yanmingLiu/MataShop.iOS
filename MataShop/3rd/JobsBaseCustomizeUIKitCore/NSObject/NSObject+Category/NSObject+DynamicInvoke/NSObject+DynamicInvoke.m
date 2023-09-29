@@ -8,7 +8,6 @@
 #import "NSObject+DynamicInvoke.h"
 
 @implementation NSObject (DynamicInvoke)
-
 #pragma mark —— 参数 和 相关调用
 /// 如果某个实例对象存在某个【不带参数的方法】，则对其调用执行
 /// @param targetObj 靶点，方法在哪里
@@ -72,11 +71,10 @@ callingMethodWithName:(nullable NSString *)methodName{
 //        }
     }
     
-    //只能使用该方法来创建，不能使用alloc init
+    /// 只能使用该方法来创建，不能使用alloc init
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
     invocation.target = targetObj;
     invocation.selector = selector;
-
     /// 【防崩溃】如果传的不是数组，则封装成数组进行处理
     if (![paramarrays isKindOfClass:NSArray.class] && paramarrays) {
         paramarrays = @[paramarrays];
@@ -210,15 +208,14 @@ static void selectorImp(id self,
     if (block) block(weak_self, arg);
 }
 /// 对 SEL和IMP的统一管理
-static char *NSObject_DynamicInvoke_selImp = "NSObject_DynamicInvoke_selImp";
-@dynamic selImp;
 #pragma mark —— @property(nonatomic,strong)JobsSEL_IMP *selImp;
+@dynamic selImp;
 -(JobsSEL_IMP *)selImp{
-    JobsSEL_IMP *SelImp = objc_getAssociatedObject(self, NSObject_DynamicInvoke_selImp);
+    JobsSEL_IMP *SelImp = objc_getAssociatedObject(self, _cmd);
     if (!SelImp) {
         SelImp = JobsSEL_IMP.new;
         objc_setAssociatedObject(self,
-                                 NSObject_DynamicInvoke_selImp,
+                                 _cmd,
                                  SelImp,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return SelImp;
@@ -226,7 +223,7 @@ static char *NSObject_DynamicInvoke_selImp = "NSObject_DynamicInvoke_selImp";
 
 -(void)setSelImp:(JobsSEL_IMP *)selImp{
     objc_setAssociatedObject(self,
-                             NSObject_DynamicInvoke_selImp,
+                             _cmd,
                              selImp,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

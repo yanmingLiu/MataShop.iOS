@@ -20,19 +20,19 @@
 Example:
  [objc_getClass("__NSDictionaryM") swizzlingMethod:@selector(setObject:forKey:) swizzledSelector:@selector(swizzled_setObject:forKey:)];
  */
--(void)swizzlingInstanceMethod:(SEL)originalSelector
-              swizzledSelector:(SEL)swizzledSelector;
+-(void)swizzlingInstanceMethod:(SEL _Nonnull)originalSelector
+              swizzledSelector:(SEL _Nonnull)swizzledSelector;
 
 @end
 /// 不同类的方法交换
-void TYFFSwizzleMethod(Class originalCls,
-                       SEL originalSelector,
-                       Class swizzledCls,
-                       SEL swizzledSelector);
+void TYFFSwizzleMethod(Class _Nonnull originalCls,
+                       SEL _Nonnull originalSelector,
+                       Class _Nonnull swizzledCls,
+                       SEL _Nonnull swizzledSelector);
 /// 同一个类的方法交换
-void MethodSwizzle(Class c,
-                   SEL orig,
-                   SEL new);
+void MethodSwizzle(Class _Nonnull c,
+                   SEL _Nonnull orig,
+                   SEL _Nonnull new);
 
 void objc_setAssociatedObject_weak(id _Nonnull object,
                               const void * _Nonnull key,

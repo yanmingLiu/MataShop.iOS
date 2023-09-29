@@ -8,14 +8,10 @@
 #import "UIView+UIBackgroundConfig.h"
 
 @implementation UIView (UIBackgroundConfig)
-
-static char *UIView_UIBackgroundConfig_backgroundConfig = "UIView_UIBackgroundConfig_backgroundConfig";
-@dynamic backgroundConfig;
-
 #pragma mark —— @property(nonatomic,strong)UIBackgroundConfiguration *backgroundConfig;
+@dynamic backgroundConfig;
 -(UIBackgroundConfiguration *)backgroundConfig{
-    UIBackgroundConfiguration *BackgroundConfig = objc_getAssociatedObject(self,
-                                                                           UIView_UIBackgroundConfig_backgroundConfig);
+    UIBackgroundConfiguration *BackgroundConfig = objc_getAssociatedObject(self,_cmd);
     if (!BackgroundConfig) {
         BackgroundConfig = UIBackgroundConfiguration.listPlainHeaderFooterConfiguration;
         BackgroundConfig.image = JobsIMG(@"设置_背景1");
@@ -23,16 +19,13 @@ static char *UIView_UIBackgroundConfig_backgroundConfig = "UIView_UIBackgroundCo
                                                                         JobsWidth(15),
                                                                         JobsWidth(3),
                                                                         JobsWidth(15));
-        objc_setAssociatedObject(self,
-                                 UIView_UIBackgroundConfig_backgroundConfig,
-                                 BackgroundConfig,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setBackgroundConfig:BackgroundConfig];
     }return BackgroundConfig;
 }
 
 -(void)setBackgroundConfig:(UIBackgroundConfiguration *)backgroundConfig{
     objc_setAssociatedObject(self,
-                             UIView_UIBackgroundConfig_backgroundConfig,
+                             _cmd,
                              backgroundConfig,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

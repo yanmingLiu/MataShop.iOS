@@ -107,9 +107,10 @@
         [_editBtn cornerCutToCircleWithCornerRadius:JobsWidth(JobsWidth(10))];
         [_editBtn layerBorderCor:HEXCOLOR(0xC4C4C4) andBorderWidth:JobsWidth(1)];
         @jobs_weakify(self)
-        [_editBtn jobsBtnClickEventBlock:^(id data) {
+        [_editBtn jobsBtnClickEventBlock:^id(id data) {
             @jobs_strongify(self)
 //            [self forceComingToPushVC:BaiShaETProjPersonalDataVC.new requestParams:@""];
+            return nil;
         }];
     }return _editBtn;
 }
@@ -131,9 +132,10 @@
         [_userRankBtn cornerCutToCircleWithCornerRadius:JobsWidth(JobsWidth(10))];
         [_userRankBtn layerBorderCor:JobsWhiteColor andBorderWidth:JobsWidth(1)];
         @jobs_weakify(self)
-        [_userRankBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_userRankBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             if (self.objectBlock) self.objectBlock(x);
+            return nil;
         }];
     }return _userRankBtn;
 }

@@ -18,42 +18,41 @@
         btn.size = self.size;
         btn.normalBackgroundImage = self.img;
         @jobs_weakify(self)
-        [btn jobsBtnClickEventBlock:^(id data) {
+        [btn jobsBtnClickEventBlock:^id(id data) {
             @jobs_strongify(self)
             if (customAccessoryViewBlock) customAccessoryViewBlock(self);
+            return nil;
         }];
         self.accessoryView = btn;
     }
 }
-static char *UITableViewCell_WhiteArrows_img = "UITableViewCell_WhiteArrows_img";
-@dynamic img;
 #pragma mark —— @property(nonatomic,strong)UIImage *img;
+@dynamic img;
 -(void)setImg:(UIImage *)img{
     objc_setAssociatedObject(self,
-                             UITableViewCell_WhiteArrows_img,
+                             _cmd,
                              img,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 -(UIImage *)img{
-    UIImage *image = objc_getAssociatedObject(self, UITableViewCell_WhiteArrows_img);
+    UIImage *image = objc_getAssociatedObject(self, _cmd);
     if (!image) {
         image = JobsIMG(@"WhiteRightArrow");
         objc_setAssociatedObject(self,
-                                 UITableViewCell_WhiteArrows_img,
+                                 _cmd,
                                  image,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return image;
 }
-static char *UITableViewCell_WhiteArrows_size = "UITableViewCell_WhiteArrows_size";
-@dynamic size;
 #pragma mark —— @property(nonatomic,assign)CGSize size;
+@dynamic size;
 -(CGSize)size{
-    CGSize Size = [objc_getAssociatedObject(self, UITableViewCell_WhiteArrows_size) CGSizeValue];
+    CGSize Size = [objc_getAssociatedObject(self, _cmd) CGSizeValue];
     if (CGSizeEqualToSize(Size, CGSizeZero)) {
         Size = CGSizeMake(JobsWidth(10), JobsWidth(18.3));//缺省值
         objc_setAssociatedObject(self,
-                                 UITableViewCell_WhiteArrows_size,
+                                 _cmd,
                                  [NSValue valueWithCGSize:Size],
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return Size;
@@ -61,7 +60,7 @@ static char *UITableViewCell_WhiteArrows_size = "UITableViewCell_WhiteArrows_siz
 
 -(void)setSize:(CGSize)size{
     objc_setAssociatedObject(self,
-                             UITableViewCell_WhiteArrows_size,
+                             _cmd,
                              [NSValue valueWithCGSize:size],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

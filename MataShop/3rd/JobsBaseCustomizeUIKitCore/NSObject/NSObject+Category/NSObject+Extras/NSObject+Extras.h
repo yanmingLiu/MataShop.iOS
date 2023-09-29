@@ -139,6 +139,8 @@ BaseProtocol
 -(UIViewController *_Nullable)vcByStoryboardWithName:(NSString *_Nonnull)storyboardWithName
                                     storyboardBundle:(NSBundle *_Nullable)storyboardBundle
                                           identifier:(NSString *_Nonnull)identifier;
+-(UIViewController *_Nullable)vcByStoryboardWithName:(NSString *_Nonnull)storyboardWithName
+                                    storyboardBundle:(NSBundle *_Nullable)storyboardBundle;
 #pragma mark —— KVO
 /**
  
@@ -314,7 +316,6 @@ BaseProtocol
     特别指出的是：
     1、除数为零的情况，被判定为不能被整除；
     2、num1 和 num2 必须为 NSNumber* 类型，否则判定为不能够被整除
- 
  */
 -(BOOL)judgementExactDivisionByNum1:(NSNumber *_Nonnull)num1
                                num2:(NSNumber *_Nonnull)num2;

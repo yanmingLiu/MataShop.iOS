@@ -8,18 +8,7 @@
 #import "UITextField+Placeholder.h"
 
 @implementation UITextField (Placeholder)
-
-static char *UITextField_Placeholder_placeholderColor = "UITextField_Placeholder_placeholderColor";
-@dynamic placeholderColor;
-
-static char *UITextField_Placeholder_placeholderFont = "UITextField_Placeholder_placeholderFont";
-@dynamic placeholderFont;
-
-static char *UITextField_Placeholder_defaultAttributedDataMutArr = "UITextField_Placeholder_defaultAttributedDataMutArr";
-@dynamic defaultAttributedDataForPlaceHolderMutArr;
-/**
-    修改Placeholder亦可以通过富文本来完成
- */
+/// 修改Placeholder亦可以通过富文本来完成
 -(NSAttributedString *)defaultAttributedPlaceholder{
     return [self richTextWithDataConfigMutArr:self.defaultAttributedDataForPlaceHolderMutArr];
 }
@@ -35,13 +24,14 @@ static char *UITextField_Placeholder_defaultAttributedDataMutArr = "UITextField_
     return placeholderLabel;
 }
 #pragma mark —— @property(nonatomic,strong)UIColor *placeholderColor;
+@dynamic placeholderColor;
 -(UIColor *)placeholderColor{
-    UIColor *PlaceholderColor = objc_getAssociatedObject(self, UITextField_Placeholder_placeholderColor);
+    UIColor *PlaceholderColor = objc_getAssociatedObject(self, _cmd);
     if (!PlaceholderColor) {
         PlaceholderColor = self.textColor;
         self.placeholderLabel.textColor = PlaceholderColor;
         objc_setAssociatedObject(self,
-                                 UITextField_Placeholder_placeholderColor,
+                                 _cmd,
                                  PlaceholderColor,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return PlaceholderColor;
@@ -50,18 +40,19 @@ static char *UITextField_Placeholder_defaultAttributedDataMutArr = "UITextField_
 -(void)setPlaceholderColor:(UIColor *)placeholderColor{
     self.placeholderLabel.textColor = placeholderColor;
     objc_setAssociatedObject(self,
-                             UITextField_Placeholder_placeholderColor,
+                             _cmd,
                              placeholderColor,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)UIFont *placeholderFont;
+@dynamic placeholderFont;
 -(UIFont *)placeholderFont{
-    UIFont *PlaceholderFont = objc_getAssociatedObject(self, UITextField_Placeholder_placeholderFont);
+    UIFont *PlaceholderFont = objc_getAssociatedObject(self, _cmd);
     if (!PlaceholderFont) {
         PlaceholderFont = self.font;
         self.placeholderLabel.font = PlaceholderFont;
         objc_setAssociatedObject(self,
-                                 UITextField_Placeholder_placeholderFont,
+                                 _cmd,
                                  PlaceholderFont,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return PlaceholderFont;
@@ -70,20 +61,21 @@ static char *UITextField_Placeholder_defaultAttributedDataMutArr = "UITextField_
 -(void)setPlaceholderFont:(UIFont *)placeholderFont{
     self.placeholderLabel.font = placeholderFont;
     objc_setAssociatedObject(self,
-                             UITextField_Placeholder_placeholderFont,
+                             _cmd,
                              placeholderFont,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <RichTextConfig *>*defaultAttributedDataMutArr;
+@dynamic defaultAttributedDataForPlaceHolderMutArr;
 -(NSMutableArray<RichTextConfig *> *)defaultAttributedDataForPlaceHolderMutArr{
-    NSMutableArray *DefaultAttributedDataMutArr = objc_getAssociatedObject(self, UITextField_Placeholder_defaultAttributedDataMutArr);
+    NSMutableArray *DefaultAttributedDataMutArr = objc_getAssociatedObject(self, _cmd);
     if (!DefaultAttributedDataMutArr) {
         DefaultAttributedDataMutArr = NSMutableArray.array;
         
         {
             RichTextConfig *richTextConfig = RichTextConfig.new;
             richTextConfig.targetString = self.placeholder;
-            richTextConfig.font = [UIFont systemFontOfSize:JobsWidth(10) weight:UIFontWeightRegular];
+            richTextConfig.font = UIFontWeightRegularSize(10);
             richTextConfig.textCor = UIColor.blueColor;
     //        richTextConfig.underlineStyle;
     //        richTextConfig.paragraphStyle;
@@ -91,9 +83,8 @@ static char *UITextField_Placeholder_defaultAttributedDataMutArr = "UITextField_
             richTextConfig.range =  NSMakeRange(0, self.placeholder.length);
             [DefaultAttributedDataMutArr addObject:richTextConfig];
         }
-        
         objc_setAssociatedObject(self,
-                                 UITextField_Placeholder_defaultAttributedDataMutArr,
+                                 _cmd,
                                  DefaultAttributedDataMutArr,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return DefaultAttributedDataMutArr;
@@ -101,7 +92,7 @@ static char *UITextField_Placeholder_defaultAttributedDataMutArr = "UITextField_
 
 -(void)setDefaultAttributedDataForPlaceHolderMutArr:(NSMutableArray<RichTextConfig *> *)defaultAttributedDataMutArr{
     objc_setAssociatedObject(self,
-                             UITextField_Placeholder_defaultAttributedDataMutArr,
+                             _cmd,
                              defaultAttributedDataMutArr,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

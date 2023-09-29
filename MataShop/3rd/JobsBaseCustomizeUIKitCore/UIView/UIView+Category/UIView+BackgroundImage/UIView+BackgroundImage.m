@@ -16,10 +16,9 @@
  如果上面覆盖一个按钮，则需要[self.contentView addSubview:self.backgroundImageView];
  否则按钮点击事件被截断
  */
-static char *UIView_BackgroundImage_backgroundImageView = "UIView_BackgroundImage_backgroundImageView";
 @dynamic backgroundImageView;
 -(UIImageView *)backgroundImageView{
-    UIImageView *BackgroundImageView = objc_getAssociatedObject(self, UIView_BackgroundImage_backgroundImageView);
+    UIImageView *BackgroundImageView = objc_getAssociatedObject(self, _cmd);
     if (!BackgroundImageView) {
         BackgroundImageView = UIImageView.new;
         BackgroundImageView.userInteractionEnabled = YES;
@@ -48,7 +47,7 @@ static char *UIView_BackgroundImage_backgroundImageView = "UIView_BackgroundImag
 
 -(void)setBackgroundImageView:(UIImageView *)backgroundImageView{
     objc_setAssociatedObject(self,
-                             UIView_BackgroundImage_backgroundImageView,
+                             _cmd,
                              backgroundImageView,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

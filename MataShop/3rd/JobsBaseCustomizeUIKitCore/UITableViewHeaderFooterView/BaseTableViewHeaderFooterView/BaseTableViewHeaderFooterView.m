@@ -12,7 +12,7 @@
 @end
 
 @implementation BaseTableViewHeaderFooterView
-
+#pragma mark —— BaseViewProtocol
 BaseViewProtocol_synthesize
 -(instancetype)initWithReuseIdentifier:(nullable NSString *)reuseIdentifier{
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {

@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import <UserNotifications/UserNotifications.h>
 #import <UniformTypeIdentifiers/UTCoreTypes.h>
-
 #import "NSObject+UNUserNotificationCenterDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -21,10 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
      authorizationStatusBlock:(jobsByIDBlock _Nullable)authorizationStatusBlock;
 /// 初始化一个本地通知
 -(UNMutableNotificationContent *)userNotificationInit;
-/**
-    设置通知附件内容
-    注意：URL必须是一个有效的文件路径，不然会报错
- */
+/// 设置通知附件内容
+/// 注意：URL必须是一个有效的文件路径，不然会报错
 -(UNNotificationAttachment *)notificationAttachmentInitByPath:(NSString *)path;
 /// 触发模式
 -(UNTimeIntervalNotificationTrigger *)notificationTriggerWithTimeInterval:(NSTimeInterval)timeInterval

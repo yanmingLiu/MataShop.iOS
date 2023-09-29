@@ -19,6 +19,5 @@
 #import "UIImage+SYS.h"
 #import "UIImage+Tailor.h"
 #import "UIImage+YBGIF.h"
-#import "UIImage+Measure.h"
 
 #endif /* JobsImage_h */

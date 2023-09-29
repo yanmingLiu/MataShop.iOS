@@ -9,9 +9,7 @@
 #import "NSArray+Tools.h"
 
 @implementation NSArray (Tools)
-/**
-*  数组转字符串
-*/
+/// 数组转字符串
 -(NSString *)string{
     if(!self
        ||self.count == 0) return @"";
@@ -24,19 +22,15 @@
     NSString *strForRight = [str substringWithRange:NSMakeRange(0, str.length - 1)];
     return strForRight;
 }
-/**
-*  数组比较
-*/
+/// 数组比较
 -(BOOL)compareEqualArrElement:(NSArray *)array{
     NSSet *set1 = [NSSet setWithArray:self];
     NSSet *set2 = [NSSet setWithArray:array];
     return [set1 isEqualToSet:set2];
 }
-/**
- *  数组计算交集
- */
+/// 数组计算交集
 -(NSArray *)arrayForIntersectionWithOtherArray:(NSArray *)otherArray{
-    NSMutableArray *intersectionArray=[NSMutableArray array];
+    NSMutableArray *intersectionArray = NSMutableArray.array;
     if(self.count == 0) return nil;
     if(!otherArray) return nil;
     //遍历
@@ -46,13 +40,11 @@
         [intersectionArray addObject:obj];
     }return intersectionArray;
 }
-/**
- *  数据计算差集
- */
+/// 数据计算差集
 -(NSArray *)arrayForMinusWithOtherArray:(NSArray *)otherArray{
     if(!self) return nil;
     if(!otherArray) return self;
-    NSMutableArray *minusArray=[NSMutableArray arrayWithArray:self];
+    NSMutableArray *minusArray = [NSMutableArray arrayWithArray:self];
     //遍历
     for (id obj in otherArray) {
         if(![self containsObject:obj]) continue;
@@ -60,6 +52,5 @@
         [minusArray removeObject:obj];
     }return minusArray;
 }
-
 
 @end

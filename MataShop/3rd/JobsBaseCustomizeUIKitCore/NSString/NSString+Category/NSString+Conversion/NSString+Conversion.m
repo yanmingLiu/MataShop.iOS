@@ -11,7 +11,7 @@
 #pragma mark —— 转化
 /// 字符串中取数字
 -(long long)getDigits{
-    NSCharacterSet *nonDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    NSCharacterSet *nonDigits = [NSCharacterSet.decimalDigitCharacterSet invertedSet];
     int remainSecond = [[self stringByTrimmingCharactersInSet:nonDigits] intValue];
     return (long long)remainSecond;
 }
@@ -58,13 +58,13 @@
     }
     NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
     NSRange range = {0,jsonString.length};
-    //去掉字符串中的空格
+    /// 去掉字符串中的空格
     [mutStr replaceOccurrencesOfString:@" "
                             withString:@""
                                options:NSLiteralSearch
                                  range:range];
     NSRange range2 = {0,mutStr.length};
-    //去掉字符串中的换行符
+    /// 去掉字符串中的换行符
     [mutStr replaceOccurrencesOfString:@"\n"
                             withString:@""
                                options:NSLiteralSearch

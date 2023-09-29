@@ -22,15 +22,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIButton (UI)<BaseProtocol,BaseButtonProtocol>
 #pragma mark —— 一些功能性
 /// RAC 点击事件2次封装
--(void)jobsBtnClickEventBlock:(jobsByIDBlock)subscribeNextBlock;
+-(RACDisposable *)jobsBtnClickEventBlock:(JobsReturnIDByIDBlock)subscribeNextBlock;
 /// 方法名字符串（带参数、参数之间用"："隔开）、作用对象、参数
--(jobsByThreeIDBlock)btnClickActionWithParamarrays;
+-(JobsReturnIDByThreeIDBlock)btnClickActionWithParamarrays;
 /// 方法名字符串（不带参数）、作用对象
--(jobsByTwoIDBlock)btnClickActionWithMethodName;
+-(JobsReturnIDByTwoIDBlock)btnClickActionWithMethodName;
 /// 代码触发点击调用
 -(void)actionByCode;
-/// 这个方法还有待完善
--(void)handelAdjustsImageWhenHighlighted;
 /// UIButton 上的 image 旋转一定的角度angle
 -(void)changeAction:(CGFloat)angle;
 /// 当Button不可用的时候，需要做些什么

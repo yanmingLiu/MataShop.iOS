@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UISlider (Extra)
 
--(RACDisposable *)sliderAllTouchEventBlock:(jobsByIDBlock)subscribeNextBlock;
--(RACDisposable *)sliderValueChangedEventBlock:(jobsByIDBlock)subscribeNextBlock;
+-(RACDisposable *)jobsSliderAllTouchEventBlock:(jobsByIDBlock)subscribeNextBlock;
+-(RACDisposable *)jobsSliderValueChangedEventBlock:(jobsByIDBlock)subscribeNextBlock;
 
 @end
 

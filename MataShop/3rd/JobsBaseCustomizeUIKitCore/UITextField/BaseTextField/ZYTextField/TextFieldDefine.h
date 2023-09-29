@@ -9,14 +9,10 @@
 #define TextFieldDefine_h
 
 typedef NS_ENUM(NSUInteger, PlaceHolderAlignment){
-    /// 左对齐 默认
-    PlaceHolderAlignmentLeft = 0,
-    /// 居中对齐
-    PlaceHolderAlignmentCenter,
-    /// 右对齐
-    PlaceHolderAlignmentRight,
-    /// 未设置
-    PlaceHolderAlignmentNone
+    PlaceHolderAlignmentLeft = 0,/// 左对齐 默认
+    PlaceHolderAlignmentCenter,/// 居中对齐
+    PlaceHolderAlignmentRight,/// 右对齐
+    PlaceHolderAlignmentNone/// 未设置
 };
 
 #endif /* TextFieldDefine_h */

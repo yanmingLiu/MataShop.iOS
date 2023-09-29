@@ -45,7 +45,6 @@
             if (completionBlock) completionBlock(@(finished));
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block];
@@ -75,7 +74,6 @@
             if (completionBlock) completionBlock(@(finished));
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block];
@@ -108,7 +106,6 @@
             if (completionBlock) completionBlock(@(finished));
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block];
@@ -136,7 +133,6 @@
             if (completionBlock) completionBlock(@(finished));
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block];
@@ -169,7 +165,6 @@
             if (completionBlock) completionBlock(@(finished));
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block];
@@ -199,7 +194,6 @@
             if (completionBlock) completionBlock(@(finished));
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block];
@@ -227,7 +221,6 @@
             if (completionBlock) completionBlock(@(finished));
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block];
@@ -259,7 +252,6 @@
             if (completionBlock) completionBlock(@(finished));
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block];
@@ -282,7 +274,6 @@
             if (animationBlock) animationBlock();
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block];
@@ -321,11 +312,9 @@
             if (completionBlock) completionBlock(@(finished));
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block1];
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block2];
@@ -363,7 +352,6 @@
             if (completionBlock) completionBlock(@(finished));
         }];
     };
-    
     [self sortingType:sortingType
                 cells:cells
                 block:block];

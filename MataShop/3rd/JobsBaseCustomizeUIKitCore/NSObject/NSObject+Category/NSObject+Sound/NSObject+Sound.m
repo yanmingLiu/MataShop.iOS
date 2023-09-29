@@ -29,10 +29,8 @@
     /// 得到音效文件的地址
     NSString *soundFilePath = [NSBundle.mainBundle pathForResource:name
                                                             ofType:type];
-    /// 将地址字符串转换成url
-    NSURL *soundURL = [NSURL fileURLWithPath:soundFilePath];
     /// 生成系统音效id
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &soundFileObject);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundFilePath.jobsUrl, &soundFileObject);
     /// 播放系统音效
     AudioServicesPlaySystemSound(soundFileObject);
 }

@@ -5,13 +5,14 @@
 //  Created by Jobs on 2022/5/29.
 //
 
+#import <UIKit/UIKit.h>
+
 #if __has_include(<TFPopup/TFPopup.h>)
 #import <TFPopup/TFPopup.h>
 #else
 #import "TFPopup.h"
 #endif
 
-#import <UIKit/UIKit.h>
 #import "BaiShaETProjCustomView.h" // 自定义
 #import "BaiShaETProjFiltrationView.h" // 过滤
 
@@ -21,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)BaiShaETProjFiltrationView *filtrationView;/// 过滤
 @property(nonatomic,strong)BaiShaETProjCustomView *customView;/// 自定义
-
 /// 弹出筛选视图
 -(UIView *)popUpFiltrationView;
 /// 弹出自定义视图

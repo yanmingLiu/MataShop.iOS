@@ -7,17 +7,10 @@
 //
 
 #import "UIView+SuspendView.h"
-#import <objc/runtime.h>
 
 @implementation UIView (SuspendView)
-
-static char *UIView_SuspendView_vc = "UIView_SuspendView_vc";
-static char *UIView_SuspendView_panRcognize = "UIView_SuspendView_panRcognize";
-
-@dynamic vc;
-@dynamic panRcognize;
-
-- (void)handlePanGesture:(UIPanGestureRecognizer *)recognizer{
+#pragma mark —— 一些私有方法
+-(void)handlePanGesture:(UIPanGestureRecognizer *)recognizer{
     //移动状态
     UIGestureRecognizerState recState = recognizer.state;
     switch (recState) {
@@ -98,10 +91,10 @@ static char *UIView_SuspendView_panRcognize = "UIView_SuspendView_panRcognize";
     [recognizer setTranslation:CGPointMake(0, 0)
                         inView:self.vc.view];
 }
-#pragma mark SET | GET
 #pragma mark —— @property(nonatomic,weak)UIViewController *vc;
+@dynamic vc;
 -(UIViewController *)vc{
-    UIViewController *VC = objc_getAssociatedObject(self, UIView_SuspendView_vc);
+    UIViewController *VC = objc_getAssociatedObject(self, _cmd);
     if (!VC) {
         NSLog(@"VC 不能为空");
     }return VC;
@@ -109,36 +102,35 @@ static char *UIView_SuspendView_panRcognize = "UIView_SuspendView_panRcognize";
 
 -(void)setVc:(UIViewController *)vc{
     objc_setAssociatedObject(self,
-                             UIView_SuspendView_vc,
+                             _cmd,
                              vc,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)UIPanGestureRecognizer *panRcognize;
+@dynamic panRcognize;
 -(UIPanGestureRecognizer *)panRcognize{
-    UIPanGestureRecognizer *PanRcognize = objc_getAssociatedObject(self, UIView_SuspendView_panRcognize);
+    UIPanGestureRecognizer *PanRcognize = objc_getAssociatedObject(self, _cmd);
     if (!PanRcognize) {
-        PanRcognize = [[UIPanGestureRecognizer alloc] initWithTarget:self
-                                                              action:@selector(handlePanGesture:)];
-        
-        [PanRcognize setMinimumNumberOfTouches:1];
-        [PanRcognize delaysTouchesEnded];
-        [PanRcognize cancelsTouchesInView];
-        [self addGestureRecognizer:PanRcognize];
-        
-        objc_setAssociatedObject(self,
-                                 UIView_SuspendView_panRcognize,
-                                 PanRcognize,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        self.panGR.enabled = YES;
+        self.panGR.minimumNumberOfTouches = 1;
+        self.panGR.delaysTouchesEnded = YES;
+        self.panGR.cancelsTouchesInView = YES;
+        self.target = self;/// ⚠️注意：任何手势这一句都要写
+        @jobs_weakify(self)
+        self.panGR_SelImp.selector = [self jobsSelectorBlock:^(id  _Nullable target,
+                                                               UIPanGestureRecognizer *_Nullable arg) {
+            @jobs_strongify(self)
+            [self handlePanGesture:arg];
+        }];
+        [self setPanRcognize:self.panGR];
     }return PanRcognize;
 }
 
 -(void)setPanRcognize:(UIPanGestureRecognizer *)panRcognize{
     objc_setAssociatedObject(self,
-                             UIView_SuspendView_panRcognize,
+                             _cmd,
                              panRcognize,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
-
 
 @end

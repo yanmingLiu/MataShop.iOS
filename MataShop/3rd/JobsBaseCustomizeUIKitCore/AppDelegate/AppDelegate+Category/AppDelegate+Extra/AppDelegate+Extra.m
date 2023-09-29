@@ -17,7 +17,7 @@
         [tabBarTitleMutArr addObject:Internationalization(@"消息")];
         [tabBarTitleMutArr addObject:Internationalization(@"未登录")];
         objc_setAssociatedObject(self,
-                                 AppDelegate_Extra_tabBarTitleMutArr,
+                                 _cmd,
                                  tabBarTitleMutArr,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
@@ -25,7 +25,7 @@
 /// 刷新 TabBarTitle
 -(void)refreshTabBarTitle{
     
-    NSMutableArray *TabBarTitleMutArr = objc_getAssociatedObject(self, AppDelegate_Extra_tabBarTitleMutArr);
+    NSMutableArray *TabBarTitleMutArr = objc_getAssociatedObject(self, _cmd);
     
     if (TabBarTitleMutArr.count) {
         [TabBarTitleMutArr removeAllObjects];
@@ -56,11 +56,10 @@
 //    PopupParameter.popupSize = [CasinoCustomerServiceView viewSizeWithModel:nil];
     return PopupParameter;
 }
-static char *AppDelegate_Extra_tabBarVC = "AppDelegate_Extra_tabBarVC";
-@dynamic tabBarVC;
 #pragma mark —— @property(nonatomic,strong)JobsTabbarVC *tabBarVC;
+@dynamic tabBarVC;
 -(JobsTabbarVC *)tabBarVC{
-    JobsTabbarVC *TabBarVC = objc_getAssociatedObject(self, AppDelegate_Extra_tabBarVC);
+    JobsTabbarVC *TabBarVC = objc_getAssociatedObject(self, _cmd);
     if (!TabBarVC) {
         TabBarVC = JobsTabbarVC.new;
         TabBarVC.isAnimationAlert = YES;//OK
@@ -109,7 +108,7 @@ static char *AppDelegate_Extra_tabBarVC = "AppDelegate_Extra_tabBarVC";
         }];
         
         objc_setAssociatedObject(self,
-                                 AppDelegate_Extra_tabBarVC,
+                                 _cmd,
                                  TabBarVC,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return TabBarVC;
@@ -117,15 +116,14 @@ static char *AppDelegate_Extra_tabBarVC = "AppDelegate_Extra_tabBarVC";
 
 -(void)setTabBarVC:(JobsTabbarVC *)tabBarVC{
     objc_setAssociatedObject(self,
-                             AppDelegate_Extra_tabBarVC,
+                             _cmd,
                              tabBarVC,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *AppDelegate_Extra_configMutArr = "AppDelegate_Extra_configMutArr";
-@dynamic configMutArr;
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <JobsTabBarControllerConfig *>*configMutArr;
+@dynamic configMutArr;
 -(NSMutableArray<JobsTabBarControllerConfig *> *)configMutArr{
-    NSMutableArray *ConfigMutArr = objc_getAssociatedObject(self, AppDelegate_Extra_configMutArr);
+    NSMutableArray *ConfigMutArr = objc_getAssociatedObject(self, _cmd);
     if (!ConfigMutArr) {
         ConfigMutArr = NSMutableArray.array;
         {
@@ -189,7 +187,7 @@ static char *AppDelegate_Extra_configMutArr = "AppDelegate_Extra_configMutArr";
         }
         
         objc_setAssociatedObject(self,
-                                 AppDelegate_Extra_configMutArr,
+                                 _cmd,
                                  ConfigMutArr,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return ConfigMutArr;
@@ -197,15 +195,14 @@ static char *AppDelegate_Extra_configMutArr = "AppDelegate_Extra_configMutArr";
 
 -(void)setConfigMutArr:(NSMutableArray<JobsTabBarControllerConfig *> *)configMutArr{
     objc_setAssociatedObject(self,
-                             AppDelegate_Extra_configMutArr,
+                             _cmd,
                              configMutArr,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *AppDelegate_Extra_tabBarTitleMutArr = "AppDelegate_Extra_tabBarTitleMutArr";
-@dynamic tabBarTitleMutArr;
 #pragma mark —— #pragma mark —— @property(nonatomic,strong)NSMutableArray <NSString *>*tabBarTitleMutArr;
+@dynamic tabBarTitleMutArr;
 -(NSMutableArray<NSString *> *)tabBarTitleMutArr{
-    NSMutableArray *TabBarTitleMutArr = objc_getAssociatedObject(self, AppDelegate_Extra_tabBarTitleMutArr);
+    NSMutableArray *TabBarTitleMutArr = objc_getAssociatedObject(self, _cmd);
     if (!TabBarTitleMutArr) {
         TabBarTitleMutArr = NSMutableArray.array;
         [self addElementByTabBarTitleMutArr:TabBarTitleMutArr];
@@ -214,7 +211,7 @@ static char *AppDelegate_Extra_tabBarTitleMutArr = "AppDelegate_Extra_tabBarTitl
 
 -(void)setTabBarTitleMutArr:(NSMutableArray<NSString *> *)tabBarTitleMutArr{
     objc_setAssociatedObject(self,
-                             AppDelegate_Extra_tabBarTitleMutArr,
+                             _cmd,
                              tabBarTitleMutArr,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

@@ -7,11 +7,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <MessageUI/MessageUI.h>// 发短信、发邮件
+#import <MessageUI/MessageUI.h>/// 发短信、发邮件
+
+#import "MacroDef_String.h"
 #import "JobsBlock.h"
 #import "MacroDef_SysWarning.h"
 #import "NSString+Judgment.h"
 #import "NSObject+WHToast.h"
+#import "NSObject+Extras.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

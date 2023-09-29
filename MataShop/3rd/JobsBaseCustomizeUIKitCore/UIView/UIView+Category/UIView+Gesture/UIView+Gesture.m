@@ -82,6 +82,32 @@ static char *UIView_Gesture_target = "UIView_Gesture_target";
                              target,
                              OBJC_ASSOCIATION_ASSIGN);
 }
+static char *UIView_Gesture_minimumNumberOfTouches = "UIView_Gesture_minimumNumberOfTouches";
+@dynamic minimumNumberOfTouches;
+#pragma mark —— @property(nonatomic,assign)NSUInteger minimumNumberOfTouches API_UNAVAILABLE(tvos);
+-(NSUInteger)minimumNumberOfTouches{
+    return [objc_getAssociatedObject(self, UIView_Gesture_minimumNumberOfTouches) unsignedIntegerValue];
+}
+
+-(void)setMinimumNumberOfTouches:(NSUInteger)minimumNumberOfTouches{
+    objc_setAssociatedObject(self,
+                             UIView_Gesture_minimumNumberOfTouches,
+                             [NSNumber numberWithInteger:minimumNumberOfTouches],
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+static char *UIView_Gesture_maximumNumberOfTouches = "UIView_Gesture_maximumNumberOfTouches";
+@dynamic maximumNumberOfTouches;
+#pragma mark —— @property(nonatomic,assign)NSUInteger maximumNumberOfTouches API_UNAVAILABLE(tvos);
+-(NSUInteger)maximumNumberOfTouches{
+    return [objc_getAssociatedObject(self, UIView_Gesture_maximumNumberOfTouches) unsignedIntegerValue];
+}
+
+-(void)setMaximumNumberOfTouches:(NSUInteger)maximumNumberOfTouches{
+    objc_setAssociatedObject(self,
+                             UIView_Gesture_maximumNumberOfTouches,
+                             [NSNumber numberWithInteger:maximumNumberOfTouches],
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 static char *UIView_Gesture_numberOfTapsRequired = "UIView_Gesture_numberOfTapsRequired";
 @dynamic numberOfTapsRequired;
 #pragma mark —— @property(nonatomic,assign)NSUInteger numberOfTapsRequired;// 设置轻拍次数【UILongPressGestureRecognizer】【UITapGestureRecognizer】
@@ -281,6 +307,7 @@ static char *UIView_Gesture_panGR = "UIView_Gesture_panGR";
         PanGR = UIPanGestureRecognizer.new;
         NSLog(@"self.target = %@",self.target);
         PanGR.delegate = self.target;
+        PanGR.minimumNumberOfTouches = self.minimumNumberOfTouches;
         if (@available(iOS 13.4, *)) {
             PanGR.allowedScrollTypesMask = self.allowedScrollTypesMask;
         }

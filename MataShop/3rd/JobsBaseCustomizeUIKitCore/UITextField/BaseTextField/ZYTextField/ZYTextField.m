@@ -9,6 +9,7 @@
 -(instancetype)init{
     if (self = [super init]) {
         self.placeHolderAlignment = PlaceHolderAlignmentLeft;
+        self.textAlignment = NSTextAlignmentLeft;
     }return self;
 }
 

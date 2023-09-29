@@ -8,9 +8,8 @@
 #import "NSObject+AFNReachability.h"
 
 @implementation NSObject (AFNReachability)
-
+/// 监听网络状态的改变
 +(void)AFNReachability:(jobsByNSIntegerBlock)statusBlock{
-    //监听网络状态的改变
     /*
      AFNetworkReachabilityStatusUnknown          = 未知
      AFNetworkReachabilityStatusNotReachable     = 没有网络
@@ -18,14 +17,12 @@
      AFNetworkReachabilityStatusReachableViaWiFi = WIFI
      */
     AFNetworkReachabilityManager *networkReachabilityManager = AFNetworkReachabilityManager.sharedManager;
-    //如果没有请求完成就检测网络
+    /// 如果没有请求完成就检测网络
     @weakify(networkReachabilityManager)
     [networkReachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        if (statusBlock) {
-            statusBlock(status);
-        }
+        if (statusBlock) statusBlock(status);
         [NSNotificationCenter.defaultCenter postNotificationName:MKAFNReachabilityStatus
-                                                            object:@(status)];
+                                                          object:@(status)];
         @strongify(networkReachabilityManager)
         [networkReachabilityManager startMonitoring];
     }];

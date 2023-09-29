@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-@class NSStringModel;
 
 typedef NS_ENUM(NSInteger,StatisticsAlphabetNumberType) {
     /// 统计汉字字数
@@ -35,17 +34,17 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - font: 字符串的字体（不能为空）
 ///   - lineSpacing: 字符串的行间距
 ///   - maxWidth: 字符串所占用的承接的控件的宽度
--(NSStringModel *_Nullable)jobsTextHeightWithFont:(UIFont *_Nonnull)font
-                                       lineHeight:(CGFloat)lineSpacing
-                                     controlWidth:(CGFloat)controlWidth;
+-(UITextModel *_Nullable)jobsTextHeightWithFont:(UIFont *_Nonnull)font
+                                     lineHeight:(CGFloat)lineSpacing
+                                   controlWidth:(CGFloat)controlWidth;
 /// 求字符串所占用的控件的宽度
 /// - Parameters:
 ///   - font: 字符串的字体（不能为空）
 ///   - lineSpacing: 字符串的行间距
 ///   - maxHeight: 字符串所占用的承接的控件的高度
--(NSStringModel *_Nullable)jobsTextWidthWithFont:(UIFont *_Nonnull)font
-                                      lineHeight:(CGFloat)lineSpacing
-                                   controlHeight:(CGFloat)controlHeight;
+-(UITextModel *_Nullable)jobsTextWidthWithFont:(UIFont *_Nonnull)font
+                                    lineHeight:(CGFloat)lineSpacing
+                                 controlHeight:(CGFloat)controlHeight;
 /**
  系统的length是不区分中文和英文的,中文一个字length也是1
  通过计算ASCII码来实现:
@@ -55,17 +54,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 统计字符串中中英文的字数
 /// @param statisticsAlphabetNumberType 统计模式
 -(NSInteger)statisticsAlphabetNumberwithType:(StatisticsAlphabetNumberType)statisticsAlphabetNumberType;
-
-@end
-
-@interface NSStringModel : NSObject
-
-@property(nonatomic,strong)NSString *stringValue; /// 字符串的字面值
-@property(nonatomic,strong)UIFont *font; /// 字符串的字体
-@property(nonatomic,assign)CGFloat textWidth; /// 字符串的宽
-@property(nonatomic,assign)CGFloat textHeight; /// 字符串的高
-@property(nonatomic,assign)NSInteger numberOfLines; /// 行数
-@property(nonatomic,assign)CGFloat lineSpacing; /// 行间距
 
 @end
 

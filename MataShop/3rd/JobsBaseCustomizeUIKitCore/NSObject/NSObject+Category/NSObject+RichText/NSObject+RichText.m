@@ -45,12 +45,12 @@
                                                                JobsWidth(400),
                                                                JobsWidth(1))];
     RichTextConfig *config_01 = RichTextConfig.new;
-    config_01.font = [UIFont systemFontOfSize:JobsWidth(10.6) weight:UIFontWeightRegular];
+    config_01.font = UIFontWeightRegularSize(10.6);
     config_01.textCor = RGB_SAMECOLOR(115);
     config_01.targetString = Internationalization(@"我是第一段文字");
 
     RichTextConfig *config_02 = RichTextConfig.new;
-    config_02.font = [UIFont systemFontOfSize:JobsWidth(10.6) weight:UIFontWeightMedium];
+    config_02.font = UIFontWeightRegularSize(10.6);;
     config_02.textCor = color;
     config_02.targetString = Internationalization(@"我是第二段文字");
     
@@ -61,20 +61,17 @@
     return dataMutArr;
 }
 /// 整合输出富文本，作用于lable.attributedText
-/// @param richTextMutArr 富文本的纯文本字符串
-/// @param richTextConfigMutArr 富文本的配置集合,对该纯文本字符串的释义
+/// @param richTextDataConfigMutArr 富文本的配置集合,对该纯文本字符串的释义
 /// @param paragraphStyle 段落样式
--(NSMutableAttributedString *)makeAttributedStringWithRichTextMutArr:(NSArray <NSString *>*)richTextMutArr
-                                                richTextConfigMutArr:(NSMutableArray <RichTextConfig *>*)richTextConfigMutArr
-                                                      paragraphStyle:(NSMutableParagraphStyle *_Nullable)paragraphStyle{
+-(NSMutableAttributedString *_Nullable)richTextWithDataConfigMutArr:(NSArray <RichTextConfig *>*_Nonnull)richTextDataConfigMutArr
+                                                     paragraphStyle:(NSMutableParagraphStyle *_Nullable)paragraphStyle{
     
     if (!paragraphStyle) {
         paragraphStyle = NSMutableParagraphStyle.new;
         paragraphStyle.alignment = NSTextAlignmentLeft;//❤️文本对齐方式 左右对齐（两边对齐）,textAlignment属性失效❤️
     }
-    
     /// 设置段落样式
-    NSMutableAttributedString *attributedString = [self richTextWithDataConfigMutArr:richTextConfigMutArr];
+    NSMutableAttributedString *attributedString = [self richTextWithDataConfigMutArr:richTextDataConfigMutArr];
     [attributedString addAttribute:NSParagraphStyleAttributeName
                              value:paragraphStyle
                              range:NSMakeRange(0, attributedString.string.length)];
@@ -83,8 +80,7 @@
 }
 /// 利用 NSArray <RichTextConfig *>* 形成富文本
 /// @param richTextDataConfigMutArr 富文本的配置集合,对该纯文本字符串的释义
--(NSMutableAttributedString *)richTextWithDataConfigMutArr:(NSArray <RichTextConfig *>*_Nonnull)richTextDataConfigMutArr{
-    
+-(NSMutableAttributedString *_Nullable)richTextWithDataConfigMutArr:(NSArray <RichTextConfig *>*_Nonnull)richTextDataConfigMutArr{
     NSString *resultString = @"";
     /// 先拼接字符串
     for (RichTextConfig *config in richTextDataConfigMutArr) {

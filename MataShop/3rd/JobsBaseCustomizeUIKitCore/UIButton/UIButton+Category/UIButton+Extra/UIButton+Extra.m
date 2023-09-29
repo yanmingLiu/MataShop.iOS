@@ -46,17 +46,16 @@
             break;
     }return self;
 }
-static char *UIButton_Extra_imageTitleSpace = "UIButton_Extra_imageTitleSpace";
 @dynamic imageTitleSpace;
 #pragma mark —— @property(nonatomic,assign)CGFloat imageTitleSpace;
 -(CGFloat)imageTitleSpace{//默认不显示
-    CGFloat ImageTitleSpace = [objc_getAssociatedObject(self, UIButton_Extra_imageTitleSpace) floatValue];
+    CGFloat ImageTitleSpace = [objc_getAssociatedObject(self, _cmd) floatValue];
     return ImageTitleSpace;
 }
 
 -(void)setImageTitleSpace:(CGFloat)imageTitleSpace{
     objc_setAssociatedObject(self,
-                             UIButton_Extra_imageTitleSpace,
+                             _cmd,
                              [NSNumber numberWithFloat:imageTitleSpace],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

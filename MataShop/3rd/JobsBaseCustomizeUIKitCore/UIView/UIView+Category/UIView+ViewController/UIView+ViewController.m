@@ -9,15 +9,14 @@
 
 @implementation UIView (ViewController)
 
-- (UIViewController *)currentController {
-    UIResponder *next = [self nextResponder];
+-(UIViewController *_Nullable)currentController{
+    UIResponder *next = self.nextResponder;
     do {
         if ([next isKindOfClass:UIViewController.class]) {
             return (UIViewController *)next;
         }
-        next = [next nextResponder];
-    } while (next);
-    return nil;
+        next = next.nextResponder;
+    } while (next);return nil;
 }
 
 @end

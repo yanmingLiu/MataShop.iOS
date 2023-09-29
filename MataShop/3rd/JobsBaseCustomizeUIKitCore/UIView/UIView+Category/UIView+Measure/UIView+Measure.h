@@ -55,32 +55,26 @@ typedef void(^EqualToView)(UIView *view);
  *  centerxEqualToView(superview/view)
  */
 -(EqualToView)centerxEqualToView;
-
 /** centerY equal to View‘s centerY
  *  centeryEqualToView(superview/view)
  */
 -(EqualToView)centeryEqualToView;
-
 /** center equal to View‘s center
  *  centerEqualToView(superview/view)
  */
 -(EqualToView)centerEqualToView;
-
 /** left equal to View‘s left
  *  leftEqualToView(superview/view)
  */
 -(EqualToView)leftEqualToView;
-
 /** right equal to View‘s right
  *  rightEqualToView(superview/view)
  */
 -(EqualToView)rightEqualToView;
-
 /** top equal to View‘s top
  *  topEqualToView(superview/view)
  */
 -(EqualToView)topEqualToView;
-
 /** bottom equal to View‘s bottom
  *  bottomEqualToView(superview/view)
  */

@@ -25,7 +25,6 @@
 }
 /// 配置返回键图片
 -(UIImage *)makeBackBtnImage{
-    id f = self.viewModel.backBtnIMG;
     return self.viewModel.backBtnIMG ? : JobsBuddleIMG(nil,@"Frameworks/GKNavigationBar.framework/GKNavigationBar",nil,self.gk_backStyle == GKNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white");
 }
 ///【子类需要覆写 】创建返回键的点击事件
@@ -42,17 +41,17 @@
             break;
     }
 }
-static char *BaseVC_BackBtn_backBtnCategory = "BaseVC_BackBtn_backBtnCategory";
 @dynamic backBtnCategory;
 #pragma mark —— @property(nonatomic,strong)BackBtn *backBtnCategory;
 -(UIButton *)backBtnCategory{
-    UIButton *BackBtnCategory = objc_getAssociatedObject(self, BaseVC_BackBtn_backBtnCategory);
+    UIButton *BackBtnCategory = objc_getAssociatedObject(self, _cmd);
     if (!BackBtnCategory) {
         BackBtnCategory = [self makeBackBtn:self.viewModel];
         @jobs_weakify(self)
-        [BackBtnCategory jobsBtnClickEventBlock:^(UIButton *x) {
+        [BackBtnCategory jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             [self backBtnClickEvent:x];
+            return nil;
         }];
         BackBtnCategory.normalImage = self.makeBackBtnImage;
         [self setBackBtnCategory:BackBtnCategory];
@@ -61,15 +60,14 @@ static char *BaseVC_BackBtn_backBtnCategory = "BaseVC_BackBtn_backBtnCategory";
 
 -(void)setBackBtnCategory:(UIButton *)backBtnCategory{
     objc_setAssociatedObject(self,
-                             BaseVC_BackBtn_backBtnCategory,
+                             _cmd,
                              backBtnCategory,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *BaseVC_BackBtn_backBtnCategoryItem = "BaseVC_BackBtn_backBtnCategoryItem";
 @dynamic backBtnCategoryItem;
 #pragma mark —— @property(nonatomic,strong)UIBarButtonItem *backBtnCategoryItem;
 -(UIBarButtonItem *)backBtnCategoryItem{
-    UIBarButtonItem *BackBtnCategoryItem = objc_getAssociatedObject(self, BaseVC_BackBtn_backBtnCategoryItem);
+    UIBarButtonItem *BackBtnCategoryItem = objc_getAssociatedObject(self, _cmd);
     if (!BackBtnCategoryItem) {
         BackBtnCategoryItem = [UIBarButtonItem.alloc initWithCustomView:self.backBtnCategory];
         [self setBackBtnCategoryItem:BackBtnCategoryItem];
@@ -78,7 +76,7 @@ static char *BaseVC_BackBtn_backBtnCategoryItem = "BaseVC_BackBtn_backBtnCategor
 
 -(void)setBackBtnCategoryItem:(UIBarButtonItem *)backBtnCategoryItem{
     objc_setAssociatedObject(self,
-                             BaseVC_BackBtn_backBtnCategoryItem,
+                             _cmd,
                              backBtnCategoryItem,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

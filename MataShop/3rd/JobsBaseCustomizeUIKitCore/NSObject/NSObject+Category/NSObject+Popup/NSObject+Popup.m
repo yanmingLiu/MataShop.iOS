@@ -33,11 +33,10 @@
         [self popupWithView:view];
     }
 }
-static char *NSObject_Popup_popupParameter = "NSObject_Popup_popupParameter";
-@dynamic popupParameter;
 #pragma mark —— @property(nonatomic,strong)TFPopupParam *popupParameter;
+@dynamic popupParameter;
 -(TFPopupParam *)popupParameter{
-    TFPopupParam *PopupParameter = objc_getAssociatedObject(self, NSObject_Popup_popupParameter);
+    TFPopupParam *PopupParameter = objc_getAssociatedObject(self, _cmd);
     if (!PopupParameter) {
         PopupParameter = TFPopupParam.new;
         PopupParameter.duration = 0.3;
@@ -52,15 +51,14 @@ static char *NSObject_Popup_popupParameter = "NSObject_Popup_popupParameter";
 
 -(void)setPopupParameter:(TFPopupParam *)popupParameter{
     objc_setAssociatedObject(self,
-                             NSObject_Popup_popupParameter,
+                             _cmd,
                              popupParameter,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *NSObject_Popup_popupView = "NSObject_Popup_popupView";
-@dynamic popupView;
 #pragma mark —— @property(nonatomic,strong)NoticePopupView *popupView;
+@dynamic popupView;
 -(JobsNoticePopupView *)popupView{
-    JobsNoticePopupView *PopupView = objc_getAssociatedObject(self, NSObject_Popup_popupView);
+    JobsNoticePopupView *PopupView = objc_getAssociatedObject(self, _cmd);
     if (!PopupView) {
         PopupView = JobsNoticePopupView.new;
         PopupView.mj_h = JobsMainScreen_HEIGHT() * 2 / 3;
@@ -72,7 +70,7 @@ static char *NSObject_Popup_popupView = "NSObject_Popup_popupView";
 
 -(void)setPopupView:(JobsNoticePopupView *)popupView{
     objc_setAssociatedObject(self,
-                             NSObject_Popup_popupView,
+                             _cmd,
                              popupView,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

@@ -38,7 +38,7 @@
 #pragma mark —— @property(nonatomic,assign)BOOL ableRespose
 - (void)setAbleRespose:(BOOL)ableRespose {
     objc_setAssociatedObject(self,
-                             @selector(ableRespose),
+                             _cmd,
                              @(ableRespose),
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

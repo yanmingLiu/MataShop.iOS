@@ -31,7 +31,6 @@
     "badge":1
         }
  }
-
  */
 @implementation NSObject (UserNotifications)
 /// 用户通知请求授权
@@ -45,11 +44,13 @@
     UNAuthorizationOptionAlert   = (1 << 2),
     UNAuthorizationOptionCarPlay = (1 << 3),
     */
+    @jobs_weakify(self)
     [userNotificationCenter requestAuthorizationWithOptions:(UNAuthorizationOptionAlert +
                                                             UNAuthorizationOptionSound +
                                                             UNAuthorizationOptionBadge)
                                          completionHandler:^(BOOL granted,
                                                              NSError * _Nullable error) {
+        @jobs_strongify(self)
         NSLog(@"granted = %d,error = %@",granted,error);
         [self registerForRemoteNotifications];
     }];
@@ -86,8 +87,7 @@
         if (authorizationStatusBlock) authorizationStatusBlock(@(settings.authorizationStatus));
     }];
 }
-
-// Register for push notification.
+/// Register for push notification.
 -(void)registerForRemoteNotifications{
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIApplication.sharedApplication registerForRemoteNotifications];
@@ -109,15 +109,12 @@
     notificationContent.launchImageName = @"大雨";
     return notificationContent;
 }
-/**
-    设置通知附件内容
-    注意：URL必须是一个有效的文件路径，不然会报错
-
- */
+/// 设置通知附件内容
+/// 注意：URL必须是一个有效的文件路径，不然会报错
 -(UNNotificationAttachment *)notificationAttachmentInitByPath:(NSString *)path{
     NSError *error = nil;
     UNNotificationAttachment *notificationAttachment = [UNNotificationAttachment attachmentWithIdentifier:@"att1"
-                                                                                                      URL:[NSURL fileURLWithPath:path]
+                                                                                                      URL:path.jobsUrl
                                                                                                   options:@{@"UNNotificationAttachmentOptionsTypeHintKey":UTTypeImage}
                                                                                                     error:&error];
     if (error) {
@@ -200,13 +197,13 @@
 - (void)registerNotificationCategory {
     // calendarCategory
     UNNotificationAction *completeAction = [UNNotificationAction actionWithIdentifier:@"markAsCompleted"
-                                                                                title:@"Mark as Completed"
+                                                                                title:Internationalization(@"Mark as Completed")
                                                                               options:UNNotificationActionOptionNone];
     UNNotificationAction *remindMeIn1MinuteAction = [UNNotificationAction actionWithIdentifier:@"remindMeIn1Minute"
-                                                                                         title:@"Remind me in 1 Minute"
+                                                                                         title:Internationalization(@"Remind me in 1 Minute")
                                                                                        options:UNNotificationActionOptionNone];
     UNNotificationAction *remindMeIn5MinuteAction = [UNNotificationAction actionWithIdentifier:@"remindMeIn5Minute"
-                                                                                         title:@"Remind me in 5 Minutes"
+                                                                                         title:Internationalization(@"Remind me in 5 Minutes")
                                                                                        options:UNNotificationActionOptionNone];
     UNNotificationCategory *calendarCategory = [UNNotificationCategory categoryWithIdentifier:@"calendarCategory"
                                                                                       actions:@[completeAction, remindMeIn1MinuteAction, remindMeIn5MinuteAction]
@@ -215,13 +212,13 @@
     
     // customUICategory
     UNNotificationAction *nextAction = [UNNotificationAction actionWithIdentifier:@"stop"
-                                                                            title:@"Stop"
+                                                                            title:Internationalization(@"Stop")
                                                                           options:UNNotificationActionOptionForeground];
     UNNotificationAction *commentAction = [UNTextInputNotificationAction actionWithIdentifier:@"comment"
-                                                                                        title:@"Comment"
+                                                                                        title:Internationalization(@"Comment")
                                                                                       options:UNNotificationActionOptionForeground
-                                                                         textInputButtonTitle:@"Send"
-                                                                         textInputPlaceholder:@"Say something"];
+                                                                         textInputButtonTitle:Internationalization(@"Send")
+                                                                         textInputPlaceholder:Internationalization(@"Say something")];
     UNNotificationCategory *customUICategory = [UNNotificationCategory categoryWithIdentifier:@"customUICategory"
                                                                                       actions:@[nextAction, commentAction]
                                                                             intentIdentifiers:@[]

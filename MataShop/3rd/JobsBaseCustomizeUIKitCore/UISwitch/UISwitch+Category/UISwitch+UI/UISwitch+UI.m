@@ -9,8 +9,8 @@
 
 @implementation UISwitch (UI)
 
--(void)jobsSwitchClickEventBlock:(jobsByIDBlock)subscribeNextBlock{
-    [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
+-(RACDisposable *)jobsSwitchClickEventBlock:(jobsByIDBlock)subscribeNextBlock{
+    return [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
         if(subscribeNextBlock) subscribeNextBlock(x);
     }];
 }

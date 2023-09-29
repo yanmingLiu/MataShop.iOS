@@ -25,9 +25,9 @@
 ///   - font: 字符串的字体（不能为空）
 ///   - lineSpacing: 字符串的行间距
 ///   - maxWidth: 字符串所占用的承接的控件的宽度
--(NSStringModel *_Nullable)jobsTextHeightWithFont:(UIFont *_Nonnull)font
-                                       lineHeight:(CGFloat)lineSpacing
-                                     controlWidth:(CGFloat)controlWidth{
+-(UITextModel *_Nullable)jobsTextHeightWithFont:(UIFont *_Nonnull)font
+                                     lineHeight:(CGFloat)lineSpacing
+                                   controlWidth:(CGFloat)controlWidth{
     if(@available(iOS 7.0, *)){
         if([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]){
             // 创建一个NSMutableAttributedString，用于设置字体和行间距
@@ -47,14 +47,15 @@
                                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                                context:nil];
             CGFloat textHeight = ceil(CGRectGetHeight(boundingRect));
-
-            NSStringModel *strModel = NSStringModel.new;
-            strModel.stringValue = self;
-            strModel.font = font;
-            strModel.lineSpacing = lineSpacing;
-            strModel.textWidth = controlWidth;
-            strModel.textHeight = textHeight;
-            return strModel;
+            
+            UITextModel *textModel = UITextModel.new;
+            textModel.text = self;
+            textModel.font = font;
+            textModel.textLineSpacing = lineSpacing;
+            textModel.jobsWidth = controlWidth;
+            textModel.jobsHeight = textHeight;
+            
+            return textModel;
         }return nil;
     }return nil;
 }
@@ -63,9 +64,9 @@
 ///   - font: 字符串的字体（不能为空）
 ///   - lineSpacing: 字符串的行间距
 ///   - maxHeight: 字符串所占用的承接的控件的高度
--(NSStringModel *_Nullable)jobsTextWidthWithFont:(UIFont *_Nonnull)font
-                                      lineHeight:(CGFloat)lineSpacing
-                                   controlHeight:(CGFloat)controlHeight{
+-(UITextModel *_Nullable)jobsTextWidthWithFont:(UIFont *_Nonnull)font
+                                    lineHeight:(CGFloat)lineSpacing
+                                 controlHeight:(CGFloat)controlHeight{
     if(@available(iOS 7.0, *)){
         if([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]){
             // 创建一个NSMutableAttributedString，用于设置字体和行间距
@@ -87,13 +88,14 @@
 
             CGFloat textWidth = ceil(CGRectGetWidth(boundingRect));
             
-            NSStringModel *strModel = NSStringModel.new;
-            strModel.stringValue = self;
-            strModel.font = font;
-            strModel.textWidth = textWidth;
-            strModel.textHeight = controlHeight;
-            strModel.lineSpacing = lineSpacing;
-            return strModel;
+            UITextModel *textModel = UITextModel.new;
+            textModel.text = self;
+            textModel.font = font;
+            textModel.textLineSpacing = lineSpacing;
+            textModel.jobsWidth = textWidth;
+            textModel.jobsHeight = controlHeight;
+            
+            return textModel;
         }return nil;
     }return nil;
 }
@@ -136,9 +138,5 @@
             break;
     }
 }
-
-@end
-
-@implementation NSStringModel
 
 @end

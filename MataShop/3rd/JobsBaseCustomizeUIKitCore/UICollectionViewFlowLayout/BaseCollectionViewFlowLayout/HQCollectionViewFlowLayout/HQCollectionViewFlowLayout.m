@@ -113,8 +113,7 @@
     //转换回不可变数组，并返回
     return [superArray copy];
 }
-
-//return YES;表示一旦滑动就实时调用上面这个layoutAttributesForElementsInRect:方法
+/// return YES;表示一旦滑动就实时调用上面这个layoutAttributesForElementsInRect:方法
 - (BOOL) shouldInvalidateLayoutForBoundsChange:(CGRect)newBound{
     return YES;
 }

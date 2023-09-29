@@ -144,9 +144,10 @@ static dispatch_once_t static_inputStyle3OnceToken;
         }];
         [_countDownBtn makeBtnLabelByShowingType:UILabelShowingType_03];
         
-        [_countDownBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_countDownBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             [x startTimer];//选择时机、触发启动
             NSLog(@"🪓🪓🪓🪓🪓 = 获取验证码");
+            return nil;
         }];
         
         [_countDownBtn actionObjectBlock:^(id data) {

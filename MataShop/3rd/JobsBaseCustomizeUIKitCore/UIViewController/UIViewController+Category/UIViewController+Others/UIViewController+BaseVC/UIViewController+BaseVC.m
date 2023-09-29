@@ -12,7 +12,7 @@
 #pragma mark —— 一些功能性
 -(void)showUserInfo{
     if (JobsDebug) {
-        UIViewModel *viewModel = [self configViewModelWithTitle:@"用户信息展示(开发测试专用)" subTitle:nil];
+        UIViewModel *viewModel = [self configViewModelWithTitle:Internationalization(@"用户信息展示(开发测试专用)") subTitle:nil];
         viewModel.cls = JobsShowObjInfoVC.class;
         viewModel.requestParams = self.readUserInfo;
         [self forceComingToPushVC:viewModel.cls.new
@@ -177,92 +177,81 @@
         return nil;// 为了防止多次推VC
     }
 }
-/// BaseViewControllerProtocol
-static char *UIViewController_BaseVC_fromVC = "UIViewController_BaseVC_fromVC";
-@dynamic fromVC;
 #pragma mark —— <BaseViewControllerProtocol> @property(nonatomic,weak)UIViewController *fromVC;
+@dynamic fromVC;
 -(UIViewController *)fromVC{
-    return objc_getAssociatedObject(self, UIViewController_BaseVC_fromVC);
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 -(void)setFromVC:(UIViewController *)fromVC{
     objc_setAssociatedObject(self,
-                             UIViewController_BaseVC_fromVC,
+                             _cmd,
                              fromVC,
                              OBJC_ASSOCIATION_ASSIGN);
 }
-static char *UIViewController_BaseVC_pushOrPresent = "UIViewController_BaseVC_pushOrPresent";
-@dynamic pushOrPresent;
 #pragma mark —— <BaseViewControllerProtocol> @property(nonatomic,assign)ComingStyle pushOrPresent;
+@dynamic pushOrPresent;
 -(ComingStyle)pushOrPresent{
-    return [objc_getAssociatedObject(self, UIViewController_BaseVC_pushOrPresent) integerValue];
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 
 -(void)setPushOrPresent:(ComingStyle)pushOrPresent{
     objc_setAssociatedObject(self,
-                             UIViewController_BaseVC_pushOrPresent,
+                             _cmd,
                              [NSNumber numberWithInteger:pushOrPresent],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-/// UIViewModelProtocol
-static char *UIViewController_BaseVC_requestParams = "UIViewController_BaseVC_requestParams";
-@dynamic requestParams;
 #pragma mark —— <UIViewModelProtocol> @property(nonatomic,strong)id requestParams;
+@dynamic requestParams;
 -(id)requestParams{
-    id RequestParams = objc_getAssociatedObject(self, UIViewController_BaseVC_requestParams);
+    id RequestParams = objc_getAssociatedObject(self, _cmd);
     return RequestParams;
 }
 
 -(void)setRequestParams:(id)requestParams{
     objc_setAssociatedObject(self,
-                             UIViewController_BaseVC_requestParams,
+                             _cmd,
                              requestParams,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIViewController_BaseVC_bgImage = "UIViewController_BaseVC_bgImage";
-@dynamic bgImage;
 #pragma mark —— <UIViewModelProtocol> @property(nonatomic,strong)UIImage *bgImage;
+@dynamic bgImage;
 -(UIImage *)bgImage{
-    UIImage *BgImage = objc_getAssociatedObject(self, UIViewController_BaseVC_bgImage);
+    UIImage *BgImage = objc_getAssociatedObject(self, _cmd);
     if (!BgImage) {
         BgImage = JobsIMG(@"启动页SLOGAN");
-        objc_setAssociatedObject(self,
-                                 UIViewController_BaseVC_bgImage,
-                                 BgImage,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        [self setBgImage:BgImage];
     }return BgImage;
 }
 
 -(void)setBgImage:(UIImage *)bgImage{
     objc_setAssociatedObject(self,
-                             UIViewController_BaseVC_bgImage,
+                             _cmd,
                              bgImage,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIViewController_BaseVC_setupNavigationBarHidden = "UIViewController_BaseVC_setupNavigationBarHidden";
-@dynamic setupNavigationBarHidden;
 #pragma mark —— @property(nonatomic,assign)BOOL setupNavigationBarHidden;
+@dynamic setupNavigationBarHidden;
 -(BOOL)setupNavigationBarHidden{
-    BOOL SetupNavigationBarHidden = [objc_getAssociatedObject(self, UIViewController_BaseVC_setupNavigationBarHidden) boolValue];
+    BOOL SetupNavigationBarHidden = [objc_getAssociatedObject(self, _cmd) boolValue];
     return SetupNavigationBarHidden;
 }
 
 -(void)setSetupNavigationBarHidden:(BOOL)setupNavigationBarHidden{
     objc_setAssociatedObject(self,
-                             UIViewController_BaseVC_setupNavigationBarHidden,
+                             _cmd,
                              [NSNumber numberWithBool:setupNavigationBarHidden],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIViewController_BaseVC_jobsTag = "UIViewController_BaseVC_jobsTag";
-@dynamic jobsTag;
 #pragma mark —— @property(nonatomic,assign)NSUInteger __block jobsTag;
+@dynamic jobsTag;
 -(NSUInteger)jobsTag{
-    return [objc_getAssociatedObject(self, UIViewController_BaseVC_jobsTag) unsignedIntegerValue];
+    return [objc_getAssociatedObject(self, _cmd) unsignedIntegerValue];
 }
 
 -(void)setJobsTag:(NSUInteger)jobsTag{
     objc_setAssociatedObject(self,
-                             UIViewController_BaseVC_jobsTag,
+                             _cmd,
                              [NSNumber numberWithBool:jobsTag],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

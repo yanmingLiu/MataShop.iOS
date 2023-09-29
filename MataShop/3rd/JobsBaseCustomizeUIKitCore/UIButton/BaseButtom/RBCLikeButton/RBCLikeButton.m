@@ -14,15 +14,11 @@
 
 @interface RBCLikeButton()
 
-@property (nonatomic, strong) CAEmitterLayer * explosionLayer;
-@property (nonatomic, strong) UIImageView *backImageView;
-@property (nonatomic, strong) UILabel *incLabel;
-
-/** 选中/取消时是否需要动画 */
-@property (nonatomic, assign) BOOL isNeedAnimation;
-
-/** 点赞数量Label */
-@property (nonatomic, strong) UILabel *countLabel;
+@property(nonatomic,strong)CAEmitterLayer * explosionLayer;
+@property(nonatomic,strong)UIImageView *backImageView;
+@property(nonatomic,strong)UILabel *incLabel;
+@property(nonatomic,assign)BOOL isNeedAnimation;/// 选中/取消时是否需要动画
+@property(nonatomic,strong)UILabel *countLabel;/// 点赞数量Label
 
 @end
 
@@ -61,17 +57,17 @@
 
 - (void)setupBackWithFrame:(CGRect)frame {
     //1.初始化👍View
-    UIImageView *backImageView = [[UIImageView alloc] initWithImage:JobsBuddleIMG(@"bundle",
-                                                                               @"RBCLikeButton",
-                                                                               nil,
-                                                                               @"day_like_red")];
+    UIImageView *backImageView = [UIImageView.alloc initWithImage:JobsBuddleIMG(@"bundle",
+                                                                                @"RBCLikeButton",
+                                                                                nil,
+                                                                                @"day_like_red")];
     backImageView.alpha = 0;
     [self addSubview:backImageView];
     self.backImageView = backImageView;
     
     //2.初始化"+1"上升label
-    UILabel *incLabel = [[UILabel alloc]init];
-    incLabel.font = [UIFont systemFontOfSize:13 weight:UIFontWeightRegular];
+    UILabel *incLabel = UILabel.new;
+    incLabel.font = UIFontWeightRegularSize(13);
     incLabel.textColor = TYColorFromRGB(0xFD5656);
     incLabel.textAlignment = NSTextAlignmentCenter;
     incLabel.text = @"+1";
@@ -81,8 +77,8 @@
     self.incLabel = incLabel;
     
     //3.初始化总点赞数label
-    UILabel *countLabel = [[UILabel alloc]init];
-    countLabel.font = [UIFont systemFontOfSize:12 weight:UIFontWeightRegular];
+    UILabel *countLabel = UILabel.new;
+    countLabel.font = UIFontWeightRegularSize(12);
     countLabel.textColor = TYColorFromRGB(0xCFD2D6);
     if (_type == RBCLikeButtonTypeImageleft) {
         countLabel.textAlignment = NSTextAlignmentLeft;
@@ -104,29 +100,28 @@
     
     //6.记录"+1"上升label的初始Y值
     _incOrginY = self.incLabel.frame.origin.y;
-    
 }
 
 - (void)layoutSubviews {
-    
     [super layoutSubviews];
     //1.确定👍View的frame
     self.backImageView.frame = self.imageView.frame;
     //2.确定总赞数label的frame
-    
     CGFloat countLabelWidth = 30;
     if (_type == RBCLikeButtonTypeImageleft) {
-        self.countLabel.frame = CGRectMake(CGRectGetMaxX(self.imageView.frame)+5, self.imageView.top + (self.imageView.height - 15)/2 + 0.5, countLabelWidth, 15);
+        self.countLabel.frame = CGRectMake(CGRectGetMaxX(self.imageView.frame)+5, 
+                                           self.imageView.top + (self.imageView.height - 15)/2 + 0.5,
+                                           countLabelWidth, 
+                                           15);
     }else{
-        self.countLabel.frame = CGRectMake((self.width - countLabelWidth)/2,self.height, countLabelWidth, 15);
+        self.countLabel.frame = CGRectMake((self.width - countLabelWidth)/2,
+                                           self.height,
+                                           countLabelWidth,
+                                           15);
     }
-    
 }
-/**
- * 设置粒子动画
- */
+/// 设置粒子动画
 - (void)setupExplosion{
-    
     // 1. 粒子
     CAEmitterCell * explosionCell = [CAEmitterCell emitterCell];
     //透明度变化速度
@@ -319,85 +314,64 @@
     animation.calculationMode = kCAAnimationCubic;
     self.backImageView.alpha = 0.2;
     [self.backImageView.layer addAnimation:animation forKey:nil];
-    
 }
 
 - (void)countAnimation {
-    
-    //1.添加数字+1透明度动画
-    CAKeyframeAnimation *animation0 = [CAKeyframeAnimation animation];
+    /// 1、添加数字+1透明度动画
+    CAKeyframeAnimation *animation0 = CAKeyframeAnimation.animation;
     animation0.keyPath = @"opacity";
     animation0.values = @[@0.5,@0.8,@1.0];
     animation0.duration = 0.5;
     animation0.calculationMode = kCAAnimationCubic;
     [self.incLabel.layer addAnimation:animation0 forKey:nil];
-    //开始动画时"+1"上升label回到起始位置
+    /// 开始动画时"+1"上升label回到起始位置
     self.incLabel.top = _incOrginY;
-    //防止label闪烁
+    /// 防止label闪烁
     self.incLabel.alpha = 1;
     
-    //2.添加"+1"慢慢变大动画
-    CAKeyframeAnimation *animationScale = [CAKeyframeAnimation animation];
+    /// 2、添加"+1"慢慢变大动画
+    CAKeyframeAnimation *animationScale = CAKeyframeAnimation.animation;
     animationScale.keyPath = @"transform.scale";
     animationScale.values = @[@1.0,@1.1,@1.2];
     animationScale.duration = 1.0;
     animationScale.calculationMode = kCAAnimationCubic;
     [self.incLabel.layer addAnimation:animationScale forKey:nil];
-    
-    //3.添加"+1"s向上位移动画
-    __weak typeof(self) weakSelf = self;
-    [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        
-        weakSelf.incLabel.top = self->_incOrginY - 18;
-        
+    /// 3、添加"+1"s向上位移动画
+    @jobs_weakify(self)
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut 
+                     animations:^{
+        @jobs_strongify(self)
+        self.incLabel.top = self->_incOrginY - 18;
     } completion:^(BOOL finished) {
-        //4.添加"+1"慢慢消失动画
-        CAKeyframeAnimation *animation2 = [CAKeyframeAnimation animation];
+        @jobs_strongify(self)
+        /// 4、添加"+1"慢慢消失动画
+        CAKeyframeAnimation *animation2 = CAKeyframeAnimation.animation;
         animation2.keyPath = @"opacity";
         animation2.values = @[@0.8,@0.5,@0];
         animation2.duration = 0.5;
         animation2.calculationMode = kCAAnimationCubic;
-        [weakSelf.incLabel.layer addAnimation:animation2 forKey:nil];
+        [self.incLabel.layer addAnimation:animation2 forKey:nil];
         self.incLabel.alpha = 0;
     }];
-    
 }
-//屏蔽drawRect
-- (void)drawRect:(CGRect)rect {}
-// 没有高亮状态
-- (void)setHighlighted:(BOOL)highlighted{}
+/// 屏蔽drawRect
+-(void)drawRect:(CGRect)rect {}
+/// 没有高亮状态
+-(void)setHighlighted:(BOOL)highlighted{}
 
-- (NSString *)getSentenceListStandardWithString:(NSString *)orginStr {
-    
+-(NSString *)getSentenceListStandardWithString:(NSString *)orginStr {
     NSInteger orginInt = [orginStr integerValue];
-    
     if (orginInt >= 10000) {
-        
         NSInteger wan = orginInt / 10000;
-        
         NSInteger qian = (orginInt - wan * 10000)/1000;
-        
-        if (qian > 0) {
-            return [NSString stringWithFormat:@"%ld.%ldw",wan,qian];
-        }else{
-            return [NSString stringWithFormat:@"%ldw",wan];
-        }
-        
+        return qian > 0 ? [NSString stringWithFormat:@"%ld.%ldw",wan,qian] : [NSString stringWithFormat:@"%ldw",wan];
     }else if (orginInt >= 1000){
-        
         NSInteger qian = orginInt / 1000;
-        
         NSInteger bai = (orginInt - qian * 1000)/100;
-        
-        if (bai > 0) {
-            return [NSString stringWithFormat:@"%ld.%ldk",qian,bai];
-        }else{
-            return [NSString stringWithFormat:@"%ldk",qian];
-        }
-        
-    }else {
-        return orginStr;
-    }
+        return bai > 0 ? [NSString stringWithFormat:@"%ld.%ldk",qian,bai] :[NSString stringWithFormat:@"%ldk",qian];
+    }else return orginStr;
 }
 
 @end

@@ -8,11 +8,9 @@
 #import "LOTAnimationMJRefreshFooter.h"
 
 static const CGFloat OffsetBetweenStateLabelAndAnimationView = 5;//StateLabel 和 AnimationView 之间的间距
-
 @interface LOTAnimationMJRefreshFooter ()
 
 @property(nonatomic,strong)LOTAnimationView *animationView;
-@property(nonatomic,copy)jobsByIDBlock refreshFooterBlock;
 
 @end
 
@@ -27,8 +25,7 @@ static const CGFloat OffsetBetweenStateLabelAndAnimationView = 5;//StateLabel �
         @jobs_strongify(self)
         [self updateStateLabelText];
     };
-    self.stateLabel.font = [UIFont systemFontOfSize:14
-                                             weight:UIFontWeightRegular];
+    self.stateLabel.font = UIFontWeightRegularSize(14);
     [self updateStateLabelText];
 }
 // 执行重新给子视图布局的时候
@@ -82,20 +79,12 @@ static const CGFloat OffsetBetweenStateLabelAndAnimationView = 5;//StateLabel �
 
 - (void)beginRefreshing{
     [super beginRefreshing];
-    if (self.refreshFooterBlock) {
-        self.refreshFooterBlock(@(RefreshingType_beginRefreshing));
-    }
+    if (self.objectBlock) self.objectBlock(@(RefreshingType_beginRefreshing));
 }
 
 - (void)endRefreshing{
     [super endRefreshing];
-    if (self.refreshFooterBlock) {
-        self.refreshFooterBlock(@(RefreshingType_endRefreshing));
-    }
-}
-
--(void)actionBlockRefreshFooter:(jobsByIDBlock)refreshFooterBlock{
-    self.refreshFooterBlock = refreshFooterBlock;
+    if (self.objectBlock) self.objectBlock(@(RefreshingType_endRefreshing));
 }
 #pragma mark —— lazyLoad
 - (LOTAnimationView *)animationView{
@@ -122,6 +111,5 @@ static const CGFloat OffsetBetweenStateLabelAndAnimationView = 5;//StateLabel �
         _refreshConfigModel = MJRefreshConfigModel.new;
     }return _refreshConfigModel;
 }
-
 
 @end

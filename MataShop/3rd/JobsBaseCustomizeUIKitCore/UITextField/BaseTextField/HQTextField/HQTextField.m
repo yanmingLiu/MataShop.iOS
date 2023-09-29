@@ -18,7 +18,6 @@
 @end
 
 @implementation HQTextField
-
 #pragma mark -- 警示框
 - (void)showWarn {
     // 透明度变化
@@ -34,7 +33,6 @@
         [self.warnLayer removeFromSuperlayer];
     });
 }
-
 #pragma mark -- 改变光标起始位置
 // 控制placeHolder的位置，左右缩20，但是光标位置不变
 /*
@@ -60,7 +58,6 @@
                               bounds.size.height);//更好理解些
     return inset;
 }
-
 #pragma mark —— lazyLoad
 -(CAShapeLayer *)warnLayer{
     if (!_warnLayer) {
@@ -87,6 +84,5 @@
         _opacityAnimation.autoreverses = YES;
     }return _opacityAnimation;
 }
-
 
 @end

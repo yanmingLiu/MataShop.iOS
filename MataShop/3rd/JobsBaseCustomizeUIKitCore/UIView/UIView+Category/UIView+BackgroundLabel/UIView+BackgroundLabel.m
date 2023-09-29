@@ -8,12 +8,9 @@
 #import "UIView+BackgroundLabel.h"
 
 @implementation UIView (BackgroundLabel)
-
-static char *UIView_BackgroundLabel_backgroundLabel = "UIView_BackgroundLabel_backgroundLabel";
 @dynamic backgroundLabel;
-
 -(UILabel *)backgroundLabel{
-    UILabel *BackgroundLabel = objc_getAssociatedObject(self, UIView_BackgroundLabel_backgroundLabel);
+    UILabel *BackgroundLabel = objc_getAssociatedObject(self, _cmd);
     if (!BackgroundLabel) {
         BackgroundLabel = UILabel.new;
         BackgroundLabel.userInteractionEnabled = YES;
@@ -23,7 +20,7 @@ static char *UIView_BackgroundLabel_backgroundLabel = "UIView_BackgroundLabel_ba
             make.edges.equalTo(self);
         }];
         objc_setAssociatedObject(self,
-                                 UIView_BackgroundLabel_backgroundLabel,
+                                 _cmd,
                                  BackgroundLabel,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return BackgroundLabel;
@@ -31,7 +28,7 @@ static char *UIView_BackgroundLabel_backgroundLabel = "UIView_BackgroundLabel_ba
 
 -(void)setBackgroundLabel:(UILabel *)backgroundLabel{
     objc_setAssociatedObject(self,
-                             UIView_BackgroundLabel_backgroundLabel,
+                             _cmd,
                              backgroundLabel,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

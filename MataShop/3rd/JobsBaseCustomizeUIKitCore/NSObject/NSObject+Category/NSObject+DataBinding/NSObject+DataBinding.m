@@ -21,18 +21,16 @@
     collectionView.delegate = self;
     collectionView.dataSource = self;
 }
-
-static char *NSObject_DataBinding_objBindingParams = "NSObject_DataBinding_objBindingParams";
-@dynamic objBindingParams;
 #pragma mark —— @property(nonatomic,strong)id objBindingParams;
+@dynamic objBindingParams;
 -(id)objBindingParams{
-    id ObjBindingParams = objc_getAssociatedObject(self, NSObject_DataBinding_objBindingParams);
+    id ObjBindingParams = objc_getAssociatedObject(self, _cmd);
     return ObjBindingParams;
 }
 
 -(void)setObjBindingParams:(id)objBindingParams{
     objc_setAssociatedObject(self,
-                             NSObject_DataBinding_objBindingParams,
+                             _cmd,
                              objBindingParams,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

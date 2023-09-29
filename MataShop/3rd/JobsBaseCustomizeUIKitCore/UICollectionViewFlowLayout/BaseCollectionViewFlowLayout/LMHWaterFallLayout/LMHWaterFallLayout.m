@@ -7,22 +7,21 @@
 //
 
 #import "LMHWaterFallLayout.h"
-
-/** 默认的列数    */
+/// 默认的列数
 static const CGFloat LMHDefaultColunmCount = 3;
-/** 每一列之间的间距    */
+/// 每一列之间的间距
 static const CGFloat LMHDefaultColunmMargin = 10;
-/** 每一行之间的间距    */
+/// 每一行之间的间距
 static const CGFloat LMHDefaultRowMargin = 10;
-/** 内边距    */
+/// 内边距
 static const UIEdgeInsets LMHDefaultEdgeInsets = {10,10,10,10};
 
 @interface LMHWaterFallLayout()
-/** 存放所有的布局属性 */
+/// 存放所有的布局属性
 @property(nonatomic,strong)NSMutableArray *attrsArr;
-/** 存放所有列的当前高度 */
+/// 存放所有列的当前高度
 @property(nonatomic,strong)NSMutableArray *columnHeights;
-/** 内容的高度 */
+/// 内容的高度
 @property(nonatomic,assign)CGFloat contentHeight;
 
 - (NSUInteger)colunmCount;
@@ -35,9 +34,7 @@ static const UIEdgeInsets LMHDefaultEdgeInsets = {10,10,10,10};
 @implementation LMHWaterFallLayout
 
 #pragma mark —— 数据处理
-/**
- * 列数
- */
+/// 列数
 - (NSUInteger)colunmCount{
     if ([self.delegate respondsToSelector:@selector(columnCountInWaterFallLayout:)]) {
         return [self.delegate columnCountInWaterFallLayout:self];
@@ -45,9 +42,7 @@ static const UIEdgeInsets LMHDefaultEdgeInsets = {10,10,10,10};
         return LMHDefaultColunmCount;
     }
 }
-/**
- * 列间距
- */
+/// 列间距
 - (CGFloat)columnMargin{
     if ([self.delegate respondsToSelector:@selector(columnMarginInWaterFallLayout:)]) {
         return [self.delegate columnMarginInWaterFallLayout:self];
@@ -55,9 +50,7 @@ static const UIEdgeInsets LMHDefaultEdgeInsets = {10,10,10,10};
         return LMHDefaultColunmMargin;
     }
 }
-/**
- * 行间距
- */
+/// 行间距
 - (CGFloat)rowMargin{
     if ([self.delegate respondsToSelector:@selector(rowMarginInWaterFallLayout:)]) {
         return [self.delegate rowMarginInWaterFallLayout:self];
@@ -65,9 +58,7 @@ static const UIEdgeInsets LMHDefaultEdgeInsets = {10,10,10,10};
         return LMHDefaultRowMargin;
     }
 }
-/**
- * item的内边距
- */
+/// item的内边距
 - (UIEdgeInsets)edgeInsets{
     if ([self.delegate respondsToSelector:@selector(edgeInsetdInWaterFallLayout:)]) {
         return [self.delegate edgeInsetdInWaterFallLayout:self];
@@ -75,9 +66,7 @@ static const UIEdgeInsets LMHDefaultEdgeInsets = {10,10,10,10};
         return LMHDefaultEdgeInsets;
     }
 }
-/**
- * 初始化
- */
+/// 初始化
 - (void)prepareLayout{
     [super prepareLayout];
     self.contentHeight = 0;
@@ -100,10 +89,7 @@ static const UIEdgeInsets LMHDefaultEdgeInsets = {10,10,10,10};
         [self.attrsArr addObject:attrs];
     }
 }
-
-/**
- * 返回indexPath位置cell对应的布局属性
- */
+/// 返回indexPath位置cell对应的布局属性
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath{
     // 创建布局属性
     UICollectionViewLayoutAttributes *attrs = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
@@ -141,15 +127,11 @@ static const UIEdgeInsets LMHDefaultEdgeInsets = {10,10,10,10};
         self.contentHeight = maxColumnHeight;
     } return attrs;
 }
-/**
- * 决定cell的高度
- */
+/// 决定cell的高度
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect{
     return self.attrsArr;
 }
-/**
- * 内容的高度
- */
+/// 内容的高度
 - (CGSize)collectionViewContentSize{
  
 //    CGFloat maxColumnHeight = [self.columnHeights[0] doubleValue];
@@ -165,7 +147,6 @@ static const UIEdgeInsets LMHDefaultEdgeInsets = {10,10,10,10};
 //    }
     return CGSizeMake(0, self.contentHeight + self.edgeInsets.bottom);
 }
-
 #pragma mark —— lazyLoad
 - (NSMutableArray *)attrsArr{
     if (!_attrsArr) {

@@ -52,11 +52,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param aFont 文字的字号
 /// @param aColor 文字的颜色
 /// @param directionStr  文字显示的方向
-- (CAShapeLayer *_Nonnull)animateOnView:(UIView *_Nonnull)aView
-                                 atRect:(CGRect)aRect
-                                forFont:(UIFont *)aFont
-                              withColor:(UIColor *_Nonnull)aColor
-                           andDirection:(TransformLayerDirectionType)directionStr;
+-(CAShapeLayer *_Nonnull)animateOnView:(UIView *_Nonnull)aView
+                                atRect:(CGRect)aRect
+                               forFont:(UIFont *)aFont
+                             withColor:(UIColor *_Nonnull)aColor
+                          andDirection:(TransformLayerDirectionType)directionStr;
 
 @end
 

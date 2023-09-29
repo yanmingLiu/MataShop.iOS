@@ -338,7 +338,6 @@
 		C561D3B22AAC7E7A00E28603 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C561CFEE2AAC7E7900E28603 /* README.md */; };
 		C561D3B32AAC7E7A00E28603 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CFF02AAC7E7900E28603 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		C561D3B42AAC7E7A00E28603 /* UIImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CFF72AAC7E7900E28603 /* UIImage+Extras.m */; };
-		C561D3B52AAC7E7A00E28603 /* UIImage+Measure.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CFFB2AAC7E7900E28603 /* UIImage+Measure.m */; };
 		C561D3B62AAC7E7A00E28603 /* UIImage+SYS.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CFFE2AAC7E7900E28603 /* UIImage+SYS.m */; };
 		C561D3B72AAC7E7A00E28603 /* UIImage+YBGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0002AAC7E7900E28603 /* UIImage+YBGIF.m */; };
 		C561D3B82AAC7E7A00E28603 /* UIImage+Tailor.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0032AAC7E7900E28603 /* UIImage+Tailor.m */; };
@@ -1550,8 +1549,6 @@
 		C561CFF42AAC7E7900E28603 /* LoadingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingImage.h; sourceTree = "<group>"; };
 		C561CFF72AAC7E7900E28603 /* UIImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extras.m"; sourceTree = "<group>"; };
 		C561CFF82AAC7E7900E28603 /* UIImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extras.h"; sourceTree = "<group>"; };
-		C561CFFA2AAC7E7900E28603 /* UIImage+Measure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Measure.h"; sourceTree = "<group>"; };
-		C561CFFB2AAC7E7900E28603 /* UIImage+Measure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Measure.m"; sourceTree = "<group>"; };
 		C561CFFD2AAC7E7900E28603 /* UIImage+SYS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYS.h"; sourceTree = "<group>"; };
 		C561CFFE2AAC7E7900E28603 /* UIImage+SYS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYS.m"; sourceTree = "<group>"; };
 		C561D0002AAC7E7900E28603 /* UIImage+YBGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YBGIF.m"; sourceTree = "<group>"; };
@@ -4904,7 +4901,6 @@
 			isa = PBXGroup;
 			children = (
 				C561CFF62AAC7E7900E28603 /* UIImage+Extras */,
-				C561CFF92AAC7E7900E28603 /* UIImage+Measure */,
 				C561CFFC2AAC7E7900E28603 /* UIImage+SYS */,
 				C561CFFF2AAC7E7900E28603 /* UIImage+YBGIF */,
 				C561D0022AAC7E7900E28603 /* UIImage+Tailor */,
@@ -4920,15 +4916,6 @@
 				C561CFF82AAC7E7900E28603 /* UIImage+Extras.h */,
 			);
 			path = "UIImage+Extras";
-			sourceTree = "<group>";
-		};
-		C561CFF92AAC7E7900E28603 /* UIImage+Measure */ = {
-			isa = PBXGroup;
-			children = (
-				C561CFFA2AAC7E7900E28603 /* UIImage+Measure.h */,
-				C561CFFB2AAC7E7900E28603 /* UIImage+Measure.m */,
-			);
-			path = "UIImage+Measure";
 			sourceTree = "<group>";
 		};
 		C561CFFC2AAC7E7900E28603 /* UIImage+SYS */ = {
@@ -10478,7 +10465,6 @@
 				C561CE482AAC7CE200E28603 /* ECPrivacyCheckGatherTool.m in Sources */,
 				C5CFE7242AB0934F00D0F225 /* MSProdSelectModel.m in Sources */,
 				C561D4572AAC7E7B00E28603 /* NSNumber+Extra.m in Sources */,
-				C561D3B52AAC7E7A00E28603 /* UIImage+Measure.m in Sources */,
 				C561D3232AAC7E7A00E28603 /* UITabBar+Ex.m in Sources */,
 				C520F6362AB3975800142DCC /* YTKUrlArgumentsFilter.m in Sources */,
 				C561CE202AAC7CE200E28603 /* ECPrivacyCheckLocationServices.m in Sources */,

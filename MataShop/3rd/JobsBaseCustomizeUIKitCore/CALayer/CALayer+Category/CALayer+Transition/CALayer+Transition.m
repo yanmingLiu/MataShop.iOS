@@ -9,37 +9,31 @@
 #import "CALayer+Transition.h"
 
 @implementation CALayer (Transition)
-/**
- *  转场动画
- *
- *  @param animType 转场动画类型
- *  @param subType  转动动画方向
- *  @param curve    转动动画曲线
- *  @param duration 转动动画时长
- *
- *  @return 转场动画实例
- */
+/// 转场动画实例
+/// - Parameters:
+///   - animType: 转场动画类型
+///   - subType: 转动动画方向
+///   - curve:  转动动画曲线
+///   - duration: 转动动画时长
 -(CATransition *)transitionWithAnimType:(TransitionAnimType)animType
                                 subType:(TransitionSubType)subType
                                   curve:(TransitionCurve)curve
                                duration:(CGFloat)duration{
     NSString *key = @"transition";
     if([self animationForKey:key]) [self removeAnimationForKey:key];
-    CATransition *transition = [CATransition animation];
+    CATransition *transition = CATransition.animation;
     transition.duration = duration;//动画时长
-    transition.type = [self animaTypeWithTransitionType:animType];//动画类型
-    transition.subtype = [self animaSubtype:subType];//动画方向
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:[self curve:curve]];//缓动函数
-    transition.removedOnCompletion = YES;//完成动画删除
+    transition.type = [self animaTypeWithTransitionType:animType];/// 动画类型
+    transition.subtype = [self animaSubtype:subType];/// 动画方向
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:[self curve:curve]];/// 缓动函数
+    transition.removedOnCompletion = YES;/// 完成动画删除
     [self addAnimation:transition
                 forKey:key];
     return transition;
 }
-/*
- *  返回动画曲线
- */
+/// 返回动画曲线
 -(NSString *)curve:(TransitionCurve)curve{
-    //曲线数组
+    /// 曲线数组
     NSArray *funcNames=@[kCAMediaTimingFunctionDefault,
                          kCAMediaTimingFunctionEaseIn,
                          kCAMediaTimingFunctionEaseInEaseOut,
@@ -49,12 +43,10 @@
                         index:curve
                      isRamdom:(TransitionCurveRamdom == curve)];
 }
-/*
- *  返回动画方向
- */
+/// 返回动画方向
 -(NSString *)animaSubtype:(TransitionSubType)subType{
     
-    //设置转场动画的方向
+    /// 设置转场动画的方向
     NSArray *subtypes=@[kCATransitionFromTop,
                         kCATransitionFromLeft,
                         kCATransitionFromBottom,
@@ -63,9 +55,7 @@
                         index:subType
                      isRamdom:(TransitionSubtypesFromRamdom == subType)];
 }
-/*
- *  返回动画类型
- */
+/// 返回动画类型
 -(NSString *)animaTypeWithTransitionType:(TransitionAnimType)type{
     
     //设置转场动画的类型
@@ -81,9 +71,7 @@
                         index:type
                      isRamdom:(TransitionAnimTypeRamdom == type)];
 }
-/*
- *  统一从数据返回对象
- */
+/// 统一从数据返回对象
 -(id)objFromArray:(NSArray *)array
             index:(NSUInteger)index
          isRamdom:(BOOL)isRamdom{
@@ -91,7 +79,5 @@
     NSUInteger i = isRamdom?arc4random_uniform((u_int32_t)count) : index;
     return array[i];
 }
-
-
 
 @end

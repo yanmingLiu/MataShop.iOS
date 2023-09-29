@@ -18,7 +18,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSUserDefaults (Manager)
-
 /// 存数据
 +(void)updateWithModel:(UserDefaultModel *)userDefaultModel;
 /// 读取数据

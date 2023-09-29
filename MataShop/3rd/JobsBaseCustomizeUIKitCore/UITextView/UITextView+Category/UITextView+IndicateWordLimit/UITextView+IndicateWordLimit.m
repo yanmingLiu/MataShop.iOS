@@ -8,12 +8,10 @@
 #import "UITextView+IndicateWordLimit.h"
 
 @implementation UITextView (IndicateWordLimit)
-
-static char *UITextView_IndicateWordLimit_indicateWordLimitLab = "UITextView_IndicateWordLimit_indicateWordLimitLab";
-@dynamic indicateWordLimitLab;
 #pragma mark —— @property(nonatomic,strong)UILabel *indicateWordLimitLab;
+@dynamic indicateWordLimitLab;
 -(UILabel *)indicateWordLimitLab{
-    UILabel *IndicateWordLimitLab = objc_getAssociatedObject(self, UITextView_IndicateWordLimit_indicateWordLimitLab);
+    UILabel *IndicateWordLimitLab = objc_getAssociatedObject(self, _cmd);
     if (!IndicateWordLimitLab) {
         IndicateWordLimitLab = UILabel.new;
         IndicateWordLimitLab.textColor = RGB_COLOR(132, 134, 140);
@@ -30,30 +28,28 @@ static char *UITextView_IndicateWordLimit_indicateWordLimitLab = "UITextView_Ind
 
 -(void)setIndicateWordLimitLab:(UILabel *)indicateWordLimitLab{
     objc_setAssociatedObject(self,
-                             UITextView_IndicateWordLimit_indicateWordLimitLab,
+                             _cmd,
                              indicateWordLimitLab,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UITextView_IndicateWordLimit_currentWordNum = "UITextView_IndicateWordLimit_currentWordNum";
-@dynamic currentWordNum;
 #pragma mark —— @property(nonatomic,assign)NSInteger currentWordNum;//当前输入的字符数
+@dynamic currentWordNum;
 -(NSInteger)currentWordNum{
-    return [objc_getAssociatedObject(self, UITextView_IndicateWordLimit_currentWordNum) integerValue];
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 
 -(void)setCurrentWordNum:(NSInteger)currentWordNum{
     self.indicateWordLimitLab.text = [NSString stringWithFormat:@"   %ld / %ld   ",currentWordNum,self.wordLimitNum];
     [self.indicateWordLimitLab makeLabelByShowingType:UILabelShowingType_03];
     objc_setAssociatedObject(self,
-                             UITextView_IndicateWordLimit_currentWordNum,
+                             _cmd,
                              [NSNumber numberWithInteger:currentWordNum],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UITextView_IndicateWordLimit_wordLimitNum = "UITextView_IndicateWordLimit_wordLimitNum";
-@dynamic wordLimitNum;
 #pragma mark —— @property(nonatomic,assign)NSInteger wordimitNum;//字符输入上限
+@dynamic wordLimitNum;
 -(NSInteger)wordLimitNum{
-    NSInteger WordLimitNum = [objc_getAssociatedObject(self, UITextView_IndicateWordLimit_wordLimitNum) integerValue];
+    NSInteger WordLimitNum = [objc_getAssociatedObject(self, _cmd) integerValue];
     if (!WordLimitNum) {
         WordLimitNum = 500;
         [self setWordLimitNum:WordLimitNum];
@@ -62,15 +58,14 @@ static char *UITextView_IndicateWordLimit_wordLimitNum = "UITextView_IndicateWor
 
 -(void)setWordLimitNum:(NSInteger)wordLimitNum{
     objc_setAssociatedObject(self,
-                             UITextView_IndicateWordLimit_wordLimitNum,
+                             _cmd,
                              [NSNumber numberWithInteger:wordLimitNum],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UITextView_IndicateWordLimit_offsetX = "UITextView_IndicateWordLimit_offsetX";
-@dynamic offsetX;
 #pragma mark —— @property(nonatomic,assign)CGFloat offsetX;
+@dynamic offsetX;
 -(CGFloat)offsetX{
-    CGFloat OffsetX = [objc_getAssociatedObject(self, UITextView_IndicateWordLimit_offsetX) floatValue];
+    CGFloat OffsetX = [objc_getAssociatedObject(self, _cmd) floatValue];
     if (!OffsetX) {
         OffsetX = JobsWidth(19.1);
         [self setOffsetX:OffsetX];
@@ -79,15 +74,14 @@ static char *UITextView_IndicateWordLimit_offsetX = "UITextView_IndicateWordLimi
 
 -(void)setOffsetX:(CGFloat)offsetX{
     objc_setAssociatedObject(self,
-                             UITextView_IndicateWordLimit_offsetX,
+                             _cmd,
                              [NSNumber numberWithFloat:offsetX],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UITextView_IndicateWordLimit_offsetY = "UITextView_IndicateWordLimit_offsetY";
-@dynamic offsetY;
 #pragma mark —— @property(nonatomic,assign)CGFloat offsetY;
+@dynamic offsetY;
 -(CGFloat)offsetY{
-    CGFloat OffsetY = [objc_getAssociatedObject(self, UITextView_IndicateWordLimit_offsetY) floatValue];
+    CGFloat OffsetY = [objc_getAssociatedObject(self, _cmd) floatValue];
     if (!OffsetY) {
         OffsetY = JobsWidth(13.1);
         [self setOffsetY:OffsetY];
@@ -96,7 +90,7 @@ static char *UITextView_IndicateWordLimit_offsetY = "UITextView_IndicateWordLimi
 
 -(void)setOffsetY:(CGFloat)offsetY{
     objc_setAssociatedObject(self,
-                             UITextView_IndicateWordLimit_offsetY,
+                             _cmd,
                              [NSNumber numberWithFloat:offsetY],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

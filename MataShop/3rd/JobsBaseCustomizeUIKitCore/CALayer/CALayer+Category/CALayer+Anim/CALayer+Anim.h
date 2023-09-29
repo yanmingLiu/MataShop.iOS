@@ -7,9 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-/*
- *  反转方向
- */
+///  反转方向
 typedef enum {
     /// X
     AnimReverDirectionX = 0,

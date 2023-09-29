@@ -257,30 +257,28 @@ makeSectionFirstAndLastCell:(UITableViewCell *_Nonnull)cell
                        dx,
                        dy);
 }
-static char *UITableViewCell_Margin_indexPath = "UITableViewCell_Margin_indexPath";
-@dynamic indexPath;
 #pragma mark —— <UIViewModelProtocol> @property(nonatomic,strong)NSIndexPath *indexPath;
+@dynamic indexPath;
 -(NSIndexPath *)indexPath{
-    NSIndexPath *indexPath = objc_getAssociatedObject(self, UITableViewCell_Margin_indexPath);
+    NSIndexPath *indexPath = objc_getAssociatedObject(self, _cmd);
     return indexPath;
 }
 
 -(void)setIndexPath:(NSIndexPath *)indexPath{
     objc_setAssociatedObject(self,
-                             UITableViewCell_Margin_indexPath,
+                             _cmd,
                              indexPath,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UITableViewCell_Margin_index = "UITableViewCell_Margin_index";
-@dynamic index;
 #pragma mark —— <UIViewModelProtocol> @property(nonatomic,assign)NSInteger index;
+@dynamic index;
 -(NSInteger)index{
-    return [objc_getAssociatedObject(self, UITableViewCell_Margin_index) integerValue];
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 
 -(void)setIndex:(NSInteger)index{
     objc_setAssociatedObject(self,
-                             UITableViewCell_Margin_index,
+                             _cmd,
                              [NSNumber numberWithInteger:index],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

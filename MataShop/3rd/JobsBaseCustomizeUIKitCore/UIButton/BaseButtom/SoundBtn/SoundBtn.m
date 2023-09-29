@@ -18,21 +18,16 @@
 
 -(instancetype)init{
     if (self = [super init]) {
-//        self.backgroundColor = JobsRandomColor;
-        
         self.uxy_acceptEventInterval = 0.5f;
     }return self;
 }
 
 - (void)touchesBegan:(NSSet *)touches
            withEvent:(UIEvent*)event{
-    
     [NSObject playSoundEffect:@"Sound"
                           type:@"wav"];
-    
     [super touchesBegan:touches
               withEvent:event];
-    
 }
 
 @end

@@ -10,13 +10,13 @@
 @implementation UIButton (UI)
 #pragma mark —— 一些功能性
 /// RAC 点击事件2次封装
--(void)jobsBtnClickEventBlock:(jobsByIDBlock)subscribeNextBlock{
-    [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
+-(RACDisposable *)jobsBtnClickEventBlock:(JobsReturnIDByIDBlock)subscribeNextBlock{
+    return [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
         if(subscribeNextBlock) subscribeNextBlock(x);
     }];
 }
 /// 方法名字符串（带参数、参数之间用"："隔开）、作用对象、参数
--(jobsByThreeIDBlock)btnClickActionWithParamarrays{
+-(JobsReturnIDByThreeIDBlock)btnClickActionWithParamarrays{
     // SEL method = @selector(func);//定义一个类方法的指针，selector查找是当前类（包含子类）的方法
     // SEL 用 assign修饰
     @jobs_weakify(self)
@@ -24,7 +24,7 @@
              id _Nonnull targetObj,
              NSArray * _Nullable paramarrays){
         @jobs_strongify(self)
-        [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
+        return [[self rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIButton * _Nullable x) {
             [NSObject methodName:methodName
                        targetObj:targetObj
                      paramarrays:paramarrays];
@@ -32,42 +32,17 @@
     };
 }
 /// 方法名字符串（不带参数）、作用对象
--(jobsByTwoIDBlock)btnClickActionWithMethodName{
+-(JobsReturnIDByTwoIDBlock)btnClickActionWithMethodName{
     return ^(NSString * _Nonnull methodName,
              id _Nonnull targetObj){
-        SEL selector = NSSelectorFromString(methodName);
-        SuppressWarcPerformSelectorLeaksWarning([self jobsBtnClickEventBlock:^(id data) {
-            [targetObj performSelector:selector withObject:nil];
-        }];);
+        SuppressWarcPerformSelectorLeaksWarning(return [self jobsBtnClickEventBlock:^(id data) {
+            return [targetObj performSelector:NSSelectorFromString(methodName) withObject:nil];
+         }];);
     };
 }
 /// 代码触发点击调用
 -(void)actionByCode{
     [self sendActionsForControlEvents:UIControlEventTouchUpInside];
-}
-/// 这个方法还有待完善
--(void)handelAdjustsImageWhenHighlighted{
-    /// iOS 15以后，系统不直接提供设置按钮在高亮状态下的图像样式
-    /// 'adjustsImageWhenHighlighted' is deprecated: first deprecated in iOS 15.0 - This property is ignored when using UIButtonConfiguration, you may customize to replicate this behavior via a configurationUpdateHandler
-    if (HDDeviceSystemVersion.floatValue >= 15.0) {
-        /**
-         UIButton *button = UIButton.new;
-         // 在按钮高亮状态变化时，使用 configurationUpdateHandler 来自定义图像样式
-         button.configurationUpdateHandler = ^(UIButton * _Nonnull updatedButton) {
-             if (updatedButton.isHighlighted) {
-                 // 按钮处于高亮状态，切换到高亮状态的图像样式
-                 UIImage *highlightedImage = [UIImage imageNamed:@"highlighted_image"];
-                 updatedButton.configuration.image = highlightedImage;
-             } else {
-                 // 按钮处于正常状态，切换到正常状态的图像样式
-                 UIImage *normalImage = [UIImage imageNamed:@"normal_image"];
-                 updatedButton.configuration.image = normalImage;
-             }
-         };
-         */
-    }else{
-        SuppressWdeprecatedDeclarationsWarning(self.adjustsImageWhenHighlighted = NO;);/// 设置按钮在高亮状态下的图像样式
-    }
 }
 /// UIButton 上的 image 旋转一定的角度angle
 -(void)changeAction:(CGFloat)angle{
@@ -182,12 +157,10 @@
 -(nullable UIImage *)backgroundImageForSelectedState{
     return [self backgroundImageForState:UIControlStateSelected];
 }
-#pragma mark —— SET | GET
-static char *UIButton_UI_titleFont = "UIButton_UI_titleFont";
 @dynamic titleFont;
 #pragma mark —— @property(nonatomic,strong)UIFont *titleFont;
 -(UIFont *)titleFont{
-    UIFont *TitleFont = objc_getAssociatedObject(self, UIButton_UI_titleFont);
+    UIFont *TitleFont = objc_getAssociatedObject(self, _cmd);
     if (!TitleFont) {
         TitleFont = UIFontWeightBoldSize(12);
         [self setTitleFont:TitleFont];
@@ -197,15 +170,14 @@ static char *UIButton_UI_titleFont = "UIButton_UI_titleFont";
 -(void)setTitleFont:(UIFont *)titleFont{
     self.titleLabel.font = titleFont;
     objc_setAssociatedObject(self,
-                             UIButton_UI_titleFont,
+                             _cmd,
                              titleFont,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_normalImage = "UIButton_UI_normalImage";
 @dynamic normalImage;
 #pragma mark —— @property(nonatomic,strong)UIImage *normalImage;
 -(UIImage *)normalImage{
-    UIImage *NormalImage = objc_getAssociatedObject(self, UIButton_UI_normalImage);
+    UIImage *NormalImage = objc_getAssociatedObject(self, _cmd);
     return NormalImage;
 }
 
@@ -214,15 +186,14 @@ static char *UIButton_UI_normalImage = "UIButton_UI_normalImage";
         [self setImage:normalImage forState:UIControlStateNormal];
     }
     objc_setAssociatedObject(self,
-                             UIButton_UI_normalImage,
+                             _cmd,
                              normalImage,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_normalBackgroundImage = "UIButton_UI_normalBackgroundImage";
 @dynamic normalBackgroundImage;
 #pragma mark —— @property(nonatomic,strong)UIImage *normalBackgroundImage;
 -(UIImage *)normalBackgroundImage{
-    UIImage *NormalBackgroundImage = objc_getAssociatedObject(self, UIButton_UI_normalBackgroundImage);
+    UIImage *NormalBackgroundImage = objc_getAssociatedObject(self, _cmd);
     return NormalBackgroundImage;
 }
 
@@ -231,15 +202,14 @@ static char *UIButton_UI_normalBackgroundImage = "UIButton_UI_normalBackgroundIm
         [self setBackgroundImage:normalBackgroundImage forState:UIControlStateNormal];
     }
     objc_setAssociatedObject(self,
-                             UIButton_UI_normalBackgroundImage,
+                             _cmd,
                              normalBackgroundImage,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_normalTitle = "UIButton_UI_normalTitle";
 @dynamic normalTitle;
 #pragma mark —— @property(nonatomic,strong)NSString *normalTitle;
 -(NSString *)normalTitle{
-    NSString *NormalTitle = objc_getAssociatedObject(self, UIButton_UI_normalTitle);
+    NSString *NormalTitle = objc_getAssociatedObject(self, _cmd);
     if (!NormalTitle) {
         NormalTitle = Internationalization(@"normalTitle");
         [self setNormalTitle:NormalTitle];
@@ -249,15 +219,14 @@ static char *UIButton_UI_normalTitle = "UIButton_UI_normalTitle";
 -(void)setNormalTitle:(NSString *)normalTitle{
     [self setTitle:normalTitle forState:UIControlStateNormal];
     objc_setAssociatedObject(self,
-                             UIButton_UI_normalTitle,
+                             _cmd,
                              normalTitle,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_normalTitleColor = "UIButton_UI_normalTitleColor";
 @dynamic normalTitleColor;
 #pragma mark —— @property(nonatomic,strong)UIColor *normalTitleColor;
 -(UIColor *)normalTitleColor{
-    UIColor *NormalTitleColor = objc_getAssociatedObject(self, UIButton_UI_normalTitleColor);
+    UIColor *NormalTitleColor = objc_getAssociatedObject(self, _cmd);
     if (!NormalTitleColor) {
         NormalTitleColor = JobsBlackColor;
         [self setNormalTitleColor:NormalTitleColor];
@@ -267,60 +236,56 @@ static char *UIButton_UI_normalTitleColor = "UIButton_UI_normalTitleColor";
 -(void)setNormalTitleColor:(UIColor *)normalTitleColor{
     [self setTitleColor:normalTitleColor forState:UIControlStateNormal];
     objc_setAssociatedObject(self,
-                             UIButton_UI_normalTitleColor,
+                             _cmd,
                              normalTitleColor,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_normalAttributedTitle = "UIButton_UI_normalAttributedTitle";
 @dynamic normalAttributedTitle;
 #pragma mark —— @property(nonatomic,strong)NSAttributedString *normalAttributedTitle;
 -(NSAttributedString *)normalAttributedTitle{
-    NSAttributedString *NormalAttributedTitle = objc_getAssociatedObject(self, UIButton_UI_normalAttributedTitle);
+    NSAttributedString *NormalAttributedTitle = objc_getAssociatedObject(self, _cmd);
     return NormalAttributedTitle;
 }
 
 -(void)setNormalAttributedTitle:(NSAttributedString *)normalAttributedTitle{
     [self setAttributedTitle:normalAttributedTitle forState:UIControlStateNormal];
     objc_setAssociatedObject(self,
-                             UIButton_UI_normalAttributedTitle,
+                             _cmd,
                              normalAttributedTitle,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_selectedImage = "UIButton_UI_selectedImage";
 @dynamic selectedImage;
 #pragma mark —— @property(nonatomic,strong)UIImage *selectedImage;
 -(UIImage *)selectedImage{
-    UIImage *SelectedImage = objc_getAssociatedObject(self, UIButton_UI_selectedImage);
+    UIImage *SelectedImage = objc_getAssociatedObject(self, _cmd);
     return SelectedImage;
 }
 
 -(void)setSelectedImage:(UIImage *)selectedImage{
     [self setImage:selectedImage forState:UIControlStateSelected];
     objc_setAssociatedObject(self,
-                             UIButton_UI_selectedImage,
+                             _cmd,
                              selectedImage,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_selectedBackgroundImage = "UIButton_UI_selectedBackgroundImage";
 @dynamic selectedBackgroundImage;
 #pragma mark —— @property(nonatomic,strong)UIImage *selectedBackgroundImage;
 -(UIImage *)selectedBackgroundImage{
-    UIImage *SelectedBackgroundImage = objc_getAssociatedObject(self, UIButton_UI_selectedBackgroundImage);
+    UIImage *SelectedBackgroundImage = objc_getAssociatedObject(self, _cmd);
     return SelectedBackgroundImage;
 }
 
 -(void)setSelectedBackgroundImage:(UIImage *)selectedBackgroundImage{
     [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected];
     objc_setAssociatedObject(self,
-                             UIButton_UI_selectedBackgroundImage,
+                             _cmd,
                              selectedBackgroundImage,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_selectedTitle = "UIButton_UI_selectedTitle";
 @dynamic selectedTitle;
 #pragma mark —— @property(nonatomic,strong)NSString *selectedTitle;
 -(NSString *)selectedTitle{
-    NSString *selectedTitle = objc_getAssociatedObject(self, UIButton_UI_selectedTitle);
+    NSString *selectedTitle = objc_getAssociatedObject(self, _cmd);
     if (!selectedTitle) {
         selectedTitle = Internationalization(@"selectedTitle");
         [self setSelectedTitle:selectedTitle];
@@ -330,65 +295,62 @@ static char *UIButton_UI_selectedTitle = "UIButton_UI_selectedTitle";
 -(void)setSelectedTitle:(NSString *)selectedTitle{
     [self setTitle:selectedTitle forState:UIControlStateSelected];
     objc_setAssociatedObject(self,
-                             UIButton_UI_selectedTitle,
+                             _cmd,
                              selectedTitle,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_selectedTitleColor = "UIButton_UI_selectedTitleColor";
 @dynamic selectedTitleColor;
 #pragma mark —— @property(nonatomic,strong)UIColor *selectedTitleColor;
 -(UIColor *)selectedTitleColor{
-    UIColor *SelectedTitleColor = objc_getAssociatedObject(self, UIButton_UI_selectedTitleColor);
+    UIColor *SelectedTitleColor = objc_getAssociatedObject(self, _cmd);
     return SelectedTitleColor;
 }
 
 -(void)setSelectedTitleColor:(UIColor *)selectedTitleColor{
     [self setTitleColor:selectedTitleColor forState:UIControlStateSelected];
     objc_setAssociatedObject(self,
-                             UIButton_UI_selectedTitleColor,
+                             _cmd,
                              selectedTitleColor,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_selectedAttributedTitle = "UIButton_UI_selectedAttributedTitle";
 @dynamic selectedAttributedTitle;
 #pragma mark —— @property(nonatomic,strong)NSAttributedString *selectedAttributedTitle;
 -(NSAttributedString *)selectedAttributedTitle{
-    NSAttributedString *SelectedAttributedTitle = objc_getAssociatedObject(self, UIButton_UI_selectedAttributedTitle);
+    NSAttributedString *SelectedAttributedTitle = objc_getAssociatedObject(self, _cmd);
     return SelectedAttributedTitle;
 }
 
 -(void)setSelectedAttributedTitle:(NSAttributedString *)selectedAttributedTitle{
     [self setAttributedTitle:selectedAttributedTitle forState:UIControlStateSelected];
     objc_setAssociatedObject(self,
-                             UIButton_UI_selectedAttributedTitle,
+                             _cmd,
                              selectedAttributedTitle,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_titleAlignment = "UIButton_UI_titleAlignment";
 @dynamic titleAlignment;
 #pragma mark —— @property(nonatomic,assign)NSTextAlignment titleAlignment;
 -(NSTextAlignment)titleAlignment{
-    NSTextAlignment TitleAlignment = [objc_getAssociatedObject(self, UIButton_UI_titleAlignment) NSIntValue];
+    NSTextAlignment TitleAlignment = [objc_getAssociatedObject(self, _cmd) NSIntValue];
     return TitleAlignment;
 }
 
 -(void)setTitleAlignment:(NSTextAlignment)titleAlignment{
     self.titleLabel.textAlignment = titleAlignment;
     objc_setAssociatedObject(self,
-                             UIButton_UI_titleAlignment,
+                             _cmd,
                              [NSNumber numberWithInteger:titleAlignment],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIButton_UI_racDisposable = "UIButton_UI_racDisposable";
+#pragma mark —— BaseProtocol
 @dynamic racDisposable;
 #pragma mark —— @property(nonatomic,strong)RACDisposable *racDisposable;
 -(RACDisposable *)racDisposable{
-    return objc_getAssociatedObject(self, UIButton_UI_racDisposable);
+    return objc_getAssociatedObject(self, _cmd);
 }
 
 -(void)setRacDisposable:(RACDisposable *)racDisposable{
     objc_setAssociatedObject(self,
-                             UIButton_UI_racDisposable,
+                             _cmd,
                              racDisposable,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

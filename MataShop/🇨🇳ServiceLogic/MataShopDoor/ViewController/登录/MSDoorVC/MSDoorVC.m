@@ -241,10 +241,11 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [_registerBtn makeBtnLabelByShowingType:UILabelShowingType_03];
         @jobs_weakify(self)
-        [_registerBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_registerBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"注册账号");
             [self forceComingToPushVC:MSRegisterVC.new requestParams:nil];
+            return nil;
         }];
     }return _registerBtn;
 }
@@ -264,9 +265,10 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [_loginBtn cornerCutToCircleWithCornerRadius:JobsWidth(24)];
         @jobs_weakify(self)
-        [_loginBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_loginBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"登录账号");
+            return nil;
         }];
     }return _loginBtn;
 }
@@ -291,10 +293,11 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [_agreeBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft
                                    imageTitleSpace:JobsWidth(4)];
         @jobs_weakify(self)
-        [_agreeBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_agreeBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"阅读并同意");
             x.selected = !x.selected;
+            return nil;
         }];
     }return _agreeBtn;
 }
@@ -314,9 +317,10 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [_privacyBtn makeBtnLabelByShowingType:UILabelShowingType_03];
         @jobs_weakify(self)
-        [_privacyBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_privacyBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"隐私政策");
+            return nil;
         }];
     }return _privacyBtn;
 }
@@ -352,9 +356,10 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [_userAgreementBtn makeBtnLabelByShowingType:UILabelShowingType_03];
         @jobs_weakify(self)
-        [_userAgreementBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_userAgreementBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             NSLog(@"用户协议");
+            return nil;
         }];
     }return _userAgreementBtn;
 }

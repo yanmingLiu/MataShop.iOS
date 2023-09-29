@@ -41,18 +41,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, UIViewControllerShakeType) {
+    UIViewControllerShakeNone,
+    UIViewControllerShakeBeganType,
+    UIViewControllerShakeCancelType,
+    UIViewControllerShakeEndType,
+};
+
 @interface UIViewController (Shake)
 
-@property(nonatomic,copy)jobsByIDBlock UIViewControllerShakeBeganBlock;
-@property(nonatomic,copy)jobsByIDBlock UIViewControllerShakeCancelBlock;
-@property(nonatomic,copy)jobsByIDBlock UIViewControllerShakeEndBlock;
 @property(nonatomic,strong)CMMotionManager *motionManager;
 
 -(void)invokeWhenViewDidLoadUsingSysFunc;
 -(void)invokeWhenViewDidAppearUsingCMMotionManager;
--(void)VC_ShakeBegan:(jobsByIDBlock)UIViewControllerShakeBeganBlock;
--(void)VC_ShakeCancel:(jobsByIDBlock)UIViewControllerShakeCancelBlock;
--(void)VC_ShakeEnd:(jobsByIDBlock)UIViewControllerShakeEndBlock;
 
 @end
 

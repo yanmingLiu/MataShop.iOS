@@ -7,8 +7,10 @@
 //  GitHub ：https://github.com/mengxianliang/XLBubbleTransition
 
 #import <UIKit/UIKit.h>
-@class XLBubbleTransition;
+#import <objc/runtime.h>
+#import "XLBubbleTransition.h"
 
+@class XLBubbleTransition;
 @interface UIViewController (XLBubbleTransition)
 <
 UINavigationControllerDelegate

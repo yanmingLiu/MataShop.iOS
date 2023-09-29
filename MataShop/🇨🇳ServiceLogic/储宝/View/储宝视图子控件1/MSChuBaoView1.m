@@ -120,11 +120,12 @@ static dispatch_once_t static_chuBaoView1OnceToken;
         [_withdrawBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
         
         @jobs_weakify(self)
-        [_withdrawBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_withdrawBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
             [WHToast toastErrMsg:Internationalization(@"提现")];
+            return nil;
         }];
         
     }return _rechargeBtn;
@@ -146,11 +147,12 @@ static dispatch_once_t static_chuBaoView1OnceToken;
         [_rechargeBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
         [_rechargeBtn layerBorderCor:RGBA_COLOR(136, 79, 2, 1) andBorderWidth:1];
         @jobs_weakify(self)
-        [_rechargeBtn jobsBtnClickEventBlock:^(UIButton *x) {
+        [_rechargeBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
             [self forceComingToPushVC:MSTopUpVC.new requestParams:@""];
+            return nil;
         }];
         
     }return _rechargeBtn;

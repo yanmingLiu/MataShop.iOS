@@ -17,7 +17,7 @@
     CTFontRef ctFont = CTFontCreateWithName((__bridge CFStringRef)font.fontName, font.pointSize, NULL);
     if (!ctFont) return nil;
     NSDictionary *attrs = @{ (__bridge id)kCTFontAttributeName:(__bridge id)ctFont };
-    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:text attributes:attrs];
+    NSAttributedString *attrString = [NSAttributedString.alloc initWithString:text attributes:attrs];
     CFRelease(ctFont);
     CTLineRef line = CTLineCreateWithAttributedString((__bridge CFTypeRef)attrString);
     if (!line) return nil;

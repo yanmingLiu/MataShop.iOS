@@ -49,9 +49,10 @@ static dispatch_once_t static_tipsView05OnceToken;
     self.tipsLab.text = Internationalization(@"暫無可用的存款渠道，請聯繫客服\n諮詢");
 
     @jobs_weakify(self)
-    [self.submitBtn jobsBtnClickEventBlock:^(id data) {
+    [self.submitBtn jobsBtnClickEventBlock:^id(id data) {
         @jobs_strongify(self)
 //        [self JobsTestPopView:@"联系客服"];
+        return nil;
     }];
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】

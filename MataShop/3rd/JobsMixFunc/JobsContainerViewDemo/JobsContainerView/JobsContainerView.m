@@ -105,7 +105,7 @@
 -(UIButton *)createButtonWithModel:(JobsBtnModel *)model{
     UIButton *button = nil;
     
-    if(HDDeviceSystemVersion.floatValue <= 15.0){
+    if(self.deviceSystemVersion.floatValue <= 15.0){
         button = [UIButton buttonWithType:UIButtonTypeCustom];
         SuppressWdeprecatedDeclarationsWarning(button.contentEdgeInsets = model.contentEdgeInsets;);
         button.normalTitle = model.normalTitle;
@@ -117,8 +117,8 @@
         UIButtonConfiguration *buttonConfig = UIButtonConfiguration.plainButtonConfiguration;
         buttonConfig.contentInsets = model.contentInsets;
         buttonConfig.image = model.normalImage;
-        buttonConfig.attributedTitle = [NSAttributedString.alloc initWithString:model.normalTitle
-                                                                     attributes:@{NSForegroundColorAttributeName:model.normalTitleColor}];
+        buttonConfig.attributedTitle = model.normalAttributedTitle ? : [NSAttributedString.alloc initWithString:model.normalTitle ? : Internationalization(@"暂无数据")
+                                                                                                             attributes:@{NSForegroundColorAttributeName:model.normalTitleColor}];
         button = [UIButton buttonWithConfiguration:buttonConfig primaryAction:nil];
     }
 

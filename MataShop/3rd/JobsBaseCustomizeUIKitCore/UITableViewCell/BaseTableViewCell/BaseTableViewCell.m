@@ -342,7 +342,7 @@ UITableViewCellProtocol_synthesize
     vm.textModel.textLineSpacing = 0;
     return [vm.textModel.text jobsTextHeightWithFont:vm.textModel.font
                                           lineHeight:vm.textModel.textLineSpacing
-                                        controlWidth:JobsMainScreen_WIDTH() - JobsWidth(200)].textHeight;
+                                        controlWidth:JobsMainScreen_WIDTH() - JobsWidth(200)].jobsHeight;
 }
 #pragma mark —— 协议属性合成set & get方法
 /// UIViewModelProtocol

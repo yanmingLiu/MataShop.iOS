@@ -8,28 +8,28 @@
 #import "NSObject+WHToast.h"
 
 @implementation NSObject (WHToast)
-/** 仅文字，展示在屏幕中间 */
+/// 仅文字，展示在屏幕中间
 +(void)toastMsg:(NSString *)msg{
     [WHToast showMessage:msg
                 duration:1.5
            finishHandler:nil];
 }
-/** 成功图标和文字，展示在屏幕中间 */
+/// 成功图标和文字，展示在屏幕中间
 +(void)toastSuccessMsg:(NSString *)successMsg{
     [WHToast showSuccessWithMessage:successMsg
                            duration:1.5
                       finishHandler:nil];
 }
-/** 失败图标和文字，展示在屏幕中间 */
+/// 失败图标和文字，展示在屏幕中间
 +(void)toastErrMsg:(NSString *)errMsg{
     [WHToast showErrorWithMessage:errMsg
                          duration:1.5
                     finishHandler:nil];
 }
-/** 延时操作 */
+/// 延时操作
 +(void)toastLoadingMsg:(NSString *)errMsg{
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"toastLoading" ofType:@"gif"];
+        NSString *path = [NSBundle.mainBundle pathForResource:@"toastLoading" ofType:@"gif"];
         NSData *data = [NSData dataWithContentsOfFile:path];
         UIImage *image = [UIImage sd_imageWithGIFData:data];
         [WHToast showImage:image

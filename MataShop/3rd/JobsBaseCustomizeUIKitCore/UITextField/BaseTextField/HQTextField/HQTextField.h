@@ -14,14 +14,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HQTextField : CJTextField
-
-
-/**
- * 显示警示框
- */
+/// 显示警示框
 - (void)showWarn;
-
-
 
 @end
 

@@ -9,18 +9,16 @@
 
 @implementation UISlider (Extra)
 
--(RACDisposable *)sliderAllTouchEventBlock:(jobsByIDBlock)subscribeNextBlock{
-    self.racDisposable = [[self rac_signalForControlEvents:UIControlEventAllTouchEvents] subscribeNext:^(__kindof UISlider * _Nullable x) {
+-(RACDisposable *)jobsSliderAllTouchEventBlock:(jobsByIDBlock)subscribeNextBlock{
+    return [[self rac_signalForControlEvents:UIControlEventAllTouchEvents] subscribeNext:^(__kindof UIButton * _Nullable x) {
         if(subscribeNextBlock) subscribeNextBlock(x);
-    }];return self.racDisposable;
+    }];
 }
 
--(RACDisposable *)sliderValueChangedEventBlock:(jobsByIDBlock)subscribeNextBlock{
-    self.racDisposable = [[self rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(__kindof UISlider * _Nullable x) {
+-(RACDisposable *)jobsSliderValueChangedEventBlock:(jobsByIDBlock)subscribeNextBlock{
+    return [[self rac_signalForControlEvents:UIControlEventValueChanged] subscribeNext:^(__kindof UIButton * _Nullable x) {
         if(subscribeNextBlock) subscribeNextBlock(x);
-    }];return self.racDisposable;
+    }];
 }
-
-
 
 @end

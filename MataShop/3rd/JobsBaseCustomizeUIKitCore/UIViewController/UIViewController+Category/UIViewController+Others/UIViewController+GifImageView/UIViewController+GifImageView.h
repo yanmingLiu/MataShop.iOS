@@ -6,6 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <objc/runtime.h>
+#import "JobsString.h"
 
 #if __has_include(<Masonry/Masonry.h>)
 #import <Masonry/Masonry.h>

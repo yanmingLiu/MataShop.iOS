@@ -19,7 +19,7 @@
 +(UIColor *)colorWithHexString:(NSString *)color
                          alpha:(CGFloat)alpha{
     //删除字符串中的空格
-    NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    NSString *cString = [color stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet].uppercaseString;
     // String should be 6 or 8 characters
     if ([cString length] < 6){
         return UIColor.clearColor;
@@ -62,7 +62,7 @@
 /// 将#格式的十六进制字符串转换为UIColor* 对外输出
 /// 使用示例：UIColor *color = [UIColor colorFromHexString:@"#EA0000"];
 +(UIColor *)colorFromHexString:(NSString *)hexString{
-    NSString *cleanedString = [hexString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *cleanedString = [hexString stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
     // 移除可能的 '#' 前缀
     if ([cleanedString hasPrefix:@"#"]) {
         cleanedString = [cleanedString substringFromIndex:1];
@@ -95,7 +95,7 @@
                              1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextFillRect(context, rect);
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

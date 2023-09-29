@@ -25,14 +25,26 @@
 }
 /// 点击时旋转180°，再点击时再转回来
 -(void)rotateHalfCycle{
-    [UIView beginAnimations:@"rotate" context:nil];
-    [UIView setAnimationDuration:.25f];
-    if(CGAffineTransformEqualToTransform(self.imageView.transform,CGAffineTransformIdentity)){
-        self.imageView.transform = CGAffineTransformMakeRotation(M_PI);
-    }else {
-        self.imageView.transform =CGAffineTransformIdentity;
+    if(self.deviceSystemVersion.floatValue >= 13.0f){
+        [UIView animateWithDuration:0.25 animations:^{
+            if (CGAffineTransformEqualToTransform(self.imageView.transform, CGAffineTransformIdentity)) {
+                self.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+            } else {
+                self.imageView.transform = CGAffineTransformIdentity;
+            }
+        }];
+    }else{
+        SuppressWdeprecatedDeclarationsWarning(
+                                               [UIView beginAnimations:@"rotate" context:nil];
+                                               [UIView setAnimationDuration:.25f];
+                                               if(CGAffineTransformEqualToTransform(self.imageView.transform,
+                                                                                    CGAffineTransformIdentity)){
+                                                   self.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+                                               }else {
+                                                   self.imageView.transform = CGAffineTransformIdentity;
+                                               }
+                                               [UIView commitAnimations];);
     }
-    [UIView commitAnimations];
 }
 
 @end

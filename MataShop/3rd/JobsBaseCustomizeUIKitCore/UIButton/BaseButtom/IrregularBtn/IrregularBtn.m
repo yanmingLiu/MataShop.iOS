@@ -9,7 +9,7 @@
 #import "IrregularBtn.h"
 
 @interface IrregularBtn()
-
+/// UI
 @property(nonatomic,strong)UIBezierPath *path;
 @property(nonatomic,strong)CAShapeLayer *shapLayer;
 

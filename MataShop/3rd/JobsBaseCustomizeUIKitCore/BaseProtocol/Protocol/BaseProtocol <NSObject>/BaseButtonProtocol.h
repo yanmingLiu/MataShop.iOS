@@ -22,14 +22,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)UIImage *normalImage;
 @property(nonatomic,strong)UIImage *normalBackgroundImage;
 @property(nonatomic,strong)NSString *normalTitle;
+@property(nonatomic,strong)NSString *normalSubTitle;
 @property(nonatomic,strong)UIColor *normalTitleColor;
+@property(nonatomic,strong)UIColor *normalSubTitleColor;
 @property(nonatomic,strong)NSAttributedString *normalAttributedTitle;// 富文本
 @property(nonatomic,strong)NSAttributedString *normalAttributedSubTitle;// 富文本
 /// Selected
 @property(nonatomic,strong)UIImage *selectedImage;
 @property(nonatomic,strong)UIImage *selectedBackgroundImage;
 @property(nonatomic,strong)NSString *selectedTitle;
+@property(nonatomic,strong)NSString *selectedSubTitle;
 @property(nonatomic,strong)UIColor *selectedTitleColor;
+@property(nonatomic,strong)UIColor *selectedSubTitleColor;
 @property(nonatomic,strong)NSAttributedString *selectedAttributedTitle;// 富文本
 @property(nonatomic,strong)NSAttributedString *selectedAttributedSubTitle;// 富文本
 #pragma mark —— JobsBtnModel
@@ -102,13 +106,17 @@ NS_ASSUME_NONNULL_END
 @synthesize normalImage = _normalImage;\
 @synthesize normalBackgroundImage = _normalBackgroundImage;\
 @synthesize normalTitle = _normalTitle;\
+@synthesize normalSubTitle = _normalSubTitle;\
 @synthesize normalTitleColor = _normalTitleColor;\
+@synthesize normalSubTitleColor = _normalSubTitleColor;\
 @synthesize normalAttributedTitle = _normalAttributedTitle;\
 @synthesize normalAttributedSubTitle = _normalAttributedSubTitle;\
 @synthesize selectedImage = _selectedImage;\
 @synthesize selectedBackgroundImage = _selectedBackgroundImage;\
 @synthesize selectedTitle = _selectedTitle;\
+@synthesize selectedSubTitle = _selectedSubTitle;\
 @synthesize selectedTitleColor = _selectedTitleColor;\
+@synthesize selectedSubTitleColor = _selectedSubTitleColor;\
 @synthesize selectedAttributedTitle = _selectedAttributedTitle;\
 @synthesize selectedAttributedSubTitle = _selectedAttributedSubTitle;\
 @synthesize backgroundColor = _backgroundColor;\

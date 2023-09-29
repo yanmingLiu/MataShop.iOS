@@ -22,11 +22,10 @@
     self.tipsLab.alpha = checkSubviews();
 #endif
 }
-static char *UIView_EmptyData_tipsLab = "UIView_EmptyData_tipsLab";
-@dynamic tipsLab;
 #pragma mark —— @property(nonatomic,strong)UILabel *tipsLab;
+@dynamic tipsLab;
 -(UILabel *)tipsLab{
-    UILabel *TipsLab = objc_getAssociatedObject(self, UIView_EmptyData_tipsLab);
+    UILabel *TipsLab = objc_getAssociatedObject(self, _cmd);
     if (!TipsLab) {
         TipsLab = UILabel.new;
         TipsLab.text = self.tipsTitle;
@@ -45,15 +44,14 @@ static char *UIView_EmptyData_tipsLab = "UIView_EmptyData_tipsLab";
 
 -(void)setTipsLab:(UILabel *)tipsLab{
     objc_setAssociatedObject(self,
-                             UIView_EmptyData_tipsLab,
+                             _cmd,
                              tipsLab,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-static char *UIView_EmptyData_tipsTitle = "UIView_EmptyData_tipsTitle";
-@dynamic tipsTitle;
 #pragma mark —— @property(nonatomic,strong)NSString *tipsTitle;
+@dynamic tipsTitle;
 -(NSString *)tipsTitle{
-    NSString *TipsTitle = objc_getAssociatedObject(self, UIView_EmptyData_tipsTitle);
+    NSString *TipsTitle = objc_getAssociatedObject(self, _cmd);
     if ([NSString isNullString:TipsTitle]) {
         TipsTitle = Internationalization(@"快来将我填满吧");
         [self setTipsTitle:TipsTitle];
@@ -62,7 +60,7 @@ static char *UIView_EmptyData_tipsTitle = "UIView_EmptyData_tipsTitle";
 
 -(void)setTipsTitle:(NSString *)tipsTitle{
     objc_setAssociatedObject(self,
-                             UIView_EmptyData_tipsTitle,
+                             _cmd,
                              tipsTitle,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

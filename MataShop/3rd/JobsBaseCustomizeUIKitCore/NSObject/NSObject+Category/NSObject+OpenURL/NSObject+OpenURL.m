@@ -8,26 +8,14 @@
 #import "NSObject+OpenURL.h"
 
 @implementation NSObject (OpenURL)
-
-static char *NSObject_OpenURL_messageComposeVC = "NSObject_OpenURL_messageComposeVC";
-@dynamic messageComposeVC;
-
-static char *NSObject_OpenURL_mailComposeVC = "NSObject_OpenURL_mailComposeVC";
-@dynamic mailComposeVC;
 /// 发送邮件
 /// @param mailComposeVC 外界自定义的发送邮件的VC，如传nil则用默认值
 -(void)sendMailWithComposeVC:(MFMailComposeViewController *_Nullable)mailComposeVC
                   completion:(void (^ __nullable)(void))completion{
-    UIViewController *vc = nil;
-    if ([self isKindOfClass:UIViewController.class]) {
-        vc = (UIViewController *)self;
-        if (MFMailComposeViewController.canSendMail) {
-            [vc presentViewController:mailComposeVC ? : self.mailComposeVC animated:YES completion:completion];
-        }else{
-            [WHToast toastMsg:@"打开邮件失败,请确保设备上至少启用了一个电子邮件帐户！"];
-        }
+    if (MFMailComposeViewController.canSendMail) {
+        [self.jobsGetCurrentViewController forceComingToPresentVC:mailComposeVC requestParams:nil completion:completion];
     }else{
-        NSLog(@"当前调用类不是UIViewController的子类,请检查!");
+        [WHToast toastMsg:Internationalization(@"打开邮件失败,请确保设备上至少启用了一个电子邮件帐户！")];
     }
 }
 #pragma mark —— MFMessageComposeViewControllerDelegate
@@ -41,7 +29,6 @@ static char *NSObject_OpenURL_mailComposeVC = "NSObject_OpenURL_mailComposeVC";
 }
 #pragma mark —— MFMailComposeViewControllerDelegate
 /**
- 
  [self presentViewController:self.messageComposeVC animated:YES completion:nil];
  */
 - (void)mailComposeController:(MFMailComposeViewController *)controller
@@ -69,11 +56,9 @@ completionOpenFailHandler:^{
         if (failBlock) failBlock(@1);
     }];
 }
-/**
-    跳转系统设置
-    在iOS10更新后，跳转到系统设置的具体的子页面被禁用，只能跳转到系统设置根目录
-    但是苹果又更新了URLscheme，亲测不可用
- */
+/// 跳转系统设置
+/// 在iOS10更新后，跳转到系统设置的具体的子页面被禁用，只能跳转到系统设置根目录
+/// 但是苹果又更新了URLscheme，亲测不可用
 -(void)pushToSysConfig{
     [self openURL:UIApplicationOpenSettingsURLString];
 }
@@ -122,70 +107,61 @@ completionOpenFailHandler:^{
        options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *_Nullable)options
 completionOpenSuccessHandler:(jobsByVoidBlock _Nullable)openSuccessBlock
 completionOpenFailHandler:(jobsByVoidBlock _Nullable)openFailBlock{
-    /**
-     URLStr不是字符串、为空、不能打开均不走以下逻辑判断
-     */
+    /// URLStr不是字符串、为空、不能打开均不走以下逻辑判断
     if (![URLStr isKindOfClass:NSString.class]) {
-        [WHToast toastMsg:@"URL类型不匹配，请检查"];
+        [WHToast toastMsg:Internationalization(@"URL类型不匹配，请检查")];
         return NO;
     }
     if ([NSString isNullString:URLStr]) {
-        [WHToast toastMsg:@"URL为空，请检查！"];
+        [WHToast toastMsg:Internationalization(@"URL为空，请检查！")];
         return NO;
     }
-    BOOL canOpen = [UIApplication.sharedApplication canOpenURL:[NSURL URLWithString:URLStr]];
+    BOOL canOpen = [UIApplication.sharedApplication canOpenURL:URLStr.jobsUrl];
     if (!canOpen) {
         [WHToast toastMsg:[NSString stringWithFormat:@"打开%@失败，请检查",URLStr]];
         return NO;
     }
-    
+
     options = options ? options : @{};
 
     if (@available(iOS 10.0, *)) {
         if ([UIApplication.sharedApplication respondsToSelector:@selector(openURL:options:completionHandler:)]) {
             if (canOpen) {
-                [UIApplication.sharedApplication openURL:[NSURL URLWithString:URLStr]
+                [UIApplication.sharedApplication openURL:URLStr.jobsUrl
                                                  options:options
                                        completionHandler:^(BOOL success) {
                     NSLog(@"打开成功");
-                    if (openSuccessBlock) {
-                        openSuccessBlock();
-                    }
+                    if (openSuccessBlock) openSuccessBlock();
                 }];return YES;
             }else{
-                if (openFailBlock) {
-                    openFailBlock();
-                }return NO;
+                if (openFailBlock)  openFailBlock();
+                return NO;
             }
         }else {
-            if (openFailBlock) {
-                openFailBlock();
-            }return NO;
+            if (openFailBlock) openFailBlock();
+            return NO;
         }
     }else {
         if (canOpen) {
             SuppressWdeprecatedDeclarationsWarning([UIApplication.sharedApplication openURL:[NSURL URLWithString:URLStr]]);
-            return YES;
-        }else{
-            if (openFailBlock) {
-                openFailBlock();
-            }return NO;
-        }
+        }else if (openFailBlock) openFailBlock();
+        return canOpen;
     }
 }
 #pragma mark —— @property(nonatomic,strong)MFMessageComposeViewController *messageComposeVC;
+@dynamic messageComposeVC;
 -(MFMessageComposeViewController *)messageComposeVC{
-    MFMessageComposeViewController *MessageComposeVC = objc_getAssociatedObject(self, NSObject_OpenURL_messageComposeVC);
+    MFMessageComposeViewController *MessageComposeVC = objc_getAssociatedObject(self, _cmd);
     if (!MessageComposeVC) {
         MessageComposeVC = MFMessageComposeViewController.new;
         //设置短信内容
-        MessageComposeVC.body = @"吃饭了没";
+        MessageComposeVC.body = Internationalization(@"吃饭了没");
         //设置收件人列表
         MessageComposeVC.recipients = @[@"10010",@"10086"];
         //设置代理
         MessageComposeVC.messageComposeDelegate = self;
         objc_setAssociatedObject(self,
-                                 NSObject_OpenURL_messageComposeVC,
+                                 _cmd,
                                  MessageComposeVC,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return MessageComposeVC;
@@ -193,19 +169,20 @@ completionOpenFailHandler:(jobsByVoidBlock _Nullable)openFailBlock{
 
 -(void)setMessageComposeVC:(MFMessageComposeViewController *)messageComposeVC{
     objc_setAssociatedObject(self,
-                             NSObject_OpenURL_messageComposeVC,
+                             _cmd,
                              messageComposeVC,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,strong)MFMailComposeViewController *mailComposeVC;
+@dynamic mailComposeVC;
 -(MFMailComposeViewController *)mailComposeVC{
-    MFMailComposeViewController *MailComposeVC = objc_getAssociatedObject(self, NSObject_OpenURL_mailComposeVC);
+    MFMailComposeViewController *MailComposeVC = objc_getAssociatedObject(self, _cmd);
     if (!MailComposeVC) {
         MailComposeVC = MFMailComposeViewController.new;
         //设置邮件主题
-        [MailComposeVC setSubject:@"测试邮件"];
+        [MailComposeVC setSubject:Internationalization(@"测试邮件")];
         //设置邮件内容
-        [MailComposeVC setMessageBody:@"测试内容" isHTML:NO];
+        [MailComposeVC setMessageBody:Internationalization(@"测试内容") isHTML:NO];
         //设置收件人列表
         [MailComposeVC setToRecipients:@[@"test@qq.com"]];
         //设置抄送人列表
@@ -213,7 +190,7 @@ completionOpenFailHandler:(jobsByVoidBlock _Nullable)openFailBlock{
         //设置代理
         MailComposeVC.mailComposeDelegate = self;
         objc_setAssociatedObject(self,
-                                 NSObject_OpenURL_mailComposeVC,
+                                 _cmd,
                                  MailComposeVC,
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }return MailComposeVC;
@@ -221,7 +198,7 @@ completionOpenFailHandler:(jobsByVoidBlock _Nullable)openFailBlock{
 
 -(void)setMailComposeVC:(MFMailComposeViewController *)mailComposeVC{
     objc_setAssociatedObject(self,
-                             NSObject_OpenURL_mailComposeVC,
+                             _cmd,
                              mailComposeVC,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

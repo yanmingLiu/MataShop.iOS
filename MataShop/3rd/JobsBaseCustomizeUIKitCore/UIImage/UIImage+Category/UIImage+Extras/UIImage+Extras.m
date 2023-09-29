@@ -28,7 +28,7 @@
     /// 获取位图上下文
     CGContextRef context = UIGraphicsGetCurrentContext();
     /// 使用color演示填充上下文
-    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextSetFillColorWithColor(context, color.CGColor);
     /// 渲染上下文
     CGContextFillRect(context, rect);
     /// 从上下文中获取图片
@@ -45,7 +45,7 @@
                            1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context,[color CGColor]);
+    CGContextSetFillColorWithColor(context,color.CGColor);
     CGContextFillRect(context, rect);
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -161,7 +161,7 @@
 }
 // 获取视频第一帧
 +(UIImage *)getVideoPreViewImage:(AVURLAsset *)asset{
-    AVAssetImageGenerator *assetGen = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    AVAssetImageGenerator *assetGen = [AVAssetImageGenerator.alloc initWithAsset:asset];
     assetGen.appliesPreferredTrackTransform = YES;
     CMTime time = CMTimeMakeWithSeconds(0.0, 600);
     NSError *error = nil;
@@ -169,7 +169,7 @@
     CGImageRef image = [assetGen copyCGImageAtTime:time
                                         actualTime:&actualTime
                                              error:&error];
-    UIImage *videoImage = [[UIImage alloc] initWithCGImage:image];
+    UIImage *videoImage = [UIImage.alloc initWithCGImage:image];
     CGImageRelease(image);
     return videoImage;
 }

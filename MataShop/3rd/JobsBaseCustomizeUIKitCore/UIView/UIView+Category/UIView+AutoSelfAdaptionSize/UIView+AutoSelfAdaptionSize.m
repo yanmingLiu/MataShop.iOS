@@ -41,7 +41,7 @@
         btn.titleLabel.adjustsFontSizeToFitWidth = YES;
     }
 }
-/**自适应宽度**/
+/// 自适应宽度
 -(CGRect)getFrameWithFreeWidth:(CGPoint)origin
                       maxHight:(CGFloat)maxHight{
     
@@ -73,7 +73,7 @@
         NSLog(@"Button");
     }return frame;
 }
-/**自适应高度**/
+/// 自适应高度
 -(CGRect)getFrameWithFreeHight:(CGPoint)origin
                       maxWidth:(CGFloat)maxWidth{
     CGRect frame = CGRectZero;
@@ -106,7 +106,7 @@
         NSLog(@"Button");
     }return frame;
 }
-/**自适应宽度--->可调整字间距**/
+/// 自适应宽度--->可调整字间距
 -(CGRect)getFrameWithFreeWidth:(CGPoint)origin
                       maxHight:(CGFloat)maxHight
                      textSpace:(CGFloat)textSpace{
@@ -133,7 +133,7 @@
         NSLog(@"Label");
     }return frame;
 }
-/**自适应高度--->可调整字间距和行间距**/
+/// 自适应高度--->可调整字间距和行间距
 -(CGRect)getFrameWithFreeHight:(CGPoint)origin
                       maxWidth:(CGFloat)maxWidth
                      textSpace:(CGFloat)textSpace

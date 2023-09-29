@@ -23,23 +23,25 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)CGFloat __block jobsLeft;
 @property(nonatomic,assign)CGFloat __block jobsRight;
 @property(nonatomic,assign)CGFloat __block jobsBottom;
+@property(nonatomic,assign)CGFloat __block jobsOffsetX;
+@property(nonatomic,assign)CGFloat __block jobsOffsetY;
 @property(nonatomic,assign)CGSize __block jobsSize;/// 二维尺寸
 @property(nonatomic,assign)CGRect __block jobsRect;
 @property(nonatomic,assign)CGPoint __block jobsPoint;
-@property(nonatomic,assign)UILayoutConstraintAxis axis;
-@property(nonatomic,assign)UIStackViewDistribution distribution;
-@property(nonatomic,assign)UIStackViewAlignment alignment;
+@property(nonatomic,assign)UILayoutConstraintAxis __block axis;
+@property(nonatomic,assign)UIStackViewDistribution __block distribution;
+@property(nonatomic,assign)UIStackViewAlignment __block alignment;
 #pragma mark —— UIButton 专用属性 — 图文的相对位置
-@property(nonatomic,assign)GLButtonEdgeInsetsStyle buttonEdgeInsetsStyle;
-@property(nonatomic,assign)CGFloat imageTitleSpace;
+@property(nonatomic,assign)GLButtonEdgeInsetsStyle __block buttonEdgeInsetsStyle;
+@property(nonatomic,assign)CGFloat __block imageTitleSpace;
 #pragma mark —— 关于 UITableViewCell 和 UICollectionViewCell
-@property(nonatomic,assign)CGFloat cellHeight;
-@property(nonatomic,assign)CGFloat heightForHeaderInSection;
-@property(nonatomic,assign)CGSize cellSize;
-@property(nonatomic,assign)CGSize tableHeaderViewSize;
-@property(nonatomic,assign)CGSize tableFooterViewSize;
-@property(nonatomic,assign)BOOL usesTableViewHeaderView;/// 默认不使用
-@property(nonatomic,assign)BOOL usesTableViewFooterView;/// 默认不使用
+@property(nonatomic,assign)CGFloat __block cellHeight;
+@property(nonatomic,assign)CGFloat __block heightForHeaderInSection;
+@property(nonatomic,assign)CGSize __block cellSize;
+@property(nonatomic,assign)CGSize __block tableHeaderViewSize;
+@property(nonatomic,assign)CGSize __block tableFooterViewSize;
+@property(nonatomic,assign)BOOL __block usesTableViewHeaderView;/// 默认不使用
+@property(nonatomic,assign)BOOL __block usesTableViewFooterView;/// 默认不使用
 /**
  控件之间的左右距离 offsetXForEach 和 offsetYForEach
  ❤️对单个cell的偏移，需要在cell的子类里面复写父类方法-(void)setFrame:(CGRect)frame；详见@implementation UITableViewCell (Margin)
@@ -77,6 +79,8 @@ NS_ASSUME_NONNULL_END
 @synthesize jobsLeft = _jobsLeft;\
 @synthesize jobsRight = _jobsRight;\
 @synthesize jobsBottom = _jobsBottom;\
+@synthesize jobsOffsetX = _jobsOffsetX;\
+@synthesize jobsOffsetY = _jobsOffsetY;\
 @synthesize jobsSize = _jobsSize;\
 @synthesize jobsRect = _jobsRect;\
 @synthesize jobsPoint = _jobsPoint;\
@@ -112,6 +116,8 @@ NS_ASSUME_NONNULL_END
 @dynamic jobsLeft;\
 @dynamic jobsRight;\
 @dynamic jobsBottom;\
+@dynamic jobsOffsetX;\
+@dynamic jobsOffsetY;\
 @dynamic jobsSize;\
 @dynamic jobsRect;\
 @dynamic jobsPoint;\
