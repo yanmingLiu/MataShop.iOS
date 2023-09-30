@@ -33,28 +33,26 @@
     self.rightView = self.customSysClearBtn;
     self.rightViewMode = UITextFieldViewModeWhileEditing;
 }
-#pragma mark —— SET | GET
+#pragma mark —— @property(nonatomic,strong)UIButton *customSysClearBtn;
+JobsKey(_customSysClearBtn)
 @dynamic customSysClearBtn;
 -(UIButton *)customSysClearBtn{
-    UIButton *CustomSysClearBtn = objc_getAssociatedObject(self, _cmd);
+    UIButton *CustomSysClearBtn = Jobs_getAssociatedObject(_customSysClearBtn);
     if (!CustomSysClearBtn) {
         CustomSysClearBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         CustomSysClearBtn.frame = CGRectMake(0.0f,0.0f,15.0f,15.0f);
         @jobs_weakify(self)
         [CustomSysClearBtn jobsBtnClickEventBlock:^id(UIButton *data) {
             @jobs_strongify(self)
-            self.text = @"";
+            self.text = Internationalization(@"");
             return nil;
         }];
-        [self setCustomSysClearBtn:CustomSysClearBtn];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_customSysClearBtn, CustomSysClearBtn)
     }return CustomSysClearBtn;
 }
 
 -(void)setCustomSysClearBtn:(UIButton *)customSysClearBtn{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             customSysClearBtn,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_customSysClearBtn, customSysClearBtn)
 }
 
 @end

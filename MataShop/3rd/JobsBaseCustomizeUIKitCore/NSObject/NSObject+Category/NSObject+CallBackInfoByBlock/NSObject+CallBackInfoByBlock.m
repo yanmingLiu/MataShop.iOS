@@ -172,489 +172,409 @@
 }
 /// 1、没有入参、没有返回值的回调
 #pragma mark —— @property(nonatomic,assign)jobsByVoidBlock voidBlock;/// 无入参，无返回值的回调
+JobsKey(_voidBlock)
 @dynamic voidBlock;
 -(jobsByVoidBlock)voidBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_voidBlock);
 }
 
 -(void)setVoidBlock:(jobsByVoidBlock)voidBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             voidBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_voidBlock, voidBlock)
 }
 /// 2、有（单一）入参、没有返回值的回调
 #pragma mark —— @property(nonatomic,assign)jobsByIDBlock objectBlock;/// 入参为ID类型，无返回值的回调
+JobsKey(_objectBlock)
 @dynamic objectBlock;
 -(jobsByIDBlock)objectBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_objectBlock);
 }
 
 -(void)setObjectBlock:(jobsByIDBlock)objectBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             objectBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_objectBlock, objectBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsBySELBlock selBlock;///入参为SEL，无返回值的回调
+JobsKey(_selBlock)
 @dynamic selBlock;
 -(jobsBySELBlock)selBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_selBlock);
 }
 
 -(void)setSelBlock:(jobsBySELBlock)selBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             selBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_selBlock, selBlock);
 }
 #pragma mark —— @property(nonatomic,assign)jobsByStringBlock stringBlock;///入参为NSString，无返回值的回调
+JobsKey(_stringBlock)
 @dynamic stringBlock;
 -(jobsByStringBlock)stringBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_stringBlock);
 }
 
 -(void)setStringBlock:(jobsByStringBlock)stringBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             stringBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_stringBlock, stringBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByGestureRecognizerBlock gestureRecognizerBlock;/// 入参为UIGestureRecognizer，无返回值的回调
+JobsKey(_gestureRecognizerBlock)
 @dynamic gestureRecognizerBlock;
 -(jobsByGestureRecognizerBlock)gestureRecognizerBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_gestureRecognizerBlock);
 }
 
 -(void)setGestureRecognizerBlock:(jobsByGestureRecognizerBlock)gestureRecognizerBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             gestureRecognizerBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_gestureRecognizerBlock, gestureRecognizerBlock)
 }
 /// 3、入参为基本数据类型、 且没有返回值的Block定义
 #pragma mark —— @property(nonatomic,assign)jobsByNSIntegerBlock NSIntegerBlock;/// 入参为NSInteger，无返回值的回调
+JobsKey(_NSIntegerBlock)
 @dynamic NSIntegerBlock;
 -(jobsByNSIntegerBlock)NSIntegerBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_NSIntegerBlock);
 }
 
 -(void)setNSIntegerBlock:(jobsByNSIntegerBlock)NSIntegerBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             NSIntegerBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_NSIntegerBlock, NSIntegerBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByNSUIntegerBlock NSUIntegerBlock;/// 入参为NSUInteger，无返回值的回调
+JobsKey(_NSUIntegerBlock)
 @dynamic NSUIntegerBlock;
 -(jobsByNSUIntegerBlock)NSUIntegerBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_NSUIntegerBlock);
 }
 
 -(void)setNSUIntegerBlock:(jobsByNSUIntegerBlock)NSUIntegerBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             NSUIntegerBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_NSUIntegerBlock, NSUIntegerBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByCGFloatBlock CGFloatBlock;/// 入参CGFloat，无返回值的回调
+JobsKey(_CGFloatBlock)
 @dynamic CGFloatBlock;
 -(jobsByCGFloatBlock)CGFloatBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_CGFloatBlock);
 }
 
 -(void)setCGFloatBlock:(jobsByCGFloatBlock)CGFloatBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             CGFloatBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_CGFloatBlock, CGFloatBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByBOOLBlock BOOLBlock;/// 入参为BOOL，无返回值的回调
+JobsKey(_BOOLBlock)
 @dynamic BOOLBlock;
 -(jobsByBOOLBlock)BOOLBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_BOOLBlock);
 }
 
 -(void)setBOOLBlock:(jobsByBOOLBlock)BOOLBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             BOOLBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_BOOLBlock, BOOLBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByIntBlock IntBlock;/// 入参为Int，无返回值的回调
+JobsKey(_IntBlock)
 @dynamic IntBlock;
 -(jobsByIntBlock)IntBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_IntBlock);
 }
 
 -(void)setIntBlock:(jobsByIntBlock)IntBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             IntBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_IntBlock, IntBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByUnsignedIntBlock UnsignedIntBlock;/// 入参为UnsignedInt，无返回值的回调
+JobsKey(_UnsignedIntBlock)
 @dynamic UnsignedIntBlock;
 -(jobsByUnsignedIntBlock)UnsignedIntBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_UnsignedIntBlock);
 }
 
 -(void)setUnsignedIntBlock:(jobsByUnsignedIntBlock)UnsignedIntBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             UnsignedIntBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_UnsignedIntBlock, UnsignedIntBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByFloatBlock FloatBlock;/// 入参为Float，无返回值的回调
+JobsKey(_FloatBlock)
 @dynamic FloatBlock;
 -(jobsByFloatBlock)FloatBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_FloatBlock);
 }
 
 -(void)setFloatBlock:(jobsByFloatBlock)FloatBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             FloatBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_FloatBlock, FloatBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByDoubleBlock DoubleBlock;/// 入参为Double，无返回值的回调
+JobsKey(_DoubleBlock)
 @dynamic DoubleBlock;
 -(jobsByDoubleBlock)DoubleBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_DoubleBlock);
 }
 
 -(void)setDoubleBlock:(jobsByDoubleBlock)DoubleBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             DoubleBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+ Jobs_setAssociatedCOPY_NONATOMIC(_DoubleBlock, DoubleBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByCharBlock CharBlock;/// 入参为Char，无返回值的回调
+JobsKey(_CharBlock)
 @dynamic CharBlock;
 -(jobsByCharBlock)CharBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_CharBlock);
 }
 
 -(void)setCharBlock:(jobsByCharBlock)CharBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             CharBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_CharBlock, CharBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByUnsignedCharBlock UnsignedCharBlock;/// 入参为IUnsignedChar，无返回值的回调
+JobsKey(_UnsignedCharBlock)
 @dynamic UnsignedCharBlock;
 -(jobsByUnsignedCharBlock)UnsignedCharBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_UnsignedCharBlock);
 }
 
 -(void)setUnsignedCharBlock:(jobsByUnsignedCharBlock)UnsignedCharBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             UnsignedCharBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_UnsignedCharBlock, UnsignedCharBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByShortBlock ShortBlock;/// 入参为Short，无返回值的回调
+JobsKey(_ShortBlock)
 @dynamic ShortBlock;
 -(jobsByShortBlock)ShortBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_ShortBlock);
 }
 
 -(void)setShortBlock:(jobsByShortBlock)ShortBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             ShortBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_ShortBlock, ShortBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByUnsignedShortBlock UnsignedShortBlock;/// 入参为UnsignedShort，无返回值的回调
+JobsKey(_UnsignedShortBlock)
 @dynamic UnsignedShortBlock;
 -(jobsByUnsignedShortBlock)UnsignedShortBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_UnsignedShortBlock);
 }
 
 -(void)setUnsignedShortBlock:(jobsByUnsignedShortBlock)UnsignedShortBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             UnsignedShortBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_UnsignedShortBlock, UnsignedShortBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByLongBlock LongBlock;/// 入参为Long，无返回值的回调
+JobsKey(_LongBlock)
 @dynamic LongBlock;
 -(jobsByLongBlock)LongBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_LongBlock);
 }
 
 -(void)setLongBlock:(jobsByLongBlock)LongBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             LongBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_LongBlock, LongBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByUnsignedLongBlock UnsignedLongBlock;/// 入参为UnsignedLong，无返回值的回调
+JobsKey(_UnsignedLongBlock)
 @dynamic UnsignedLongBlock;
 -(jobsByUnsignedLongBlock)UnsignedLongBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_UnsignedLongBlock);
 }
 
 -(void)setUnsignedLongBlock:(jobsByUnsignedLongBlock)UnsignedLongBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             UnsignedLongBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_UnsignedLongBlock, UnsignedLongBlock)
 }
 #pragma mark —— @property(nonatomic,assign)jobsByUnsignedLongLongBlock UnsignedLongLongBlock;/// 入参为IUnsignedLongLong，无返回值的回调
+JobsKey(_UnsignedLongLongBlock)
 @dynamic UnsignedLongLongBlock;
 -(jobsByUnsignedLongLongBlock)UnsignedLongLongBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_UnsignedLongLongBlock);
 }
 
 -(void)setUnsignedLongLongBlock:(jobsByUnsignedLongLongBlock)UnsignedLongLongBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             UnsignedLongLongBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_UnsignedLongLongBlock, UnsignedLongLongBlock)
 }
 /// 4、无入参、有返回值的回调
 #pragma mark —— @property(nonatomic,assign)JobsReturnIDByVoidBlock returnObjectByVoidBlock;/// 无入参，返回值为ID的回调
+JobsKey(_returnObjectByVoidBlock)
 @dynamic returnObjectByVoidBlock;
 -(JobsReturnIDByVoidBlock)returnObjectByVoidBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnObjectByVoidBlock);
 }
 
 -(void)setReturnObjectByVoidBlock:(JobsReturnIDByVoidBlock)returnObjectByVoidBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnObjectByVoidBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnObjectByVoidBlock, returnObjectByVoidBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnIDByGestureRecognizerBlock returnObjectByGestureRecognizerBlock;/// 入参为UIGestureRecognizer，返回值为ID的回调
+JobsKey(_returnObjectByGestureRecognizerBlock)
 @dynamic returnObjectByGestureRecognizerBlock;
 -(JobsReturnIDByGestureRecognizerBlock)returnObjectByGestureRecognizerBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnObjectByGestureRecognizerBlock);
 }
 
 -(void)setReturnObjectByGestureRecognizerBlock:(JobsReturnIDByGestureRecognizerBlock)returnObjectByGestureRecognizerBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnObjectByGestureRecognizerBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnObjectByGestureRecognizerBlock, returnObjectByGestureRecognizerBlock)
 }
 
 #pragma mark —— @property(nonatomic,assign)JobsReturnIDBySELBlock returnObjectBySELBlock;/// 入参为SEL，返回值为ID的回调
+JobsKey(_returnObjectBySELBlock)
 @dynamic returnObjectBySELBlock;
 -(JobsReturnIDBySELBlock)returnObjectBySELBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnObjectBySELBlock);
 }
 
 -(void)setReturnObjectBySELBlock:(JobsReturnIDBySELBlock)returnObjectBySELBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnObjectBySELBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnObjectBySELBlock, returnObjectBySELBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnIDByStringBlock returnObjectByStringBlock;/// 入参为NSString，返回值为ID的回调
+JobsKey(_returnObjectByStringBlock)
 @dynamic returnObjectByStringBlock;
 -(JobsReturnIDByStringBlock)returnObjectByStringBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnObjectByStringBlock);
 }
 
 -(void)setReturnObjectByStringBlock:(JobsReturnIDByStringBlock)returnObjectByStringBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnObjectByStringBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnObjectByStringBlock, returnObjectByStringBlock)
 }
 /// 6、有（单一）入参、有返回值的回调【返回入参类型】
 #pragma mark —— @property(nonatomic,assign)JobsReturnIDByIDBlock returnObjectBlock;
+JobsKey(_returnObjectBlock)
 @dynamic returnObjectBlock;
 -(JobsReturnIDByIDBlock)returnObjectBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnObjectBlock);
 }
 
 -(void)setReturnObjectBlock:(JobsReturnIDByIDBlock)returnObjectBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnObjectBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnObjectBlock, returnObjectBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByNSIntegerBlock returnNSIntegerBlock;/// 返回值为NSInteger的回调
+JobsKey(_returnNSIntegerBlock)
 @dynamic returnNSIntegerBlock;
 -(JobsReturnByNSIntegerBlock)returnNSIntegerBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnNSIntegerBlock);
 }
 
 -(void)setReturnNSIntegerBlock:(JobsReturnByNSIntegerBlock)returnNSIntegerBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnNSIntegerBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnNSIntegerBlock, returnNSIntegerBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByUIntegerBlock returnNSUIntegerBlock;/// 返回值为UInteger的回调
+JobsKey(_returnNSUIntegerBlock)
 @dynamic returnNSUIntegerBlock;
 -(JobsReturnByNSUIntegerBlock)returnNSUIntegerBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnNSUIntegerBlock);
 }
 
 -(void)setReturnUIntegerBlock:(JobsReturnByNSUIntegerBlock)returnNSUIntegerBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnNSUIntegerBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnNSUIntegerBlock, returnNSUIntegerBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByCGFloatBlock returnCGFloatBlock;/// 返回值为CGFloat的回调
+JobsKey(_returnCGFloatBlock)
 @dynamic returnCGFloatBlock;
 -(JobsReturnByCGFloatBlock)returnCGFloatBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnCGFloatBlock);
 }
 
 -(void)setReturnCGFloatBlock:(JobsReturnByCGFloatBlock)returnCGFloatBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnCGFloatBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnCGFloatBlock, returnCGFloatBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByBOOLBlock returnBOOLBlock;/// 返回值为BOOL的回调
+JobsKey(_returnBOOLBlock)
 @dynamic returnBOOLBlock;
 -(JobsReturnByBOOLBlock)returnBOOLBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnBOOLBlock);
 }
 
 -(void)setReturnBOOLBlock:(JobsReturnByBOOLBlock)returnBOOLBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnBOOLBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnBOOLBlock, returnBOOLBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByIntBlock returnIntBlock;/// 返回值为Int的回调
+JobsKey(_returnIntBlock)
 @dynamic returnIntBlock;
 -(JobsReturnByIntBlock)returnIntBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnIntBlock);
 }
 
 -(void)setReturnIntBlock:(JobsReturnByIntBlock)returnIntBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnIntBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnIntBlock, returnIntBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByUnsignedIntBlock returnUnsignedIntBlock;/// 返回值为UnsignedInt的回调
+JobsKey(_returnUnsignedIntBlock)
 @dynamic returnUnsignedIntBlock;
 -(JobsReturnByUnsignedIntBlock)returnUnsignedIntBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnUnsignedIntBlock);
 }
 
 -(void)setReturnUnsignedIntBlock:(JobsReturnByUnsignedIntBlock)returnUnsignedIntBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnUnsignedIntBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnUnsignedIntBlock, returnUnsignedIntBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByFloatBlock returnFloatBlock;/// 返回值为Float的回调
+JobsKey(_returnFloatBlock)
 @dynamic returnFloatBlock;
 -(JobsReturnByFloatBlock)returnFloatBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnFloatBlock);
 }
 
 -(void)setReturnFloatBlock:(JobsReturnByFloatBlock)returnFloatBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnFloatBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnFloatBlock, returnFloatBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByDoubleBlock returnDoubleBlock;/// 返回值为Double的回调
+JobsKey(_returnDoubleBlock)
 @dynamic returnDoubleBlock;
 -(JobsReturnByDoubleBlock)returnDoubleBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnDoubleBlock);
 }
 
 -(void)setReturnDoubleBlock:(JobsReturnByDoubleBlock)returnDoubleBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnDoubleBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnDoubleBlock, returnDoubleBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByCharBlock returnCharBlock;/// 返回值为Char的回调
+JobsKey(_returnCharBlock)
 @dynamic returnCharBlock;
 -(JobsReturnByCharBlock)returnCharBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnCharBlock);
 }
 
 -(void)setReturnCharBlock:(JobsReturnByCharBlock)returnCharBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnCharBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnCharBlock, returnCharBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByUnsignedCharBlock returnUnsignedCharBlock;/// 返回值为UnsignedChar的回调
+JobsKey(_returnUnsignedCharBlock)
 @dynamic returnUnsignedCharBlock;
 -(JobsReturnByUnsignedCharBlock)returnUnsignedCharBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnUnsignedCharBlock);
 }
 
 -(void)setReturnUnsignedCharBlock:(JobsReturnByUnsignedCharBlock)returnUnsignedCharBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnUnsignedCharBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnUnsignedCharBlock, returnUnsignedCharBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByShortBlock returnShortBlock;/// 返回值为Short的回调
+JobsKey(_returnShortBlock)
 @dynamic returnShortBlock;
 -(JobsReturnByShortBlock)returnShortBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnShortBlock);
 }
 
 -(void)setReturnShortBlock:(JobsReturnByShortBlock)returnShortBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnShortBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnShortBlock, returnShortBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByUnsignedShortBlock returnUnsignedShortBlock;/// 返回值为UnsignedShort的回调
+JobsKey(_returnUnsignedShortBlock)
 @dynamic returnUnsignedShortBlock;
 -(JobsReturnByUnsignedShortBlock)returnUnsignedShortBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnUnsignedShortBlock);
 }
 
 -(void)setReturnUnsignedShortBlock:(JobsReturnByUnsignedShortBlock)returnUnsignedShortBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnUnsignedShortBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnUnsignedShortBlock, returnUnsignedShortBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByLongBlock returnLongBlock;/// 返回值为Long的回调
+JobsKey(_returnLongBlock)
 @dynamic returnLongBlock;
 -(JobsReturnByNSIntegerBlock)returnLongBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnLongBlock);
 }
 
 -(void)setReturnLongBlock:(JobsReturnByNSIntegerBlock)returnLongBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnLongBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnLongBlock, returnLongBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByUnsignedLongBlock returnUnsignedLongBlock;/// 返回值为UnsignedLong的回调
+JobsKey(_returnUnsignedLongBlock)
 @dynamic returnUnsignedLongBlock;
 -(JobsReturnByUnsignedLongBlock)returnUnsignedLongBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnUnsignedLongBlock);
 }
 
 -(void)setReturnUnsignedLongBlock:(JobsReturnByUnsignedLongBlock)returnUnsignedLongBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnUnsignedLongBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnUnsignedLongBlock, returnUnsignedLongBlock)
 }
 #pragma mark —— @property(nonatomic,assign)JobsReturnByUnsignedLongLongBlock returnUnsignedLongLongBlock;/// 返回值为UnsignedLongLong的回调
+JobsKey(_returnUnsignedLongLongBlock)
 @dynamic returnUnsignedLongLongBlock;
 -(JobsReturnByUnsignedLongLongBlock)returnUnsignedLongLongBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_returnUnsignedLongLongBlock);
 }
 
 -(void)setReturnUnsignedLongLongBlock:(JobsReturnByUnsignedLongLongBlock)returnUnsignedLongLongBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             returnUnsignedLongLongBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_returnUnsignedLongLongBlock, returnUnsignedLongLongBlock)
 }
 
 @end

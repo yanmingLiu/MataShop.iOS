@@ -41,44 +41,40 @@
             break;
     }
 }
-@dynamic backBtnCategory;
 #pragma mark —— @property(nonatomic,strong)BackBtn *backBtnCategory;
+JobsKey(_backBtnCategory)
+@dynamic backBtnCategory;
 -(UIButton *)backBtnCategory{
-    UIButton *BackBtnCategory = objc_getAssociatedObject(self, _cmd);
+    UIButton *BackBtnCategory = Jobs_getAssociatedObject(_backBtnCategory);
     if (!BackBtnCategory) {
         BackBtnCategory = [self makeBackBtn:self.viewModel];
+        BackBtnCategory.normalImage = self.makeBackBtnImage;
         @jobs_weakify(self)
         [BackBtnCategory jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             [self backBtnClickEvent:x];
             return nil;
         }];
-        BackBtnCategory.normalImage = self.makeBackBtnImage;
-        [self setBackBtnCategory:BackBtnCategory];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_backBtnCategory, BackBtnCategory)
     }return BackBtnCategory;
 }
 
 -(void)setBackBtnCategory:(UIButton *)backBtnCategory{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             backBtnCategory,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_backBtnCategory, backBtnCategory)
 }
-@dynamic backBtnCategoryItem;
 #pragma mark —— @property(nonatomic,strong)UIBarButtonItem *backBtnCategoryItem;
+JobsKey(_backBtnCategoryItem)
+@dynamic backBtnCategoryItem;
 -(UIBarButtonItem *)backBtnCategoryItem{
-    UIBarButtonItem *BackBtnCategoryItem = objc_getAssociatedObject(self, _cmd);
+    UIBarButtonItem *BackBtnCategoryItem = Jobs_getAssociatedObject(_backBtnCategoryItem);
     if (!BackBtnCategoryItem) {
         BackBtnCategoryItem = [UIBarButtonItem.alloc initWithCustomView:self.backBtnCategory];
-        [self setBackBtnCategoryItem:BackBtnCategoryItem];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_backBtnCategoryItem, BackBtnCategoryItem)
     }return BackBtnCategoryItem;
 }
 
 -(void)setBackBtnCategoryItem:(UIBarButtonItem *)backBtnCategoryItem{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             backBtnCategoryItem,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_backBtnCategoryItem, backBtnCategoryItem)
 }
 
 @end

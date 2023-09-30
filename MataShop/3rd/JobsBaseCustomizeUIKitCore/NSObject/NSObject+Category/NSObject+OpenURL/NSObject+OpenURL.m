@@ -118,7 +118,7 @@ completionOpenFailHandler:(jobsByVoidBlock _Nullable)openFailBlock{
     }
     BOOL canOpen = [UIApplication.sharedApplication canOpenURL:URLStr.jobsUrl];
     if (!canOpen) {
-        [WHToast toastMsg:[NSString stringWithFormat:@"打开%@失败，请检查",URLStr]];
+        [WHToast toastMsg:[NSString stringWithFormat:Internationalization(@"打开%@失败，请检查"),URLStr]];
         return NO;
     }
 
@@ -149,9 +149,10 @@ completionOpenFailHandler:(jobsByVoidBlock _Nullable)openFailBlock{
     }
 }
 #pragma mark —— @property(nonatomic,strong)MFMessageComposeViewController *messageComposeVC;
+JobsKey(_messageComposeVC)
 @dynamic messageComposeVC;
 -(MFMessageComposeViewController *)messageComposeVC{
-    MFMessageComposeViewController *MessageComposeVC = objc_getAssociatedObject(self, _cmd);
+    MFMessageComposeViewController *MessageComposeVC = Jobs_getAssociatedObject(_messageComposeVC);
     if (!MessageComposeVC) {
         MessageComposeVC = MFMessageComposeViewController.new;
         //设置短信内容
@@ -160,23 +161,18 @@ completionOpenFailHandler:(jobsByVoidBlock _Nullable)openFailBlock{
         MessageComposeVC.recipients = @[@"10010",@"10086"];
         //设置代理
         MessageComposeVC.messageComposeDelegate = self;
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 MessageComposeVC,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_messageComposeVC, MessageComposeVC)
     }return MessageComposeVC;
 }
 
 -(void)setMessageComposeVC:(MFMessageComposeViewController *)messageComposeVC{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             messageComposeVC,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_messageComposeVC, messageComposeVC)
 }
 #pragma mark —— @property(nonatomic,strong)MFMailComposeViewController *mailComposeVC;
+JobsKey(_mailComposeVC)
 @dynamic mailComposeVC;
 -(MFMailComposeViewController *)mailComposeVC{
-    MFMailComposeViewController *MailComposeVC = objc_getAssociatedObject(self, _cmd);
+    MFMailComposeViewController *MailComposeVC = Jobs_getAssociatedObject(_mailComposeVC);
     if (!MailComposeVC) {
         MailComposeVC = MFMailComposeViewController.new;
         //设置邮件主题
@@ -189,18 +185,12 @@ completionOpenFailHandler:(jobsByVoidBlock _Nullable)openFailBlock{
         [MailComposeVC setCcRecipients:@[@"test1@qq.com"]];
         //设置代理
         MailComposeVC.mailComposeDelegate = self;
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 MailComposeVC,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mailComposeVC, MailComposeVC)
     }return MailComposeVC;
 }
 
 -(void)setMailComposeVC:(MFMailComposeViewController *)mailComposeVC{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mailComposeVC,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mailComposeVC, mailComposeVC)
 }
 
 @end

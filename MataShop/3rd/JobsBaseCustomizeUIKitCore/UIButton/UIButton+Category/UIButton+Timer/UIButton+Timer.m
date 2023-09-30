@@ -221,45 +221,40 @@
     self.backgroundColor = self.btnTimerConfig.endValue.bgCor;
     [self.btnTimerConfig.timerManager nsTimeDestroy];
 }
-#pragma mark SET | GET
-static char *UIButton_Timer_btnTimerConfig = "UIButton_Timer_btnTimerConfig";
-@dynamic btnTimerConfig;
 #pragma mark —— @property(nonatomic,strong)ButtonTimerModel *btnTimerConfig;
+JobsKey(_btnTimerConfig)
+@dynamic btnTimerConfig;
 -(ButtonTimerConfigModel *)btnTimerConfig{
-    ButtonTimerConfigModel *BtnTimerConfig = objc_getAssociatedObject(self, UIButton_Timer_btnTimerConfig);
+    ButtonTimerConfigModel *BtnTimerConfig = Jobs_getAssociatedObject(_btnTimerConfig);
     if (!BtnTimerConfig) {
         BtnTimerConfig = ButtonTimerConfigModel.new;
-        [self setBtnTimerConfig:BtnTimerConfig];
-    }
-    // 定时器运行时的Block
-    @jobs_weakify(self)
-    [BtnTimerConfig actionObjectBlock:^(TimerProcessModel *data) {
-        @jobs_strongify(self)
-        switch (data.timerProcessType) {
-            case TimerProcessType_ready:{
-                
-            }break;
-            case TimerProcessType_running:{
-                data.data.timerStyle = BtnTimerConfig.countDownBtnType;
-                NSLog(@"DDD = %f",data.data.anticlockwiseTime);
-                [self timerRuning:(long)data.data.anticlockwiseTime];//倒计时方法
-            }break;
-            case TimerProcessType_end:{
-                [self timerDestroy];
-            }break;
-            default:
-                break;
-        }
-        
-        if (self.objectBlock) self.objectBlock(data);
-    }];return BtnTimerConfig;
+        // 定时器运行时的Block
+        @jobs_weakify(self)
+        [BtnTimerConfig actionObjectBlock:^(TimerProcessModel *data) {
+            @jobs_strongify(self)
+            switch (data.timerProcessType) {
+                case TimerProcessType_ready:{
+                    
+                }break;
+                case TimerProcessType_running:{
+                    data.data.timerStyle = BtnTimerConfig.countDownBtnType;
+                    NSLog(@"DDD = %f",data.data.anticlockwiseTime);
+                    [self timerRuning:(long)data.data.anticlockwiseTime];//倒计时方法
+                }break;
+                case TimerProcessType_end:{
+                    [self timerDestroy];
+                }break;
+                default:
+                    break;
+            }
+            if (self.objectBlock) self.objectBlock(data);
+        }];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_btnTimerConfig, BtnTimerConfig)
+    }return BtnTimerConfig;
 }
 
 -(void)setBtnTimerConfig:(ButtonTimerConfigModel *)btnTimerConfig{
-    objc_setAssociatedObject(self,
-                             UIButton_Timer_btnTimerConfig,
-                             btnTimerConfig,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_btnTimerConfig, btnTimerConfig)
 }
 
 @end

@@ -17,25 +17,25 @@
                                                 usingBlock:^(NSNotification * _Nonnull notification) {
         @jobs_strongify(self)
         NSString *notificationName = notification.name;
-        if (objc_getAssociatedObject(self, UIView_ZFPlayer_avPlayerManager)) {
+        if (objc_getAssociatedObject(self, _avPlayerManager)) {
             [self.avPlayerManager stop];
         }
         
-        if (objc_getAssociatedObject(self, UIView_ZFPlayer_ijkPlayerManager)) {
+        if (objc_getAssociatedObject(self, _ijkPlayerManager)) {
             [self.ijkPlayerManager stop];
         }
     }];
 }
 #pragma mark —— @property(nonatomic,strong,nullable)ZFPlayerController *playerCtr;
-static char *UIView_ZFPlayer_playerCtr = "UIView_ZFPlayer_playerCtr";
+JobsKey(_playerCtr)
 @dynamic playerCtr;
 -(ZFPlayerController *)playerCtr{
-    ZFPlayerController *PlayerCtr = objc_getAssociatedObject(self, UIView_ZFPlayer_playerCtr);
+    ZFPlayerController *PlayerCtr = Jobs_getAssociatedObject(_playerCtr);
     if (!PlayerCtr) {
-        if (objc_getAssociatedObject(self, UIView_ZFPlayer_avPlayerManager)) {
+        if (objc_getAssociatedObject(self, _avPlayerManager)) {
             @jobs_weakify(self)
-            PlayerCtr = [[ZFPlayerController alloc] initWithPlayerManager:self.avPlayerManager
-                                                            containerView:self];
+            PlayerCtr = [ZFPlayerController.alloc initWithPlayerManager:self.avPlayerManager
+                                                          containerView:self];
             PlayerCtr.controlView = self.customPlayerControlView;
             NSLog(@"%@",PlayerCtr.controlView);
             PlayerCtr.muted = YES;//静音播放
@@ -45,7 +45,7 @@ static char *UIView_ZFPlayer_playerCtr = "UIView_ZFPlayer_playerCtr";
             }];
         }
         
-        if (objc_getAssociatedObject(self, UIView_ZFPlayer_ijkPlayerManager)) {
+        if (objc_getAssociatedObject(self, _ijkPlayerManager)) {
             @jobs_weakify(self)
             PlayerCtr = [ZFPlayerController.alloc initWithPlayerManager:self.ijkPlayerManager
                                                           containerView:self];
@@ -57,21 +57,18 @@ static char *UIView_ZFPlayer_playerCtr = "UIView_ZFPlayer_playerCtr";
                 [self.ijkPlayerManager replay];//设置循环播放
             }];
         }
-        [self setPlayerCtr:PlayerCtr];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_playerCtr, PlayerCtr)
     }return PlayerCtr;
 }
 
 -(void)setPlayerCtr:(ZFPlayerController *)playerCtr{
-    objc_setAssociatedObject(self,
-                             UIView_ZFPlayer_playerCtr,
-                             playerCtr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_playerCtr, playerCtr)
 }
 #pragma mark —— @property(nonatomic,strong,nullable)ZFAVPlayerManager *avPlayerManager;//默认不支持FLV流视频格式的
-static char *UIView_ZFPlayer_avPlayerManager = "UIView_ZFPlayer_avPlayerManager";
+JobsKey(_avPlayerManager)
 @dynamic avPlayerManager;
 -(ZFAVPlayerManager *)avPlayerManager{
-    ZFAVPlayerManager *AVPlayerManager = objc_getAssociatedObject(self, UIView_ZFPlayer_avPlayerManager);
+    ZFAVPlayerManager *AVPlayerManager = Jobs_getAssociatedObject(_avPlayerManager);
     if (!AVPlayerManager) {
         AVPlayerManager = ZFAVPlayerManager.new;
         AVPlayerManager.shouldAutoPlay = YES;
@@ -80,50 +77,41 @@ static char *UIView_ZFPlayer_avPlayerManager = "UIView_ZFPlayer_avPlayerManager"
 //            AVPlayerManager.assetURL = str.jobsUrl;
 //            AVPlayerManager.assetURL = [NSURL fileURLWithPath:[NSBundle.mainBundle pathForResource:@"iph_X" ofType:@"mp4"]];
 //        }
-        [self setAvPlayerManager:AVPlayerManager];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_avPlayerManager, AVPlayerManager)
     }return AVPlayerManager;
 }
 
 -(void)setAvPlayerManager:(ZFAVPlayerManager *)avPlayerManager{
-    objc_setAssociatedObject(self,
-                             UIView_ZFPlayer_avPlayerManager,
-                             avPlayerManager,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_avPlayerManager, avPlayerManager)
 }
 #pragma mark —— @property(nonatomic,strong,nullable)ZFIJKPlayerManager *ijkPlayerManager;//ZFPlayer的作者告诉我：如果要兼容FLV流视频格式请用这个
-static char *UIView_ZFPlayer_ijkPlayerManager = "UIView_ZFPlayer_ijkPlayerManager";
+JobsKey(_ijkPlayerManager)
 @dynamic ijkPlayerManager;
 -(ZFIJKPlayerManager *)ijkPlayerManager{
-    ZFIJKPlayerManager *IJKPlayerManager = objc_getAssociatedObject(self, UIView_ZFPlayer_ijkPlayerManager);
+    ZFIJKPlayerManager *IJKPlayerManager = Jobs_getAssociatedObject(_ijkPlayerManager);
     if (!IJKPlayerManager) {
         IJKPlayerManager = ZFIJKPlayerManager.new;
-        [self setIjkPlayerManager:IJKPlayerManager];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_ijkPlayerManager, IJKPlayerManager)
     }return IJKPlayerManager;
 }
 
 -(void)setIjkPlayerManager:(ZFIJKPlayerManager *)ijkPlayerManager{
-    objc_setAssociatedObject(self,
-                             UIView_ZFPlayer_ijkPlayerManager,
-                             ijkPlayerManager,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_ijkPlayerManager, ijkPlayerManager)
 }
 #pragma mark —— @property(nonatomic,strong,nullable)CustomZFPlayerControlView *customPlayerControlView;
-static char *UIView_ZFPlayer_customPlayerControlView = "UIView_ZFPlayer_customPlayerControlView";
+JobsKey(_customPlayerControlView)
 @dynamic customPlayerControlView;
 -(CustomZFPlayerControlView *)customPlayerControlView{
-    CustomZFPlayerControlView *playerControlView = objc_getAssociatedObject(self, UIView_ZFPlayer_customPlayerControlView);
+    CustomZFPlayerControlView *playerControlView = Jobs_getAssociatedObject(_customPlayerControlView);
     if (!playerControlView) {
         playerControlView = CustomZFPlayerControlView.new;
 //        playerControlView.frame = self.bounds;
-        [self setCustomPlayerControlView:playerControlView];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_customPlayerControlView, playerControlView)
     }return playerControlView;
 }
 
 -(void)setCustomPlayerControlView:(CustomZFPlayerControlView *)customPlayerControlView{
-    objc_setAssociatedObject(self,
-                             UIView_ZFPlayer_customPlayerControlView,
-                             customPlayerControlView,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_customPlayerControlView, customPlayerControlView)
 }
 
 @end

@@ -9,9 +9,10 @@
 
 @implementation UIViewController (GifImageView)
 #pragma mark —— @property(nonatomic,strong)UIImageView *gifImageView;
+JobsKey(_gifImageView)
 @dynamic gifImageView;
 -(UIImageView *)gifImageView{
-    UIImageView *GifImageView = objc_getAssociatedObject(self, _cmd);
+    UIImageView *GifImageView = Jobs_getAssociatedObject(_gifImageView);
     if (!GifImageView) {
         GifImageView = UIImageView.new;
         GifImageView.image = self.image;
@@ -19,64 +20,55 @@
         [GifImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);
         }];
-        [self setGifImageView:GifImageView];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_gifImageView, GifImageView)
     }return GifImageView;
 }
 
 -(void)setGifImageView:(UIImageView *)gifImageView{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             gifImageView,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_gifImageView, gifImageView)
 }
 
 #pragma mark —— @property(nonatomic,strong)NSString *path;
+JobsKey(_path)
 @dynamic path;
 -(NSString *)path{
-    NSString *Path = objc_getAssociatedObject(self, _cmd);
+    NSString *Path = Jobs_getAssociatedObject(_path);
     if (![NSString isNullString:Path]) {
         Path = [NSBundle.mainBundle pathForResource:@"GIF大图" ofType:@"gif"];
-        [self setPath:Path];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_path, Path)
     }return Path;
 }
 
 -(void)setPath:(NSString *)path{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             path,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_path, path)
 }
 #pragma mark —— @property(nonatomic,strong)NSData *data;
+JobsKey(_data)
 @dynamic data;
 -(NSData *)data{
-    NSData *Data = objc_getAssociatedObject(self, _cmd);
+    NSData *Data = Jobs_getAssociatedObject(_data);
     if (!Data) {
         Data = [NSData dataWithContentsOfFile:self.path];
-        [self setData:Data];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_data, Data);
     }return Data;
 }
 
 -(void)setData:(NSData *)data{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             data,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_data, data);
 }
 #pragma mark —— @property(nonatomic,strong)UIImage *image;
+JobsKey(_image)
 @dynamic image;
 -(UIImage *)image{
-    UIImage *img = objc_getAssociatedObject(self, _cmd);
+    UIImage *img = Jobs_getAssociatedObject(_image);
     if (!img) {
         img = [UIImage sd_imageWithGIFData:self.data];
-        [self setImage:img];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_image, img)
     }return img;
 }
 
 -(void)setImage:(UIImage *)image{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             image,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_image, image)
 }
 
 @end

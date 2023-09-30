@@ -7,18 +7,15 @@
 
 #import "NSObject+HXPhotoPicker.h"
 
-@implementation HXPhotoPickerModel
-
-@end
-
 @implementation NSObject (HXPhotoPicker)
-
+#pragma mark —— 一些公有方法
 /// 弹出系统相册选择页面
 -(void)invokeSysPhotoAlbumSuccessBlock:(jobsByIDBlock _Nullable)successBlock
                              failBlock:(jobsByIDBlock _Nullable)failBlock{
     /// 请求相册权限
-//    @jobs_weakify(self)
+    @jobs_weakify(self)
     [ECPrivacyCheckGatherTool requestPhotosAuthorizationWithCompletionHandler:^(BOOL granted) {
+        @jobs_strongify(self)
         if (granted) {
             if ([self isKindOfClass:UIViewController.class]) {
                 UIViewController *viewController = (UIViewController *)self;
@@ -56,8 +53,9 @@
                          failBlock:(jobsByIDBlock _Nullable)failBlock{
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         /// 请求相机📷权限
-//        @jobs_weakify(self)
+        @jobs_weakify(self)
         [ECPrivacyCheckGatherTool requestCameraAuthorizationWithCompletionHandler:^(BOOL granted) {
+            @jobs_strongify(self)
             if (granted) {
                 if ([self isKindOfClass:UIViewController.class]) {
                     UIViewController *viewController = (UIViewController *)self;
@@ -86,9 +84,10 @@
     }
 }
 #pragma mark —— @property(nonatomic,strong)HXPhotoManager *photoManager;//选取图片的数据管理类
+JobsKey(_photoManager)
 @dynamic photoManager;
 -(HXPhotoManager *)photoManager{
-    HXPhotoManager *PhotoManager = objc_getAssociatedObject(self, _cmd);
+    HXPhotoManager *PhotoManager = Jobs_getAssociatedObject(_photoManager);
     if (!PhotoManager) {
         PhotoManager = [HXPhotoManager.alloc initWithType:HXPhotoManagerSelectedTypePhotoAndVideo];
         PhotoManager.configuration.localFileName = [self.appDisplayName stringByAppendingString:@"Models"];
@@ -109,79 +108,62 @@
             /// 只会影响 viewWillAppear 和 viewWillDisappear 两个生命周期
             [viewController.navigationController setNavigationBarHidden:NO animated:NO];
         };
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 PhotoManager,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_photoManager, PhotoManager)
     }return PhotoManager;
 }
 
 -(void)setPhotoManager:(HXPhotoManager *)photoManager{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             photoManager,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_photoManager, photoManager)
 }
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <HXPhotoModel *>*__block historyPhotoDataMutArr;//与之相对应的是self.photoManager.afterSelectedArray
+JobsKey(_historyPhotoDataMutArr)
 @dynamic historyPhotoDataMutArr;
 -(NSMutableArray<HXPhotoModel *> *)historyPhotoDataMutArr{
-    NSMutableArray <HXPhotoModel *>*HistoryPhotoDataMutArr = objc_getAssociatedObject(self, _cmd);
+    NSMutableArray <HXPhotoModel *>*HistoryPhotoDataMutArr = Jobs_getAssociatedObject(_historyPhotoDataMutArr);
     if (!HistoryPhotoDataMutArr) {
         /// < 保存本地的方法 >
         /// 保存本地的方法都是在主线程调用
         /// 获取保存在本地文件的模型数组
         /// @param addData 是否添加到manager的数据中
         HistoryPhotoDataMutArr = [NSMutableArray arrayWithArray:[self.photoManager getLocalModelsInFileWithAddData:YES]];
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 HistoryPhotoDataMutArr,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_historyPhotoDataMutArr, HistoryPhotoDataMutArr)
     }return HistoryPhotoDataMutArr;
 }
 
 -(void)setHistoryPhotoDataMutArr:(NSMutableArray<HXPhotoModel *> *)historyPhotoDataMutArr{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             historyPhotoDataMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_historyPhotoDataMutArr, historyPhotoDataMutArr)
 }
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <HXPhotoModel *>*__block photosDataMutArr;
+JobsKey(_photosDataMutArr)
 @dynamic photosDataMutArr;
 -(NSMutableArray<HXPhotoModel *> *)photosDataMutArr{
-    NSMutableArray <HXPhotoModel *>*PhotosDataMutArr = objc_getAssociatedObject(self, _cmd);
+    NSMutableArray <HXPhotoModel *>*PhotosDataMutArr = Jobs_getAssociatedObject(_photosDataMutArr);
     if (!PhotosDataMutArr) {
         PhotosDataMutArr = NSMutableArray.array;
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 PhotosDataMutArr,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_photosDataMutArr, PhotosDataMutArr)
     }return PhotosDataMutArr;
 }
 
 -(void)setPhotosDataMutArr:(NSMutableArray<HXPhotoModel *> *)photosDataMutArr{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             photosDataMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_photosDataMutArr, photosDataMutArr)
 }
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <HXPhotoModel *>*__block videosDataMutArr;
+JobsKey(_videosDataMutArr)
 @dynamic videosDataMutArr;
 -(NSMutableArray<HXPhotoModel *> *)videosDataMutArr{
-    NSMutableArray <HXPhotoModel *>*VideosDataMutArr = objc_getAssociatedObject(self, _cmd);
+    NSMutableArray <HXPhotoModel *>*VideosDataMutArr = Jobs_getAssociatedObject(_videosDataMutArr);
     if (!VideosDataMutArr) {
         VideosDataMutArr = NSMutableArray.array;
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 VideosDataMutArr,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_videosDataMutArr, VideosDataMutArr)
     }return VideosDataMutArr;
 }
 
 -(void)setVideosDataMutArr:(NSMutableArray<HXPhotoModel *> *)videosDataMutArr{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             videosDataMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_videosDataMutArr, videosDataMutArr)
 }
+
+@end
+
+@implementation HXPhotoPickerModel
 
 @end

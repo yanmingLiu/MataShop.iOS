@@ -33,17 +33,14 @@
     return self.view;
 }
 #pragma mark —— @property(nonatomic,strong)Class scrollViewClass;
+JobsKey(_scrollViewClass)
 @dynamic scrollViewClass;
 -(Class)scrollViewClass{
-    Class ScrollViewClass = objc_getAssociatedObject(self, _cmd);
-    return ScrollViewClass;
+    return Jobs_getAssociatedObject(_scrollViewClass);
 }
 
 -(void)setScrollViewClass:(Class)scrollViewClass{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             scrollViewClass,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_scrollViewClass, scrollViewClass)
 }
 #pragma mark —— @property(nonatomic,strong)UIScrollView *scrollView;
 @dynamic scrollView;
@@ -83,16 +80,14 @@
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 #pragma mark —— @property(nonatomic,copy)void(^scrollCallback)(UIScrollView *scrollView);
+JobsKey(_scrollCallback)
 @dynamic scrollCallback;
--(void)setScrollCallback:(void (^)(UIScrollView * _Nonnull))scrollCallback{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             scrollCallback,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+-(void (^)(UIScrollView * _Nonnull))scrollCallback{
+    return Jobs_getAssociatedObject(_scrollCallback);
 }
 
--(void (^)(UIScrollView * _Nonnull))scrollCallback{
-    return objc_getAssociatedObject(self, _cmd);
+-(void)setScrollCallback:(void (^)(UIScrollView * _Nonnull))scrollCallback{
+    Jobs_setAssociatedCOPY_NONATOMIC(_scrollCallback, scrollCallback)
 }
 
 @end

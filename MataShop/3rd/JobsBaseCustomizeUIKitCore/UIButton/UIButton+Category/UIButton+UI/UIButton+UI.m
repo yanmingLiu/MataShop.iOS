@@ -157,202 +157,156 @@
 -(nullable UIImage *)backgroundImageForSelectedState{
     return [self backgroundImageForState:UIControlStateSelected];
 }
-@dynamic titleFont;
 #pragma mark —— @property(nonatomic,strong)UIFont *titleFont;
+JobsKey(_titleFont)
+@dynamic titleFont;
 -(UIFont *)titleFont{
-    UIFont *TitleFont = objc_getAssociatedObject(self, _cmd);
+    UIFont *TitleFont = Jobs_getAssociatedObject(_titleFont);
     if (!TitleFont) {
         TitleFont = UIFontWeightBoldSize(12);
-        [self setTitleFont:TitleFont];
+        self.titleLabel.font = TitleFont;
+        Jobs_setAssociatedRETAIN_NONATOMIC(_titleFont, TitleFont);
     }return TitleFont;
 }
 
 -(void)setTitleFont:(UIFont *)titleFont{
     self.titleLabel.font = titleFont;
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             titleFont,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_titleFont, titleFont);
 }
-@dynamic normalImage;
 #pragma mark —— @property(nonatomic,strong)UIImage *normalImage;
+JobsKey(_normalImage)
+@dynamic normalImage;
 -(UIImage *)normalImage{
-    UIImage *NormalImage = objc_getAssociatedObject(self, _cmd);
-    return NormalImage;
+    return Jobs_getAssociatedObject(_normalImage);
 }
 
 -(void)setNormalImage:(UIImage *)normalImage{
-    if (normalImage) {
-        [self setImage:normalImage forState:UIControlStateNormal];
-    }
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             normalImage,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (normalImage) [self setImage:normalImage forState:UIControlStateNormal];
+    Jobs_setAssociatedRETAIN_NONATOMIC(_normalImage, normalImage)
 }
-@dynamic normalBackgroundImage;
 #pragma mark —— @property(nonatomic,strong)UIImage *normalBackgroundImage;
+JobsKey(_normalBackgroundImage)
+@dynamic normalBackgroundImage;
 -(UIImage *)normalBackgroundImage{
-    UIImage *NormalBackgroundImage = objc_getAssociatedObject(self, _cmd);
-    return NormalBackgroundImage;
+    return Jobs_getAssociatedObject(_normalBackgroundImage);
 }
 
 -(void)setNormalBackgroundImage:(UIImage *)normalBackgroundImage{
-    if (normalBackgroundImage) {
-        [self setBackgroundImage:normalBackgroundImage forState:UIControlStateNormal];
-    }
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             normalBackgroundImage,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (normalBackgroundImage) [self setBackgroundImage:normalBackgroundImage forState:UIControlStateNormal];
+    Jobs_setAssociatedRETAIN_NONATOMIC(_normalBackgroundImage, normalBackgroundImage)
 }
-@dynamic normalTitle;
 #pragma mark —— @property(nonatomic,strong)NSString *normalTitle;
+@dynamic normalTitle;
+JobsKey(_normalTitle)
 -(NSString *)normalTitle{
-    NSString *NormalTitle = objc_getAssociatedObject(self, _cmd);
-    if (!NormalTitle) {
-        NormalTitle = Internationalization(@"normalTitle");
-        [self setNormalTitle:NormalTitle];
-    }return NormalTitle;
+    return Jobs_getAssociatedObject(_normalTitle);
 }
 
 -(void)setNormalTitle:(NSString *)normalTitle{
     [self setTitle:normalTitle forState:UIControlStateNormal];
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             normalTitle,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_normalTitle, normalTitle)
 }
-@dynamic normalTitleColor;
 #pragma mark —— @property(nonatomic,strong)UIColor *normalTitleColor;
+JobsKey(_normalTitleColor)
+@dynamic normalTitleColor;
 -(UIColor *)normalTitleColor{
-    UIColor *NormalTitleColor = objc_getAssociatedObject(self, _cmd);
+    UIColor *NormalTitleColor = Jobs_getAssociatedObject(_normalTitleColor);
     if (!NormalTitleColor) {
         NormalTitleColor = JobsBlackColor;
-        [self setNormalTitleColor:NormalTitleColor];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_normalTitleColor, NormalTitleColor);
     }return NormalTitleColor;
 }
 
 -(void)setNormalTitleColor:(UIColor *)normalTitleColor{
     [self setTitleColor:normalTitleColor forState:UIControlStateNormal];
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             normalTitleColor,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_normalTitleColor, normalTitleColor);
 }
-@dynamic normalAttributedTitle;
 #pragma mark —— @property(nonatomic,strong)NSAttributedString *normalAttributedTitle;
+JobsKey(_normalAttributedTitle)
+@dynamic normalAttributedTitle;
 -(NSAttributedString *)normalAttributedTitle{
-    NSAttributedString *NormalAttributedTitle = objc_getAssociatedObject(self, _cmd);
-    return NormalAttributedTitle;
+    return Jobs_getAssociatedObject(_normalAttributedTitle);
 }
 
 -(void)setNormalAttributedTitle:(NSAttributedString *)normalAttributedTitle{
     [self setAttributedTitle:normalAttributedTitle forState:UIControlStateNormal];
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             normalAttributedTitle,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_normalAttributedTitle, normalAttributedTitle)
 }
-@dynamic selectedImage;
 #pragma mark —— @property(nonatomic,strong)UIImage *selectedImage;
+JobsKey(_selectedImage)
+@dynamic selectedImage;
 -(UIImage *)selectedImage{
-    UIImage *SelectedImage = objc_getAssociatedObject(self, _cmd);
-    return SelectedImage;
+    return Jobs_getAssociatedObject(_selectedImage);
 }
 
 -(void)setSelectedImage:(UIImage *)selectedImage{
     [self setImage:selectedImage forState:UIControlStateSelected];
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             selectedImage,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_selectedImage, selectedImage)
 }
-@dynamic selectedBackgroundImage;
 #pragma mark —— @property(nonatomic,strong)UIImage *selectedBackgroundImage;
+JobsKey(_selectedBackgroundImage)
+@dynamic selectedBackgroundImage;
 -(UIImage *)selectedBackgroundImage{
-    UIImage *SelectedBackgroundImage = objc_getAssociatedObject(self, _cmd);
-    return SelectedBackgroundImage;
+    return Jobs_getAssociatedObject(_selectedBackgroundImage);
 }
 
 -(void)setSelectedBackgroundImage:(UIImage *)selectedBackgroundImage{
     [self setBackgroundImage:selectedBackgroundImage forState:UIControlStateSelected];
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             selectedBackgroundImage,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_selectedBackgroundImage, selectedBackgroundImage)
 }
-@dynamic selectedTitle;
 #pragma mark —— @property(nonatomic,strong)NSString *selectedTitle;
+JobsKey(_selectedTitle)
+@dynamic selectedTitle;
 -(NSString *)selectedTitle{
-    NSString *selectedTitle = objc_getAssociatedObject(self, _cmd);
-    if (!selectedTitle) {
-        selectedTitle = Internationalization(@"selectedTitle");
-        [self setSelectedTitle:selectedTitle];
-    }return selectedTitle;
+    return Jobs_getAssociatedObject(_selectedTitle);
 }
 
 -(void)setSelectedTitle:(NSString *)selectedTitle{
     [self setTitle:selectedTitle forState:UIControlStateSelected];
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             selectedTitle,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_selectedTitle, selectedTitle)
 }
-@dynamic selectedTitleColor;
 #pragma mark —— @property(nonatomic,strong)UIColor *selectedTitleColor;
+JobsKey(_selectedTitleColor)
+@dynamic selectedTitleColor;
 -(UIColor *)selectedTitleColor{
-    UIColor *SelectedTitleColor = objc_getAssociatedObject(self, _cmd);
-    return SelectedTitleColor;
+    return Jobs_getAssociatedObject(_selectedTitleColor);
 }
 
 -(void)setSelectedTitleColor:(UIColor *)selectedTitleColor{
     [self setTitleColor:selectedTitleColor forState:UIControlStateSelected];
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             selectedTitleColor,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_selectedTitleColor, selectedTitleColor)
 }
-@dynamic selectedAttributedTitle;
 #pragma mark —— @property(nonatomic,strong)NSAttributedString *selectedAttributedTitle;
+JobsKey(_selectedAttributedTitle)
+@dynamic selectedAttributedTitle;
 -(NSAttributedString *)selectedAttributedTitle{
-    NSAttributedString *SelectedAttributedTitle = objc_getAssociatedObject(self, _cmd);
-    return SelectedAttributedTitle;
+    return Jobs_getAssociatedObject(_selectedAttributedTitle);
 }
 
 -(void)setSelectedAttributedTitle:(NSAttributedString *)selectedAttributedTitle{
     [self setAttributedTitle:selectedAttributedTitle forState:UIControlStateSelected];
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             selectedAttributedTitle,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_selectedAttributedTitle, selectedAttributedTitle);
 }
-@dynamic titleAlignment;
 #pragma mark —— @property(nonatomic,assign)NSTextAlignment titleAlignment;
+JobsKey(_titleAlignment)
+@dynamic titleAlignment;
 -(NSTextAlignment)titleAlignment{
-    NSTextAlignment TitleAlignment = [objc_getAssociatedObject(self, _cmd) NSIntValue];
-    return TitleAlignment;
+    return [Jobs_getAssociatedObject(_titleAlignment) NSIntValue];;
 }
 
 -(void)setTitleAlignment:(NSTextAlignment)titleAlignment{
     self.titleLabel.textAlignment = titleAlignment;
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithInteger:titleAlignment],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_titleAlignment, @(titleAlignment))
 }
-#pragma mark —— BaseProtocol
+#pragma mark —— <BaseProtocol> @property(nonatomic,strong)RACDisposable *racDisposable;
+JobsKey(_racDisposable)
 @dynamic racDisposable;
-#pragma mark —— @property(nonatomic,strong)RACDisposable *racDisposable;
 -(RACDisposable *)racDisposable{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_racDisposable);
 }
 
 -(void)setRacDisposable:(RACDisposable *)racDisposable{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             racDisposable,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_racDisposable, racDisposable)
 }
 
 @end

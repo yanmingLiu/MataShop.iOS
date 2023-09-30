@@ -66,83 +66,63 @@
             break;
     }
 }
-static char *UILabel_Extra_labelShowingType = "UILabel_Extra_labelShowingType";
-@dynamic labelShowingType;
 #pragma mark —— @property(nonatomic,assign)UILabelShowingType labelShowingType;
+JobsKey(_labelShowingType)
+@dynamic labelShowingType;
 -(UILabelShowingType)labelShowingType{
-    UILabelShowingType LabelShowingType = [objc_getAssociatedObject(self, UILabel_Extra_labelShowingType) integerValue];
-    return LabelShowingType;
+    return [Jobs_getAssociatedObject(_labelShowingType) integerValue];
 }
 
 -(void)setLabelShowingType:(UILabelShowingType)labelShowingType{
-    objc_setAssociatedObject(self,
-                             UILabel_Extra_labelShowingType,
-                             [NSNumber numberWithInteger:labelShowingType],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_labelShowingType, @(labelShowingType))
 }
-static char *UILabel_Extra_value = "UILabel_Extra_value";
-@dynamic value;
 #pragma mark —— @property(nonatomic,assign)CGFloat value;
+JobsKey(_value)
+@dynamic value;
 -(CGFloat)value{
-    return [objc_getAssociatedObject(self, UILabel_Extra_value) floatValue];
+    return [Jobs_getAssociatedObject(_value) floatValue];
 }
 
 -(void)setValue:(CGFloat)value{
-    objc_setAssociatedObject(self,
-                             UILabel_Extra_value,
-                             [NSNumber numberWithFloat:value],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_value, @(value));
 }
-
-static char *UILabel_Extra_lastValue = "UILabel_Extra_lastValue";
-@dynamic lastValue;
 #pragma mark —— @property(nonatomic,assign)CGFloat lastValue;
+JobsKey(_lastValue)
+@dynamic lastValue;
 -(CGFloat)lastValue{
-    return [objc_getAssociatedObject(self, UILabel_Extra_lastValue) floatValue];
+    return [Jobs_getAssociatedObject(_lastValue) floatValue];
 }
 
 -(void)setLastValue:(CGFloat)lastValue{
-    objc_setAssociatedObject(self,
-                             UILabel_Extra_lastValue,
-                             [NSNumber numberWithFloat:lastValue],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_lastValue, @(lastValue));
 }
-static char *UILabel_Extra_shapeLayer = "UILabel_Extra_shapeLayer";
-@dynamic shapeLayer;
 #pragma mark —— @property(nonatomic,strong)CAShapeLayer *shapeLayer;
+JobsKey(_shapeLayer)
+@dynamic shapeLayer;
 -(CAShapeLayer *)shapeLayer{
-    CAShapeLayer *ShapeLayer = objc_getAssociatedObject(self, UILabel_Extra_shapeLayer);
+    CAShapeLayer *ShapeLayer = Jobs_getAssociatedObject(_shapeLayer);
     if (!ShapeLayer) {
         ShapeLayer = [self.text animateOnView:self
                                        atRect:self.bounds
                                       forFont:self.font
                                     withColor:self.textColor
                                  andDirection:self.transformLayerDirectionType];
-        objc_setAssociatedObject(self,
-                                 UILabel_Extra_shapeLayer,
-                                 ShapeLayer,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_shapeLayer, ShapeLayer);
     }return ShapeLayer;
 }
 
 -(void)setShapeLayer:(CAShapeLayer *)shapeLayer{
-    objc_setAssociatedObject(self,
-                             UILabel_Extra_shapeLayer,
-                             shapeLayer,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_shapeLayer, shapeLayer);
 }
-static char *UILabel_Extra_transformLayerDirectionType = "UILabel_Extra_transformLayerDirectionType";
-@dynamic transformLayerDirectionType;
 #pragma mark —— @property(nonatomic,assign)TransformLayerDirectionType transformLayerDirectionType;
+JobsKey(_transformLayerDirectionType)
+@dynamic transformLayerDirectionType;
 -(TransformLayerDirectionType)transformLayerDirectionType{
-    return [objc_getAssociatedObject(self, UILabel_Extra_transformLayerDirectionType) unsignedIntegerValue];
+    return [Jobs_getAssociatedObject(_transformLayerDirectionType) unsignedIntegerValue];
 }
 
 -(void)setTransformLayerDirectionType:(TransformLayerDirectionType)transformLayerDirectionType{
-    objc_setAssociatedObject(self,
-                             UILabel_Extra_transformLayerDirectionType,
-                             [NSNumber numberWithUnsignedInteger:transformLayerDirectionType],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_transformLayerDirectionType, @(transformLayerDirectionType))
 }
 
 @end

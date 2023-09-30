@@ -18,9 +18,10 @@
     }
 }
 #pragma mark —— @property(nonatomic,strong)NavigationBar *navigationBar;
+JobsKey(_navigationBar)
 @dynamic navigationBar;
 -(BaseNavigationBar *)navigationBar{
-    BaseNavigationBar *NavBar = objc_getAssociatedObject(self, _cmd);
+    BaseNavigationBar *NavBar = Jobs_getAssociatedObject(_navigationBar);
     if (!NavBar) {
         NavBar = BaseNavigationBar.new;
         //优先级:背景图 > 背景色
@@ -35,7 +36,6 @@
         [NavBar setBarTintColor:JobsRedColor];//一般的业务是全局设置，因为一个App里面只有一个主题
         NavBar.tintColor = JobsBlackColor;//系统的组件着色（返回按钮——箭头图标 和 上面的字）
         NavBar.items = @[self.navItem];
-
         NavBar.translucent = self.isBarTranslucent;
         NavBar.hidden = self.isHiddenNavigationBar;
         [self.view addSubview:NavBar];
@@ -43,20 +43,18 @@
             make.left.right.top.equalTo(self.view);
             make.height.mas_offset(self.jobsNavigationBarHeight);
         }];
-        [self setNavigationBar:NavBar];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_navigationBar, NavBar)
     }return NavBar;
 }
 
 -(void)setNavigationBar:(BaseNavigationBar *)navigationBar{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             navigationBar,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_navigationBar, navigationBar)
 }
 #pragma mark —— @property(nonatomic,strong)UIBarButtonItem *leftBarButtonItem_back;
+JobsKey(_leftBarButtonItem_back)
 @dynamic leftBarButtonItem_back;
 -(UIBarButtonItem *)leftBarButtonItem_back{
-    UIBarButtonItem *LeftBarButtonItem_back = objc_getAssociatedObject(self, _cmd);
+    UIBarButtonItem *LeftBarButtonItem_back = Jobs_getAssociatedObject(_leftBarButtonItem_back);
     if (!LeftBarButtonItem_back) {
         if(self.navigationController.viewControllers.count > 1){
             NSString *imageName = self.gk_backStyle == GKNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
@@ -75,201 +73,171 @@
 }
 
 - (void)setLeftBarButtonItem_back:(UIBarButtonItem *)leftBarButtonItem_back{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             leftBarButtonItem_back,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_leftBarButtonItem_back, leftBarButtonItem_back)
 }
 #pragma mark —— @property(nonatomic,strong)UIColor *bgCor;
+JobsKey(_bgCor)
 @dynamic bgCor;
 -(UIColor *)bgCor{
-    UIColor *BgCor = objc_getAssociatedObject(self, _cmd);
+    UIColor *BgCor = Jobs_getAssociatedObject(_bgCor);
     if (!BgCor) {
         BgCor = JobsLightGrayColor;
-        [self setBgCor:BgCor];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_bgCor, BgCor)
     }return BgCor;
 }
 
 -(void)setBgCor:(UIColor *)bgCor{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             bgCor,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_bgCor, bgCor)
 }
 #pragma mark —— @property(nonatomic,assign)CGFloat jobsNavigationBarHeight;
+JobsKey(_jobsNavigationBarHeight)
 @dynamic jobsNavigationBarHeight;
 -(CGFloat)jobsNavigationBarHeight{
-    CGFloat jobsNavigationBarHeight = [objc_getAssociatedObject(self, _cmd) floatValue];
+    CGFloat jobsNavigationBarHeight = [Jobs_getAssociatedObject(_jobsNavigationBarHeight) floatValue];
     if (jobsNavigationBarHeight == 0) {
         jobsNavigationBarHeight = JobsNavigationBarAndStatusBarHeight(nil);
-        [self setJobsNavigationBarHeight:jobsNavigationBarHeight];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_jobsNavigationBarHeight, @(jobsNavigationBarHeight));
     }return jobsNavigationBarHeight;
 }
 
 -(void)setJobsNavigationBarHeight:(CGFloat)jobsNavigationBarHeight{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithFloat:jobsNavigationBarHeight],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_jobsNavigationBarHeight, @(jobsNavigationBarHeight));
 }
 #pragma mark —— @property(nonatomic,assign)BOOL isHiddenNavigationBar
+JobsKey(_isHiddenNavigationBar)
 @dynamic isHiddenNavigationBar;
 -(BOOL)isHiddenNavigationBar{//默认不显示
-    BOOL IsHiddenNavigationBar = [objc_getAssociatedObject(self, _cmd) boolValue];
-    return IsHiddenNavigationBar;
+    return [Jobs_getAssociatedObject(_isHiddenNavigationBar) boolValue];
 }
 
 -(void)setIsHiddenNavigationBar:(BOOL)isHiddenNavigationBar{
     [self.navigationController setNavigationBarHidden:isHiddenNavigationBar animated:true];
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithBool:isHiddenNavigationBar],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_isHiddenNavigationBar, @(isHiddenNavigationBar))
 }
 #pragma mark —— @property(nonatomic,assign)BOOL isBarTranslucent;
+JobsKey(_isBarTranslucent)
 @dynamic isBarTranslucent;
 -(BOOL)isBarTranslucent{//默认
-    BOOL IsBarTranslucent = [objc_getAssociatedObject(self, _cmd) boolValue];
-    return IsBarTranslucent;
+    return [Jobs_getAssociatedObject(_isBarTranslucent) boolValue];
 }
 
 -(void)setIsBarTranslucent:(BOOL)isBarTranslucent{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithBool:isBarTranslucent],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_isBarTranslucent, @(isBarTranslucent))
 }
 #pragma mark —— @property(nonatomic,strong)NSShadow *shadow;
+JobsKey(_shadow)
 @dynamic shadow;
 -(NSShadow *)shadow{
-    NSShadow *Shadow = objc_getAssociatedObject(self, _cmd);
+    NSShadow *Shadow = Jobs_getAssociatedObject(_shadow);
     if (!Shadow) {
         Shadow = NSShadow.new;
         Shadow.shadowColor = self.shadowCor;
         Shadow.shadowOffset = CGSizeZero;
-        [self setShadow:Shadow];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_shadow, Shadow)
     }return Shadow;
 }
 
 -(void)setShadow:(NSShadow *)shadow{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             shadow,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_shadow, shadow)
 }
 #pragma mark —— @property(nonatomic,strong)UINavigationItem *navItem;
+JobsKey(_navItem)
 @dynamic navItem;
 -(UINavigationItem *)navItem{
-    UINavigationItem *NavItem = objc_getAssociatedObject(self, _cmd);
+    UINavigationItem *NavItem = Jobs_getAssociatedObject(_navItem);
     if (!NavItem) {
         NavItem = UINavigationItem.new;
         NavItem.title = self.title;
         NavItem.leftBarButtonItem = self.leftBarButtonItem_back;
-        [self setNavItem:NavItem];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_navItem, NavItem)
     }return NavItem;
 }
 
 -(void)setNavItem:(UINavigationItem *)navItem{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             navItem,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_navItem, navItem)
 }
 #pragma mark —— @property(nonatomic,strong)UIColor *foregroundColorAttributeNameCor;
+JobsKey(_foregroundColorAttributeNameCor)
 @dynamic foregroundColorAttributeNameCor;
 -(UIColor *)foregroundColorAttributeNameCor{
-    UIColor *ForegroundColorAttributeNameCor = objc_getAssociatedObject(self, _cmd);
+    UIColor *ForegroundColorAttributeNameCor = Jobs_getAssociatedObject(_foregroundColorAttributeNameCor);
     if (!ForegroundColorAttributeNameCor) {
-        ForegroundColorAttributeNameCor = JobsGreenColor;//JobsBlackColor;
-        [self setForegroundColorAttributeNameCor:ForegroundColorAttributeNameCor];
+        ForegroundColorAttributeNameCor = JobsGreenColor;
+        Jobs_setAssociatedRETAIN_NONATOMIC(_foregroundColorAttributeNameCor, ForegroundColorAttributeNameCor)
     }return ForegroundColorAttributeNameCor;
 }
 
 -(void)setForegroundColorAttributeNameCor:(UIColor *)foregroundColorAttributeNameCor{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             foregroundColorAttributeNameCor,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_foregroundColorAttributeNameCor, foregroundColorAttributeNameCor)
 }
 #pragma mark —— @property(nonatomic,strong)UIFont *fontAttributeName;
+JobsKey(_fontAttributeName)
 @dynamic fontAttributeName;
 -(UIFont *)fontAttributeName{
-    UIFont *FontAttributeName = objc_getAssociatedObject(self, _cmd);
+    UIFont *FontAttributeName = Jobs_getAssociatedObject(_fontAttributeName);
     if (!FontAttributeName) {
         FontAttributeName = JobsFontRegular(18);
-        [self setFontAttributeName:FontAttributeName];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_fontAttributeName, FontAttributeName)
     }return FontAttributeName;
 }
 
 -(void)setFontAttributeName:(UIFont *)fontAttributeName{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             fontAttributeName,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_fontAttributeName, fontAttributeName)
 }
 #pragma mark —— @property(nonatomic,strong)UIColor *tintColor;
+JobsKey(_tintColor)
 @dynamic tintColor;
 -(UIColor *)tintColor{
-    UIColor *TintColor = objc_getAssociatedObject(self, _cmd);
+    UIColor *TintColor = Jobs_getAssociatedObject(_tintColor);
     if (!TintColor) {
         TintColor = JobsGreenColor;
-        [self setTintColor:TintColor];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_tintColor, TintColor)
     }return TintColor;
 }
 
 -(void)setTintColor:(UIColor *)tintColor{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             tintColor,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_tintColor, tintColor)
 }
 #pragma mark —— @property(nonatomic,strong)UIColor *barTintColor;
+JobsKey(_barTintColor)
 @dynamic barTintColor;
 -(UIColor *)barTintColor{
-    UIColor *BarTintColor = objc_getAssociatedObject(self, _cmd);
+    UIColor *BarTintColor = Jobs_getAssociatedObject(_barTintColor);
     if (!BarTintColor) {
         BarTintColor = JobsGreenColor;
-        [self setBarTintColor:BarTintColor];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_barTintColor, BarTintColor)
     }return BarTintColor;
 }
 
 -(void)setBarTintColor:(UIColor *)barTintColor{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             barTintColor,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_barTintColor, barTintColor)
 }
 #pragma mark —— @property(nonatomic,strong)NSString *title;
+JobsKey(_title)
 @dynamic title;
 -(NSString *)title{
-    NSString *Title = objc_getAssociatedObject(self, _cmd);
-    return Title;
+    return Jobs_getAssociatedObject(_title);
 }
 
 -(void)setTitle:(NSString *)title{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             title,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_title, title)
 }
 #pragma mark —— @property(nonatomic,strong)UIColor *shadowCor;
+JobsKey(_shadowCor)
 @dynamic shadowCor;
 -(UIColor *)shadowCor{
-    UIColor *ShadowCor = objc_getAssociatedObject(self, _cmd);
+    UIColor *ShadowCor = Jobs_getAssociatedObject(_shadowCor);
     if (!ShadowCor) {
         ShadowCor = RGBA_COLOR(0,
                               0,
                               0,
                               0.8);
-        [self setShadowCor:ShadowCor];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_shadowCor, ShadowCor)
     }return ShadowCor;
 }
 
 -(void)setShadowCor:(UIColor *)shadowCor{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             shadowCor,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_shadowCor, shadowCor)
 }
 
 @end

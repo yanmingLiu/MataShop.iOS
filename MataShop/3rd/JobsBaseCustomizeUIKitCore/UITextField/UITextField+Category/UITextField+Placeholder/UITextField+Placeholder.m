@@ -24,51 +24,42 @@
     return placeholderLabel;
 }
 #pragma mark —— @property(nonatomic,strong)UIColor *placeholderColor;
+JobsKey(_placeholderColor)
 @dynamic placeholderColor;
 -(UIColor *)placeholderColor{
-    UIColor *PlaceholderColor = objc_getAssociatedObject(self, _cmd);
+    UIColor *PlaceholderColor = Jobs_getAssociatedObject(_placeholderColor);
     if (!PlaceholderColor) {
         PlaceholderColor = self.textColor;
         self.placeholderLabel.textColor = PlaceholderColor;
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 PlaceholderColor,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_placeholderColor, PlaceholderColor)
     }return PlaceholderColor;
 }
 
 -(void)setPlaceholderColor:(UIColor *)placeholderColor{
     self.placeholderLabel.textColor = placeholderColor;
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             placeholderColor,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_placeholderColor, placeholderColor)
 }
 #pragma mark —— @property(nonatomic,strong)UIFont *placeholderFont;
+JobsKey(_placeholderFont)
 @dynamic placeholderFont;
 -(UIFont *)placeholderFont{
-    UIFont *PlaceholderFont = objc_getAssociatedObject(self, _cmd);
+    UIFont *PlaceholderFont = Jobs_getAssociatedObject(_placeholderFont);
     if (!PlaceholderFont) {
         PlaceholderFont = self.font;
         self.placeholderLabel.font = PlaceholderFont;
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 PlaceholderFont,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_placeholderFont, PlaceholderFont)
     }return PlaceholderFont;
 }
 
 -(void)setPlaceholderFont:(UIFont *)placeholderFont{
     self.placeholderLabel.font = placeholderFont;
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             placeholderFont,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_placeholderFont, placeholderFont)
 }
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <RichTextConfig *>*defaultAttributedDataMutArr;
+JobsKey(_defaultAttributedDataForPlaceHolderMutArr)
 @dynamic defaultAttributedDataForPlaceHolderMutArr;
 -(NSMutableArray<RichTextConfig *> *)defaultAttributedDataForPlaceHolderMutArr{
-    NSMutableArray *DefaultAttributedDataMutArr = objc_getAssociatedObject(self, _cmd);
+    NSMutableArray *DefaultAttributedDataMutArr = Jobs_getAssociatedObject(_defaultAttributedDataForPlaceHolderMutArr);
     if (!DefaultAttributedDataMutArr) {
         DefaultAttributedDataMutArr = NSMutableArray.array;
         
@@ -83,18 +74,12 @@
             richTextConfig.range =  NSMakeRange(0, self.placeholder.length);
             [DefaultAttributedDataMutArr addObject:richTextConfig];
         }
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 DefaultAttributedDataMutArr,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_defaultAttributedDataForPlaceHolderMutArr, DefaultAttributedDataMutArr)
     }return DefaultAttributedDataMutArr;
 }
 
 -(void)setDefaultAttributedDataForPlaceHolderMutArr:(NSMutableArray<RichTextConfig *> *)defaultAttributedDataMutArr{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             defaultAttributedDataMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_defaultAttributedDataForPlaceHolderMutArr, defaultAttributedDataMutArr)
 }
 
 @end

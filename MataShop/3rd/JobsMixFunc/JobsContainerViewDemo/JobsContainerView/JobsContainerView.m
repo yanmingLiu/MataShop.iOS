@@ -8,11 +8,14 @@
 #import "JobsContainerView.h"
 
 @interface JobsContainerView (){
-    CGFloat btnWidth;
+
+    CGFloat maxWidth;/// 根据数据源得出的，当前的最大宽
+    CGFloat totalHeight;
 }
 
 @property(nonatomic,strong)NSArray<JobsBtnModel *> *buttonModels;
-@property(nonatomic,assign)CGFloat widthBySelf;
+@property(nonatomic,assign)CGFloat widthBySelf;/// 本容器的最大宽
+@property(nonatomic,strong)NSMutableArray <UIButton *>*btnMutArr;
 
 @end
 
@@ -38,18 +41,24 @@
                  buttonModels:(NSArray<JobsBtnModel *> *)buttonModels{
     if (self = [super initWithFrame:CGRectZero]) {
         if([buttonModels isKindOfClass:NSArray.class]){
+            
             self.widthBySelf = widthBySelf;
+            self.buttonModels = buttonModels;
+            maxWidth = 0.f;
+            totalHeight = 0.f;
+            totalHeight = 0.f;
+            
             [self createByModels:buttonModels];
+            /// 重设Btn中心X
+            for (UIButton *btn in self.btnMutArr) {
+                btn.centerX = maxWidth / 2;
+            }
         }
     }return self;
 }
 #pragma mark —— 一些私有方法
 -(void)createByModels:(NSArray<JobsBtnModel *> *)buttonModels{
-    self.buttonModels = buttonModels;
 
-    CGFloat maxWidth = 0.f;
-    CGFloat totalHeight = 0.f;
-    
     CGFloat nbtnY = 0.0f;// 本次的Btn的头Y
     CGFloat btnBottom = 0.f;// 本次的Btn的底Y
     
@@ -58,32 +67,19 @@
 
     for (JobsBtnModel *model in buttonModels) {
 
-/**
- 1、如果在数据源（JobsBtnModel *）里面设置了Btn的宽度
- 这个view的宽度 = 所有的Btn的宽度最长的那一个值【Btn为基准】
- 
- 2、如果在数据源（JobsBtnModel *）里面没有设置Btn的宽度
-    2.1、如果不提行
-        这个view的宽度 = 单行文字 + 字体 得出的这段文字的宽
-    2.2、如果文字提行
-        这个view的宽度 = 这个view在初始化方法中的预设值
- 
-❤️优先级示意图：JobsBtnModel.btnWidth > 不提行时候的最大宽度 > 整个容器的宽widthBySelf ❤️
- */
         if(model.btnWidth){
-            btnWidth = model.btnWidth;
-            maxWidth = MAX(maxWidth, btnWidth);
+            maxWidth = MAX(maxWidth, model.btnWidth);
         }else{
-            if(model.lineBreakMode){// 不提行
+            if(model.lineBreakMode){// 不提行的情况下，因为字数超出，子控件是可以超出父视图容器的
                 NSDictionary *attributes = @{NSFontAttributeName: model.titleFont};
-                btnWidth = [model.normalTitle sizeWithAttributes:attributes].width;
-                maxWidth = MAX(maxWidth, btnWidth);
+                maxWidth = MAX(maxWidth, [model.normalTitle sizeWithAttributes:attributes].width);
             }else{
                 maxWidth = self.widthBySelf;
             }
         }
         
         UIButton *button = [self createButtonWithModel:model];
+        [self.btnMutArr addObject:button];
         [self addSubview:button];
         
         buttonHeight = CGRectGetHeight(button.frame);
@@ -122,7 +118,7 @@
         button = [UIButton buttonWithConfiguration:buttonConfig primaryAction:nil];
     }
 
-    button.width = self.widthBySelf;/// 预设值，否则撑不开
+    button.width = maxWidth;
     button.backgroundColor = model.backgroundColor;
     button.titleFont = model.titleFont;
     button.contentVerticalAlignment = model.contentVerticalAlignment;
@@ -135,10 +131,11 @@
     return button;
 }
 #pragma mark —— lazyLoad
--(CGFloat)widthBySelf{
-    if(!_widthBySelf){
-        _widthBySelf = JobsWidth(200);
-    }return _widthBySelf;
+-(NSMutableArray<UIButton *> *)btnMutArr{
+    if(!_btnMutArr){
+        _btnMutArr = NSMutableArray.array;
+    }return _btnMutArr;
 }
+
 
 @end

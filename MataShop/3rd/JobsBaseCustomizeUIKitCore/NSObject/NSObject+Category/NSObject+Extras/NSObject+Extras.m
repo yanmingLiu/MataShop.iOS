@@ -1002,115 +1002,98 @@
     contentView.mj_footer.hidden = !dataSource.count;
 }
 #pragma mark —— @property(nonatomic,assign)CGPoint lastPoint;
+JobsKey(_lastPoint)
 @dynamic lastPoint;
 -(CGPoint)lastPoint{
-    CGPoint LastPoint = [objc_getAssociatedObject(self,_cmd) CGPointValue];
+    CGPoint LastPoint = [Jobs_getAssociatedObject(_lastPoint) CGPointValue];
     return LastPoint;
 }
 
 -(void)setLastPoint:(CGPoint)lastPoint{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSValue valueWithCGPoint:lastPoint],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_lastPoint, [NSValue valueWithCGPoint:lastPoint])
 }
 #pragma mark —— @property(nonatomic,strong)NSIndexPath *indexPath;
+JobsKey(_indexPath)
 @dynamic indexPath;
 -(NSIndexPath *)indexPath{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_indexPath);
 }
 
 -(void)setIndexPath:(NSIndexPath *)indexPath{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             indexPath,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_indexPath, indexPath)
 }
 #pragma mark —— @property(nonatomic,assign)NSInteger currentPage;
+JobsKey(_currentPage)
 @dynamic currentPage;
 -(NSInteger)currentPage{
-    NSInteger CurrentPage = [objc_getAssociatedObject(self, _cmd) integerValue];
+    NSInteger CurrentPage = [Jobs_getAssociatedObject(_currentPage) integerValue];
     if (CurrentPage == 0) {
         CurrentPage = 1;
-        [self setCurrentPage:CurrentPage];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_currentPage, @(CurrentPage))
     }return CurrentPage;
 }
 
 -(void)setCurrentPage:(NSInteger)currentPage{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithInteger:currentPage],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_currentPage, @(currentPage))
 }
 #pragma mark —— @property(nonatomic,assign)NSInteger pageSize;
+JobsKey(_pageSize)
 @dynamic pageSize;
 -(NSInteger)pageSize{
-    NSInteger PageSize = [objc_getAssociatedObject(self, _cmd) integerValue];
+    NSInteger PageSize = [Jobs_getAssociatedObject(_pageSize) integerValue];
     if (PageSize == 0) {
         PageSize = 10;
-        [self setPageSize:PageSize];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_pageSize, @(PageSize))
     }return PageSize;
 }
 
 -(void)setPageSize:(NSInteger)pageSize{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithInteger:pageSize],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_pageSize, @(pageSize))
 }
 #pragma mark —— @property(nonatomic,assign)NSInteger index;
+JobsKey(_index)
 @dynamic index;
 -(NSInteger)index{
-    NSInteger Index = [objc_getAssociatedObject(self, _cmd) integerValue];
-    return Index;
+    return [Jobs_getAssociatedObject(_index) integerValue];
 }
 
 -(void)setIndex:(NSInteger)index{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithInteger:index],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_index, @(index))
 }
 #pragma mark —— @property(nonatomic,strong)UIViewModel *viewModel;
+JobsKey(_viewModel)
 @dynamic viewModel;
 -(UIViewModel *)viewModel{
-    UIViewModel *ViewModel = objc_getAssociatedObject(self, _cmd);
+    UIViewModel *ViewModel = Jobs_getAssociatedObject(_viewModel);
     if (!ViewModel) {
         ViewModel = UIViewModel.new;
-        [self setViewModel:ViewModel];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_viewModel, ViewModel)
     }return ViewModel;
 }
 
 -(void)setViewModel:(UIViewModel *)viewModel{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             viewModel,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_viewModel, viewModel)
 }
 #pragma mark —— @property(nonatomic,strong)NSString *internationalizationKEY;/// 国际化的key
+JobsKey(_internationalizationKEY)
 @dynamic internationalizationKEY;
 -(NSString *)internationalizationKEY{
-    NSString *InternationalizationKEY = objc_getAssociatedObject(self, _cmd);
+    NSString *InternationalizationKEY = Jobs_getAssociatedObject(_internationalizationKEY);
     return InternationalizationKEY;
 }
 
 -(void)setInternationalizationKEY:(NSString *)internationalizationKEY{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             internationalizationKEY,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_internationalizationKEY, internationalizationKEY)
 }
 #pragma mark —— @property(nonatomic,copy)JobsReturnIDByIDBlock notificationBlock;
+JobsKey(_notificationBlock)
 @dynamic notificationBlock;
 -(JobsReturnIDByIDBlock)notificationBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_notificationBlock);
 }
 
 -(void)setNotificationBlock:(JobsReturnIDByIDBlock)notificationBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             notificationBlock,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_notificationBlock, notificationBlock)
 }
 
 @end

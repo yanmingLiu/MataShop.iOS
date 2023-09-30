@@ -155,33 +155,28 @@
             }
             self.resStr = res;
             if (normalInputBlock) normalInputBlock(res);
-        }
-        return self.currentWordNum < self.wordLimitNum;
+        }return self.currentWordNum < self.wordLimitNum;
     }
 }
 #pragma mark —— @property(nonatomic,strong)NSString *replacementText;
+JobsKey(_replacementText)
 @dynamic replacementText;
 -(NSString *)replacementText{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_replacementText);
 }
 
 -(void)setReplacementText:(NSString *)replacementText{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             replacementText,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_replacementText, replacementText)
 }
 #pragma mark —— @property(nonatomic,strong)NSString *resStr;
+JobsKey(_resStr)
 @dynamic resStr;
 -(NSString *)resStr{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_resStr);
 }
 
 -(void)setResStr:(NSString *)resStr{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             resStr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_resStr, resStr);
 }
 
 @end

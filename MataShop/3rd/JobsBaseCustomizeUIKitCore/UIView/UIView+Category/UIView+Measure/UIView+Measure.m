@@ -272,246 +272,212 @@
         }
     };
 }
-#pragma mark —— 简捷获得控件坐标
-static char *UIView_Measure_x = "UIView_Measure_x";
-@dynamic x;
+/// 简捷获得控件坐标
 #pragma mark —— @property(nonatomic,assign)CGFloat x
+JobsKey(_x)
+@dynamic x;
 -(CGFloat)x{
-    if (objc_getAssociatedObject(self, UIView_Measure_x)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_x) floatValue];
+    
+    if (Jobs_getAssociatedObject(_x)) {
+        return [Jobs_getAssociatedObject(_x) floatValue];
     }else{
         CGFloat X = self.frame.origin.x;
-        [self setX:X];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_x, @(X))
         return X;
     }
 }
 
 -(void)setX:(CGFloat)x{
     self.frame = self.resetOriginX(x);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_x,
-                             [NSNumber numberWithFloat:x],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_x, @(x))
 }
-/// @property(nonatomic,assign)CGFloat y
-static char *UIView_Measure_y = "UIView_Measure_y";
+#pragma mark —— @property(nonatomic,assign)CGFloat y
+JobsKey(_y)
 @dynamic y;
 -(CGFloat)y{
-    if (objc_getAssociatedObject(self, UIView_Measure_y)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_y) floatValue];
+    if (Jobs_getAssociatedObject(_y)) {
+        return [Jobs_getAssociatedObject(_y) floatValue];
     }else{
         CGFloat Y = self.frame.origin.y;
-        [self setY:Y];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_y, @(Y))
         return Y;
     }
 }
 
 -(void)setY:(CGFloat)y{
     self.frame = self.resetOriginY(y);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_y,
-                             [NSNumber numberWithFloat:y],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_y, @(y))
 }
-/// @property(nonatomic,assign)CGFloat width
-static char *UIView_Measure_width = "UIView_Measure_width";
+#pragma mark —— @property(nonatomic,assign)CGFloat width
+JobsKey(_width)
 @dynamic width;
 -(CGFloat)width{
-    if (objc_getAssociatedObject(self, UIView_Measure_width)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_width) floatValue];
+    if (Jobs_getAssociatedObject(_width)) {
+        return [Jobs_getAssociatedObject(_width) floatValue];
     }else{
         CGFloat Width = self.frame.size.width;
-        [self setWidth:Width];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_width, @(Width))
         return Width;
     }
 }
 
 -(void)setWidth:(CGFloat)width{
     self.frame = self.resetWidth(width);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_width,
-                             [NSNumber numberWithFloat:width],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_width, @(width))
 }
-/// @property(nonatomic,assign)CGFloat height
-static char *UIView_Measure_height = "UIView_Measure_height";
+#pragma mark —— @property(nonatomic,assign)CGFloat height
+JobsKey(_height)
 @dynamic height;
 -(CGFloat)height{
-    if (objc_getAssociatedObject(self, UIView_Measure_height)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_height) floatValue];
+    if (Jobs_getAssociatedObject(_height)) {
+        return [Jobs_getAssociatedObject(_height) floatValue];
     }else{
         CGFloat Height = self.frame.size.height;
-        [self setHeight:Height];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_height, @(Height))
         return Height;
     }
 }
 
 -(void)setHeight:(CGFloat)height{
     self.frame = self.resetHeight(height);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_height,
-                             [NSNumber numberWithFloat:height],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_height, @(height))
 }
-/// @property(nonatomic,assign)CGFloat centerX
-static char *UIView_Measure_centerX = "UIView_Measure_centerX";
+#pragma mark —— @property(nonatomic,assign)CGFloat centerX
+JobsKey(_centerX)
 @dynamic centerX;
 -(CGFloat)centerX{
-    if (objc_getAssociatedObject(self, UIView_Measure_centerX)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_centerX) floatValue];
+    if (Jobs_getAssociatedObject(_centerX)) {
+        return [Jobs_getAssociatedObject(_centerX) floatValue];
     }else{
         CGFloat CenterX = self.center.x;
-        [self setCenterX:CenterX];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_centerX, @(CenterX))
         return CenterX;
     }
 }
 
 -(void)setCenterX:(CGFloat)centerX{
     self.frame = self.resetCenterX(centerX);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_centerX,
-                             [NSNumber numberWithFloat:centerX],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_centerX, @(centerX))
 }
-/// @property(nonatomic,assign)CGFloat centerY
-static char *UIView_Measure_centerY = "UIView_Measure_centerY";
+#pragma mark —— @property(nonatomic,assign)CGFloat centerY
+JobsKey(_centerY)
 @dynamic centerY;
 -(CGFloat)centerY{
-    if (objc_getAssociatedObject(self, UIView_Measure_centerY)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_centerY) floatValue];
+    if (Jobs_getAssociatedObject(_centerY)) {
+        return [Jobs_getAssociatedObject(_centerY) floatValue];
     }else{
         CGFloat CenterY = self.center.y;
-        [self setCenterY:CenterY];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_centerY, @(CenterY))
         return CenterY;
     }
 }
 
 -(void)setCenterY:(CGFloat)centerY{
     self.frame = self.resetCenterY(centerY);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_centerY,
-                             [NSNumber numberWithFloat:centerY],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_centerY, @(centerY))
 }
-/// @property(nonatomic,assign)CGFloat left
-static char *UIView_Measure_left = "UIView_Measure_left";
+#pragma mark —— @property(nonatomic,assign)CGFloat left
+JobsKey(_left)
 @dynamic left;
 -(CGFloat)left{
-    if (objc_getAssociatedObject(self, UIView_Measure_left)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_left) floatValue];
+    if (Jobs_getAssociatedObject(_left)) {
+        return [Jobs_getAssociatedObject(_left) floatValue];
     }else{
         CGFloat Left = self.frame.origin.x;
-        [self setLeft:Left];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_left, @(Left))
         return Left;
     }
 }
 
 -(void)setLeft:(CGFloat)left{
     self.frame = self.resetOriginX(left);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_left,
-                             [NSNumber numberWithFloat:left],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_left, @(left))
 }
-/// @property(nonatomic,assign)CGFloat right
-static char *UIView_Measure_right = "UIView_Measure_right";
+#pragma mark —— @property(nonatomic,assign)CGFloat right
+JobsKey(_right)
 @dynamic right;
 -(CGFloat)right{
-    if (objc_getAssociatedObject(self, UIView_Measure_right)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_right) floatValue];
+    if (Jobs_getAssociatedObject(_right)) {
+        return [Jobs_getAssociatedObject(_right) floatValue];
     }else{
         CGFloat Right = self.frame.origin.x + self.frame.size.width;
-        [self setRight:Right];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_right, @(Right))
         return Right;
     }
 }
 
 -(void)setRight:(CGFloat)right{
     self.frame = self.resetOriginX(right - self.width);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_right,
-                             [NSNumber numberWithFloat:right],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_right, @(right))
 }
-/// @property(nonatomic,assign)CGFloat top
-static char *UIView_Measure_top = "UIView_Measure_top";
+#pragma mark —— @property(nonatomic,assign)CGFloat top
+JobsKey(_top)
 @dynamic top;
 -(CGFloat)top{
-    if (objc_getAssociatedObject(self, UIView_Measure_top)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_top) floatValue];
+    if (Jobs_getAssociatedObject(_top)) {
+        return [Jobs_getAssociatedObject(_top) floatValue];
     }else{
         CGFloat Top = CGRectGetMinY(self.frame);
         [self setTop:Top];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_top, @(Top))
         return Top;
     }
 }
 
 -(void)setTop:(CGFloat)top{
     self.frame = self.resetOriginY(top);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_top,
-                             [NSNumber numberWithFloat:top],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_top, @(top))
 }
-/// @property(nonatomic,assign)CGFloat bottom
-static char *UIView_Measure_bottom = "UIView_Measure_bottom";
+#pragma mark —— @property(nonatomic,assign)CGFloat bottom
+JobsKey(_bottom)
 @dynamic bottom;
 -(CGFloat)bottom{
-    if (objc_getAssociatedObject(self, UIView_Measure_bottom)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_bottom) floatValue];
+    if (Jobs_getAssociatedObject(_bottom)) {
+        return [Jobs_getAssociatedObject(_bottom) floatValue];
     }else{
         CGFloat Bottom = self.frame.origin.y + self.frame.size.height;
-        [self setBottom:Bottom];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_bottom, @(Bottom))
         return Bottom;
     }
 }
 
 -(void)setBottom:(CGFloat)bottom{
     self.frame = self.resetOriginY(bottom - self.height);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_bottom,
-                             [NSNumber numberWithFloat:bottom],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_bottom, @(bottom))
 }
-/// @property(nonatomic,assign)CGSize size
-static char *UIView_Measure_size = "UIView_Measure_size";
+#pragma mark —— @property(nonatomic,assign)CGSize size
+JobsKey(_size)
 @dynamic size;
 -(CGSize)size{
-    if (objc_getAssociatedObject(self, UIView_Measure_size)) {
-        return [objc_getAssociatedObject(self, UIView_Measure_size) CGSizeValue];
+    if (Jobs_getAssociatedObject(_size)) {
+        return [Jobs_getAssociatedObject(_size) CGSizeValue];
     }else{
         CGSize Size = self.frame.size;
-        [self setSize:Size];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_size, @(Size))
         return Size;
     }
 }
 
 -(void)setSize:(CGSize)size{
     self.frame = self.resetSize(size);
-    objc_setAssociatedObject(self,
-                             UIView_Measure_size,
-                             [NSValue valueWithCGSize:size],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_size, @(size))
 }
-/// @property(nonatomic,assign)CGPoint origin
-static char *NSObject_Extras_origin = "NSObject_Extras_origin";
+#pragma mark —— @property(nonatomic,assign)CGPoint origin
+JobsKey(_origin)
 @dynamic origin;
 -(CGPoint)origin{
-    if (objc_getAssociatedObject(self, NSObject_Extras_origin)) {
-        return [objc_getAssociatedObject(self, NSObject_Extras_origin) CGPointValue];
+    if (Jobs_getAssociatedObject(_origin)) {
+        return [Jobs_getAssociatedObject(_origin) CGPointValue];
     }else{
         CGPoint Point = self.frame.origin;
-        [self setOrigin:Point];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_origin, [NSValue valueWithCGPoint:Point])
         return Point;
     }
 }
 
 -(void)setOrigin:(CGPoint)origin{
     self.frame = self.resetOrigin(origin);
-    objc_setAssociatedObject(self,
-                             NSObject_Extras_origin,
-                             [NSValue valueWithCGPoint:origin],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_origin, [NSValue valueWithCGPoint:origin])
 }
 
 @end

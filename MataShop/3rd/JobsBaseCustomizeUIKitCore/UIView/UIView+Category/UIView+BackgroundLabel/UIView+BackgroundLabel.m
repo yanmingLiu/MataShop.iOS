@@ -8,9 +8,11 @@
 #import "UIView+BackgroundLabel.h"
 
 @implementation UIView (BackgroundLabel)
+#pragma mark —— @property(nonatomic,strong)UILabel *backgroundLabel;
+JobsKey(_backgroundLabel)
 @dynamic backgroundLabel;
 -(UILabel *)backgroundLabel{
-    UILabel *BackgroundLabel = objc_getAssociatedObject(self, _cmd);
+    UILabel *BackgroundLabel = Jobs_getAssociatedObject(_backgroundLabel);
     if (!BackgroundLabel) {
         BackgroundLabel = UILabel.new;
         BackgroundLabel.userInteractionEnabled = YES;
@@ -19,18 +21,12 @@
         [BackgroundLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
         }];
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 BackgroundLabel,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_backgroundLabel, BackgroundLabel)
     }return BackgroundLabel;
 }
 
 -(void)setBackgroundLabel:(UILabel *)backgroundLabel{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             backgroundLabel,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_backgroundLabel, backgroundLabel)
 }
 
 @end

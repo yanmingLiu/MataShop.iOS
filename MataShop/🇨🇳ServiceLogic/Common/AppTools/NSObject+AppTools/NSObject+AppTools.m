@@ -154,9 +154,9 @@ languageSwitchNotificationWithSelector:(SEL)aSelector{
 }
 
 -(HTTPRequestHeaderLanguageType)currentLanguageType{
-    if ([NSBundle.currentLanguage containsString:@"zh-Hans"]) {
+    if(NSBundle.currentLanguage.containsString(@"zh-Hans")){
         return HTTPRequestHeaderLanguageCN;
-    }else if ([NSBundle.currentLanguage containsString:@"en"]){
+    }else if (NSBundle.currentLanguage.containsString(@"en")){
         return HTTPRequestHeaderLanguageEn;
     }else{
         NSLog(@"%@",NSBundle.currentLanguage);
@@ -490,11 +490,11 @@ languageSwitchNotificationWithSelector:(SEL)aSelector{
 //        [DDNetworkingAPI handleError:data];
 //    }];
 }
-static char *NSObject_AppTools_hotLabelDataMutArr = "NSObject_AppTools_hotLabelDataMutArr";
-@dynamic hotLabelDataMutArr;
 #pragma mark —— @property(nonatomic,strong)NSMutableArray<UIViewModel *> *hotLabelDataMutArr;
+JobsKey(_hotLabelDataMutArr)
+@dynamic hotLabelDataMutArr;
 -(NSMutableArray<UIViewModel *> *)hotLabelDataMutArr{
-    NSMutableArray<UIViewModel *> *HotLabelDataMutArr = objc_getAssociatedObject(self, NSObject_AppTools_hotLabelDataMutArr);
+    NSMutableArray<UIViewModel *> *HotLabelDataMutArr = Jobs_getAssociatedObject(_hotLabelDataMutArr);
     if (!HotLabelDataMutArr) {
         HotLabelDataMutArr = NSMutableArray.array;
 
@@ -510,21 +510,18 @@ static char *NSObject_AppTools_hotLabelDataMutArr = "NSObject_AppTools_hotLabelD
 //            [HotLabelDataMutArr addObject:vm];
 //        }
 
-        [self setHotLabelDataMutArr:HotLabelDataMutArr];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_hotLabelDataMutArr, HotLabelDataMutArr)
     }return HotLabelDataMutArr;
 }
 
 -(void)setHotLabelDataMutArr:(NSMutableArray<UIViewModel *> *)hotLabelDataMutArr{
-    objc_setAssociatedObject(self,
-                             NSObject_AppTools_hotLabelDataMutArr,
-                             hotLabelDataMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_hotLabelDataMutArr, hotLabelDataMutArr)
 }
-static char *NSObject_AppTools_separateLab = "NSObject_AppTools_separateLab";
-@dynamic separateLab;
 #pragma mark —— @property(nonatomic,strong)UILabel *separateLab;/// 分割线
+JobsKey(_separateLab)
+@dynamic separateLab;
 -(UILabel *)separateLab{
-    UILabel *SeparateLab = objc_getAssociatedObject(self, NSObject_AppTools_separateLab);
+    UILabel *SeparateLab = Jobs_getAssociatedObject(_separateLab);
     if ([self isKindOfClass:UIViewController.class] && !SeparateLab) {
         SeparateLab = UILabel.new;
         SeparateLab.backgroundColor = HEXCOLOR(0xC4C4C4);
@@ -536,20 +533,18 @@ static char *NSObject_AppTools_separateLab = "NSObject_AppTools_separateLab";
             make.bottom.equalTo(viewController.view).offset(JobsWidth(-64));
         }];
         [self setSeparateLab:SeparateLab];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_separateLab, SeparateLab)
     }return SeparateLab;
 }
 
 -(void)setSeparateLab:(UILabel *)separateLab{
-    objc_setAssociatedObject(self,
-                             NSObject_AppTools_separateLab,
-                             separateLab,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_separateLab, separateLab)
 }
-static char *NSObject_AppTools_立即注册 = "NSObject_AppTools_立即注册";
-@dynamic 立即注册;
 #pragma mark —— @property(nonatomic,strong)UIButton *立即注册;
+JobsKey(__立即注册)
+@dynamic 立即注册;
 -(UIButton *)立即注册{
-    UIButton *_立即注册 = objc_getAssociatedObject(self, NSObject_AppTools_立即注册);
+    UIButton *_立即注册 = Jobs_getAssociatedObject(_立即注册);
     if ([self isKindOfClass:UIViewController.class] && !_立即注册 ) {
         _立即注册 = UIButton.new;
         _立即注册.normalTitle = Internationalization(@"立即注册");
@@ -570,21 +565,18 @@ static char *NSObject_AppTools_立即注册 = "NSObject_AppTools_立即注册";
             return nil;
         }];
         [_立即注册 makeBtnLabelByShowingType:UILabelShowingType_03];
-        [self set立即注册:_立即注册];
+        Jobs_setAssociatedRETAIN_NONATOMIC(__立即注册, _立即注册);
     }return _立即注册;
 }
 
 -(void)set立即注册:(UIButton *)立即注册{
-    objc_setAssociatedObject(self,
-                             NSObject_AppTools_立即注册,
-                             立即注册,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(__立即注册, 立即注册);
 }
-static char *NSObject_AppTools_联系客服 = "NSObject_AppTools_联系客服";
-@dynamic 联系客服;
 #pragma mark —— @property(nonatomic,strong)UIButton *联系客服;
+JobsKey(__联系客服)
+@dynamic 联系客服;
 -(UIButton *)联系客服{
-    UIButton *_联系客服 = objc_getAssociatedObject(self, NSObject_AppTools_联系客服);
+    UIButton *_联系客服 = Jobs_getAssociatedObject(__联系客服);
     if ([self isKindOfClass:UIViewController.class] && !_联系客服) {
         _联系客服 = UIButton.new;
         _联系客服.normalTitle = Internationalization(@"联系客服");
@@ -605,87 +597,78 @@ static char *NSObject_AppTools_联系客服 = "NSObject_AppTools_联系客服";
             return nil;
         }];
         [_联系客服 makeBtnLabelByShowingType:UILabelShowingType_03];
-        [self set联系客服:_联系客服];
+        Jobs_setAssociatedRETAIN_NONATOMIC(__联系客服, _联系客服)
     }return _联系客服;
 }
 
 -(void)set联系客服:(UIButton *)联系客服{
-    objc_setAssociatedObject(self,
-                             NSObject_AppTools_联系客服,
-                             联系客服,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(__联系客服, 联系客服)
 }
-static char *NSObject_AppTools_attributedStringData = "NSObject_AppTools_attributedStringData";
-@dynamic attributedStringData;
 #pragma mark —— @property(nonatomic,strong)NSMutableAttributedString *attributedStringData;
+JobsKey(_attributedStringData)
+@dynamic attributedStringData;
 -(NSMutableAttributedString *)attributedStringData{
-    NSMutableAttributedString *AttributedStringData = objc_getAssociatedObject(self, NSObject_AppTools_attributedStringData);
+    NSMutableAttributedString *AttributedStringData = Jobs_getAssociatedObject(_attributedStringData);
     if (!AttributedStringData) {
         AttributedStringData = [self richTextWithDataConfigMutArr:self.richTextConfigMutArr];
-        [self setAttributedStringData:AttributedStringData];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_attributedStringData, AttributedStringData)
     }return AttributedStringData;
 }
 
 -(void)setAttributedStringData:(NSMutableAttributedString *)attributedStringData{
-    objc_setAssociatedObject(self,
-                             NSObject_AppTools_attributedStringData,
-                             attributedStringData,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_attributedStringData, attributedStringData)
 }
-static char *NSObject_AppTools_richTextMutArr = "NSObject_AppTools_richTextMutArr";
-@dynamic richTextMutArr;
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <NSString *>*richTextMutArr;
+JobsKey(_richTextMutArr)
+@dynamic richTextMutArr;
 -(NSMutableArray<NSString *> *)richTextMutArr{
-    NSMutableArray <NSString *>*RichTextMutArr = objc_getAssociatedObject(self, NSObject_AppTools_richTextMutArr);
+    NSMutableArray <NSString *>*RichTextMutArr = Jobs_getAssociatedObject(_richTextMutArr);
     if (!RichTextMutArr) {
         RichTextMutArr = NSMutableArray.array;
         [RichTextMutArr addObject:Internationalization(@"如需帮助，请联系")];
         [RichTextMutArr addObject:Internationalization(@"专属客服")];
         [self setRichTextMutArr:RichTextMutArr];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_richTextMutArr, RichTextMutArr)
     }return RichTextMutArr;
 }
 
 -(void)setRichTextMutArr:(NSMutableArray<NSString *> *)richTextMutArr{
-    objc_setAssociatedObject(self,
-                             NSObject_AppTools_richTextMutArr,
-                             richTextMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_richTextMutArr, richTextMutArr)
 }
-static char *NSObject_AppTools_richTextConfigMutArr = "NSObject_AppTools_richTextConfigMutArr";
-@dynamic richTextConfigMutArr;
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <RichTextConfig *>*richTextConfigMutArr;
+JobsKey(_richTextConfigMutArr)
+@dynamic richTextConfigMutArr;
 -(NSMutableArray<RichTextConfig *> *)richTextConfigMutArr{
-    NSMutableArray <RichTextConfig *>*RichTextMutArr = objc_getAssociatedObject(self, NSObject_AppTools_richTextConfigMutArr);
+    NSMutableArray <RichTextConfig *>*RichTextMutArr = Jobs_getAssociatedObject(_richTextConfigMutArr);
     if (!RichTextMutArr) {
         RichTextMutArr = NSMutableArray.array;
         
         RichTextConfig *config_01 = RichTextConfig.new;
-        config_01.font = [UIFont systemFontOfSize:JobsWidth(12) weight:UIFontWeightRegular];
+        config_01.font = UIFontWeightRegularSize(12);
         config_01.textCor = HEXCOLOR(0x757575);
         config_01.targetString = self.richTextMutArr[0];
         [RichTextMutArr addObject:config_01];
 
         RichTextConfig *config_02 = RichTextConfig.new;
-        config_02.font = [UIFont systemFontOfSize:JobsWidth(12) weight:UIFontWeightMedium];
+        config_02.font = UIFontWeightMediumSize(12);;
         config_02.textCor = HEXCOLOR(0xAE8330);
         config_02.targetString = self.richTextMutArr[1];
         config_02.urlStr = @"click://";
         [RichTextMutArr addObject:config_02];
         [self setRichTextConfigMutArr:RichTextMutArr];
+        
+        Jobs_setAssociatedRETAIN_NONATOMIC(_richTextConfigMutArr, RichTextMutArr)
     }return RichTextMutArr;
 }
 
 -(void)setRichTextConfigMutArr:(NSMutableArray<RichTextConfig *> *)richTextConfigMutArr{
-    objc_setAssociatedObject(self,
-                             NSObject_AppTools_richTextConfigMutArr,
-                             richTextConfigMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_richTextConfigMutArr, richTextConfigMutArr)
 }
-static char *NSObject_AppTools_connectionTipsTV = "NSObject_AppTools_connectionTipsTV";
-@dynamic connectionTipsTV;
 #pragma mark —— @property(nonatomic,strong)UITextView *connectionTipsTV;/// 承接富文本:如需幫助，請聯繫專屬客服
+JobsKey(_connectionTipsTV)
+@dynamic connectionTipsTV;
 -(UITextView *)connectionTipsTV{
-    UITextView *ConnectionTipsTV = objc_getAssociatedObject(self, NSObject_AppTools_connectionTipsTV);
+    UITextView *ConnectionTipsTV = Jobs_getAssociatedObject(_connectionTipsTV);
     if (!ConnectionTipsTV) {
         ConnectionTipsTV = UITextView.new;
         ConnectionTipsTV.userInteractionEnabled = YES;
@@ -708,37 +691,31 @@ static char *NSObject_AppTools_connectionTipsTV = "NSObject_AppTools_connectionT
                 make.bottom.equalTo(viewController.view).offset(JobsWidth(-65));
             }];
         }
-        [self setConnectionTipsTV:ConnectionTipsTV];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_connectionTipsTV, ConnectionTipsTV)
     }return ConnectionTipsTV;
 }
 
 -(void)setConnectionTipsTV:(UITextView *)connectionTipsTV{
-    objc_setAssociatedObject(self,
-                             NSObject_AppTools_connectionTipsTV,
-                             connectionTipsTV,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_connectionTipsTV, connectionTipsTV)
 }
-static char *NSObject_AppTools_jxCategoryViewTitleMutArr = "NSObject_AppTools_jxCategoryViewTitleMutArr";
-@dynamic jxCategoryViewTitleMutArr;
 #pragma mark —— @property(nonatomic,strong)NSMutableArray<NSString *> *jxCategoryViewTitleMutArr;
+JobsKey(_jxCategoryViewTitleMutArr)
+@dynamic jxCategoryViewTitleMutArr;
 -(NSMutableArray<NSString *> *)jxCategoryViewTitleMutArr{
-    NSMutableArray *JXCategoryViewTitleMutArr = objc_getAssociatedObject(self, NSObject_AppTools_jxCategoryViewTitleMutArr);
+    NSMutableArray *JXCategoryViewTitleMutArr = Jobs_getAssociatedObject(_jxCategoryViewTitleMutArr);
     if (!JXCategoryViewTitleMutArr) {
         JXCategoryViewTitleMutArr = NSMutableArray.array;
         [JXCategoryViewTitleMutArr addObject:Internationalization(@"今日")];
         [JXCategoryViewTitleMutArr addObject:Internationalization(@"昨日")];
         [JXCategoryViewTitleMutArr addObject:Internationalization(@"近7日")];
         [JXCategoryViewTitleMutArr addObject:Internationalization(@"近30日")];
-        
-        [self setJxCategoryViewTitleMutArr:JXCategoryViewTitleMutArr];
+    
+        Jobs_setAssociatedRETAIN_NONATOMIC(_jxCategoryViewTitleMutArr, JXCategoryViewTitleMutArr)
     }return JXCategoryViewTitleMutArr;
 }
 
 -(void)setJxCategoryViewTitleMutArr:(NSMutableArray<NSString *> *)jxCategoryViewTitleMutArr{
-    objc_setAssociatedObject(self,
-                             NSObject_AppTools_jxCategoryViewTitleMutArr,
-                             jxCategoryViewTitleMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_jxCategoryViewTitleMutArr, jxCategoryViewTitleMutArr)
 }
 
 @end

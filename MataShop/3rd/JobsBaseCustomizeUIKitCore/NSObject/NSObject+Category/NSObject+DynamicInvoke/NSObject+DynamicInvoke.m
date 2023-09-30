@@ -195,8 +195,8 @@ SEL _Nullable selectorBlocks(JobsSelectorBlock block,
                                  block,
                                  OBJC_ASSOCIATION_COPY_NONATOMIC);
     }else{
-//        [NSException raise:Internationalization(@"添加方法失败")
-//                    format:@"%@ selectorBlock error", target];
+        [NSException raise:Internationalization(@"添加方法失败")
+                    format:@"%@ selectorBlock error", target];
     }return sel;
 }
 /// 内部调用无需暴露
@@ -209,23 +209,18 @@ static void selectorImp(id self,
 }
 /// 对 SEL和IMP的统一管理
 #pragma mark —— @property(nonatomic,strong)JobsSEL_IMP *selImp;
+JobsKey(_selImp)
 @dynamic selImp;
 -(JobsSEL_IMP *)selImp{
-    JobsSEL_IMP *SelImp = objc_getAssociatedObject(self, _cmd);
+    JobsSEL_IMP *SelImp = Jobs_getAssociatedObject(_selImp);
     if (!SelImp) {
         SelImp = JobsSEL_IMP.new;
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 SelImp,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_selImp, SelImp)
     }return SelImp;
 }
 
 -(void)setSelImp:(JobsSEL_IMP *)selImp{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             selImp,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_selImp, selImp)
 }
 
 @end

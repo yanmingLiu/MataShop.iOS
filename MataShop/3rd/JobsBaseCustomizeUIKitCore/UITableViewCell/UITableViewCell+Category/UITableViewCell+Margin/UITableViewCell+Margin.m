@@ -258,29 +258,24 @@ makeSectionFirstAndLastCell:(UITableViewCell *_Nonnull)cell
                        dy);
 }
 #pragma mark —— <UIViewModelProtocol> @property(nonatomic,strong)NSIndexPath *indexPath;
+JobsKey(_indexPath)
 @dynamic indexPath;
 -(NSIndexPath *)indexPath{
-    NSIndexPath *indexPath = objc_getAssociatedObject(self, _cmd);
-    return indexPath;
+    return Jobs_getAssociatedObject(_indexPath);
 }
 
 -(void)setIndexPath:(NSIndexPath *)indexPath{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             indexPath,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_indexPath, indexPath)
 }
 #pragma mark —— <UIViewModelProtocol> @property(nonatomic,assign)NSInteger index;
+JobsKey(_index)
 @dynamic index;
 -(NSInteger)index{
-    return [objc_getAssociatedObject(self, _cmd) integerValue];
+    return [Jobs_getAssociatedObject(_index) integerValue];
 }
 
 -(void)setIndex:(NSInteger)index{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithInteger:index],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_index, @(index))
 }
 
 @end

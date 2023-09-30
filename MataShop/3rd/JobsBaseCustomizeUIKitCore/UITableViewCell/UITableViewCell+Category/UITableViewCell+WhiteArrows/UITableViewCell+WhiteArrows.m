@@ -27,42 +27,32 @@
     }
 }
 #pragma mark —— @property(nonatomic,strong)UIImage *img;
+JobsKey(_img)
 @dynamic img;
--(void)setImg:(UIImage *)img{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             img,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
 -(UIImage *)img{
-    UIImage *image = objc_getAssociatedObject(self, _cmd);
+    UIImage *image = Jobs_getAssociatedObject(_img);
     if (!image) {
         image = JobsIMG(@"WhiteRightArrow");
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 image,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_img, image)
     }return image;
 }
+
+-(void)setImg:(UIImage *)img{
+    Jobs_setAssociatedRETAIN_NONATOMIC(_img, img)
+}
 #pragma mark —— @property(nonatomic,assign)CGSize size;
+JobsKey(_size)
 @dynamic size;
 -(CGSize)size{
-    CGSize Size = [objc_getAssociatedObject(self, _cmd) CGSizeValue];
+    CGSize Size = [Jobs_getAssociatedObject(_size) CGSizeValue];
     if (CGSizeEqualToSize(Size, CGSizeZero)) {
         Size = CGSizeMake(JobsWidth(10), JobsWidth(18.3));//缺省值
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 [NSValue valueWithCGSize:Size],
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_size, [NSValue valueWithCGSize:Size])
     }return Size;
 }
 
 -(void)setSize:(CGSize)size{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSValue valueWithCGSize:size],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_size, [NSValue valueWithCGSize:size])
 }
 
 @end

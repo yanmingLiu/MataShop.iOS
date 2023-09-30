@@ -46,18 +46,16 @@
             break;
     }return self;
 }
-@dynamic imageTitleSpace;
 #pragma mark —— @property(nonatomic,assign)CGFloat imageTitleSpace;
+JobsKey(_imageTitleSpace)
+@dynamic imageTitleSpace;
 -(CGFloat)imageTitleSpace{//默认不显示
-    CGFloat ImageTitleSpace = [objc_getAssociatedObject(self, _cmd) floatValue];
+    CGFloat ImageTitleSpace = [Jobs_getAssociatedObject(_imageTitleSpace) floatValue];
     return ImageTitleSpace;
 }
 
 -(void)setImageTitleSpace:(CGFloat)imageTitleSpace{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithFloat:imageTitleSpace],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_imageTitleSpace, @(imageTitleSpace))
 }
 
 @end

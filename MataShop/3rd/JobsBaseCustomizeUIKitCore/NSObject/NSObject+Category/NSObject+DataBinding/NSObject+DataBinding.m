@@ -22,17 +22,14 @@
     collectionView.dataSource = self;
 }
 #pragma mark —— @property(nonatomic,strong)id objBindingParams;
+JobsKey(_objBindingParams)
 @dynamic objBindingParams;
 -(id)objBindingParams{
-    id ObjBindingParams = objc_getAssociatedObject(self, _cmd);
-    return ObjBindingParams;
+    return Jobs_getAssociatedObject(_objBindingParams);
 }
 
 -(void)setObjBindingParams:(id)objBindingParams{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             objBindingParams,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_objBindingParams, objBindingParams)
 }
 
 @end

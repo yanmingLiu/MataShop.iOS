@@ -64,36 +64,32 @@
     }else{}
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshConfigModel *refreshConfigHeader;//头部的配置信息
+JobsKey(_refreshConfigHeader)
 @dynamic refreshConfigHeader;
 -(MJRefreshConfigModel *)refreshConfigHeader{
-    MJRefreshConfigModel *RefreshConfigHeader = objc_getAssociatedObject(self, _cmd);
+    MJRefreshConfigModel *RefreshConfigHeader = Jobs_getAssociatedObject(_refreshConfigHeader);
     if (!RefreshConfigHeader) {
         RefreshConfigHeader = MJRefreshConfigModel.new;
-        [self setRefreshConfigHeader:RefreshConfigHeader];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_refreshConfigHeader, RefreshConfigHeader)
     }return RefreshConfigHeader;
 }
 
 -(void)setRefreshConfigHeader:(MJRefreshConfigModel *)refreshConfigHeader{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             refreshConfigHeader,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_refreshConfigHeader, refreshConfigHeader)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshConfigModel *refreshConfigFooter;//尾部的配置信息
+JobsKey(_refreshConfigFooter)
 @dynamic refreshConfigFooter;
 -(MJRefreshConfigModel *)refreshConfigFooter{
-    MJRefreshConfigModel *RefreshConfigFooter = objc_getAssociatedObject(self, _cmd);
+    MJRefreshConfigModel *RefreshConfigFooter = Jobs_getAssociatedObject(_refreshConfigFooter);
     if (!RefreshConfigFooter) {
         RefreshConfigFooter = MJRefreshConfigModel.new;
-        [self setRefreshConfigFooter:RefreshConfigFooter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_refreshConfigFooter, RefreshConfigFooter)
     }return RefreshConfigFooter;
 }
 
 -(void)setRefreshConfigFooter:(MJRefreshConfigModel *)refreshConfigFooter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             refreshConfigFooter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_refreshConfigFooter, refreshConfigFooter)
 }
 /**
  MJRefreshStateIdle,   //   普通闲置状态
@@ -104,9 +100,10 @@
  */
 #pragma mark —— MJRefreshHeader
 #pragma mark —— @property(nonatomic,strong)LOTAnimationMJRefreshHeader *lotAnimMJRefreshHeader;
+JobsKey(_lotAnimMJRefreshHeader)
 @dynamic lotAnimMJRefreshHeader;
 -(LOTAnimationMJRefreshHeader *)lotAnimMJRefreshHeader{
-    LOTAnimationMJRefreshHeader *lotAnimMJRefreshHeader = objc_getAssociatedObject(self, _cmd);
+    LOTAnimationMJRefreshHeader *lotAnimMJRefreshHeader = Jobs_getAssociatedObject(_lotAnimMJRefreshHeader);
     NSLog(@"DDD = %@",lotAnimMJRefreshHeader);
     if (!lotAnimMJRefreshHeader) {
         @jobs_weakify(self)
@@ -163,20 +160,18 @@
                 [self 震动特效反馈];
             }
         }
-        [self setLotAnimMJRefreshHeader:lotAnimMJRefreshHeader];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_lotAnimMJRefreshHeader, lotAnimMJRefreshHeader)
     }return lotAnimMJRefreshHeader;
 }
 
 -(void)setLotAnimMJRefreshHeader:(LOTAnimationMJRefreshHeader *)lotAnimMJRefreshHeader{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             lotAnimMJRefreshHeader,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_lotAnimMJRefreshHeader, lotAnimMJRefreshHeader)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshNormalHeader *mjRefreshNormalHeader;
+JobsKey(_mjRefreshNormalHeader)
 @dynamic mjRefreshNormalHeader;
 -(MJRefreshNormalHeader *)mjRefreshNormalHeader{
-    MJRefreshNormalHeader *MjRefreshNormalHeader = objc_getAssociatedObject(self, _cmd);
+    MJRefreshNormalHeader *MjRefreshNormalHeader = Jobs_getAssociatedObject(_mjRefreshNormalHeader);
     if (!MjRefreshNormalHeader) {
         @jobs_weakify(self)
         MjRefreshNormalHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -211,17 +206,15 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshNormalHeader:MjRefreshNormalHeader];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshNormalHeader, MjRefreshNormalHeader);
     }return MjRefreshNormalHeader;
 }
 
 -(void)setMjRefreshNormalHeader:(MJRefreshNormalHeader *)mjRefreshNormalHeader{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshNormalHeader,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshNormalHeader, mjRefreshNormalHeader);
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshStateHeader *mjRefreshStateHeader;
+JobsKey(_mjRefreshStateHeader)
 @dynamic mjRefreshStateHeader;
 -(MJRefreshStateHeader *)mjRefreshStateHeader{
     MJRefreshStateHeader *MjRefreshStateHeader = objc_getAssociatedObject(self, _cmd);
@@ -259,20 +252,18 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshStateHeader:MjRefreshStateHeader];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshStateHeader, MjRefreshStateHeader)
     }return MjRefreshStateHeader;
 }
 
 -(void)setMjRefreshStateHeader:(MJRefreshStateHeader *)mjRefreshStateHeader{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshStateHeader,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshStateHeader, mjRefreshStateHeader)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshHeader *mjRefreshHeader;
+JobsKey(_mjRefreshHeader)
 @dynamic mjRefreshHeader;
 -(MJRefreshHeader *)mjRefreshHeader{
-    MJRefreshHeader *MjRefreshHeader = objc_getAssociatedObject(self, _cmd);
+    MJRefreshHeader *MjRefreshHeader = Jobs_getAssociatedObject(_mjRefreshHeader);
     if (!MjRefreshHeader) {
         @jobs_weakify(self)
         MjRefreshHeader = [MJRefreshHeader headerWithRefreshingBlock:^{
@@ -285,20 +276,18 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshHeader:MjRefreshHeader];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshHeader, MjRefreshHeader)
     }return MjRefreshHeader;
 }
 
 -(void)setMjRefreshHeader:(MJRefreshHeader *)mjRefreshHeader{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshHeader,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshHeader, mjRefreshHeader)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshGifHeader *mjRefreshGifHeader;
+JobsKey(_mjRefreshGifHeader)
 @dynamic mjRefreshGifHeader;
 -(MJRefreshGifHeader *)mjRefreshGifHeader{
-    MJRefreshGifHeader *MjRefreshGifHeader = objc_getAssociatedObject(self, _cmd);
+    MJRefreshGifHeader *MjRefreshGifHeader = Jobs_getAssociatedObject(_mjRefreshGifHeader);
     if (!MjRefreshGifHeader) {
         @jobs_weakify(self)
         MjRefreshGifHeader = [MJRefreshGifHeader headerWithRefreshingBlock:^{
@@ -352,21 +341,19 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshGifHeader:MjRefreshGifHeader];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshGifHeader, MjRefreshGifHeader)
     }return MjRefreshGifHeader;
 }
 
 -(void)setMjRefreshGifHeader:(MJRefreshGifHeader *)mjRefreshGifHeader{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshGifHeader,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshGifHeader, mjRefreshGifHeader)
 }
 #pragma mark —— MJRefreshFooter
 #pragma mark —— @property(nonatomic,strong)MJRefreshAutoGifFooter *mjRefreshAutoGifFooter;
+JobsKey(_mjRefreshAutoGifFooter)
 @dynamic mjRefreshAutoGifFooter;
 -(MJRefreshAutoGifFooter *)mjRefreshAutoGifFooter{
-    MJRefreshAutoGifFooter *MjRefreshAutoGifFooter = objc_getAssociatedObject(self, _cmd);
+    MJRefreshAutoGifFooter *MjRefreshAutoGifFooter = Jobs_getAssociatedObject(_mjRefreshAutoGifFooter);
     if (!MjRefreshAutoGifFooter) {
         @jobs_weakify(self)
         MjRefreshAutoGifFooter = [MJRefreshAutoGifFooter footerWithRefreshingBlock:^{
@@ -420,20 +407,18 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshAutoGifFooter:MjRefreshAutoGifFooter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshAutoGifFooter, MjRefreshAutoGifFooter)
     }return MjRefreshAutoGifFooter;
 }
 
 -(void)setMjRefreshAutoGifFooter:(MJRefreshAutoGifFooter *)mjRefreshAutoGifFooter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshAutoGifFooter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshAutoGifFooter, mjRefreshAutoGifFooter)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshBackNormalFooter *mjRefreshBackNormalFooter;
+JobsKey(_mjRefreshBackNormalFooter)
 @dynamic mjRefreshBackNormalFooter;
 -(MJRefreshBackNormalFooter *)mjRefreshBackNormalFooter{
-    MJRefreshBackNormalFooter *MjRefreshBackNormalFooter = objc_getAssociatedObject(self, _cmd);
+    MJRefreshBackNormalFooter *MjRefreshBackNormalFooter = Jobs_getAssociatedObject(_mjRefreshBackNormalFooter);
     if (!MjRefreshBackNormalFooter) {
         @jobs_weakify(self)
         MjRefreshBackNormalFooter = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
@@ -468,20 +453,18 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshBackNormalFooter:MjRefreshBackNormalFooter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshBackNormalFooter, MjRefreshBackNormalFooter)
     }return MjRefreshBackNormalFooter;
 }
 
 -(void)setMjRefreshBackNormalFooter:(MJRefreshBackNormalFooter *)mjRefreshBackNormalFooter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshBackNormalFooter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshBackNormalFooter, mjRefreshBackNormalFooter)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshAutoNormalFooter *mjRefreshAutoNormalFooter;
+JobsKey(_mjRefreshAutoNormalFooter)
 @dynamic mjRefreshAutoNormalFooter;
 -(MJRefreshAutoNormalFooter *)mjRefreshAutoNormalFooter{
-    MJRefreshAutoNormalFooter *MjRefreshAutoNormalFooter = objc_getAssociatedObject(self, _cmd);
+    MJRefreshAutoNormalFooter *MjRefreshAutoNormalFooter = Jobs_getAssociatedObject(_mjRefreshAutoNormalFooter);
     if (!MjRefreshAutoNormalFooter) {
         @jobs_weakify(self)
         MjRefreshAutoNormalFooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -517,20 +500,18 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshAutoNormalFooter:MjRefreshAutoNormalFooter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshAutoNormalFooter, MjRefreshAutoNormalFooter)
     }return MjRefreshAutoNormalFooter;
 }
 
 -(void)setMjRefreshAutoNormalFooter:(MJRefreshAutoNormalFooter *)mjRefreshAutoNormalFooter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshAutoNormalFooter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshAutoNormalFooter, mjRefreshAutoNormalFooter)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshAutoStateFooter *mjRefreshAutoStateFooter;
+JobsKey(_mjRefreshAutoStateFooter)
 @dynamic mjRefreshAutoStateFooter;
 -(MJRefreshAutoStateFooter *)mjRefreshAutoStateFooter{
-    MJRefreshAutoStateFooter *MjRefreshAutoStateFooter = objc_getAssociatedObject(self, _cmd);
+    MJRefreshAutoStateFooter *MjRefreshAutoStateFooter = Jobs_getAssociatedObject(_mjRefreshAutoStateFooter);
     if (!MjRefreshAutoStateFooter) {
         @jobs_weakify(self)
         MjRefreshAutoStateFooter = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
@@ -565,40 +546,36 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshAutoStateFooter:MjRefreshAutoStateFooter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshAutoStateFooter, MjRefreshAutoStateFooter)
     }return MjRefreshAutoStateFooter;
 }
 
 -(void)setMjRefreshAutoStateFooter:(MJRefreshAutoStateFooter *)mjRefreshAutoStateFooter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshAutoStateFooter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshAutoStateFooter, mjRefreshAutoStateFooter)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshAutoFooter *mjRefreshAutoFooter;
+JobsKey(_mjRefreshAutoFooter)
 @dynamic mjRefreshAutoFooter;
 -(MJRefreshAutoFooter *)mjRefreshAutoFooter{
-    MJRefreshAutoFooter *MjRefreshAutoFooter = objc_getAssociatedObject(self, _cmd);
+    MJRefreshAutoFooter *MjRefreshAutoFooter = Jobs_getAssociatedObject(_mjRefreshAutoFooter);
     if (!MjRefreshAutoFooter) {
         @jobs_weakify(self)
         MjRefreshAutoFooter = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
             @jobs_strongify(self)
             [self loadMoreRefresh];
         }];
-        [self setMjRefreshAutoFooter:MjRefreshAutoFooter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshAutoFooter, MjRefreshAutoFooter)
     }return MjRefreshAutoFooter;
 }
 
 -(void)setMjRefreshAutoFooter:(MJRefreshAutoFooter *)mjRefreshAutoFooter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshAutoFooter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshAutoFooter, mjRefreshAutoFooter)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshBackGifFooter *mjRefreshBackGifFooter;
+JobsKey(_mjRefreshBackGifFooter)
 @dynamic mjRefreshBackGifFooter;
 -(MJRefreshBackGifFooter *)mjRefreshBackGifFooter{
-    MJRefreshBackGifFooter *MjRefreshBackGifFooter = objc_getAssociatedObject(self, _cmd);
+    MJRefreshBackGifFooter *MjRefreshBackGifFooter = Jobs_getAssociatedObject(_mjRefreshBackGifFooter);
     if (!MjRefreshBackGifFooter) {
         @jobs_weakify(self)
         MjRefreshBackGifFooter = [MJRefreshBackGifFooter footerWithRefreshingBlock:^{
@@ -652,20 +629,18 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshBackGifFooter:MjRefreshBackGifFooter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshBackGifFooter, MjRefreshBackGifFooter)
     }return MjRefreshBackGifFooter;
 }
 
 -(void)setMjRefreshBackGifFooter:(MJRefreshBackGifFooter *)mjRefreshBackGifFooter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshBackGifFooter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshBackGifFooter, mjRefreshBackGifFooter)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshBackStateFooter *mjRefreshBackStateFooter;
+JobsKey(_mjRefreshBackStateFooter)
 @dynamic mjRefreshBackStateFooter;
 -(MJRefreshBackStateFooter *)mjRefreshBackStateFooter{
-    MJRefreshBackStateFooter *MjRefreshBackStateFooter = objc_getAssociatedObject(self, _cmd);
+    MJRefreshBackStateFooter *MjRefreshBackStateFooter = Jobs_getAssociatedObject(_mjRefreshBackStateFooter);
     if (!MjRefreshBackStateFooter) {
         @jobs_weakify(self)
         MjRefreshBackStateFooter = [MJRefreshBackStateFooter footerWithRefreshingBlock:^{
@@ -700,20 +675,18 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshBackStateFooter:MjRefreshBackStateFooter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshBackStateFooter, MjRefreshBackStateFooter)
     }return MjRefreshBackStateFooter;
 }
 
 -(void)setMjRefreshBackStateFooter:(MJRefreshBackStateFooter *)mjRefreshBackStateFooter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshBackStateFooter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshBackStateFooter, mjRefreshBackStateFooter)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshBackFooter *mjRefreshBackFooter;
+JobsKey(_mjRefreshBackFooter)
 @dynamic mjRefreshBackFooter;
 -(MJRefreshBackFooter *)mjRefreshBackFooter{
-    MJRefreshBackFooter *MjRefreshBackFooter = objc_getAssociatedObject(self, _cmd);
+    MJRefreshBackFooter *MjRefreshBackFooter = Jobs_getAssociatedObject(_mjRefreshBackFooter);
     if (!MjRefreshBackFooter) {
         @jobs_weakify(self)
         MjRefreshBackFooter = [MJRefreshBackFooter footerWithRefreshingBlock:^{
@@ -726,20 +699,18 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshBackFooter:MjRefreshBackFooter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshBackFooter, MjRefreshBackFooter)
     }return MjRefreshBackFooter;
 }
 
 -(void)setMjRefreshBackFooter:(MJRefreshBackFooter *)mjRefreshBackFooter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshBackFooter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshBackFooter, mjRefreshBackFooter)
 }
 #pragma mark —— @property(nonatomic,strong)MJRefreshFooter *mjRefreshFooter;
+JobsKey(_mjRefreshFooter)
 @dynamic mjRefreshFooter;
 -(MJRefreshFooter *)mjRefreshFooter{
-    MJRefreshFooter *MjRefreshFooter = objc_getAssociatedObject(self, _cmd);
+    MJRefreshFooter *MjRefreshFooter = Jobs_getAssociatedObject(_mjRefreshFooter);
     if (!MjRefreshFooter) {
         @jobs_weakify(self)
         MjRefreshFooter = [MJRefreshFooter footerWithRefreshingBlock:^{
@@ -752,15 +723,12 @@
                 [self 震动特效反馈];
             }
         }
-        [self setMjRefreshFooter:MjRefreshFooter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshFooter, MjRefreshFooter)
     }return MjRefreshFooter;
 }
 
 -(void)setMjRefreshFooter:(MJRefreshFooter *)mjRefreshFooter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             mjRefreshFooter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_mjRefreshFooter, mjRefreshFooter)
 }
 
 @end

@@ -9,9 +9,10 @@
 
 @implementation UIView (UIBackgroundConfig)
 #pragma mark —— @property(nonatomic,strong)UIBackgroundConfiguration *backgroundConfig;
+JobsKey(_backgroundConfig)
 @dynamic backgroundConfig;
 -(UIBackgroundConfiguration *)backgroundConfig{
-    UIBackgroundConfiguration *BackgroundConfig = objc_getAssociatedObject(self,_cmd);
+    UIBackgroundConfiguration *BackgroundConfig = Jobs_getAssociatedObject(_backgroundConfig);
     if (!BackgroundConfig) {
         BackgroundConfig = UIBackgroundConfiguration.listPlainHeaderFooterConfiguration;
         BackgroundConfig.image = JobsIMG(@"设置_背景1");
@@ -19,18 +20,13 @@
                                                                         JobsWidth(15),
                                                                         JobsWidth(3),
                                                                         JobsWidth(15));
-        [self setBackgroundConfig:BackgroundConfig];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_backgroundConfig, BackgroundConfig);
     }return BackgroundConfig;
 }
 
 -(void)setBackgroundConfig:(UIBackgroundConfiguration *)backgroundConfig{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             backgroundConfig,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_backgroundConfig, backgroundConfig);
 }
-
-
 
 @end
 

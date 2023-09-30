@@ -150,111 +150,84 @@
     }
 }
 #pragma mark —— @property(nonatomic,strong)BRStringPickerView *stringPickerView;/// 自定义字符串选择器
+JobsKey(_stringPickerView)
 @dynamic stringPickerView;
 -(BRStringPickerView *)stringPickerView{
-    BRStringPickerView *StringPickerView = objc_getAssociatedObject(self, _cmd);
+    BRStringPickerView *StringPickerView = Jobs_getAssociatedObject(_stringPickerView);
     if (!StringPickerView) {
         StringPickerView = [UIView makeStringPickerView:self.brStringPickerMode];
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 StringPickerView,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_stringPickerView, StringPickerView)
     }return StringPickerView;
 }
 
 -(void)setStringPickerView:(BRStringPickerView *)stringPickerView{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             stringPickerView,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_stringPickerView, stringPickerView)
 }
 #pragma mark —— @property(nonatomic,strong)BRDatePickerView *datePickerView;/// 时间选择器
+JobsKey(_datePickerView)
 @dynamic datePickerView;
 -(BRDatePickerView *)datePickerView{
-    BRDatePickerView *DatePickerView = objc_getAssociatedObject(self, _cmd);
+    BRDatePickerView *DatePickerView = Jobs_getAssociatedObject(_datePickerView);
     if (!DatePickerView) {
         DatePickerView = [UIView makeDatePickerView:self.customStyle];
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 DatePickerView,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_datePickerView, DatePickerView)
     }return DatePickerView;
 }
 
 -(void)setDatePickerView:(BRDatePickerView *)datePickerView{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             datePickerView,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_datePickerView, datePickerView)
 }
 #pragma mark —— @property(nonatomic,strong)BRAddressPickerView *addressPickerView;/// 地址选择器
+JobsKey(_addressPickerView)
 @dynamic addressPickerView;
 -(BRAddressPickerView *)addressPickerView{
-    BRAddressPickerView *AddressPickerView = objc_getAssociatedObject(self, _cmd);
+    BRAddressPickerView *AddressPickerView = Jobs_getAssociatedObject(_addressPickerView);
     if (!AddressPickerView) {
         AddressPickerView = [UIView makeAddressPickerView:self.customStyle];
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 AddressPickerView,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_addressPickerView, AddressPickerView)
     }return AddressPickerView;
 }
 
 -(void)setAddressPickerView:(BRAddressPickerView *)addressPickerView{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             addressPickerView,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_addressPickerView, addressPickerView)
 }
 #pragma mark —— @property(nonatomic,strong)BRPickerStyle *customStyle;
+JobsKey(_customStyle)
 @dynamic customStyle;
 -(BRPickerStyle *)customStyle{
-    BRPickerStyle *pickerStyle = objc_getAssociatedObject(self, _cmd);
+    BRPickerStyle *pickerStyle = Jobs_getAssociatedObject(_customStyle);
     if (!pickerStyle) {
         pickerStyle = [UIView makeCustomStyle];
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 pickerStyle,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_customStyle, pickerStyle)
     }return pickerStyle;
 }
 
 -(void)setCustomStyle:(BRPickerStyle *)customStyle{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             customStyle,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_customStyle, customStyle)
 }
 #pragma mark —— @property(nonatomic,assign)BRStringPickerMode brStringPickerMode;
+JobsKey(_brStringPickerMode)
 @dynamic brStringPickerMode;
 -(BRStringPickerMode)brStringPickerMode{
-    return [objc_getAssociatedObject(self, _cmd) integerValue];
+    return [Jobs_getAssociatedObject(_brStringPickerMode) integerValue];
 }
 
 -(void)setBrStringPickerMode:(BRStringPickerMode)brStringPickerMode{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithInteger:brStringPickerMode],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_brStringPickerMode, @(brStringPickerMode))
 }
 #pragma mark —— @property(nonatomic,strong)NSMutableArray *BRStringPickerViewDataMutArr;
+JobsKey(_BRStringPickerViewDataMutArr)
 @dynamic BRStringPickerViewDataMutArr;
 -(NSMutableArray *)BRStringPickerViewDataMutArr{
-    NSMutableArray *brStringPickerViewDataMutArr = objc_getAssociatedObject(self, _cmd);
+    NSMutableArray *brStringPickerViewDataMutArr = Jobs_getAssociatedObject(_BRStringPickerViewDataMutArr);
     if (!brStringPickerViewDataMutArr) {
         brStringPickerViewDataMutArr = NSMutableArray.array;
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 brStringPickerViewDataMutArr,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_BRStringPickerViewDataMutArr, brStringPickerViewDataMutArr)
     }return brStringPickerViewDataMutArr;
 }
 
 -(void)setBRStringPickerViewDataMutArr:(NSMutableArray *)BRStringPickerViewDataMutArr{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             BRStringPickerViewDataMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_BRStringPickerViewDataMutArr, BRStringPickerViewDataMutArr)
 }
 
 @end

@@ -92,24 +92,23 @@
                         inView:self.vc.view];
 }
 #pragma mark —— @property(nonatomic,weak)UIViewController *vc;
+JobsKey(_vc)
 @dynamic vc;
 -(UIViewController *)vc{
-    UIViewController *VC = objc_getAssociatedObject(self, _cmd);
+    UIViewController *VC = Jobs_getAssociatedObject(_vc);
     if (!VC) {
         NSLog(@"VC 不能为空");
     }return VC;
 }
 
 -(void)setVc:(UIViewController *)vc{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             vc,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_vc, vc)
 }
 #pragma mark —— @property(nonatomic,strong)UIPanGestureRecognizer *panRcognize;
+JobsKey(_panRcognize)
 @dynamic panRcognize;
 -(UIPanGestureRecognizer *)panRcognize{
-    UIPanGestureRecognizer *PanRcognize = objc_getAssociatedObject(self, _cmd);
+    UIPanGestureRecognizer *PanRcognize = Jobs_getAssociatedObject(_panRcognize);
     if (!PanRcognize) {
         self.panGR.enabled = YES;
         self.panGR.minimumNumberOfTouches = 1;
@@ -122,15 +121,12 @@
             @jobs_strongify(self)
             [self handlePanGesture:arg];
         }];
-        [self setPanRcognize:self.panGR];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_panRcognize, self.panGR)
     }return PanRcognize;
 }
 
 -(void)setPanRcognize:(UIPanGestureRecognizer *)panRcognize{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             panRcognize,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_panRcognize, panRcognize)
 }
 
 @end

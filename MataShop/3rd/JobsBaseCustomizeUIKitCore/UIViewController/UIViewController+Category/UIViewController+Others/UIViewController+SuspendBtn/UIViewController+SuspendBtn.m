@@ -8,11 +8,11 @@
 #import "UIViewController+SuspendBtn.h"
 
 @implementation UIViewController (SuspendBtn)
-
-@dynamic suspendBtn;
 #pragma mark —— @property(nonatomic,strong)JobsSuspendBtn *suspendBtn;
+JobsKey(_suspendBtn)
+@dynamic suspendBtn;
 -(JobsSuspendBtn *)suspendBtn{
-    JobsSuspendBtn *SuspendBtn = objc_getAssociatedObject(self, _cmd);
+    JobsSuspendBtn *SuspendBtn = Jobs_getAssociatedObject(_suspendBtn);
     if (!SuspendBtn) {
         SuspendBtn = JobsSuspendBtn.new;
         SuspendBtn.normalImage = JobsIMG(@"旋转");
@@ -34,15 +34,12 @@
                                       JobsWidth(50),
                                       JobsWidth(50));
         [SuspendBtn cornerCutToCircleWithCornerRadius:SuspendBtn.width / 2];
-        [self setSuspendBtn:SuspendBtn];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_suspendBtn, SuspendBtn)
     }return SuspendBtn;
 }
 
 -(void)setSuspendBtn:(JobsSuspendBtn *)suspendBtn{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             suspendBtn,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_suspendBtn, suspendBtn)
 }
 
 @end

@@ -8,6 +8,7 @@
 #import "AppDelegate+Extra.h"
 
 @implementation AppDelegate (Extra)
+#pragma mark —— 一些私有方法
 /// 仅仅对数值tabBarTitleMutArr做简单的添加元素并赋值
 -(void)addElementByTabBarTitleMutArr:(NSMutableArray *)tabBarTitleMutArr{
     if (tabBarTitleMutArr) {
@@ -16,12 +17,22 @@
         [tabBarTitleMutArr addObject:Internationalization(@"")];
         [tabBarTitleMutArr addObject:Internationalization(@"消息")];
         [tabBarTitleMutArr addObject:Internationalization(@"未登录")];
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 tabBarTitleMutArr,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_tabBarTitleMutArr, tabBarTitleMutArr)
     }
 }
+
+-(TFPopupParam *)appDelegatePopupParameter{
+    TFPopupParam *PopupParameter = TFPopupParam.new;
+    PopupParameter.duration = 0.3f;
+    PopupParameter.showAnimationDelay = 0.1f;
+    PopupParameter.hideAnimationDelay = 0.1f;
+    PopupParameter.dragEnable = YES;
+    PopupParameter.offset = CGPointMake(0,-JobsTabBarHeightByBottomSafeArea(self.tabBarVC));
+    PopupParameter.disuseBackgroundTouchHide = YES;
+//    PopupParameter.popupSize = [CasinoCustomerServiceView viewSizeWithModel:nil];
+    return PopupParameter;
+}
+#pragma mark —— 一些公有方法
 /// 刷新 TabBarTitle
 -(void)refreshTabBarTitle{
     
@@ -44,22 +55,11 @@
         [mutArr addObject:config.vc];
     }return mutArr;
 }
-
--(TFPopupParam *)appDelegatePopupParameter{
-    TFPopupParam *PopupParameter = TFPopupParam.new;
-    PopupParameter.duration = 0.3f;
-    PopupParameter.showAnimationDelay = 0.1f;
-    PopupParameter.hideAnimationDelay = 0.1f;
-    PopupParameter.dragEnable = YES;
-    PopupParameter.offset = CGPointMake(0,-JobsTabBarHeightByBottomSafeArea(self.tabBarVC));
-    PopupParameter.disuseBackgroundTouchHide = YES;
-//    PopupParameter.popupSize = [CasinoCustomerServiceView viewSizeWithModel:nil];
-    return PopupParameter;
-}
 #pragma mark —— @property(nonatomic,strong)JobsTabbarVC *tabBarVC;
+JobsKey(_tabBarVC)
 @dynamic tabBarVC;
 -(JobsTabbarVC *)tabBarVC{
-    JobsTabbarVC *TabBarVC = objc_getAssociatedObject(self, _cmd);
+    JobsTabbarVC *TabBarVC = Jobs_getAssociatedObject(_tabBarVC);
     if (!TabBarVC) {
         TabBarVC = JobsTabbarVC.new;
         TabBarVC.isAnimationAlert = YES;//OK
@@ -106,24 +106,18 @@
                 }return @(!ok);
             }return @(YES);
         }];
-        
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 TabBarVC,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_tabBarVC, TabBarVC);
     }return TabBarVC;
 }
 
 -(void)setTabBarVC:(JobsTabbarVC *)tabBarVC{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             tabBarVC,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_tabBarVC, tabBarVC);
 }
 #pragma mark —— @property(nonatomic,strong)NSMutableArray <JobsTabBarControllerConfig *>*configMutArr;
+JobsKey(_configMutArr)
 @dynamic configMutArr;
 -(NSMutableArray<JobsTabBarControllerConfig *> *)configMutArr{
-    NSMutableArray *ConfigMutArr = objc_getAssociatedObject(self, _cmd);
+    NSMutableArray *ConfigMutArr = Jobs_getAssociatedObject(_configMutArr);
     if (!ConfigMutArr) {
         ConfigMutArr = NSMutableArray.array;
         {
@@ -185,24 +179,18 @@
             config.tag = ConfigMutArr.count + 1;
             [ConfigMutArr addObject:config];
         }
-        
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 ConfigMutArr,
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_configMutArr, ConfigMutArr);
     }return ConfigMutArr;
 }
 
 -(void)setConfigMutArr:(NSMutableArray<JobsTabBarControllerConfig *> *)configMutArr{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             configMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_configMutArr, configMutArr);
 }
 #pragma mark —— #pragma mark —— @property(nonatomic,strong)NSMutableArray <NSString *>*tabBarTitleMutArr;
+JobsKey(_tabBarTitleMutArr)
 @dynamic tabBarTitleMutArr;
 -(NSMutableArray<NSString *> *)tabBarTitleMutArr{
-    NSMutableArray *TabBarTitleMutArr = objc_getAssociatedObject(self, _cmd);
+    NSMutableArray *TabBarTitleMutArr = Jobs_getAssociatedObject(_tabBarTitleMutArr);
     if (!TabBarTitleMutArr) {
         TabBarTitleMutArr = NSMutableArray.array;
         [self addElementByTabBarTitleMutArr:TabBarTitleMutArr];
@@ -210,10 +198,7 @@
 }
 
 -(void)setTabBarTitleMutArr:(NSMutableArray<NSString *> *)tabBarTitleMutArr{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             tabBarTitleMutArr,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_tabBarTitleMutArr, tabBarTitleMutArr)
 }
 
 @end

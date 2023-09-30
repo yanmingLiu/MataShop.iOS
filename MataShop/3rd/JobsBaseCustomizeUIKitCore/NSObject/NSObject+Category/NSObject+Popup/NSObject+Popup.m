@@ -34,9 +34,10 @@
     }
 }
 #pragma mark —— @property(nonatomic,strong)TFPopupParam *popupParameter;
+JobsKey(_popupParameter)
 @dynamic popupParameter;
 -(TFPopupParam *)popupParameter{
-    TFPopupParam *PopupParameter = objc_getAssociatedObject(self, _cmd);
+    TFPopupParam *PopupParameter = Jobs_getAssociatedObject(_popupParameter);
     if (!PopupParameter) {
         PopupParameter = TFPopupParam.new;
         PopupParameter.duration = 0.3;
@@ -45,34 +46,30 @@
         PopupParameter.autoDissmissDuration = 0;
         PopupParameter.dragEnable = NO;
         PopupParameter.disuseBackgroundTouchHide = YES;
-        [self setPopupParameter:PopupParameter];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_popupParameter, PopupParameter)
     }return PopupParameter;
 }
 
 -(void)setPopupParameter:(TFPopupParam *)popupParameter{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             popupParameter,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_popupParameter, popupParameter)
 }
 #pragma mark —— @property(nonatomic,strong)NoticePopupView *popupView;
+JobsKey(_popupView)
 @dynamic popupView;
 -(JobsNoticePopupView *)popupView{
-    JobsNoticePopupView *PopupView = objc_getAssociatedObject(self, _cmd);
+    JobsNoticePopupView *PopupView = Jobs_getAssociatedObject(_popupView);
     if (!PopupView) {
         PopupView = JobsNoticePopupView.new;
         PopupView.mj_h = JobsMainScreen_HEIGHT() * 2 / 3;
         PopupView.mj_w = JobsMainScreen_WIDTH() - 12 * 2;
         [PopupView richElementsInViewWithModel:UIViewModel.new];
         [self setPopupView:PopupView];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_popupView, PopupView)
     }return PopupView;
 }
 
 -(void)setPopupView:(JobsNoticePopupView *)popupView{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             popupView,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_popupView, popupView)
 }
 
 @end

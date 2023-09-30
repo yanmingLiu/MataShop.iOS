@@ -112,22 +112,20 @@
         });
     }
 }
-@dynamic motionManager;
 #pragma mark —— @property(nonatomic,strong)CMMotionManager *motionManager;
+JobsKey(_motionManager)
+@dynamic motionManager;
 -(CMMotionManager *)motionManager{
-    CMMotionManager *MotionManager = objc_getAssociatedObject(self, _cmd);
+    CMMotionManager *MotionManager = Jobs_getAssociatedObject(_motionManager);
     if (!MotionManager) {
         MotionManager = CMMotionManager.new;
         MotionManager.accelerometerUpdateInterval = 0.5;//加速仪更新频率，以秒为单位
-        [self setMotionManager:MotionManager];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_motionManager, MotionManager)
     }return MotionManager;
 }
 
 -(void)setMotionManager:(CMMotionManager *)motionManager{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             motionManager,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_motionManager, motionManager)
 }
 
 @end

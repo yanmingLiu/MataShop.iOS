@@ -80,11 +80,11 @@ static dispatch_once_t static_payViewOnceToken;
 -(JobsContainerView *)titleView{
     if(!_titleView){
         _titleView = [JobsContainerView.alloc initWithWidth:JobsWidth(315)
-                                              buttonModels:self.btnModelMutArr];
+                                               buttonModels:self.btnModelMutArr];
         _titleView.backgroundColor = JobsRedColor;
         [self addSubview:_titleView];
         [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(252), JobsWidth(72)));
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(315), JobsWidth(72)));
             make.top.equalTo(self).offset(JobsWidth(20));
             make.centerX.equalTo(self);
         }];
@@ -96,12 +96,12 @@ static dispatch_once_t static_payViewOnceToken;
         _btnModelMutArr = NSMutableArray.array;
         {
             JobsBtnModel *model = JobsBtnModel.new;
-            model.backgroundColor = UIColor.yellowColor;
+            model.backgroundColor = UIColor.whiteColor;
             model.normalTitle = Internationalization(@"请支付");
-            model.titleFont = UIFontWeightBoldSize(26);
+            model.titleFont = UIFontWeightBoldSize(18);
             model.normalTitleColor = JobsCor(@"#333333");
             model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            model.contentSpacing = JobsWidth(8);
+            model.contentSpacing = JobsWidth(0);
             model.lineBreakMode = NSLineBreakByWordWrapping;
             model.btnWidth = JobsWidth(54);
 
@@ -110,10 +110,10 @@ static dispatch_once_t static_payViewOnceToken;
 //
         {
             JobsBtnModel *model = JobsBtnModel.new;
-            model.backgroundColor = UIColor.blueColor;
+            model.backgroundColor = UIColor.whiteColor;
             model.titleFont = UIFontWeightRegularSize(16);
             model.normalTitleColor = JobsCor(@"#666666");
-            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
             model.contentSpacing = JobsWidth(10);
             model.lineBreakMode = NSLineBreakByWordWrapping;
             model.btnWidth = JobsWidth(315);
@@ -129,6 +129,7 @@ static dispatch_once_t static_payViewOnceToken;
     if (!_richTextMutArr) {
         _richTextMutArr = NSMutableArray.array;
         [_richTextMutArr addObject:Internationalization(@"观看完整教学视频需支付")];
+        [_richTextMutArr addObject:Internationalization(@"99")];
         [_richTextMutArr addObject:Internationalization(@"Mata值")];
     }return _richTextMutArr;
 }
@@ -146,13 +147,13 @@ static dispatch_once_t static_payViewOnceToken;
         RichTextConfig *config_02 = RichTextConfig.new;
         config_02.font = UIFontWeightRegularSize(14);
         config_02.textCor = JobsCor(@"#BA9B77");
-        config_02.targetString = Internationalization(@"99");
+        config_02.targetString = self.richTextMutArr[1];
         [_richTextConfigMutArr addObject:config_02];
         
         RichTextConfig *config_03 = RichTextConfig.new;
         config_03.font = UIFontWeightRegularSize(14);
         config_03.textCor = JobsCor(@"#666666");
-        config_03.targetString = self.richTextMutArr[1];
+        config_03.targetString = self.richTextMutArr[2];
         [_richTextConfigMutArr addObject:config_03];
         
     }return _richTextConfigMutArr;

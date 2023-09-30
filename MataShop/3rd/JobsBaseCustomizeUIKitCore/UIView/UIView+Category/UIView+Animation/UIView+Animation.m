@@ -152,83 +152,71 @@
     [self.layer addAnimation:animation forKey:@"kViewShakerAnimationKey"];
 }
 #pragma mark —— @property(nonatomic,assign)CGFloat rotateChangeAngle;
+JobsKey(_rotateChangeAngle)
 @dynamic rotateChangeAngle;
 -(CGFloat)rotateChangeAngle{
-    CGFloat RotateChangeAngle = [objc_getAssociatedObject(self, _cmd) floatValue];
+    CGFloat RotateChangeAngle = [Jobs_getAssociatedObject(_rotateChangeAngle) floatValue];
     if (RotateChangeAngle == 0) {
         RotateChangeAngle = 20;
-        objc_setAssociatedObject(self,
-                                 _cmd,
-                                 [NSNumber numberWithFloat:RotateChangeAngle],
-                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Jobs_setAssociatedRETAIN_NONATOMIC(_rotateChangeAngle, @(RotateChangeAngle))
     }return RotateChangeAngle;
 }
 
 -(void)setRotateChangeAngle:(CGFloat)rotateChangeAngle{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithFloat:rotateChangeAngle],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_rotateChangeAngle, @(rotateChangeAngle))
 }
 #pragma mark —— @property(nonatomic,assign)__block CGFloat currentAngle;
+JobsKey(_currentAngle)
 @dynamic currentAngle;
 -(CGFloat)currentAngle{
-    return [objc_getAssociatedObject(self, _cmd) floatValue];
+    return [Jobs_getAssociatedObject(_currentAngle) floatValue];
 }
 
 -(void)setCurrentAngle:(CGFloat)currentAngle{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithFloat:currentAngle],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_currentAngle, @(currentAngle))
 }
 #pragma mark —— @property(nonatomic,assign)CGFloat durationTime;
+JobsKey(_durationTime)
 @dynamic durationTime;
 -(CGFloat)durationTime{
-    CGFloat DurationTime = [objc_getAssociatedObject(self, _cmd) floatValue];
+    CGFloat DurationTime = [Jobs_getAssociatedObject(_durationTime) floatValue];
     if (DurationTime == 0) {
         DurationTime = 0.1;//缺省值
     }return DurationTime;
 }
 
 -(void)setDurationTime:(CGFloat)durationTime{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithFloat:durationTime],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_durationTime, @(durationTime))
 }
 #pragma mark —— @property(nonatomic,assign)CGFloat delayTime;
+JobsKey(_delayTime)
 @dynamic delayTime;
 -(CGFloat)delayTime{
-    CGFloat DelayTime = [objc_getAssociatedObject(self, _cmd) floatValue];
+    CGFloat DelayTime = [Jobs_getAssociatedObject(_delayTime) floatValue];
     if (DelayTime == 0) {
         DelayTime = 0.01;//缺省值
-        [self setDelayTime:DelayTime];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_delayTime, @(DelayTime))
     }return DelayTime;
 }
 
 -(void)setDelayTime:(CGFloat)delayTime{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithFloat:delayTime],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_delayTime, @(delayTime))
 }
 #pragma mark —— @property(nonatomic,assign)BOOL isStopRotateAnimation;//默认值为NO（一直旋转）
+JobsKey(_isStopRotateAnimation)
 @dynamic isStopRotateAnimation;
 -(BOOL)isStopRotateAnimation{
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
+    return [Jobs_getAssociatedObject(_isStopRotateAnimation) boolValue];
 }
 
 -(void)setIsStopRotateAnimation:(BOOL)isStopRotateAnimation{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithBool:isStopRotateAnimation],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_isStopRotateAnimation, @(isStopRotateAnimation))
 }
 #pragma mark —— @property(nonatomic,strong)CAKeyframeAnimation *shakeAnim;
+JobsKey(_shakeAnim)
 @dynamic shakeAnim;
 -(CAKeyframeAnimation *)shakeAnim{
-    CAKeyframeAnimation *ShakeAnim = objc_getAssociatedObject(self, _cmd);
+    CAKeyframeAnimation *ShakeAnim = Jobs_getAssociatedObject(_shakeAnim);
     if (!ShakeAnim) {
         #define Angle2Radian(angle) ((angle) / 180.0 * M_PI)
         ShakeAnim = CAKeyframeAnimation.animation;
@@ -240,15 +228,12 @@
         ShakeAnim.repeatCount = MAXFLOAT;// 动画次数设置为最大
         ShakeAnim.removedOnCompletion = NO;// 保持动画执行完毕后的状态
         ShakeAnim.fillMode = kCAFillModeForwards;
-        [self setShakeAnim:ShakeAnim];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_shakeAnim, ShakeAnim)
     }return ShakeAnim;
 }
 
 -(void)setShakeAnim:(CAKeyframeAnimation *)shakeAnim{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             shakeAnim,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_shakeAnim, shakeAnim)
 }
 
 @end

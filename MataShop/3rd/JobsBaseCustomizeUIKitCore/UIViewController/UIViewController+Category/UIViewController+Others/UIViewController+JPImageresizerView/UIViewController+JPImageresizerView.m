@@ -8,11 +8,11 @@
 #import "UIViewController+JPImageresizerView.h"
 
 @implementation UIViewController (JPImageresizerView)
-
 #pragma mark —— @property(nonatomic,strong)JPImageresizerConfigure *configure;
+JobsKey(_configure)
 @dynamic configure;
 -(JPImageresizerConfigure *)configure{
-    JPImageresizerConfigure *Configure = objc_getAssociatedObject(self, _cmd);
+    JPImageresizerConfigure *Configure = Jobs_getAssociatedObject(_configure);
     if (!Configure) {
         @jobs_weakify(self)
         switch (self.configureType) {
@@ -206,19 +206,18 @@
                 NSAssert(Configure,@"alertController 创建出现错误");
                 break;
         }
+        Jobs_setAssociatedRETAIN_NONATOMIC(_configure, Configure)
     }return Configure;
 }
 
 -(void)setConfigure:(JPImageresizerConfigure *)configure{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             configure,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_configure, configure)
 }
 #pragma mark —— @property(nonatomic,strong)JPImageresizerView *imageresizerView;
+JobsKey(_imageresizerView)
 @dynamic imageresizerView;
 -(JPImageresizerView *)imageresizerView{
-    JPImageresizerView *ImageresizerView = objc_getAssociatedObject(self, _cmd);
+    JPImageresizerView *ImageresizerView = Jobs_getAssociatedObject(_imageresizerView);
     if (!ImageresizerView) {
 //        @jobs_weakify(self)
         ImageresizerView = [JPImageresizerView imageresizerViewWithConfigure:self.configure
@@ -227,139 +226,113 @@
         } imageresizerIsPrepareToScale:^(BOOL isPrepareToScale) {
 //            @jobs_strongify(self)
         }];
-    }return ImageresizerView;
+    }
+    Jobs_setAssociatedRETAIN_NONATOMIC(_imageresizerView, ImageresizerView)
+    return ImageresizerView;
 }
 
 -(void)setImageresizerView:(JPImageresizerView *)imageresizerView{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             imageresizerView,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_imageresizerView, imageresizerView)
 }
 #pragma mark —— @property(nonatomic,assign)JPImageresizerConfigureType *configureType;
+JobsKey(_configureType)
 @dynamic configureType;
 -(JPImageresizerConfigureType)configureType{
-    JPImageresizerConfigureType configureType = [objc_getAssociatedObject(self, _cmd) integerValue];
-    return configureType;
+    return [Jobs_getAssociatedObject(_configureType) integerValue];;
 }
 
 -(void)setConfigureType:(JPImageresizerConfigureType)configureType{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithInteger:configureType],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_configureType, @(configureType))
 }
 #pragma mark —— @property(nonatomic,strong)NSData *JPImageresizerView_data;
+JobsKey(_JPImageresizerView_data)
 @dynamic JPImageresizerView_data;
 -(NSData *)JPImageresizerView_data{
-    NSData *data = objc_getAssociatedObject(self, _cmd);
-    return data;
+    return Jobs_getAssociatedObject(_JPImageresizerView_data);
 }
 
 -(void)setJPImageresizerView_data:(NSData *)JPImageresizerView_data{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             JPImageresizerView_data,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_JPImageresizerView_data, JPImageresizerView_data)
 }
 #pragma mark ——@property(nonatomic,strong)UIImage *JPImageresizerView_img; BaseVC_JPImageresizerView_JPImageresizerView_img
+JobsKey(_JPImageresizerView_img)
 @dynamic JPImageresizerView_img;
 -(UIImage *)JPImageresizerView_img{
-    UIImage *img = objc_getAssociatedObject(self, _cmd);
-    return img;
+    return Jobs_getAssociatedObject(_JPImageresizerView_img);
 }
 
 -(void)setJPImageresizerView_img:(UIImage *)JPImageresizerView_img{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             JPImageresizerView_img,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_JPImageresizerView_img, JPImageresizerView_img)
 }
 #pragma mark —— @property(nonatomic,strong)NSURL *JPImageresizerView_url; BaseVC_JPImageresizerView_JPImageresizerView_url
+JobsKey(_JPImageresizerView_url)
 @dynamic JPImageresizerView_url;
 -(NSURL *)JPImageresizerView_url{
-    NSURL *url = objc_getAssociatedObject(self, _cmd);
-    return url;
+    return Jobs_getAssociatedObject(_JPImageresizerView_url);
 }
 
 -(void)setJPImageresizerView_url:(NSURL *)JPImageresizerView_url{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             JPImageresizerView_url,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_JPImageresizerView_url, JPImageresizerView_url)
 }
 #pragma mark —— @property(nonatomic,strong)AVURLAsset *JPImageresizerView_avURLAsset; BaseVC_JPImageresizerView_JPImageresizerView_avURLAsset
+JobsKey(_JPImageresizerView_avURLAsset)
 @dynamic JPImageresizerView_avURLAsset;
 -(AVURLAsset *)JPImageresizerView_avURLAsset{
-    AVURLAsset *urlAsset = objc_getAssociatedObject(self, _cmd);
-    return urlAsset;
+    return Jobs_getAssociatedObject(_JPImageresizerView_avURLAsset);
 }
 
 -(void)setJPImageresizerView_avURLAsset:(AVURLAsset *)JPImageresizerView_avURLAsset{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             JPImageresizerView_avURLAsset,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_JPImageresizerView_avURLAsset, JPImageresizerView_avURLAsset)
 }
 #pragma mark —— @property(nonatomic,copy)jobsByIDBlock makeBlock;
+JobsKey(_makeBlock)
 @dynamic makeBlock;
 -(jobsByIDBlock)makeBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_makeBlock);
 }
 
 -(void)setMakeBlock:(jobsByIDBlock)makeBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             makeBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_makeBlock, makeBlock)
 }
 #pragma mark —— @property(nonatomic,copy)jobsByIDBlock fixErrorBlock;
+JobsKey(_fixErrorBlock)
 @dynamic fixErrorBlock;
 -(jobsByIDBlock)fixErrorBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_fixErrorBlock);
 }
 
 -(void)setFixErrorBlock:(jobsByIDBlock)fixErrorBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             fixErrorBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_fixErrorBlock, fixErrorBlock)
 }
 #pragma mark —— @property(nonatomic,copy)jobsByIDBlock fixStartBlock;
+JobsKey(_fixStartBlock)
 @dynamic fixStartBlock;
 -(jobsByIDBlock)fixStartBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_fixStartBlock);
 }
 
 -(void)setFixStartBlock:(jobsByIDBlock)fixStartBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             fixStartBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_fixStartBlock, fixStartBlock)
 }
 #pragma mark —— @property(nonatomic,copy)jobsByIDBlock fixProgressBlock;
+JobsKey(_fixProgressBlock)
 @dynamic fixProgressBlock;
 -(jobsByIDBlock)fixProgressBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_fixProgressBlock);
 }
 
 -(void)setFixProgressBlock:(jobsByIDBlock)fixProgressBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             fixProgressBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_fixProgressBlock, fixProgressBlock)
 }
 #pragma mark —— @property(nonatomic,copy)jobsByIDBlock fixCompleteBlock;
+JobsKey(_fixCompleteBlock)
 @dynamic fixCompleteBlock;
 -(jobsByIDBlock)fixCompleteBlock{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_fixCompleteBlock);
 }
 
 -(void)setFixCompleteBlock:(jobsByIDBlock)fixCompleteBlock{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             fixCompleteBlock,
-                             OBJC_ASSOCIATION_COPY_NONATOMIC);
+    Jobs_setAssociatedCOPY_NONATOMIC(_fixCompleteBlock, fixCompleteBlock)
 }
 
 @end

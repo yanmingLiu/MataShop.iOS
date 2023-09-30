@@ -178,82 +178,68 @@
     }
 }
 #pragma mark —— <BaseViewControllerProtocol> @property(nonatomic,weak)UIViewController *fromVC;
+JobsKey(_fromVC)
 @dynamic fromVC;
 -(UIViewController *)fromVC{
-    return objc_getAssociatedObject(self, _cmd);
+    return Jobs_getAssociatedObject(_fromVC);
 }
 
 -(void)setFromVC:(UIViewController *)fromVC{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             fromVC,
-                             OBJC_ASSOCIATION_ASSIGN);
+    Jobs_setAssociatedASSIGN(_fromVC, fromVC)
 }
 #pragma mark —— <BaseViewControllerProtocol> @property(nonatomic,assign)ComingStyle pushOrPresent;
+JobsKey(_pushOrPresent)
 @dynamic pushOrPresent;
 -(ComingStyle)pushOrPresent{
-    return [objc_getAssociatedObject(self, _cmd) integerValue];
+    return [Jobs_getAssociatedObject(_pushOrPresent) integerValue];
 }
 
 -(void)setPushOrPresent:(ComingStyle)pushOrPresent{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithInteger:pushOrPresent],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_pushOrPresent, @(pushOrPresent))
 }
 #pragma mark —— <UIViewModelProtocol> @property(nonatomic,strong)id requestParams;
+JobsKey(_requestParams)
 @dynamic requestParams;
 -(id)requestParams{
-    id RequestParams = objc_getAssociatedObject(self, _cmd);
-    return RequestParams;
+    return Jobs_getAssociatedObject(_requestParams);
 }
 
 -(void)setRequestParams:(id)requestParams{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             requestParams,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_requestParams, requestParams)
 }
 #pragma mark —— <UIViewModelProtocol> @property(nonatomic,strong)UIImage *bgImage;
+JobsKey(_bgImage)
 @dynamic bgImage;
 -(UIImage *)bgImage{
-    UIImage *BgImage = objc_getAssociatedObject(self, _cmd);
+    UIImage *BgImage = Jobs_getAssociatedObject(_bgImage);
     if (!BgImage) {
         BgImage = JobsIMG(@"启动页SLOGAN");
-        [self setBgImage:BgImage];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_bgImage, BgImage)
     }return BgImage;
 }
 
 -(void)setBgImage:(UIImage *)bgImage{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             bgImage,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_bgImage, bgImage)
 }
 #pragma mark —— @property(nonatomic,assign)BOOL setupNavigationBarHidden;
+JobsKey(_setupNavigationBarHidden)
 @dynamic setupNavigationBarHidden;
 -(BOOL)setupNavigationBarHidden{
-    BOOL SetupNavigationBarHidden = [objc_getAssociatedObject(self, _cmd) boolValue];
-    return SetupNavigationBarHidden;
+    return Jobs_getAssociatedObject(_setupNavigationBarHidden);
 }
 
 -(void)setSetupNavigationBarHidden:(BOOL)setupNavigationBarHidden{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithBool:setupNavigationBarHidden],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_setupNavigationBarHidden, @(setupNavigationBarHidden));
 }
 #pragma mark —— @property(nonatomic,assign)NSUInteger __block jobsTag;
+JobsKey(_jobsTag)
 @dynamic jobsTag;
 -(NSUInteger)jobsTag{
-    return [objc_getAssociatedObject(self, _cmd) unsignedIntegerValue];
+    return [Jobs_getAssociatedObject(_jobsTag) unsignedIntegerValue];
 }
 
 -(void)setJobsTag:(NSUInteger)jobsTag{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             [NSNumber numberWithBool:jobsTag],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_jobsTag, @(jobsTag))
 }
 
 @end

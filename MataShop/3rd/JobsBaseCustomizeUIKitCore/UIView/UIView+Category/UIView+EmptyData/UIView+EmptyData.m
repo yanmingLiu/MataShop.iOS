@@ -23,9 +23,10 @@
 #endif
 }
 #pragma mark —— @property(nonatomic,strong)UILabel *tipsLab;
+JobsKey(_tipsLab)
 @dynamic tipsLab;
 -(UILabel *)tipsLab{
-    UILabel *TipsLab = objc_getAssociatedObject(self, _cmd);
+    UILabel *TipsLab = Jobs_getAssociatedObject(_tipsLab);
     if (!TipsLab) {
         TipsLab = UILabel.new;
         TipsLab.text = self.tipsTitle;
@@ -38,31 +39,26 @@
         [TipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self);
         }];
-        [self setTipsLab:TipsLab];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_tipsLab, TipsLab)
     }return TipsLab;
 }
 
 -(void)setTipsLab:(UILabel *)tipsLab{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             tipsLab,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_tipsLab, tipsLab)
 }
 #pragma mark —— @property(nonatomic,strong)NSString *tipsTitle;
+JobsKey(_tipsTitle)
 @dynamic tipsTitle;
 -(NSString *)tipsTitle{
-    NSString *TipsTitle = objc_getAssociatedObject(self, _cmd);
+    NSString *TipsTitle = Jobs_getAssociatedObject(_tipsTitle);
     if ([NSString isNullString:TipsTitle]) {
         TipsTitle = Internationalization(@"快来将我填满吧");
-        [self setTipsTitle:TipsTitle];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_tipsTitle, TipsTitle)
     }return TipsTitle;
 }
 
 -(void)setTipsTitle:(NSString *)tipsTitle{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             tipsTitle,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_tipsTitle, tipsTitle)
 }
 
 @end

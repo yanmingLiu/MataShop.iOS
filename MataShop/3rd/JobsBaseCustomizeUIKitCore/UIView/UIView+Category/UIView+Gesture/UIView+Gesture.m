@@ -15,49 +15,49 @@
 }
 /// 取消注册各种手势对应的方法
 -(void)Dealloc{
-    UILongPressGestureRecognizer *LongPressGR = objc_getAssociatedObject(self, UIView_Gesture_longPressGR);
+    UILongPressGestureRecognizer *LongPressGR = objc_getAssociatedObject(self, _longPressGR);
     if (LongPressGR) {
         if (self.longPressGR_SelImp.selector) {
             [LongPressGR removeTarget:self.target
                                action:self.longPressGR_SelImp.selector];
         }
     }
-    UITapGestureRecognizer *TapGR = objc_getAssociatedObject(self, UIView_Gesture_tapGR);
+    UITapGestureRecognizer *TapGR = objc_getAssociatedObject(self,_tapGR);
     if (TapGR) {
         if (self.tapGR_SelImp.selector) {
             [TapGR removeTarget:self.target
                          action:self.tapGR_SelImp.selector];
         }
     }
-    UISwipeGestureRecognizer *SwipeGR = objc_getAssociatedObject(self, UIView_Gesture_swipeGR);
+    UISwipeGestureRecognizer *SwipeGR = objc_getAssociatedObject(self, _swipeGR);
     if (SwipeGR) {
         if (self.swipeGR_SelImp.selector) {
             [SwipeGR removeTarget:self.target
                            action:self.swipeGR_SelImp.selector];
         }
     }
-    UIPanGestureRecognizer *PanGR = objc_getAssociatedObject(self, UIView_Gesture_panGR);
+    UIPanGestureRecognizer *PanGR = objc_getAssociatedObject(self, _panGR);
     if (PanGR) {
         if (self.panGR_SelImp.selector) {
             [PanGR removeTarget:self.target
                          action:self.panGR_SelImp.selector];
         }
     }
-    UIPinchGestureRecognizer *PinchGR = objc_getAssociatedObject(self, UIView_Gesture_pinchGR);
+    UIPinchGestureRecognizer *PinchGR = objc_getAssociatedObject(self, _pinchGR);
     if (PinchGR) {
         if (self.pinchGR_SelImp.selector) {
             [PinchGR removeTarget:self.target
                            action:self.pinchGR_SelImp.selector];
         }
     }
-    UIRotationGestureRecognizer *RotationGR = objc_getAssociatedObject(self, UIView_Gesture_rotationGR);
+    UIRotationGestureRecognizer *RotationGR = objc_getAssociatedObject(self, _rotationGR);
     if (RotationGR) {
         if (self.rotationGR_SelImp.selector) {
             [RotationGR removeTarget:self.target
                               action:self.rotationGR_SelImp.selector];
         }
     }
-    UIScreenEdgePanGestureRecognizer *ScreenEdgePanGR = objc_getAssociatedObject(self, UIView_Gesture_screenEdgePanGR);
+    UIScreenEdgePanGestureRecognizer *ScreenEdgePanGR = objc_getAssociatedObject(self, _screenEdgePanGR);
     if (ScreenEdgePanGR) {
         if (self.screenEdgePanGR_SelImp.selector) {
             [ScreenEdgePanGR removeTarget:self.target
@@ -65,158 +65,125 @@
         }
     }
 }
-static char *UIView_Gesture_target = "UIView_Gesture_target";
-@dynamic target;
 #pragma mark —— @property(nonatomic,strong,nullable)id target;/// 描述方法实现的位置
+JobsKey(_target)
+@dynamic target;
 -(id)target{
-    id target = objc_getAssociatedObject(self, UIView_Gesture_target);
+    id target = Jobs_getAssociatedObject(_target);
     if (!target) {
         @jobs_weakify(self)
-        [self setTarget:weak_self];
+        Jobs_setAssociatedASSIGN(_target, weak_self)
     }return target;
 }
 
 -(void)setTarget:(id)target{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_target,
-                             target,
-                             OBJC_ASSOCIATION_ASSIGN);
+    Jobs_setAssociatedASSIGN(_target, target)
 }
-static char *UIView_Gesture_minimumNumberOfTouches = "UIView_Gesture_minimumNumberOfTouches";
-@dynamic minimumNumberOfTouches;
 #pragma mark —— @property(nonatomic,assign)NSUInteger minimumNumberOfTouches API_UNAVAILABLE(tvos);
+JobsKey(_minimumNumberOfTouches)
+@dynamic minimumNumberOfTouches;
 -(NSUInteger)minimumNumberOfTouches{
-    return [objc_getAssociatedObject(self, UIView_Gesture_minimumNumberOfTouches) unsignedIntegerValue];
+    return [Jobs_getAssociatedObject(_minimumNumberOfTouches) unsignedIntegerValue];
 }
 
 -(void)setMinimumNumberOfTouches:(NSUInteger)minimumNumberOfTouches{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_minimumNumberOfTouches,
-                             [NSNumber numberWithInteger:minimumNumberOfTouches],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_minimumNumberOfTouches, @(minimumNumberOfTouches))
 }
-static char *UIView_Gesture_maximumNumberOfTouches = "UIView_Gesture_maximumNumberOfTouches";
-@dynamic maximumNumberOfTouches;
 #pragma mark —— @property(nonatomic,assign)NSUInteger maximumNumberOfTouches API_UNAVAILABLE(tvos);
+JobsKey(_maximumNumberOfTouches)
+@dynamic maximumNumberOfTouches;
 -(NSUInteger)maximumNumberOfTouches{
-    return [objc_getAssociatedObject(self, UIView_Gesture_maximumNumberOfTouches) unsignedIntegerValue];
+    return [Jobs_getAssociatedObject(_maximumNumberOfTouches) unsignedIntegerValue];
 }
 
 -(void)setMaximumNumberOfTouches:(NSUInteger)maximumNumberOfTouches{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_maximumNumberOfTouches,
-                             [NSNumber numberWithInteger:maximumNumberOfTouches],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_maximumNumberOfTouches, @(maximumNumberOfTouches))
 }
-static char *UIView_Gesture_numberOfTapsRequired = "UIView_Gesture_numberOfTapsRequired";
-@dynamic numberOfTapsRequired;
 #pragma mark —— @property(nonatomic,assign)NSUInteger numberOfTapsRequired;// 设置轻拍次数【UILongPressGestureRecognizer】【UITapGestureRecognizer】
+JobsKey(_numberOfTapsRequired)
+@dynamic numberOfTapsRequired;
 -(NSUInteger)numberOfTapsRequired{
-    return [objc_getAssociatedObject(self, UIView_Gesture_numberOfTapsRequired) unsignedIntegerValue];
+    return [Jobs_getAssociatedObject(_numberOfTapsRequired) unsignedIntegerValue];
 }
 
 -(void)setNumberOfTapsRequired:(NSUInteger)numberOfTapsRequired{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_numberOfTapsRequired,
-                             [NSNumber numberWithInteger:numberOfTapsRequired],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_numberOfTapsRequired, @(numberOfTapsRequired))
 }
-static char *UIView_Gesture_numberOfTouchesRequired = "UIView_Gesture_numberOfTouchesRequired";
-@dynamic numberOfTouchesRequired;
 #pragma mark —— @property(nonatomic,assign)NSUInteger numberOfTouchesRequired;// 设置手指字数【UILongPressGestureRecognizer】【UITapGestureRecognizer】
+JobsKey(_numberOfTouchesRequired)
+@dynamic numberOfTouchesRequired;
 -(NSUInteger)numberOfTouchesRequired{
-    return [objc_getAssociatedObject(self, UIView_Gesture_numberOfTouchesRequired) unsignedIntegerValue];
+    return [Jobs_getAssociatedObject(_numberOfTouchesRequired) unsignedIntegerValue];
 }
 
 -(void)setNumberOfTouchesRequired:(NSUInteger)numberOfTouchesRequired{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_numberOfTouchesRequired,
-                             [NSNumber numberWithUnsignedInteger:numberOfTouchesRequired],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_numberOfTouchesRequired, @(numberOfTouchesRequired))
 }
-static char *UIView_Gesture_minimumPressDuration = "UIView_Gesture_minimumPressDuration";
-@dynamic minimumPressDuration;
 #pragma mark —— @property(nonatomic,assign)NSTimeInterval minimumPressDuration;// longPressGR最小长按时间【UILongPressGestureRecognizer】
+JobsKey(_minimumPressDuration)
+@dynamic minimumPressDuration;
 -(NSTimeInterval)minimumPressDuration{
-    return [objc_getAssociatedObject(self, UIView_Gesture_minimumPressDuration) doubleValue];
+    return [Jobs_getAssociatedObject(_minimumPressDuration) doubleValue];
 }
 
 -(void)setMinimumPressDuration:(NSTimeInterval)minimumPressDuration{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_minimumPressDuration,
-                             [NSNumber numberWithDouble:minimumPressDuration],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_minimumPressDuration, @(minimumPressDuration))
 }
-static char *UIView_Gesture_allowableMovement = "UIView_Gesture_allowableMovement";
-@dynamic allowableMovement;
 #pragma mark —— @property(nonatomic,assign)CGFloat allowableMovement;//【UILongPressGestureRecognizer】
+JobsKey(_allowableMovement)
+@dynamic allowableMovement;
 -(CGFloat)allowableMovement{
-    return [objc_getAssociatedObject(self, UIView_Gesture_allowableMovement) floatValue];
+    return [Jobs_getAssociatedObject(_allowableMovement) floatValue];
 }
 
 -(void)setAllowableMovement:(CGFloat)allowableMovement{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_allowableMovement,
-                             [NSNumber numberWithFloat:allowableMovement],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_allowableMovement, @(allowableMovement))
 }
-static char *UIView_Gesture_swipeGRDirection = "UIView_Gesture_swipeGRDirection";
-@dynamic swipeGRDirection;
 #pragma mark —— @property(nonatomic,assign)UISwipeGestureRecognizerDirection swipeGRDirection;// swipe手势清扫方向
+JobsKey(_swipeGRDirection)
+@dynamic swipeGRDirection;
 -(UISwipeGestureRecognizerDirection)swipeGRDirection{
-    return [objc_getAssociatedObject(self, UIView_Gesture_swipeGRDirection) unsignedIntegerValue];
+    return [Jobs_getAssociatedObject(_swipeGRDirection) unsignedIntegerValue];
 }
 
 -(void)setSwipeGRDirection:(UISwipeGestureRecognizerDirection)swipeGRDirection{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_swipeGRDirection,
-                             [NSNumber numberWithUnsignedInteger:swipeGRDirection],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_swipeGRDirection, @(swipeGRDirection))
 }
-static char *UIView_Gesture_allowedScrollTypesMask = "UIView_Gesture_allowedScrollTypesMask";
-@dynamic allowedScrollTypesMask;
 #pragma mark —— @property(nonatomic,assign)UIScrollTypeMask allowedScrollTypesMask;
+JobsKey(_allowedScrollTypesMask)
+@dynamic allowedScrollTypesMask;
 -(UIScrollTypeMask)allowedScrollTypesMask{
-    return [objc_getAssociatedObject(self, UIView_Gesture_allowedScrollTypesMask) integerValue];
+    return [Jobs_getAssociatedObject(_allowedScrollTypesMask) integerValue];
 }
 
 -(void)setAllowedScrollTypesMask:(UIScrollTypeMask)allowedScrollTypesMask{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_allowedScrollTypesMask,
-                             [NSNumber numberWithInteger:allowedScrollTypesMask],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_allowedScrollTypesMask, @(allowedScrollTypesMask))
 }
-static char *UIView_Gesture_scale = "UIView_Gesture_scale";
-@dynamic scale;
 #pragma mark —— @property(nonatomic,assign)CGFloat scale;
+JobsKey(_scale)
+@dynamic scale;
 -(CGFloat)scale{
-    return [objc_getAssociatedObject(self, UIView_Gesture_scale) floatValue];
+    return [Jobs_getAssociatedObject(_scale) floatValue];
 }
 
 -(void)setScale:(CGFloat)scale{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_scale,
-                             [NSNumber numberWithFloat:scale],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_scale, @(scale))
 }
-static char *UIView_Gesture_rotate = "UIView_Gesture_rotate";
-@dynamic rotate;
 #pragma mark —— @property(nonatomic,assign)CGFloat rotate;
+JobsKey(_rotate)
+@dynamic rotate;
 -(CGFloat)rotate{
-    return [objc_getAssociatedObject(self, UIView_Gesture_rotate) floatValue];
+    return [Jobs_getAssociatedObject(_rotate) floatValue];
 }
 
 -(void)setRotate:(CGFloat)rotate{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_rotate,
-                             [NSNumber numberWithFloat:rotate],
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_rotate, @(rotate))
 }
-static char *UIView_Gesture_longPressGR = "UIView_Gesture_longPressGR";
-@dynamic longPressGR;
 #pragma mark —— @property(nonatomic,strong)UILongPressGestureRecognizer *longPressGR;// 长按手势
+JobsKey(_longPressGR)
+@dynamic longPressGR;
 -(UILongPressGestureRecognizer *)longPressGR{
-    UILongPressGestureRecognizer *LongPressGR = objc_getAssociatedObject(self, UIView_Gesture_longPressGR);
+    UILongPressGestureRecognizer *LongPressGR = Jobs_getAssociatedObject(_longPressGR);
     if (!LongPressGR) {
         LongPressGR = UILongPressGestureRecognizer.new;
         NSLog(@"self.target = %@",self.target);
@@ -234,21 +201,18 @@ static char *UIView_Gesture_longPressGR = "UIView_Gesture_longPressGR";
             [LongPressGR addTarget:self.target action:self.longPressGR_SelImp.selector];
         }
         [self addGestureRecognizer:LongPressGR];
-        [self setLongPressGR:LongPressGR];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_longPressGR, LongPressGR)
     }return LongPressGR;
 }
 
 -(void)setLongPressGR:(UILongPressGestureRecognizer *)longPressGR{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_longPressGR,
-                             longPressGR,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_longPressGR, longPressGR)
 }
-static char *UIView_Gesture_tapGR = "UIView_Gesture_tapGR";
-@dynamic tapGR;
 #pragma mark —— @property(nonatomic,strong)UITapGestureRecognizer *tapGR;// 点击手势
+JobsKey(_tapGR)
+@dynamic tapGR;
 -(UITapGestureRecognizer *)tapGR{
-    UITapGestureRecognizer *TapGR = objc_getAssociatedObject(self, UIView_Gesture_tapGR);
+    UITapGestureRecognizer *TapGR = Jobs_getAssociatedObject(_tapGR);
     if (!TapGR) {
         TapGR = UITapGestureRecognizer.new;
         NSLog(@"self.target = %@",self.target);
@@ -263,21 +227,18 @@ static char *UIView_Gesture_tapGR = "UIView_Gesture_tapGR";
             [TapGR addTarget:self.target action:self.tapGR_SelImp.selector];
         }
         [self addGestureRecognizer:TapGR];
-        [self setTapGR:TapGR];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_tapGR, TapGR)
     }return TapGR;
 }
 
 -(void)setTapGR:(UITapGestureRecognizer *)tapGR{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_tapGR,
-                             tapGR,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_tapGR, tapGR)
 }
-static char *UIView_Gesture_swipeGR = "UIView_Gesture_swipeGR";
-@dynamic swipeGR;
 #pragma mark —— @property(nonatomic,strong)UISwipeGestureRecognizer *swipeGR;// 轻扫手势
+JobsKey(_swipeGR)
+@dynamic swipeGR;
 -(UISwipeGestureRecognizer *)swipeGR{
-    UISwipeGestureRecognizer *SwipeGR = objc_getAssociatedObject(self, UIView_Gesture_swipeGR);
+    UISwipeGestureRecognizer *SwipeGR = Jobs_getAssociatedObject(_swipeGR);
     if (!SwipeGR) {
         SwipeGR = UISwipeGestureRecognizer.new;
         NSLog(@"self.target = %@",self.target);
@@ -285,24 +246,22 @@ static char *UIView_Gesture_swipeGR = "UIView_Gesture_swipeGR";
         SwipeGR.direction = self.swipeGRDirection;// 清扫方向。如果多组可以用|来进行,默认UISwipeGestureRecognizerDirectionRight
         SwipeGR.numberOfTouchesRequired = self.numberOfTouchesRequired;// 设置手指字数,默认1
         if (self.swipeGR_SelImp.selector) {
-            [SwipeGR addTarget:self.target action:self.swipeGR_SelImp.selector];
+            [SwipeGR addTarget:self.target
+                        action:self.swipeGR_SelImp.selector];
         }
         [self addGestureRecognizer:SwipeGR];
-        [self setSwipeGR:SwipeGR];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_swipeGR, SwipeGR)
     }return SwipeGR;
 }
 
 -(void)setSwipeGR:(UISwipeGestureRecognizer *)swipeGR{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_swipeGR,
-                             swipeGR,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_swipeGR, swipeGR)
 }
-static char *UIView_Gesture_panGR = "UIView_Gesture_panGR";
-@dynamic panGR;
 #pragma mark —— @property(nonatomic,strong)UIPanGestureRecognizer *panGR;// 平移手势
+JobsKey(_panGR)
+@dynamic panGR;
 -(UIPanGestureRecognizer *)panGR{
-    UIPanGestureRecognizer *PanGR = objc_getAssociatedObject(self, UIView_Gesture_panGR);
+    UIPanGestureRecognizer *PanGR = Jobs_getAssociatedObject(_panGR);
     if (!PanGR) {
         PanGR = UIPanGestureRecognizer.new;
         NSLog(@"self.target = %@",self.target);
@@ -317,20 +276,18 @@ static char *UIView_Gesture_panGR = "UIView_Gesture_panGR";
         }
         [self addGestureRecognizer:PanGR];
         [self setPanGR:PanGR];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_panGR, PanGR)
     }return PanGR;
 }
 
 -(void)setPanGR:(UIPanGestureRecognizer *)panGR{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_panGR,
-                             panGR,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_panGR, panGR)
 }
-static char *UIView_Gesture_pinchGR = "UIView_Gesture_pinchGR";
-@dynamic pinchGR;
 #pragma mark —— @property(nonatomic,strong)UIPinchGestureRecognizer *pinchGR;// 捏合（缩放）手势
+JobsKey(_pinchGR)
+@dynamic pinchGR;
 -(UIPinchGestureRecognizer *)pinchGR{
-    UIPinchGestureRecognizer *PinchGR = objc_getAssociatedObject(self, UIView_Gesture_pinchGR);
+    UIPinchGestureRecognizer *PinchGR = Jobs_getAssociatedObject(_pinchGR);
     if (!PinchGR) {
         PinchGR = UIPinchGestureRecognizer.new;
         NSLog(@"self.target = %@",self.target);
@@ -341,21 +298,18 @@ static char *UIView_Gesture_pinchGR = "UIView_Gesture_pinchGR";
                         action:self.pinchGR_SelImp.selector];
         }
         [self addGestureRecognizer:PinchGR];
-        [self setPinchGR:PinchGR];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_pinchGR, PinchGR)
     }return PinchGR;
 }
 
 -(void)setPinchGR:(UIPinchGestureRecognizer *)pinchGR{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_pinchGR,
-                             pinchGR,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_pinchGR, pinchGR)
 }
-static char *UIView_Gesture_rotationGR = "UIView_Gesture_rotationGR";
-@dynamic rotationGR;
 #pragma mark —— @property(nonatomic,strong)UIRotationGestureRecognizer *rotationGR;// 旋转手势
+JobsKey(_rotationGR)
+@dynamic rotationGR;
 -(UIRotationGestureRecognizer *)rotationGR{
-    UIRotationGestureRecognizer *RotationGR = objc_getAssociatedObject(self, UIView_Gesture_rotationGR);
+    UIRotationGestureRecognizer *RotationGR = Jobs_getAssociatedObject(_rotationGR);
     if (!RotationGR) {
         RotationGR = UIRotationGestureRecognizer.new;
         NSLog(@"self.target = %@",self.target);
@@ -366,21 +320,18 @@ static char *UIView_Gesture_rotationGR = "UIView_Gesture_rotationGR";
                            action:self.rotationGR_SelImp.selector];
         }
         [self addGestureRecognizer:RotationGR];
-        [self setRotationGR:RotationGR];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_rotationGR, RotationGR)
     }return RotationGR;
 }
 
 -(void)setRotationGR:(UIRotationGestureRecognizer *)rotationGR{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_rotationGR,
-                             rotationGR,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_rotationGR, rotationGR)
 }
-static char *UIView_Gesture_screenEdgePanGR = "UIView_Gesture_screenEdgePanGR";
-@dynamic screenEdgePanGR;
 #pragma mark —— @property(nonatomic,strong)UIScreenEdgePanGestureRecognizer *screenEdgePanGR;// 屏幕边缘平移
+JobsKey(_screenEdgePanGR)
+@dynamic screenEdgePanGR;
 -(UIScreenEdgePanGestureRecognizer *)screenEdgePanGR{
-    UIScreenEdgePanGestureRecognizer *ScreenEdgePanGR = objc_getAssociatedObject(self, UIView_Gesture_screenEdgePanGR);
+    UIScreenEdgePanGestureRecognizer *ScreenEdgePanGR = Jobs_getAssociatedObject(_screenEdgePanGR);
     if (!ScreenEdgePanGR) {
         ScreenEdgePanGR = UIScreenEdgePanGestureRecognizer.new;
         NSLog(@"self.target = %@",self.target);
@@ -390,133 +341,109 @@ static char *UIView_Gesture_screenEdgePanGR = "UIView_Gesture_screenEdgePanGR";
                                 action:self.screenEdgePanGR_SelImp.selector];
         }
         [self addGestureRecognizer:ScreenEdgePanGR];
-        [self setScreenEdgePanGR:ScreenEdgePanGR];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_screenEdgePanGR, ScreenEdgePanGR)
     }return ScreenEdgePanGR;
 }
 
 -(void)setScreenEdgePanGR:(UIScreenEdgePanGestureRecognizer *)screenEdgePanGR{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_screenEdgePanGR,
-                             screenEdgePanGR,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_screenEdgePanGR, screenEdgePanGR)
 }
-static char *UIView_Gesture_longPressGRSelImp = "UIView_Gesture_longPressGRSelImp";
-@dynamic longPressGR_SelImp;
 #pragma mark —— @property(nonatomic,strong)JobsSEL_IMP *longPressGR_SelImp;
+JobsKey(_longPressGR_SelImp)
+@dynamic longPressGR_SelImp;
 -(JobsSEL_IMP *)longPressGR_SelImp{
-    JobsSEL_IMP *SEL_IMP = objc_getAssociatedObject(self, UIView_Gesture_longPressGRSelImp);
+    JobsSEL_IMP *SEL_IMP = Jobs_getAssociatedObject(_longPressGR_SelImp);
     if (!SEL_IMP) {
         SEL_IMP = JobsSEL_IMP.new;
-        [self setLongPressGR_SelImp:SEL_IMP];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_longPressGR_SelImp, SEL_IMP)
     }return SEL_IMP;
 }
 
 -(void)setLongPressGR_SelImp:(JobsSEL_IMP *)longPressGR_SelImp{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_longPressGRSelImp,
-                             longPressGR_SelImp,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_longPressGR_SelImp, longPressGR_SelImp)
 }
-static char *UIView_Gesture_tapGRSelImp = "UIView_Gesture_tapGRSelImp";
-@dynamic tapGR_SelImp;
 #pragma mark —— @property(nonatomic,strong)JobsSEL_IMP *tapGR_SelImp;
+JobsKey(_tapGR_SelImp)
+@dynamic tapGR_SelImp;
 -(JobsSEL_IMP *)tapGR_SelImp{
-    JobsSEL_IMP *SEL_IMP = objc_getAssociatedObject(self, UIView_Gesture_tapGRSelImp);
+    JobsSEL_IMP *SEL_IMP = Jobs_getAssociatedObject(_tapGR_SelImp);
     if (!SEL_IMP) {
         SEL_IMP = JobsSEL_IMP.new;
-        [self setTapGR_SelImp:SEL_IMP];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_tapGR_SelImp, SEL_IMP)
     }return SEL_IMP;
 }
 
 -(void)setTapGR_SelImp:(JobsSEL_IMP *)tapGR_SelImp{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_tapGRSelImp,
-                             tapGR_SelImp,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_tapGR_SelImp, tapGR_SelImp)
 }
-static char *UIView_Gesture_swipeGRSelImp = "UIView_Gesture_swipeGRSelImp";
-@dynamic swipeGR_SelImp;
 #pragma mark —— @property(nonatomic,strong)JobsSEL_IMP *swipeGR_SelImp;
+JobsKey(_swipeGR_SelImp)
+@dynamic swipeGR_SelImp;
 -(JobsSEL_IMP *)swipeGR_SelImp{
-    JobsSEL_IMP *SEL_IMP = objc_getAssociatedObject(self, UIView_Gesture_swipeGRSelImp);
+    JobsSEL_IMP *SEL_IMP = Jobs_getAssociatedObject(_swipeGR_SelImp);
     if (!SEL_IMP) {
         SEL_IMP = JobsSEL_IMP.new;
-        [self setSwipeGR_SelImp:SEL_IMP];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_swipeGR_SelImp, SEL_IMP)
     }return SEL_IMP;
 }
 -(void)setSwipeGR_SelImp:(JobsSEL_IMP *)swipeGR_SelImp{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_swipeGRSelImp,
-                             swipeGR_SelImp,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_swipeGR_SelImp, swipeGR_SelImp)
 }
-static char *UIView_Gesture_panGRSelImp = "UIView_Gesture_panGRSelImp";
-@dynamic panGR_SelImp;
 #pragma mark —— @property(nonatomic,strong)JobsSEL_IMP *panGR_SelImp;
+JobsKey(_panGR_SelImp)
+@dynamic panGR_SelImp;
 -(JobsSEL_IMP *)panGR_SelImp{
-    JobsSEL_IMP *SEL_IMP = objc_getAssociatedObject(self, UIView_Gesture_panGRSelImp);
+    JobsSEL_IMP *SEL_IMP = Jobs_getAssociatedObject(_panGR_SelImp);
     if (!SEL_IMP) {
         SEL_IMP = JobsSEL_IMP.new;
-        [self setPanGR_SelImp:SEL_IMP];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_panGR_SelImp, SEL_IMP)
     }return SEL_IMP;
 }
 
 -(void)setPanGR_SelImp:(JobsSEL_IMP *)panGR_SelImp{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_panGRSelImp,
-                             panGR_SelImp,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_panGR_SelImp, panGR_SelImp)
 }
-static char *UIView_Gesture_pinchGRSelImp = "UIView_Gesture_pinchGRSelImp";
-@dynamic pinchGR_SelImp;
 #pragma mark —— @property(nonatomic,strong)JobsSEL_IMP *pinchGR_SelImp;
+JobsKey(_pinchGR_SelImp)
+@dynamic pinchGR_SelImp;
 -(JobsSEL_IMP *)pinchGR_SelImp{
-    JobsSEL_IMP *SEL_IMP = objc_getAssociatedObject(self, UIView_Gesture_pinchGRSelImp);
+    JobsSEL_IMP *SEL_IMP = Jobs_getAssociatedObject(_pinchGR_SelImp);
     if (!SEL_IMP) {
         SEL_IMP = JobsSEL_IMP.new;
-        [self setPinchGR_SelImp:SEL_IMP];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_pinchGR_SelImp, SEL_IMP)
     }return SEL_IMP;
 }
 
 -(void)setPinchGR_SelImp:(JobsSEL_IMP *)pinchGR_SelImp{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_pinchGRSelImp,
-                             pinchGR_SelImp,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_pinchGR_SelImp, pinchGR_SelImp)
 }
-static char *UIView_Gesture_rotationGRSelImp = "UIView_Gesture_rotationGRSelImp";
-@dynamic rotationGR_SelImp;
 #pragma mark —— @property(nonatomic,strong)JobsSEL_IMP *rotationGR_SelImp;
+JobsKey(_rotationGR_SelImp)
+@dynamic rotationGR_SelImp;
 -(JobsSEL_IMP *)rotationGR_SelImp{
-    JobsSEL_IMP *SEL_IMP = objc_getAssociatedObject(self, UIView_Gesture_rotationGRSelImp);
+    JobsSEL_IMP *SEL_IMP = Jobs_getAssociatedObject(_rotationGR_SelImp);
     if (!SEL_IMP) {
         SEL_IMP = JobsSEL_IMP.new;
-        [self setRotationGR_SelImp:SEL_IMP];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_rotationGR_SelImp, SEL_IMP)
     }return SEL_IMP;
 }
 
 -(void)setRotationGR_SelImp:(JobsSEL_IMP *)rotationGR_SelImp{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_rotationGRSelImp,
-                             rotationGR_SelImp,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_rotationGR_SelImp, rotationGR_SelImp)
 }
-static char *UIView_Gesture_screenEdgePanGRSelImp = "UIView_Gesture_screenEdgePanGRSelImp";
-@dynamic screenEdgePanGR_SelImp;
 #pragma mark —— @property(nonatomic,strong)JobsSEL_IMP *screenEdgePanGR_SelImp;
+JobsKey(_screenEdgePanGR_SelImp)
+@dynamic screenEdgePanGR_SelImp;
 -(JobsSEL_IMP *)screenEdgePanGR_SelImp{
-    JobsSEL_IMP *SEL_IMP = objc_getAssociatedObject(self, UIView_Gesture_screenEdgePanGRSelImp);
+    JobsSEL_IMP *SEL_IMP = Jobs_getAssociatedObject(_screenEdgePanGR_SelImp);
     if (!SEL_IMP) {
         SEL_IMP = JobsSEL_IMP.new;
-        [self setScreenEdgePanGR_SelImp:SEL_IMP];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_screenEdgePanGR_SelImp, SEL_IMP)
     }return SEL_IMP;
 }
 
 -(void)setScreenEdgePanGR_SelImp:(JobsSEL_IMP *)screenEdgePanGR_SelImp{
-    objc_setAssociatedObject(self,
-                             UIView_Gesture_screenEdgePanGRSelImp,
-                             screenEdgePanGR_SelImp,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_screenEdgePanGR_SelImp, screenEdgePanGR_SelImp)
 }
 
 @end

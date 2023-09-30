@@ -16,9 +16,11 @@
  如果上面覆盖一个按钮，则需要[self.contentView addSubview:self.backgroundImageView];
  否则按钮点击事件被截断
  */
+#pragma mark —— @property(nonatomic,strong)UIImageView *backgroundImageView;
+JobsKey(_backgroundImageView)
 @dynamic backgroundImageView;
 -(UIImageView *)backgroundImageView{
-    UIImageView *BackgroundImageView = objc_getAssociatedObject(self, _cmd);
+    UIImageView *BackgroundImageView = Jobs_getAssociatedObject(_backgroundImageView);
     if (!BackgroundImageView) {
         BackgroundImageView = UIImageView.new;
         BackgroundImageView.userInteractionEnabled = YES;
@@ -34,22 +36,16 @@
         }else{
             [self addSubview:BackgroundImageView];
         }
-        
         BackgroundImageView.layer.zPosition = -1;// 设置层级关系
-        
         [BackgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
         }];
-        
-        [self setBackgroundImageView:BackgroundImageView];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_backgroundImageView, BackgroundImageView)
     }return BackgroundImageView;
 }
 
 -(void)setBackgroundImageView:(UIImageView *)backgroundImageView{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             backgroundImageView,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_backgroundImageView, backgroundImageView)
 }
 
 @end

@@ -41,41 +41,36 @@
     [popupView tf_hide];
 }
 #pragma mark —— @property(nonatomic,strong)BaiShaETProjFiltrationView *filtrationView;/// 过滤
+JobsKey(_filtrationView)
 @dynamic filtrationView;
 -(BaiShaETProjFiltrationView *)filtrationView{
-    BaiShaETProjFiltrationView *FiltrationView = objc_getAssociatedObject(self, _cmd);
+    BaiShaETProjFiltrationView *FiltrationView = Jobs_getAssociatedObject(_filtrationView);
     if (!FiltrationView) {
         FiltrationView = BaiShaETProjFiltrationView.new;
         FiltrationView.size = [BaiShaETProjFiltrationView viewSizeWithModel:nil];
         [FiltrationView richElementsInViewWithModel:nil];
-        [self setFiltrationView:FiltrationView];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_filtrationView, FiltrationView)
     }return FiltrationView;
 }
 
 -(void)setFiltrationView:(BaiShaETProjFiltrationView *)filtrationView{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             filtrationView,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_filtrationView, filtrationView)
 }
 #pragma mark —— @property(nonatomic,strong)BaiShaETProjCustomView *customView;/// 自定义
+JobsKey(_customView)
 @dynamic customView;
 -(BaiShaETProjCustomView *)customView{
-    BaiShaETProjCustomView *CustomView = objc_getAssociatedObject(self, _cmd);
+    BaiShaETProjCustomView *CustomView = Jobs_getAssociatedObject(_customView);
     if (!CustomView) {
         CustomView = BaiShaETProjCustomView.new;
         CustomView.size = [BaiShaETProjFiltrationView viewSizeWithModel:nil];
         [CustomView richElementsInViewWithModel:nil];
-        [self setCustomView:CustomView];
+        Jobs_setAssociatedRETAIN_NONATOMIC(_customView, CustomView)
     }return CustomView;
 }
 
 -(void)setCustomView:(BaiShaETProjCustomView *)customView{
-    objc_setAssociatedObject(self,
-                             _cmd,
-                             customView,
-                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    Jobs_setAssociatedRETAIN_NONATOMIC(_customView, customView)
 }
-
 
 @end
