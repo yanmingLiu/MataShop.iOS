@@ -617,10 +617,10 @@
 		C561D9292AAC8D8000E28603 /* BaiShaETProjChoiceHeaderIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D8C52AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView.m */; };
 		C561D92A2AAC8D8000E28603 /* BaiShaETProjChoiceStadiumView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D8C72AAC8D7B00E28603 /* BaiShaETProjChoiceStadiumView.m */; };
 		C561D92C2AAC8D8000E28603 /* BaiShaETProjMembersSection1View.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D8CC2AAC8D7C00E28603 /* BaiShaETProjMembersSection1View.m */; };
-		C561D9462AAC8D8000E28603 /* 自定义视图.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D9032AAC8D7D00E28603 /* 自定义视图.png */; };
-		C561D9472AAC8D8000E28603 /* BaiShaETProjCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9052AAC8D7D00E28603 /* BaiShaETProjCustomView.m */; };
+		C561D9462AAC8D8000E28603 /* JobsCustomView.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D9032AAC8D7D00E28603 /* JobsCustomView.png */; };
+		C561D9472AAC8D8000E28603 /* JobsCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9052AAC8D7D00E28603 /* JobsCustomView.m */; };
 		C561D94A2AAC8D8000E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D90B2AAC8D7E00E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVCell.m */; };
-		C561D94E2AAC8D8000E28603 /* BaiShaETProjFiltrationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9142AAC8D7F00E28603 /* BaiShaETProjFiltrationView.m */; };
+		C561D94E2AAC8D8000E28603 /* JobsFiltrationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9142AAC8D7F00E28603 /* JobsFiltrationView.m */; };
 		C561D94F2AAC8D8000E28603 /* BaiShaETProjChoiceVenuesView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9162AAC8D7F00E28603 /* BaiShaETProjChoiceVenuesView.m */; };
 		C561D9552AAC8ECB00E28603 /* BaiShaETProjUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9532AAC8ECA00E28603 /* BaiShaETProjUserInfoModel.m */; };
 		C561D9592AAC90A300E28603 /* BaiShaETProjMsgDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D9572AAC90A300E28603 /* BaiShaETProjMsgDataModel.m */; };
@@ -2182,15 +2182,15 @@
 		C561D8C92AAC8D7B00E28603 /* BaiShaETProjChoiceStadiumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjChoiceStadiumView.h; sourceTree = "<group>"; };
 		C561D8CB2AAC8D7C00E28603 /* BaiShaETProjMembersSection1View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjMembersSection1View.h; sourceTree = "<group>"; };
 		C561D8CC2AAC8D7C00E28603 /* BaiShaETProjMembersSection1View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjMembersSection1View.m; sourceTree = "<group>"; };
-		C561D9032AAC8D7D00E28603 /* 自定义视图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "自定义视图.png"; sourceTree = "<group>"; };
-		C561D9042AAC8D7D00E28603 /* BaiShaETProjCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjCustomView.h; sourceTree = "<group>"; };
-		C561D9052AAC8D7D00E28603 /* BaiShaETProjCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjCustomView.m; sourceTree = "<group>"; };
+		C561D9032AAC8D7D00E28603 /* JobsCustomView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JobsCustomView.png; sourceTree = "<group>"; };
+		C561D9042AAC8D7D00E28603 /* JobsCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsCustomView.h; sourceTree = "<group>"; };
+		C561D9052AAC8D7D00E28603 /* JobsCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsCustomView.m; sourceTree = "<group>"; };
 		C561D90B2AAC8D7E00E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjDepositAndWithdrawRecordTBVCell.m; sourceTree = "<group>"; };
 		C561D90C2AAC8D7E00E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjDepositAndWithdrawRecordTBVCell.png; sourceTree = "<group>"; };
 		C561D90D2AAC8D7E00E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjDepositAndWithdrawRecordTBVCell.h; sourceTree = "<group>"; };
-		C561D9122AAC8D7F00E28603 /* BaiShaETProjFiltrationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjFiltrationView.h; sourceTree = "<group>"; };
+		C561D9122AAC8D7F00E28603 /* JobsFiltrationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsFiltrationView.h; sourceTree = "<group>"; };
 		C561D9132AAC8D7F00E28603 /* 筛选视图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "筛选视图.png"; sourceTree = "<group>"; };
-		C561D9142AAC8D7F00E28603 /* BaiShaETProjFiltrationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjFiltrationView.m; sourceTree = "<group>"; };
+		C561D9142AAC8D7F00E28603 /* JobsFiltrationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsFiltrationView.m; sourceTree = "<group>"; };
 		C561D9162AAC8D7F00E28603 /* BaiShaETProjChoiceVenuesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjChoiceVenuesView.m; sourceTree = "<group>"; };
 		C561D9172AAC8D7F00E28603 /* BaiShaETProjChoiceVenuesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjChoiceVenuesView.h; sourceTree = "<group>"; };
 		C561D9532AAC8ECA00E28603 /* BaiShaETProjUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjUserInfoModel.m; sourceTree = "<group>"; };
@@ -3443,6 +3443,26 @@
 				C53CD9132ABC32BA0011FD1A /* JobsTuple.m */,
 			);
 			path = JobsTuple;
+			sourceTree = "<group>";
+		};
+		C552242A2AC89A1600668516 /* JobsCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				C561D9042AAC8D7D00E28603 /* JobsCustomView.h */,
+				C561D9052AAC8D7D00E28603 /* JobsCustomView.m */,
+				C561D9032AAC8D7D00E28603 /* JobsCustomView.png */,
+			);
+			path = JobsCustomView;
+			sourceTree = "<group>";
+		};
+		C552242C2AC89AA300668516 /* JobsFiltrationView */ = {
+			isa = PBXGroup;
+			children = (
+				C561D9122AAC8D7F00E28603 /* JobsFiltrationView.h */,
+				C561D9142AAC8D7F00E28603 /* JobsFiltrationView.m */,
+				C561D9132AAC8D7F00E28603 /* 筛选视图.png */,
+			);
+			path = JobsFiltrationView;
 			sourceTree = "<group>";
 		};
 		C561CD462AAC7CC500E28603 /* PodsManual */ = {
@@ -8201,7 +8221,6 @@
 		C561D8A52AAC8D3A00E28603 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C561D9112AAC8D7F00E28603 /* 筛选视图 */,
 				C561D9022AAC8D7D00E28603 /* 自定义视图 */,
 				C561D8C22AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView */,
 				C561D8C62AAC8D7B00E28603 /* BaiShaETProjChoiceStadiumView */,
@@ -8295,9 +8314,8 @@
 		C561D9022AAC8D7D00E28603 /* 自定义视图 */ = {
 			isa = PBXGroup;
 			children = (
-				C561D9042AAC8D7D00E28603 /* BaiShaETProjCustomView.h */,
-				C561D9052AAC8D7D00E28603 /* BaiShaETProjCustomView.m */,
-				C561D9032AAC8D7D00E28603 /* 自定义视图.png */,
+				C552242C2AC89AA300668516 /* JobsFiltrationView */,
+				C552242A2AC89A1600668516 /* JobsCustomView */,
 			);
 			path = "自定义视图";
 			sourceTree = "<group>";
@@ -8310,16 +8328,6 @@
 				C561D90C2AAC8D7E00E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVCell.png */,
 			);
 			path = BaiShaETProjDepositAndWithdrawRecordTBVCell;
-			sourceTree = "<group>";
-		};
-		C561D9112AAC8D7F00E28603 /* 筛选视图 */ = {
-			isa = PBXGroup;
-			children = (
-				C561D9122AAC8D7F00E28603 /* BaiShaETProjFiltrationView.h */,
-				C561D9142AAC8D7F00E28603 /* BaiShaETProjFiltrationView.m */,
-				C561D9132AAC8D7F00E28603 /* 筛选视图.png */,
-			);
-			path = "筛选视图";
 			sourceTree = "<group>";
 		};
 		C561D9152AAC8D7F00E28603 /* BaiShaETProjChoiceVenuesView */ = {
@@ -9887,7 +9895,7 @@
 				C5BD5E7B2AAC76750048F36B /* LaunchScreen.storyboard in Resources */,
 				C561D3172AAC7E7A00E28603 /* record_change.json in Resources */,
 				C5FB56622AB31B5E00C873B7 /* iph_X.mp4 in Resources */,
-				C561D9462AAC8D8000E28603 /* 自定义视图.png in Resources */,
+				C561D9462AAC8D8000E28603 /* JobsCustomView.png in Resources */,
 				C561D37A2AAC7E7A00E28603 /* 1@2x.png in Resources */,
 				C561D3832AAC7E7A00E28603 /* 0@2x.png in Resources */,
 				C5E011452AADE1CD005ABE09 /* 176@2x.gif in Resources */,
@@ -10819,7 +10827,7 @@
 				C561D3362AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_1.m in Sources */,
 				C561D99D2AAC9A8400E28603 /* BaiShaETProjMarqueeView.m in Sources */,
 				C561D4382AAC7E7B00E28603 /* UITableView+WWFoldableTableView.m in Sources */,
-				C561D9472AAC8D8000E28603 /* BaiShaETProjCustomView.m in Sources */,
+				C561D9472AAC8D8000E28603 /* JobsCustomView.m in Sources */,
 				C561D3F42AAC7E7B00E28603 /* UIView+JHGestureBlock.m in Sources */,
 				C561D46D2AAC7E7B00E28603 /* JobsTimeModel.m in Sources */,
 				C561D95F2AAC910900E28603 /* BaiShaETProjSettingGestureVC.m in Sources */,
@@ -10833,7 +10841,7 @@
 				C561D4432AAC7E7B00E28603 /* UITableViewHeaderFooterView+BaseTableViewHeaderFooterViewProtocol.m in Sources */,
 				C561D3D02AAC7E7B00E28603 /* NSBundle+CLLanguage.m in Sources */,
 				C53295682ABCD78E004294E0 /* JobsContainerView.m in Sources */,
-				C561D94E2AAC8D8000E28603 /* BaiShaETProjFiltrationView.m in Sources */,
+				C561D94E2AAC8D8000E28603 /* JobsFiltrationView.m in Sources */,
 				C561D3FD2AAC7E7B00E28603 /* NSMutableDictionary+Ordered.m in Sources */,
 				C561D4632AAC7E7B00E28603 /* JobsHeaderFooterViewModel.m in Sources */,
 				C5D71F402AC22EE800DD8938 /* KTVHCDataLoader.m in Sources */,

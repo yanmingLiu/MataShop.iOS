@@ -1,13 +1,13 @@
 //
-//  BaiShaETProjCustomView.m
+//  JobsCustomView.m
 //  BaiShaEntertainmentProj
 //
 //  Created by Jobs on 2022/5/25.
 //
 
-#import "BaiShaETProjCustomView.h"
+#import "JobsCustomView.h"
 
-@interface BaiShaETProjCustomView ()
+@interface JobsCustomView ()
 /// UI
 @property(nonatomic,strong)UIImageView *indicatorIMGV;
 @property(nonatomic,strong)UILabel *tipsLab;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation BaiShaETProjCustomView
+@implementation JobsCustomView
 
 @synthesize viewModel = _viewModel;
 
@@ -36,11 +36,11 @@
     static_customView = nil;
 }
 
-static BaiShaETProjCustomView *static_customView = nil;
+static JobsCustomView *static_customView = nil;
 static dispatch_once_t static_customViewOnceToken;
 +(instancetype)sharedInstance{
     dispatch_once(&static_customViewOnceToken, ^{
-        static_customView = BaiShaETProjCustomView.new;
+        static_customView = JobsCustomView.new;
     });return static_customView;
 }
 #pragma mark —— SysMethod

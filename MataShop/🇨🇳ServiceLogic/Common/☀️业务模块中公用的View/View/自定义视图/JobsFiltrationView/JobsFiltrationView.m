@@ -5,9 +5,9 @@
 //  Created by Jobs on 2022/5/25.
 //
 
-#import "BaiShaETProjFiltrationView.h"
+#import "JobsFiltrationView.h"
 
-@interface BaiShaETProjFiltrationView ()
+@interface JobsFiltrationView ()
 /// UI
 @property(nonatomic,strong)JobsHotLabelWithMultiLine *hotLabel;
 /// Data
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation BaiShaETProjFiltrationView
+@implementation JobsFiltrationView
 
 @synthesize viewModel = _viewModel;
 
@@ -30,11 +30,11 @@
     static_filtrationView = nil;
 }
 
-static BaiShaETProjFiltrationView *static_filtrationView = nil;
+static JobsFiltrationView *static_filtrationView = nil;
 static dispatch_once_t static_filtrationViewOnceToken;
 +(instancetype)sharedInstance{
     dispatch_once(&static_filtrationViewOnceToken, ^{
-        static_filtrationView = BaiShaETProjFiltrationView.new;
+        static_filtrationView = JobsFiltrationView.new;
     });return static_filtrationView;
 }
 #pragma mark —— SysMethod
