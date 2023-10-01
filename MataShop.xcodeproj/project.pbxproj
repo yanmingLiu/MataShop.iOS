@@ -92,6 +92,8 @@
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
 		C553D0F02AC9CBFF00F9CEA1 /* MSVoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0EF2AC9CBFF00F9CEA1 /* MSVoteView.m */; };
 		C553D0F52AC9CFC000F9CEA1 /* MSMySocialTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0F42AC9CFBF00F9CEA1 /* MSMySocialTitleView.m */; };
+		C553D1722AC9D98900F9CEA1 /* MSCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D1712AC9D98900F9CEA1 /* MSCommentView.m */; };
+		C553D1782AC9DE6500F9CEA1 /* UITableView+WWFoldableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D1772AC9DE6500F9CEA1 /* UITableView+WWFoldableTableView.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
 		C561CDFD2AAC7CE200E28603 /* CasinoFlowDetailsVC_h in Resources */ = {isa = PBXBuildFile; fileRef = C561CD4A2AAC7CDD00E28603 /* CasinoFlowDetailsVC_h */; };
 		C561CDFE2AAC7CE200E28603 /* CasinoFlowDetailsVC_m in Resources */ = {isa = PBXBuildFile; fileRef = C561CD4B2AAC7CDD00E28603 /* CasinoFlowDetailsVC_m */; };
@@ -458,8 +460,6 @@
 		C561D4352AAC7E7B00E28603 /* UINavigationController+SafeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1882AAC7E7A00E28603 /* UINavigationController+SafeTransition.m */; };
 		C561D4362AAC7E7B00E28603 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D18B2AAC7E7A00E28603 /* BaseNavigationVC.m */; };
 		C561D4372AAC7E7B00E28603 /* UITableView+RegisterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1922AAC7E7A00E28603 /* UITableView+RegisterClass.m */; };
-		C561D4382AAC7E7B00E28603 /* UITableView+WWFoldableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1942AAC7E7A00E28603 /* UITableView+WWFoldableTableView.m */; };
-		C561D4392AAC7E7B00E28603 /* UITableView+WWFoldableTableView.md in Resources */ = {isa = PBXBuildFile; fileRef = C561D1952AAC7E7A00E28603 /* UITableView+WWFoldableTableView.md */; };
 		C561D43A2AAC7E7B00E28603 /* UITableView+Expand.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1992AAC7E7A00E28603 /* UITableView+Expand.m */; };
 		C561D43B2AAC7E7B00E28603 /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D19B2AAC7E7A00E28603 /* BaseTableView.m */; };
 		C561D43C2AAC7E7B00E28603 /* BaseTableView.md in Resources */ = {isa = PBXBuildFile; fileRef = C561D19C2AAC7E7A00E28603 /* BaseTableView.md */; };
@@ -1172,6 +1172,12 @@
 		C553D0F22AC9CFB400F9CEA1 /* MSMySocialTitleView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMySocialTitleView.jpg; sourceTree = "<group>"; };
 		C553D0F32AC9CFBF00F9CEA1 /* MSMySocialTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMySocialTitleView.h; sourceTree = "<group>"; };
 		C553D0F42AC9CFBF00F9CEA1 /* MSMySocialTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMySocialTitleView.m; sourceTree = "<group>"; };
+		C553D16F2AC9D97900F9CEA1 /* MSCommentView.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSCommentView.jpg; sourceTree = "<group>"; };
+		C553D1702AC9D98900F9CEA1 /* MSCommentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCommentView.h; sourceTree = "<group>"; };
+		C553D1712AC9D98900F9CEA1 /* MSCommentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSCommentView.m; sourceTree = "<group>"; };
+		C553D1762AC9DE6500F9CEA1 /* UITableView+WWFoldableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WWFoldableTableView.h"; sourceTree = "<group>"; };
+		C553D1772AC9DE6500F9CEA1 /* UITableView+WWFoldableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WWFoldableTableView.m"; sourceTree = "<group>"; };
+		C553D1E52AC9E14F00F9CEA1 /* UITableView+WWFoldableTableView.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "UITableView+WWFoldableTableView.md"; sourceTree = "<group>"; };
 		C561CD442AAC7C8C00E28603 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZMJCell+CustomView.m"; sourceTree = "<group>"; };
 		C561CD4A2AAC7CDD00E28603 /* CasinoFlowDetailsVC_h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CasinoFlowDetailsVC_h; sourceTree = "<group>"; };
@@ -1812,9 +1818,6 @@
 		C561D18E2AAC7E7A00E28603 /* JobsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsTableView.h; sourceTree = "<group>"; };
 		C561D1912AAC7E7A00E28603 /* UITableView+RegisterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+RegisterClass.h"; sourceTree = "<group>"; };
 		C561D1922AAC7E7A00E28603 /* UITableView+RegisterClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RegisterClass.m"; sourceTree = "<group>"; };
-		C561D1942AAC7E7A00E28603 /* UITableView+WWFoldableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WWFoldableTableView.m"; sourceTree = "<group>"; };
-		C561D1952AAC7E7A00E28603 /* UITableView+WWFoldableTableView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UITableView+WWFoldableTableView.md"; sourceTree = "<group>"; };
-		C561D1962AAC7E7A00E28603 /* UITableView+WWFoldableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WWFoldableTableView.h"; sourceTree = "<group>"; };
 		C561D1982AAC7E7A00E28603 /* UITableView+Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Expand.h"; sourceTree = "<group>"; };
 		C561D1992AAC7E7A00E28603 /* UITableView+Expand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Expand.m"; sourceTree = "<group>"; };
 		C561D19B2AAC7E7A00E28603 /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
@@ -3263,6 +3266,7 @@
 		C5329B1D2ABED45B004294E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C553D16E2AC9D95400F9CEA1 /* MSCommentView */,
 				C553D0F12AC9CF8D00F9CEA1 /* MSMySocialTitleView */,
 				C5329FD12ABF0510004294E0 /* MSVedioCVCell */,
 				C5329B212ABED4AB004294E0 /* MSFindCVCell */,
@@ -3492,6 +3496,16 @@
 				C553D0F42AC9CFBF00F9CEA1 /* MSMySocialTitleView.m */,
 			);
 			path = MSMySocialTitleView;
+			sourceTree = "<group>";
+		};
+		C553D16E2AC9D95400F9CEA1 /* MSCommentView */ = {
+			isa = PBXGroup;
+			children = (
+				C553D16F2AC9D97900F9CEA1 /* MSCommentView.jpg */,
+				C553D1702AC9D98900F9CEA1 /* MSCommentView.h */,
+				C553D1712AC9D98900F9CEA1 /* MSCommentView.m */,
+			);
+			path = MSCommentView;
 			sourceTree = "<group>";
 		};
 		C561CD462AAC7CC500E28603 /* PodsManual */ = {
@@ -6372,9 +6386,9 @@
 		C561D1932AAC7E7A00E28603 /* UITableView+WWFoldableTableView */ = {
 			isa = PBXGroup;
 			children = (
-				C561D1942AAC7E7A00E28603 /* UITableView+WWFoldableTableView.m */,
-				C561D1952AAC7E7A00E28603 /* UITableView+WWFoldableTableView.md */,
-				C561D1962AAC7E7A00E28603 /* UITableView+WWFoldableTableView.h */,
+				C553D1E52AC9E14F00F9CEA1 /* UITableView+WWFoldableTableView.md */,
+				C553D1762AC9DE6500F9CEA1 /* UITableView+WWFoldableTableView.h */,
+				C553D1772AC9DE6500F9CEA1 /* UITableView+WWFoldableTableView.m */,
 			);
 			path = "UITableView+WWFoldableTableView";
 			sourceTree = "<group>";
@@ -10005,7 +10019,6 @@
 				C5E011562AADE1CD005ABE09 /* 97@2x.gif in Resources */,
 				C561D39C2AAC7E7A00E28603 /* gesture_selected@2x.png in Resources */,
 				C561D4592AAC7E7B00E28603 /* FileFolderHandleTool.md in Resources */,
-				C561D4392AAC7E7B00E28603 /* UITableView+WWFoldableTableView.md in Resources */,
 				C561D3032AAC7E7A00E28603 /* TabbaritemImage.bundle in Resources */,
 				C5E0117A2AADE1CD005ABE09 /* 106@2x.gif in Resources */,
 				C5E0119C2AADE1CD005ABE09 /* 167@2x.gif in Resources */,
@@ -10718,6 +10731,7 @@
 				C5729EFF2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m in Sources */,
 				C561D41D2AAC7E7B00E28603 /* UIViewController+JXPagerViewListViewDelegate.m in Sources */,
 				C561D43B2AAC7E7B00E28603 /* BaseTableView.m in Sources */,
+				C553D1722AC9D98900F9CEA1 /* MSCommentView.m in Sources */,
 				C561CE252AAC7CE200E28603 /* ECPrivacyCheckMediaAndAppleMusic.m in Sources */,
 				C5D71F542AC22EE800DD8938 /* HTTPAuthenticationRequest.m in Sources */,
 				C561D9552AAC8ECB00E28603 /* BaiShaETProjUserInfoModel.m in Sources */,
@@ -10858,7 +10872,6 @@
 				C5329FED2ABF10DE004294E0 /* MSMineView4.m in Sources */,
 				C561D3362AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_1.m in Sources */,
 				C561D99D2AAC9A8400E28603 /* BaiShaETProjMarqueeView.m in Sources */,
-				C561D4382AAC7E7B00E28603 /* UITableView+WWFoldableTableView.m in Sources */,
 				C561D9472AAC8D8000E28603 /* JobsCustomView.m in Sources */,
 				C561D3F42AAC7E7B00E28603 /* UIView+JHGestureBlock.m in Sources */,
 				C561D46D2AAC7E7B00E28603 /* JobsTimeModel.m in Sources */,
@@ -10908,6 +10921,7 @@
 				C561D3B72AAC7E7A00E28603 /* UIImage+YBGIF.m in Sources */,
 				C5CFE67D2AB082FE00D0F225 /* MSBankCardTopUpVC.m in Sources */,
 				C520F5F62AB396F400142DCC /* JobsInfoTBVCell.m in Sources */,
+				C553D1782AC9DE6500F9CEA1 /* UITableView+WWFoldableTableView.m in Sources */,
 				C561D4062AAC7E7B00E28603 /* UICollectionView+RegisterClass.m in Sources */,
 				C561D4942AAC7E7B00E28603 /* NSObject+ChangeAppicon.m in Sources */,
 				C5D71F3C2AC22EE800DD8938 /* KTVHCDataNetworkSource.m in Sources */,

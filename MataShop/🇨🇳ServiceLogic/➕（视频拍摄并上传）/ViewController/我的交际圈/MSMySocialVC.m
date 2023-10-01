@@ -10,6 +10,7 @@
 @interface MSMySocialVC ()
 /// UI
 @property(nonatomic,strong)MSMySocialTitleView *mySocialTitleView;
+@property(nonatomic,strong)MSCommentView *commentView;
 
 @end
 
@@ -36,6 +37,7 @@
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
     self.mySocialTitleView.alpha = 1;
+    self.commentView.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -73,6 +75,18 @@
             make.size.mas_equalTo([MSMySocialTitleView viewSizeWithModel:nil]);
         }];
     }return _mySocialTitleView;
+}
+
+-(MSCommentView *)commentView{
+    if(!_commentView){
+        _commentView = MSCommentView.new;
+        [_commentView richElementsInViewWithModel:nil];
+        [self.view addSubview:_commentView];
+        [_commentView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.mySocialTitleView.mas_bottom);
+            make.left.right.bottom.equalTo(self.view);
+        }];
+    }return _commentView;
 }
 
 @end

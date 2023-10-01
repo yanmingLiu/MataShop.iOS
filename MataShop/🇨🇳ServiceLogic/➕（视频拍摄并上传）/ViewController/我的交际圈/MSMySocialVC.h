@@ -7,6 +7,7 @@
 
 #import "BaseViewController.h"
 #import "MSMySocialTitleView.h"
+#import "MSCommentView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
