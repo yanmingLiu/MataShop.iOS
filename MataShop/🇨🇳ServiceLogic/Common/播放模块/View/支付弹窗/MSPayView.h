@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 /// 支付弹窗
-@interface MSPayView : BaseView
+@interface MSPayView : BaseView<UITextFieldDelegate>
 
 @end
 

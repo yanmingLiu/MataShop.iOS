@@ -126,16 +126,14 @@
         _textField = JobsMagicTextField.new;
         _textField.delegate = self;
         @jobs_weakify(self)
-        [[_textField.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
+        [_textField jobsTextFieldEventFilterBlock:^BOOL(id data) {
 //            @jobs_strongify(self)
             return YES;
-        }] subscribeNext:^(NSString * _Nullable x) {
+        } subscribeNextBlock:^(NSString * _Nullable x) {
             @jobs_strongify(self)
-            NSLog(@"MMM = %@",x);
-            [self textFieldBlock:self.textField
+            [self textFieldBlock:self->_textField
                   textFieldValue:x];
         }];
-        
         [self addSubview:_textField];
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.bottom.equalTo(self);

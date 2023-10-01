@@ -47,7 +47,7 @@ static dispatch_once_t static_inputStyle3OnceToken;
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        NotificationAdd(self,
+        JobsAddNotification(self,
                         @selector(languageSwitchNotification:),
                         LanguageSwitchNotification,
                         nil);
@@ -115,10 +115,10 @@ static dispatch_once_t static_inputStyle3OnceToken;
         _textField.placeholderColor = JobsGrayColor;
         _textField.placeholderFont = UIFontWeightRegularSize(14);
         @jobs_weakify(self)
-        [[_textField.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
+        [_textField jobsTextFieldEventFilterBlock:^BOOL(id data) {
 //            @jobs_strongify(self)
             return YES;
-        }] subscribeNext:^(NSString * _Nullable x) {
+        } subscribeNextBlock:^(NSString * _Nullable x) {
             @jobs_strongify(self)
             [self textFieldBlock:self->_textField
                   textFieldValue:x];

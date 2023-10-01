@@ -14,7 +14,7 @@
     if ([NSString isNullString:notificationName]) {
         return;
     }
-    NotificationAdd(self,
+    JobsAddNotification(self,
                     @selector(selector),
                     notificationName,
                     nil);
@@ -42,9 +42,7 @@
             break;
     }
     /// 发通知，通知需要更改的地方进行修改
-    NotificationPostOnMainThread(LanguageSwitchNotification,
-                                 CLLanguageManager.userLanguage,
-                                 nil);
+    JobsPostNotificationOnMainThread(LanguageSwitchNotification,CLLanguageManager.userLanguage,nil);
 }
 /// 接收通知并相应的方法 【在分类或者基类中实现会屏蔽具体子类的相关实现】
 //-(void)languageSwitchNotification:(nonnull NSNotification *)notification{

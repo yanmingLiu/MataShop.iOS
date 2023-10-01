@@ -10,9 +10,10 @@
 @interface MSPayView ()
 /// UI
 @property(nonatomic,strong)JobsContainerView *titleView;
-@property(nonatomic,strong)UITextField *textField;
+@property(nonatomic,strong)ZYTextField *textField;
 @property(nonatomic,strong)UIButton *cancelBtn;
 @property(nonatomic,strong)UIButton *sureBtn;
+@property(nonatomic,strong)UILabel *titleLab;
 /// Data
 @property(nonatomic,strong)NSMutableArray <JobsBtnModel *>*btnModelMutArr;
 @property(nonatomic,strong)NSMutableArray <NSString *>*richTextMutArr;
@@ -44,10 +45,10 @@ static dispatch_once_t static_payViewOnceToken;
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        NotificationAdd(self,
-                        @selector(languageSwitchNotification:),
-                        LanguageSwitchNotification,
-                        nil);
+        JobsAddNotification(self,
+                            @selector(languageSwitchNotification:),
+                            LanguageSwitchNotification,
+                            nil);
 
     }return self;
 }
@@ -71,17 +72,30 @@ static dispatch_once_t static_payViewOnceToken;
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
     self.titleView.alpha = 1;
+    self.textField.alpha = 1;
+    self.cancelBtn.alpha = 1;
+    self.sureBtn.alpha = 1;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)viewSizeWithModel:(UIViewModel *_Nullable)model{
     return CGSizeMake(JobsWidth(315), JobsWidth(201));
+}
+#pragma mark —— 一些私有方法
+-(void)textFieldBlock:(JobsMagicTextField *)textField
+       textFieldValue:(NSString *)value{
+    
+//    self.textFieldInputModel.resString = value;
+//    self.textFieldInputModel.PlaceHolder = self.doorInputViewBaseStyleModel.placeHolderStr;
+//    textField.objBindingParams = self.textFieldInputModel;
+//
+//    if (self.objectBlock) self.objectBlock(textField);// 对外统一传出TF
 }
 #pragma mark —— lazyLoad
 -(JobsContainerView *)titleView{
     if(!_titleView){
         _titleView = [JobsContainerView.alloc initWithWidth:JobsWidth(315)
                                                buttonModels:self.btnModelMutArr];
-        _titleView.backgroundColor = JobsRedColor;
+//        _titleView.backgroundColor = JobsRedColor;
         [self addSubview:_titleView];
         [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(315), JobsWidth(72)));
@@ -103,7 +117,7 @@ static dispatch_once_t static_payViewOnceToken;
             model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
             model.contentSpacing = JobsWidth(0);
             model.lineBreakMode = NSLineBreakByWordWrapping;
-            model.btnWidth = JobsWidth(54);
+            model.btnWidth = JobsWidth(80);
 
             [_btnModelMutArr addObject:model];
         }
@@ -157,6 +171,101 @@ static dispatch_once_t static_payViewOnceToken;
         [_richTextConfigMutArr addObject:config_03];
         
     }return _richTextConfigMutArr;
+}
+
+-(ZYTextField *)textField{
+    if (!_textField) {
+        _textField = ZYTextField.new;
+        _textField.delegate = self;
+        _textField.textColor = JobsBlackColor;
+        _textField.backgroundColor = RGBA_COLOR(245, 245, 245, 1);
+        _textField.returnKeyType = UIReturnKeyDefault;
+        _textField.keyboardAppearance = UIKeyboardAppearanceDefault;
+        _textField.keyboardType = UIKeyboardTypeDefault;
+        _textField.leftView = self.titleLab;
+        _textField.leftViewMode = UITextFieldViewModeAlways;
+        _textField.leftViewOffsetX = JobsWidth(210);
+        _textField.placeHolderOffset = JobsWidth(-1950);
+//        _textField.placeholdAnimationable = NO;
+        _textField.offset = JobsWidth(0);
+        _textField.placeholder = Internationalization(@"打赏的Mata值");
+        _textField.placeholderColor = JobsCor(@"#333333");
+        _textField.placeholderFont = UIFontWeightRegularSize(12);
+        _textField.text = @"deced";
+//        @jobs_weakify(self)
+//        [_textField jobsTextFieldEventFilterBlock:^BOOL(id data) {
+////            @jobs_strongify(self)
+//            return YES;
+//        } subscribeNextBlock:^(NSString * _Nullable x) {
+//            @jobs_strongify(self)
+//            self.textField.text = x;
+//            [self textFieldBlock:self.textField
+//                  textFieldValue:x];
+//        }];
+        [_textField cornerCutToCircleWithCornerRadius:JobsWidth(8)];
+        [self addSubview:_textField];
+        [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake([MSInputStyle1View viewSizeWithModel:nil].width - JobsWidth(32 + 12), JobsWidth(32)));
+            make.centerX.equalTo(self);
+            make.top.equalTo(self.titleView.mas_bottom).offset(JobsWidth(20));
+        }];
+    }return _textField;
+}
+
+-(UILabel *)titleLab{
+    if(!_titleLab){
+        _titleLab = UILabel.new;
+        _titleLab.text = Internationalization(@"请输入");
+        _titleLab.textColor = JobsCor(@"#999999");
+        _titleLab.font = UIFontWeightRegularSize(12);
+//        _titleLab.backgroundColor = JobsGreenColor;
+        _titleLab.height = JobsWidth(15);
+        [_titleLab makeLabelByShowingType:UILabelShowingType_03];
+    }return _titleLab;
+}
+
+-(UIButton *)cancelBtn{
+    if(!_cancelBtn){
+        _cancelBtn = UIButton.new;
+        _cancelBtn.normalTitle = Internationalization(@"取消");
+        _cancelBtn.normalTitleColor = JobsCor(@"#333333");
+        _cancelBtn.titleFont = UIFontWeightRegularSize(14);
+        [self addSubview:_cancelBtn];
+        [_cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake([MSPayView viewSizeWithModel:nil].width / 2, JobsWidth(14)));
+            make.left.equalTo(self);
+            make.bottom.equalTo(self);
+        }];
+        [_cancelBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+        @jobs_weakify(self)
+        [_cancelBtn jobsBtnClickEventBlock:^id(UIButton *x) {
+            @jobs_strongify(self)
+            NSLog(@"取消");
+            return nil;
+        }];
+    }return _cancelBtn;
+}
+
+-(UIButton *)sureBtn{
+    if(!_sureBtn){
+        _sureBtn = UIButton.new;
+        _sureBtn.normalTitle = Internationalization(@"确认");
+        _sureBtn.normalTitleColor = JobsCor(@"#333333");
+        _sureBtn.titleFont = UIFontWeightRegularSize(14);
+        [self addSubview:_sureBtn];
+        [_sureBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake([MSPayView viewSizeWithModel:nil].width / 2, JobsWidth(14)));
+            make.right.equalTo(self);
+            make.bottom.equalTo(self);
+        }];
+        [_sureBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+        @jobs_weakify(self)
+        [_sureBtn jobsBtnClickEventBlock:^id(UIButton *x) {
+            @jobs_strongify(self)
+            NSLog(@"确认");
+            return nil;
+        }];
+    }return _sureBtn;
 }
 
 @end

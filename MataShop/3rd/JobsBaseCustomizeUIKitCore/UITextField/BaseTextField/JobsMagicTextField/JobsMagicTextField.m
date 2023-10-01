@@ -25,10 +25,10 @@
         self.placeholdAnimationable = YES;
         self.placeHolderAlignment = PlaceHolderAlignmentLeft;
         self.clipsToBounds = NO;
-        [NSNotificationCenter.defaultCenter addObserver:self
-                                               selector:@selector(changeEditing)
-                                                   name:UITextFieldTextDidChangeNotification
-                                                 object:nil];
+        JobsAddNotification(self,
+                            @selector(changeEditing),
+                            UITextFieldTextDidChangeNotification,
+                            nil);
     }return self;
 }
 

@@ -43,7 +43,7 @@ static dispatch_once_t static_thirdPartyShortcutLoginPanelViewOnceToken;
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        NotificationAdd(self,
+        JobsAddNotification(self,
                         @selector(languageSwitchNotification:),
                         LanguageSwitchNotification,
                         nil);
