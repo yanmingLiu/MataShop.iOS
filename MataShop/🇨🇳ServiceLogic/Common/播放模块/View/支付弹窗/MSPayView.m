@@ -223,16 +223,18 @@ static dispatch_once_t static_payViewOnceToken;
         _textField.returnKeyType = UIReturnKeyDefault;
         _textField.keyboardAppearance = UIKeyboardAppearanceDefault;
         _textField.keyboardType = UIKeyboardTypeDefault;
-        _textField.leftView = self.titleLab;
-        _textField.leftViewMode = UITextFieldViewModeAlways;
-        _textField.leftViewOffsetX = JobsWidth(210);
-        _textField.placeHolderOffset = JobsWidth(-1950);
-//        _textField.placeholdAnimationable = NO;
-        _textField.offset = JobsWidth(0);
+        _textField.rightView = self.titleLab;
+        _textField.rightViewMode = UITextFieldViewModeAlways;
         _textField.placeholder = Internationalization(@"打赏的Mata值");
         _textField.placeholderColor = JobsCor(@"#333333");
         _textField.placeholderFont = UIFontWeightRegularSize(12);
-//        _textField.text = @"deced";
+
+        _textField.drawPlaceholderInRect = CGRectMake(0, 0, JobsWidth(255 - 20 - 40 - 5), JobsWidth(32));
+        _textField.rightViewRectForBounds = CGRectMake(JobsWidth(255 - 20 - 40), JobsWidth(10), JobsWidth(40), JobsWidth(12));
+        _textField.placeholderRectForBounds = CGRectMake(JobsWidth(10), JobsWidth(10), JobsWidth(255 - 20 - 40 - 5), JobsWidth(12));
+        _textField.textRectForBounds = CGRectMake(JobsWidth(10), 0, JobsWidth(255 - 20 - 40 - 10), 100);
+        _textField.editingRectForBounds = CGRectMake(JobsWidth(10), 0, JobsWidth(255 - 20 - 40 - 10), 100);
+
         @jobs_weakify(self)
         [_textField jobsTextFieldEventFilterBlock:^BOOL(id data) {
 //            @jobs_strongify(self)
@@ -246,9 +248,9 @@ static dispatch_once_t static_payViewOnceToken;
         [_textField cornerCutToCircleWithCornerRadius:JobsWidth(8)];
         [self addSubview:_textField];
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake([MSInputStyle1View viewSizeWithModel:nil].width - JobsWidth(32 + 12), JobsWidth(32)));
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(255), JobsWidth(32)));
             make.centerX.equalTo(self);
-            make.top.equalTo(self.titleView.mas_bottom).offset(JobsWidth(20));
+            make.top.equalTo(self.titleView.mas_bottom).offset(JobsWidth(10));
         }];
     }return _textField;
 }
