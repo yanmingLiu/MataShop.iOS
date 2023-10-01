@@ -40,16 +40,17 @@ static dispatch_once_t static_payViewOnceToken;
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = JobsWhiteColor;
+        [self registerKeyboard];
+        JobsAddNotification(self,
+                            @selector(languageSwitchNotification:),
+                            LanguageSwitchNotification,
+                            nil);
     }return self;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        JobsAddNotification(self,
-                            @selector(languageSwitchNotification:),
-                            LanguageSwitchNotification,
-                            nil);
-
+        
     }return self;
 }
 
@@ -59,6 +60,7 @@ static dispatch_once_t static_payViewOnceToken;
 
 -(void)layoutSubviews{
     [super layoutSubviews];
+    self.size = [MSPayView viewSizeWithModel:nil];
     /// 内部指定圆切角
     [self layoutSubviewsCutCnrByRoundingCorners:UIRectCornerAllCorners
                                     cornerRadii:CGSizeMake(JobsWidth(8), JobsWidth(8))];
@@ -81,7 +83,45 @@ static dispatch_once_t static_payViewOnceToken;
     return CGSizeMake(JobsWidth(315), JobsWidth(201));
 }
 #pragma mark —— 一些私有方法
--(void)textFieldBlock:(JobsMagicTextField *)textField
+-(void)registerKeyboard{
+    IQKeyboardManager.sharedManager.enable = NO;
+    [self keyboard];
+    @jobs_weakify(self)
+    __block CGFloat gg = 0;// 修正间距
+    [self actionkeyboardUpNotificationBlock:^id(NSNotificationKeyboardModel *data) {
+        @jobs_strongify(self)
+        NSLog(@"userInfo = %@",data.userInfo);
+        NSLog(@"beginFrame = %@",NSStringFromCGRect(data.beginFrame));
+        NSLog(@"endFrame = %@",NSStringFromCGRect(data.endFrame));
+        NSLog(@"keyboardOffsetY = %f",data.keyboardOffsetY);
+        NSLog(@"notificationName = %@",data.notificationName);
+        
+        // 键盘高度：data.keyboardOffsetY
+        // view底的Y值：self.y + [MSPayView viewSizeWithModel:nil].height
+        // 我希望的view距离键盘的固定距离为JobsWidth(20),即:data.keyboardOffsetY - (self.y + [MSPayView viewSizeWithModel:nil].height) = JobsWidth(20)
+        CGFloat dd = data.keyboardOffsetY - (self.y + [MSPayView viewSizeWithModel:nil].height);// 实际间距
+        CGFloat ff = JobsWidth(20) - dd;
+        if(ff > 0){
+            // 实际间距 小于 我希望的距离
+            self.y -= JobsWidth(20);
+            gg = ff;// 修正为补偿值
+        }else{
+            // 实际间距 大于 我希望的距离
+            gg = JobsWidth(20);
+        }
+        self.y -= gg;
+        return nil;
+    }];
+    
+    [self actionkeyboardDownNotificationBlock:^id(id data) {
+        @jobs_strongify(self)
+        self.y += gg;
+        NSLog(@"ddd = %f",self.origin.y);
+        return nil;
+    }];
+}
+
+-(void)textFieldBlock:(ZYTextField *)textField
        textFieldValue:(NSString *)value{
     
 //    self.textFieldInputModel.resString = value;
@@ -96,6 +136,7 @@ static dispatch_once_t static_payViewOnceToken;
         _titleView = [JobsContainerView.alloc initWithWidth:JobsWidth(315)
                                                buttonModels:self.btnModelMutArr];
 //        _titleView.backgroundColor = JobsRedColor;
+        _titleView.userInteractionEnabled = NO;
         [self addSubview:_titleView];
         [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(315), JobsWidth(72)));
@@ -191,17 +232,17 @@ static dispatch_once_t static_payViewOnceToken;
         _textField.placeholder = Internationalization(@"打赏的Mata值");
         _textField.placeholderColor = JobsCor(@"#333333");
         _textField.placeholderFont = UIFontWeightRegularSize(12);
-        _textField.text = @"deced";
-//        @jobs_weakify(self)
-//        [_textField jobsTextFieldEventFilterBlock:^BOOL(id data) {
-////            @jobs_strongify(self)
-//            return YES;
-//        } subscribeNextBlock:^(NSString * _Nullable x) {
+//        _textField.text = @"deced";
+        @jobs_weakify(self)
+        [_textField jobsTextFieldEventFilterBlock:^BOOL(id data) {
 //            @jobs_strongify(self)
-//            self.textField.text = x;
-//            [self textFieldBlock:self.textField
-//                  textFieldValue:x];
-//        }];
+            return YES;
+        } subscribeNextBlock:^(NSString * _Nullable x) {
+            @jobs_strongify(self)
+            self.textField.text = x;
+            [self textFieldBlock:self.textField
+                  textFieldValue:x];
+        }];
         [_textField cornerCutToCircleWithCornerRadius:JobsWidth(8)];
         [self addSubview:_textField];
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -234,12 +275,14 @@ static dispatch_once_t static_payViewOnceToken;
         [_cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake([MSPayView viewSizeWithModel:nil].width / 2, JobsWidth(14)));
             make.left.equalTo(self);
-            make.bottom.equalTo(self);
+            make.bottom.equalTo(self).offset(JobsWidth(-20));
         }];
-        [_cancelBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+        [_cancelBtn makeBtnLabelByShowingType:UILabelShowingType_01];
         @jobs_weakify(self)
         [_cancelBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
+            if(self.objectBlock) self.objectBlock(self.cancelBtn);
+//            [self.textField endEditing:YES];
             NSLog(@"取消");
             return nil;
         }];
@@ -256,12 +299,13 @@ static dispatch_once_t static_payViewOnceToken;
         [_sureBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake([MSPayView viewSizeWithModel:nil].width / 2, JobsWidth(14)));
             make.right.equalTo(self);
-            make.bottom.equalTo(self);
+            make.bottom.equalTo(self).offset(JobsWidth(-20));
         }];
-        [_sureBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+        [_sureBtn makeBtnLabelByShowingType:UILabelShowingType_01];
         @jobs_weakify(self)
         [_sureBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
+            if(self.objectBlock) self.objectBlock(self.sureBtn);
             NSLog(@"确认");
             return nil;
         }];

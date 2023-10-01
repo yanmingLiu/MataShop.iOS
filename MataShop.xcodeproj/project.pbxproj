@@ -11117,11 +11117,33 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MataShop/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Mata商城";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Add tracks to your music library.";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "若不允许，你将无法使用联机服务";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "若不允许，你将无法使用联机服务";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "若不允许，你将无法使用添加日历功能";
+				INFOPLIST_KEY_NSCameraUsageDescription = "若不允许，你将无法使用拍照功能";
+				INFOPLIST_KEY_NSContactsUsageDescription = "通讯录信息仅用于查找联系人，并会得到严格保密";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "App需要您的同意，才能访问您的面容识别功能，用于安全验证";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "若不允许，你将无法参与运动排行榜活动";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "若不允许，你将无法参与运动排行榜活动";
+				INFOPLIST_KEY_NSHomeKitUsageDescription = "若不允许，你将无法使用智能家居服务";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "我们需要获取你的定位权限以供完成查找附近商户功能";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "我们需要您的同意,您的位置信息将用于查看当前位置信息";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "我们需要获取你的定位权限以供完成查找附近商户功能";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "我们需要获取你的麦克风权限以供完成语音搜索功能";
+				INFOPLIST_KEY_NSMotionUsageDescription = "我们需要获取你的运动权限以完成运动挑战赛功能";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "我们需要获取你的相册权限以完成选择本地图片功能";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "我们需要获取你的相册权限以完成选择本地图片功能";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "我们需要获取你的提醒事项权限以供添加提醒事项";
+				INFOPLIST_KEY_NSSiriUsageDescription = "我们需要获取你的Siri权限以方便完成Siri建议功能";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "我们需要获取你的语音识别功能已完成键盘语音识别输入功能";
+				INFOPLIST_KEY_NSVideoSubscriberAccountUsageDescription = "我们需要获取你的TV权限";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -11147,11 +11169,33 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MataShop/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Mata商城";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Add tracks to your music library.";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "若不允许，你将无法使用联机服务";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "若不允许，你将无法使用联机服务";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "若不允许，你将无法使用添加日历功能";
+				INFOPLIST_KEY_NSCameraUsageDescription = "若不允许，你将无法使用拍照功能";
+				INFOPLIST_KEY_NSContactsUsageDescription = "通讯录信息仅用于查找联系人，并会得到严格保密";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "App需要您的同意，才能访问您的面容识别功能，用于安全验证";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "若不允许，你将无法参与运动排行榜活动";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "若不允许，你将无法参与运动排行榜活动";
+				INFOPLIST_KEY_NSHomeKitUsageDescription = "若不允许，你将无法使用智能家居服务";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "我们需要获取你的定位权限以供完成查找附近商户功能";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "我们需要您的同意,您的位置信息将用于查看当前位置信息";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "我们需要获取你的定位权限以供完成查找附近商户功能";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "我们需要获取你的麦克风权限以供完成语音搜索功能";
+				INFOPLIST_KEY_NSMotionUsageDescription = "我们需要获取你的运动权限以完成运动挑战赛功能";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "我们需要获取你的相册权限以完成选择本地图片功能";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "我们需要获取你的相册权限以完成选择本地图片功能";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "我们需要获取你的提醒事项权限以供添加提醒事项";
+				INFOPLIST_KEY_NSSiriUsageDescription = "我们需要获取你的Siri权限以方便完成Siri建议功能";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "我们需要获取你的语音识别功能已完成键盘语音识别输入功能";
+				INFOPLIST_KEY_NSVideoSubscriberAccountUsageDescription = "我们需要获取你的TV权限";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

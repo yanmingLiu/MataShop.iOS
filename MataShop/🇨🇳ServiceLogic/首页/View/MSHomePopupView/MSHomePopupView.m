@@ -45,9 +45,9 @@ static dispatch_once_t static_homePopupViewOnceToken;
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         JobsAddNotification(self,
-                        @selector(languageSwitchNotification:),
-                        LanguageSwitchNotification,
-                        nil);
+                            @selector(languageSwitchNotification:),
+                            LanguageSwitchNotification,
+                            nil);
     }return self;
 }
 
@@ -57,6 +57,7 @@ static dispatch_once_t static_homePopupViewOnceToken;
 
 -(void)layoutSubviews{
     [super layoutSubviews];
+    self.size = [MSHomePopupView viewSizeWithModel:nil];
     [self layoutSubviewsCutCnrByRoundingCorners:UIRectCornerAllCorners
                                     cornerRadii:CGSizeMake(JobsWidth(8), JobsWidth(8))];
 }
@@ -68,7 +69,6 @@ static dispatch_once_t static_homePopupViewOnceToken;
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
-    
     self.backgroundColor = JobsCor(@"#FFFFFF");
     self.titleLab.alpha = 1;
     self.textView.alpha = 1;
