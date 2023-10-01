@@ -1,13 +1,13 @@
 //
-//  MSPayView.m
+//  MSVoteView.m
 //  MataShop
 //
-//  Created by Jobs Hi on 9/27/23.
+//  Created by Jobs Hi on 10/1/23.
 //
 
-#import "MSPayView.h"
+#import "MSVoteView.h"
 
-@interface MSPayView ()
+@interface MSVoteView ()
 /// UI
 @property(nonatomic,strong)JobsContainerView *titleView;
 @property(nonatomic,strong)ZYTextField *textField;
@@ -21,20 +21,21 @@
 
 @end
 
-@implementation MSPayView
+@implementation MSVoteView
+
 #pragma mark —— BaseProtocol
 /// 单例化和销毁
 +(void)destroySingleton{
-    static_payViewOnceToken = 0;
-    static_payView = nil;
+    static_voteViewOnceToken = 0;
+    static_voteView = nil;
 }
 
-static MSPayView *static_payView = nil;
-static dispatch_once_t static_payViewOnceToken;
+static MSVoteView *static_voteView = nil;
+static dispatch_once_t static_voteViewOnceToken;
 +(instancetype)sharedInstance{
-    dispatch_once(&static_payViewOnceToken, ^{
-        static_payView = MSPayView.new;
-    });return static_payView;
+    dispatch_once(&static_voteViewOnceToken, ^{
+        static_voteView = MSVoteView.new;
+    });return static_voteView;
 }
 #pragma mark —— SysMethod
 -(instancetype)init{
@@ -183,9 +184,7 @@ static dispatch_once_t static_payViewOnceToken;
 -(NSMutableArray<NSString *> *)richTextMutArr{
     if (!_richTextMutArr) {
         _richTextMutArr = NSMutableArray.array;
-        [_richTextMutArr addObject:Internationalization(@"观看完整教学视频需支付")];
-        [_richTextMutArr addObject:Internationalization(@"99")];
-        [_richTextMutArr addObject:Internationalization(@"Mata值")];
+        [_richTextMutArr addObject:Internationalization(@"2Mata值一票，一个账号可免费投票一次")];
     }return _richTextMutArr;
 }
 
@@ -198,18 +197,6 @@ static dispatch_once_t static_payViewOnceToken;
         config_01.textCor = JobsCor(@"#666666");
         config_01.targetString = self.richTextMutArr[0];
         [_richTextConfigMutArr addObject:config_01];
-        
-        RichTextConfig *config_02 = RichTextConfig.new;
-        config_02.font = UIFontWeightRegularSize(14);
-        config_02.textCor = JobsCor(@"#BA9B77");
-        config_02.targetString = self.richTextMutArr[1];
-        [_richTextConfigMutArr addObject:config_02];
-        
-        RichTextConfig *config_03 = RichTextConfig.new;
-        config_03.font = UIFontWeightRegularSize(14);
-        config_03.textCor = JobsCor(@"#666666");
-        config_03.targetString = self.richTextMutArr[2];
-        [_richTextConfigMutArr addObject:config_03];
         
     }return _richTextConfigMutArr;
 }
@@ -225,7 +212,7 @@ static dispatch_once_t static_payViewOnceToken;
         _textField.keyboardType = UIKeyboardTypeNumberPad;
         _textField.rightView = self.titleLab;
         _textField.rightViewMode = UITextFieldViewModeAlways;
-        _textField.placeholder = Internationalization(@"打赏的Mata值");
+        _textField.placeholder = Internationalization(@"投票数量");
         _textField.placeholderColor = JobsCor(@"#333333");
         _textField.placeholderFont = UIFontWeightRegularSize(12);
 
@@ -313,5 +300,6 @@ static dispatch_once_t static_payViewOnceToken;
         }];
     }return _sureBtn;
 }
+
 
 @end

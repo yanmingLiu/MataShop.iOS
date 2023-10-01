@@ -90,6 +90,7 @@
 		C536CE152AC23B40005D1FCD /* UISlider+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C536CE142AC23B40005D1FCD /* UISlider+Extra.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
+		C553D0F02AC9CBFF00F9CEA1 /* MSVoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0EF2AC9CBFF00F9CEA1 /* MSVoteView.m */; };
 		C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */; };
 		C561CDFD2AAC7CE200E28603 /* CasinoFlowDetailsVC_h in Resources */ = {isa = PBXBuildFile; fileRef = C561CD4A2AAC7CDD00E28603 /* CasinoFlowDetailsVC_h */; };
 		C561CDFE2AAC7CE200E28603 /* CasinoFlowDetailsVC_m in Resources */ = {isa = PBXBuildFile; fileRef = C561CD4B2AAC7CDD00E28603 /* CasinoFlowDetailsVC_m */; };
@@ -1164,6 +1165,9 @@
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
 		C53CD9122ABC32BA0011FD1A /* JobsTuple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobsTuple.h; sourceTree = "<group>"; };
 		C53CD9132ABC32BA0011FD1A /* JobsTuple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobsTuple.m; sourceTree = "<group>"; };
+		C553D0ED2AC9CBD500F9CEA1 /* 投票弹窗.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "投票弹窗.jpg"; sourceTree = "<group>"; };
+		C553D0EE2AC9CBFF00F9CEA1 /* MSVoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVoteView.h; sourceTree = "<group>"; };
+		C553D0EF2AC9CBFF00F9CEA1 /* MSVoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVoteView.m; sourceTree = "<group>"; };
 		C561CD442AAC7C8C00E28603 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZMJCell+CustomView.m"; sourceTree = "<group>"; };
 		C561CD4A2AAC7CDD00E28603 /* CasinoFlowDetailsVC_h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CasinoFlowDetailsVC_h; sourceTree = "<group>"; };
@@ -3463,6 +3467,16 @@
 				C561D9132AAC8D7F00E28603 /* 筛选视图.png */,
 			);
 			path = JobsFiltrationView;
+			sourceTree = "<group>";
+		};
+		C553D0EC2AC9CB9E00F9CEA1 /* 投票弹窗 */ = {
+			isa = PBXGroup;
+			children = (
+				C553D0ED2AC9CBD500F9CEA1 /* 投票弹窗.jpg */,
+				C553D0EE2AC9CBFF00F9CEA1 /* MSVoteView.h */,
+				C553D0EF2AC9CBFF00F9CEA1 /* MSVoteView.m */,
+			);
+			path = "投票弹窗";
 			sourceTree = "<group>";
 		};
 		C561CD462AAC7CC500E28603 /* PodsManual */ = {
@@ -8950,6 +8964,7 @@
 		C5D71EA62AC22C8B00DD8938 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C553D0EC2AC9CB9E00F9CEA1 /* 投票弹窗 */,
 				C5E7BBE12AC3EE5800236FC6 /* 支付弹窗 */,
 				C5D71EBA2AC22DAE00DD8938 /* JobsRightBtnsView */,
 				C5D71EB02AC22CC700DD8938 /* ZFDouYinControlView */,
@@ -10556,6 +10571,7 @@
 				C561D4212AAC7E7B00E28603 /* UIViewController+XLBubbleTransition.m in Sources */,
 				C561D65C2AAC862000E28603 /* URLManagerModel.m in Sources */,
 				C5329FE72ABF10CB004294E0 /* MSMineView2.m in Sources */,
+				C553D0F02AC9CBFF00F9CEA1 /* MSVoteView.m in Sources */,
 				C5EE37B42AB875740020BDB8 /* MSRedEnvelopeDetailModel.m in Sources */,
 				C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */,
 				C561D98C2AAC954400E28603 /* BaiShaETProjHeaderIconModel.m in Sources */,
