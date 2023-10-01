@@ -140,7 +140,9 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (CGSize)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [MSMineView6CVCell cellSizeWithModel:nil];
+    UIViewModel *viewModel = UIViewModel.new;
+    viewModel.cls = self.class;
+    return [MSMineView6CVCell cellSizeWithModel:viewModel];
 }
 /// 定义的是元素垂直之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView

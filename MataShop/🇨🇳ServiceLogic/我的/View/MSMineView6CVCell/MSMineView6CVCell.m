@@ -51,7 +51,13 @@
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)cellSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsWidth(73), JobsWidth(64));
+    if([model.cls isEqual:MSMySocialTitleView.class]){
+        return CGSizeMake(JobsWidth(36), JobsWidth(60));
+    }else if ([model.cls isEqual:MSMineView3.class] ||
+              [model.cls isEqual:MSMineView4.class] ||
+              [model.cls isEqual:MSMineView5.class]){
+        return CGSizeMake(JobsWidth(73), JobsWidth(64));
+    }else return CGSizeZero;
 }
 #pragma mark —— lazyLoad
 

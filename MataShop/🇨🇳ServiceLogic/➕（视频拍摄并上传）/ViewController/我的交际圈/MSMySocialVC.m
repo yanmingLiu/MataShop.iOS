@@ -8,6 +8,8 @@
 #import "MSMySocialVC.h"
 
 @interface MSMySocialVC ()
+/// UI
+@property(nonatomic,strong)MSMySocialTitleView *mySocialTitleView;
 
 @end
 
@@ -29,11 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = JobsRandomColor;
+    self.view.backgroundColor = JobsWhiteColor;
     [self setGKNav];
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
+    self.mySocialTitleView.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -60,5 +62,17 @@
     [super viewDidDisappear:animated];
 }
 #pragma mark —— lazyLoad
+-(MSMySocialTitleView *)mySocialTitleView{
+    if(!_mySocialTitleView){
+        _mySocialTitleView = MSMySocialTitleView.new;
+        [_mySocialTitleView richElementsInViewWithModel:nil];
+        [self.view addSubview:_mySocialTitleView];
+        [_mySocialTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.view);
+            make.size.mas_equalTo([MSMySocialTitleView viewSizeWithModel:nil]);
+        }];
+    }return _mySocialTitleView;
+}
 
 @end

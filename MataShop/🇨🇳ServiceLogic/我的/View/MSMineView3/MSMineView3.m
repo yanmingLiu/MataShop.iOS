@@ -141,7 +141,9 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (CGSize)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [MSMineView6CVCell cellSizeWithModel:nil];
+    UIViewModel *viewModel = UIViewModel.new;
+    viewModel.cls = self.class;
+    return [MSMineView6CVCell cellSizeWithModel:viewModel];
 }
 /// 定义的是元素垂直之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView
@@ -215,10 +217,14 @@ insetForSectionAtIndex:(NSInteger)section {
         _collectionView.scrollEnabled = NO;
         [_collectionView registerCollectionViewClass];
         [self addSubview:_collectionView];
+        
+        UIViewModel *viewModel = UIViewModel.new;
+        viewModel.cls = self.class;
+        
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.equalTo(self);
             make.bottom.equalTo(self).offset(JobsWidth(-10));
-            make.height.mas_equalTo([MSMineView6CVCell cellSizeWithModel:nil].height);
+            make.height.mas_equalTo([MSMineView6CVCell cellSizeWithModel:viewModel].height);
         }];
     }return _collectionView;
 }

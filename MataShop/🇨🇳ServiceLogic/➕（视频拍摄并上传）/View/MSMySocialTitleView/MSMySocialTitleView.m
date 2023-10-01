@@ -1,15 +1,14 @@
 //
-//  MSMineView5.m
+//  MSMySocialTitleView.m
 //  MataShop
 //
-//  Created by Jobs Hi on 9/23/23.
+//  Created by Jobs Hi on 10/1/23.
 //
 
-#import "MSMineView5.h"
+#import "MSMySocialTitleView.h"
 
-@interface MSMineView5 ()
+@interface MSMySocialTitleView ()
 /// UI
-@property(nonatomic,strong)UILabel *titlelab;
 @property(nonatomic,strong)UICollectionViewFlowLayout *layout;
 @property(nonatomic,strong)UICollectionView *collectionView;
 /// Data
@@ -17,20 +16,20 @@
 
 @end
 
-@implementation MSMineView5
+@implementation MSMySocialTitleView
 #pragma mark —— BaseProtocol
 /// 单例化和销毁
 +(void)destroySingleton{
-    static_mineView5OnceToken = 0;
-    static_mineView5 = nil;
+    static_mySocialTitleViewOnceToken = 0;
+    static_mySocialTitleView = nil;
 }
 
-static MSMineView5 *static_mineView5 = nil;
-static dispatch_once_t static_mineView5OnceToken;
+static MSMySocialTitleView *static_mySocialTitleView = nil;
+static dispatch_once_t static_mySocialTitleViewOnceToken;
 +(instancetype)sharedInstance{
-    dispatch_once(&static_mineView5OnceToken, ^{
-        static_mineView5 = MSMineView5.new;
-    });return static_mineView5;
+    dispatch_once(&static_mySocialTitleViewOnceToken, ^{
+        static_mySocialTitleView = MSMySocialTitleView.new;
+    });return static_mySocialTitleView;
 }
 #pragma mark —— SysMethod
 -(instancetype)init{
@@ -42,9 +41,9 @@ static dispatch_once_t static_mineView5OnceToken;
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         JobsAddNotification(self,
-                        @selector(languageSwitchNotification:),
-                        LanguageSwitchNotification,
-                        nil);
+                            @selector(languageSwitchNotification:),
+                            LanguageSwitchNotification,
+                            nil);
     }return self;
 }
 
@@ -54,24 +53,24 @@ static dispatch_once_t static_mineView5OnceToken;
 
 -(void)layoutSubviews{
     [super layoutSubviews];
+    /// 内部指定圆切角
+    [self layoutSubviewsCutCnrByRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
+                                    cornerRadii:CGSizeMake(JobsWidth(8), JobsWidth(8))];
 }
 #pragma mark —— BaseViewProtocol
 - (instancetype)initWithSize:(CGSize)thisViewSize{
     if (self = [super init]) {
-        
+        self.backgroundColor = JobsWhiteColor;
     }return self;
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
-    self.titlelab.alpha = 1;
     self.collectionView.alpha = 1;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)viewSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsWidth(375), JobsWidth(180));
+    return CGSizeMake(JobsMainScreen_WIDTH(), JobsWidth(110));
 }
-#pragma mark —— 一些私有方法
-
 #pragma mark —— UICollectionViewCell 部署策略
 //见 @interface NSObject (JobsDeployCellConfig)
 #pragma mark —— UICollectionViewDataSource
@@ -154,29 +153,15 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section {
 - (CGFloat)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return JobsWidth(10);
+    return JobsWidth(35);
 }
 /// 内间距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(JobsWidth(5), JobsWidth(5), JobsWidth(5), JobsWidth(5));
+    return UIEdgeInsetsMake(JobsWidth(25), JobsWidth(25), JobsWidth(25), JobsWidth(25));
 }
 #pragma mark —— lazyLoad
--(UILabel *)titlelab{
-    if(!_titlelab){
-        _titlelab = UILabel.new;
-        _titlelab.text = Internationalization(@"服务功能");
-        _titlelab.font = UIFontWeightBoldSize(16);
-        [self addSubview:_titlelab];
-        [_titlelab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self).offset(JobsWidth(10));
-            make.left.equalTo(self).offset(JobsWidth(20));
-        }];
-        [_titlelab makeLabelByShowingType:UILabelShowingType_03];
-    }return _titlelab;
-}
-
 -(UICollectionViewFlowLayout *)layout{
     if (!_layout) {
         _layout = UICollectionViewFlowLayout.new;
@@ -195,8 +180,7 @@ insetForSectionAtIndex:(NSInteger)section {
         [_collectionView registerCollectionViewClass];
         [self addSubview:_collectionView];
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.bottom.equalTo(self);
-            make.top.equalTo(self.titlelab.mas_bottom).offset(JobsWidth(0));
+            make.edges.equalTo(self);
         }];
     }return _collectionView;
 }
@@ -207,8 +191,8 @@ insetForSectionAtIndex:(NSInteger)section {
         
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.textModel.text = Internationalization(@"个人资料");
-            viewModel.image = JobsIMG(@"个人资料");
+            viewModel.textModel.text = Internationalization(@"点赞");
+            viewModel.image = JobsIMG(@"点赞");
             viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
@@ -217,8 +201,8 @@ insetForSectionAtIndex:(NSInteger)section {
         
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.textModel.text = Internationalization(@"意见反馈");
-            viewModel.image = JobsIMG(@"意见反馈");
+            viewModel.textModel.text = Internationalization(@"粉丝");
+            viewModel.image = JobsIMG(@"粉丝");
             viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
@@ -227,8 +211,8 @@ insetForSectionAtIndex:(NSInteger)section {
         
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.textModel.text = Internationalization(@"消息通知");
-            viewModel.image = JobsIMG(@"消息通知");
+            viewModel.textModel.text = Internationalization(@"关注");
+            viewModel.image = JobsIMG(@"关注");
             viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
@@ -237,8 +221,8 @@ insetForSectionAtIndex:(NSInteger)section {
 
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.textModel.text = Internationalization(@"收货地址");
-            viewModel.image = JobsIMG(@"收货地址");
+            viewModel.textModel.text = Internationalization(@"打赏");
+            viewModel.image = JobsIMG(@"打赏");
             viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
@@ -247,38 +231,8 @@ insetForSectionAtIndex:(NSInteger)section {
         
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.textModel.text = Internationalization(@"修改密码");
-            viewModel.image = JobsIMG(@"修改密码");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
-            viewModel.imageTitleSpace = JobsWidth(1);
-            
-            [_dataMutArr addObject:viewModel];
-        }
-        
-        {
-            UIViewModel *viewModel = UIViewModel.new;
-            viewModel.textModel.text = Internationalization(@"收货地址");
-            viewModel.image = JobsIMG(@"收货地址");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
-            viewModel.imageTitleSpace = JobsWidth(1);
-            
-            [_dataMutArr addObject:viewModel];
-        }
-        
-        {
-            UIViewModel *viewModel = UIViewModel.new;
-            viewModel.textModel.text = Internationalization(@"设置");
-            viewModel.image = JobsIMG(@"设置");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
-            viewModel.imageTitleSpace = JobsWidth(1);
-            
-            [_dataMutArr addObject:viewModel];
-        }
-        
-        {
-            UIViewModel *viewModel = UIViewModel.new;
-            viewModel.textModel.text = Internationalization(@"购物车");
-            viewModel.image = JobsIMG(@"购物车");
+            viewModel.textModel.text = Internationalization(@"评比");
+            viewModel.image = JobsIMG(@"评比");
             viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
