@@ -12,6 +12,7 @@
 @property(nonatomic,strong)JXCategoryTitleView *categoryView;
 @property(nonatomic,strong)JXCategoryIndicatorLineView *lineView;/// 跟随的指示器
 @property(nonatomic,strong)JXCategoryListContainerView *listContainerView;/// 此属性决定依附于此的viewController
+@property(nonatomic,strong)UIButton *publishBtn;
 /// Data
 @property(nonatomic,strong)NSMutableArray <NSString *>*titleMutArr;
 @property(nonatomic,strong)NSMutableArray <UIViewController *>*childVCMutArr;
@@ -53,6 +54,7 @@
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = YES;
     self.categoryView.alpha = 1;
+    self.publishBtn.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -68,6 +70,7 @@
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     NSLog(@"");
+    [self.view bringSubviewToFront:self.publishBtn];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -76,7 +79,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self restoreStatusBarCor];
+    [self restoreStatusBarCor:nil];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -181,6 +184,25 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [self.view layoutIfNeeded];
     }return _listContainerView;
+}
+
+-(UIButton *)publishBtn{
+    if(!_publishBtn){
+        _publishBtn = UIButton.new;
+        _publishBtn.normalBackgroundImage = JobsIMG(@"发布动态");
+        [self.view addSubview:_publishBtn];
+        [_publishBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(20), JobsWidth(20)));
+            make.top.equalTo(self.view).offset(JobsStatusBarHeightByAppleIncData() + JobsWidth(10));
+            make.right.equalTo(self.gk_navigationBar).offset(JobsWidth(-15));
+        }];
+        @jobs_weakify(self)
+        [_publishBtn jobsBtnClickEventBlock:^id(id data) {
+            @jobs_strongify(self)
+            [self forceComingToPushVC:MSMyDynamicVC.new requestParams:nil];
+            return nil;
+        }];
+    }return _publishBtn;
 }
 
 -(NSMutableArray<UIViewController *> *)childVCMutArr{

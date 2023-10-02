@@ -52,7 +52,7 @@ BOOL ISLogin;
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    [self updateStatusBarCor:JobsOrangeColor];/// 在具体子类实现，不要写在父类
+    [self updateStatusBarCor:JobsCor(@"#EA2D19")];/// 在具体子类实现，不要写在父类
 }
 
 -(void)viewDidAppear:(BOOL)animated{
