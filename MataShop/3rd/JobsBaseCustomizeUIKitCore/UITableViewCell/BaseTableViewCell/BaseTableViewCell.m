@@ -302,7 +302,7 @@ UITableViewCellProtocol_synthesize
 }
 #pragma mark —— BaseCellProtocol
 -(void)richElementsInCellWithModel:(UIViewModel *_Nullable)model{
-    if (model) {
+    if ([model isKindOfClass:UIViewModel.class]) {
         self.viewModel = model;
         
         /**

@@ -6,12 +6,12 @@
 //
 
 #import "MSCommentView.h"
-#define kTableViewHeaderID @"kTableViewHeaderID"
+
 @interface MSCommentView ()
 /// UI
 @property(nonatomic,strong)UITableView *tableView;
 /// Data
-@property(nonatomic,strong)NSMutableArray *dataList;
+@property(nonatomic,strong)NSMutableArray <MSCommentModel *>*dataMutArr;
 
 @end
 
@@ -58,11 +58,14 @@ static dispatch_once_t static_commentViewOnceToken;
                                     cornerRadii:CGSizeMake(JobsWidth(8), JobsWidth(8))];
 }
 #pragma mark —— 一些私有方法
-- (void)gestureTapped:(UIGestureRecognizer *)gesture{
-    UIView *header = gesture.view;
-    NSInteger section = header.tag;
-    [self.tableView ww_foldSection:section fold:![self.tableView ww_isSectionFolded:section]];
-    
+/// 设置headerView
+-(void)headerView:(UITableViewHeaderFooterView *)headerView
+          section:(NSInteger)section{
+    UIViewModel *viewModel = UIViewModel.new;
+    viewModel.textModel.text = self.dataMutArr[section].sectionTitle;
+    viewModel.textModel.font = UIFontWeightBoldSize(16);
+    viewModel.textModel.textCor = JobsCor(@"#333333");
+    [headerView richElementsInViewWithModel:viewModel];
 }
 /// 下拉刷新 （子类要进行覆写）
 -(void)pullToRefresh{
@@ -82,16 +85,10 @@ static dispatch_once_t static_commentViewOnceToken;
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
     self.tableView.alpha = 1;
 }
-/// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
-+(CGSize)viewSizeWithModel:(UIViewModel *_Nullable)model{
-    return BaiShaETProjTipsViewSize();
-}
 #pragma mark —— UITableViewDelegate,UITableViewDataSource
 - (void)tableView:(UITableView *)tableView
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
+forRowAtIndexPath:(NSIndexPath *)indexPath{}
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -99,66 +96,34 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 }
 /// 编辑模式下，点击取消左边已选中的cell的按钮
 - (void)tableView:(UITableView *)tableView
-didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
+didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return self.dataMutArr.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
+    return [MSCommentTBVCell cellHeightWithModel:self.dataMutArr[indexPath.section].commentDataMutArr[indexPath.row]];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section{
-    return self.self.dataList.count;
+    return self.dataMutArr[section].commentDataMutArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    BaseTableViewCell *cell = (BaseTableViewCell *)self.tableViewCellMutArr[indexPath.section][indexPath.row];
-//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//    cell.indexPath = indexPath;
-//    switch (indexPath.section) {
-//        case 0:
-//            [cell richElementsInCellWithModel:nil];
-//            break;
-//        case 1:
-//        case 2:
-//            [cell richElementsInCellWithModel:self.dataMutArr[indexPath.section - 1][indexPath.row]];
-//            break;
-//        default:
-//            [cell richElementsInCellWithModel:nil];
-//            break;
-//    }return cell;
-    
-    static NSString *reuseId = @"CELLID";
-    UITableViewCell *cell;
-    
-    cell = [tableView dequeueReusableCellWithIdentifier:reuseId];
-    if(!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
-    }
-    
-    NSString *rowData = self.dataList[indexPath.row];
-    
-    NSString *rowName = rowData;
-    NSArray *nameArray = [rowData componentsSeparatedByString:@"-"];
-    if(nameArray.count == 2){
-        rowName = nameArray[0];
-    }
-    
-    cell.textLabel.text = rowName;
-    
+    MSCommentTBVCell *cell = [MSCommentTBVCell cellStyleDefaultWithTableView:tableView];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.indexPath = indexPath;
+    [cell richElementsInCellWithModel:self.dataMutArr[indexPath.section].commentDataMutArr[indexPath.row]];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForHeaderInSection:(NSInteger)section{
-    return 44;
+    return [MSCommentTableHeaderFooterView heightForHeaderInSection:nil];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
@@ -168,49 +133,54 @@ heightForFooterInSection:(NSInteger)section{
 /// 这里涉及到复用机制，return出去的是UITableViewHeaderFooterView的派生类
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section{
-    UITableViewHeaderFooterView *header = nil;
-    
-    header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kTableViewHeaderID];
+    MSCommentTableHeaderFooterView *header = [tableView tableViewHeaderFooterView:MSCommentTableHeaderFooterView.class];
     if(!header){
-        header = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:kTableViewHeaderID];
-        UITapGestureRecognizer *tapgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureTapped:)];
-        [header addGestureRecognizer:tapgr];
+        header = [MSCommentTableHeaderFooterView.alloc initWithReuseIdentifier:MSCommentTableHeaderFooterView.class.description];
     }
-    
-    if(header){
-        header.textLabel.text = [NSString stringWithFormat:@"第%@组", @(section+1)];
-        header.tag = section;
+
+    {
+        header.numberOfTouchesRequired = 1;
+        header.numberOfTapsRequired = 1;/// ⚠️注意：如果要设置长按手势，此属性必须设置为0⚠️
+        header.minimumPressDuration = 0.1;
+        header.numberOfTouchesRequired = 1;
+        header.allowableMovement = 1;
+        header.userInteractionEnabled = YES;
+        header.target = self;
+        @jobs_weakify(self)
+        header.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target,
+                                                                 UITapGestureRecognizer *_Nullable arg) {
+            @jobs_strongify(self)
+            MSCommentTableHeaderFooterView *header = (MSCommentTableHeaderFooterView *)arg.view;
+            NSInteger section = header.tag;
+            [tableView ww_foldSection:section
+                                 fold:![tableView ww_isSectionFolded:section]];
+        }];
+        header.tapGR.enabled = YES;/// 必须在设置完Target和selector以后方可开启执行
     }
-    
+    header.tag = section;
     return header;
 }
-#pragma mark —— lazyLoad
--(NSMutableArray *)dataList{
-    if(!_dataList){
-        _dataList = NSMutableArray.array;
-        [_dataList addObject:@"FileManage"];
-        [_dataList addObject:@"ViewControllerTransition"];
-        [_dataList addObject:@"ThreadViewController"];
-        [_dataList addObject:@"MemoryLeak"];
-        [_dataList addObject:@"——————————————————"];
-    }return _dataList;
-}
 
+- (void)tableView:(UITableView *)tableView 
+willDisplayHeaderView:(UIView *)view
+       forSection:(NSInteger)section{
+    MSCommentTableHeaderFooterView *commentTableHeaderFooterView = (MSCommentTableHeaderFooterView *)view;
+    [self headerView:commentTableHeaderFooterView section:section];
+}
+#pragma mark —— lazyLoad
 -(UITableView *)tableView{
     if (!_tableView) {
         _tableView = UITableView.initWithStyleGrouped;
         _tableView.ww_foldable = YES;
         [self dataLinkByTableView:_tableView];
-        _tableView.backgroundColor = AppMainCor_02;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        _tableView.backgroundColor = JobsWhiteColor;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.separatorColor = HEXCOLOR(0xEEE2C8);
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.scrollEnabled = YES;
         _tableView.tableHeaderView = UIView.new;/// 这里接入的就是一个UIView的派生类
         _tableView.tableFooterView = UIView.new;/// 这里接入的就是一个UIView的派生类
-        _tableView.separatorColor = HEXCOLOR(0xEEEEEE);
-        _tableView.contentInset = UIEdgeInsetsMake(0, 0, JobsBottomSafeAreaHeight(), 0);
-        [_tableView registerTableViewClass];
+        [_tableView registerHeaderFooterViewClass:MSCommentTableHeaderFooterView.class];
         if(@available(iOS 11.0, *)) {
             _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
@@ -244,23 +214,131 @@ viewForHeaderInSection:(NSInteger)section{
             
             _tableView.ly_emptyView.titleLabTextColor = JobsLightGrayColor;
             _tableView.ly_emptyView.contentViewOffset = JobsWidth(-180);
-            _tableView.ly_emptyView.titleLabFont = [UIFont systemFontOfSize:JobsWidth(16) weight:UIFontWeightMedium];
+            _tableView.ly_emptyView.titleLabFont = UIFontWeightLightSize(16);
         }
         
 //        {/// 设置tabAnimated相关属性
 //            // 可以不进行手动初始化，将使用默认属性
-//            _tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:DDSignlePeopleCell.class
+//            _tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:MSCommentTBVCell.class
 //                                                                  cellHeight:74.5];
 //            _tableView.tabAnimated.superAnimationType = TABViewSuperAnimationTypeShimmer;
 //            [_tableView tab_startAnimation];   // 开启动画
 //        }
-//        
+//
         [self addSubview:_tableView];
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self);
         }];
 
     }return _tableView;
+}
+
+-(NSMutableArray<MSCommentModel *> *)dataMutArr{
+    if(!_dataMutArr){
+        _dataMutArr = NSMutableArray.array;
+        {
+            NSMutableArray <MSCommentDetailModel *>*commentDataMutArr = NSMutableArray.array;
+            
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"张山的歌，第1条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+            
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"张山的歌，第2条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"张山的歌，第3条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+            
+            MSCommentModel *commentModel = MSCommentModel.new;
+            commentModel.sectionTitle = Internationalization(@"张山的歌");
+            commentModel.commentDataMutArr = commentDataMutArr;
+            
+            [_dataMutArr addObject:commentModel];
+        }
+        
+        {
+            NSMutableArray <MSCommentDetailModel *>*commentDataMutArr = NSMutableArray.array;
+            
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"我是李闯，第1条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+            
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"我是李闯，第2条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"我是李闯，第3条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+            
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"我是李闯，第4条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+            
+            MSCommentModel *commentModel = MSCommentModel.new;
+            commentModel.sectionTitle = Internationalization(@"我是李闯");
+            commentModel.commentDataMutArr = commentDataMutArr;
+            
+            [_dataMutArr addObject:commentModel];
+        }
+
+        {
+            NSMutableArray <MSCommentDetailModel *>*commentDataMutArr = NSMutableArray.array;
+            
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"今天我很高兴，第1条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+            
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"今天我很高兴，第2条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"今天我很高兴，第3条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+            
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"今天我很高兴，第4条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+            
+            {
+                MSCommentDetailModel *commentDetailModel = MSCommentDetailModel.new;
+                commentDetailModel.rowTitle = @"今天我很高兴，第5条评论";
+                [commentDataMutArr addObject:commentDetailModel];
+            }
+            
+            MSCommentModel *commentModel = MSCommentModel.new;
+            commentModel.sectionTitle = Internationalization(@"今天我很高兴");
+            commentModel.commentDataMutArr = commentDataMutArr;
+            
+            [_dataMutArr addObject:commentModel];
+        }
+
+    }return _dataMutArr;
 }
 
 @end

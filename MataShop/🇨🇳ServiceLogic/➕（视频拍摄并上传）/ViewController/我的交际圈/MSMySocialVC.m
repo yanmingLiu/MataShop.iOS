@@ -10,6 +10,7 @@
 @interface MSMySocialVC ()
 /// UI
 @property(nonatomic,strong)MSMySocialTitleView *mySocialTitleView;
+@property(nonatomic,strong)UILabel *titleLab;
 @property(nonatomic,strong)MSCommentView *commentView;
 
 @end
@@ -37,6 +38,7 @@
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
     self.mySocialTitleView.alpha = 1;
+    self.titleLab.alpha = 1;
     self.commentView.alpha = 1;
 }
 
@@ -77,13 +79,29 @@
     }return _mySocialTitleView;
 }
 
+-(UILabel *)titleLab{
+    if(!_titleLab){
+        _titleLab = UILabel.new;
+        _titleLab.text = Internationalization(@"评论");
+        _titleLab.textColor = JobsCor(@"#333333");
+        _titleLab.font = UIFontWeightBoldSize(18);
+        [self.view addSubview:_titleLab];
+        [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view).offset(JobsWidth(15));
+            make.top.equalTo(self.mySocialTitleView.mas_bottom).offset(JobsWidth(25));
+            make.height.mas_equalTo(JobsWidth(20));
+        }];
+        [_titleLab makeLabelByShowingType:UILabelShowingType_03];
+    }return _titleLab;
+}
+
 -(MSCommentView *)commentView{
     if(!_commentView){
         _commentView = MSCommentView.new;
         [_commentView richElementsInViewWithModel:nil];
         [self.view addSubview:_commentView];
         [_commentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mySocialTitleView.mas_bottom);
+            make.top.equalTo(self.titleLab.mas_bottom);
             make.left.right.bottom.equalTo(self.view);
         }];
     }return _commentView;
