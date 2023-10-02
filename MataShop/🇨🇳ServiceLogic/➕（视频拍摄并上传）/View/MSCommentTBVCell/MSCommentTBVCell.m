@@ -81,8 +81,8 @@ UIViewModelProtocol_synthesize
 /// 具体由子类进行复写【数据定高】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGFloat)cellHeightWithModel:(MSCommentDetailModel *_Nullable)model{
     return 3 * [self jobsGetLabelHeightByWidth:JobsWidth(355)
-                                         title:model.rowTitle
-                                          font:UIFontWeightRegularSize(14)];
+                                           title:model.rowTitle
+                                            font:UIFontWeightRegularSize(14)];
 }
 // 在具体的子类去实现,分类调用异常
 -(void)setFrame:(CGRect)frame{
@@ -103,7 +103,7 @@ UIViewModelProtocol_synthesize
         _titileLab.font = UIFontWeightRegularSize(14);
         [self.contentView addSubview:_titileLab];
         [_titileLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(JobsWidth(15), JobsWidth(10), JobsWidth(15), JobsWidth(10)));
+            make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(JobsWidth(5), JobsWidth(25), JobsWidth(5), JobsWidth(25)));
         }];
         [_titileLab cornerCutToCircleWithCornerRadius:JobsWidth(8)];
     }

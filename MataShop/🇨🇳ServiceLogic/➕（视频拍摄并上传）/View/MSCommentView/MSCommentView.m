@@ -118,6 +118,11 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.indexPath = indexPath;
     [cell richElementsInCellWithModel:self.dataMutArr[indexPath.section].commentDataMutArr[indexPath.row]];
+    
+    CGRect cellFrame = cell.frame;
+    cellFrame.size.width -= JobsWidth(15 * 2);
+    cell.frame = cellFrame;
+    
     return cell;
 }
 
@@ -173,7 +178,7 @@ willDisplayHeaderView:(UIView *)view
         _tableView = UITableView.initWithStyleGrouped;
         _tableView.ww_foldable = YES;
         [self dataLinkByTableView:_tableView];
-        _tableView.backgroundColor = JobsWhiteColor;
+        _tableView.backgroundColor = JobsCor(@"#FFFFFF");
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.separatorColor = HEXCOLOR(0xEEE2C8);
         _tableView.showsVerticalScrollIndicator = NO;
