@@ -13,6 +13,7 @@
 @property(nonatomic,strong)UICollectionView *collectionView;
 /// Data
 @property(nonatomic,strong)NSMutableArray <UIViewModel *>*dataMutArr;
+@property(nonatomic,strong)NSMutableArray <UIViewController *>*vcMutArr;
 
 @end
 
@@ -122,13 +123,14 @@ shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
-    UIViewModel *viewModel = self.dataMutArr[indexPath.item];
-    [WHToast toastMsg:viewModel.textModel.text];
+//    UIViewModel *viewModel = self.dataMutArr[indexPath.item];
+//    [WHToast toastMsg:viewModel.textModel.text];
     /**
      滚动到指定位置
      _collectionView.contentOffset = CGPointMake(0,-100);
      [_collectionView setContentOffset:CGPointMake(0, -200) animated:YES];// 只有在viewDidAppear周期 或者 手动触发才有效
      */
+    [self forceComingToPushVC:self.vcMutArr[indexPath.item] requestParams:nil];
 }
 /// 取消选中操作
 -(void)collectionView:(UICollectionView *)collectionView
@@ -240,6 +242,40 @@ insetForSectionAtIndex:(NSInteger)section {
         }
         
     }return _dataMutArr;
+}
+
+-(NSMutableArray<UIViewController *> *)vcMutArr{
+    if(!_vcMutArr){
+        _vcMutArr = NSMutableArray.array;
+        [_vcMutArr addObject:MSThumbsUpVC.new];/// 点赞作品
+        
+        {
+            MSMyFansBaseVC *myFansBaseVC = MSMyFansBaseVC.new;
+            myFansBaseVC.data = @(MSMyFansStyle_2);/// 我的粉丝——我的粉丝
+            [_vcMutArr addObject:myFansBaseVC];
+        }
+
+        {
+            MSMyFansBaseVC *myFansBaseVC = MSMyFansBaseVC.new;
+            myFansBaseVC.data = @(MSMyFansStyle_1);/// 我的粉丝——我的关注
+            [_vcMutArr addObject:myFansBaseVC];
+        }
+        
+        {
+            MSMyFansBaseVC *myFansBaseVC = MSMyFansBaseVC.new;
+            myFansBaseVC.data = @(MSMyFansStyle_3);/// 我的粉丝——我打赏的用户
+            [_vcMutArr addObject:myFansBaseVC];
+        }
+        
+//        {
+//            MSMyFansBaseVC *myFansBaseVC = MSMyFansBaseVC.new;
+//            myFansBaseVC.requestParams = @(MSMyFansStyle_4);/// 我的粉丝——打赏我的用户
+//            [_vcMutArr addObject:myFansBaseVC];
+//        }
+    
+        [_vcMutArr addObject:MSMyAppraiseComparisonVC.new];/// 我的评比
+        
+    }return _vcMutArr;
 }
 
 @end

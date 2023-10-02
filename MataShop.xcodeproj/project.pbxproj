@@ -90,6 +90,14 @@
 		C536CE152AC23B40005D1FCD /* UISlider+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C536CE142AC23B40005D1FCD /* UISlider+Extra.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
+		C5432DF72ACB1E6C008F92B0 /* MSThumbsUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432DF62ACB1E6C008F92B0 /* MSThumbsUpVC.m */; };
+		C5432DFA2ACB1EAE008F92B0 /* MSMyFansSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432DF92ACB1EAE008F92B0 /* MSMyFansSubVC.m */; };
+		C5432DFD2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432DFC2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.m */; };
+		C5432E002ACB1F25008F92B0 /* MSMyDynamicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432DFF2ACB1F25008F92B0 /* MSMyDynamicVC.m */; };
+		C5432E042ACB21F2008F92B0 /* MSMyTipsSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432E032ACB21F2008F92B0 /* MSMyTipsSubVC.m */; };
+		C5432E082ACB2272008F92B0 /* MSMyAttentionSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432E072ACB2272008F92B0 /* MSMyAttentionSubVC.m */; };
+		C5432E0C2ACB2444008F92B0 /* MSMyFansBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432E0B2ACB2444008F92B0 /* MSMyFansBaseVC.m */; };
+		C5432E0F2ACB2C30008F92B0 /* MSTipsMeSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432E0E2ACB2C30008F92B0 /* MSTipsMeSubVC.m */; };
 		C553D0F02AC9CBFF00F9CEA1 /* MSVoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0EF2AC9CBFF00F9CEA1 /* MSVoteView.m */; };
 		C553D0F52AC9CFC000F9CEA1 /* MSMySocialTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0F42AC9CFBF00F9CEA1 /* MSMySocialTitleView.m */; };
 		C553D1722AC9D98900F9CEA1 /* MSCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D1712AC9D98900F9CEA1 /* MSCommentView.m */; };
@@ -1169,6 +1177,28 @@
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
 		C53CD9122ABC32BA0011FD1A /* JobsTuple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobsTuple.h; sourceTree = "<group>"; };
 		C53CD9132ABC32BA0011FD1A /* JobsTuple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobsTuple.m; sourceTree = "<group>"; };
+		C5432CEF2ACB1BB6008F92B0 /* 我的粉丝.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "我的粉丝.jpg"; sourceTree = "<group>"; };
+		C5432CF02ACB1BB6008F92B0 /* 打赏我的用户.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "打赏我的用户.jpg"; sourceTree = "<group>"; };
+		C5432CF12ACB1BB6008F92B0 /* 我的关注.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "我的关注.jpg"; sourceTree = "<group>"; };
+		C5432CF22ACB1BC2008F92B0 /* 点赞作品.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "点赞作品.jpg"; sourceTree = "<group>"; };
+		C5432CF42ACB1C28008F92B0 /* 我的评比.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "我的评比.jpg"; sourceTree = "<group>"; };
+		C5432CF62ACB1C34008F92B0 /* 发布动态.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "发布动态.jpg"; sourceTree = "<group>"; };
+		C5432DF52ACB1E6C008F92B0 /* MSThumbsUpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSThumbsUpVC.h; sourceTree = "<group>"; };
+		C5432DF62ACB1E6C008F92B0 /* MSThumbsUpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSThumbsUpVC.m; sourceTree = "<group>"; };
+		C5432DF82ACB1EAE008F92B0 /* MSMyFansSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyFansSubVC.h; sourceTree = "<group>"; };
+		C5432DF92ACB1EAE008F92B0 /* MSMyFansSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyFansSubVC.m; sourceTree = "<group>"; };
+		C5432DFB2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyAppraiseComparisonVC.h; sourceTree = "<group>"; };
+		C5432DFC2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyAppraiseComparisonVC.m; sourceTree = "<group>"; };
+		C5432DFE2ACB1F25008F92B0 /* MSMyDynamicVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyDynamicVC.h; sourceTree = "<group>"; };
+		C5432DFF2ACB1F25008F92B0 /* MSMyDynamicVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyDynamicVC.m; sourceTree = "<group>"; };
+		C5432E022ACB21F2008F92B0 /* MSMyTipsSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyTipsSubVC.h; sourceTree = "<group>"; };
+		C5432E032ACB21F2008F92B0 /* MSMyTipsSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyTipsSubVC.m; sourceTree = "<group>"; };
+		C5432E062ACB2272008F92B0 /* MSMyAttentionSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyAttentionSubVC.h; sourceTree = "<group>"; };
+		C5432E072ACB2272008F92B0 /* MSMyAttentionSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyAttentionSubVC.m; sourceTree = "<group>"; };
+		C5432E0A2ACB2443008F92B0 /* MSMyFansBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyFansBaseVC.h; sourceTree = "<group>"; };
+		C5432E0B2ACB2444008F92B0 /* MSMyFansBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyFansBaseVC.m; sourceTree = "<group>"; };
+		C5432E0D2ACB2C30008F92B0 /* MSTipsMeSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSTipsMeSubVC.h; sourceTree = "<group>"; };
+		C5432E0E2ACB2C30008F92B0 /* MSTipsMeSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTipsMeSubVC.m; sourceTree = "<group>"; };
 		C553D0ED2AC9CBD500F9CEA1 /* 投票弹窗.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "投票弹窗.jpg"; sourceTree = "<group>"; };
 		C553D0EE2AC9CBFF00F9CEA1 /* MSVoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVoteView.h; sourceTree = "<group>"; };
 		C553D0EF2AC9CBFF00F9CEA1 /* MSVoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVoteView.m; sourceTree = "<group>"; };
@@ -3467,6 +3497,84 @@
 				C53CD9132ABC32BA0011FD1A /* JobsTuple.m */,
 			);
 			path = JobsTuple;
+			sourceTree = "<group>";
+		};
+		C5432CED2ACB1ADB008F92B0 /* 点赞作品 */ = {
+			isa = PBXGroup;
+			children = (
+				C5432CF22ACB1BC2008F92B0 /* 点赞作品.jpg */,
+				C5432DF52ACB1E6C008F92B0 /* MSThumbsUpVC.h */,
+				C5432DF62ACB1E6C008F92B0 /* MSThumbsUpVC.m */,
+			);
+			path = "点赞作品";
+			sourceTree = "<group>";
+		};
+		C5432CEE2ACB1BA9008F92B0 /* 我的粉丝 */ = {
+			isa = PBXGroup;
+			children = (
+				C5432CEF2ACB1BB6008F92B0 /* 我的粉丝.jpg */,
+				C5432DF82ACB1EAE008F92B0 /* MSMyFansSubVC.h */,
+				C5432DF92ACB1EAE008F92B0 /* MSMyFansSubVC.m */,
+			);
+			path = "我的粉丝";
+			sourceTree = "<group>";
+		};
+		C5432CF32ACB1BDD008F92B0 /* 我的评比 */ = {
+			isa = PBXGroup;
+			children = (
+				C5432CF42ACB1C28008F92B0 /* 我的评比.jpg */,
+				C5432DFB2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.h */,
+				C5432DFC2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.m */,
+			);
+			path = "我的评比";
+			sourceTree = "<group>";
+		};
+		C5432CF52ACB1C2D008F92B0 /* 发布动态 */ = {
+			isa = PBXGroup;
+			children = (
+				C5432CF62ACB1C34008F92B0 /* 发布动态.jpg */,
+				C5432DFE2ACB1F25008F92B0 /* MSMyDynamicVC.h */,
+				C5432DFF2ACB1F25008F92B0 /* MSMyDynamicVC.m */,
+			);
+			path = "发布动态";
+			sourceTree = "<group>";
+		};
+		C5432E012ACB21B2008F92B0 /* 打赏我的用户 */ = {
+			isa = PBXGroup;
+			children = (
+				C5432CF02ACB1BB6008F92B0 /* 打赏我的用户.jpg */,
+				C5432E0D2ACB2C30008F92B0 /* MSTipsMeSubVC.h */,
+				C5432E0E2ACB2C30008F92B0 /* MSTipsMeSubVC.m */,
+			);
+			path = "打赏我的用户";
+			sourceTree = "<group>";
+		};
+		C5432E052ACB224A008F92B0 /* 我的关注 */ = {
+			isa = PBXGroup;
+			children = (
+				C5432CF12ACB1BB6008F92B0 /* 我的关注.jpg */,
+				C5432E062ACB2272008F92B0 /* MSMyAttentionSubVC.h */,
+				C5432E072ACB2272008F92B0 /* MSMyAttentionSubVC.m */,
+			);
+			path = "我的关注";
+			sourceTree = "<group>";
+		};
+		C5432E092ACB23FB008F92B0 /* MSMyFansBaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				C5432E0A2ACB2443008F92B0 /* MSMyFansBaseVC.h */,
+				C5432E0B2ACB2444008F92B0 /* MSMyFansBaseVC.m */,
+			);
+			path = MSMyFansBaseVC;
+			sourceTree = "<group>";
+		};
+		C5432E102ACB2C38008F92B0 /* 我打赏的用户 */ = {
+			isa = PBXGroup;
+			children = (
+				C5432E022ACB21F2008F92B0 /* MSMyTipsSubVC.h */,
+				C5432E032ACB21F2008F92B0 /* MSMyTipsSubVC.m */,
+			);
+			path = "我打赏的用户";
 			sourceTree = "<group>";
 		};
 		C552242A2AC89A1600668516 /* JobsCustomView */ = {
@@ -8562,6 +8670,14 @@
 		C561D98F2AAC9A4E00E28603 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C5432E092ACB23FB008F92B0 /* MSMyFansBaseVC */,
+				C5432E012ACB21B2008F92B0 /* 打赏我的用户 */,
+				C5432E102ACB2C38008F92B0 /* 我打赏的用户 */,
+				C5432CEE2ACB1BA9008F92B0 /* 我的粉丝 */,
+				C5432E052ACB224A008F92B0 /* 我的关注 */,
+				C5432CF52ACB1C2D008F92B0 /* 发布动态 */,
+				C5432CF32ACB1BDD008F92B0 /* 我的评比 */,
+				C5432CED2ACB1ADB008F92B0 /* 点赞作品 */,
 				C5329F552ABEFE7D004294E0 /* MSVedioSubVC */,
 				C5329B232ABED4E7004294E0 /* MSOrderVC */,
 				C5329B162ABECE0B004294E0 /* 我的交际圈 */,
@@ -10523,6 +10639,7 @@
 				C561D6992AAC862000E28603 /* ZMJCells.m in Sources */,
 				C561D42B2AAC7E7B00E28603 /* UIViewController+BaseNavigationBar.m in Sources */,
 				C5CFE7182AB089A300D0F225 /* MSInterestSettleRecordVC.m in Sources */,
+				C5432E0F2ACB2C30008F92B0 /* MSTipsMeSubVC.m in Sources */,
 				C561D3AA2AAC7E7A00E28603 /* CheckMemFreeVC.m in Sources */,
 				C561D45F2AAC7E7B00E28603 /* CADisplayLink_TimerManager.m in Sources */,
 				C561D4282AAC7E7B00E28603 /* UIViewController+Shake.m in Sources */,
@@ -10580,6 +10697,7 @@
 				C5CFE7142AB0892500D0F225 /* MSProdSelectCVCell.m in Sources */,
 				C561D47B2AAC7E7B00E28603 /* DynamicInvoke.m in Sources */,
 				C561D3B92AAC7E7A00E28603 /* UIImage+Overlay.m in Sources */,
+				C5432E042ACB21F2008F92B0 /* MSMyTipsSubVC.m in Sources */,
 				C561D4242AAC7E7B00E28603 /* UIViewController+JPImageresizerView.m in Sources */,
 				C561D65E2AAC862000E28603 /* DataManager.m in Sources */,
 				C561D6A02AAC862000E28603 /* BaiShaETProjTipsView05.m in Sources */,
@@ -10656,6 +10774,7 @@
 				C561D4102AAC7E7B00E28603 /* BaseNavigationBar.m in Sources */,
 				C561D3B32AAC7E7A00E28603 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				C5729B9F2AB5AE2B0084EAFC /* UIColor+Other.m in Sources */,
+				C5432DF72ACB1E6C008F92B0 /* MSThumbsUpVC.m in Sources */,
 				C5CFE8962AB1A0BD00D0F225 /* MSPromotionIncentiveModel.m in Sources */,
 				C5D71F432AC22EE800DD8938 /* KTVHCRange.m in Sources */,
 				C520F5F22AB396F400142DCC /* JobsCommentVC.m in Sources */,
@@ -10697,6 +10816,7 @@
 				C561CE502AAC7CE200E28603 /* XHLaunchAd.m in Sources */,
 				C561CE042AAC7CE200E28603 /* EmptyView.m in Sources */,
 				C520F23A2AB38CF700142DCC /* WMZBannerParam.m in Sources */,
+				C5432DFD2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.m in Sources */,
 				C561D3F32AAC7E7B00E28603 /* UIView+UIBackgroundConfig.m in Sources */,
 				C561D42E2AAC7E7B00E28603 /* MJRefreshConfigModel.m in Sources */,
 				C5E015CB2AAE1DD9005ABE09 /* LunarFormatter.m in Sources */,
@@ -10772,6 +10892,7 @@
 				C561D41D2AAC7E7B00E28603 /* UIViewController+JXPagerViewListViewDelegate.m in Sources */,
 				C561D43B2AAC7E7B00E28603 /* BaseTableView.m in Sources */,
 				C553D1722AC9D98900F9CEA1 /* MSCommentView.m in Sources */,
+				C5432DFA2ACB1EAE008F92B0 /* MSMyFansSubVC.m in Sources */,
 				C561CE252AAC7CE200E28603 /* ECPrivacyCheckMediaAndAppleMusic.m in Sources */,
 				C5D71F542AC22EE800DD8938 /* HTTPAuthenticationRequest.m in Sources */,
 				C561D9552AAC8ECB00E28603 /* BaiShaETProjUserInfoModel.m in Sources */,
@@ -10886,6 +11007,7 @@
 				C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */,
 				C5329B1C2ABECE3B004294E0 /* MSMySocialVC.m in Sources */,
 				C561D47A2AAC7E7B00E28603 /* NSObject+DataSave.m in Sources */,
+				C5432E002ACB1F25008F92B0 /* MSMyDynamicVC.m in Sources */,
 				C536CE0E2AC23AE1005D1FCD /* UIWindow+Extra.m in Sources */,
 				C561D69E2AAC862000E28603 /* BaiShaETProjTipsView02.m in Sources */,
 				C561D3E92AAC7E7B00E28603 /* UIView+ZFPlayer.m in Sources */,
@@ -10894,6 +11016,7 @@
 				C5EE35D82AB8351D0020BDB8 /* MSPersonalDataVC.m in Sources */,
 				C561D4082AAC7E7B00E28603 /* UICollectionViewCell+ShakeAnimation.m in Sources */,
 				C561CE1F2AAC7CE200E28603 /* ECPrivacyCheckCamera.m in Sources */,
+				C5432E0C2ACB2444008F92B0 /* MSMyFansBaseVC.m in Sources */,
 				C561D5402AAC846300E28603 /* MSMsgVC.m in Sources */,
 				C561D40E2AAC7E7B00E28603 /* BaseImageView.m in Sources */,
 				C561D48B2AAC7E7B00E28603 /* NSObject+UUID.m in Sources */,
@@ -10971,6 +11094,7 @@
 				C561D4702AAC7E7B00E28603 /* NSObject+Swizzling.m in Sources */,
 				C561D4882AAC7E7B00E28603 /* NSObject+AFNReachability.m in Sources */,
 				C561D4342AAC7E7B00E28603 /* UINavigationController+Extra.m in Sources */,
+				C5432E082ACB2272008F92B0 /* MSMyAttentionSubVC.m in Sources */,
 				C561D3BF2AAC7E7B00E28603 /* BaseLabel.m in Sources */,
 				C561D3A72AAC7E7A00E28603 /* JobsSuspendBtn.m in Sources */,
 				C5CFE5392AB054CC00D0F225 /* MSTransactionRecordVC.m in Sources */,

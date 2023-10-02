@@ -44,6 +44,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+//    [self updateStatusBarCor:JobsWhiteColor];/// 在具体子类实现，不要写在父类
 }
 
 -(void)viewWillLayoutSubviews{
@@ -60,6 +61,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+//    [self restoreStatusBarCor];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{

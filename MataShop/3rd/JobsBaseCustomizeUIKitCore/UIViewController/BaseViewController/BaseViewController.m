@@ -191,6 +191,7 @@ BaseViewControllerProtocol_synthesize
         if (![jobsGetMainWindow().subviews containsObject:self.statusBar]) {
             [self.statusBar removeFromSuperview];
         }
+        self.statusBar.backgroundColor = JobsWhiteColor;
     } else {
         UIView *statusBar = [UIApplication.sharedApplication.valueForKeyBlock(@"statusBarWindow") valueForKey:@"statusBar"];
         if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
