@@ -11,7 +11,7 @@
 /// 获取文件服务器地址
 -(void)appDelegate_getDownloadStationGetFileServerUrl{
 //    [self getDownloadStationGetFileServerUrl:^(DDResponseModel *data) {
-//        DDUserModel *userModel = self.readUserInfo;
+//        JobsUserModel *userModel = self.readUserInfo;
 //        userModel.resourcesAddress = data.data;
 //        [self saveUserInfo:userModel];
 //    }];

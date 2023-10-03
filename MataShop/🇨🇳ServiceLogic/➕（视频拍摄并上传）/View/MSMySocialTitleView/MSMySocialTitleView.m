@@ -155,7 +155,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section {
 - (CGFloat)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return JobsWidth(35);
+    return JobsWidth(25);
 }
 /// 内间距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView

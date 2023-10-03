@@ -6,10 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JobsObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaiShaETProjUserInfoModel : NSObject
+@interface BaiShaETProjUserInfoModel : JobsObject
 
 @property(nonatomic,copy)NSString *account;
 @property(nonatomic,copy)NSString *domain;// 域名配置

@@ -9,7 +9,7 @@
 #define BaiShaETProjModelHeader_h
 
 #import "BaseModel.h"
-#import "DDUserModel.h"
+#import "JobsUserModel.h"
 #import "DDResponseModel.h"
 
 #import "BaiShaETProjUserInfoModel.h"

@@ -14,6 +14,7 @@
 #import "BaseViewController.h"
 #import "MSFindVC.h"/// 发现
 #import "MSMySocialVC.h"/// 我的交际圈
+#import "MSMyPostDynamicVC.h"/// 发布动态
 
 NS_ASSUME_NONNULL_BEGIN
 

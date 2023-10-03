@@ -199,7 +199,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         @jobs_weakify(self)
         [_publishBtn jobsBtnClickEventBlock:^id(id data) {
             @jobs_strongify(self)
-            [self forceComingToPushVC:MSMyDynamicVC.new requestParams:nil];
+            [self forceComingToPushVC:MSMyPostDynamicVC.new requestParams:nil];
             return nil;
         }];
     }return _publishBtn;
