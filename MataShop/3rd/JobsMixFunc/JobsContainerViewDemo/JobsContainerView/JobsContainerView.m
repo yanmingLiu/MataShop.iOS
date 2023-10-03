@@ -8,7 +8,6 @@
 #import "JobsContainerView.h"
 
 @interface JobsContainerView (){
-
     CGFloat maxWidth;/// 根据数据源得出的，当前的最大宽
     CGFloat totalHeight;
 }
@@ -99,31 +98,44 @@
 /// 批量创建UIButton（使之兼容图文）
 /// - Parameter model: 数据源
 -(UIButton *)createButtonWithModel:(JobsBtnModel *)model{
-    UIButton *button = nil;
-    
-    if(self.deviceSystemVersion.floatValue <= 15.0){
-        button = [UIButton buttonWithType:UIButtonTypeCustom];
-        SuppressWdeprecatedDeclarationsWarning(button.contentEdgeInsets = model.contentEdgeInsets;);
-        button.normalTitle = model.normalTitle;
-        button.normalTitleColor = model.normalTitleColor;
-        button.normalImage = model.image;
-        
-    }else{
-        /// 使用 UIButtonConfiguration
-        UIButtonConfiguration *buttonConfig = UIButtonConfiguration.plainButtonConfiguration;
-        buttonConfig.contentInsets = model.contentInsets;
-        buttonConfig.image = model.normalImage;
-        buttonConfig.attributedTitle = model.normalAttributedTitle ? : [NSAttributedString.alloc initWithString:model.normalTitle ? : Internationalization(@"暂无数据")
-                                                                                                             attributes:@{NSForegroundColorAttributeName:model.normalTitleColor}];
-        button = [UIButton buttonWithConfiguration:buttonConfig primaryAction:nil];
-    }
-
+    @jobs_weakify(self)
+    BaseButton *button = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                           background:nil
+                                                       titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                        textAlignment:NSTextAlignmentCenter
+                                                          normalImage:model.normalImage
+                                                       highlightImage:nil
+                                                      attributedTitle:model.normalAttributedTitle
+                                              selectedAttributedTitle:nil
+                                                   attributedSubtitle:nil
+                                                                title:model.normalTitle
+                                                             subTitle:nil
+                                                            titleFont:model.titleFont
+                                                         subTitleFont:nil
+                                                             titleCor:model.normalTitleColor
+                                                          subTitleCor:nil
+                                                   titleLineBreakMode:model.lineBreakMode
+                                                subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                                  baseBackgroundColor:model.backgroundColor
+                                                         imagePadding:JobsWidth(0)
+                                                         titlePadding:JobsWidth(0)
+                                                       imagePlacement:JobsWidth(0)
+                                           contentHorizontalAlignment:JobsWidth(0)
+                                             contentVerticalAlignment:JobsWidth(0)
+                                                        contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                    cornerRadiusValue:JobsWidth(16)
+                                                      roundingCorners:UIRectCornerAllCorners
+                                                 roundingCornersRadii:CGSizeZero
+                                                       layerBorderCor:nil
+                                                          borderWidth:JobsWidth(1)
+                                                        primaryAction:nil
+                                                      clickEventBlock:^id(BaseButton *x) {
+        @jobs_strongify(self)
+        x.selected = !x.selected;
+        if (self.objectBlock) self.objectBlock(x);
+        return nil;
+    }];
     button.width = maxWidth;
-    button.backgroundColor = model.backgroundColor;
-    button.titleFont = model.titleFont;
-    button.contentVerticalAlignment = model.contentVerticalAlignment;
-    button.contentHorizontalAlignment = model.contentHorizontalAlignment;
-    button.titleLabel.lineBreakMode = model.lineBreakMode;/// NSLineBreakByWordWrapping = 自动换行
     // 计算按钮文本所需的高度
     CGSize buttonSize = [button.titleLabel sizeThatFits:CGSizeMake(button.frame.size.width, CGFLOAT_MAX)];
     // 调整按钮的高度，确保文本不超出按钮的边界

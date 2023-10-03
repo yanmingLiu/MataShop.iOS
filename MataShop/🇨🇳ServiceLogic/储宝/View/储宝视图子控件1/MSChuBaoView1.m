@@ -16,8 +16,6 @@
 /// Data
 @property(nonatomic,strong)NSMutableArray <JobsBtnModel *>*btnModelMutArr;
 @property(nonatomic,strong)NSMutableArray <NSString *>*richTextMutArr;
-//@property(nonatomic,strong)UIButtonConfiguration *withdrawBtnConfig;
-//@property(nonatomic,strong)UIButtonConfiguration *rechargeBtnConfig;
 
 @end
 
@@ -112,6 +110,9 @@ static dispatch_once_t static_chuBaoView1OnceToken;
     if(!_rechargeBtn){
         @jobs_weakify(self)
         _rechargeBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                         background:nil
+                                                     titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                      textAlignment:NSTextAlignmentCenter
                                                         normalImage:nil
                                                      highlightImage:nil
                                                     attributedTitle:nil
@@ -123,13 +124,18 @@ static dispatch_once_t static_chuBaoView1OnceToken;
                                                        subTitleFont:nil
                                                            titleCor:RGBA_COLOR(136, 79, 2, 1)
                                                         subTitleCor:nil
+                                                 titleLineBreakMode:NSLineBreakByWordWrapping
+                                              subtitleLineBreakMode:NSLineBreakByWordWrapping
                                                 baseBackgroundColor:JobsClearColor
-                                                     imagePlacement:0
-                                                       imagePadding:0
+                                                       imagePadding:JobsWidth(0)
+                                                       titlePadding:JobsWidth(0)
+                                                     imagePlacement:JobsWidth(0)
+                                         contentHorizontalAlignment:JobsWidth(0)
+                                           contentVerticalAlignment:JobsWidth(0)
                                                       contentInsets:jobsSameDirectionalEdgeInsets(0)
                                                   cornerRadiusValue:JobsWidth(16)
                                                     roundingCorners:UIRectCornerAllCorners
-                                               roundingCornersRadii:CGSizeMake(0, 0)
+                                               roundingCornersRadii:CGSizeZero
                                                      layerBorderCor:nil
                                                         borderWidth:JobsWidth(1)
                                                       primaryAction:nil
@@ -140,7 +146,6 @@ static dispatch_once_t static_chuBaoView1OnceToken;
             [self forceComingToPushVC:MSTopUpVC.new requestParams:@""];
             return nil;
         }];
-        
         [self addSubview:_rechargeBtn];
         [_rechargeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(80), JobsWidth(32)));
@@ -154,6 +159,9 @@ static dispatch_once_t static_chuBaoView1OnceToken;
     if(!_withdrawBtn){
         @jobs_weakify(self)
         _withdrawBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                         background:nil
+                                                     titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                      textAlignment:NSTextAlignmentCenter
                                                         normalImage:nil
                                                      highlightImage:nil
                                                     attributedTitle:nil
@@ -165,13 +173,18 @@ static dispatch_once_t static_chuBaoView1OnceToken;
                                                        subTitleFont:nil
                                                            titleCor:JobsCor(@"#EA2918")
                                                         subTitleCor:nil
+                                                 titleLineBreakMode:NSLineBreakByWordWrapping
+                                              subtitleLineBreakMode:NSLineBreakByWordWrapping
                                                 baseBackgroundColor:UIColor.whiteColor
-                                                     imagePlacement:0
-                                                       imagePadding:0
+                                                       imagePadding:JobsWidth(0)
+                                                       titlePadding:JobsWidth(0)
+                                                     imagePlacement:JobsWidth(0)
+                                         contentHorizontalAlignment:JobsWidth(0)
+                                           contentVerticalAlignment:JobsWidth(0)
                                                       contentInsets:jobsSameDirectionalEdgeInsets(0)
                                                   cornerRadiusValue:JobsWidth(16)
                                                     roundingCorners:UIRectCornerAllCorners
-                                               roundingCornersRadii:CGSizeMake(0, 0)
+                                               roundingCornersRadii:CGSizeZero
                                                      layerBorderCor:nil
                                                         borderWidth:JobsWidth(1)
                                                       primaryAction:nil
@@ -179,7 +192,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastErrMsg:Internationalization(@"提现")];
+            [WHToast toastMsg:Internationalization(@"提现")];
             return nil;
         }];
         [self addSubview:_withdrawBtn];
