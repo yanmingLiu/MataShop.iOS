@@ -62,20 +62,20 @@ static dispatch_once_t static_textViewOnceToken;
 -(void)richElementsInViewWithModel:(UITextModel *_Nullable)model{
     if([model isKindOfClass:UITextModel.class]){
         self.textModel = (UITextModel *)model;
-        [self updateWordCount];
+        [self updateWordCount:0];
         self.countLabel.alpha = 1;
         self.textView.alpha = 1;
     }
 }
-#pragma mark —— 一些私有方法
-- (void)updateWordCount{
-    self.countLabel.text = [NSString stringWithFormat:@"%ld/%ld", self.textModel.curWordCount, self.textModel.maxWordCount];
-//    [self.countLabel sizeToFit];
-    [self.countLabel makeLabelByShowingType:UILabelShowingType_03];
-}
 #pragma mark —— 一些公有方法
 -(SZTextView *)getTextView{
     return _textView;
+}
+
+-(void)updateWordCount:(NSInteger)count{
+    if(count) self.textModel.curWordCount = count;
+    self.countLabel.text = [NSString stringWithFormat:@"%ld/%ld", self.textModel.curWordCount, self.textModel.maxWordCount];
+    [self.countLabel makeLabelByShowingType:UILabelShowingType_03];
 }
 #pragma mark —— lazyLoad
 - (SZTextView *)textView{
@@ -101,7 +101,7 @@ static dispatch_once_t static_textViewOnceToken;
             }
             self.textView.text = x;
             self.textModel.curWordCount = x.length;
-            [self updateWordCount];
+            [self updateWordCount:0];
             /// 向外回调目前的textView的字符串
             if (self.objectBlock) self.objectBlock(x);
         }];

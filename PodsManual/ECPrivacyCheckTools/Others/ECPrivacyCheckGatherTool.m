@@ -239,13 +239,13 @@ _Pragma("clang diagnostic pop")
             }];
         } else {
             SuppressWdeprecatedDeclarationsWarning(
+                                                   @jobs_weakify(self)
                                                    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
                                                    ABAddressBookRequestAccessWithCompletion(addressBook,
                                                                                             ^(bool granted,
                                                                                               CFErrorRef error) {
-                                                       @jobs_weakify(self)
+                                                       @jobs_strongify(self)
                                                        [self callbackOnMainQueue:^{
-                                                           @jobs_strongify(self)
                                                            if (completionHandler) completionHandler(granted);
                                                        }];
                                                    });

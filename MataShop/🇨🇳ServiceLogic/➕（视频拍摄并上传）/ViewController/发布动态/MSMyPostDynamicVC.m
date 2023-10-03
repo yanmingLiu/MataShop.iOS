@@ -75,7 +75,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = JobsCor(@"#F7F7F7");
     [self setGKNav];
     [self setGKNavBackBtn];
@@ -93,6 +92,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.textView updateWordCount:self.inputDataHistoryString.length];
 }
 
 -(void)viewWillLayoutSubviews{
@@ -191,7 +191,7 @@
     } completionBlock:nil];
 }
 /// 返回按钮点击方法 【覆写父类方法】 // 清空草稿   [self.photoManager deleteLocalModelsInFile];
-- (void)backItemClick:(id)sender{
+-(void)backBtnClickEvent:(UIButton *_Nullable)sender{
     if (self.isUpload) return;
     if (![self.photoManager.afterSelectedArray compareEqualArrElement:self.historyPhotoDataArr] ||//!d
         ![NSString isEqualStrA:self.inputDataHistoryString strB:self.inputDataString]) {
@@ -202,7 +202,17 @@
 - (void)back:(id)sender{
     /// 因为manager上个界面也持有了，并不会释放。所以手动清空一下已选的数据
     [self.photoManager clearSelectedList];
-    [self backBtnClickEvent:sender];
+    switch (self.pushOrPresent) {
+        case ComingStyle_PRESENT:{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }break;
+        case ComingStyle_PUSH:{
+            self.navigationController ? [self.navigationController popViewControllerAnimated:YES] : [self dismissViewControllerAnimated:YES completion:nil];
+        }break;
+            
+        default:
+            break;
+    }
 }
 
 -(void)releaseBtnState:(NSArray *)photoDataArr
