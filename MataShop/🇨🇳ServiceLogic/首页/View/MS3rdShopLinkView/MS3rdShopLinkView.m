@@ -131,8 +131,8 @@ static dispatch_once_t static_shopLinkViewOnceToken;
                 btn.titleFont = UIFontWeightRegularSize(14);
                 btn.imageViewSize = CGSizeMake(JobsWidth(36), JobsWidth(36));
                 [btn makeBtnLabelByShowingType:UILabelShowingType_03];
-                [btn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop
-                                     imageTitleSpace:JobsWidth(10)];
+                [btn layoutButtonWithEdgeInsetsStyle:NSDirectionalRectEdgeTop
+                                        imagePadding:JobsWidth(10)];
             }
             [self addSubview:btn];
             [_btnMutArr addObject:btn];

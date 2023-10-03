@@ -80,8 +80,8 @@
             make.center.equalTo(self.contentView);
         }];
         [self layoutIfNeeded];
-        [_addBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleTop
-                                 imageTitleSpace:JobsWidth(15)];
+        [_addBtn layoutButtonWithEdgeInsetsStyle:NSDirectionalRectEdgeTop
+                                    imagePadding:JobsWidth(15)];
     }return _addBtn;
 }
 

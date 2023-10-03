@@ -195,7 +195,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"点赞");
             viewModel.image = JobsIMG(@"点赞");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -205,7 +205,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"粉丝");
             viewModel.image = JobsIMG(@"粉丝");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -215,7 +215,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"关注");
             viewModel.image = JobsIMG(@"关注");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -225,7 +225,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"打赏");
             viewModel.image = JobsIMG(@"打赏");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -235,7 +235,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"评比");
             viewModel.image = JobsIMG(@"评比");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];

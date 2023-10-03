@@ -153,7 +153,8 @@
             make.right.equalTo(self).offset(JobsWidth(-22));
             make.centerY.equalTo(self.userRankBtn);
         }];
-        [_rankProcessValueBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleRight imageTitleSpace:JobsWidth(14)];
+        [_rankProcessValueBtn layoutButtonWithEdgeInsetsStyle:NSDirectionalRectEdgeTrailing 
+                                                 imagePadding:JobsWidth(14)];
     }return _rankProcessValueBtn;
 }
 

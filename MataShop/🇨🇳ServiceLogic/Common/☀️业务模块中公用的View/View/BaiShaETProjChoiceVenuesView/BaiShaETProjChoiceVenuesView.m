@@ -104,7 +104,8 @@ static dispatch_once_t static_choiceVenuesViewOnceToken;
             make.centerY.equalTo(self);
             make.height.mas_equalTo(JobsWidth(14));
         }];
-        [_btn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleRight imageTitleSpace:JobsWidth(15.6)];
+        [_btn layoutButtonWithEdgeInsetsStyle:NSDirectionalRectEdgeTrailing 
+                                 imagePadding:JobsWidth(15.6)];
     }return _btn;
 }
 

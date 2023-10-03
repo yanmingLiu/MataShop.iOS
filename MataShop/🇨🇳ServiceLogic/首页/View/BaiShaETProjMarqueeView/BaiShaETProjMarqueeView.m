@@ -110,8 +110,8 @@ static dispatch_once_t static_marqueeViewOnceToken;
     _hornBtn.titleFont = UIFontWeightBoldSize(14);
     
     [_hornBtn makeBtnLabelByShowingType:UILabelShowingType_03];
-    [_hornBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft
-                              imageTitleSpace:JobsWidth(1)];
+    [_hornBtn layoutButtonWithEdgeInsetsStyle:NSDirectionalRectEdgeLeading
+                                 imagePadding:JobsWidth(1)];
     return _hornBtn;
 }
 

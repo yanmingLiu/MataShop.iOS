@@ -290,8 +290,8 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         }];
         [_agreeBtn makeBtnLabelByShowingType:UILabelShowingType_03];
         [self.view layoutIfNeeded];
-        [_agreeBtn layoutButtonWithEdgeInsetsStyle:GLButtonEdgeInsetsStyleLeft
-                                   imageTitleSpace:JobsWidth(4)];
+        [_agreeBtn layoutButtonWithEdgeInsetsStyle:NSDirectionalRectEdgeLeading
+                                      imagePadding:JobsWidth(4)];
         @jobs_weakify(self)
         [_agreeBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)

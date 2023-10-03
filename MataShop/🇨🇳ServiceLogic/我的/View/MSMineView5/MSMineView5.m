@@ -209,7 +209,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"个人资料");
             viewModel.image = JobsIMG(@"个人资料");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -219,7 +219,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"意见反馈");
             viewModel.image = JobsIMG(@"意见反馈");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -229,7 +229,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"消息通知");
             viewModel.image = JobsIMG(@"消息通知");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -239,7 +239,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"收货地址");
             viewModel.image = JobsIMG(@"收货地址");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -249,7 +249,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"修改密码");
             viewModel.image = JobsIMG(@"修改密码");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -259,7 +259,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"收货地址");
             viewModel.image = JobsIMG(@"收货地址");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -269,7 +269,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"设置");
             viewModel.image = JobsIMG(@"设置");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
@@ -279,7 +279,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"购物车");
             viewModel.image = JobsIMG(@"购物车");
-            viewModel.buttonEdgeInsetsStyle = GLButtonEdgeInsetsStyleTop;
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
             [_dataMutArr addObject:viewModel];
