@@ -16,8 +16,8 @@
 /// Data
 @property(nonatomic,strong)NSMutableArray <JobsBtnModel *>*btnModelMutArr;
 @property(nonatomic,strong)NSMutableArray <NSString *>*richTextMutArr;
-@property(nonatomic,strong)UIButtonConfiguration *withdrawBtnConfig;
-@property(nonatomic,strong)UIButtonConfiguration *rechargeBtnConfig;
+//@property(nonatomic,strong)UIButtonConfiguration *withdrawBtnConfig;
+//@property(nonatomic,strong)UIButtonConfiguration *rechargeBtnConfig;
 
 @end
 
@@ -108,160 +108,87 @@ static dispatch_once_t static_chuBaoView1OnceToken;
     }return _titleView;
 }
 
--(BaseButton *)withdrawBtn{
-    if(!_withdrawBtn){
-        if(self.deviceSystemVersion.floatValue >= 15.0){
-            _withdrawBtn = [BaseButton buttonWithConfiguration:self.withdrawBtnConfig primaryAction:nil];
-        }else{
-            _withdrawBtn = BaseButton.new;
-            _withdrawBtn.backgroundColor = JobsCor(@"#EA2918");
-            _withdrawBtn.titleFont = UIFontWeightBoldSize(12);
-            _withdrawBtn.normalTitle = Internationalization(@"提现");
-            _withdrawBtn.normalTitleColor = JobsWhiteColor;
-            
-            // 在按钮高亮状态变化时，使用 configurationUpdateHandler 来自定义图像样式
-            // 关于UIButtonConfiguration 和 configurationUpdateHandler 的使用
-            _withdrawBtn.configurationUpdateHandler = ^(UIButton * _Nonnull updatedButton) {
-                if (updatedButton.isHighlighted) {
-                    // 按钮处于高亮状态，切换到高亮状态的图像样式
-                    UIImage *highlightedImage = [UIImage imageNamed:@"highlighted_image"];
-                    updatedButton.configuration.image = highlightedImage;
-                } else {
-                    // 按钮处于正常状态，切换到正常状态的图像样式
-                    UIImage *normalImage = [UIImage imageNamed:@"normal_image"];
-                    updatedButton.configuration.image = normalImage;
-                }};
-        }
-        // 添加按钮到视图中
-        [self addSubview:_withdrawBtn];
-        [_withdrawBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(80), JobsWidth(32)));
-            make.centerY.equalTo(self);
-            make.right.equalTo(self).offset(JobsWidth(-16));
-        }];
-        if(self.deviceSystemVersion.floatValue < 15.0){
-            [_withdrawBtn layoutButtonWithEdgeInsetsStyle:NSDirectionalRectEdgeLeading
-                                             imagePadding:JobsWidth(8)];
-        }
-        [_withdrawBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
-        @jobs_weakify(self)
-        [_withdrawBtn jobsBtnClickEventBlock:^id(UIButton *x) {
-            @jobs_strongify(self)
-            x.selected = !x.selected;
-            if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastErrMsg:Internationalization(@"提现")];
-            return nil;
-        }];
-    }return _withdrawBtn;
-}
-
 -(BaseButton *)rechargeBtn{
     if(!_rechargeBtn){
-        if(self.deviceSystemVersion.floatValue >= 15.0){
-            _rechargeBtn = [BaseButton buttonWithConfiguration:self.rechargeBtnConfig primaryAction:nil];
-        }else{
-            _rechargeBtn = BaseButton.new;
-            _rechargeBtn.backgroundColor = JobsClearColor;
-            _rechargeBtn.titleFont = UIFontWeightBoldSize(12);
-            _rechargeBtn.normalTitle =  Internationalization(@"充值");
-            _rechargeBtn.normalTitleColor = RGBA_COLOR(136, 79, 2, 1);
-            
-            // 在按钮高亮状态变化时，使用 configurationUpdateHandler 来自定义图像样式
-            // 关于UIButtonConfiguration 和 configurationUpdateHandler 的使用
-            _rechargeBtn.configurationUpdateHandler = ^(UIButton * _Nonnull updatedButton) {
-                if (updatedButton.isHighlighted) {
-                // 按钮处于高亮状态，切换到高亮状态的图像样式
-                UIImage *highlightedImage = [UIImage imageNamed:@"highlighted_image"];
-                updatedButton.configuration.image = highlightedImage;
-            } else {
-                // 按钮处于正常状态，切换到正常状态的图像样式
-                UIImage *normalImage = [UIImage imageNamed:@"normal_image"];
-                updatedButton.configuration.image = normalImage;
-            }
-        };
-        }
-        // 添加按钮到视图中
-        [self addSubview:_rechargeBtn];
-        [_rechargeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(80), JobsWidth(32)));
-            make.centerY.equalTo(self);
-            make.right.equalTo(self).offset(JobsWidth(-104));
-        }];
-        if(self.deviceSystemVersion.floatValue < 15.0){
-            [_rechargeBtn layoutButtonWithEdgeInsetsStyle:NSDirectionalRectEdgeLeading 
-                                             imagePadding:JobsWidth(8)];
-        }
-        [_rechargeBtn layerBorderCor:JobsCor(@"#FFE4BE") andBorderWidth:1];
-        [_rechargeBtn cornerCutToCircleWithCornerRadius:JobsWidth(16)];
         @jobs_weakify(self)
-        [_rechargeBtn jobsBtnClickEventBlock:^id(UIButton *x) {
+        _rechargeBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                        normalImage:nil
+                                                     highlightImage:nil
+                                                    attributedTitle:nil
+                                            selectedAttributedTitle:nil
+                                                 attributedSubtitle:nil
+                                                              title:Internationalization(@"充值")
+                                                           subTitle:nil
+                                                          titleFont:UIFontWeightBoldSize(12)
+                                                       subTitleFont:nil
+                                                           titleCor:RGBA_COLOR(136, 79, 2, 1)
+                                                        subTitleCor:nil
+                                                baseBackgroundColor:JobsClearColor
+                                                     imagePlacement:0
+                                                       imagePadding:0
+                                                      contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                  cornerRadiusValue:JobsWidth(16)
+                                                    roundingCorners:UIRectCornerAllCorners
+                                               roundingCornersRadii:CGSizeMake(0, 0)
+                                                     layerBorderCor:nil
+                                                        borderWidth:JobsWidth(1)
+                                                      primaryAction:nil
+                                                    clickEventBlock:^id(BaseButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
             [self forceComingToPushVC:MSTopUpVC.new requestParams:@""];
             return nil;
         }];
+        
+        [self addSubview:_rechargeBtn];
+        [_rechargeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(80), JobsWidth(32)));
+            make.centerY.equalTo(self);
+            make.right.equalTo(self).offset(JobsWidth(-104));
+        }];
     }return _rechargeBtn;
 }
 
--(UIButtonConfiguration *)withdrawBtnConfig{
-    if(!_withdrawBtnConfig){
-        _withdrawBtnConfig = UIButtonConfiguration.filledButtonConfiguration;
-
-        {// 一般的文字
-            _withdrawBtnConfig.title = Internationalization(@"提现");
-            _withdrawBtnConfig.subtitle = @"";
-            _withdrawBtnConfig.baseForegroundColor = JobsCor(@"#EA2918");// 前景颜色（= 文字颜色）
-        }
-        
-        {// 富文本
-            // 设置按钮标题的文本属性
-            _withdrawBtnConfig.titleTextAttributesTransformer = ^NSDictionary<NSAttributedStringKey, id> *(NSDictionary<NSAttributedStringKey, id> *textAttributes) {
-                NSMutableDictionary<NSAttributedStringKey, id> *newTextAttributes = textAttributes.mutableCopy;
-                [newTextAttributes addEntriesFromDictionary:@{
-                    NSFontAttributeName:UIFontWeightBoldSize(12), // 替换为你想要的字体和大小
-                    NSForegroundColorAttributeName: JobsCor(@"#EA2918") // 替换为你想要的文本颜色
-                }];
-                return newTextAttributes.copy;
-            };
-            _withdrawBtnConfig.attributedTitle = [NSAttributedString.alloc initWithString:Internationalization(@"提现") attributes:@{NSForegroundColorAttributeName:JobsCor(@"#EA2918")}];
-        }
-        
-        {// 其他
-            _withdrawBtnConfig.baseBackgroundColor = UIColor.whiteColor;// 背景颜色
-            _withdrawBtnConfig.contentInsets = NSDirectionalEdgeInsetsMake(0, 0, 0, 0); // 内边距
-        }
-    }return _withdrawBtnConfig;
-}
-
--(UIButtonConfiguration *)rechargeBtnConfig{
-    if(!_rechargeBtnConfig){
-        _rechargeBtnConfig = UIButtonConfiguration.filledButtonConfiguration;
-
-        {// 一般的文字
-            _rechargeBtnConfig.title = Internationalization(@"充值");
-            _rechargeBtnConfig.subtitle = @"";
-            _rechargeBtnConfig.baseForegroundColor = JobsClearColor;// 前景颜色（= 文字颜色）
-        }
-        
-        {// 富文本
-            // 设置按钮标题的文本属性
-            _rechargeBtnConfig.titleTextAttributesTransformer = ^NSDictionary<NSAttributedStringKey, id> *(NSDictionary<NSAttributedStringKey, id> *textAttributes) {
-                NSMutableDictionary<NSAttributedStringKey, id> *newTextAttributes = textAttributes.mutableCopy;
-                [newTextAttributes addEntriesFromDictionary:@{
-                    NSFontAttributeName:UIFontWeightBoldSize(12), // 替换为你想要的字体和大小
-                    NSForegroundColorAttributeName: RGBA_COLOR(136, 79, 2, 1) // 替换为你想要的文本颜色
-                }];
-                return newTextAttributes.copy;
-            };
-            _rechargeBtnConfig.attributedTitle = [NSAttributedString.alloc initWithString:Internationalization(@"充值") attributes:@{NSForegroundColorAttributeName:RGBA_COLOR(136, 79, 2, 1)}];
-        }
-        
-        {// 其他
-            _rechargeBtnConfig.baseBackgroundColor = UIColor.whiteColor;// 背景颜色
-            _rechargeBtnConfig.contentInsets = NSDirectionalEdgeInsetsMake(0, 0, 0, 0); // 内边距
-        }
-    }return _rechargeBtnConfig;
+-(BaseButton *)withdrawBtn{
+    if(!_withdrawBtn){
+        @jobs_weakify(self)
+        _withdrawBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                        normalImage:nil
+                                                     highlightImage:nil
+                                                    attributedTitle:nil
+                                            selectedAttributedTitle:nil
+                                                 attributedSubtitle:nil
+                                                              title:Internationalization(@"提现")
+                                                           subTitle:nil
+                                                          titleFont:UIFontWeightBoldSize(12)
+                                                       subTitleFont:nil
+                                                           titleCor:JobsCor(@"#EA2918")
+                                                        subTitleCor:nil
+                                                baseBackgroundColor:UIColor.whiteColor
+                                                     imagePlacement:0
+                                                       imagePadding:0
+                                                      contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                  cornerRadiusValue:JobsWidth(16)
+                                                    roundingCorners:UIRectCornerAllCorners
+                                               roundingCornersRadii:CGSizeMake(0, 0)
+                                                     layerBorderCor:nil
+                                                        borderWidth:JobsWidth(1)
+                                                      primaryAction:nil
+                                                    clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            [WHToast toastErrMsg:Internationalization(@"提现")];
+            return nil;
+        }];
+        [self addSubview:_withdrawBtn];
+        [_withdrawBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(80), JobsWidth(32)));
+            make.centerY.equalTo(self);
+            make.right.equalTo(self).offset(JobsWidth(-16));
+        }];
+    }return _withdrawBtn;
 }
 
 -(NSMutableArray<JobsBtnModel *> *)btnModelMutArr{
