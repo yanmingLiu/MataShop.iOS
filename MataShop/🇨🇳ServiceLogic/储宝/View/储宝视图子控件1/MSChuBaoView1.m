@@ -9,8 +9,8 @@
 
 @interface MSChuBaoView1 ()
 /// UI
-@property(nonatomic,strong)UIImageView *imgV;
-@property(nonatomic,strong)JobsContainerView *titleView;
+//@property(nonatomic,strong)UIImageView *imgV;
+@property(nonatomic,strong)BaseButton *titleView;
 @property(nonatomic,strong)BaseButton *rechargeBtn;// 充值
 @property(nonatomic,strong)BaseButton *withdrawBtn;// 提现
 /// Data
@@ -68,7 +68,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
     MakeDataNull
-    self.imgV.alpha = 1;
+//    self.imgV.alpha = 1;
     self.titleView.alpha = 1;
     self.withdrawBtn.alpha = 1;
     self.rechargeBtn.alpha = 1;
@@ -78,28 +78,111 @@ static dispatch_once_t static_chuBaoView1OnceToken;
     return CGSizeMake(JobsWidth(343), JobsWidth(92));
 }
 #pragma mark —— lazyLoad
--(UIImageView *)imgV{
-    if(!_imgV){
-        _imgV = UIImageView.new;
-        _imgV.image = JobsIMG(@"FAFB4239-814A-436E-8C3B-3B18D88B1D53");
-        [self addSubview:_imgV];
-        [_imgV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(23), JobsWidth(23)));
-            make.centerY.equalTo(self);
-            make.left.equalTo(self).offset(JobsWidth(16));
-        }];
-    }return _imgV;
-}
+//-(UIImageView *)imgV{
+//    if(!_imgV){
+//        _imgV = UIImageView.new;
+//        _imgV.image = JobsIMG(@"FAFB4239-814A-436E-8C3B-3B18D88B1D53");
+//        [self addSubview:_imgV];
+//        [_imgV mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.size.mas_equalTo(CGSizeMake(JobsWidth(23), JobsWidth(23)));
+//            make.centerY.equalTo(self);
+//            make.left.equalTo(self).offset(JobsWidth(16));
+//        }];
+//    }return _imgV;
+//}
 
--(JobsContainerView *)titleView{
+//-(NSMutableArray<JobsBtnModel *> *)btnModelMutArr{
+//    if(!_btnModelMutArr){
+//        _btnModelMutArr = NSMutableArray.array;
+//        {
+//            JobsBtnModel *model = JobsBtnModel.new;
+//            model.backgroundColor = UIColor.whiteColor;
+//            model.normalTitle = Internationalization(@"我的余额");
+//            model.titleFont = UIFontWeightRegularSize(6);
+//            model.normalTitleColor = RGBA_COLOR(51, 51, 51, 1);
+//            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+//            model.contentSpacing = JobsWidth(10);
+//            model.lineBreakMode = NSLineBreakByWordWrapping;
+//            model.btnWidth = JobsWidth(100);
+//
+//            [_btnModelMutArr addObject:model];
+//        }
+////
+//        {
+//            JobsBtnModel *model = JobsBtnModel.new;
+//            model.backgroundColor = UIColor.whiteColor;
+//            model.normalTitle = Internationalization(@"45466");
+//            model.titleFont = UIFontWeightRegularSize(24);
+//            model.normalTitleColor = RGBA_COLOR(236, 86, 40, 1);
+//            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+//            model.contentSpacing = JobsWidth(10);
+//            model.lineBreakMode = NSLineBreakByWordWrapping;
+//            model.btnWidth = JobsWidth(100);
+//
+//            [_btnModelMutArr addObject:model];
+//        }
+//
+//    }return _btnModelMutArr;
+//}
+
+//-(JobsContainerView *)titleView{
+//    if(!_titleView){
+//        _titleView = [JobsContainerView.alloc initWithWidth:JobsWidth(100)
+//                                               buttonModels:self.btnModelMutArr];
+////        _titleView.backgroundColor = JobsRedColor;
+//        _titleView.userInteractionEnabled = NO;
+//        [self addSubview:_titleView];
+//        [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.equalTo(self.imgV.mas_right).offset(JobsWidth(8));
+//            make.top.equalTo(self).offset(JobsWidth(24));
+//            make.size.mas_equalTo(CGSizeMake(JobsWidth(100), JobsWidth(44)));
+//        }];
+//    }return _titleView;
+//}
+
+-(BaseButton *)titleView{
     if(!_titleView){
-        _titleView = [JobsContainerView.alloc initWithWidth:JobsWidth(100)
-                                               buttonModels:self.btnModelMutArr];
-//        _titleView.backgroundColor = JobsRedColor;
-        _titleView.userInteractionEnabled = NO;
+        @jobs_weakify(self)
+        _titleView = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                       background:nil
+                                                   titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                    textAlignment:NSTextAlignmentCenter
+                                                      normalImage:JobsIMG(@"FAFB4239-814A-436E-8C3B-3B18D88B1D53")
+                                                   highlightImage:nil
+                                                  attributedTitle:nil
+                                          selectedAttributedTitle:nil
+                                               attributedSubtitle:nil
+                                                            title:Internationalization(@"我的余额")
+                                                         subTitle:Internationalization(@"45466")
+                                                        titleFont:UIFontWeightRegularSize(14)
+                                                     subTitleFont:UIFontWeightRegularSize(20)
+                                                         titleCor:RGBA_COLOR(136, 79, 2, 1)
+                                                      subTitleCor:RGBA_COLOR(236, 86, 40, 1)
+                                               titleLineBreakMode:NSLineBreakByWordWrapping
+                                            subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                              baseBackgroundColor:JobsClearColor
+                                                     imagePadding:JobsWidth(0)
+                                                     titlePadding:JobsWidth(0)
+                                                   imagePlacement:NSDirectionalRectEdgeLeading
+                                       contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                         contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                    contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                cornerRadiusValue:JobsWidth(0)
+                                                  roundingCorners:UIRectCornerAllCorners
+                                             roundingCornersRadii:CGSizeZero
+                                                   layerBorderCor:nil
+                                                      borderWidth:JobsWidth(0)
+                                                    primaryAction:nil
+                                                  clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            [self forceComingToPushVC:MSTopUpVC.new requestParams:@""];
+            return nil;
+        }];
         [self addSubview:_titleView];
         [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.imgV.mas_right).offset(JobsWidth(8));
+            make.left.equalTo(self).offset(JobsWidth(23));
             make.top.equalTo(self).offset(JobsWidth(24));
             make.size.mas_equalTo(CGSizeMake(JobsWidth(100), JobsWidth(44)));
         }];
@@ -129,9 +212,9 @@ static dispatch_once_t static_chuBaoView1OnceToken;
                                                 baseBackgroundColor:JobsClearColor
                                                        imagePadding:JobsWidth(0)
                                                        titlePadding:JobsWidth(0)
-                                                     imagePlacement:JobsWidth(0)
-                                         contentHorizontalAlignment:JobsWidth(0)
-                                           contentVerticalAlignment:JobsWidth(0)
+                                                     imagePlacement:NSDirectionalRectEdgeNone
+                                         contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                           contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
                                                       contentInsets:jobsSameDirectionalEdgeInsets(0)
                                                   cornerRadiusValue:JobsWidth(16)
                                                     roundingCorners:UIRectCornerAllCorners
@@ -178,9 +261,9 @@ static dispatch_once_t static_chuBaoView1OnceToken;
                                                 baseBackgroundColor:UIColor.whiteColor
                                                        imagePadding:JobsWidth(0)
                                                        titlePadding:JobsWidth(0)
-                                                     imagePlacement:JobsWidth(0)
-                                         contentHorizontalAlignment:JobsWidth(0)
-                                           contentVerticalAlignment:JobsWidth(0)
+                                                     imagePlacement:NSDirectionalRectEdgeNone
+                                         contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                           contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
                                                       contentInsets:jobsSameDirectionalEdgeInsets(0)
                                                   cornerRadiusValue:JobsWidth(16)
                                                     roundingCorners:UIRectCornerAllCorners
@@ -204,38 +287,6 @@ static dispatch_once_t static_chuBaoView1OnceToken;
     }return _withdrawBtn;
 }
 
--(NSMutableArray<JobsBtnModel *> *)btnModelMutArr{
-    if(!_btnModelMutArr){
-        _btnModelMutArr = NSMutableArray.array;
-        {
-            JobsBtnModel *model = JobsBtnModel.new;
-            model.backgroundColor = UIColor.whiteColor;
-            model.normalTitle = Internationalization(@"我的余额");
-            model.titleFont = UIFontWeightRegularSize(6);
-            model.normalTitleColor = RGBA_COLOR(51, 51, 51, 1);
-            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            model.contentSpacing = JobsWidth(10);
-            model.lineBreakMode = NSLineBreakByWordWrapping;
-            model.btnWidth = JobsWidth(100);
 
-            [_btnModelMutArr addObject:model];
-        }
-//
-        {
-            JobsBtnModel *model = JobsBtnModel.new;
-            model.backgroundColor = UIColor.whiteColor;
-            model.normalTitle = Internationalization(@"45466");
-            model.titleFont = UIFontWeightRegularSize(24);
-            model.normalTitleColor = RGBA_COLOR(236, 86, 40, 1);
-            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            model.contentSpacing = JobsWidth(10);
-            model.lineBreakMode = NSLineBreakByWordWrapping;
-            model.btnWidth = JobsWidth(100);
-            
-            [_btnModelMutArr addObject:model];
-        }
-        
-    }return _btnModelMutArr;
-}
 
 @end

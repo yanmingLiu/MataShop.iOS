@@ -119,9 +119,9 @@
                                                   baseBackgroundColor:model.backgroundColor
                                                          imagePadding:JobsWidth(0)
                                                          titlePadding:JobsWidth(0)
-                                                       imagePlacement:JobsWidth(0)
-                                           contentHorizontalAlignment:JobsWidth(0)
-                                             contentVerticalAlignment:JobsWidth(0)
+                                                       imagePlacement:NSDirectionalRectEdgeLeading
+                                           contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                             contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
                                                         contentInsets:jobsSameDirectionalEdgeInsets(0)
                                                     cornerRadiusValue:JobsWidth(16)
                                                       roundingCorners:UIRectCornerAllCorners
