@@ -53,11 +53,10 @@
     self.backgroundColor = self.contentView.backgroundColor = JobsWhiteColor;
     if([model isKindOfClass:UIViewModel.class]){
         self.prodSelectModel = model.data;
-        self.prodNameLab.resetTitle(@"wowowowow");
-//        [self.prodNameLab setBtnConfigTitle:self.prodSelectModel.prodName];/// 产品名
-//        [self.prodNameLab setBtnConfigSubtitle:self.prodSelectModel.prodPrice];/// 产品价格
-//        [self.prodRemainsLab setBtnConfigTitle:self.prodSelectModel.prodNum];/// 产品剩余
-//        [self.prodDailyRateLab setBtnConfigTitle:self.prodSelectModel.prodDailyRate];/// 产品日利率
+        self.prodNameLab.jobsResetTitle(self.prodSelectModel.prodName);/// 产品名
+        self.prodNameLab.jobsResetSubtitle(self.prodSelectModel.prodPrice);/// 产品价格
+        self.prodRemainsLab.jobsResetTitle(self.prodSelectModel.prodNum);/// 产品剩余
+        self.prodDailyRateLab.jobsResetTitle(self.prodSelectModel.prodDailyRate);/// 产品日利率
     }
     self.lineLab.alpha = 1;
     self.prodTipsTextView.alpha = 1;

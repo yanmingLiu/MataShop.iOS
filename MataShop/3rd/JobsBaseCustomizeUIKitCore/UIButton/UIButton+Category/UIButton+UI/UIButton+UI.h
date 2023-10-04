@@ -19,11 +19,8 @@
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
-typedef UIButtonConfiguration *_Nullable(^JobsReturnButtonConfigurationByTitleBlock)(NSString *data);
-
 /// ⚠️当font描绘的文字,或者文字大于UIButton的frame,UIButton的Title将不会显现⚠️
 @interface UIButton (UI)<BaseProtocol,BaseButtonProtocol>
--(JobsReturnButtonConfigurationByTitleBlock _Nonnull)resetTitle;
 #pragma mark —— 一些功能性
 /// 为了兼容新的Api，批量设定UIButton
 /// 资料来源：https://www.jianshu.com/p/12426709420e
@@ -109,33 +106,33 @@ typedef UIButtonConfiguration *_Nullable(^JobsReturnButtonConfigurationByTitleBl
  3、要修改通过UIButtonConfiguration创建的UIButton的各属性值，只有通过下列方式方可以
  */
 #pragma mark —— UIButton.configuration的各项属性值的修改
--(void)setBtnConfigBackground:(UIBackgroundConfiguration *)background;
--(void)setBtnConfigCornerStyle:(UIButtonConfigurationCornerStyle)cornerStyle;
--(void)setBtnConfigButtonSize:(UIButtonConfigurationSize)buttonSize;
--(void)setBtnConfigMacIdiomStyle:(UIButtonConfigurationMacIdiomStyle)macIdiomStyle;
--(void)setBtnConfigBaseForegroundColor:(UIColor *)baseForegroundColor;
--(void)setBtnConfigBaseBackgroundColor:(UIColor *)baseBackgroundColor;
--(void)setBtnConfigImage:(UIImage *)image;
--(void)setBtnConfigImageColorTransformer:(UIConfigurationColorTransformer)imageColorTransformer;
--(void)setBtnConfigPreferredSymbolConfigurationForImage:(UIImageSymbolConfiguration *)preferredSymbolConfigurationForImage;
--(void)setBtnConfigShowsActivityIndicator:(BOOL)showsActivityIndicator;
--(void)setBtnConfigActivityIndicatorColorTransformer:(UIConfigurationColorTransformer)activityIndicatorColorTransformer;
--(void)setBtnConfigTitle:(NSString *)title;
--(void)setBtnConfigAttributedTitle:(NSAttributedString *)attributedTitle;
--(void)setBtnConfigTitleTextAttributesTransformer:(UIConfigurationTextAttributesTransformer)titleTextAttributesTransformer;
--(void)setBtnConfigTitleLineBreakMode:(NSLineBreakMode)titleLineBreakMode;
--(void)setBtnConfigSubtitle:(NSString *)subtitle;
--(void)setBtnConfigAttributedSubtitle:(NSAttributedString *)attributedSubtitle;
--(void)setBtnConfigSubtitleTextAttributesTransformer:(UIConfigurationTextAttributesTransformer)subtitleTextAttributesTransformer;
--(void)setBtnConfigSubtitleLineBreakMode:(NSLineBreakMode)subtitleLineBreakMode;
--(void)setBtnConfigIndicator:(UIButtonConfigurationIndicator)indicator;
--(void)setBtnConfigIndicatorColorTransformer:(UIConfigurationColorTransformer)indicatorColorTransformer;
--(void)setBtnConfigContentInsets:(NSDirectionalEdgeInsets)contentInsets;
--(void)setBtnConfigImagePlacement:(NSDirectionalRectEdge)imagePlacement;
--(void)setBtnConfigImagePadding:(CGFloat)imagePadding;
--(void)setBtnConfigTitlePadding:(CGFloat)titlePadding;
--(void)setBtnConfigTitleAlignment:(UIButtonConfigurationTitleAlignment)titleAlignment;
--(void)setBtnConfigAutomaticallyUpdateForSelection:(BOOL)automaticallyUpdateForSelection;
+-(JobsReturnButtonConfigurationByBackgroundBlock _Nonnull)jobsResetBackground;
+-(JobsReturnButtonConfigurationByCornerStyleBlock _Nonnull)jobsResetCornerStyle;
+-(JobsReturnButtonConfigurationBySizeBlock _Nonnull)jobsResetButtonSize;
+-(JobsReturnButtonConfigurationByMacIdiomStyleBlock _Nonnull)jobsResetMacIdiomStyle;
+-(JobsReturnButtonConfigurationByBaseForegroundColorBlock _Nonnull)jobsResetBaseForegroundColor;
+-(JobsReturnButtonConfigurationByBaseBackgroundColorBlock _Nonnull)jobsResetBaseBackgroundColor;
+-(JobsReturnButtonConfigurationByImageBlock _Nonnull)jobsResetImage;
+-(JobsReturnButtonConfigurationByImageColorTransformerBlock _Nonnull)jobsResetImageColorTransformer;
+-(JobsReturnButtonConfigurationByPreferredSymbolConfigurationForImageBlock _Nonnull)jobsResetPreferredSymbolConfigurationForImage;
+-(JobsReturnButtonConfigurationByShowsActivityIndicatorBlock _Nonnull)jobsResetShowsActivityIndicator;
+-(JobsReturnButtonConfigurationByActivityIndicatorColorTransformerBlock _Nonnull)jobsResetActivityIndicatorColorTransformer;
+-(JobsReturnButtonConfigurationByTitleBlock _Nonnull)jobsResetTitle;
+-(JobsReturnButtonConfigurationByAttributedTitleBlock _Nonnull)jobsResetAttributedTitle;
+-(JobsReturnButtonConfigurationByTitleTextAttributesTransformerBlock _Nonnull)jobsResetTitleTextAttributesTransformer;
+-(JobsReturnButtonConfigurationByTitleLineBreakModeBlock _Nonnull)jobsResetTitleLineBreakMode;
+-(JobsReturnButtonConfigurationBySubtitleBlock _Nonnull)jobsResetSubtitle;
+-(JobsReturnButtonConfigurationByAttributedSubtitleBlock _Nonnull)jobsResetAttributedSubtitle;
+-(JobsReturnButtonConfigurationBySubtitleTextAttributesTransformerBlock _Nonnull)jobsResetSubtitleTextAttributesTransformer;
+-(JobsReturnButtonConfigurationBySubtitleLineBreakModeBlock _Nonnull)jobsResetSubtitleLineBreakMode;
+-(JobsReturnButtonConfigurationByIndicatorBlock _Nonnull)jobsResetIndicator;
+-(JobsReturnButtonConfigurationByIndicatorColorTransformerBlock _Nonnull)jobsResetIndicatorColorTransformer;
+-(JobsReturnButtonConfigurationByContentInsetsBlock _Nonnull)jobsResetContentInsets;
+-(JobsReturnButtonConfigurationByImagePlacementBlock _Nonnull)jobsResetImagePlacement;
+-(JobsReturnButtonConfigurationByImagePaddingBlock _Nonnull)jobsResetImagePadding;
+-(JobsReturnButtonConfigurationByTitlePaddingBlock _Nonnull)jobsResetTitlePadding;
+-(JobsReturnButtonConfigurationByTitleAlignmentBlock _Nonnull)jobsResetTitleAlignment;
+-(JobsReturnButtonConfigurationByAutomaticallyUpdateForSelectionBlock _Nonnull)jobsResetAutomaticallyUpdateForSelection;
 #pragma mark —— UIButton普通文本的通用设置
 /// 代码触发点击调用
 -(void)titleFont:(UIFont *)font;
