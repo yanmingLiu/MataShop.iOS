@@ -8,6 +8,21 @@
 #import "UIButton+UI.h"
 
 @implementation UIButton (UI)
+
+/// 重设Frame
+-(JobsReturnButtonConfigurationByTitleBlock _Nonnull)resetTitle{
+    @jobs_weakify(self)
+    return ^(NSString *data) {
+        @jobs_strongify(self)
+        UIButtonConfiguration *config = self.configuration;
+        config.title = data;
+        self.configuration = config;
+        return self.configuration;
+    };
+}
+
+
+
 #pragma mark —— 一些功能性
 /// 为了兼容新的Api，批量设定UIButton
 /// 资料来源：https://www.jianshu.com/p/12426709420e

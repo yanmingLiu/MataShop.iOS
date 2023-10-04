@@ -19,8 +19,11 @@
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
+typedef UIButtonConfiguration *_Nullable(^JobsReturnButtonConfigurationByTitleBlock)(NSString *data);
+
 /// ⚠️当font描绘的文字,或者文字大于UIButton的frame,UIButton的Title将不会显现⚠️
 @interface UIButton (UI)<BaseProtocol,BaseButtonProtocol>
+-(JobsReturnButtonConfigurationByTitleBlock _Nonnull)resetTitle;
 #pragma mark —— 一些功能性
 /// 为了兼容新的Api，批量设定UIButton
 /// 资料来源：https://www.jianshu.com/p/12426709420e
