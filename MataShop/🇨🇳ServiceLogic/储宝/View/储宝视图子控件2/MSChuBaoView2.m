@@ -9,19 +9,13 @@
 
 @interface MSChuBaoView2 ()
 /// UI
-//@property(nonatomic,strong)JobsUpDownLab *lab1;// 定期余额
-//@property(nonatomic,strong)JobsUpDownLab *lab2;// 活期余额
-//@property(nonatomic,strong)JobsUpDownLab *lab3;// 前一日定期收益
-//@property(nonatomic,strong)JobsUpDownLab *lab4;// 前一日活期收益
-//@property(nonatomic,strong)JobsUpDownLab *lab5;// 前一日总收益
-//@property(nonatomic,strong)JobsUpDownLab *lab6;// 储宝总资产
+@property(nonatomic,strong)BaseButton *lab1;// 定期余额
+@property(nonatomic,strong)BaseButton *lab2;// 活期余额
+@property(nonatomic,strong)BaseButton *lab3;// 前一日定期收益
+@property(nonatomic,strong)BaseButton *lab4;// 前一日活期收益
+@property(nonatomic,strong)BaseButton *lab5;// 前一日总收益
+@property(nonatomic,strong)BaseButton *lab6;// 储宝总资产
 /// Data
-//@property(nonatomic,strong)JobsUpDownLabModel *labModel1;// 定期余额Data
-//@property(nonatomic,strong)JobsUpDownLabModel *labModel2;// 活期余额Data
-//@property(nonatomic,strong)JobsUpDownLabModel *labModel3;// 前一日定期收益Data
-//@property(nonatomic,strong)JobsUpDownLabModel *labModel4;// 前一日活期收益Data
-//@property(nonatomic,strong)JobsUpDownLabModel *labModel5;// 前一日总收益Data
-//@property(nonatomic,strong)JobsUpDownLabModel *labModel6;// 储宝总资产Data
 
 @end
 
@@ -53,7 +47,6 @@ static dispatch_once_t static_chuBaoView2OnceToken;
                         @selector(languageSwitchNotification:),
                         LanguageSwitchNotification,
                         nil);
-//        [self netWorking];
     }return self;
 }
 
@@ -72,176 +65,298 @@ static dispatch_once_t static_chuBaoView2OnceToken;
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
-    MakeDataNull
-//    self.lab1.alpha = 1;
-//    self.lab2.alpha = 1;
-//    self.lab3.alpha = 1;
-//    self.lab4.alpha = 1;
-//    self.lab5.alpha = 1;
-//    self.lab6.alpha = 1;
+    self.lab1.alpha = 1;
+    self.lab2.alpha = 1;
+    self.lab3.alpha = 1;
+    self.lab4.alpha = 1;
+    self.lab5.alpha = 1;
+    self.lab6.alpha = 1;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)viewSizeWithModel:(UIViewModel *_Nullable)model{
     return CGSizeMake(JobsWidth(343), JobsWidth(156));
 }
-#pragma mark —— 一些私有方法
-/// 配置数据源
-//-(void)configLabModel:(JobsUpDownLabModel *)labModel{
-//    labModel.upLabTextAlignment = NSTextAlignmentCenter;
-//    labModel.upLabFont = JobsFontRegular(12);
-//    labModel.upLabTextCor = RGBA_COLOR(136, 79, 2, 1);
-//    labModel.upLabBgCor = JobsClearColor;
-//
-//    labModel.downLabTextAlignment = NSTextAlignmentCenter;
-//    labModel.downLabFont = JobsFontBold(16);
-//    labModel.downLabTextCor = RGBA_COLOR(51, 51, 51, 1);
-//    labModel.downLabBgCor = JobsClearColor;
-//
-//    labModel.upLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-//    labModel.upLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-//    labModel.downLabVerticalAlign = JobsUpDownLabAlign_TopLeft;
-//    labModel.downLabLevelAlign = JobsUpDownLabAlign_TopLeft;
-//
-//    labModel.space = JobsWidth(3);
-//}
 #pragma mark —— lazyLoad
-//-(JobsUpDownLab *)lab1{
-//    if(!_lab1){
-//        _lab1 = JobsUpDownLab.new;
-//        [self addSubview:_lab1];
-//        [_lab1 mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.equalTo(self).offset(JobsWidth(38));
-//            make.top.equalTo(self).offset(JobsWidth(16));
-//        }];
-//        [_lab1 richElementsInViewWithModel:self.labModel1];
-//        [self layoutIfNeeded];
-//    }return _lab1;
-//}
-//
-//-(JobsUpDownLab *)lab2{
-//    if(!_lab2){
-//        _lab2 = JobsUpDownLab.new;
-//        [self addSubview:_lab2];
-//        [_lab2 mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.right.equalTo(self).offset(JobsWidth(-120));
-//            make.top.equalTo(self).offset(JobsWidth(16));
-//        }];
-//        [_lab2 richElementsInViewWithModel:self.labModel2];
-//        [self layoutIfNeeded];
-//    }return _lab2;
-//}
-//
-//-(JobsUpDownLab *)lab3{
-//    if(!_lab3){
-//        _lab3 = JobsUpDownLab.new;
-//        [self addSubview:_lab3];
-//        [_lab3 mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.equalTo(self.lab1);
-//            make.top.equalTo(self.lab1.mas_bottom).offset(JobsWidth(43));
-//        }];
-//        [_lab3 richElementsInViewWithModel:self.labModel3];
-//        [self layoutIfNeeded];
-//    }return _lab3;
-//}
-//
-//-(JobsUpDownLab *)lab4{
-//    if(!_lab4){
-//        _lab4 = JobsUpDownLab.new;
-//        [self addSubview:_lab4];
-//        [_lab4 mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.right.equalTo(self.lab2);
-//            make.top.equalTo(self.lab3);
-//        }];
-//        [_lab4 richElementsInViewWithModel:self.labModel4];
-//        [self layoutIfNeeded];
-//    }return _lab4;
-//}
-//
-//-(JobsUpDownLab *)lab5{
-//    if(!_lab5){
-//        _lab5 = JobsUpDownLab.new;
-//        [self addSubview:_lab5];
-//        [_lab5 mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.equalTo(self.lab3);
-//            make.top.equalTo(self.lab3.mas_bottom).offset(JobsWidth(43));
-//        }];
-//        [_lab5 richElementsInViewWithModel:self.labModel5];
-//        [self layoutIfNeeded];
-//    }return _lab5;
-//}
-//
-//-(JobsUpDownLab *)lab6{
-//    if(!_lab6){
-//        _lab6 = JobsUpDownLab.new;
-//        [self addSubview:_lab6];
-//        [_lab6 mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.right.equalTo(self.lab4);
-//            make.top.equalTo(self.lab5);
-//        }];
-//        [_lab6 richElementsInViewWithModel:self.labModel6];
-//        [self layoutIfNeeded];
-//    }return _lab6;
-//}
-//
-//-(JobsUpDownLabModel *)labModel1{
-//    if (!_labModel1) {
-//        _labModel1 = JobsUpDownLabModel.new;
-//    }
-//    _labModel1.upLabText = Internationalization(@"定期余额") ;
-//    _labModel1.downLabText = Internationalization(@"0000");
-//    [self configLabModel:_labModel1];
-//    return _labModel1;
-//}
-//
-//-(JobsUpDownLabModel *)labModel2{
-//    if (!_labModel2) {
-//        _labModel2 = JobsUpDownLabModel.new;
-//    }
-//    _labModel2.upLabText = Internationalization(@"活期余额") ;
-//    _labModel2.downLabText = Internationalization(@"1111");
-//    [self configLabModel:_labModel2];
-//    return _labModel2;
-//}
-//
-//-(JobsUpDownLabModel *)labModel3{
-//    if (!_labModel3) {
-//        _labModel3 = JobsUpDownLabModel.new;
-//    }
-//    _labModel3.upLabText = Internationalization(@"前一日定期收益") ;
-//    _labModel3.downLabText = Internationalization(@"2222");
-//    [self configLabModel:_labModel3];
-//    return _labModel3;
-//}
-//
-//-(JobsUpDownLabModel *)labModel4{
-//    if (!_labModel4) {
-//        _labModel4 = JobsUpDownLabModel.new;
-//    }
-//    _labModel4.upLabText = Internationalization(@"前一日活期收益") ;
-//    _labModel4.downLabText = Internationalization(@"3333");
-//    [self configLabModel:_labModel4];
-//    return _labModel4;
-//}
-//
-//-(JobsUpDownLabModel *)labModel5{
-//    if (!_labModel5) {
-//        _labModel5 = JobsUpDownLabModel.new;
-//    }
-//    _labModel5.upLabText = Internationalization(@"前一日总收益") ;
-//    _labModel5.downLabText = Internationalization(@"4444");
-//    [self configLabModel:_labModel5];
-//    return _labModel5;
-//}
-//
-//-(JobsUpDownLabModel *)labModel6{
-//    if (!_labModel6) {
-//        _labModel6 = JobsUpDownLabModel.new;
-//    }
-//    _labModel6.upLabText = Internationalization(@"储宝总资产") ;
-//    _labModel6.downLabText = Internationalization(@"5555");
-//    [self configLabModel:_labModel6];
-//    return _labModel6;
-//}
+-(BaseButton *)lab1{
+    if(!_lab1){
+        @jobs_weakify(self)
+        _lab1 = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                  background:nil
+                                              titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                               textAlignment:NSTextAlignmentCenter
+                                                 normalImage:nil
+                                              highlightImage:nil
+                                             attributedTitle:nil
+                                     selectedAttributedTitle:nil
+                                          attributedSubtitle:nil
+                                                       title:Internationalization(@"定期余额")
+                                                    subTitle:@"24224"
+                                                   titleFont:UIFontWeightLightSize(12)
+                                                subTitleFont:UIFontWeightBoldSize(16)
+                                                    titleCor:JobsCor(@"#EA2918")
+                                                 subTitleCor:JobsCor(@"#333333")
+                                          titleLineBreakMode:NSLineBreakByWordWrapping
+                                       subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                         baseBackgroundColor:JobsClearColor
+                                                imagePadding:JobsWidth(0)
+                                                titlePadding:JobsWidth(0)
+                                              imagePlacement:NSDirectionalRectEdgeNone
+                                  contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                    contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                               contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                           cornerRadiusValue:JobsWidth(0)
+                                             roundingCorners:UIRectCornerAllCorners
+                                        roundingCornersRadii:CGSizeZero
+                                              layerBorderCor:nil
+                                                 borderWidth:JobsWidth(0)
+                                               primaryAction:nil
+                                             clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
+        [self addSubview:_lab1];
+        [_lab1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self).offset(JobsWidth(38));
+            make.top.equalTo(self).offset(JobsWidth(16));
+        }];
+    }return _lab1;
+}
 
+-(BaseButton *)lab2{
+    if(!_lab2){
+        @jobs_weakify(self)
+        _lab2 = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                  background:nil
+                                              titleAlignment:UIButtonConfigurationTitleAlignmentTrailing
+                                               textAlignment:NSTextAlignmentRight
+                                                 normalImage:nil
+                                              highlightImage:nil
+                                             attributedTitle:nil
+                                     selectedAttributedTitle:nil
+                                          attributedSubtitle:nil
+                                                       title:Internationalization(@"活期余额")
+                                                    subTitle:@"24224"
+                                                   titleFont:UIFontWeightLightSize(12)
+                                                subTitleFont:UIFontWeightBoldSize(16)
+                                                    titleCor:JobsCor(@"#EA2918")
+                                                 subTitleCor:JobsCor(@"#333333")
+                                          titleLineBreakMode:NSLineBreakByWordWrapping
+                                       subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                         baseBackgroundColor:JobsClearColor
+                                                imagePadding:JobsWidth(0)
+                                                titlePadding:JobsWidth(0)
+                                              imagePlacement:NSDirectionalRectEdgeNone
+                                  contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                    contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                               contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                           cornerRadiusValue:JobsWidth(0)
+                                             roundingCorners:UIRectCornerAllCorners
+                                        roundingCornersRadii:CGSizeZero
+                                              layerBorderCor:nil
+                                                 borderWidth:JobsWidth(0)
+                                               primaryAction:nil
+                                             clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
+        [self addSubview:_lab2];
+        [_lab2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self).offset(JobsWidth(-38));
+            make.top.equalTo(self).offset(JobsWidth(16));
+        }];
+    }return _lab2;
+}
+
+-(BaseButton *)lab3{
+    if(!_lab3){
+        @jobs_weakify(self)
+        _lab3 = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                  background:nil
+                                              titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                               textAlignment:NSTextAlignmentCenter
+                                                 normalImage:nil
+                                              highlightImage:nil
+                                             attributedTitle:nil
+                                     selectedAttributedTitle:nil
+                                          attributedSubtitle:nil
+                                                       title:Internationalization(@"前一日定期收益")
+                                                    subTitle:@"24224"
+                                                   titleFont:UIFontWeightLightSize(12)
+                                                subTitleFont:UIFontWeightBoldSize(16)
+                                                    titleCor:JobsCor(@"#EA2918")
+                                                 subTitleCor:JobsCor(@"#333333")
+                                          titleLineBreakMode:NSLineBreakByWordWrapping
+                                       subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                         baseBackgroundColor:JobsClearColor
+                                                imagePadding:JobsWidth(0)
+                                                titlePadding:JobsWidth(0)
+                                              imagePlacement:NSDirectionalRectEdgeNone
+                                  contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                    contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                               contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                           cornerRadiusValue:JobsWidth(0)
+                                             roundingCorners:UIRectCornerAllCorners
+                                        roundingCornersRadii:CGSizeZero
+                                              layerBorderCor:nil
+                                                 borderWidth:JobsWidth(0)
+                                               primaryAction:nil
+                                             clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
+        [self addSubview:_lab3];
+        [_lab3 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.lab1);
+            make.top.equalTo(self.lab1.mas_bottom).offset(JobsWidth(8));
+        }];
+    }return _lab3;
+}
+
+-(BaseButton *)lab4{
+    if(!_lab4){
+        @jobs_weakify(self)
+        _lab4 = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                  background:nil
+                                              titleAlignment:UIButtonConfigurationTitleAlignmentTrailing
+                                               textAlignment:NSTextAlignmentRight
+                                                 normalImage:nil
+                                              highlightImage:nil
+                                             attributedTitle:nil
+                                     selectedAttributedTitle:nil
+                                          attributedSubtitle:nil
+                                                       title:Internationalization(@"前一日活期收益")
+                                                    subTitle:@"24224"
+                                                   titleFont:UIFontWeightLightSize(12)
+                                                subTitleFont:UIFontWeightBoldSize(16)
+                                                    titleCor:JobsCor(@"#EA2918")
+                                                 subTitleCor:JobsCor(@"#333333")
+                                          titleLineBreakMode:NSLineBreakByWordWrapping
+                                       subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                         baseBackgroundColor:JobsClearColor
+                                                imagePadding:JobsWidth(0)
+                                                titlePadding:JobsWidth(0)
+                                              imagePlacement:NSDirectionalRectEdgeNone
+                                  contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                    contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                               contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                           cornerRadiusValue:JobsWidth(0)
+                                             roundingCorners:UIRectCornerAllCorners
+                                        roundingCornersRadii:CGSizeZero
+                                              layerBorderCor:nil
+                                                 borderWidth:JobsWidth(0)
+                                               primaryAction:nil
+                                             clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
+        [self addSubview:_lab4];
+        [_lab4 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.lab2);
+            make.top.equalTo(self.lab3);
+        }];
+    }return _lab4;
+}
+
+-(BaseButton *)lab5{
+    if(!_lab5){
+        @jobs_weakify(self)
+        _lab5 = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                  background:nil
+                                              titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                               textAlignment:NSTextAlignmentCenter
+                                                 normalImage:nil
+                                              highlightImage:nil
+                                             attributedTitle:nil
+                                     selectedAttributedTitle:nil
+                                          attributedSubtitle:nil
+                                                       title:Internationalization(@"前一日活期收益")
+                                                    subTitle:@"24224"
+                                                   titleFont:UIFontWeightLightSize(12)
+                                                subTitleFont:UIFontWeightBoldSize(16)
+                                                    titleCor:JobsCor(@"#EA2918")
+                                                 subTitleCor:JobsCor(@"#333333")
+                                          titleLineBreakMode:NSLineBreakByWordWrapping
+                                       subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                         baseBackgroundColor:JobsClearColor
+                                                imagePadding:JobsWidth(0)
+                                                titlePadding:JobsWidth(0)
+                                              imagePlacement:NSDirectionalRectEdgeNone
+                                  contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                    contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                               contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                           cornerRadiusValue:JobsWidth(0)
+                                             roundingCorners:UIRectCornerAllCorners
+                                        roundingCornersRadii:CGSizeZero
+                                              layerBorderCor:nil
+                                                 borderWidth:JobsWidth(0)
+                                               primaryAction:nil
+                                             clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
+        [self addSubview:_lab5];
+        [_lab5 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.lab3);
+            make.top.equalTo(self.lab3.mas_bottom).offset(JobsWidth(8));
+        }];
+    }return _lab5;
+}
+
+-(BaseButton *)lab6{
+    if(!_lab6){
+        @jobs_weakify(self)
+        _lab6 = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                  background:nil
+                                              titleAlignment:UIButtonConfigurationTitleAlignmentTrailing
+                                               textAlignment:NSTextAlignmentRight
+                                                 normalImage:nil
+                                              highlightImage:nil
+                                             attributedTitle:nil
+                                     selectedAttributedTitle:nil
+                                          attributedSubtitle:nil
+                                                       title:Internationalization(@"储宝总资产")
+                                                    subTitle:@"24224"
+                                                   titleFont:UIFontWeightLightSize(12)
+                                                subTitleFont:UIFontWeightBoldSize(16)
+                                                    titleCor:JobsCor(@"#EA2918")
+                                                 subTitleCor:JobsCor(@"#333333")
+                                          titleLineBreakMode:NSLineBreakByWordWrapping
+                                       subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                         baseBackgroundColor:JobsClearColor
+                                                imagePadding:JobsWidth(0)
+                                                titlePadding:JobsWidth(0)
+                                              imagePlacement:NSDirectionalRectEdgeNone
+                                  contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                    contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                               contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                           cornerRadiusValue:JobsWidth(0)
+                                             roundingCorners:UIRectCornerAllCorners
+                                        roundingCornersRadii:CGSizeZero
+                                              layerBorderCor:nil
+                                                 borderWidth:JobsWidth(0)
+                                               primaryAction:nil
+                                             clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
+        [self addSubview:_lab6];
+        [_lab6 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.lab4);
+            make.top.equalTo(self.lab5);
+        }];
+    }return _lab6;
+}
 
 @end

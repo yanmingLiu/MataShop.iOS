@@ -1223,6 +1223,8 @@
 		C553D1EB2ACA587600F9CEA1 /* MSCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSCommentModel.m; sourceTree = "<group>"; };
 		C553D4AD2ACA6AA700F9CEA1 /* MSCommentTableHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCommentTableHeaderFooterView.h; sourceTree = "<group>"; };
 		C553D4AE2ACA6AA700F9CEA1 /* MSCommentTableHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSCommentTableHeaderFooterView.m; sourceTree = "<group>"; };
+		C5603AC12ACCCED5009BF812 /* 储宝视图子控件2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "储宝视图子控件2.jpg"; sourceTree = "<group>"; };
+		C5603AC22ACCCEFF009BF812 /* 储宝视图子控件1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "储宝视图子控件1.jpg"; sourceTree = "<group>"; };
 		C561CD442AAC7C8C00E28603 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C561CD482AAC7CDD00E28603 /* ZMJCell+CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZMJCell+CustomView.m"; sourceTree = "<group>"; };
 		C561CD4A2AAC7CDD00E28603 /* CasinoFlowDetailsVC_h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CasinoFlowDetailsVC_h; sourceTree = "<group>"; };
@@ -2706,8 +2708,6 @@
 		C5E017582AAF2F15005ABE09 /* 储宝.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "储宝.xcassets"; sourceTree = "<group>"; };
 		C5E0175B2AAF2F90005ABE09 /* MSChuBaoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoVC.h; sourceTree = "<group>"; };
 		C5E0175C2AAF2F90005ABE09 /* MSChuBaoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoVC.m; sourceTree = "<group>"; };
-		C5E0175F2AAF3635005ABE09 /* 储宝视图子控件1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "储宝视图子控件1.jpg"; sourceTree = "<group>"; };
-		C5E017602AAF3635005ABE09 /* 储宝视图子控件2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "储宝视图子控件2.jpg"; sourceTree = "<group>"; };
 		C5E017632AAF3676005ABE09 /* MSChuBaoView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoView1.h; sourceTree = "<group>"; };
 		C5E017642AAF3676005ABE09 /* MSChuBaoView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoView1.m; sourceTree = "<group>"; };
 		C5E017662AAF3684005ABE09 /* MSChuBaoView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoView2.h; sourceTree = "<group>"; };
@@ -9784,7 +9784,7 @@
 		C5E017612AAF363D005ABE09 /* 储宝视图子控件1 */ = {
 			isa = PBXGroup;
 			children = (
-				C5E0175F2AAF3635005ABE09 /* 储宝视图子控件1.jpg */,
+				C5603AC22ACCCEFF009BF812 /* 储宝视图子控件1.jpg */,
 				C5E017632AAF3676005ABE09 /* MSChuBaoView1.h */,
 				C5E017642AAF3676005ABE09 /* MSChuBaoView1.m */,
 			);
@@ -9794,7 +9794,7 @@
 		C5E017622AAF3645005ABE09 /* 储宝视图子控件2 */ = {
 			isa = PBXGroup;
 			children = (
-				C5E017602AAF3635005ABE09 /* 储宝视图子控件2.jpg */,
+				C5603AC12ACCCED5009BF812 /* 储宝视图子控件2.jpg */,
 				C5E017662AAF3684005ABE09 /* MSChuBaoView2.h */,
 				C5E017672AAF3684005ABE09 /* MSChuBaoView2.m */,
 			);

@@ -16,11 +16,11 @@
 #import "MSChuBaoAdMarqueeView.h"
 
 #import "BaseViewController.h"
-#import "MSProdSelectVC.h"// 产品选购
-#import "MSTransactionRecordVC.h"// 交易记录
-#import "MSPromotionIncentiveVC.h"// 推广奖励
-#import "MSInterestSettleRecordVC.h"// 结息记录
-#import "MSAboutChuBaoVC.h"// 关于储宝
+#import "MSProdSelectVC.h"/// 产品选购
+#import "MSTransactionRecordVC.h"/// 交易记录
+#import "MSPromotionIncentiveVC.h"/// 推广奖励
+#import "MSInterestSettleRecordVC.h"/// 结息记录
+#import "MSAboutChuBaoVC.h"/// 关于储宝
 
 NS_ASSUME_NONNULL_BEGIN
 ///  储宝模块入口页

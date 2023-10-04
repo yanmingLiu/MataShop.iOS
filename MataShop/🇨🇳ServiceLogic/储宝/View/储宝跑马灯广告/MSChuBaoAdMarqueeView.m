@@ -9,8 +9,8 @@
 
 @interface MSChuBaoAdMarqueeView ()
 /// UI
-@property(nonatomic,strong)WMZBannerView *bannerView;
 @property(nonatomic,strong)BaseButton *hornBtn;
+@property(nonatomic,strong)WMZBannerView *bannerView;
 /// Data
 @property(nonatomic,strong)WMZBannerParam *bannerParam;
 @property(nonatomic,strong)NSMutableArray <NSString *>*dataMutArr;
@@ -61,8 +61,6 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
 #pragma mark —— BaseViewProtocol
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
-    self.viewModel = model ? : UIViewModel.new;
-    MakeDataNull
     self.hornBtn.alpha = 1;
     self.bannerParam.wDataSet(self.dataMutArr);
     [self.bannerView updateUI];
@@ -77,6 +75,55 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
 
 }
 #pragma mark —— lazyLoad
+-(BaseButton *)hornBtn{
+    if (!_hornBtn) {
+        @jobs_weakify(self)
+        _hornBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                     background:nil
+                                                 titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                  textAlignment:NSTextAlignmentCenter
+                                                    normalImage:JobsIMG(@"912241CB-F48C-48AC-BC2F-3CA7742C8B1F")
+                                                 highlightImage:nil
+                                                attributedTitle:nil
+                                        selectedAttributedTitle:nil
+                                             attributedSubtitle:nil
+                                                          title:Internationalization(@"活动通知")
+                                                       subTitle:nil
+                                                      titleFont:UIFontWeightBoldSize(14)
+                                                   subTitleFont:nil
+                                                       titleCor:JobsCor(@"#FFE190")
+                                                    subTitleCor:nil
+                                             titleLineBreakMode:NSLineBreakByWordWrapping
+                                          subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                            baseBackgroundColor:JobsClearColor
+                                                   imagePadding:JobsWidth(8)
+                                                   titlePadding:JobsWidth(0)
+                                                 imagePlacement:NSDirectionalRectEdgeLeading
+                                     contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                       contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                  contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                              cornerRadiusValue:JobsWidth(0)
+                                                roundingCorners:UIRectCornerAllCorners
+                                           roundingCornersRadii:CGSizeZero
+                                                 layerBorderCor:nil
+                                                    borderWidth:JobsWidth(0)
+                                                  primaryAction:nil
+                                                clickEventBlock:^id(BaseButton *x) {
+             @jobs_strongify(self)
+             x.selected = !x.selected;
+             if (self.objectBlock) self.objectBlock(x);
+             [WHToast toastMsg:Internationalization(@"提现")];
+             return nil;
+        }];
+    }
+    [self addSubview:_hornBtn];
+    [_hornBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.mas_centerY);
+        make.left.equalTo(self).offset(JobsWidth(10));
+        make.height.mas_equalTo(JobsWidth(20));
+    }];return _hornBtn;
+}
+
 -(WMZBannerParam *)bannerParam{
     if (!_bannerParam) {
         _bannerParam = BannerParam()
@@ -146,23 +193,6 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
         _bannerView = [WMZBannerView.alloc initConfigureWithModel:self.bannerParam];
         [self addSubview:_bannerView];
     }return _bannerView;
-}
-
--(BaseButton *)hornBtn{
-    if (!_hornBtn) {
-        _hornBtn = BaseButton.new;
-        [self addSubview:_hornBtn];
-        [_hornBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.mas_centerY);
-            make.left.equalTo(self).offset(JobsWidth(10));
-            make.height.mas_equalTo(JobsWidth(16));
-        }];
-    }
-    _hornBtn.normalImage = JobsIMG(@"912241CB-F48C-48AC-BC2F-3CA7742C8B1F");
-    _hornBtn.normalTitle = Internationalization(@" 活动通知: ");
-    _hornBtn.normalTitleColor = RGBA_COLOR(255, 255, 144, 1);
-    _hornBtn.titleFont = UIFontWeightBoldSize(14);
-    return _hornBtn;
 }
 
 -(NSMutableArray <NSString *>*)dataMutArr{

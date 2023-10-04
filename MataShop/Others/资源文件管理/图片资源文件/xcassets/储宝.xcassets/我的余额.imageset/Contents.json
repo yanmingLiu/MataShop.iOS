@@ -1,17 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "储宝导航栏背景图 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "储宝导航栏背景图.png",
+      "filename" : "我的余额@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "储宝导航栏背景图 2.png",
+      "filename" : "我的余额@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

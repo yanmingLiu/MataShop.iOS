@@ -41,14 +41,14 @@
     self.viewModel.textModel.textCor = RGBA_COLOR(51, 51, 51, 1);
     self.viewModel.textModel.text = Internationalization(@"储宝");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);
-    self.viewModel.bgImage = JobsIMG(@"储宝导航栏背景图");
+    self.viewModel.bgCor = JobsCor(@"#F5F5F5");
     
     self.bgImage = nil;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = RGB_SAMECOLOR(245);
+    self.view.backgroundColor = JobsCor(@"#F5F5F5");
     [self setGKNav];
     [self setGKNavBackBtn];
     
@@ -64,7 +64,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self updateStatusBarCor:JobsWhiteColor];/// 在具体子类实现，不要写在父类
+    [self updateStatusBarCor:JobsCor(@"#F5F5F5")];/// 在具体子类实现，不要写在父类
 }
 
 -(void)viewWillLayoutSubviews{
