@@ -74,30 +74,22 @@
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
     MSPromotionIncentiveModel *promotionIncentiveModel = (MSPromotionIncentiveModel *)self.dataMutArr[section].data;
-    return 1;
-//    return promotionIncentiveModel.incentiveDetailModelMutArr.count + 1;
+    return promotionIncentiveModel.incentiveDetailModelMutArr.count + 1;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return self.dataMutArr.count;
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView
                                    cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    @jobs_weakify(self)
     MSPromotionIncentiveModel *promotionIncentiveModel = (MSPromotionIncentiveModel *)self.dataMutArr[indexPath.section].data;
     promotionIncentiveModel.indexPath = indexPath;
     MSPromotionIncentiveCVCell *cell = [MSPromotionIncentiveCVCell cellWithCollectionView:collectionView forIndexPath:indexPath];
-    
-    if(indexPath.row){
-        MSPromotionIncentiveDetailModel *incentiveDetailModel = (MSPromotionIncentiveDetailModel *)[promotionIncentiveModel.incentiveDetailModelMutArr objectAtIndex:indexPath.row - 1];
-        incentiveDetailModel.indexPath = indexPath;
-        [cell richElementsInCellWithModel:promotionIncentiveModel.incentiveDetailModelMutArr[indexPath.row - 1]];
-    }else{
-        MSPromotionIncentiveDetailModel *incentiveDetailModel = (MSPromotionIncentiveDetailModel *)[promotionIncentiveModel.incentiveDetailModelMutArr objectAtIndex:indexPath.row];
-        incentiveDetailModel.indexPath = indexPath;
-        [cell richElementsInCellWithModel:promotionIncentiveModel.incentiveDetailModelMutArr[indexPath.row]];
-    }return cell;
+    MSPromotionIncentiveDetailModel *promotionIncentiveDetailModel = promotionIncentiveModel.incentiveDetailModelMutArr[!indexPath.row ? : indexPath.row - 1];
+    promotionIncentiveDetailModel.indexPath = indexPath;
+    [cell richElementsInCellWithModel:promotionIncentiveDetailModel];
+    return cell;
 }
 #pragma mark —— UICollectionViewDelegate
 /// 允许选中时，高亮

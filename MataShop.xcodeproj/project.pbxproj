@@ -2214,6 +2214,12 @@
 		C561D99A2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjMarqueeView.png; sourceTree = "<group>"; };
 		C561DA132AACA62900E28603 /* 首页.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "首页.xcassets"; sourceTree = "<group>"; };
 		C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "临时的占位图.xcassets"; sourceTree = "<group>"; };
+		C56D8DF82ACECFEA00523046 /* 结息记录子控件UI002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI002.jpg"; sourceTree = "<group>"; };
+		C56D8DF92ACECFEA00523046 /* 结息记录子控件UI004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI004.jpg"; sourceTree = "<group>"; };
+		C56D8DFA2ACECFEA00523046 /* 结息记录子控件UI001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI001.jpg"; sourceTree = "<group>"; };
+		C56D8DFB2ACECFEA00523046 /* 结息记录子控件UI003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI003.jpg"; sourceTree = "<group>"; };
+		C56D8DFC2ACED03200523046 /* 推广奖励子控件UI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "推广奖励子控件UI.jpg"; sourceTree = "<group>"; };
+		C56D8DFD2ACED08200523046 /* 交易记录子控件UI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "交易记录子控件UI.jpg"; sourceTree = "<group>"; };
 		C5729A952AB591E10084EAFC /* MSInternalRecruitmentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInternalRecruitmentVC.h; sourceTree = "<group>"; };
 		C5729A962AB591E10084EAFC /* MSInternalRecruitmentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSInternalRecruitmentVC.m; sourceTree = "<group>"; };
 		C5729A982AB592420084EAFC /* 内部招聘.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "内部招聘.jpg"; sourceTree = "<group>"; };
@@ -2280,12 +2286,6 @@
 		C5CFE6822AB0831800D0F225 /* MSWechatTopUpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSWechatTopUpVC.m; sourceTree = "<group>"; };
 		C5CFE6842AB0868800D0F225 /* MSAboutChuBaoVC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSAboutChuBaoVC.jpg; sourceTree = "<group>"; };
 		C5CFE6882AB086FB00D0F225 /* 产品选购子控件UI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "产品选购子控件UI.jpg"; sourceTree = "<group>"; };
-		C5CFE7012AB0878700D0F225 /* 结息记录子控件UI001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI001.jpg"; sourceTree = "<group>"; };
-		C5CFE7022AB0878700D0F225 /* 结息记录子控件UI002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI002.jpg"; sourceTree = "<group>"; };
-		C5CFE7032AB0878700D0F225 /* 结息记录子控件UI004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI004.jpg"; sourceTree = "<group>"; };
-		C5CFE7042AB0878700D0F225 /* 结息记录子控件UI003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI003.jpg"; sourceTree = "<group>"; };
-		C5CFE7092AB087D800D0F225 /* 推广奖励子控件UI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "推广奖励子控件UI.jpg"; sourceTree = "<group>"; };
-		C5CFE70B2AB0882500D0F225 /* 交易记录子控件UI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "交易记录子控件UI.jpg"; sourceTree = "<group>"; };
 		C5CFE7122AB0892500D0F225 /* MSProdSelectCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdSelectCVCell.h; sourceTree = "<group>"; };
 		C5CFE7132AB0892500D0F225 /* MSProdSelectCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdSelectCVCell.m; sourceTree = "<group>"; };
 		C5CFE7162AB089A300D0F225 /* MSInterestSettleRecordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSInterestSettleRecordVC.h; sourceTree = "<group>"; };
@@ -8989,10 +8989,10 @@
 		C5CFE6862AB086CE00D0F225 /* 结息记录子控件UI */ = {
 			isa = PBXGroup;
 			children = (
-				C5CFE7012AB0878700D0F225 /* 结息记录子控件UI001.jpg */,
-				C5CFE7022AB0878700D0F225 /* 结息记录子控件UI002.jpg */,
-				C5CFE7042AB0878700D0F225 /* 结息记录子控件UI003.jpg */,
-				C5CFE7032AB0878700D0F225 /* 结息记录子控件UI004.jpg */,
+				C56D8DFA2ACECFEA00523046 /* 结息记录子控件UI001.jpg */,
+				C56D8DF82ACECFEA00523046 /* 结息记录子控件UI002.jpg */,
+				C56D8DFB2ACECFEA00523046 /* 结息记录子控件UI003.jpg */,
+				C56D8DF92ACECFEA00523046 /* 结息记录子控件UI004.jpg */,
 				C5CFE71C2AB08AE200D0F225 /* MSInterestSettleRecordCVCell.h */,
 				C5CFE71D2AB08AE200D0F225 /* MSInterestSettleRecordCVCell.m */,
 			);
@@ -9002,7 +9002,7 @@
 		C5CFE6872AB086DA00D0F225 /* 推广奖励子控件UI */ = {
 			isa = PBXGroup;
 			children = (
-				C5CFE7092AB087D800D0F225 /* 推广奖励子控件UI.jpg */,
+				C56D8DFC2ACED03200523046 /* 推广奖励子控件UI.jpg */,
 				C5CFE7192AB08A4900D0F225 /* MSPromotionIncentiveCVCell.h */,
 				C5CFE71A2AB08A4900D0F225 /* MSPromotionIncentiveCVCell.m */,
 			);
@@ -9012,7 +9012,7 @@
 		C5CFE70A2AB0881000D0F225 /* 交易记录子控件UI */ = {
 			isa = PBXGroup;
 			children = (
-				C5CFE70B2AB0882500D0F225 /* 交易记录子控件UI.jpg */,
+				C56D8DFD2ACED08200523046 /* 交易记录子控件UI.jpg */,
 				C5CFE71F2AB08B4200D0F225 /* MSTransactionRecordCVCell.h */,
 				C5CFE7202AB08B4200D0F225 /* MSTransactionRecordCVCell.m */,
 			);

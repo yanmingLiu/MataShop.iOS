@@ -40,14 +40,13 @@
     // UICollectionViewCell圆切角
     [cell.contentView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
     [cell.contentView layerBorderCor:JobsCor(@"#D2D5E0") andBorderWidth:JobsWidth(.5f)];
-
+    cell.contentView.backgroundColor = cell.backgroundColor = JobsWhiteColor;
     cell.indexPath = indexPath;
     return cell;
 }
 #pragma mark —— BaseCellProtocol
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInCellWithModel:(UIViewModel *_Nullable)model{
-    self.backgroundColor = self.contentView.backgroundColor = RGBA_COLOR(210, 213, 224, 0.2);
     if([model isKindOfClass:UIViewModel.class]){
         self.interestSettleRecordModel = model.data;
         self.prodNameLab.jobsResetTitle(self.interestSettleRecordModel.prodName);/// 产品名
@@ -310,7 +309,7 @@
 -(UITextView *)prodTipsTextView{
     if(!_prodTipsTextView){
         _prodTipsTextView = UITextView.new;
-        _prodTipsTextView.backgroundColor = self.backgroundColor;
+        _prodTipsTextView.backgroundColor = JobsClearColor;
         _prodTipsTextView.font = UIFontWeightRegularSize(9);
         _prodTipsTextView.textColor = RGBA_COLOR(102, 102, 102, 1);
         _prodTipsTextView.text = self.interestSettleRecordModel.prodTimeTips;
@@ -391,8 +390,8 @@
         case ProdStyle03:{/// 产品未到期（不可赎回）
             _moneyBackBtn.jobsResetTitle(Internationalization(@"我要赎回"));
             _moneyBackBtn.jobsResetBaseBackgroundColor(JobsCor(@"#D4D4D4"));
-            [_moneyBackBtn jobsSetBtntitleFont:UIFontWeightRegularSize(14) btnTitleCor:JobsCor(@"#D4D4D4")];
-            [_moneyBackBtn layerBorderCor:JobsCor(@"#D4D4D4") andBorderWidth:JobsWidth(.5f)];
+            [_moneyBackBtn jobsSetBtntitleFont:UIFontWeightRegularSize(14) btnTitleCor:JobsCor(@"#FFFFFF")];
+            [_moneyBackBtn layerBorderCor:JobsCor(@"#DDDDDD") andBorderWidth:JobsWidth(.5f)];
             _moneyBackBtn.userInteractionEnabled = NO;
         } break;
             

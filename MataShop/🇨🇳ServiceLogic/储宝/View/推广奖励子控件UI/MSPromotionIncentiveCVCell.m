@@ -28,11 +28,6 @@
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    
-//    [self outline:UIBorderSideTypeTop | UIBorderSideTypeLeft | UIBorderSideTypeRight
-//      borderColor:JobsBlueColor
-//      borderWidth:1];
-
     [self outlineByBezierPath:UIBorderSideTypeTop
             cellBackgroundCor:JobsGrayColor
                   borderColor:JobsBlackColor
@@ -49,23 +44,17 @@
         [collectionView registerCollectionViewCellClass:MSPromotionIncentiveCVCell.class];
         cell = (MSPromotionIncentiveCVCell *)[collectionView collectionViewCellClass:MSPromotionIncentiveCVCell.class forIndexPath:indexPath];
     }
-    
-//    [cell layerBorderCor:RGBA_COLOR(225, 225, 144, 1) andBorderWidth:1];
-    
     // UICollectionViewCell圆切角
-//    cell.contentView.layer.cornerRadius = cell.layer.cornerRadius = JobsWidth(8);
-//    cell.contentView.layer.borderWidth = cell.layer.borderWidth = JobsWidth(1);
-//    cell.contentView.layer.borderColor = cell.layer.borderColor = RGBA_COLOR(255, 225, 144, 1).CGColor;
-//    cell.contentView.layer.masksToBounds = cell.layer.masksToBounds = YES;
-
+//    [cell.contentView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
+//    [cell.contentView layerBorderCor:JobsCor(@"#D2D5E0") andBorderWidth:JobsWidth(.5f)];
+    cell.contentView.backgroundColor = cell.backgroundColor = JobsWhiteColor;
     cell.indexPath = indexPath;
-    
     return cell;
 }
 #pragma mark —— BaseCellProtocol
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInCellWithModel:(MSPromotionIncentiveDetailModel *_Nullable)model{
-    self.contentView.backgroundColor = RGBA_COLOR(210, 213, 224, 0.2f);
+    
     self.promotionIncentiveDetailModel = model;
     if(model.indexPath.row){
         self.myIncentiveDetailNameLab.alpha = 1;
@@ -83,8 +72,8 @@
 -(UILabel *)titleLab{
     if(!_titleLab){
         _titleLab = UILabel.new;
-        _titleLab.textColor = RGBA_COLOR(51, 51, 51, 1);
-        _titleLab.font = UIFontWeightBoldSize(16);
+        _titleLab.textColor = JobsCor(@"#333333");
+        _titleLab.font = UIFontWeightSemiboldSize(16);
         [self.contentView addSubview:_titleLab];
         [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(20));
@@ -96,12 +85,11 @@
     return _titleLab;
 }
 
-
 -(UILabel *)myIncentiveDetailNameLab{
     if(!_myIncentiveDetailNameLab){
         _myIncentiveDetailNameLab = UILabel.new;
-        _myIncentiveDetailNameLab.textColor = RGBA_COLOR(136, 79, 2, 1);
-        _myIncentiveDetailNameLab.font = UIFontWeightRegularSize(12);
+        _myIncentiveDetailNameLab.textColor = JobsCor(@"#EA2918");
+        _myIncentiveDetailNameLab.font = UIFontWeightSemiboldSize(12);
         [self.contentView addSubview:_myIncentiveDetailNameLab];
         [_myIncentiveDetailNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(20));
@@ -117,7 +105,7 @@
 -(UILabel *)userNameLab{
     if(!_userNameLab){
         _userNameLab = UILabel.new;
-        _userNameLab.textColor = RGBA_COLOR(153, 153, 153, 1);
+        _userNameLab.textColor = JobsCor(@"#999999");
         _userNameLab.font = UIFontWeightRegularSize(12);
         [self.contentView addSubview:_userNameLab];
         [_userNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -133,7 +121,7 @@
 -(UILabel *)timeLab{
     if(!_timeLab){
         _timeLab = UILabel.new;
-        _timeLab.textColor = RGBA_COLOR(153, 153, 153, 1);
+        _timeLab.textColor = JobsCor(@"#999999");
         _timeLab.font = UIFontWeightRegularSize(12);
         [self.contentView addSubview:_timeLab];
         [_timeLab mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -75,7 +75,6 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView
                                    cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    @jobs_weakify(self)
     MSInterestSettleRecordCVCell *cell = [MSInterestSettleRecordCVCell cellWithCollectionView:collectionView forIndexPath:indexPath];
     [cell richElementsInCellWithModel:self.dataMutArr[indexPath.section]];
     return cell;
@@ -165,7 +164,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     if (!_collectionView) {
         _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero
                                            collectionViewLayout:self.layout];
-        _collectionView.backgroundColor = HEXCOLOR(0xFCFBFB);
+        _collectionView.backgroundColor = JobsCor(@"#F5F5F5");
         [self dataLinkByCollectionView:_collectionView];
         _collectionView.showsVerticalScrollIndicator = NO;
         [_collectionView registerCollectionViewClass];

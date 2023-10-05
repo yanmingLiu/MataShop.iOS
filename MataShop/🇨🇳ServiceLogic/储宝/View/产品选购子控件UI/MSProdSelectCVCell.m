@@ -40,9 +40,8 @@
     // UICollectionViewCell圆切角
     [cell.contentView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
     [cell.contentView layerBorderCor:JobsCor(@"#D2D5E0") andBorderWidth:JobsWidth(.5f)];
-
     cell.indexPath = indexPath;
-    
+
     return cell;
 }
 #pragma mark —— BaseCellProtocol
