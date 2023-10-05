@@ -31,3 +31,7 @@ https://www.theiphonewiki.com/wiki/Models
 Chat GPT 3.5 
 https://www.jianshu.com/p/12426709420e
 ```
+```
+打开苹果的反馈助理：
+浏览器打开并输入 applefeedback://
+```

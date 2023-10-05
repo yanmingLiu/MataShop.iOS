@@ -38,10 +38,8 @@
     }
     
     // UICollectionViewCell圆切角
-    cell.contentView.layer.cornerRadius = cell.layer.cornerRadius = JobsWidth(8);
-    cell.contentView.layer.borderWidth = cell.layer.borderWidth = JobsWidth(1);
-    cell.contentView.layer.borderColor = cell.layer.borderColor = RGBA_COLOR(255, 225, 144, 1).CGColor;
-    cell.contentView.layer.masksToBounds = cell.layer.masksToBounds = YES;
+    [cell.contentView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
+    [cell.contentView layerBorderCor:JobsCor(@"#D2D5E0") andBorderWidth:JobsWidth(.5f)];
 
     cell.indexPath = indexPath;
     
@@ -55,8 +53,8 @@
         self.prodSelectModel = model.data;
         self.prodNameLab.jobsResetTitle(self.prodSelectModel.prodName);/// 产品名
         self.prodNameLab.jobsResetSubtitle(self.prodSelectModel.prodPrice);/// 产品价格
-        self.prodRemainsLab.jobsResetTitle(self.prodSelectModel.prodNum);/// 产品剩余
-        self.prodDailyRateLab.jobsResetTitle(self.prodSelectModel.prodDailyRate);/// 产品日利率
+        self.prodRemainsLab.jobsResetSubtitle(self.prodSelectModel.prodNum);/// 产品剩余
+        self.prodDailyRateLab.jobsResetSubtitle(self.prodSelectModel.prodDailyRate);/// 产品日利率
     }
     self.lineLab.alpha = 1;
     self.prodTipsTextView.alpha = 1;
@@ -80,8 +78,8 @@
                                                     attributedTitle:nil
                                             selectedAttributedTitle:nil
                                                  attributedSubtitle:nil
-                                                              title:@"3543"
-                                                           subTitle:@"34"
+                                                              title:nil
+                                                           subTitle:nil
                                                           titleFont:UIFontWeightSemiboldSize(16)
                                                        subTitleFont:UIFontWeightSemiboldSize(14)
                                                            titleCor:JobsCor(@"#333333")
@@ -134,7 +132,7 @@
                                                               subTitle:nil
                                                              titleFont:UIFontWeightRegularSize(12)
                                                           subTitleFont:UIFontWeightSemiboldSize(14)
-                                                              titleCor:JobsCor(@"#EA2918")
+                                                              titleCor:JobsCor(@"#666666")
                                                            subTitleCor:JobsCor(@"#000000")
                                                     titleLineBreakMode:NSLineBreakByWordWrapping
                                                  subtitleLineBreakMode:NSLineBreakByWordWrapping
@@ -179,11 +177,11 @@
                                                          attributedTitle:nil
                                                  selectedAttributedTitle:nil
                                                       attributedSubtitle:nil
-                                                                   title:nil
+                                                                   title:Internationalization(@"日利率")
                                                                 subTitle:nil
                                                                titleFont:UIFontWeightRegularSize(12)
                                                             subTitleFont:UIFontWeightSemiboldSize(14)
-                                                                titleCor:JobsCor(@"#EA2918")
+                                                                titleCor:JobsCor(@"#666666")
                                                              subTitleCor:JobsCor(@"#000000")
                                                       titleLineBreakMode:NSLineBreakByWordWrapping
                                                    subtitleLineBreakMode:NSLineBreakByWordWrapping
@@ -194,17 +192,16 @@
                                               contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
                                                 contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
                                                            contentInsets:jobsSameDirectionalEdgeInsets(0)
-                                                       cornerRadiusValue:JobsWidth(16)
+                                                       cornerRadiusValue:JobsWidth(0)
                                                          roundingCorners:UIRectCornerAllCorners
                                                     roundingCornersRadii:CGSizeZero
                                                           layerBorderCor:nil
-                                                             borderWidth:JobsWidth(1)
+                                                             borderWidth:JobsWidth(0)
                                                            primaryAction:nil
                                                          clickEventBlock:^id(BaseButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastMsg:Internationalization(@"提现")];
             return nil;
         }];
         
@@ -235,13 +232,13 @@
     if(!_prodTipsTextView){
         _prodTipsTextView = UITextView.new;
         _prodTipsTextView.backgroundColor = self.backgroundColor;
-        _prodTipsTextView.font = UIFontWeightRegularSize(9);
-        _prodTipsTextView.textColor = RGBA_COLOR(102, 102, 102, 1);
+        _prodTipsTextView.font = UIFontWeightRegularSize(12);
+        _prodTipsTextView.textColor = JobsCor(@"#666666");
         _prodTipsTextView.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:_prodTipsTextView];
         [_prodTipsTextView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.lineLab);
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(132), JobsWidth(32)));
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(132), JobsWidth(40)));
             make.bottom.equalTo(self.contentView).offset(JobsWidth(-16));
         }];
     }
@@ -269,7 +266,7 @@
                                                    subTitleCor:nil
                                             titleLineBreakMode:NSLineBreakByWordWrapping
                                          subtitleLineBreakMode:NSLineBreakByWordWrapping
-                                           baseBackgroundColor:RGBA_COLOR(136, 79, 2, 1)
+                                           baseBackgroundColor:JobsCor(@"#EA2918")
                                                   imagePadding:JobsWidth(0)
                                                   titlePadding:JobsWidth(0)
                                                 imagePlacement:NSDirectionalRectEdgeNone
@@ -280,7 +277,7 @@
                                                roundingCorners:UIRectCornerAllCorners
                                           roundingCornersRadii:CGSizeZero
                                                 layerBorderCor:nil
-                                                   borderWidth:JobsWidth(1)
+                                                   borderWidth:JobsWidth(0)
                                                  primaryAction:nil
                                                clickEventBlock:^id(BaseButton *x) {
             @jobs_strongify(self)
@@ -314,9 +311,9 @@
                                                                  subTitle:nil
                                                                 titleFont:UIFontWeightRegularSize(14)
                                                              subTitleFont:nil
-                                                                 titleCor:RGBA_COLOR(136, 79, 2, 1)
+                                                                 titleCor:JobsCor(@"#EA2918")
                                                               subTitleCor:nil
-                                               titleLineBreakMode:NSLineBreakByWordWrapping
+                                                       titleLineBreakMode:NSLineBreakByWordWrapping
                                                     subtitleLineBreakMode:NSLineBreakByWordWrapping
                                                       baseBackgroundColor:UIColor.whiteColor
                                                              imagePadding:JobsWidth(0)
@@ -328,8 +325,8 @@
                                                         cornerRadiusValue:JobsWidth(16)
                                                           roundingCorners:UIRectCornerAllCorners
                                                      roundingCornersRadii:CGSizeZero
-                                                           layerBorderCor:nil
-                                                              borderWidth:JobsWidth(1)
+                                                           layerBorderCor:JobsCor(@"#F0D4AD")
+                                                              borderWidth:JobsWidth(.5f)
                                                             primaryAction:nil
                                                           clickEventBlock:^id(BaseButton *x) {
             @jobs_strongify(self)
