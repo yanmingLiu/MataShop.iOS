@@ -12,6 +12,10 @@
 NS_ASSUME_NONNULL_BEGIN
 /// 结息记录
 @interface MSInterestSettleRecordVC : BaseViewController
+<
+UICollectionViewDataSource,
+UICollectionViewDelegate
+>
 
 @end
 

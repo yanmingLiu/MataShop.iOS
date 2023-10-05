@@ -14,6 +14,10 @@
 NS_ASSUME_NONNULL_BEGIN
 /// 推广奖励
 @interface MSPromotionIncentiveVC : BaseViewController
+<
+UICollectionViewDataSource,
+UICollectionViewDelegate
+>
 
 @end
 

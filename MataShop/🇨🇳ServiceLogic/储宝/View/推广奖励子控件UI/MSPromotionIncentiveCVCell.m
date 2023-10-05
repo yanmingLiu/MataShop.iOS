@@ -28,13 +28,13 @@
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    [self outlineByBezierPath:UIBorderSideTypeTop
-            cellBackgroundCor:JobsGrayColor
-                  borderColor:JobsBlackColor
-                  borderWidth:1
-             cornerRadiusSize:CGSizeMake(JobsWidth(8), JobsWidth(8))
-              roundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight];
-
+    [self cutFirstAndLastCollectionViewCellWithBackgroundCor:JobsWhiteColor
+                                              cellOutLineCor:JobsGrayColor
+                                               bottomLineCor:JobsGrayColor
+                                                 borderWidth:JobsWidth(0.1)
+                                            cornerRadiusSize:CGSizeMake(JobsWidth(8), JobsWidth(8))
+                                                          dx:0
+                                                          dy:0];
 }
 #pragma mark —— UICollectionViewCellProtocol
 +(instancetype)cellWithCollectionView:(nonnull UICollectionView *)collectionView
@@ -44,10 +44,7 @@
         [collectionView registerCollectionViewCellClass:MSPromotionIncentiveCVCell.class];
         cell = (MSPromotionIncentiveCVCell *)[collectionView collectionViewCellClass:MSPromotionIncentiveCVCell.class forIndexPath:indexPath];
     }
-    // UICollectionViewCell圆切角
-//    [cell.contentView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
-//    [cell.contentView layerBorderCor:JobsCor(@"#D2D5E0") andBorderWidth:JobsWidth(.5f)];
-    cell.contentView.backgroundColor = cell.backgroundColor = JobsWhiteColor;
+//    cell.contentView.backgroundColor = cell.backgroundColor = JobsClearColor;//JobsWhiteColor;
     cell.indexPath = indexPath;
     return cell;
 }

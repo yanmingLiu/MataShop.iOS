@@ -92,6 +92,11 @@
     return cell;
 }
 #pragma mark —— UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView
+       willDisplayCell:(UICollectionViewCell *)cell
+    forItemAtIndexPath:(NSIndexPath *)indexPath{
+
+}
 /// 允许选中时，高亮
 -(BOOL)collectionView:(UICollectionView *)collectionView
 shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {

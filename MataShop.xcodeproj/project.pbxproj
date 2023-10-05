@@ -322,7 +322,7 @@
 		C561D3C12AAC7E7B00E28603 /* UILabel+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0292AAC7E7900E28603 /* UILabel+Extra.m */; };
 		C561D3C22AAC7E7B00E28603 /* UILabel+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D02B2AAC7E7900E28603 /* UILabel+Gesture.m */; };
 		C561D3C32AAC7E7B00E28603 /* UILabel+Measure.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D02F2AAC7E7900E28603 /* UILabel+Measure.m */; };
-		C561D3C42AAC7E7B00E28603 /* UITableViewCell+BaseCellProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0352AAC7E7900E28603 /* UITableViewCell+BaseCellProtocol.m */; };
+		C561D3C42AAC7E7B00E28603 /* UITableViewCell+UITableViewCellProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0352AAC7E7900E28603 /* UITableViewCell+UITableViewCellProtocol.m */; };
 		C561D3C52AAC7E7B00E28603 /* WhiteRightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D0392AAC7E7900E28603 /* WhiteRightArrow@2x.png */; };
 		C561D3C62AAC7E7B00E28603 /* WhiteRightArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D03A2AAC7E7900E28603 /* WhiteRightArrow@3x.png */; };
 		C561D3C82AAC7E7B00E28603 /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D03C2AAC7E7900E28603 /* UITableViewCell+WhiteArrows.m */; };
@@ -382,7 +382,7 @@
 		C561D4062AAC7E7B00E28603 /* UICollectionView+RegisterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0F22AAC7E7900E28603 /* UICollectionView+RegisterClass.m */; };
 		C561D4072AAC7E7B00E28603 /* BaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0F52AAC7E7900E28603 /* BaseCollectionView.m */; };
 		C561D4082AAC7E7B00E28603 /* UICollectionViewCell+ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0FB2AAC7E7900E28603 /* UICollectionViewCell+ShakeAnimation.m */; };
-		C561D4092AAC7E7B00E28603 /* UICollectionViewCell+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0FE2AAC7E7900E28603 /* UICollectionViewCell+Default.m */; };
+		C561D4092AAC7E7B00E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0FE2AAC7E7900E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.m */; };
 		C561D40A2AAC7E7B00E28603 /* JobsBtnStyleCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1022AAC7E7900E28603 /* JobsBtnStyleCVCell.m */; };
 		C561D40C2AAC7E7B00E28603 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1062AAC7E7900E28603 /* BaseCollectionViewCell.m */; };
 		C561D40D2AAC7E7B00E28603 /* UIBezierPath+TextPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D10B2AAC7E7900E28603 /* UIBezierPath+TextPath.m */; };
@@ -1578,8 +1578,8 @@
 		C561D02F2AAC7E7900E28603 /* UILabel+Measure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Measure.m"; sourceTree = "<group>"; };
 		C561D0302AAC7E7900E28603 /* JobsLabelDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsLabelDef.h; sourceTree = "<group>"; };
 		C561D0322AAC7E7900E28603 /* JobsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsTableViewCell.h; sourceTree = "<group>"; };
-		C561D0352AAC7E7900E28603 /* UITableViewCell+BaseCellProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+BaseCellProtocol.m"; sourceTree = "<group>"; };
-		C561D0362AAC7E7900E28603 /* UITableViewCell+BaseCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+BaseCellProtocol.h"; sourceTree = "<group>"; };
+		C561D0352AAC7E7900E28603 /* UITableViewCell+UITableViewCellProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+UITableViewCellProtocol.m"; sourceTree = "<group>"; };
+		C561D0362AAC7E7900E28603 /* UITableViewCell+UITableViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+UITableViewCellProtocol.h"; sourceTree = "<group>"; };
 		C561D0382AAC7E7900E28603 /* UITableViewCell+WhiteArrows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WhiteArrows.h"; sourceTree = "<group>"; };
 		C561D0392AAC7E7900E28603 /* WhiteRightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WhiteRightArrow@2x.png"; sourceTree = "<group>"; };
 		C561D03A2AAC7E7900E28603 /* WhiteRightArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WhiteRightArrow@3x.png"; sourceTree = "<group>"; };
@@ -1704,8 +1704,8 @@
 		C561D0F72AAC7E7900E28603 /* JobsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsCollectionViewCell.h; sourceTree = "<group>"; };
 		C561D0FA2AAC7E7900E28603 /* UICollectionViewCell+ShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+ShakeAnimation.h"; sourceTree = "<group>"; };
 		C561D0FB2AAC7E7900E28603 /* UICollectionViewCell+ShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+ShakeAnimation.m"; sourceTree = "<group>"; };
-		C561D0FD2AAC7E7900E28603 /* UICollectionViewCell+Default.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Default.h"; sourceTree = "<group>"; };
-		C561D0FE2AAC7E7900E28603 /* UICollectionViewCell+Default.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Default.m"; sourceTree = "<group>"; };
+		C561D0FD2AAC7E7900E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+UICollectionViewCellProtocol.h"; sourceTree = "<group>"; };
+		C561D0FE2AAC7E7900E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+UICollectionViewCellProtocol.m"; sourceTree = "<group>"; };
 		C561D1012AAC7E7900E28603 /* JobsBtnStyleCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBtnStyleCVCell.h; sourceTree = "<group>"; };
 		C561D1022AAC7E7900E28603 /* JobsBtnStyleCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsBtnStyleCVCell.m; sourceTree = "<group>"; };
 		C561D1032AAC7E7900E28603 /* JobsBtnStyleCVCell.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = JobsBtnStyleCVCell.md; sourceTree = "<group>"; };
@@ -5267,20 +5267,20 @@
 		C561D0332AAC7E7900E28603 /* UITableViewCell+Category */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0342AAC7E7900E28603 /* UITableViewCell+BaseCellProtocol */,
+				C561D0342AAC7E7900E28603 /* UITableViewCell+UITableViewCellProtocol */,
 				C561D0372AAC7E7900E28603 /* UITableViewCell+WhiteArrows */,
 				C561D03D2AAC7E7900E28603 /* UITableViewCell+Margin */,
 			);
 			path = "UITableViewCell+Category";
 			sourceTree = "<group>";
 		};
-		C561D0342AAC7E7900E28603 /* UITableViewCell+BaseCellProtocol */ = {
+		C561D0342AAC7E7900E28603 /* UITableViewCell+UITableViewCellProtocol */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0362AAC7E7900E28603 /* UITableViewCell+BaseCellProtocol.h */,
-				C561D0352AAC7E7900E28603 /* UITableViewCell+BaseCellProtocol.m */,
+				C561D0362AAC7E7900E28603 /* UITableViewCell+UITableViewCellProtocol.h */,
+				C561D0352AAC7E7900E28603 /* UITableViewCell+UITableViewCellProtocol.m */,
 			);
-			path = "UITableViewCell+BaseCellProtocol";
+			path = "UITableViewCell+UITableViewCellProtocol";
 			sourceTree = "<group>";
 		};
 		C561D0372AAC7E7900E28603 /* UITableViewCell+WhiteArrows */ = {
@@ -5917,7 +5917,7 @@
 			isa = PBXGroup;
 			children = (
 				C561D0F92AAC7E7900E28603 /* UICollectionViewCell+ShakeAnimation */,
-				C561D0FC2AAC7E7900E28603 /* UICollectionViewCell+Default */,
+				C561D0FC2AAC7E7900E28603 /* UICollectionViewCell+UICollectionViewCellProtocol */,
 			);
 			path = "UICollectionViewCell+Category";
 			sourceTree = "<group>";
@@ -5931,13 +5931,13 @@
 			path = "UICollectionViewCell+ShakeAnimation";
 			sourceTree = "<group>";
 		};
-		C561D0FC2AAC7E7900E28603 /* UICollectionViewCell+Default */ = {
+		C561D0FC2AAC7E7900E28603 /* UICollectionViewCell+UICollectionViewCellProtocol */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0FD2AAC7E7900E28603 /* UICollectionViewCell+Default.h */,
-				C561D0FE2AAC7E7900E28603 /* UICollectionViewCell+Default.m */,
+				C561D0FD2AAC7E7900E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.h */,
+				C561D0FE2AAC7E7900E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.m */,
 			);
-			path = "UICollectionViewCell+Default";
+			path = "UICollectionViewCell+UICollectionViewCellProtocol";
 			sourceTree = "<group>";
 		};
 		C561D0FF2AAC7E7900E28603 /* BaseCollectionViewCell */ = {
@@ -11008,7 +11008,7 @@
 				C5DE5D352ACBB3E80075DF4B /* ECPrivacyCheckPhotos.m in Sources */,
 				C561D4862AAC7E7B00E28603 /* NSObject+RunrtimeGet.m in Sources */,
 				C578F0572ABB8CCA00832A07 /* MSDoorVC.m in Sources */,
-				C561D4092AAC7E7B00E28603 /* UICollectionViewCell+Default.m in Sources */,
+				C561D4092AAC7E7B00E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.m in Sources */,
 				C561D3FF2AAC7E7B00E28603 /* UITextView+Extend.m in Sources */,
 				C561D9232AAC8D8000E28603 /* BaiShaETProjRuleDetailTBVCell.m in Sources */,
 				C561D3332AAC7E7A00E28603 /* AuthCodeLab.m in Sources */,
@@ -11126,7 +11126,7 @@
 				C561D3BF2AAC7E7B00E28603 /* BaseLabel.m in Sources */,
 				C561D3A72AAC7E7A00E28603 /* JobsSuspendBtn.m in Sources */,
 				C5CFE5392AB054CC00D0F225 /* MSTransactionRecordVC.m in Sources */,
-				C561D3C42AAC7E7B00E28603 /* UITableViewCell+BaseCellProtocol.m in Sources */,
+				C561D3C42AAC7E7B00E28603 /* UITableViewCell+UITableViewCellProtocol.m in Sources */,
 				C561D6922AAC862000E28603 /* BaiShaETProjCVCellStyle1.m in Sources */,
 				C5BD5E702AAC76740048F36B /* SceneDelegate.m in Sources */,
 				C520F5F52AB396F400142DCC /* JobsLoadMoreTBVCell.m in Sources */,

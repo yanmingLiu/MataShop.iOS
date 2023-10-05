@@ -145,10 +145,9 @@
                              withColor:(UIColor *_Nonnull)aColor
                           andDirection:(TransformLayerDirectionType)directionStr{
     // 创建文字路径
-    UIBezierPath *path;
-    path = [UIBezierPath bezierPathWithText:self
-                                       font:aFont
-                           andWithDirection:directionStr];
+    UIBezierPath *path = [UIBezierPath bezierPathWithText:self
+                                                     font:aFont
+                                         andWithDirection:directionStr];
     // 创建路径图层
     CAShapeLayer *pathLayer = CAShapeLayer.layer;
     pathLayer.frame = aRect;
