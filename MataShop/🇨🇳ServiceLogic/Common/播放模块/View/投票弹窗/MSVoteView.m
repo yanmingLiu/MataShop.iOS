@@ -9,7 +9,7 @@
 
 @interface MSVoteView ()
 /// UI
-@property(nonatomic,strong)JobsContainerView *titleView;
+@property(nonatomic,strong)BaseButton *titleView;
 @property(nonatomic,strong)ZYTextField *textField;
 @property(nonatomic,strong)UIButton *cancelBtn;
 @property(nonatomic,strong)UIButton *sureBtn;
@@ -124,7 +124,6 @@ static dispatch_once_t static_voteViewOnceToken;
 
 -(void)textFieldBlock:(ZYTextField *)textField
        textFieldValue:(NSString *)value{
-    
 //    self.textFieldInputModel.resString = value;
 //    self.textFieldInputModel.PlaceHolder = self.doorInputViewBaseStyleModel.placeHolderStr;
 //    textField.objBindingParams = self.textFieldInputModel;
@@ -132,12 +131,45 @@ static dispatch_once_t static_voteViewOnceToken;
 //    if (self.objectBlock) self.objectBlock(textField);// 对外统一传出TF
 }
 #pragma mark —— lazyLoad
--(JobsContainerView *)titleView{
+-(BaseButton *)titleView{
     if(!_titleView){
-        _titleView = [JobsContainerView.alloc initWithWidth:JobsWidth(315)
-                                               buttonModels:self.btnModelMutArr];
-//        _titleView.backgroundColor = JobsRedColor;
-        _titleView.userInteractionEnabled = NO;
+        @jobs_weakify(self)
+        _titleView = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                       background:nil
+                                                   titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                    textAlignment:NSTextAlignmentCenter
+                                                      normalImage:nil
+                                                   highlightImage:nil
+                                                  attributedTitle:nil
+                                          selectedAttributedTitle:nil
+                                               attributedSubtitle:[self richTextWithDataConfigMutArr:self.richTextConfigMutArr]
+                                                            title:Internationalization(@"请支付")
+                                                         subTitle:nil
+                                                        titleFont:UIFontWeightBoldSize(18)
+                                                     subTitleFont:UIFontWeightRegularSize(16)
+                                                         titleCor:JobsCor(@"#333333")
+                                                      subTitleCor:nil
+                                               titleLineBreakMode:NSLineBreakByWordWrapping
+                                            subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                              baseBackgroundColor:UIColor.whiteColor
+                                                     imagePadding:JobsWidth(0)
+                                                     titlePadding:JobsWidth(10)
+                                                   imagePlacement:NSDirectionalRectEdgeNone
+                                       contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                         contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                    contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                cornerRadiusValue:JobsWidth(0)
+                                                  roundingCorners:UIRectCornerAllCorners
+                                             roundingCornersRadii:CGSizeZero
+                                                   layerBorderCor:nil
+                                                      borderWidth:JobsWidth(0)
+                                                    primaryAction:nil
+                                                  clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
         [self addSubview:_titleView];
         [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(315), JobsWidth(72)));
@@ -145,40 +177,6 @@ static dispatch_once_t static_voteViewOnceToken;
             make.centerX.equalTo(self);
         }];
     }return _titleView;
-}
-
--(NSMutableArray<JobsBtnModel *> *)btnModelMutArr{
-    if(!_btnModelMutArr){
-        _btnModelMutArr = NSMutableArray.array;
-        {
-            JobsBtnModel *model = JobsBtnModel.new;
-            model.backgroundColor = UIColor.whiteColor;
-            model.normalTitle = Internationalization(@"请支付");
-            model.titleFont = UIFontWeightBoldSize(18);
-            model.normalTitleColor = JobsCor(@"#333333");
-            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            model.contentSpacing = JobsWidth(0);
-            model.lineBreakMode = NSLineBreakByWordWrapping;
-            model.btnWidth = JobsWidth(80);
-
-            [_btnModelMutArr addObject:model];
-        }
-//
-        {
-            JobsBtnModel *model = JobsBtnModel.new;
-            model.backgroundColor = UIColor.whiteColor;
-            model.titleFont = UIFontWeightRegularSize(16);
-            model.normalTitleColor = JobsCor(@"#666666");
-            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            model.contentSpacing = JobsWidth(10);
-            model.lineBreakMode = NSLineBreakByWordWrapping;
-            model.btnWidth = JobsWidth(315);
-            model.normalAttributedTitle = [self richTextWithDataConfigMutArr:self.richTextConfigMutArr];
-            
-            [_btnModelMutArr addObject:model];
-        }
-        
-    }return _btnModelMutArr;
 }
 
 -(NSMutableArray<NSString *> *)richTextMutArr{
@@ -300,6 +298,5 @@ static dispatch_once_t static_voteViewOnceToken;
         }];
     }return _sureBtn;
 }
-
 
 @end

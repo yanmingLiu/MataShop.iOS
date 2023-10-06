@@ -10,7 +10,7 @@
 @interface MSDoorVC ()
 /// UI
 @property(nonatomic,strong)UIImageView *logoImageView;
-@property(nonatomic,strong)JobsContainerView *titleLab;
+@property(nonatomic,strong)BaseButton *titleLab;
 @property(nonatomic,strong)JXCategoryTitleView *categoryView;
 @property(nonatomic,strong)JXCategoryIndicatorLineView *lineView;/// 跟随的指示器
 @property(nonatomic,strong)JXCategoryListContainerView *listContainerView;/// 此属性决定依附于此的viewController
@@ -162,10 +162,45 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     }return _logoImageView;
 }
 
--(JobsContainerView *)titleLab{
+-(BaseButton *)titleLab{
     if(!_titleLab){
-        _titleLab = [JobsContainerView.alloc initWithWidth:JobsWidth(252)
-                                              buttonModels:self.btnModelMutArr];
+        @jobs_weakify(self)
+        _titleLab = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                      background:nil
+                                                  titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                   textAlignment:NSTextAlignmentCenter
+                                                     normalImage:nil
+                                                  highlightImage:nil
+                                                 attributedTitle:nil
+                                         selectedAttributedTitle:nil
+                                              attributedSubtitle:nil
+                                                           title:Internationalization(@"欢迎来到Mata商城")
+                                                        subTitle:Internationalization(@"登陆探索更多潮玩惊喜")
+                                                       titleFont:UIFontWeightBoldSize(26)
+                                                    subTitleFont:UIFontWeightRegularSize(16)
+                                                        titleCor:JobsCor(@"#333333")
+                                                     subTitleCor:JobsCor(@"#666666")
+                                              titleLineBreakMode:NSLineBreakByWordWrapping
+                                           subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                             baseBackgroundColor:UIColor.clearColor
+                                                    imagePadding:JobsWidth(0)
+                                                    titlePadding:JobsWidth(10)
+                                                  imagePlacement:NSDirectionalRectEdgeNone
+                                      contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                        contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                   contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                               cornerRadiusValue:JobsWidth(0)
+                                                 roundingCorners:UIRectCornerAllCorners
+                                            roundingCornersRadii:CGSizeZero
+                                                  layerBorderCor:nil
+                                                     borderWidth:JobsWidth(0)
+                                                   primaryAction:nil
+                                                 clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
         [self.view addSubview:_titleLab];
         [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(_titleLab.jobsSize);
@@ -390,40 +425,6 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [_titleMutArr addObject:Internationalization(@"密码登录")];
         [_titleMutArr addObject:Internationalization(@"短信登录")];
     }return _titleMutArr;
-}
-
--(NSMutableArray<JobsBtnModel *> *)btnModelMutArr{
-    if(!_btnModelMutArr){
-        _btnModelMutArr = NSMutableArray.array;
-        {
-            JobsBtnModel *model = JobsBtnModel.new;
-            model.backgroundColor = UIColor.clearColor;
-            model.normalTitle = Internationalization(@"欢迎来到Mata商城");
-            model.titleFont = UIFontWeightBoldSize(26);
-            model.normalTitleColor = JobsCor(@"#333333");
-            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            model.contentSpacing = JobsWidth(8);
-            model.lineBreakMode = NSLineBreakByWordWrapping;
-            model.btnWidth = JobsWidth(252);
-
-            [_btnModelMutArr addObject:model];
-        }
-//
-        {
-            JobsBtnModel *model = JobsBtnModel.new;
-            model.backgroundColor = UIColor.clearColor;
-            model.normalTitle = Internationalization(@"登陆探索更多潮玩惊喜");
-            model.titleFont = UIFontWeightRegularSize(16);
-            model.normalTitleColor = JobsCor(@"#666666");
-            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-            model.contentSpacing = JobsWidth(10);
-            model.lineBreakMode = NSLineBreakByWordWrapping;
-            model.btnWidth = JobsWidth(145);
-
-            [_btnModelMutArr addObject:model];
-        }
-        
-    }return _btnModelMutArr;
 }
 
 @end

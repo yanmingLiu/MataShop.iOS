@@ -10,7 +10,7 @@
 @interface MSMineView1 ()
 /// UI
 @property(nonatomic,strong)UIImageView *avatarIMGV;
-@property(nonatomic,strong)JobsContainerView *userInfoView;
+@property(nonatomic,strong)BaseButton *userInfoView;
 @property(nonatomic,strong)UIButton *leftArrowBtn;
 /// Data
 @property(nonatomic,strong)NSMutableArray <JobsBtnModel *>*btnModelMutArr;
@@ -87,10 +87,45 @@ static dispatch_once_t static_mineView1OnceToken;
     }return _avatarIMGV;
 }
 
--(JobsContainerView *)userInfoView{
+-(BaseButton *)userInfoView{
     if(!_userInfoView){
-        _userInfoView = [JobsContainerView.alloc initWithWidth:JobsWidth(120)
-                                                  buttonModels:self.btnModelMutArr];
+        @jobs_weakify(self)
+        _userInfoView = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                          background:nil
+                                                      titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                       textAlignment:NSTextAlignmentCenter
+                                                         normalImage:nil
+                                                      highlightImage:nil
+                                                     attributedTitle:nil
+                                             selectedAttributedTitle:nil
+                                                  attributedSubtitle:nil
+                                                               title:Internationalization(@"赵露思")
+                                                            subTitle:Internationalization(@"138****8888")
+                                                           titleFont:UIFontWeightBoldSize(18)
+                                                        subTitleFont:UIFontWeightRegularSize(14)
+                                                            titleCor:JobsWhiteColor
+                                                         subTitleCor:JobsWhiteColor
+                                                  titleLineBreakMode:NSLineBreakByWordWrapping
+                                               subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                                 baseBackgroundColor:UIColor.whiteColor
+                                                        imagePadding:JobsWidth(0)
+                                                        titlePadding:JobsWidth(0)
+                                                      imagePlacement:NSDirectionalRectEdgeNone
+                                          contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                            contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                       contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                   cornerRadiusValue:JobsWidth(0)
+                                                     roundingCorners:UIRectCornerAllCorners
+                                                roundingCornersRadii:CGSizeZero
+                                                      layerBorderCor:nil
+                                                         borderWidth:JobsWidth(0)
+                                                       primaryAction:nil
+                                                     clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
         [self addSubview:_userInfoView];
         [_userInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(120), JobsWidth(43)));
@@ -117,39 +152,6 @@ static dispatch_once_t static_mineView1OnceToken;
             return nil;
         }];
     }return _leftArrowBtn;
-}
-
--(NSMutableArray<JobsBtnModel *> *)btnModelMutArr{
-    if(!_btnModelMutArr){
-        _btnModelMutArr = NSMutableArray.array;
-        {
-            JobsBtnModel *model = JobsBtnModel.new;
-            model.backgroundColor = UIColor.clearColor;
-            model.normalTitle = Internationalization(@"赵露思");
-            model.titleFont = UIFontWeightBoldSize(18);
-            model.normalTitleColor = JobsWhiteColor;
-            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            model.contentSpacing = JobsWidth(8);
-            model.lineBreakMode = NSLineBreakByWordWrapping;
-//            model.btnWidth = JobsWidth(160);
-            [_btnModelMutArr addObject:model];
-        }
-//
-        {
-            JobsBtnModel *model = JobsBtnModel.new;
-            model.backgroundColor = UIColor.clearColor;
-            model.normalTitle = Internationalization(@"138****8888");
-            model.titleFont = UIFontWeightRegularSize(14);
-            model.normalTitleColor = JobsWhiteColor;
-            model.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            model.contentSpacing = JobsWidth(10);
-            model.lineBreakMode = NSLineBreakByWordWrapping;
-//            model.btnWidth = JobsWidth(252);
-
-            [_btnModelMutArr addObject:model];
-        }
-        
-    }return _btnModelMutArr;
 }
 
 @end

@@ -9,6 +9,7 @@
 
 @implementation UIButton (UI)
 #pragma mark —— 一些功能性
+#warning 怎么去修改subTitle的对齐方式，使其居中？？？
 /// 为了兼容新的Api，批量设定UIButton
 /// 资料来源：https://www.jianshu.com/p/12426709420e
 /// - Parameters:
