@@ -106,7 +106,7 @@ static dispatch_once_t static_mineView1OnceToken;
                                                          subTitleCor:JobsWhiteColor
                                                   titleLineBreakMode:NSLineBreakByWordWrapping
                                                subtitleLineBreakMode:NSLineBreakByWordWrapping
-                                                 baseBackgroundColor:UIColor.whiteColor
+                                                 baseBackgroundColor:JobsClearColor
                                                         imagePadding:JobsWidth(0)
                                                         titlePadding:JobsWidth(0)
                                                       imagePlacement:NSDirectionalRectEdgeNone
