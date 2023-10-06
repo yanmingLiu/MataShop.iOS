@@ -29,8 +29,8 @@
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     [self cutFirstAndLastCollectionViewCellWithBackgroundCor:JobsWhiteColor
-                                              cellOutLineCor:JobsGrayColor
-                                               bottomLineCor:JobsGrayColor
+                                              cellOutLineCor:JobsClearColor
+                                               bottomLineCor:JobsWhiteColor
                                                  borderWidth:JobsWidth(0.1)
                                             cornerRadiusSize:CGSizeMake(JobsWidth(8), JobsWidth(8))
                                                           dx:0

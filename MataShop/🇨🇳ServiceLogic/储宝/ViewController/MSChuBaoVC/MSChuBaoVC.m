@@ -142,14 +142,41 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
 #pragma mark —— lazyLoad
 -(BaseButton *)aboutBtn{
     if (!_aboutBtn) {
-        _aboutBtn = BaseButton.new;
-        _aboutBtn.backgroundColor = JobsClearColor;
-        _aboutBtn.normalTitle = Internationalization(@"关于储宝");
-        _aboutBtn.normalTitleColor = RGBA_COLOR(51, 51, 51, 1);
-        _aboutBtn.titleFont = UIFontWeightRegularSize(14);
         @jobs_weakify(self)
-        [_aboutBtn jobsBtnClickEventBlock:^id(id data) {
+        _aboutBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                      background:nil
+                                                  titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                   textAlignment:NSTextAlignmentCenter
+                                                     normalImage:nil
+                                                  highlightImage:nil
+                                                 attributedTitle:nil
+                                         selectedAttributedTitle:nil
+                                              attributedSubtitle:nil
+                                                           title:Internationalization(@"关于储宝")
+                                                        subTitle:nil
+                                                       titleFont:UIFontWeightRegularSize(14)
+                                                    subTitleFont:nil
+                                                        titleCor:RGBA_COLOR(51, 51, 51, 1)
+                                                     subTitleCor:nil
+                                              titleLineBreakMode:NSLineBreakByWordWrapping
+                                           subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                             baseBackgroundColor:UIColor.clearColor
+                                                    imagePadding:JobsWidth(0)
+                                                    titlePadding:JobsWidth(0)
+                                                  imagePlacement:NSDirectionalRectEdgeNone
+                                      contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                        contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                   contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                               cornerRadiusValue:JobsWidth(0)
+                                                 roundingCorners:UIRectCornerAllCorners
+                                            roundingCornersRadii:CGSizeZero
+                                                  layerBorderCor:nil
+                                                     borderWidth:JobsWidth(0)
+                                                   primaryAction:nil
+                                                 clickEventBlock:^id(BaseButton *x) {
             @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
             [self forceComingToPushVC:MSAboutChuBaoVC.new requestParams:@""];
             return nil;
         }];
@@ -202,9 +229,9 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     if (!_categoryView) {
         _categoryView = JXCategoryTitleView.new;
         _categoryView.delegate = self;
-        _categoryView.backgroundColor = RGBA_COLOR(210, 213, 224, 0.2);
-        _categoryView.titleSelectedColor = RGBA_COLOR(51, 51, 51, 1);
-        _categoryView.titleColor = RGBA_COLOR(102, 102, 102, 1);
+        _categoryView.backgroundColor = JobsCor(@"#F5F5F5");
+        _categoryView.titleSelectedColor = JobsCor(@"#333333");
+        _categoryView.titleColor = JobsCor(@"#666666");
         _categoryView.titleFont = UIFontWeightRegularSize(14);
         _categoryView.titleSelectedFont = UIFontWeightBoldSize(16);
         _categoryView.titles = self.titleMutArr;
@@ -227,7 +254,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
 -(JXCategoryIndicatorLineView *)lineView{
     if (!_lineView) {
         _lineView = JXCategoryIndicatorLineView.new;
-        _lineView.indicatorColor = RGBA_COLOR(247, 181, 0, 1);
+        _lineView.indicatorColor = JobsCor(@"#EA2918");
         _lineView.indicatorHeight = JobsWidth(4);
         _lineView.indicatorWidthIncrement = JobsWidth(10);
         _lineView.verticalMargin = 0;

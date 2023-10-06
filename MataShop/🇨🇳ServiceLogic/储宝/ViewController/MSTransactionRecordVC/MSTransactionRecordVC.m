@@ -9,10 +9,12 @@
 
 @interface MSTransactionRecordVC ()
 /// UI
-@property(nonatomic,strong)UICollectionViewFlowLayout *layout;
-@property(nonatomic,strong)UICollectionView *collectionView;
+@property(nonatomic,strong)JXCategoryTitleView *categoryView;
+@property(nonatomic,strong)JXCategoryIndicatorBackgroundView *categoryBgView;
+@property(nonatomic,strong)JXCategoryListContainerView *listContainerView;/// 此属性决定依附于此的viewController
 /// Data
-@property(nonatomic,strong)NSMutableArray <UIViewModel *>*dataMutArr;
+@property(nonatomic,strong)NSMutableArray <NSString *>*titleMutArr;
+@property(nonatomic,strong)NSMutableArray <UIViewController *>*childVCMutArr;
 
 @end
 
@@ -35,11 +37,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = JobsRandomColor;
+    self.view.backgroundColor = JobsCor(@"#F5F5F5");
     [self setGKNav];
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
-    self.collectionView.alpha = 1;
+    self.categoryView.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -68,206 +70,133 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
 }
-#pragma mark —— UICollectionViewDataSource
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.dataMutArr.count;
-}
+#pragma mark —— JXCategoryTitleViewDataSource
+//// 如果将JXCategoryTitleView嵌套进UITableView的cell，每次重用的时候，JXCategoryTitleView进行reloadData时，会重新计算所有的title宽度。所以该应用场景，需要UITableView的cellModel缓存titles的文字宽度，再通过该代理方法返回给JXCategoryTitleView。
+//// 如果实现了该方法就以该方法返回的宽度为准，不触发内部默认的文字宽度计算。
+//- (CGFloat)categoryTitleView:(JXCategoryTitleView *)titleView
+//               widthForTitle:(NSString *)title{
+//
+//    return 10;
+//}
+#pragma mark —— JXCategoryListContainerViewDelegate
+/**
+ 返回list的数量
 
-- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView
-                                   cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    @jobs_weakify(self)
-    MSTransactionRecordCVCell *cell = [MSTransactionRecordCVCell cellWithCollectionView:collectionView forIndexPath:indexPath];
-    [cell richElementsInCellWithModel:self.dataMutArr[indexPath.section]];
-    return cell;
+ @param listContainerView 列表的容器视图
+ @return list的数量
+ */
+- (NSInteger)numberOfListsInlistContainerView:(JXCategoryListContainerView *)listContainerView{
+    return self.titleMutArr.count;
 }
+/**
+ 根据index初始化一个对应列表实例，需要是遵从`JXCategoryListContentViewDelegate`协议的对象。
+ 如果列表是用自定义UIView封装的，就让自定义UIView遵从`JXCategoryListContentViewDelegate`协议，该方法返回自定义UIView即可。
+ 如果列表是用自定义UIViewController封装的，就让自定义UIViewController遵从`JXCategoryListContentViewDelegate`协议，该方法返回自定义UIViewController即可。
 
-- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView
-     numberOfItemsInSection:(NSInteger)section {
-    return 1;
+ @param listContainerView 列表的容器视图
+ @param index 目标下标
+ @return 遵从JXCategoryListContentViewDelegate协议的list实例
+ */
+- (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView
+                                          initListForIndex:(NSInteger)index{
+    return self.childVCMutArr[index];
 }
-#pragma mark —— UICollectionViewDelegate
-/// 允许选中时，高亮
--(BOOL)collectionView:(UICollectionView *)collectionView
-shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s", __FUNCTION__);
-    return YES;
+#pragma mark —— JXCategoryViewDelegate
+///【点击的结果】点击选中的情况才会调用该方法。传递didClickSelectedItemAt事件给listContainerView
+- (void)categoryView:(JXCategoryBaseView *)categoryView
+didClickSelectedItemAtIndex:(NSInteger)index {
+    [self.listContainerView didClickSelectedItemAtIndex:index];
 }
-/// 高亮完成后回调
--(void)collectionView:(UICollectionView *)collectionView
-didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s", __FUNCTION__);
+///【点击选中或者滚动选中的结果】点击选中或者滚动选中都会调用该方法。适用于只关心选中事件，不关心具体是点击还是滚动选中的。
+- (void)categoryView:(JXCategoryBaseView *)categoryView
+didSelectedItemAtIndex:(NSInteger)index {
+    NSLog(@"");
 }
-/// 由高亮转成非高亮完成时的回调
--(void)collectionView:(UICollectionView *)collectionView
-didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s", __FUNCTION__);
+///【滚动选中的结果】滚动选中的情况才会调用该方法
+- (void)categoryView:(JXCategoryBaseView *)categoryView
+didScrollSelectedItemAtIndex:(NSInteger)index{
+    NSLog(@"");
 }
-/// 设置是否允许选中
--(BOOL)collectionView:(UICollectionView *)collectionView
-shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s", __FUNCTION__);
-    return YES;
-}
-/// 设置是否允许取消选中
--(BOOL)collectionView:(UICollectionView *)collectionView
-shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s", __FUNCTION__);
-    return YES;
-}
-/// 选中操作
-- (void)collectionView:(UICollectionView *)collectionView
-didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s", __FUNCTION__);
-    /**
-     滚动到指定位置
-     _collectionView.contentOffset = CGPointMake(0,-100);
-     [_collectionView setContentOffset:CGPointMake(0, -200) animated:YES];// 只有在viewDidAppear周期 或者 手动触发才有效
-     */
-}
-/// 取消选中操作
--(void)collectionView:(UICollectionView *)collectionView
-didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s", __FUNCTION__);
-}
-#pragma mark —— UICollectionViewDelegateFlowLayout
-- (CGSize)collectionView:(UICollectionView *)collectionView
-                  layout:(UICollectionViewLayout *)collectionViewLayout
-  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [MSInterestSettleRecordCVCell cellSizeWithModel:nil];
-}
-/// 定义的是元素垂直之间的间距
-- (CGFloat)collectionView:(UICollectionView *)collectionView
-                   layout:(UICollectionViewLayout *)collectionViewLayout
-minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return JobsWidth(12);
-}
-/// 定义的是元素水平之间的间距。Api自动计算一行的Cell个数，只有当间距小于此定义的最小值时才会换行，最小执行单元是Section（每个section里面的样式是统一的）
-- (CGFloat)collectionView:(UICollectionView *)collectionView
-                   layout:(UICollectionViewLayout *)collectionViewLayout
-minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return 0;
-}
-/// 内间距
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView
-                       layout:(UICollectionViewLayout *)collectionViewLayout
-       insetForSectionAtIndex:(NSInteger)section {
-    return jobsSameEdgeInset(16);
+/// 传递scrolling事件给listContainerView，必须调用！！！
+- (void)categoryView:(JXCategoryBaseView *)categoryView
+scrollingFromLeftIndex:(NSInteger)leftIndex
+        toRightIndex:(NSInteger)rightIndex
+               ratio:(CGFloat)ratio {
+    NSLog(@"");
 }
 #pragma mark —— lazyLoad
--(UICollectionViewFlowLayout *)layout{
-    if (!_layout) {
-        _layout = UICollectionViewFlowLayout.new;
-        _layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    }return _layout;
-}
-
--(UICollectionView *)collectionView{
-    if (!_collectionView) {
-        _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero
-                                           collectionViewLayout:self.layout];
-        _collectionView.backgroundColor = HEXCOLOR(0xFCFBFB);
-        [self dataLinkByCollectionView:_collectionView];
-        _collectionView.showsVerticalScrollIndicator = NO;
-        [_collectionView registerCollectionViewClass];
-        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, JobsWidth(288), 0);
+-(JXCategoryTitleView *)categoryView{
+    if (!_categoryView) {
+        _categoryView = JXCategoryTitleView.new;
+        _categoryView.backgroundColor = JobsCor(@"#ECECEC");
+        _categoryView.titleSelectedColor = JobsWhiteColor;
+        _categoryView.titleColor = JobsCor(@"#333333");
+        _categoryView.titleFont = UIFontWeightSemiboldSize(12);
+        _categoryView.titleSelectedFont = UIFontWeightSemiboldSize(12);
+        _categoryView.delegate = self;
+        _categoryView.titles = self.titleMutArr;
+        _categoryView.titleColorGradientEnabled = YES;
+        _categoryView.indicators = @[self.categoryBgView];//
+        _categoryView.defaultSelectedIndex = 1;// 默认从第二个开始显示
+        _categoryView.cellSpacing = JobsWidth(0);
+        _categoryView.cellWidth = JobsWidth(72);
+        _categoryView.titleLabelMaskEnabled = YES;
+        _categoryView.listContainer = self.listContainerView;
         
-        {
-            MJRefreshConfigModel *refreshConfigHeader = MJRefreshConfigModel.new;
-            refreshConfigHeader.stateIdleTitle = Internationalization(@"下拉可以刷新");
-            refreshConfigHeader.pullingTitle = Internationalization(@"下拉可以刷新");
-            refreshConfigHeader.refreshingTitle = Internationalization(@"松开立即刷新");
-            refreshConfigHeader.willRefreshTitle = Internationalization(@"刷新数据中");
-            refreshConfigHeader.noMoreDataTitle = Internationalization(@"下拉可以刷新");
-
-            MJRefreshConfigModel *refreshConfigFooter = MJRefreshConfigModel.new;
-            refreshConfigFooter.stateIdleTitle = Internationalization(@"");
-            refreshConfigFooter.pullingTitle = Internationalization(@"");
-            refreshConfigFooter.refreshingTitle = Internationalization(@"");
-            refreshConfigFooter.willRefreshTitle = Internationalization(@"");
-            refreshConfigFooter.noMoreDataTitle = Internationalization(@"");
-
-            self.refreshConfigHeader = refreshConfigHeader;
-            self.refreshConfigFooter = refreshConfigFooter;
-
-            _collectionView.mj_header = self.mjRefreshNormalHeader;
-            _collectionView.mj_header.automaticallyChangeAlpha = YES;//根据拖拽比例自动切换透明度
-            
-            _collectionView.mj_footer = self.mjRefreshAutoNormalFooter;
-        }
+        [_categoryView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
+        [_categoryView layerBorderCor:JobsClearColor andBorderWidth:1];
         
-        {
-            _collectionView.ly_emptyView = [LYEmptyView emptyViewWithImageStr:@"暂无数据"
-                                                                     titleStr:Internationalization(@"暂无数据")
-                                                                    detailStr:Internationalization(@"")];
-            
-            _collectionView.ly_emptyView.titleLabTextColor = JobsLightGrayColor;
-            _collectionView.ly_emptyView.contentViewOffset = JobsWidth(-180);
-            _collectionView.ly_emptyView.titleLabFont = UIFontWeightRegularSize(16);
-        }
-        
-        [self.view addSubview:_collectionView];
-        [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.bottom.left.right.equalTo(self.view);
+        [self.view addSubview:_categoryView];
+        [_categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view).offset(JobsWidth(16));
+            make.centerX.equalTo(self.view);
+            make.size.mas_offset(CGSizeMake(JobsWidth(216), JobsWidth(28)));
         }];
-    }return _collectionView;
+        [self.view layoutIfNeeded];
+    }return _categoryView;
 }
 
--(NSMutableArray<UIViewModel *> *)dataMutArr{
-    if (!_dataMutArr) {
-        _dataMutArr = NSMutableArray.array;
-        {
-            UIViewModel *viewModel = UIViewModel.new;
-            [_dataMutArr addObject:viewModel];
-        }
-        
-        {
-            NSMutableArray <UIViewModel *>*mutArr = NSMutableArray.array;
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"存款金额");
-                viewModel.subTextModel.text = Internationalization(@"10,000.00");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"存款方式");
-                viewModel.subTextModel.text = Internationalization(@"虛擬幣充值");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"訂單編號");
-                viewModel.subTextModel.text = Internationalization(@"YSF2025022302644565964");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"轉賬姓名");
-                viewModel.subTextModel.text = Internationalization(@"張三 ");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"銀行賬號");
-                viewModel.subTextModel.text = Internationalization(@"6230 5822 0031 5762 430");
-                [mutArr addObject:viewModel];
-            }
-            
-            {
-                UIViewModel *viewModel = UIViewModel.new;
-                viewModel.textModel.text = Internationalization(@"轉賬地址");
-                viewModel.subTextModel.text = Internationalization(@"中國平安銀行");
-                [mutArr addObject:viewModel];
-            }
-            UIViewModel *viewModel = UIViewModel.new;
-            viewModel.jobsDataMutArr = mutArr;
-            [_dataMutArr addObject:viewModel];
-        }
-    }return _dataMutArr;
+-(JXCategoryIndicatorBackgroundView *)categoryBgView{
+    if (!_categoryBgView) {
+        _categoryBgView = JXCategoryIndicatorBackgroundView.new;
+        _categoryBgView.indicatorHeight = JobsWidth(30);
+        _categoryBgView.indicatorWidthIncrement = 0;
+        _categoryBgView.indicatorWidth = JobsWidth(76);
+        _categoryBgView.indicatorColor = JobsCor(@"#333333");
+        _categoryBgView.indicatorCornerRadius = 0;
+    }return _categoryBgView;
+}
+/// 此属性决定依附于此的viewController
+-(JXCategoryListContainerView *)listContainerView{
+    if (!_listContainerView) {
+        _listContainerView = [JXCategoryListContainerView.alloc initWithType:JXCategoryListContainerType_CollectionView
+                                                                    delegate:self];
+        _listContainerView.defaultSelectedIndex = 1;// 默认从第二个开始显示
+        [self.view addSubview:_listContainerView];
+        [_listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view).offset(-JobsWidth(10));
+            make.left.right.bottom.equalTo(self.view);
+        }];
+        [self.view layoutIfNeeded];
+    }return _listContainerView;
+}
+
+-(NSMutableArray<NSString *> *)titleMutArr{
+    if(!_titleMutArr){
+        _titleMutArr = NSMutableArray.array;
+        [_titleMutArr addObject:Internationalization(@"充值")];
+        [_titleMutArr addObject:Internationalization(@"提现")];
+        [_titleMutArr addObject:Internationalization(@"购买")];
+    }return _titleMutArr;
+}
+
+-(NSMutableArray<UIViewController *> *)childVCMutArr{
+    if(!_childVCMutArr){
+        _childVCMutArr = NSMutableArray.array;
+        [_childVCMutArr addObject:MSChuBaoTopUpVC.new];/// 储宝.充值
+        [_childVCMutArr addObject:MSChuBaoWithdrawVC.new];/// 储宝.提现
+        [_childVCMutArr addObject:MSChuBaoBuyVC.new];/// 储宝.购买
+    }return _childVCMutArr;
 }
 
 @end
