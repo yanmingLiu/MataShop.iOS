@@ -22,7 +22,6 @@
 @property(nonatomic,strong)UIButton *userAgreementBtn;/// 用户协议
 @property(nonatomic,strong)MSThirdPartyShortcutLoginPanelView *thirdPartyShortcutLoginPanelView;
 /// Data
-@property(nonatomic,strong)NSMutableArray <JobsBtnModel *>*btnModelMutArr;
 @property(nonatomic,strong)NSMutableArray <NSString *>*titleMutArr;
 @property(nonatomic,strong)NSMutableArray <UIViewController *>*childVCMutArr;
 

@@ -13,7 +13,6 @@
 @property(nonatomic,strong)BaseButton *rechargeBtn;// 充值
 @property(nonatomic,strong)BaseButton *withdrawBtn;// 提现
 /// Data
-@property(nonatomic,strong)NSMutableArray <JobsBtnModel *>*btnModelMutArr;
 @property(nonatomic,strong)NSMutableArray <NSString *>*richTextMutArr;
 
 @end

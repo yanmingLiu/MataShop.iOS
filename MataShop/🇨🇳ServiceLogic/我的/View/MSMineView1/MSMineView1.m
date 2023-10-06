@@ -13,7 +13,6 @@
 @property(nonatomic,strong)BaseButton *userInfoView;
 @property(nonatomic,strong)UIButton *leftArrowBtn;
 /// Data
-@property(nonatomic,strong)NSMutableArray <JobsBtnModel *>*btnModelMutArr;
 
 @end
 

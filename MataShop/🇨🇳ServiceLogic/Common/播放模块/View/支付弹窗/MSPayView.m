@@ -15,7 +15,6 @@
 @property(nonatomic,strong)UIButton *sureBtn;
 @property(nonatomic,strong)UILabel *titleLab;
 /// Data
-@property(nonatomic,strong)NSMutableArray <JobsBtnModel *>*btnModelMutArr;
 @property(nonatomic,strong)NSMutableArray <NSString *>*richTextMutArr;
 @property(nonatomic,strong)NSMutableArray <RichTextConfig *>*richTextConfigMutArr;
 
