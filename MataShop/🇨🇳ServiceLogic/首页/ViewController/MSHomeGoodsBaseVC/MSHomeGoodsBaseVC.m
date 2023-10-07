@@ -240,37 +240,57 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 
         {
             MSProdShowModel *model = MSProdShowModel.new;
-            model.prodIMG = JobsIMG(@"商品占位图1");
-            model.prodIMGURL = @"";
-            model.prodName = Internationalization(@"天然羊羔毛外套");
-            model.prodPrice = @"￥ 8549.33";
+            
+            model.prodIMG = JobsIMG(@"商品占位图1");/// 商品图
+            model.prodIMGURL = @"";/// 商品图URL
+            model.prodTitle = Internationalization(@"天然羊羔毛外套");/// 商品名
+            model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
+            model.prodPrice = @"￥6".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodSubPrice = @"￥126";/// 商品原价
+            model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
+            
             [_cvCellDataMutArr addObject:model];
         }
 
         {
             MSProdShowModel *model = MSProdShowModel.new;
-            model.prodIMG = JobsIMG(@"商品占位图1");
-            model.prodIMGURL = @"";
-            model.prodName = Internationalization(@"幻龙无线");
-            model.prodPrice = @"￥ 333.33";
+            
+            model.prodIMG = JobsIMG(@"商品占位图1");/// 商品图
+            model.prodIMGURL = @"";/// 商品图URL
+            model.prodTitle = Internationalization(@"火箭");/// 商品名
+            model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
+            model.prodPrice = @"￥126".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodSubPrice = @"￥126";/// 商品原价
+            model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
+            
             [_cvCellDataMutArr addObject:model];
         }
 
         {
             MSProdShowModel *model = MSProdShowModel.new;
-            model.prodIMG = JobsIMG(@"商品占位图1");
-            model.prodIMGURL = @"";
-            model.prodName = Internationalization(@"杰士邦");
-            model.prodPrice = @"￥ 555.33";
+            
+            model.prodIMG = JobsIMG(@"商品占位图1");/// 商品图
+            model.prodIMGURL = @"";/// 商品图URL
+            model.prodTitle = Internationalization(@"火车");/// 商品名
+            model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
+            model.prodPrice = @"￥126".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodSubPrice = @"￥126";/// 商品原价
+            model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
+            
             [_cvCellDataMutArr addObject:model];
         }
 
         {
             MSProdShowModel *model = MSProdShowModel.new;
-            model.prodIMG = JobsIMG(@"商品占位图1");
-            model.prodIMGURL = @"";
-            model.prodName = Internationalization(@"蛋糕");
-            model.prodPrice = @"￥ 1111.33";
+            
+            model.prodIMG = JobsIMG(@"商品占位图1");/// 商品图
+            model.prodIMGURL = @"";/// 商品图URL
+            model.prodTitle = Internationalization(@"蛋糕");/// 商品名
+            model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
+            model.prodPrice = @"￥126".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodSubPrice = @"￥126";/// 商品原价
+            model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
+            
             [_cvCellDataMutArr addObject:model];
         }
     }return _cvCellDataMutArr;

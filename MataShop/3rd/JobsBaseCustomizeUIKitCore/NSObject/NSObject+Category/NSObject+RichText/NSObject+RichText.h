@@ -32,6 +32,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 利用 NSArray <RichTextConfig *>* 形成富文本
 /// @param richTextDataConfigMutArr 富文本的配置集合,对该纯文本字符串的释义
 -(NSMutableAttributedString *_Nullable)richTextWithDataConfigMutArr:(NSArray <RichTextConfig *>*_Nonnull)richTextDataConfigMutArr;
+/// 字符串中划线
+-(JobsReturnAttributedStringByStringBlock _Nonnull)jobsHorizontalCentralLineation;
+/// 字符串下划线
+-(JobsReturnAttributedStringByStringBlock _Nonnull)jobsHorizontalBottomLineation;
 
 @end
 

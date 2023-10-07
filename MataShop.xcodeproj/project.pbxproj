@@ -2248,6 +2248,7 @@
 		C578F0552ABB8CCA00832A07 /* MSDoorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDoorVC.h; sourceTree = "<group>"; };
 		C578F0562ABB8CCA00832A07 /* MSDoorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSDoorVC.m; sourceTree = "<group>"; };
 		C578F0592ABB8E3000832A07 /* MSDoorVC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSDoorVC.jpg; sourceTree = "<group>"; };
+		C59FE4F12AD1D899005F3DDE /* MSProdShowCVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSProdShowCVCell.jpg; sourceTree = "<group>"; };
 		C5A7D1692ACF850A00440B7C /* MSTransactionRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTransactionRecordVC.m; sourceTree = "<group>"; };
 		C5A7D1B62ACFB31200440B7C /* MSChuBaoWithdrawVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoWithdrawVC.h; sourceTree = "<group>"; };
 		C5A7D1B72ACFB31200440B7C /* MSChuBaoWithdrawVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoWithdrawVC.m; sourceTree = "<group>"; };
@@ -3147,6 +3148,7 @@
 		C527BD822AB46E7900DFC90A /* MSProdShowCVCell */ = {
 			isa = PBXGroup;
 			children = (
+				C59FE4F12AD1D899005F3DDE /* MSProdShowCVCell.jpg */,
 				C527BD832AB46F2A00DFC90A /* MSProdShowCVCell.h */,
 				C527BD842AB46F2A00DFC90A /* MSProdShowCVCell.m */,
 				C527BE002AB4754B00DFC90A /* MSProdShowModel.h */,
