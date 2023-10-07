@@ -5392,9 +5392,9 @@
 			isa = PBXGroup;
 			children = (
 				C561D0602AAC7E7900E28603 /* ButtonTimerDefStructure.h */,
-				C561D0612AAC7E7900E28603 /* UIButton+Timer.m */,
 				C561D0622AAC7E7900E28603 /* ButtonTimerModel */,
 				C561D0652AAC7E7900E28603 /* UIButton+Timer.h */,
+				C561D0612AAC7E7900E28603 /* UIButton+Timer.m */,
 			);
 			path = "UIButton+Timer";
 			sourceTree = "<group>";
