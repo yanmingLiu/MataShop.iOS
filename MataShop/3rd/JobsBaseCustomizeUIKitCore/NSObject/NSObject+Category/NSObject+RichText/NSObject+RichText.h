@@ -9,7 +9,7 @@
 #import "MacroDef_Font.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+/// 富文本4要素：文字信息、文字颜色、段落、字体
 @interface RichTextConfig : NSObject
 
 @property(nonatomic,strong)NSString *targetString;/// 作用文字

@@ -1,5 +1,7 @@
 # Mata商城iOS原生版本
 
+
+
 ## 一些潜在的Bug
 
 ```javascript
@@ -12,10 +14,14 @@ https://www.theiphonewiki.com/wiki/Models
 
 ## 几点重要说明
 
+* 要想快，用快捷键调取代码块。集成方式：
+
 ```javascript
-要想快，用快捷键调取代码块
-集成方式：https://github.com/JobsKit/JobsCodeSnippets
+https://github.com/JobsKit/JobsCodeSnippets
 ```
+
+* 创建UIButton的方式（带富文本的）。
+* 兼容新Api，如果还是按照以前的方式创建，你会发现UIButton不正常出现
 
 ```javascript
 苹果在后续的Api中推出了 UIButtonConfiguration 来设置UIButton，但是这个新Api会存在几大问题
@@ -32,6 +38,106 @@ Chat GPT 3.5
 https://www.jianshu.com/p/12426709420e
 ```
 ```
-打开苹果的反馈助理：
-浏览器打开并输入 applefeedback://
+@property(nonatomic,strong)BaseButton *titleBtn;
+@property(nonatomic,strong)NSMutableArray <NSString *>*richTextMutArr;
+@property(nonatomic,strong)NSMutableArray <RichTextConfig *>*richTextConfigMutArr;
+ 
+ -(BaseButton *)titleBtn{
+     if(!_titleBtn){
+         @jobs_weakify(self)
+         _titleBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                        background:nil
+                                                    titleAlignment:UIButtonConfigurationTitleAlignmentCenter
+                                                     textAlignment:NSTextAlignmentCenter
+                                                  subTextAlignment:NSTextAlignmentCenter
+                                                       normalImage:nil
+                                                    highlightImage:nil
+                                                   attributedTitle:nil
+                                           selectedAttributedTitle:nil
+                                                attributedSubtitle:[self richTextWithDataConfigMutArr:self.richTextConfigMutArr]
+                                                             title:Internationalization(@"请支付")
+                                                          subTitle:nil//Internationalization(@"观看完整教学视频需支付99Mata值")
+                                                         titleFont:UIFontWeightBoldSize(18)
+                                                      subTitleFont:nil
+                                                          titleCor:JobsCor(@"#333333")
+                                                       subTitleCor:nil
+                                                titleLineBreakMode:NSLineBreakByWordWrapping
+                                             subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                               baseBackgroundColor:UIColor.whiteColor
+                                                      imagePadding:JobsWidth(0)
+                                                      titlePadding:JobsWidth(10)
+                                                    imagePlacement:NSDirectionalRectEdgeNone
+                                        contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                          contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                     contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                 cornerRadiusValue:JobsWidth(0)
+                                                   roundingCorners:UIRectCornerAllCorners
+                                              roundingCornersRadii:CGSizeZero
+                                                    layerBorderCor:nil
+                                                       borderWidth:JobsWidth(0)
+                                                     primaryAction:nil
+                                                   clickEventBlock:^id(BaseButton *x) {
+             @jobs_strongify(self)
+             x.selected = !x.selected;
+             if (self.objectBlock) self.objectBlock(x);
+             return nil;
+         }];
+         [self addSubview:_titleBtn];
+         [_titleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+             make.height.mas_equalTo(JobsWidth(72));
+             make.top.equalTo(self).offset(JobsWidth(20));
+             make.centerX.equalTo(self);
+         }];
+         [_titleBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+     }return _titleBtn;
+ }
+
+ -(NSMutableArray<NSString *> *)richTextMutArr{
+     if (!_richTextMutArr) {
+         _richTextMutArr = NSMutableArray.array;
+         [_richTextMutArr addObject:Internationalization(@"观看完整教学视频需支付")];
+         [_richTextMutArr addObject:Internationalization(@"99")];
+         [_richTextMutArr addObject:Internationalization(@"Mata值")];
+     }return _richTextMutArr;
+ }
+
+ -(NSMutableArray<RichTextConfig *> *)richTextConfigMutArr{
+     if (!_richTextConfigMutArr) {
+         _richTextConfigMutArr = NSMutableArray.array;
+         {
+             RichTextConfig *config_01 = RichTextConfig.new;
+             config_01.font = UIFontWeightRegularSize(14);
+             config_01.textCor = JobsCor(@"#666666");
+             config_01.targetString = self.richTextMutArr[0];
+             config_01.paragraphStyle = self.jobsParagraphStyleCenter;
+             [_richTextConfigMutArr addObject:config_01];
+         }
+         
+         {
+             RichTextConfig *config_02 = RichTextConfig.new;
+             config_02.font = UIFontWeightRegularSize(14);
+             config_02.textCor = JobsCor(@"#BA9B77");
+             config_02.targetString = self.richTextMutArr[1];
+             config_02.paragraphStyle = self.jobsParagraphStyleCenter;
+             [_richTextConfigMutArr addObject:config_02];
+         }
+         
+         {
+             RichTextConfig *config_03 = RichTextConfig.new;
+             config_03.font = UIFontWeightRegularSize(14);
+             config_03.textCor = JobsCor(@"#666666");
+             config_03.targetString = self.richTextMutArr[2];
+             config_03.paragraphStyle = self.jobsParagraphStyleCenter;
+             [_richTextConfigMutArr addObject:config_03];
+         }
+     }return _richTextConfigMutArr;
+ }
+```
+
+## 打开苹果的反馈助理
+
+* 浏览器打开并输入 
+
+```javascript
+applefeedback://
 ```

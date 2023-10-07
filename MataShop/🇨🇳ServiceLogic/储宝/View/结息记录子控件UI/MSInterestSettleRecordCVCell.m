@@ -9,10 +9,10 @@
 
 @interface MSInterestSettleRecordCVCell ()
 /// UI
-@property(nonatomic,strong)BaseButton *prodNameLab;/// 产品名
-@property(nonatomic,strong)BaseButton *prodDailyRateLab;/// 日利率 或者 昨日结息
-@property(nonatomic,strong)BaseButton *prodInterestSettledAllLab;/// 总结息 或 预计收益
-@property(nonatomic,strong)BaseButton *prodEarnedIncomeLab;/// 已获收益
+@property(nonatomic,strong)BaseButton *prodNameBtn;/// 产品名
+@property(nonatomic,strong)BaseButton *prodDailyRateBtn;/// 日利率 或者 昨日结息
+@property(nonatomic,strong)BaseButton *prodInterestSettledAllBtn;/// 总结息 或 预计收益
+@property(nonatomic,strong)BaseButton *prodEarnedIncomeBtn;/// 已获收益
 @property(nonatomic,strong)UILabel *lineLab;
 @property(nonatomic,strong)UITextView *prodTipsTextView;
 @property(nonatomic,strong)BaseButton *moneyBackBtn;/// 我要提现  或者 我要赎回
@@ -49,31 +49,31 @@
 -(void)richElementsInCellWithModel:(UIViewModel *_Nullable)model{
     if([model isKindOfClass:UIViewModel.class]){
         self.interestSettleRecordModel = model.data;
-        self.prodNameLab.jobsResetTitle(self.interestSettleRecordModel.prodName);/// 产品名
-        self.prodNameLab.jobsResetSubtitle(self.interestSettleRecordModel.prodPrice);/// 产品价格
+        self.prodNameBtn.jobsResetTitle(self.interestSettleRecordModel.prodName);/// 产品名
+        self.prodNameBtn.jobsResetSubtitle(self.interestSettleRecordModel.prodPrice);/// 产品价格
         
         switch (self.interestSettleRecordModel.prodStyle) {
             case ProdStyle01:{/// 产品已到期
-                self.prodDailyRateLab.jobsResetTitle(Internationalization(@"昨日结息："));
-                self.prodDailyRateLab.jobsResetSubtitle(self.interestSettleRecordModel.prodInterestSettledYesterday);/// 昨日结息
-                self.prodInterestSettledAllLab.jobsResetTitle(Internationalization(@"总结息："));
-                self.prodInterestSettledAllLab.jobsResetSubtitle(self.interestSettleRecordModel.prodInterestSettledAll);/// 总结息
+                self.prodDailyRateBtn.jobsResetTitle(Internationalization(@"昨日结息："));
+                self.prodDailyRateBtn.jobsResetSubtitle(self.interestSettleRecordModel.prodInterestSettledYesterday);/// 昨日结息
+                self.prodInterestSettledAllBtn.jobsResetTitle(Internationalization(@"总结息："));
+                self.prodInterestSettledAllBtn.jobsResetSubtitle(self.interestSettleRecordModel.prodInterestSettledAll);/// 总结息
                 
             } break;
             case ProdStyle02:{/// 产品未到期（可赎回）
-                self.prodDailyRateLab.jobsResetTitle(Internationalization(@"日利率："));
-                self.prodDailyRateLab.jobsResetSubtitle(self.interestSettleRecordModel.prodDailyRate);/// 日利率
-                self.prodInterestSettledAllLab.jobsResetTitle(Internationalization(@"预计收益："));
-                self.prodInterestSettledAllLab.jobsResetSubtitle(self.interestSettleRecordModel.prodExpectedIncome);/// 预计收益
+                self.prodDailyRateBtn.jobsResetTitle(Internationalization(@"日利率："));
+                self.prodDailyRateBtn.jobsResetSubtitle(self.interestSettleRecordModel.prodDailyRate);/// 日利率
+                self.prodInterestSettledAllBtn.jobsResetTitle(Internationalization(@"预计收益："));
+                self.prodInterestSettledAllBtn.jobsResetSubtitle(self.interestSettleRecordModel.prodExpectedIncome);/// 预计收益
                 
             } break;
             case ProdStyle03:{/// 产品未到期（不可赎回）
-                self.prodDailyRateLab.jobsResetTitle(Internationalization(@"日利率："));
-                self.prodDailyRateLab.jobsResetSubtitle(self.interestSettleRecordModel.prodDailyRate);/// 日利率
-                self.prodInterestSettledAllLab.jobsResetTitle(Internationalization(@"预计收益："));
-                self.prodInterestSettledAllLab.jobsResetSubtitle(self.interestSettleRecordModel.prodExpectedIncome);/// 预计收益
+                self.prodDailyRateBtn.jobsResetTitle(Internationalization(@"日利率："));
+                self.prodDailyRateBtn.jobsResetSubtitle(self.interestSettleRecordModel.prodDailyRate);/// 日利率
+                self.prodInterestSettledAllBtn.jobsResetTitle(Internationalization(@"预计收益："));
+                self.prodInterestSettledAllBtn.jobsResetSubtitle(self.interestSettleRecordModel.prodExpectedIncome);/// 预计收益
                 
-                self.prodEarnedIncomeLab.jobsResetSubtitle(self.interestSettleRecordModel.prodEarnedIncome);/// 已获收益
+                self.prodEarnedIncomeBtn.jobsResetSubtitle(self.interestSettleRecordModel.prodEarnedIncome);/// 已获收益
             } break;
                 
             default:
@@ -81,10 +81,10 @@
         }
     }
     
-    self.prodNameLab.alpha = 1;
-    self.prodDailyRateLab.alpha = 1;
-    self.prodInterestSettledAllLab.alpha = 1;
-    self.prodEarnedIncomeLab.alpha = self.interestSettleRecordModel.prodStyle == ProdStyle03;
+    self.prodNameBtn.alpha = 1;
+    self.prodDailyRateBtn.alpha = 1;
+    self.prodInterestSettledAllBtn.alpha = 1;
+    self.prodEarnedIncomeBtn.alpha = self.interestSettleRecordModel.prodStyle == ProdStyle03;
     
     self.lineLab.alpha = 1;
     self.prodTipsTextView.alpha = 1;
@@ -95,13 +95,14 @@
     return CGSizeMake(JobsWidth(343), JobsWidth(124));
 }
 #pragma mark —— lazyLoad
--(BaseButton *)prodNameLab{
-    if(!_prodNameLab){
+-(BaseButton *)prodNameBtn{
+    if(!_prodNameBtn){
         @jobs_weakify(self)
-        _prodNameLab = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _prodNameBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                          background:nil
                                                      titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                       textAlignment:NSTextAlignmentCenter
+                                                   subTextAlignment:NSTextAlignmentCenter
                                                         normalImage:nil
                                                      highlightImage:nil
                                                     attributedTitle:nil
@@ -135,23 +136,24 @@
             return nil;
         }];
         
-        [self.contentView addSubview:_prodNameLab];
-        [_prodNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.contentView addSubview:_prodNameBtn];
+        [_prodNameBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(20));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
     }
     [self layoutIfNeeded];
-    return _prodNameLab;
+    return _prodNameBtn;
 }
 
--(BaseButton *)prodDailyRateLab{
-    if(!_prodDailyRateLab){
+-(BaseButton *)prodDailyRateBtn{
+    if(!_prodDailyRateBtn){
         @jobs_weakify(self)
-        _prodDailyRateLab = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _prodDailyRateBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                               background:nil
                                                           titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                            textAlignment:NSTextAlignmentCenter
+                                                        subTextAlignment:NSTextAlignmentCenter
                                                              normalImage:nil
                                                           highlightImage:nil
                                                          attributedTitle:nil
@@ -185,23 +187,24 @@
             return nil;
         }];
         
-        [self.contentView addSubview:_prodDailyRateLab];
-        [_prodDailyRateLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.contentView addSubview:_prodDailyRateBtn];
+        [_prodDailyRateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(112));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
     }
     [self layoutIfNeeded];
-    return _prodDailyRateLab;
+    return _prodDailyRateBtn;
 }
 
--(BaseButton *)prodInterestSettledAllLab{
-    if(!_prodInterestSettledAllLab){
+-(BaseButton *)prodInterestSettledAllBtn{
+    if(!_prodInterestSettledAllBtn){
         @jobs_weakify(self)
-        _prodInterestSettledAllLab = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _prodInterestSettledAllBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                                        background:nil
                                                                    titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                                     textAlignment:NSTextAlignmentCenter
+                                                                 subTextAlignment:NSTextAlignmentCenter
                                                                       normalImage:nil
                                                                    highlightImage:nil
                                                                   attributedTitle:nil
@@ -234,23 +237,24 @@
             if (self.objectBlock) self.objectBlock(x);
             return nil;
         }];
-        [self.contentView addSubview:_prodInterestSettledAllLab];
-        [_prodInterestSettledAllLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.contentView addSubview:_prodInterestSettledAllBtn];
+        [_prodInterestSettledAllBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(192));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
     }
     [self layoutIfNeeded];
-    return _prodInterestSettledAllLab;
+    return _prodInterestSettledAllBtn;
 }
 
--(BaseButton *)prodEarnedIncomeLab{
-    if(!_prodEarnedIncomeLab){
+-(BaseButton *)prodEarnedIncomeBtn{
+    if(!_prodEarnedIncomeBtn){
         @jobs_weakify(self)
-        _prodEarnedIncomeLab = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _prodEarnedIncomeBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                                  background:nil
                                                              titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                               textAlignment:NSTextAlignmentCenter
+                                                           subTextAlignment:NSTextAlignmentCenter
                                                                 normalImage:nil
                                                              highlightImage:nil
                                                             attributedTitle:nil
@@ -283,14 +287,14 @@
             if (self.objectBlock) self.objectBlock(x);
             return nil;
         }];
-        [self.contentView addSubview:_prodEarnedIncomeLab];
-        [_prodEarnedIncomeLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.contentView addSubview:_prodEarnedIncomeBtn];
+        [_prodEarnedIncomeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(263));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
     }
     [self layoutIfNeeded];
-    return _prodEarnedIncomeLab;
+    return _prodEarnedIncomeBtn;
 }
 
 -(UILabel *)lineLab{
@@ -330,6 +334,7 @@
                                                           background:nil
                                                       titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                        textAlignment:NSTextAlignmentCenter
+                                                    subTextAlignment:NSTextAlignmentCenter
                                                          normalImage:nil
                                                       highlightImage:nil
                                                      attributedTitle:nil

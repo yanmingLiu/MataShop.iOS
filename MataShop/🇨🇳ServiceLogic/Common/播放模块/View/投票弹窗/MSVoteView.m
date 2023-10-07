@@ -9,7 +9,7 @@
 
 @interface MSVoteView ()
 /// UI
-@property(nonatomic,strong)BaseButton *titleView;
+@property(nonatomic,strong)BaseButton *titleBtn;
 @property(nonatomic,strong)ZYTextField *textField;
 @property(nonatomic,strong)UIButton *cancelBtn;
 @property(nonatomic,strong)UIButton *sureBtn;
@@ -73,7 +73,7 @@ static dispatch_once_t static_voteViewOnceToken;
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
-    self.titleView.alpha = 1;
+    self.titleBtn.alpha = 1;
     self.textField.alpha = 1;
     self.cancelBtn.alpha = 1;
     self.sureBtn.alpha = 1;
@@ -130,13 +130,14 @@ static dispatch_once_t static_voteViewOnceToken;
 //    if (self.objectBlock) self.objectBlock(textField);// 对外统一传出TF
 }
 #pragma mark —— lazyLoad
--(BaseButton *)titleView{
-    if(!_titleView){
+-(BaseButton *)titleBtn{
+    if(!_titleBtn){
         @jobs_weakify(self)
-        _titleView = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _titleBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                        background:nil
                                                    titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                     textAlignment:NSTextAlignmentCenter
+                                                 subTextAlignment:NSTextAlignmentCenter
                                                       normalImage:nil
                                                    highlightImage:nil
                                                   attributedTitle:nil
@@ -169,13 +170,13 @@ static dispatch_once_t static_voteViewOnceToken;
             if (self.objectBlock) self.objectBlock(x);
             return nil;
         }];
-        [self addSubview:_titleView];
-        [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self addSubview:_titleBtn];
+        [_titleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(315), JobsWidth(72)));
             make.top.equalTo(self).offset(JobsWidth(20));
             make.centerX.equalTo(self);
         }];
-    }return _titleView;
+    }return _titleBtn;
 }
 
 -(NSMutableArray<NSString *> *)richTextMutArr{
@@ -234,7 +235,7 @@ static dispatch_once_t static_voteViewOnceToken;
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(255), JobsWidth(32)));
             make.centerX.equalTo(self);
-            make.top.equalTo(self.titleView.mas_bottom).offset(JobsWidth(10));
+            make.top.equalTo(self.titleBtn.mas_bottom).offset(JobsWidth(10));
         }];
     }return _textField;
 }

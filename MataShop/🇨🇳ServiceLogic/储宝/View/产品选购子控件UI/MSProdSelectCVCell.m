@@ -9,9 +9,9 @@
 
 @interface MSProdSelectCVCell ()
 /// UI
-@property(nonatomic,strong)BaseButton *prodNameLab;
-@property(nonatomic,strong)BaseButton *prodDailyRateLab;
-@property(nonatomic,strong)BaseButton *prodRemainsLab;
+@property(nonatomic,strong)BaseButton *prodNameBtn;
+@property(nonatomic,strong)BaseButton *prodDailyRateBtn;
+@property(nonatomic,strong)BaseButton *prodRemainsBtn;
 @property(nonatomic,strong)UILabel *lineLab;
 @property(nonatomic,strong)UITextView *prodTipsTextView;
 @property(nonatomic,strong)BaseButton *recommendedBuyBtn;
@@ -50,10 +50,10 @@
     self.backgroundColor = self.contentView.backgroundColor = JobsWhiteColor;
     if([model isKindOfClass:UIViewModel.class]){
         self.prodSelectModel = model.data;
-        self.prodNameLab.jobsResetTitle(self.prodSelectModel.prodName);/// 产品名
-        self.prodNameLab.jobsResetSubtitle(self.prodSelectModel.prodPrice);/// 产品价格
-        self.prodRemainsLab.jobsResetSubtitle(self.prodSelectModel.prodNum);/// 产品剩余
-        self.prodDailyRateLab.jobsResetSubtitle(self.prodSelectModel.prodDailyRate);/// 产品日利率
+        self.prodNameBtn.jobsResetTitle(self.prodSelectModel.prodName);/// 产品名
+        self.prodNameBtn.jobsResetSubtitle(self.prodSelectModel.prodPrice);/// 产品价格
+        self.prodRemainsBtn.jobsResetSubtitle(self.prodSelectModel.prodNum);/// 产品剩余
+        self.prodDailyRateBtn.jobsResetSubtitle(self.prodSelectModel.prodDailyRate);/// 产品日利率
     }
     self.lineLab.alpha = 1;
     self.prodTipsTextView.alpha = 1;
@@ -65,13 +65,14 @@
     return CGSizeMake(JobsWidth(343), JobsWidth(124));
 }
 #pragma mark —— lazyLoad
--(BaseButton *)prodNameLab{
-    if(!_prodNameLab){
+-(BaseButton *)prodNameBtn{
+    if(!_prodNameBtn){
         @jobs_weakify(self)
-        _prodNameLab = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _prodNameBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                          background:nil
                                                      titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                       textAlignment:NSTextAlignmentCenter
+                                                   subTextAlignment:NSTextAlignmentCenter
                                                         normalImage:nil
                                                      highlightImage:nil
                                                     attributedTitle:nil
@@ -105,23 +106,24 @@
             return nil;
         }];
         
-        [self.contentView addSubview:_prodNameLab];
-        [_prodNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.contentView addSubview:_prodNameBtn];
+        [_prodNameBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(20));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
     }
     [self layoutIfNeeded];
-    return _prodNameLab;
+    return _prodNameBtn;
 }
 
--(BaseButton *)prodRemainsLab{
-    if(!_prodRemainsLab){
+-(BaseButton *)prodRemainsBtn{
+    if(!_prodRemainsBtn){
         @jobs_weakify(self)
-        _prodRemainsLab = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _prodRemainsBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                             background:nil
                                                         titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                          textAlignment:NSTextAlignmentCenter
+                                                      subTextAlignment:NSTextAlignmentCenter
                                                            normalImage:nil
                                                         highlightImage:nil
                                                        attributedTitle:nil
@@ -154,23 +156,24 @@
             if (self.objectBlock) self.objectBlock(x);
             return nil;
         }];
-        [self.contentView addSubview:_prodRemainsLab];
-        [_prodRemainsLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.contentView addSubview:_prodRemainsBtn];
+        [_prodRemainsBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(192));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
     }
     [self layoutIfNeeded];
-    return _prodRemainsLab;
+    return _prodRemainsBtn;
 }
 
--(BaseButton *)prodDailyRateLab{
-    if(!_prodDailyRateLab){
+-(BaseButton *)prodDailyRateBtn{
+    if(!_prodDailyRateBtn){
         @jobs_weakify(self)
-        _prodDailyRateLab = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _prodDailyRateBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                               background:nil
                                                           titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                            textAlignment:NSTextAlignmentCenter
+                                                        subTextAlignment:NSTextAlignmentCenter
                                                              normalImage:nil
                                                           highlightImage:nil
                                                          attributedTitle:nil
@@ -204,14 +207,14 @@
             return nil;
         }];
         
-        [self.contentView addSubview:_prodDailyRateLab];
-        [_prodDailyRateLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.contentView addSubview:_prodDailyRateBtn];
+        [_prodDailyRateBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(JobsWidth(112));
             make.top.equalTo(self.contentView).offset(JobsWidth(12));
         }];
     }
     [self layoutIfNeeded];
-    return _prodDailyRateLab;
+    return _prodDailyRateBtn;
 }
 
 -(UILabel *)lineLab{
@@ -252,6 +255,7 @@
                                                     background:nil
                                                 titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                  textAlignment:NSTextAlignmentCenter
+                                              subTextAlignment:NSTextAlignmentCenter
                                                    normalImage:nil
                                                 highlightImage:nil
                                                attributedTitle:nil
@@ -301,6 +305,7 @@
                                                                background:nil
                                                            titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                             textAlignment:NSTextAlignmentCenter
+                                                         subTextAlignment:NSTextAlignmentCenter
                                                               normalImage:nil
                                                            highlightImage:nil
                                                           attributedTitle:nil

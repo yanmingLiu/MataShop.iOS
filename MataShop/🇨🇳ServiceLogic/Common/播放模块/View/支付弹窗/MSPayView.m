@@ -9,7 +9,7 @@
 
 @interface MSPayView ()
 /// UI
-@property(nonatomic,strong)BaseButton *titleView;
+@property(nonatomic,strong)BaseButton *titleBtn;
 @property(nonatomic,strong)ZYTextField *textField;
 @property(nonatomic,strong)UIButton *cancelBtn;
 @property(nonatomic,strong)UIButton *sureBtn;
@@ -72,7 +72,7 @@ static dispatch_once_t static_payViewOnceToken;
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
-    self.titleView.alpha = 1;
+    self.titleBtn.alpha = 1;
     self.textField.alpha = 1;
     self.cancelBtn.alpha = 1;
     self.sureBtn.alpha = 1;
@@ -129,20 +129,21 @@ static dispatch_once_t static_payViewOnceToken;
 //    if (self.objectBlock) self.objectBlock(textField);// 对外统一传出TF
 }
 #pragma mark —— lazyLoad
--(BaseButton *)titleView{
-    if(!_titleView){
+-(BaseButton *)titleBtn{
+    if(!_titleBtn){
         @jobs_weakify(self)
-        _titleView = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _titleBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                        background:nil
                                                    titleAlignment:UIButtonConfigurationTitleAlignmentCenter
                                                     textAlignment:NSTextAlignmentCenter
+                                                 subTextAlignment:NSTextAlignmentCenter
                                                       normalImage:nil
                                                    highlightImage:nil
                                                   attributedTitle:nil
                                           selectedAttributedTitle:nil
                                                attributedSubtitle:[self richTextWithDataConfigMutArr:self.richTextConfigMutArr]
                                                             title:Internationalization(@"请支付")
-                                                         subTitle:nil
+                                                         subTitle:nil//Internationalization(@"观看完整教学视频需支付99Mata值")
                                                         titleFont:UIFontWeightBoldSize(18)
                                                      subTitleFont:nil
                                                          titleCor:JobsCor(@"#333333")
@@ -166,16 +167,16 @@ static dispatch_once_t static_payViewOnceToken;
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastMsg:Internationalization(@"提现")];
             return nil;
         }];
-        [self addSubview:_titleView];
-        [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(315), JobsWidth(72)));
+        [self addSubview:_titleBtn];
+        [_titleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(JobsWidth(72));
             make.top.equalTo(self).offset(JobsWidth(20));
             make.centerX.equalTo(self);
         }];
-    }return _titleView;
+        [_titleBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+    }return _titleBtn;
 }
 
 -(NSMutableArray<NSString *> *)richTextMutArr{
@@ -190,25 +191,32 @@ static dispatch_once_t static_payViewOnceToken;
 -(NSMutableArray<RichTextConfig *> *)richTextConfigMutArr{
     if (!_richTextConfigMutArr) {
         _richTextConfigMutArr = NSMutableArray.array;
+        {
+            RichTextConfig *config_01 = RichTextConfig.new;
+            config_01.font = UIFontWeightRegularSize(14);
+            config_01.textCor = JobsCor(@"#666666");
+            config_01.targetString = self.richTextMutArr[0];
+            config_01.paragraphStyle = self.jobsParagraphStyleCenter;
+            [_richTextConfigMutArr addObject:config_01];
+        }
         
-        RichTextConfig *config_01 = RichTextConfig.new;
-        config_01.font = UIFontWeightRegularSize(14);
-        config_01.textCor = JobsCor(@"#666666");
-        config_01.targetString = self.richTextMutArr[0];
-        [_richTextConfigMutArr addObject:config_01];
+        {
+            RichTextConfig *config_02 = RichTextConfig.new;
+            config_02.font = UIFontWeightRegularSize(14);
+            config_02.textCor = JobsCor(@"#BA9B77");
+            config_02.targetString = self.richTextMutArr[1];
+            config_02.paragraphStyle = self.jobsParagraphStyleCenter;
+            [_richTextConfigMutArr addObject:config_02];
+        }
         
-        RichTextConfig *config_02 = RichTextConfig.new;
-        config_02.font = UIFontWeightRegularSize(14);
-        config_02.textCor = JobsCor(@"#BA9B77");
-        config_02.targetString = self.richTextMutArr[1];
-        [_richTextConfigMutArr addObject:config_02];
-        
-        RichTextConfig *config_03 = RichTextConfig.new;
-        config_03.font = UIFontWeightRegularSize(14);
-        config_03.textCor = JobsCor(@"#666666");
-        config_03.targetString = self.richTextMutArr[2];
-        [_richTextConfigMutArr addObject:config_03];
-        
+        {
+            RichTextConfig *config_03 = RichTextConfig.new;
+            config_03.font = UIFontWeightRegularSize(14);
+            config_03.textCor = JobsCor(@"#666666");
+            config_03.targetString = self.richTextMutArr[2];
+            config_03.paragraphStyle = self.jobsParagraphStyleCenter;
+            [_richTextConfigMutArr addObject:config_03];
+        }
     }return _richTextConfigMutArr;
 }
 
@@ -248,7 +256,7 @@ static dispatch_once_t static_payViewOnceToken;
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(255), JobsWidth(32)));
             make.centerX.equalTo(self);
-            make.top.equalTo(self.titleView.mas_bottom).offset(JobsWidth(10));
+            make.top.equalTo(self.titleBtn.mas_bottom).offset(JobsWidth(10));
         }];
     }return _textField;
 }

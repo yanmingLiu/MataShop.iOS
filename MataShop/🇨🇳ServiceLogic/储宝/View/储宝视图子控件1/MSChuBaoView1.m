@@ -9,7 +9,7 @@
 
 @interface MSChuBaoView1 ()
 /// UI
-@property(nonatomic,strong)BaseButton *titleView;
+@property(nonatomic,strong)BaseButton *titleBtn;
 @property(nonatomic,strong)BaseButton *rechargeBtn;// 充值
 @property(nonatomic,strong)BaseButton *withdrawBtn;// 提现
 /// Data
@@ -64,7 +64,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
-    self.titleView.alpha = 1;
+    self.titleBtn.alpha = 1;
     self.withdrawBtn.alpha = 1;
     self.rechargeBtn.alpha = 1;
 }
@@ -73,13 +73,14 @@ static dispatch_once_t static_chuBaoView1OnceToken;
     return CGSizeMake(JobsWidth(343), JobsWidth(92));
 }
 #pragma mark —— lazyLoad
--(BaseButton *)titleView{
-    if(!_titleView){
+-(BaseButton *)titleBtn{
+    if(!_titleBtn){
         @jobs_weakify(self)
-        _titleView = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _titleBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                        background:nil
                                                    titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                     textAlignment:NSTextAlignmentCenter
+                                                 subTextAlignment:NSTextAlignmentCenter
                                                       normalImage:JobsIMG(@"我的余额")
                                                    highlightImage:nil
                                                   attributedTitle:nil
@@ -113,13 +114,13 @@ static dispatch_once_t static_chuBaoView1OnceToken;
             [self forceComingToPushVC:MSTopUpVC.new requestParams:@""];
             return nil;
         }];
-        [self addSubview:_titleView];
-        [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self addSubview:_titleBtn];
+        [_titleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self).offset(JobsWidth(23));
             make.top.equalTo(self).offset(JobsWidth(24));
             make.size.mas_equalTo(CGSizeMake(JobsWidth(100), JobsWidth(50)));
         }];
-    }return _titleView;
+    }return _titleBtn;
 }
 
 -(BaseButton *)rechargeBtn{
@@ -129,6 +130,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
                                                          background:nil
                                                      titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                       textAlignment:NSTextAlignmentCenter
+                                                   subTextAlignment:NSTextAlignmentCenter
                                                         normalImage:nil
                                                      highlightImage:nil
                                                     attributedTitle:nil
@@ -178,6 +180,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
                                                          background:nil
                                                      titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                       textAlignment:NSTextAlignmentCenter
+                                                   subTextAlignment:NSTextAlignmentCenter
                                                         normalImage:nil
                                                      highlightImage:nil
                                                     attributedTitle:nil

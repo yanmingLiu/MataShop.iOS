@@ -82,6 +82,7 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
                                                      background:nil
                                                  titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                   textAlignment:NSTextAlignmentCenter
+                                               subTextAlignment:NSTextAlignmentCenter
                                                     normalImage:JobsIMG(@"912241CB-F48C-48AC-BC2F-3CA7742C8B1F")
                                                  highlightImage:nil
                                                 attributedTitle:nil

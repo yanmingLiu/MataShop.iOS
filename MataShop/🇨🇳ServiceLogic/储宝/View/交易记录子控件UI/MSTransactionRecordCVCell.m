@@ -56,6 +56,7 @@
                                                      background:nil
                                                  titleAlignment:UIButtonConfigurationTitleAlignmentLeading
                                                   textAlignment:NSTextAlignmentCenter
+                                               subTextAlignment:NSTextAlignmentCenter
                                                     normalImage:nil
                                                  highlightImage:nil
                                                 attributedTitle:nil
@@ -105,6 +106,7 @@
                                                       background:nil
                                                   titleAlignment:UIButtonConfigurationTitleAlignmentTrailing
                                                    textAlignment:NSTextAlignmentCenter
+                                                subTextAlignment:NSTextAlignmentCenter
                                                      normalImage:nil
                                                   highlightImage:nil
                                                  attributedTitle:nil

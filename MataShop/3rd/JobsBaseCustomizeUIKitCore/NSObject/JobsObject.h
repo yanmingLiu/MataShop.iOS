@@ -99,5 +99,7 @@
 #import "NSObject+UIScrollViewDelegate.h"
 /// Cell 部署策略
 #import "NSObject+JobsDeployCellConfig.h"
+/// 文本对齐
+#import "NSObject+NSMutableParagraphStyle.h"
 
 #endif /* JobsObject_h */

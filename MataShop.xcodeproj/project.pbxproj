@@ -87,6 +87,7 @@
 		C536CE152AC23B40005D1FCD /* UISlider+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C536CE142AC23B40005D1FCD /* UISlider+Extra.m */; };
 		C5371E522AACDD2F008988CE /* MSSearchBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5371E512AACDD2F008988CE /* MSSearchBoardView.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
+		C53F698C2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = C53F698B2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m */; };
 		C5432DF72ACB1E6C008F92B0 /* MSThumbsUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432DF62ACB1E6C008F92B0 /* MSThumbsUpVC.m */; };
 		C5432DFA2ACB1EAE008F92B0 /* MSMyFansSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432DF92ACB1EAE008F92B0 /* MSMyFansSubVC.m */; };
 		C5432DFD2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432DFC2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.m */; };
@@ -1174,6 +1175,8 @@
 		C5371E542AACDD77008988CE /* MSSearchBoardView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSSearchBoardView.png; sourceTree = "<group>"; };
 		C53CD9122ABC32BA0011FD1A /* JobsTuple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobsTuple.h; sourceTree = "<group>"; };
 		C53CD9132ABC32BA0011FD1A /* JobsTuple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobsTuple.m; sourceTree = "<group>"; };
+		C53F698A2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSMutableParagraphStyle.h"; sourceTree = "<group>"; };
+		C53F698B2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSMutableParagraphStyle.m"; sourceTree = "<group>"; };
 		C5432CEF2ACB1BB6008F92B0 /* 我的粉丝.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "我的粉丝.jpg"; sourceTree = "<group>"; };
 		C5432CF02ACB1BB6008F92B0 /* 打赏我的用户.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "打赏我的用户.jpg"; sourceTree = "<group>"; };
 		C5432CF12ACB1BB6008F92B0 /* 我的关注.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "我的关注.jpg"; sourceTree = "<group>"; };
@@ -3471,6 +3474,15 @@
 				C53CD9132ABC32BA0011FD1A /* JobsTuple.m */,
 			);
 			path = JobsTuple;
+			sourceTree = "<group>";
+		};
+		C53F698D2AD0DCCF00B51391 /* NSObject+NSMutableParagraphStyle */ = {
+			isa = PBXGroup;
+			children = (
+				C53F698A2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.h */,
+				C53F698B2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m */,
+			);
+			path = "NSObject+NSMutableParagraphStyle";
 			sourceTree = "<group>";
 		};
 		C5432CED2ACB1ADB008F92B0 /* 点赞作品 */ = {
@@ -7034,6 +7046,7 @@
 		C561D2432AAC7E7A00E28603 /* NSObject+Category */ = {
 			isa = PBXGroup;
 			children = (
+				C53F698D2AD0DCCF00B51391 /* NSObject+NSMutableParagraphStyle */,
 				C561D2442AAC7E7A00E28603 /* NSObject+Swizzling */,
 				C561D2482AAC7E7A00E28603 /* NSObject+OpenURL */,
 				C561D24B2AAC7E7A00E28603 /* NSObject+Measure */,
@@ -10842,6 +10855,7 @@
 				C561CE042AAC7CE200E28603 /* EmptyView.m in Sources */,
 				C520F23A2AB38CF700142DCC /* WMZBannerParam.m in Sources */,
 				C5432DFD2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.m in Sources */,
+				C53F698C2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m in Sources */,
 				C561D3F32AAC7E7B00E28603 /* UIView+UIBackgroundConfig.m in Sources */,
 				C561D42E2AAC7E7B00E28603 /* MJRefreshConfigModel.m in Sources */,
 				C5E015CB2AAE1DD9005ABE09 /* LunarFormatter.m in Sources */,

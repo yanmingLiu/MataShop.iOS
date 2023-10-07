@@ -10,7 +10,7 @@
 @interface MSDoorVC ()
 /// UI
 @property(nonatomic,strong)UIImageView *logoImageView;
-@property(nonatomic,strong)BaseButton *titleLab;
+@property(nonatomic,strong)BaseButton *titleBtn;
 @property(nonatomic,strong)JXCategoryTitleView *categoryView;
 @property(nonatomic,strong)JXCategoryIndicatorLineView *lineView;/// 跟随的指示器
 @property(nonatomic,strong)JXCategoryListContainerView *listContainerView;/// 此属性决定依附于此的viewController
@@ -55,7 +55,7 @@
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
     self.logoImageView.alpha = 1;
-    self.titleLab.alpha = 1;
+    self.titleBtn.alpha = 1;
     self.categoryView.alpha = 1;
     self.registerBtn.alpha = 1;
     self.loginBtn.alpha = 1;
@@ -69,6 +69,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self updateStatusBarCor:JobsWhiteColor];
 }
 
 -(void)viewWillLayoutSubviews{
@@ -161,13 +162,14 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     }return _logoImageView;
 }
 
--(BaseButton *)titleLab{
-    if(!_titleLab){
+-(BaseButton *)titleBtn{
+    if(!_titleBtn){
         @jobs_weakify(self)
-        _titleLab = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _titleBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                       background:nil
-                                                  titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                  titleAlignment:UIButtonConfigurationTitleAlignmentCenter
                                                    textAlignment:NSTextAlignmentCenter
+                                                subTextAlignment:NSTextAlignmentCenter
                                                      normalImage:nil
                                                   highlightImage:nil
                                                  attributedTitle:nil
@@ -200,13 +202,14 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
             if (self.objectBlock) self.objectBlock(x);
             return nil;
         }];
-        [self.view addSubview:_titleLab];
-        [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(_titleLab.jobsSize);
+        [self.view addSubview:_titleBtn];
+        [_titleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(JobsWidth(70));
             make.top.equalTo(self.logoImageView.mas_bottom).offset(JobsWidth(10));
             make.centerX.equalTo(self.view);
         }];
-    }return _titleLab;
+        [_titleBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+    }return _titleBtn;
 }
 
 -(JXCategoryTitleView *)categoryView{
@@ -226,7 +229,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _categoryView.cellSpacing = JobsWidth(-20);
         [self.view addSubview:_categoryView];
         [_categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.titleLab.mas_bottom).offset(JobsWidth(83));
+            make.top.equalTo(self.titleBtn.mas_bottom).offset(JobsWidth(83));
             make.left.equalTo(self.view);
             make.height.mas_equalTo(listContainerViewDefaultOffset);
             make.width.mas_equalTo(JobsMainScreen_WIDTH() / 2);
@@ -252,7 +255,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _listContainerView.defaultSelectedIndex = 1;// 默认从第二个开始显示
         [self.view addSubview:_listContainerView];
         [_listContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.titleLab.mas_bottom).offset(listContainerViewDefaultOffset + JobsWidth(83));
+            make.top.equalTo(self.titleBtn.mas_bottom).offset(listContainerViewDefaultOffset + JobsWidth(83));
             make.left.right.equalTo(self.view);
             make.height.mas_equalTo(JobsWidth(132 + 30));
         }];

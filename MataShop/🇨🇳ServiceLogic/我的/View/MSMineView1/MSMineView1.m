@@ -10,7 +10,7 @@
 @interface MSMineView1 ()
 /// UI
 @property(nonatomic,strong)UIImageView *avatarIMGV;
-@property(nonatomic,strong)BaseButton *userInfoView;
+@property(nonatomic,strong)BaseButton *userInfoBtn;
 @property(nonatomic,strong)UIButton *leftArrowBtn;
 /// Data
 
@@ -65,7 +65,7 @@ static dispatch_once_t static_mineView1OnceToken;
     self.userInteractionEnabled = YES;
     self.image = JobsIMG(@"个人中心背景图片");
     self.avatarIMGV.alpha = 1;
-    self.userInfoView.alpha = 1;
+    self.userInfoBtn.alpha = 1;
     self.leftArrowBtn.alpha = 1;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
@@ -86,13 +86,14 @@ static dispatch_once_t static_mineView1OnceToken;
     }return _avatarIMGV;
 }
 
--(BaseButton *)userInfoView{
-    if(!_userInfoView){
+-(BaseButton *)userInfoBtn{
+    if(!_userInfoBtn){
         @jobs_weakify(self)
-        _userInfoView = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _userInfoBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                           background:nil
                                                       titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                        textAlignment:NSTextAlignmentCenter
+                                                    subTextAlignment:NSTextAlignmentCenter
                                                          normalImage:nil
                                                       highlightImage:nil
                                                      attributedTitle:nil
@@ -125,13 +126,15 @@ static dispatch_once_t static_mineView1OnceToken;
             if (self.objectBlock) self.objectBlock(x);
             return nil;
         }];
-        [self addSubview:_userInfoView];
-        [_userInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self addSubview:_userInfoBtn];
+        [_userInfoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(120), JobsWidth(43)));
             make.centerY.equalTo(self.avatarIMGV);
             make.left.equalTo(self.avatarIMGV.mas_right).offset(JobsWidth(16));
         }];
-    }return _userInfoView;
+    }
+//    _userInfoView.jobsResetTitle(Internationalization(@"赵露思"));
+    return _userInfoBtn;
 }
 
 -(UIButton *)leftArrowBtn{

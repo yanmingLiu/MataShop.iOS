@@ -10,7 +10,7 @@
 @interface MSRegisterVC ()
 /// UI
 @property(nonatomic,strong)UIImageView *logoImageView;
-@property(nonatomic,strong)BaseButton *titleLab;
+@property(nonatomic,strong)BaseButton *titleBtn;
 @property(nonatomic,strong)MSInputStyle2View *iPhInputView;
 @property(nonatomic,strong)MSInputStyle1View *codeInputView;
 @property(nonatomic,strong)MSInputStyle1View *codeVerifyInputView;
@@ -53,7 +53,7 @@
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = YES;
     self.logoImageView.alpha = 1;
-    self.titleLab.alpha = 1;
+    self.titleBtn.alpha = 1;
     
     self.iPhInputView.alpha = 1;
     self.codeInputView.alpha = 1;
@@ -104,13 +104,14 @@
     }return _logoImageView;
 }
 
--(BaseButton *)titleLab{
-    if(!_titleLab){
+-(BaseButton *)titleBtn{
+    if(!_titleBtn){
         @jobs_weakify(self)
-        _titleLab = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _titleBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                       background:nil
                                                   titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                    textAlignment:NSTextAlignmentCenter
+                                                subTextAlignment:NSTextAlignmentCenter
                                                      normalImage:nil
                                                   highlightImage:nil
                                                  attributedTitle:nil
@@ -143,13 +144,13 @@
             if (self.objectBlock) self.objectBlock(x);
             return nil;
         }];
-        [self.view addSubview:_titleLab];
-        [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(_titleLab.jobsSize);
+        [self.view addSubview:_titleBtn];
+        [_titleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(_titleBtn.jobsSize);
             make.top.equalTo(self.logoImageView.mas_bottom).offset(JobsWidth(10));
             make.centerX.equalTo(self.view);
         }];
-    }return _titleLab;
+    }return _titleBtn;
 }
 
 -(MSInputStyle2View *)iPhInputView{
@@ -165,7 +166,7 @@
         [_iPhInputView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo([MSInputStyle2View viewSizeWithModel:nil]);
             make.centerX.equalTo(self.view);
-            make.top.equalTo(self.titleLab.mas_bottom).offset(JobsWidth(76));
+            make.top.equalTo(self.titleBtn.mas_bottom).offset(JobsWidth(76));
         }];
         [_iPhInputView cornerCutToCircleWithCornerRadius:[MSInputStyle1View viewSizeWithModel:nil].height / 2];
     }return _iPhInputView;
