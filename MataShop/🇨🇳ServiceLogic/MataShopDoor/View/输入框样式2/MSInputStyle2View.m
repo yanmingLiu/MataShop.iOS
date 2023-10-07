@@ -10,7 +10,7 @@
 @interface MSInputStyle2View ()
 /// UI
 @property(nonatomic,strong)MSInputTextFieldLeftView *inputTextFieldLeftView;
-@property(nonatomic,strong)JobsMagicTextField *textField;
+@property(nonatomic,strong)ZYTextField *textField;
 
 @end
 
@@ -70,7 +70,7 @@ static dispatch_once_t static_inputStyle2ViewOnceToken;
     return CGSizeMake(JobsWidth(315), JobsWidth(54));
 }
 #pragma mark —— 一些私有方法
--(void)textFieldBlock:(JobsMagicTextField *)textField
+-(void)textFieldBlock:(ZYTextField *)textField
        textFieldValue:(NSString *)value{
     
 //    self.textFieldInputModel.resString = value;
@@ -80,18 +80,17 @@ static dispatch_once_t static_inputStyle2ViewOnceToken;
 //    if (self.objectBlock) self.objectBlock(textField);// 对外统一传出TF
 }
 #pragma mark —— lazyLoad
--(JobsMagicTextField *)textField{
+-(ZYTextField *)textField{
     if (!_textField) {
-        _textField = JobsMagicTextField.new;
+        _textField = ZYTextField.new;
         _textField.delegate = self;
-        _textField.backgroundColor = RGBA_COLOR(245, 245, 245, 1);
+        _textField.backgroundColor = JobsCor(@"#F9F9F9");
         _textField.returnKeyType = UIReturnKeyDefault;
         _textField.keyboardAppearance = UIKeyboardAppearanceDefault;
         _textField.keyboardType = UIKeyboardTypeDefault;
         _textField.leftView = self.inputTextFieldLeftView;
         _textField.leftViewMode = UITextFieldViewModeAlways;
         _textField.leftViewOffsetX = JobsWidth(0);
-        _textField.placeholdAnimationable = NO;
         _textField.offset = JobsWidth(24 + 43 + 15);
         _textField.placeholder = self.viewModel.textModel.text;
         _textField.placeholderColor = JobsGrayColor;

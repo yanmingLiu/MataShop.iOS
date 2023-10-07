@@ -9,7 +9,7 @@
 
 @interface MSInputStyle1View ()
 
-@property(nonatomic,strong)JobsMagicTextField *textField;
+@property(nonatomic,strong)ZYTextField *textField;
 
 @end
 
@@ -69,7 +69,7 @@ static dispatch_once_t static_inputStyle1OnceToken;
     return CGSizeMake(JobsWidth(315), JobsWidth(54));
 }
 #pragma mark —— 一些私有方法
--(void)textFieldBlock:(JobsMagicTextField *)textField
+-(void)textFieldBlock:(ZYTextField *)textField
        textFieldValue:(NSString *)value{
     
 //    self.textFieldInputModel.resString = value;
@@ -79,22 +79,26 @@ static dispatch_once_t static_inputStyle1OnceToken;
 //    if (self.objectBlock) self.objectBlock(textField);// 对外统一传出TF
 }
 #pragma mark —— lazyLoad
--(JobsMagicTextField *)textField{
+-(ZYTextField *)textField{
     if (!_textField) {
-        _textField = JobsMagicTextField.new;
+        _textField = ZYTextField.new;
         _textField.delegate = self;
-        _textField.backgroundColor = RGBA_COLOR(245, 245, 245, 1);
+        _textField.textColor = JobsBlackColor;
+        _textField.backgroundColor = JobsCor(@"#F9F9F9");
         _textField.returnKeyType = UIReturnKeyDefault;
         _textField.keyboardAppearance = UIKeyboardAppearanceDefault;
         _textField.keyboardType = UIKeyboardTypeDefault;
         _textField.leftView = [UIImageView.alloc initWithImage:self.viewModel.image];
         _textField.leftViewMode = UITextFieldViewModeAlways;
-        _textField.leftViewOffsetX = JobsWidth(0);
-        _textField.placeholdAnimationable = NO;
-        _textField.offset = JobsWidth(24);
         _textField.placeholder = self.viewModel.textModel.text;
+        _textField.font = UIFontWeightRegularSize(14);
+        _textField.placeholderFont = _textField.font;
         _textField.placeholderColor = JobsGrayColor;
-        _textField.placeholderFont = UIFontWeightRegularSize(14);
+        CGFloat placeholderHeight = [self jobsGetLabelWidthWithTitle:_textField.placeholder font:_textField.placeholderFont].height;
+        CGFloat placeholderY = (JobsWidth(28) - placeholderHeight) / 2;
+        _textField.drawPlaceholderInRect = CGRectMake(JobsWidth(52), placeholderY, [MSInputStyle1View viewSizeWithModel:nil].width - JobsWidth(32), JobsWidth(28));// OK
+        _textField.editingRectForBounds = CGRectMake(JobsWidth(52), 0, [MSInputStyle1View viewSizeWithModel:nil].width - JobsWidth(32 + 12), JobsWidth(28));
+        _textField.textRectForBounds = CGRectMake(JobsWidth(52), 0, [MSInputStyle3View viewSizeWithModel:nil].width - JobsWidth(32 + 12 + 100), 100);
         @jobs_weakify(self)
         [_textField jobsTextFieldEventFilterBlock:^BOOL(id data) {
 //            @jobs_strongify(self)

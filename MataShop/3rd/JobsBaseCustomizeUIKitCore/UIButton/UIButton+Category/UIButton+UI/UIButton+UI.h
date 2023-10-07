@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
                       baseBackgroundColor:(UIColor *_Nullable)baseBackgroundColor
                              imagePadding:(CGFloat)imagePadding
                              titlePadding:(CGFloat)titlePadding
-                           imagePlacement:(NSDirectionalRectEdge)imagePlacement
+                           imagePlacement:(NSDirectionalRectEdge)imagePlacement/// 定义图文关系
                contentHorizontalAlignment:(UIControlContentHorizontalAlignment)contentHorizontalAlignment /// 针对内容
                  contentVerticalAlignment:(UIControlContentVerticalAlignment)contentVerticalAlignment /// 针对内容
                             contentInsets:(NSDirectionalEdgeInsets)contentInsets/// 对应老Api中的：UIButton.contentEdgeInsets

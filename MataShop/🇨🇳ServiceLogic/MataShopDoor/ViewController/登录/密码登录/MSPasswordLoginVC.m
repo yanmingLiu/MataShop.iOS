@@ -71,7 +71,7 @@
         
         UIViewModel *viewModel = UIViewModel.new;
         viewModel.image = JobsIMG(@"手机号码登录");
-        viewModel.textModel.text = Internationalization(@"          请输入手机号");
+        viewModel.textModel.text = Internationalization(@"请输入手机号");
         
         [_iPhInputView richElementsInViewWithModel:viewModel];
         [self.view addSubview:_iPhInputView];
@@ -90,12 +90,12 @@
         
         UIViewModel *viewModel = UIViewModel.new;
         viewModel.image = JobsIMG(@"登录密码");
-        viewModel.textModel.text = Internationalization(@"         密码");
+        viewModel.textModel.text = Internationalization(@"密码");
         
         [_codeInputView richElementsInViewWithModel:viewModel];
         [self.view addSubview:_codeInputView];
         [_codeInputView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo([MSInputStyle3View viewSizeWithModel:nil]);
+            make.size.mas_equalTo([MSInputStyle1View viewSizeWithModel:nil]);
             make.centerX.equalTo(self.view);
             make.top.equalTo(self.iPhInputView.mas_bottom).offset(JobsWidth(15));
         }];

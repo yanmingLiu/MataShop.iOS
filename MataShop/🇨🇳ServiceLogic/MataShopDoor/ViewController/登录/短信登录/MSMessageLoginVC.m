@@ -71,7 +71,7 @@
         
         UIViewModel *viewModel = UIViewModel.new;
         viewModel.image = JobsIMG(@"手机号码登录");
-        viewModel.textModel.text = Internationalization(@"          请输入手机号");
+        viewModel.textModel.text = Internationalization(@"请输入手机号");
         
         [_iPhInputView richElementsInViewWithModel:viewModel];
         [self.view addSubview:_iPhInputView];
@@ -90,7 +90,7 @@
         
         UIViewModel *viewModel = UIViewModel.new;
         viewModel.image = JobsIMG(@"登录密码");
-        viewModel.textModel.text = Internationalization(@"         密码");
+        viewModel.textModel.text = Internationalization(@"密码");
         
         [_msgCodeInputView richElementsInViewWithModel:viewModel];
         [self.view addSubview:_msgCodeInputView];
@@ -99,7 +99,7 @@
             make.centerX.equalTo(self.view);
             make.top.equalTo(self.iPhInputView.mas_bottom).offset(JobsWidth(15));
         }];
-        [_msgCodeInputView cornerCutToCircleWithCornerRadius:[MSInputStyle1View viewSizeWithModel:nil].height / 2];
+        [_msgCodeInputView cornerCutToCircleWithCornerRadius:[MSInputStyle3View viewSizeWithModel:nil].height / 2];
     }return _msgCodeInputView;
 }
 

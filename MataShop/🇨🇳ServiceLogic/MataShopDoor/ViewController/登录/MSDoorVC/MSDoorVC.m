@@ -46,6 +46,7 @@
     // self.viewModel.bgImage = JobsIMG(@"内部招聘导航栏背景图");/// self.gk_navBackgroundImage 和 self.bgImageView
 //    self.viewModel.bgCor = RGBA_COLOR(255, 238, 221, 1);/// self.gk_navBackgroundColor 和 self.view.backgroundColor
 //    self.viewModel.bgImage = JobsIMG(@"新首页的底图");
+    [self registerKeyboard];
 }
 
 - (void)viewDidLoad {
@@ -90,6 +91,31 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+}
+#pragma mark —— 一些私有方法
+-(void)registerKeyboard{
+    IQKeyboardManager.sharedManager.enable = NO;
+    [self keyboard];
+    @jobs_weakify(self)
+    __block CGFloat gg = 0;// 修正间距
+    [self actionkeyboardUpNotificationBlock:^id(NSNotificationKeyboardModel *data) {
+        @jobs_strongify(self)
+        NSLog(@"userInfo = %@",data.userInfo);
+        NSLog(@"beginFrame = %@",NSStringFromCGRect(data.beginFrame));
+        NSLog(@"endFrame = %@",NSStringFromCGRect(data.endFrame));
+        NSLog(@"keyboardOffsetY = %f",data.keyboardOffsetY);/// 键盘高度
+        NSLog(@"notificationName = %@",data.notificationName);
+        self.categoryView.y -= JobsWidth(90);
+        self.listContainerView.y -= JobsWidth(90);
+        return nil;
+    }];
+    
+    [self actionkeyboardDownNotificationBlock:^id(id data) {
+        @jobs_strongify(self)
+        self.categoryView.y += JobsWidth(90);
+        self.listContainerView.y += JobsWidth(90);
+        return nil;
+    }];
 }
 #pragma mark JXCategoryTitleViewDataSource
 //// 如果将JXCategoryTitleView嵌套进UITableView的cell，每次重用的时候，JXCategoryTitleView进行reloadData时，会重新计算所有的title宽度。所以该应用场景，需要UITableView的cellModel缓存titles的文字宽度，再通过该代理方法返回给JXCategoryTitleView。
@@ -155,9 +181,9 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _logoImageView.image = JobsIMG(@"Logo");
         [self.view addSubview:_logoImageView];
         [_logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(100), JobsWidth(100)));
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(150), JobsWidth(150)));
             make.centerX.equalTo(self.view);
-            make.top.equalTo(self.view).offset(JobsWidth(70));
+            make.top.equalTo(self.view).offset(JobsWidth(50));
         }];
     }return _logoImageView;
 }
@@ -205,7 +231,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         [self.view addSubview:_titleBtn];
         [_titleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(JobsWidth(70));
-            make.top.equalTo(self.logoImageView.mas_bottom).offset(JobsWidth(10));
+            make.top.equalTo(self.logoImageView.mas_bottom).offset(JobsWidth(-40));
             make.centerX.equalTo(self.view);
         }];
         [_titleBtn makeBtnLabelByShowingType:UILabelShowingType_03];
@@ -265,100 +291,211 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
 
 -(UIButton *)registerBtn{
     if(!_registerBtn){
-        _registerBtn = UIButton.new;
-        _registerBtn.normalTitle = Internationalization(@"注册账号");
-        _registerBtn.normalTitleColor = JobsCor(@"#333333");
-        _registerBtn.titleFont = UIFontWeightRegularSize(14);
+        @jobs_weakify(self)
+        _registerBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                         background:nil
+                                                     titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                      textAlignment:NSTextAlignmentCenter
+                                                   subTextAlignment:NSTextAlignmentCenter
+                                                        normalImage:nil
+                                                     highlightImage:nil
+                                                    attributedTitle:nil
+                                            selectedAttributedTitle:nil
+                                                 attributedSubtitle:nil
+                                                              title:Internationalization(@"注册账号")
+                                                           subTitle:nil
+                                                          titleFont:UIFontWeightRegularSize(14)
+                                                       subTitleFont:nil
+                                                           titleCor:JobsCor(@"#333333")
+                                                        subTitleCor:nil
+                                                titleLineBreakMode:NSLineBreakByWordWrapping
+                                             subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                               baseBackgroundColor:UIColor.whiteColor
+                                                      imagePadding:JobsWidth(0)
+                                                      titlePadding:JobsWidth(0)
+                                                    imagePlacement:NSDirectionalRectEdgeNone
+                                        contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                          contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                     contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                 cornerRadiusValue:JobsWidth(0)
+                                                   roundingCorners:UIRectCornerAllCorners
+                                              roundingCornersRadii:CGSizeZero
+                                                    layerBorderCor:nil
+                                                       borderWidth:JobsWidth(0)
+                                                     primaryAction:nil
+                                                   clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            NSLog(@"注册账号");
+            [self forceComingToPushVC:MSRegisterVC.new requestParams:nil];
+            return nil;
+        }];
         [self.view addSubview:_registerBtn];
         [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(CGSizeMake(JobsWidth(56), JobsWidth(14)));
             make.height.mas_equalTo(JobsWidth(14));
             make.left.equalTo(self.view).offset(JobsWidth(40));
             make.top.equalTo(self.listContainerView.mas_bottom);
         }];
         [_registerBtn makeBtnLabelByShowingType:UILabelShowingType_03];
-        @jobs_weakify(self)
-        [_registerBtn jobsBtnClickEventBlock:^id(UIButton *x) {
-            @jobs_strongify(self)
-            NSLog(@"注册账号");
-            [self forceComingToPushVC:MSRegisterVC.new requestParams:nil];
-            return nil;
-        }];
     }return _registerBtn;
 }
 
 -(UIButton *)loginBtn{
     if(!_loginBtn){
-        _loginBtn = UIButton.new;
-        _loginBtn.normalTitle = Internationalization(@"登录");
-        _loginBtn.titleFont = UIFontWeightRegularSize(14);
-        _loginBtn.normalTitleColor = JobsWhiteColor;
-        _loginBtn.backgroundColor = JobsCor(@"#DD0000");
+        @jobs_weakify(self)
+        _loginBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                      background:nil
+                                                  titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                   textAlignment:NSTextAlignmentCenter
+                                                subTextAlignment:NSTextAlignmentCenter
+                                                     normalImage:nil
+                                                  highlightImage:nil
+                                                 attributedTitle:nil
+                                         selectedAttributedTitle:nil
+                                              attributedSubtitle:nil
+                                                           title:Internationalization(@"登录")
+                                                        subTitle:nil
+                                                       titleFont:UIFontWeightRegularSize(14)
+                                                    subTitleFont:nil
+                                                        titleCor:JobsWhiteColor
+                                                     subTitleCor:nil
+                                              titleLineBreakMode:NSLineBreakByWordWrapping
+                                           subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                             baseBackgroundColor:JobsCor(@"#DD0000")
+                                                    imagePadding:JobsWidth(0)
+                                                    titlePadding:JobsWidth(0)
+                                                  imagePlacement:NSDirectionalRectEdgeNone
+                                      contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                        contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                   contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                               cornerRadiusValue:JobsWidth(0)
+                                                 roundingCorners:UIRectCornerAllCorners
+                                            roundingCornersRadii:CGSizeZero
+                                                  layerBorderCor:nil
+                                                     borderWidth:JobsWidth(0)
+                                                   primaryAction:nil
+                                                 clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            NSLog(@"登录账号");
+            [self.navigationController popViewControllerAnimated:YES];
+            return nil;
+        }];
         [self.view addSubview:_loginBtn];
         [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(315), JobsWidth(48)));
             make.left.equalTo(self.view).offset(JobsWidth(40));
-            make.top.equalTo(self.registerBtn.mas_bottom).offset(JobsWidth(50));
+            make.top.equalTo(self.registerBtn.mas_bottom).offset(JobsWidth(25));
         }];
         [_loginBtn cornerCutToCircleWithCornerRadius:JobsWidth(24)];
-        @jobs_weakify(self)
-        [_loginBtn jobsBtnClickEventBlock:^id(UIButton *x) {
-            @jobs_strongify(self)
-            NSLog(@"登录账号");
-            return nil;
-        }];
     }return _loginBtn;
 }
 
 -(UIButton *)agreeBtn{
     if(!_agreeBtn){
-        _agreeBtn = UIButton.new;
-        _agreeBtn.normalTitle = Internationalization(@"阅读并同意");
-        _agreeBtn.normalTitleColor = JobsCor(@"#333333");
-        _agreeBtn.titleFont = UIFontWeightRegularSize(12);
-        _agreeBtn.normalImage = JobsIMG(@"登录-未同意");
-        _agreeBtn.selectedImage = JobsIMG(@"登录-同意");
-        _agreeBtn.backgroundColor = UIColor.clearColor;
+        @jobs_weakify(self)
+        _agreeBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                      background:nil
+                                                  titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                   textAlignment:NSTextAlignmentCenter
+                                                subTextAlignment:NSTextAlignmentCenter
+                                                     normalImage:JobsIMG(@"登录-未同意")
+                                                  highlightImage:nil
+                                                 attributedTitle:nil
+                                         selectedAttributedTitle:nil
+                                              attributedSubtitle:nil
+                                                           title:Internationalization(@"阅读并同意")
+                                                        subTitle:nil
+                                                       titleFont:UIFontWeightRegularSize(12)
+                                                    subTitleFont:nil
+                                                        titleCor:JobsCor(@"#333333")
+                                                     subTitleCor:nil
+                                              titleLineBreakMode:NSLineBreakByWordWrapping
+                                           subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                             baseBackgroundColor:UIColor.clearColor
+                                                    imagePadding:JobsWidth(5)
+                                                    titlePadding:JobsWidth(0)
+                                                  imagePlacement:NSDirectionalRectEdgeLeading
+                                      contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                        contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                   contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                               cornerRadiusValue:JobsWidth(0)
+                                                 roundingCorners:UIRectCornerAllCorners
+                                            roundingCornersRadii:CGSizeZero
+                                                  layerBorderCor:nil
+                                                     borderWidth:JobsWidth(0)
+                                                   primaryAction:nil
+                                                 clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            if(x.selected){
+                x.jobsResetImage(JobsIMG(@"登录-同意"));
+            }else{
+                x.jobsResetImage(JobsIMG(@"登录-未同意"));
+            }
+            NSLog(@"阅读并同意");
+            return nil;
+        }];
         [self.view addSubview:_agreeBtn];
         [_agreeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(JobsWidth(12));
+            make.height.mas_equalTo(JobsWidth(15));
             make.left.equalTo(self.loginBtn);
             make.top.equalTo(self.loginBtn.mas_bottom).offset(JobsWidth(20));
         }];
         [_agreeBtn makeBtnLabelByShowingType:UILabelShowingType_03];
-        [self.view layoutIfNeeded];
-        [_agreeBtn layoutButtonWithEdgeInsetsStyle:NSDirectionalRectEdgeLeading
-                                      imagePadding:JobsWidth(4)];
-        @jobs_weakify(self)
-        [_agreeBtn jobsBtnClickEventBlock:^id(UIButton *x) {
-            @jobs_strongify(self)
-            NSLog(@"阅读并同意");
-            x.selected = !x.selected;
-            return nil;
-        }];
     }return _agreeBtn;
 }
 
 -(UIButton *)privacyBtn{
     if(!_privacyBtn){
-        _privacyBtn = UIButton.new;
-        _privacyBtn.normalTitle = Internationalization(@"《隐私政策》");
-        _privacyBtn.normalTitleColor = JobsCor(@"#DD0000");
-        _privacyBtn.titleFont = UIFontWeightRegularSize(12);
-        _privacyBtn.backgroundColor = UIColor.clearColor;
+        @jobs_weakify(self)
+        _privacyBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                        background:nil
+                                                    titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                     textAlignment:NSTextAlignmentCenter
+                                                  subTextAlignment:NSTextAlignmentCenter
+                                                       normalImage:nil
+                                                    highlightImage:nil
+                                                   attributedTitle:nil
+                                           selectedAttributedTitle:nil
+                                                attributedSubtitle:nil
+                                                             title:Internationalization(@"《隐私政策》")
+                                                          subTitle:nil
+                                                         titleFont:UIFontWeightRegularSize(12)
+                                                      subTitleFont:nil
+                                                          titleCor:JobsCor(@"#DD0000")
+                                                       subTitleCor:nil
+                                                titleLineBreakMode:NSLineBreakByWordWrapping
+                                             subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                               baseBackgroundColor:UIColor.clearColor
+                                                      imagePadding:JobsWidth(0)
+                                                      titlePadding:JobsWidth(0)
+                                                    imagePlacement:NSDirectionalRectEdgeNone
+                                        contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                          contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                     contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                 cornerRadiusValue:JobsWidth(0)
+                                                   roundingCorners:UIRectCornerAllCorners
+                                              roundingCornersRadii:CGSizeZero
+                                                    layerBorderCor:nil
+                                                       borderWidth:JobsWidth(0)
+                                                     primaryAction:nil
+                                                   clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            NSLog(@"隐私政策");
+            return nil;
+        }];
         [self.view addSubview:_privacyBtn];
         [_privacyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(JobsWidth(12));
+            make.height.mas_equalTo(JobsWidth(15));
             make.top.equalTo(self.agreeBtn);
             make.left.equalTo(self.agreeBtn.mas_right);
         }];
         [_privacyBtn makeBtnLabelByShowingType:UILabelShowingType_03];
-        @jobs_weakify(self)
-        [_privacyBtn jobsBtnClickEventBlock:^id(UIButton *x) {
-            @jobs_strongify(self)
-            NSLog(@"隐私政策");
-            return nil;
-        }];
     }return _privacyBtn;
 }
 
@@ -371,7 +508,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _label.backgroundColor = UIColor.clearColor;
         [self.view addSubview:_label];
         [_label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(JobsWidth(12));
+            make.height.mas_equalTo(JobsWidth(15));
             make.top.equalTo(self.agreeBtn);
             make.left.equalTo(self.privacyBtn.mas_right);
         }];
@@ -380,24 +517,52 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
 
 -(UIButton *)userAgreementBtn{
     if(!_userAgreementBtn){
-        _userAgreementBtn = UIButton.new;
-        _userAgreementBtn.normalTitle = Internationalization(@"《用户协议》");
-        _userAgreementBtn.normalTitleColor = JobsCor(@"#DD0000");
-        _userAgreementBtn.titleFont = UIFontWeightRegularSize(12);
-        _userAgreementBtn.backgroundColor = UIColor.clearColor;
+        @jobs_weakify(self)
+        _userAgreementBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                              background:nil
+                                                          titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                           textAlignment:NSTextAlignmentCenter
+                                                        subTextAlignment:NSTextAlignmentCenter
+                                                             normalImage:nil
+                                                          highlightImage:nil
+                                                         attributedTitle:nil
+                                                 selectedAttributedTitle:nil
+                                                      attributedSubtitle:nil
+                                                                   title:Internationalization(@"《用户协议》")
+                                                                subTitle:nil
+                                                               titleFont:UIFontWeightRegularSize(12)
+                                                            subTitleFont:nil
+                                                                titleCor:JobsCor(@"#DD0000")
+                                                             subTitleCor:nil
+                                                      titleLineBreakMode:NSLineBreakByWordWrapping
+                                                   subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                                     baseBackgroundColor:UIColor.clearColor
+                                                            imagePadding:JobsWidth(0)
+                                                            titlePadding:JobsWidth(0)
+                                                          imagePlacement:NSDirectionalRectEdgeNone
+                                              contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                                contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                           contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                       cornerRadiusValue:JobsWidth(0)
+                                                         roundingCorners:UIRectCornerAllCorners
+                                                    roundingCornersRadii:CGSizeZero
+                                                          layerBorderCor:nil
+                                                             borderWidth:JobsWidth(0)
+                                                           primaryAction:nil
+                                                         clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            NSLog(@"用户协议");
+            return nil;
+        }];
         [self.view addSubview:_userAgreementBtn];
         [_userAgreementBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(JobsWidth(12));
+            make.height.mas_equalTo(JobsWidth(15));
             make.top.equalTo(self.agreeBtn);
             make.left.equalTo(self.label.mas_right);
         }];
         [_userAgreementBtn makeBtnLabelByShowingType:UILabelShowingType_03];
-        @jobs_weakify(self)
-        [_userAgreementBtn jobsBtnClickEventBlock:^id(UIButton *x) {
-            @jobs_strongify(self)
-            NSLog(@"用户协议");
-            return nil;
-        }];
     }return _userAgreementBtn;
 }
 
