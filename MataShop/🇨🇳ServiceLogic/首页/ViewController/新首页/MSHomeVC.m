@@ -41,7 +41,7 @@ BOOL ISLogin;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.searchBoardView.alpha = 1;
+//    self.searchBoardView.alpha = 1;
     self.bannerParam.wDataSet(self.dataMutArr);
     [self.bannerView updateUI];
     self.marqueeView.alpha = 1;
@@ -52,6 +52,7 @@ BOOL ISLogin;
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self updateStatusBarCor:JobsCor(@"#EA2D19")];/// 在具体子类实现，不要写在父类
+    self.searchBoardView.alpha = 1;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -73,13 +74,20 @@ BOOL ISLogin;
         _searchBoardView.backgroundColor = RGB_COLOR(234, 41, 24);
         [_searchBoardView richElementsInViewWithModel:nil];
         [self.view addSubview:_searchBoardView];
-        [_searchBoardView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo([MSSearchBoardView viewSizeWithModel:nil]);
-            make.centerX.equalTo(self.view);
-            make.top.equalTo(self.view).offset(JobsStatusBarHeightByAppleIncData());
-        }];
-        [self.view layoutIfNeeded];
-    }return _searchBoardView;
+    }
+    [_searchBoardView jobsMasonryBeforeBlock:^(MASConstraintMaker * _Nonnull make) {
+        make.width.mas_equalTo(0);
+        make.height.mas_equalTo([MSSearchBoardView viewSizeWithModel:nil].height);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view).offset(JobsStatusBarHeightByAppleIncData());
+    }
+                           masonryAfterBlock:^(MASConstraintMaker * _Nonnull make) {
+        make.size.mas_equalTo([MSSearchBoardView viewSizeWithModel:nil]);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view).offset(JobsStatusBarHeightByAppleIncData());
+    }];
+    [self.view layoutIfNeeded];
+    return _searchBoardView;
 }
 
 -(WMZBannerView *)bannerView{

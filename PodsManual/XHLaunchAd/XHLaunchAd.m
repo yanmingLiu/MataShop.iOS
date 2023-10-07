@@ -444,6 +444,7 @@ static  SourceType _sourceType = SourceTypeLaunchImage;
 -(void)skipButtonClick:(XHLaunchAdButton *)button{
     if ([self.delegate respondsToSelector:@selector(xhLaunchAd:clickSkipButton:)]) {
         [self.delegate xhLaunchAd:self clickSkipButton:button];
+        
     }
     [self removeAndAnimated:YES];
 }

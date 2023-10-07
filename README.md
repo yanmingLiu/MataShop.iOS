@@ -134,6 +134,32 @@ https://www.jianshu.com/p/12426709420e
  }
 ```
 
+* 示例代码：Masonry约束动画
+
+```
+-(MSMineView2 *)view2{
+    if(!_view2){
+        _view2 = MSMineView2.new;
+        [_view2 richElementsInViewWithModel:nil];
+        [self addSubview:_view2];
+        [_view2 jobsMasonryBeforeBlock:^(MASConstraintMaker * _Nonnull make) {
+            // 添加第一个 _view2 的约束
+            make.width.mas_equalTo(0);
+            make.height.mas_equalTo([MSMineView2 viewSizeWithModel:nil].height);
+            make.right.equalTo(self).offset(JobsWidth(-10));
+            make.top.equalTo(self).offset(JobsWidth(10));
+        }
+                     masonryAfterBlock:^(MASConstraintMaker * _Nonnull make) {
+            // 添加第二个 _view2 的约束
+            make.size.mas_equalTo([MSMineView2 viewSizeWithModel:nil]);
+            make.centerX.equalTo(self);
+            make.top.equalTo(self).offset(JobsWidth(10));
+        }];
+        [_view2 cornerCutToCircleWithCornerRadius:[MSMineView2 viewSizeWithModel:nil].height / 2];
+    }return _view2;
+}
+```
+
 ## 打开苹果的反馈助理
 
 * 浏览器打开并输入 
