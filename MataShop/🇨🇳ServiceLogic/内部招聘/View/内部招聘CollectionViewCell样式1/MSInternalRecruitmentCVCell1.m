@@ -67,25 +67,51 @@
 }
 
 -(BaseButton *)joinBtn{
-    if (!_joinBtn) {
-        _joinBtn = BaseButton.new;
-        _joinBtn.normalTitle = Internationalization(@"我要加入");
-        _joinBtn.normalTitleColor = RGB_SAMECOLOR(255);
-        _joinBtn.titleFont = UIFontWeightBoldSize(14);
-        _joinBtn.backgroundColor = RGBA_COLOR(255, 89, 12, 1);
+    if(!_joinBtn){
+        @jobs_weakify(self)
+        _joinBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                     background:nil
+                                                 titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                  textAlignment:NSTextAlignmentCenter
+                                               subTextAlignment:NSTextAlignmentCenter
+                                                    normalImage:nil
+                                                 highlightImage:nil
+                                                attributedTitle:nil
+                                        selectedAttributedTitle:nil
+                                             attributedSubtitle:nil
+                                                          title:Internationalization(@"我要加入")
+                                                       subTitle:nil
+                                                      titleFont:UIFontWeightBoldSize(14)
+                                                   subTitleFont:nil
+                                                       titleCor:RGB_SAMECOLOR(255)
+                                                    subTitleCor:nil
+                                             titleLineBreakMode:NSLineBreakByWordWrapping
+                                          subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                            baseBackgroundColor:RGBA_COLOR(255, 89, 12, 1)
+                                                   imagePadding:JobsWidth(0)
+                                                   titlePadding:JobsWidth(0)
+                                                 imagePlacement:NSDirectionalRectEdgeNone
+                                     contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                       contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                  contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                              cornerRadiusValue:JobsWidth(14)
+                                                roundingCorners:UIRectCornerAllCorners
+                                           roundingCornersRadii:CGSizeZero
+                                                 layerBorderCor:nil
+                                                    borderWidth:JobsWidth(0)
+                                                  primaryAction:nil
+                                                clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            [WHToast toastMsg:Internationalization(@"我要加入")];
+            return nil;
+        }];
         [self.contentView addSubview:_joinBtn];
         [_joinBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(88), JobsWidth(28)));
             make.centerY.equalTo(self.contentView);
             make.right.equalTo(self.contentView).offset(JobsWidth(-6));
-        }];
-        [_joinBtn cornerCutToCircleWithCornerRadius:JobsWidth(14)];
-        @jobs_weakify(self)
-        [_joinBtn jobsBtnClickEventBlock:^id(UIButton *x) {
-            @jobs_strongify(self)
-            x.selected = !x.selected;
-            [WHToast toastErrMsg:Internationalization(@"我要加入")];
-            return nil;
         }];
     }return _joinBtn;
 }

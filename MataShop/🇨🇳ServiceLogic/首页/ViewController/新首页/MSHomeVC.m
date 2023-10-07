@@ -15,7 +15,7 @@ BOOL ISLogin;
 @property(nonatomic,strong)BaiShaETProjMarqueeView *marqueeView;
 @property(nonatomic,strong)MS3rdShopLinkView *shopLinkView;
 @property(nonatomic,strong)MSHomeGoodsView *homeGoodsView;
-@property(nonatomic,strong)MSHomePopupView *popupView;
+//@property(nonatomic,strong)MSHomePopupView *popupView;
 /// Data
 @property(nonatomic,strong)NSArray *__block dataArr;
 @property(nonatomic,strong)WMZBannerParam *bannerParam;
@@ -169,8 +169,9 @@ BOOL ISLogin;
         [_marqueeView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo([BaiShaETProjMarqueeView viewSizeWithModel:nil]);
             make.centerX.equalTo(self.view);
-            make.top.equalTo(self.bannerView.mas_bottom).offset(JobsWidth(10));
+            make.top.equalTo(self.bannerView.mas_bottom).offset(JobsWidth(5));
         }];
+        [_marqueeView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
     }return _marqueeView;
 }
 
@@ -181,7 +182,7 @@ BOOL ISLogin;
         [_shopLinkView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo([MS3rdShopLinkView viewSizeWithModel:nil]);
             make.centerX.equalTo(self.view);
-            make.top.equalTo(self.marqueeView.mas_bottom).offset(JobsWidth(16));
+            make.top.equalTo(self.marqueeView.mas_bottom).offset(JobsWidth(5));
         }];
         [_shopLinkView richElementsInViewWithModel:nil];
     }return _shopLinkView;

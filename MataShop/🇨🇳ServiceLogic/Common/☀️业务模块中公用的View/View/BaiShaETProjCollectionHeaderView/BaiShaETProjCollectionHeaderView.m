@@ -129,7 +129,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
         NSLog(@"%@",_userHeaderBtn.titleForNormalState);
         _userHeaderBtn.normalImage = self.readUserInfo.userHeaderIMG;
         _userHeaderBtn.normalTitleColor = HEXCOLOR(0xAE8330);
-        _userHeaderBtn.titleFont = notoSansBold(16);
+        _userHeaderBtn.titleFont = UIFontWeightRegularSize(18);
         [self addSubview:_userHeaderBtn];
         [_userHeaderBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self);

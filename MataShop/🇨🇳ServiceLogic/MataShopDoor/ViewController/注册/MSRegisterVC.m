@@ -38,7 +38,7 @@
     self.viewModel.textModel.textCor = JobsClearColor;
 //    self.viewModel.textModel.textCor = HEXCOLOR(0x3D4A58);
 //    self.viewModel.textModel.text = Internationalization(@"消息详情页");
-//    self.viewModel.textModel.font = notoSansBold(16);
+//    self.viewModel.textModel.font = UIFontWeightRegularSize(18);
     // 使用原则：底图有 + 底色有 = 优先使用底图数据
     // 以下2个属性的设置，涉及到的UI结论 请参阅父类（BaseViewController）的私有方法：-(void)setBackGround
     // self.viewModel.bgImage = JobsIMG(@"内部招聘导航栏背景图");/// self.gk_navBackgroundImage 和 self.bgImageView

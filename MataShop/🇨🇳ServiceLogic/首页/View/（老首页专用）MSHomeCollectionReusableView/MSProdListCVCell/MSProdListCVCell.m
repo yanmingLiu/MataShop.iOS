@@ -1,26 +1,26 @@
 //
-//  MSProdShowCVCell.m
+//  MSProdListCVCell.m
 //  MataShop
 //
-//  Created by Jobs Hi on 9/15/23.
+//  Created by Jobs Hi on 10/8/23.
 //
 
-#import "MSProdShowCVCell.h"
+#import "MSProdListCVCell.h"
 
-@interface MSProdShowCVCell ()
+@interface MSProdListCVCell ()
 /// UI
 @property(nonatomic,strong)UIImageView *imageView;
 @property(nonatomic,strong)UILabel *prodTitleLab;
 @property(nonatomic,strong)UILabel *prodSubNameLab;
 @property(nonatomic,strong)UILabel *prodPriceLab;
 @property(nonatomic,strong)UILabel *prodSubPriceLab;
-@property(nonatomic,strong)UILabel *prodSalesLab;
+@property(nonatomic,strong)UIButton *prodSalesBtn;
 /// Data
 @property(nonatomic,strong)MSProdShowModel *prodShowModel;
 
 @end
 
-@implementation MSProdShowCVCell
+@implementation MSProdListCVCell
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -46,10 +46,10 @@
 #pragma mark —— BaseCellProtocol
 +(instancetype)cellWithCollectionView:(nonnull UICollectionView *)collectionView
                          forIndexPath:(nonnull NSIndexPath *)indexPath{
-    MSProdShowCVCell *cell = (MSProdShowCVCell *)[collectionView collectionViewCellClass:MSProdShowCVCell.class forIndexPath:indexPath];
+    MSProdListCVCell *cell = (MSProdListCVCell *)[collectionView collectionViewCellClass:MSProdListCVCell.class forIndexPath:indexPath];
     if (!cell) {
-        [collectionView registerCollectionViewCellClass:MSProdShowCVCell.class];
-        cell = (MSProdShowCVCell *)[collectionView collectionViewCellClass:MSProdShowCVCell.class forIndexPath:indexPath];
+        [collectionView registerCollectionViewCellClass:MSProdListCVCell.class];
+        cell = (MSProdListCVCell *)[collectionView collectionViewCellClass:MSProdListCVCell.class forIndexPath:indexPath];
     }
     
     // UICollectionViewCell 圆切角
@@ -68,9 +68,9 @@
     self.imageView.alpha = 1;
     self.prodTitleLab.alpha = 1;
     self.prodSubNameLab.alpha = 1;
-    self.prodPriceLab.alpha = 1;
-    self.prodSubPriceLab.alpha = 1;
-    self.prodSalesLab.alpha = 1;
+    self.prodSalesBtn.alpha = 1;
+//    self.prodPriceLab.alpha = 1;
+//    self.prodSubPriceLab.alpha = 1;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)cellSizeWithModel:(UIViewModel *_Nullable)model{
@@ -112,19 +112,21 @@
 -(UILabel *)prodSubNameLab{
     if(!_prodSubNameLab){
         _prodSubNameLab = UILabel.new;
-        _prodSubNameLab.textColor = JobsCor(@"#9F9993");
+        _prodSubNameLab.textColor = JobsCor(@"#2B3034");
+        _prodSubNameLab.backgroundColor = JobsCor(@"#EAECEE");
         _prodSubNameLab.textAlignment = NSTextAlignmentLeft;
         _prodSubNameLab.font = UIFontWeightRegularSize(12);
         [self.contentView addSubview:_prodSubNameLab];
         [_prodSubNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(JobsWidth(14));
-            make.top.equalTo(self.prodTitleLab.mas_bottom).offset(JobsWidth(8));
-            make.left.equalTo(self.contentView).offset(JobsWidth(12));
-            make.right.equalTo(self.contentView).offset(JobsWidth(-12));
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(JobsWidth(8));
+            make.right.equalTo(self.contentView);
         }];
     }
+    [_prodSubNameLab appointCornerCutToCircleByRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomLeft
+                                                   cornerRadii:CGSizeMake(JobsWidth(7), JobsWidth(7))];
     _prodSubNameLab.text = self.prodShowModel.prodSubTitle;
-    [_prodSubNameLab makeLabelByShowingType:UILabelShowingType_01];
+    [_prodSubNameLab makeLabelByShowingType:UILabelShowingType_03];
     return _prodSubNameLab;
 }
 
@@ -166,23 +168,55 @@
     return _prodSubPriceLab;
 }
 
--(UILabel *)prodSalesLab{
-    if(!_prodSalesLab){
-        _prodSalesLab = UILabel.new;
-        _prodSalesLab.textColor = JobsCor(@"#999999");
-        _prodSalesLab.textAlignment = NSTextAlignmentRight;
-        _prodSalesLab.font = UIFontWeightBoldSize(11);
-        [self.contentView addSubview:_prodSalesLab];
-        [_prodSalesLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(JobsWidth(14));
-            make.top.equalTo(self.prodSubNameLab.mas_bottom).offset(JobsWidth(6));
+-(UIButton *)prodSalesBtn{
+    if(!_prodSalesBtn){
+        @jobs_weakify(self)
+        _prodSalesBtn = [UIButton.alloc jobsInitBtnByConfiguration:nil
+                                                        background:nil
+                                                    titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                     textAlignment:NSTextAlignmentCenter
+                                                  subTextAlignment:NSTextAlignmentCenter
+                                                       normalImage:JobsIMG(@"火")
+                                                    highlightImage:nil
+                                                   attributedTitle:nil
+                                           selectedAttributedTitle:nil
+                                                attributedSubtitle:nil
+                                                             title:nil
+                                                          subTitle:nil
+                                                            titleFont:UIFontWeightBoldSize(14)
+                                                      subTitleFont:nil
+                                                          titleCor:JobsCor(@"#FF0E3E")
+                                                       subTitleCor:nil
+                                                titleLineBreakMode:NSLineBreakByWordWrapping
+                                             subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                               baseBackgroundColor:UIColor.whiteColor
+                                                      imagePadding:JobsWidth(0)
+                                                      titlePadding:JobsWidth(0)
+                                                    imagePlacement:NSDirectionalRectEdgeLeading
+                                        contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                          contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                     contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                 cornerRadiusValue:JobsWidth(0)
+                                                   roundingCorners:UIRectCornerAllCorners
+                                              roundingCornersRadii:CGSizeZero
+                                                    layerBorderCor:nil
+                                                       borderWidth:JobsWidth(0)
+                                                     primaryAction:nil
+                                                   clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
+        [self.contentView addSubview:_prodSalesBtn];
+        [_prodSalesBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(JobsWidth(16));
+            make.top.equalTo(self.prodTitleLab.mas_bottom).offset(JobsWidth(6));
             make.left.equalTo(self.contentView).offset(JobsWidth(12));
-            make.right.equalTo(self.contentView).offset(JobsWidth(-12));
         }];
     }
-    _prodSalesLab.text = self.prodShowModel.prodSales;
-    [_prodSalesLab makeLabelByShowingType:UILabelShowingType_01];
-    return _prodSalesLab;
+    _prodSalesBtn.jobsResetTitle(self.prodShowModel.prodSales);
+    return _prodSalesBtn;
 }
 
 @end

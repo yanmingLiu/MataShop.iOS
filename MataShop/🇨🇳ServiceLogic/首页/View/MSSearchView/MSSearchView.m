@@ -10,7 +10,7 @@
 @interface MSSearchView ()
 /// UI
 @property(nonatomic,strong)BaseButton *searchBtn;
-@property(nonatomic,strong)JobsMagicTextField *textField;
+@property(nonatomic,strong)ZYTextField *textField;
 /// Data
 
 @end
@@ -56,7 +56,7 @@ static dispatch_once_t static_searchViewOnceToken;
     [super layoutSubviews];
 }
 #pragma mark —— 一些私有方法
--(void)textFieldBlock:(JobsMagicTextField *)textField
+-(void)textFieldBlock:(ZYTextField *)textField
        textFieldValue:(NSString *)value{
     
 //    self.textFieldInputModel.resString = value;
@@ -84,23 +84,43 @@ static dispatch_once_t static_searchViewOnceToken;
     return CGSizeMake(JobsWidth(220), JobsWidth(44));
 }
 #pragma mark —— lazyLoad
--(JobsMagicTextField *)textField{
+-(ZYTextField *)textField{
     if (!_textField) {
-        _textField = JobsMagicTextField.new;
+        _textField = ZYTextField.new;
         _textField.delegate = self;
         _textField.backgroundColor = RGBA_COLOR(245, 245, 245, 1);
         _textField.returnKeyType = UIReturnKeyDefault;
         _textField.keyboardAppearance = UIKeyboardAppearanceDefault;
         _textField.keyboardType = UIKeyboardTypeDefault;
-//        _textField.leftView = [UIImageView.alloc initWithImage:JobsIMG(@"搜索放大镜")];
         _textField.leftView = [UIImageView.alloc initWithImage:JobsIMG(@"新首页的搜索放大镜")];
         _textField.leftViewMode = UITextFieldViewModeAlways;
-        _textField.leftViewOffsetX = JobsWidth(0);
-        _textField.placeholdAnimationable = NO;
-        _textField.offset = JobsWidth(24);
-        _textField.placeholder = Internationalization(@"        搜索关键词");
-        _textField.placeholderColor = JobsGrayColor;
+        _textField.rightView = self.searchBtn;
+        _textField.rightViewMode = UITextFieldViewModeAlways;
+        _textField.placeholder = Internationalization(@"搜索关键词");
         _textField.placeholderFont = UIFontWeightRegularSize(14);
+        _textField.placeholderColor = JobsGrayColor;
+        _textField.size = CGSizeMake(JobsWidth(220 - 80 - 12), JobsWidth(28));
+        
+        CGFloat placeholderHeight = [self jobsGetLabelWidthWithTitle:_textField.placeholder font:_textField.placeholderFont].height;
+        CGFloat placeholderY = (_textField.size.height - placeholderHeight) / 2;
+        CGFloat rightViewY = (_textField.size.height - self.searchBtn.size.height) / 2;
+        
+        _textField.drawPlaceholderInRect = CGRectMake(JobsWidth(32),// leftView的宽
+                                                      placeholderY,// 垂直居中
+                                                      [MSSearchView viewSizeWithModel:nil].width - JobsWidth(32 + 52),// 52是self.searchBtn的宽
+                                                      JobsWidth(28));//
+        _textField.editingRectForBounds = CGRectMake(JobsWidth(32),
+                                                     0,
+                                                     [MSSearchView viewSizeWithModel:nil].width - JobsWidth(32 + 22 + 5) - self.searchBtn.size.width,// 5 是右边与self.searchBtn的距离
+                                                     JobsWidth(28));
+        _textField.textRectForBounds = CGRectMake(JobsWidth(32),
+                                                  0,
+                                                  [MSSearchView viewSizeWithModel:nil].width - JobsWidth(32 + 22 + 5),// 5 是右边与self.searchBtn的距离
+                                                  100);// 100 这个值写死，不用管
+        _textField.rightViewRectForBounds = CGRectMake(JobsWidth([MSSearchView viewSizeWithModel:nil].width - self.searchBtn.size.width),
+                                                       rightViewY,
+                                                       self.searchBtn.size.width,
+                                                       self.searchBtn.size.height);
         @jobs_weakify(self)
         [_textField jobsTextFieldEventFilterBlock:^BOOL(id data) {
 //            @jobs_strongify(self)
@@ -112,7 +132,8 @@ static dispatch_once_t static_searchViewOnceToken;
         }];
         [self addSubview:_textField];
         [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(220 - 80 - 12), JobsWidth(28)));
+            make.size.mas_equalTo(_textField.size);
+            make.right.equalTo(self).offset(JobsWidth(-12));
             make.centerY.equalTo(self);
             make.left.equalTo(self).offset(JobsWidth(12));
         }];
@@ -120,32 +141,48 @@ static dispatch_once_t static_searchViewOnceToken;
 }
 
 -(BaseButton *)searchBtn{
-    if (!_searchBtn) {
-        _searchBtn = BaseButton.new;
-        _searchBtn.normalTitle = Internationalization(@"搜索");
-//        _searchBtn.backgroundColor = RGBA_COLOR(255, 231, 18, 1);
-        _searchBtn.backgroundColor = RGBA_COLOR(234, 41, 24, 1);
-//        _searchBtn.normalTitleColor = RGBA_COLOR(20, 17, 38, 1);
-        _searchBtn.normalTitleColor = RGB_SAMECOLOR(255);
-        _searchBtn.titleFont = UIFontWeightBoldSize(16);
-        [_searchBtn makeBtnLabelByShowingType:UILabelShowingType_01];
+    if(!_searchBtn){
         @jobs_weakify(self)
-        [_searchBtn jobsBtnClickEventBlock:^id(UIButton *x) {
+        _searchBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                       background:nil
+                                                   titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                    textAlignment:NSTextAlignmentCenter
+                                                 subTextAlignment:NSTextAlignmentCenter
+                                                      normalImage:nil
+                                                   highlightImage:nil
+                                                  attributedTitle:nil
+                                          selectedAttributedTitle:nil
+                                               attributedSubtitle:nil
+                                                            title:Internationalization(@"搜索")
+                                                         subTitle:nil
+                                                        titleFont:UIFontWeightBoldSize(16)
+                                                     subTitleFont:nil
+                                                         titleCor:RGB_SAMECOLOR(255)
+                                                      subTitleCor:nil
+                                               titleLineBreakMode:NSLineBreakByWordWrapping
+                                            subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                              baseBackgroundColor:RGBA_COLOR(234, 41, 24, 1)
+                                                     imagePadding:JobsWidth(0)
+                                                     titlePadding:JobsWidth(0)
+                                                   imagePlacement:NSDirectionalRectEdgeNone
+                                       contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                         contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                    contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                cornerRadiusValue:JobsWidth(16)
+                                                  roundingCorners:UIRectCornerAllCorners
+                                             roundingCornersRadii:CGSizeZero
+                                                   layerBorderCor:nil
+                                                      borderWidth:JobsWidth(0)
+                                                    primaryAction:nil
+                                                  clickEventBlock:^id(BaseButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-//            [WHToast toastErrMsg:Internationalization(@"获取节日事件需要权限呀大宝贝!")];
             return nil;
         }];
-        [self addSubview:_searchBtn];
-        [_searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(CGSizeMake(JobsWidth(80), JobsWidth(36)));
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(60), JobsWidth(32)));
-            make.centerY.equalTo(self);
-            make.right.equalTo(self).offset(JobsWidth(-2));
-        }];
-        [_searchBtn cornerCutToCircleWithCornerRadius:JobsWidth(18)];
-    }return _searchBtn;
+        _searchBtn.size = CGSizeMake(JobsWidth(60), JobsWidth(32));
+    }
+    return _searchBtn;
 }
 
 @end

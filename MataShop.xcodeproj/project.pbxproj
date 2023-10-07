@@ -611,6 +611,8 @@
 		C5729EFF2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729EFE2AB5CC0A0084EAFC /* MSInternalRecruitmentCVCell1.m */; };
 		C578EBC02ABB026900832A07 /* MSHomeGoodsBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C578EBBF2ABB026800832A07 /* MSHomeGoodsBaseVC.m */; };
 		C578F0572ABB8CCA00832A07 /* MSDoorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C578F0562ABB8CCA00832A07 /* MSDoorVC.m */; };
+		C59FE5A72AD1FEA3005F3DDE /* MSProdListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C59FE5A62AD1FEA3005F3DDE /* MSProdListVC.m */; };
+		C59FE5AB2AD200BB005F3DDE /* MSProdListCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C59FE5AA2AD200BB005F3DDE /* MSProdListCVCell.m */; };
 		C5A7D16A2ACF850A00440B7C /* MSTransactionRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D1692ACF850A00440B7C /* MSTransactionRecordVC.m */; };
 		C5A7D1B82ACFB31200440B7C /* MSChuBaoWithdrawVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D1B72ACFB31200440B7C /* MSChuBaoWithdrawVC.m */; };
 		C5A7D1BB2ACFB32500440B7C /* MSChuBaoTopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D1BA2ACFB32500440B7C /* MSChuBaoTopUpVC.m */; };
@@ -2249,6 +2251,12 @@
 		C578F0562ABB8CCA00832A07 /* MSDoorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSDoorVC.m; sourceTree = "<group>"; };
 		C578F0592ABB8E3000832A07 /* MSDoorVC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSDoorVC.jpg; sourceTree = "<group>"; };
 		C59FE4F12AD1D899005F3DDE /* MSProdShowCVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSProdShowCVCell.jpg; sourceTree = "<group>"; };
+		C59FE5A42AD1FE8B005F3DDE /* 产品列表.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "产品列表.jpg"; sourceTree = "<group>"; };
+		C59FE5A52AD1FEA3005F3DDE /* MSProdListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdListVC.h; sourceTree = "<group>"; };
+		C59FE5A62AD1FEA3005F3DDE /* MSProdListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdListVC.m; sourceTree = "<group>"; };
+		C59FE5A92AD200BB005F3DDE /* MSProdListCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSProdListCVCell.h; sourceTree = "<group>"; };
+		C59FE5AA2AD200BB005F3DDE /* MSProdListCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSProdListCVCell.m; sourceTree = "<group>"; };
+		C59FE5AC2AD201A8005F3DDE /* MSProdListCVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSProdListCVCell.jpg; sourceTree = "<group>"; };
 		C5A7D1692ACF850A00440B7C /* MSTransactionRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTransactionRecordVC.m; sourceTree = "<group>"; };
 		C5A7D1B62ACFB31200440B7C /* MSChuBaoWithdrawVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChuBaoWithdrawVC.h; sourceTree = "<group>"; };
 		C5A7D1B72ACFB31200440B7C /* MSChuBaoWithdrawVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoWithdrawVC.m; sourceTree = "<group>"; };
@@ -3327,6 +3335,7 @@
 		C5329DE42ABEDD04004294E0 /* （老首页专用）MSHomeCollectionReusableView */ = {
 			isa = PBXGroup;
 			children = (
+				C59FE5A82AD20092005F3DDE /* MSProdListCVCell */,
 				C5329DE52ABEDD04004294E0 /* MSHomeCollectionReusableView.h */,
 				C5329DE62ABEDD04004294E0 /* MSHomeCollectionReusableView.m */,
 			);
@@ -8564,6 +8573,7 @@
 		C561D98D2AAC9A4100E28603 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C59FE5A32AD1FE58005F3DDE /* 产品列表 */,
 				C578EBBD2ABB024800832A07 /* MSHomeGoodsBaseVC */,
 				C5EE38312AB986090020BDB8 /* 老首页 */,
 				C5EE38302AB986000020BDB8 /* 新首页 */,
@@ -8804,6 +8814,26 @@
 				C532965A2ABCE544004294E0 /* 短信登录 */,
 			);
 			path = "登录";
+			sourceTree = "<group>";
+		};
+		C59FE5A32AD1FE58005F3DDE /* 产品列表 */ = {
+			isa = PBXGroup;
+			children = (
+				C59FE5A42AD1FE8B005F3DDE /* 产品列表.jpg */,
+				C59FE5A52AD1FEA3005F3DDE /* MSProdListVC.h */,
+				C59FE5A62AD1FEA3005F3DDE /* MSProdListVC.m */,
+			);
+			path = "产品列表";
+			sourceTree = "<group>";
+		};
+		C59FE5A82AD20092005F3DDE /* MSProdListCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C59FE5AC2AD201A8005F3DDE /* MSProdListCVCell.jpg */,
+				C59FE5A92AD200BB005F3DDE /* MSProdListCVCell.h */,
+				C59FE5AA2AD200BB005F3DDE /* MSProdListCVCell.m */,
+			);
+			path = MSProdListCVCell;
 			sourceTree = "<group>";
 		};
 		C5A7D1B02ACFB27F00440B7C /* 充值 */ = {
@@ -10919,6 +10949,7 @@
 				C561D46A2AAC7E7B00E28603 /* TouchID.m in Sources */,
 				C561D3AF2AAC7E7A00E28603 /* JobsDropDownListView.m in Sources */,
 				C561D4002AAC7E7B00E28603 /* UITextView+IndicateWordLimit.m in Sources */,
+				C59FE5AB2AD200BB005F3DDE /* MSProdListCVCell.m in Sources */,
 				C520F6372AB3975800142DCC /* YTKBaseRequest+AnimatingAccessory.m in Sources */,
 				C561D4A22AAC7E7B00E28603 /* ZYTextField.m in Sources */,
 				C561D3382AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_7.m in Sources */,
@@ -10983,6 +11014,7 @@
 				C52F30572AC036B200BB5549 /* NSNotificationCenter+JobsBlock.m in Sources */,
 				C5D71F462AC22EE800DD8938 /* KTVHTTPCache.m in Sources */,
 				C561D35A2AAC7E7A00E28603 /* JobsHotLabelWithMultiLine.m in Sources */,
+				C59FE5A72AD1FEA3005F3DDE /* MSProdListVC.m in Sources */,
 				C561D40F2AAC7E7B00E28603 /* UIImageView+GIF.m in Sources */,
 				C561D49C2AAC7E7B00E28603 /* UITextField+Animation.m in Sources */,
 				C5FF92322AC493E300D3A386 /* MSMyInfoVC.m in Sources */,

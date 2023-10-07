@@ -10,7 +10,6 @@
 @interface BaiShaETProjMarqueeView ()
 /// UI
 @property(nonatomic,strong)WMZBannerView *bannerView;
-//@property(nonatomic,strong)UIImageView *hornIMGV;
 @property(nonatomic,strong)BaseButton *hornBtn;
 /// Data
 @property(nonatomic,strong)WMZBannerParam *bannerParam;
@@ -78,41 +77,54 @@ static dispatch_once_t static_marqueeViewOnceToken;
 
 }
 #pragma mark —— lazyLoad
-//-(UIImageView *)hornIMGV{
-//    if (!_hornIMGV) {
-//        _hornIMGV = UIImageView.new;
-//        _hornIMGV.image = JobsIMG(@"系统公告");
-//        [self addSubview:_hornIMGV];
-//        [_hornIMGV mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.size.mas_equalTo(CGSizeMake(JobsWidth(62), JobsWidth(20)));
-//            make.centerY.equalTo(self.mas_centerY);
-//            make.left.equalTo(self).offset(JobsWidth(0));
-//        }];
-//    }return _hornIMGV;
-//}
-
 -(BaseButton *)hornBtn{
-    if (!_hornBtn) {
-        _hornBtn = BaseButton.new;
+    if(!_hornBtn){
+        @jobs_weakify(self)
+        _hornBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                     background:nil
+                                                 titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                  textAlignment:NSTextAlignmentCenter
+                                               subTextAlignment:NSTextAlignmentCenter
+                                                    normalImage:JobsIMG(@"系统公告")
+                                                 highlightImage:nil
+                                                attributedTitle:self.viewModel.subTextModel.attributedText
+                                        selectedAttributedTitle:nil
+                                             attributedSubtitle:nil
+                                                          title:Internationalization(@"  系统公告 | ")
+                                                       subTitle:nil
+                                                      titleFont:UIFontWeightSemiboldSize(14)
+                                                   subTitleFont:nil
+                                                       titleCor:RGB_SAMECOLOR(255)
+                                                    subTitleCor:nil
+                                             titleLineBreakMode:NSLineBreakByWordWrapping
+                                          subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                            baseBackgroundColor:UIColor.clearColor
+                                                   imagePadding:JobsWidth(5)
+                                                   titlePadding:JobsWidth(0)
+                                                 imagePlacement:NSDirectionalRectEdgeLeading
+                                     contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                       contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                  contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                              cornerRadiusValue:JobsWidth(10)
+                                                roundingCorners:UIRectCornerAllCorners
+                                           roundingCornersRadii:CGSizeZero
+                                                 layerBorderCor:nil
+                                                    borderWidth:JobsWidth(0)
+                                                  primaryAction:nil
+                                                clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            return nil;
+        }];
         [self addSubview:_hornBtn];
         [_hornBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(62), JobsWidth(20)));
+            make.height.mas_equalTo(JobsWidth(20));
             make.centerY.equalTo(self.mas_centerY);
-            make.left.equalTo(self).offset(JobsWidth(0));
+            make.left.equalTo(self).offset(JobsWidth(5));
         }];
-    }
-    
-    _hornBtn.normalImage = self.viewModel.image;
-    _hornBtn.normalTitle = Internationalization(@"  系统公告 | ");
-    _hornBtn.normalTitleColor = RGB_SAMECOLOR(255);
-    _hornBtn.normalAttributedTitle = self.viewModel.subTextModel.attributedText;
-    
-    _hornBtn.titleFont = UIFontWeightBoldSize(14);
-    
-    [_hornBtn makeBtnLabelByShowingType:UILabelShowingType_03];
-    [_hornBtn layoutButtonWithEdgeInsetsStyle:NSDirectionalRectEdgeLeading
-                                 imagePadding:JobsWidth(1)];
-    return _hornBtn;
+        [_hornBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+    }return _hornBtn;
 }
 
 -(WMZBannerView *)bannerView{
@@ -135,7 +147,6 @@ static dispatch_once_t static_marqueeViewOnceToken;
             //自定义视图
             CasinoMarqueeCell *cell = [CasinoMarqueeCell cellWithCollectionView:collectionView
                                                                    forIndexPath:indexPath];
-//            cell.backgroundColor = JobsRandomColor;
             cell.backgroundLabel.text = self.dataMutArr[indexPath.item];
             cell.backgroundLabel.textColor = UIColor.whiteColor;
             cell.backgroundLabel.font = UIFontWeightRegularSize(12);
@@ -150,9 +161,9 @@ static dispatch_once_t static_marqueeViewOnceToken;
                                 UICollectionViewCell *cell) {
             NSLog(@"判断居中点击");
         })
-        .wFrameSet(CGRectMake(JobsWidth(70),
+        .wFrameSet(CGRectMake(JobsWidth(110),
                               0,
-                              [BaiShaETProjMarqueeView viewSizeWithModel:nil].width - JobsWidth(70),
+                              [BaiShaETProjMarqueeView viewSizeWithModel:nil].width - JobsWidth(110),
                               [BaiShaETProjMarqueeView viewSizeWithModel:nil].height))
         //图片铺满
         .wImageFillSet(YES)
