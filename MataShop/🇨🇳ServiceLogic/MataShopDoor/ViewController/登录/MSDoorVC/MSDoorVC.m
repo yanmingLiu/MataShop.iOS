@@ -569,11 +569,12 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
 -(MSThirdPartyShortcutLoginPanelView *)thirdPartyShortcutLoginPanelView{
     if(!_thirdPartyShortcutLoginPanelView){
         _thirdPartyShortcutLoginPanelView = MSThirdPartyShortcutLoginPanelView.new;
+        [_thirdPartyShortcutLoginPanelView richElementsInViewWithModel:nil];
         [self.view addSubview:_thirdPartyShortcutLoginPanelView];
         [_thirdPartyShortcutLoginPanelView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo([MSThirdPartyShortcutLoginPanelView viewSizeWithModel:nil]);
             make.centerX.equalTo(self.view);
-            make.bottom.equalTo(self.view);
+            make.bottom.equalTo(self.view).offset(-JobsBottomSafeAreaHeight()-JobsWidth(16));
         }];
     }return _thirdPartyShortcutLoginPanelView;
 }

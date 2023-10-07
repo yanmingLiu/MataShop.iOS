@@ -83,9 +83,9 @@ static dispatch_once_t static_thirdPartyShortcutLoginPanelViewOnceToken;
     if(!_titleLab){
         _titleLab = UILabel.new;
         _titleLab.text = Internationalization(@"使用第三方帐号快捷登录");
-        _titleLab.textColor = JobsCor(@"#333333");
+        _titleLab.textColor = JobsCor(@"#7C7C7C");
         _titleLab.font = UIFontWeightRegularSize(14);
-        _titleLab.backgroundColor = JobsGrayColor;
+        _titleLab.backgroundColor = JobsClearColor;
         [self addSubview:_titleLab];
         [_titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(JobsWidth(14));
@@ -99,11 +99,11 @@ static dispatch_once_t static_thirdPartyShortcutLoginPanelViewOnceToken;
 -(UILabel *)leftLine{
     if(!_leftLine){
         _leftLine = UILabel.new;
-        _leftLine.backgroundColor = JobsGrayColor;
+        _leftLine.backgroundColor = JobsCor(@"#EEEEEE");
         [self addSubview:_leftLine];
         [_leftLine mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(70), JobsWidth(1)));
-            make.right.equalTo(self.titleLab.mas_left);
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(58), JobsWidth(1)));
+            make.right.equalTo(self.titleLab.mas_left).offset(JobsWidth(-22));
             make.centerY.equalTo(self.titleLab);
         }];
     }return _leftLine;
@@ -112,10 +112,11 @@ static dispatch_once_t static_thirdPartyShortcutLoginPanelViewOnceToken;
 -(UILabel *)rightLine{
     if(!_rightLine){
         _rightLine = UILabel.new;
+        _rightLine.backgroundColor = JobsCor(@"#EEEEEE");
         [self addSubview:_rightLine];
         [_rightLine mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(70), JobsWidth(1)));
-            make.left.equalTo(self.titleLab.mas_right);
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(58), JobsWidth(1)));
+            make.left.equalTo(self.titleLab.mas_right).offset(JobsWidth(22));
             make.centerY.equalTo(self.titleLab);
         }];
     }return _rightLine;
