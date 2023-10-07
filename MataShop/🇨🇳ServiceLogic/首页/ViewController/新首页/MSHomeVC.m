@@ -15,7 +15,6 @@ BOOL ISLogin;
 @property(nonatomic,strong)BaiShaETProjMarqueeView *marqueeView;
 @property(nonatomic,strong)MS3rdShopLinkView *shopLinkView;
 @property(nonatomic,strong)MSHomeGoodsView *homeGoodsView;
-//@property(nonatomic,strong)MSHomePopupView *popupView;
 /// Data
 @property(nonatomic,strong)NSArray *__block dataArr;
 @property(nonatomic,strong)WMZBannerParam *bannerParam;

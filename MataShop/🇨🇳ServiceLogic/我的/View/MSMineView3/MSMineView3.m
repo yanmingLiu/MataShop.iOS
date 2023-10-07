@@ -169,18 +169,19 @@ insetForSectionAtIndex:(NSInteger)section {
         _view2 = MSMineView2.new;
         [_view2 richElementsInViewWithModel:nil];
         [self addSubview:_view2];
-        // 移除第一个 _view2 的约束
         [self.view2 mas_remakeConstraints:^(MASConstraintMaker *make) {
             // 添加第一个 _view2 的约束
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(88), JobsWidth(28)));
+            make.width.mas_equalTo(0);
+            make.height.mas_equalTo([MSMineView2 viewSizeWithModel:nil].height);
             make.right.equalTo(self).offset(JobsWidth(-10));
             make.top.equalTo(self).offset(JobsWidth(10));
         }];
         // 告诉视图需要更新布局
-        [self setNeedsUpdateConstraints];
+        [_view2.superview setNeedsUpdateConstraints];
         // 执行动画
-        [UIView animateWithDuration:0.5 animations:^{
-            [self layoutIfNeeded]; // 让视图更新布局
+        [UIView animateWithDuration:0.5 
+                         animations:^{
+            [self->_view2.superview layoutIfNeeded]; // 让视图更新布局
         } completion:^(BOOL finished) {
             // 在动画完成后，切换到第二个 _view2 的约束
             [self.view2 mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -190,10 +191,11 @@ insetForSectionAtIndex:(NSInteger)section {
                 make.top.equalTo(self).offset(JobsWidth(10));
             }];
             // 再次告诉视图需要更新布局
-            [self setNeedsUpdateConstraints];
+            [self->_view2.superview setNeedsUpdateConstraints];
             // 再次执行动画
-            [UIView animateWithDuration:0.5 animations:^{
-                [self layoutIfNeeded]; // 让视图更新布局
+            [UIView animateWithDuration:0.5
+                             animations:^{
+                [self->_view2.superview layoutIfNeeded]; // 让视图更新布局
             }];
         }];
         [_view2 cornerCutToCircleWithCornerRadius:[MSMineView2 viewSizeWithModel:nil].height / 2];
