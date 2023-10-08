@@ -32,14 +32,25 @@ https://www.theiphonewiki.com/wiki/Models
 
 ## 几点重要说明
 
+<details id="iOS Xcode 代码块">
+ <summary><strong>iOS Xcode 代码块</strong></summary>
+
 * 要想快，用快捷键调取代码块。集成方式：
+
 
 ```javascript
 https://github.com/JobsKit/JobsCodeSnippets
 ```
 
-* 创建UIButton的方式（带富文本的）。
-* 兼容新Api，如果还是按照以前的方式创建，你会发现UIButton不正常出现
+</details>
+
+</details>
+
+<details id="UIButton">
+ <summary><strong>UIButton</strong></summary>
+
+* 兼容新Api，如果还是按照以前的方式创建，你会发现UIButton不正常出现（请看下面的示例代码）
+
 
 ```javascript
 苹果在后续的Api中推出了 UIButtonConfiguration 来设置UIButton，但是这个新Api会存在几大问题
@@ -55,7 +66,43 @@ https://github.com/JobsKit/JobsCodeSnippets
 Chat GPT 3.5 
 https://www.jianshu.com/p/12426709420e
 ```
+
+</details>
+
+</details>
+
+<details id="示例代码">
+ <summary><strong>示例代码</strong></summary>
+
+* Masonry约束动画
+
+```objective-c
+-(MSMineView2 *)view2{
+    if(!_view2){
+        _view2 = MSMineView2.new;
+        [_view2 richElementsInViewWithModel:nil];
+        [self addSubview:_view2];
+        [_view2 jobsMasonryBeforeBlock:^(MASConstraintMaker * _Nonnull make) {
+            // 添加第一个 _view2 的约束
+            make.width.mas_equalTo(0);
+            make.height.mas_equalTo([MSMineView2 viewSizeWithModel:nil].height);
+            make.right.equalTo(self).offset(JobsWidth(-10));
+            make.top.equalTo(self).offset(JobsWidth(10));
+        }
+                     masonryAfterBlock:^(MASConstraintMaker * _Nonnull make) {
+            // 添加第二个 _view2 的约束
+            make.size.mas_equalTo([MSMineView2 viewSizeWithModel:nil]);
+            make.centerX.equalTo(self);
+            make.top.equalTo(self).offset(JobsWidth(10));
+        }];
+        [_view2 cornerCutToCircleWithCornerRadius:[MSMineView2 viewSizeWithModel:nil].height / 2];
+    }return _view2;
+}
 ```
+
+* 用新Api创建一个带富文本的UIButton
+
+```objective-c
 @property(nonatomic,strong)BaseButton *titleBtn;
 @property(nonatomic,strong)NSMutableArray <NSString *>*richTextMutArr;
 @property(nonatomic,strong)NSMutableArray <RichTextConfig *>*richTextConfigMutArr;
@@ -152,31 +199,7 @@ https://www.jianshu.com/p/12426709420e
  }
 ```
 
-* 示例代码：Masonry约束动画
-
-```
--(MSMineView2 *)view2{
-    if(!_view2){
-        _view2 = MSMineView2.new;
-        [_view2 richElementsInViewWithModel:nil];
-        [self addSubview:_view2];
-        [_view2 jobsMasonryBeforeBlock:^(MASConstraintMaker * _Nonnull make) {
-            // 添加第一个 _view2 的约束
-            make.width.mas_equalTo(0);
-            make.height.mas_equalTo([MSMineView2 viewSizeWithModel:nil].height);
-            make.right.equalTo(self).offset(JobsWidth(-10));
-            make.top.equalTo(self).offset(JobsWidth(10));
-        }
-                     masonryAfterBlock:^(MASConstraintMaker * _Nonnull make) {
-            // 添加第二个 _view2 的约束
-            make.size.mas_equalTo([MSMineView2 viewSizeWithModel:nil]);
-            make.centerX.equalTo(self);
-            make.top.equalTo(self).offset(JobsWidth(10));
-        }];
-        [_view2 cornerCutToCircleWithCornerRadius:[MSMineView2 viewSizeWithModel:nil].height / 2];
-    }return _view2;
-}
-```
+</details>
 
 ## 打开苹果的反馈助理
 
