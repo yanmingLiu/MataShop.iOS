@@ -124,6 +124,7 @@ static dispatch_once_t static_mineView1OnceToken;
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
+            [self forceComingToPushVC:MSMyInfoVC.new requestParams:nil];
             return nil;
         }];
         [self addSubview:_userInfoBtn];

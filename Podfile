@@ -37,6 +37,7 @@ def debugPods
 
 # 几乎每个App都会用到的
 def appCommon
+  pod 'UITextView+Placeholder' # https://github.com/devxoul/UITextView-Placeholder A missing placeholder for UITextView.
   pod 'XYColorOC' # https://github.com/RayJiang16/XYColor 适配iOS 13夜间模式/深色外观(Dark Mode)
   pod 'IQKeyboardManager' # https://github.com/hackiftekhar/IQKeyboardManager Codeless drop-in universal library allows to prevent issues of keyboard sliding up and cover UITextField/UITextView. Neither need to write any code nor any setup required and much more.
   pod 'Masonry' # https://github.com/SnapKit/Masonry NO_SMP

@@ -37,6 +37,7 @@
 //#endif
 
 #import "XYColorOC-umbrella.h"
+#import "UITextView+Placeholder.h"
 
 //#if __has_include(<QMUIKit/QMUIKit.h>)
 //#import <QMUIKit/QMUIKit.h>

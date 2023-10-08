@@ -600,6 +600,9 @@
 		C561D99E2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D99A2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png */; };
 		C561DA142AACA62900E28603 /* 首页.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C561DA132AACA62900E28603 /* 首页.xcassets */; };
 		C561DA8A2AACA95A00E28603 /* 临时的占位图.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */; };
+		C569E5582AD24F31000F4DE3 /* MSMyInfoStyle1TBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C569E5572AD24F31000F4DE3 /* MSMyInfoStyle1TBVCell.m */; };
+		C569E55C2AD24F6F000F4DE3 /* MSMyInfoStyle2TBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C569E55B2AD24F6F000F4DE3 /* MSMyInfoStyle2TBVCell.m */; };
+		C569E5602AD24F87000F4DE3 /* MSMyInfoStyle3TBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C569E55F2AD24F87000F4DE3 /* MSMyInfoStyle3TBVCell.m */; };
 		C5729A972AB591E10084EAFC /* MSInternalRecruitmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729A962AB591E10084EAFC /* MSInternalRecruitmentVC.m */; };
 		C5729AA12AB593B00084EAFC /* MSBODVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729AA02AB593B00084EAFC /* MSBODVC.m */; };
 		C5729AA42AB593CD0084EAFC /* MSMDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729AA32AB593CD0084EAFC /* MSMDVC.m */; };
@@ -2214,6 +2217,16 @@
 		C561D99A2AAC9A8400E28603 /* BaiShaETProjMarqueeView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjMarqueeView.png; sourceTree = "<group>"; };
 		C561DA132AACA62900E28603 /* 首页.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "首页.xcassets"; sourceTree = "<group>"; };
 		C561DA892AACA95A00E28603 /* 临时的占位图.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "临时的占位图.xcassets"; sourceTree = "<group>"; };
+		C569E5552AD24E94000F4DE3 /* 个人信息.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "个人信息.jpg"; sourceTree = "<group>"; };
+		C569E5562AD24F31000F4DE3 /* MSMyInfoStyle1TBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyInfoStyle1TBVCell.h; sourceTree = "<group>"; };
+		C569E5572AD24F31000F4DE3 /* MSMyInfoStyle1TBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyInfoStyle1TBVCell.m; sourceTree = "<group>"; };
+		C569E55A2AD24F6F000F4DE3 /* MSMyInfoStyle2TBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyInfoStyle2TBVCell.h; sourceTree = "<group>"; };
+		C569E55B2AD24F6F000F4DE3 /* MSMyInfoStyle2TBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyInfoStyle2TBVCell.m; sourceTree = "<group>"; };
+		C569E55E2AD24F87000F4DE3 /* MSMyInfoStyle3TBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyInfoStyle3TBVCell.h; sourceTree = "<group>"; };
+		C569E55F2AD24F87000F4DE3 /* MSMyInfoStyle3TBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyInfoStyle3TBVCell.m; sourceTree = "<group>"; };
+		C569E5622AD25155000F4DE3 /* MSMyInfoStyle2TBVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMyInfoStyle2TBVCell.jpg; sourceTree = "<group>"; };
+		C569E5632AD2515E000F4DE3 /* MSMyInfoStyle1TBVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMyInfoStyle1TBVCell.jpg; sourceTree = "<group>"; };
+		C569E5642AD25162000F4DE3 /* MSMyInfoStyle3TBVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMyInfoStyle3TBVCell.jpg; sourceTree = "<group>"; };
 		C56D8DF82ACECFEA00523046 /* 结息记录子控件UI002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI002.jpg"; sourceTree = "<group>"; };
 		C56D8DF92ACECFEA00523046 /* 结息记录子控件UI004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI004.jpg"; sourceTree = "<group>"; };
 		C56D8DFA2ACECFEA00523046 /* 结息记录子控件UI001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI001.jpg"; sourceTree = "<group>"; };
@@ -3363,6 +3376,9 @@
 		C5329FD72ABF0FB7004294E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C569E5592AD24F3C000F4DE3 /* MSMyInfoStyle1TBVCell */,
+				C569E55D2AD24F76000F4DE3 /* MSMyInfoStyle2TBVCell */,
+				C569E5612AD24F8C000F4DE3 /* MSMyInfoStyle3TBVCell */,
 				C5329FD82ABF1066004294E0 /* MSMineView1 */,
 				C5329FDA2ABF1070004294E0 /* MSMineView2 */,
 				C5329FDC2ABF107B004294E0 /* MSMineView3 */,
@@ -8652,6 +8668,36 @@
 			path = BaiShaETProjMarqueeView;
 			sourceTree = "<group>";
 		};
+		C569E5592AD24F3C000F4DE3 /* MSMyInfoStyle1TBVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C569E5632AD2515E000F4DE3 /* MSMyInfoStyle1TBVCell.jpg */,
+				C569E5562AD24F31000F4DE3 /* MSMyInfoStyle1TBVCell.h */,
+				C569E5572AD24F31000F4DE3 /* MSMyInfoStyle1TBVCell.m */,
+			);
+			path = MSMyInfoStyle1TBVCell;
+			sourceTree = "<group>";
+		};
+		C569E55D2AD24F76000F4DE3 /* MSMyInfoStyle2TBVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C569E5622AD25155000F4DE3 /* MSMyInfoStyle2TBVCell.jpg */,
+				C569E55A2AD24F6F000F4DE3 /* MSMyInfoStyle2TBVCell.h */,
+				C569E55B2AD24F6F000F4DE3 /* MSMyInfoStyle2TBVCell.m */,
+			);
+			path = MSMyInfoStyle2TBVCell;
+			sourceTree = "<group>";
+		};
+		C569E5612AD24F8C000F4DE3 /* MSMyInfoStyle3TBVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C569E5642AD25162000F4DE3 /* MSMyInfoStyle3TBVCell.jpg */,
+				C569E55E2AD24F87000F4DE3 /* MSMyInfoStyle3TBVCell.h */,
+				C569E55F2AD24F87000F4DE3 /* MSMyInfoStyle3TBVCell.m */,
+			);
+			path = MSMyInfoStyle3TBVCell;
+			sourceTree = "<group>";
+		};
 		C5729A942AB591B30084EAFC /* 内部招聘 */ = {
 			isa = PBXGroup;
 			children = (
@@ -10013,6 +10059,7 @@
 		C5FF922F2AC493C500D3A386 /* MSMyInfoVC */ = {
 			isa = PBXGroup;
 			children = (
+				C569E5552AD24E94000F4DE3 /* 个人信息.jpg */,
 				C5FF92302AC493E300D3A386 /* MSMyInfoVC.h */,
 				C5FF92312AC493E300D3A386 /* MSMyInfoVC.m */,
 			);
@@ -10756,6 +10803,7 @@
 				C561D3BB2AAC7E7A00E28603 /* UIScrollView+Extra.m in Sources */,
 				C561D3192AAC7E7A00E28603 /* JobsTabbarVC.m in Sources */,
 				C561D48D2AAC7E7B00E28603 /* NSObject+IDFA.m in Sources */,
+				C569E5582AD24F31000F4DE3 /* MSMyInfoStyle1TBVCell.m in Sources */,
 				C520F5FA2AB396F500142DCC /* JobsCommentPopUpView_viewForHeaderInSection.m in Sources */,
 				C561D6872AAC862000E28603 /* BaiShaETProjMembersTBVCell1.m in Sources */,
 				C561D3F52AAC7E7B00E28603 /* UIView+Animation.m in Sources */,
@@ -10955,6 +11003,7 @@
 				C561D3382AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_7.m in Sources */,
 				C561D3472AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_5.m in Sources */,
 				C5EE37382AB871540020BDB8 /* MSDisburseVC.m in Sources */,
+				C569E55C2AD24F6F000F4DE3 /* MSMyInfoStyle2TBVCell.m in Sources */,
 				C5CFE6802AB0830D00D0F225 /* MSAlipayTopUpVC.m in Sources */,
 				C561CDFF2AAC7CE200E28603 /* FMDatabase+Manager.m in Sources */,
 				C5DE5D342ACBB3E80075DF4B /* ECPrivacyCheckMediaAndAppleMusic.m in Sources */,
@@ -11014,6 +11063,7 @@
 				C52F30572AC036B200BB5549 /* NSNotificationCenter+JobsBlock.m in Sources */,
 				C5D71F462AC22EE800DD8938 /* KTVHTTPCache.m in Sources */,
 				C561D35A2AAC7E7A00E28603 /* JobsHotLabelWithMultiLine.m in Sources */,
+				C569E5602AD24F87000F4DE3 /* MSMyInfoStyle3TBVCell.m in Sources */,
 				C59FE5A72AD1FEA3005F3DDE /* MSProdListVC.m in Sources */,
 				C561D40F2AAC7E7B00E28603 /* UIImageView+GIF.m in Sources */,
 				C561D49C2AAC7E7B00E28603 /* UITextField+Animation.m in Sources */,
