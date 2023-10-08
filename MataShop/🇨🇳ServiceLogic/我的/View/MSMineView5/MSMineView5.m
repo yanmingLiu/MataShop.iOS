@@ -125,6 +125,28 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
     UIViewModel *viewModel = self.dataMutArr[indexPath.item];
     [WHToast toastMsg:viewModel.textModel.text];
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"个人资料"))){
+        [self forceComingToPushVC:MSPersonalDataVC.new requestParams:nil];
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"意见反馈"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"消息通知"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"收货地址"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"修改密码"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"设置"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"购物车"))){
+        
+    }
+   
     /**
      滚动到指定位置
      _collectionView.contentOffset = CGPointMake(0,-100);
@@ -249,16 +271,6 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"修改密码");
             viewModel.image = JobsIMG(@"修改密码");
-            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            viewModel.imageTitleSpace = JobsWidth(1);
-            
-            [_dataMutArr addObject:viewModel];
-        }
-        
-        {
-            UIViewModel *viewModel = UIViewModel.new;
-            viewModel.textModel.text = Internationalization(@"收货地址");
-            viewModel.image = JobsIMG(@"收货地址");
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             

@@ -126,6 +126,18 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
     UIViewModel *viewModel = self.dataMutArr[indexPath.item];
     [WHToast toastMsg:viewModel.textModel.text];
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"钱包"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"我的店铺"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"我的团队"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"信用分数"))){
+        
+    }
     /**
      滚动到指定位置
      _collectionView.contentOffset = CGPointMake(0,-100);

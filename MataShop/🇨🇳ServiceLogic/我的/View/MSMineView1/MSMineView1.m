@@ -99,8 +99,8 @@ static dispatch_once_t static_mineView1OnceToken;
                                                      attributedTitle:nil
                                              selectedAttributedTitle:nil
                                                   attributedSubtitle:nil
-                                                               title:Internationalization(@"赵露思")
-                                                            subTitle:Internationalization(@"138****8888")
+                                                               title:nil
+                                                            subTitle:nil
                                                            titleFont:UIFontWeightBoldSize(18)
                                                         subTitleFont:UIFontWeightRegularSize(14)
                                                             titleCor:JobsWhiteColor
@@ -134,7 +134,8 @@ static dispatch_once_t static_mineView1OnceToken;
             make.left.equalTo(self.avatarIMGV.mas_right).offset(JobsWidth(16));
         }];
     }
-//    _userInfoView.jobsResetTitle(Internationalization(@"赵露思"));
+    _userInfoBtn.jobsResetTitle(Internationalization(@"赵露思"));
+    _userInfoBtn.jobsResetSubtitle(Internationalization(@"138****8888"));
     return _userInfoBtn;
 }
 

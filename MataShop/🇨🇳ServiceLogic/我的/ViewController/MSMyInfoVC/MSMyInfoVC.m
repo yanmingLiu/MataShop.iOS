@@ -32,7 +32,7 @@
     
     self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");
     self.viewModel.textModel.textCor = HEXCOLOR(0x3D4A58);
-    self.viewModel.textModel.text = Internationalization(@"消息详情页");
+    self.viewModel.textModel.text = Internationalization(@"个人信息");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);
     
     // 使用原则：底图有 + 底色有 = 优先使用底图数据

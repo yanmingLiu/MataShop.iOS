@@ -7,6 +7,7 @@
 
 #import "BaseView.h"
 #import "MSMineView6CVCell.h"
+#import "MSPersonalDataVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

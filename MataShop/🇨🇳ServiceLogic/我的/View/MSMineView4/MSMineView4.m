@@ -125,6 +125,24 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
     UIViewModel *viewModel = self.dataMutArr[indexPath.item];
     [WHToast toastMsg:viewModel.textModel.text];
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"培训课程"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"我的课件"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"店铺数据"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"实名认证"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"邀请好友"))){
+        
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"分享二维码"))){
+        
+    }
     /**
      滚动到指定位置
      _collectionView.contentOffset = CGPointMake(0,-100);

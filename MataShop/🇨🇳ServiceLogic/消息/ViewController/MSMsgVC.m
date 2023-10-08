@@ -72,12 +72,10 @@
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [self forceComingToPushVC:JobsCommentVC.new requestParams:nil];
-//    [self forceComingToPushVC:MSPersonalDataVC.new requestParams:nil];
     [self forceComingToPushVC:MSDoorVC.new requestParams:nil];
-//    [self forceComingToPushVC:MSSignInVC.new requestParams:@""];
-//    [self forceComingToPushVC:MSRedEnvelopeDetailVC.new requestParams:@""];
-//    [jobsGetMainWindow() popupWithView:[self jobsPopView:MSPayView.class viewModel:UIViewModel.new]];
+//    [self forceComingToPushVC:MSSignInVC.new requestParams:@""];//签到
+//    [self forceComingToPushVC:MSRedEnvelopeDetailVC.new requestParams:@""];//助力红包
+//    [jobsGetMainWindow() popupWithView:[self jobsPopView:MSPayView.class viewModel:UIViewModel.new]];//zhifu 
 }
 #pragma mark —— lazyLoad
 
