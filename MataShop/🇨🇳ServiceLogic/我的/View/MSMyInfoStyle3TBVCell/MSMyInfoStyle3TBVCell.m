@@ -43,7 +43,7 @@ UIViewModelProtocol_synthesize
     self.textLabel.text = self.viewModel.textModel.text;
     self.textLabel.font = UIFontWeightBoldSize(16);
     self.textLabel.textColor = JobsCor(@"#333333");
-    self.textView.text = self.viewModel.subTextModel.text;
+    self.textView.alpha = 1;
 }
 /// 具体由子类进行复写【数据定高】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGFloat)cellHeightWithModel:(UIViewModel *_Nullable)model{
@@ -70,11 +70,11 @@ UIViewModelProtocol_synthesize
 -(UITextView *)textView{
     if (!_textView) {
         _textView = UITextView.new;
-        _textView.placeholder;
+        _textView.placeholder = self.viewModel.subTextModel.text;
         _textView.text = Internationalization(@"");
         _textView.font = UIFontWeightRegularSize(12);
         _textView.backgroundColor = JobsCor(@"#F7F7F7");
-        _textView.textColor = RGBA_COLOR(51, 51, 51, 1);
+        _textView.textColor = JobsCor(@"#AAAAAA");
         [self.contentView addSubview:_textView];
         [_textView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(335), JobsWidth(120)));
@@ -82,7 +82,7 @@ UIViewModelProtocol_synthesize
             make.bottom.equalTo(self.contentView.mas_bottom).offset(JobsWidth(-20));
         }];
         [_textView cornerCutToCircleWithCornerRadius:8];
-        [_textView layerBorderCor:RGBA_COLOR(255, 255, 144, 1) andBorderWidth:0.5f];
+        [_textView layerBorderCor:JobsCor(@"#F7F7F7") andBorderWidth:0.5f];
     }return _textView;
 }
 

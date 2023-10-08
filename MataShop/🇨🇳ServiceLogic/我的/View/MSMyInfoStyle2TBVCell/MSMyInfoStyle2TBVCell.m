@@ -37,7 +37,7 @@ UIViewModelProtocol_synthesize
     self.textLabel.text = self.viewModel.textModel.text;
     self.textLabel.font = UIFontWeightBoldSize(16);
     self.textLabel.textColor = JobsCor(@"#333333");
-    self.textField.text = self.viewModel.subTextModel.text;
+    self.textField.alpha = 1;
 }
 /// 具体由子类进行复写【数据定高】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGFloat)cellHeightWithModel:(UIViewModel *_Nullable)model{
@@ -73,16 +73,17 @@ UIViewModelProtocol_synthesize
     if (!_textField) {
         _textField = ZYTextField.new;
         _textField.delegate = self;
-        _textField.textColor = JobsBlackColor;
+        _textField.textColor = JobsCor(@"#AAAAAA");
         _textField.textAlignment = NSTextAlignmentRight;
         _textField.backgroundColor = JobsClearColor;
         _textField.returnKeyType = UIReturnKeyDefault;
         _textField.keyboardAppearance = UIKeyboardAppearanceDefault;
         _textField.keyboardType = UIKeyboardTypeDefault;
-        _textField.placeholder = self.viewModel.textModel.text;
+        _textField.placeholder = self.viewModel.subTextModel.text;
         _textField.font = UIFontWeightMediumSize(16);
         _textField.placeholderFont = _textField.font;
-        _textField.placeholderColor = JobsGrayColor;
+        _textField.placeholderColor = JobsCor(@"#AAAAAA");
+        _textField.placeHolderAlignment = NSTextAlignmentRight;
         @jobs_weakify(self)
         [_textField jobsTextFieldEventFilterBlock:^BOOL(id data) {
 //            @jobs_strongify(self)

@@ -2022,7 +2022,6 @@
 		C561D2F12AAC7E7A00E28603 /* HQTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQTextField.m; sourceTree = "<group>"; };
 		C561D2F32AAC7E7A00E28603 /* CJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTextField.m; sourceTree = "<group>"; };
 		C561D2F42AAC7E7A00E28603 /* CJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTextField.h; sourceTree = "<group>"; };
-		C561D2F62AAC7E7A00E28603 /* TextFieldDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldDefine.h; sourceTree = "<group>"; };
 		C561D2F72AAC7E7A00E28603 /* ZYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTextField.m; sourceTree = "<group>"; };
 		C561D2F82AAC7E7A00E28603 /* ZYTextField.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYTextField.bundle; sourceTree = "<group>"; };
 		C561D2F92AAC7E7A00E28603 /* ZYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTextField.h; sourceTree = "<group>"; };
@@ -7644,7 +7643,6 @@
 		C561D2F52AAC7E7A00E28603 /* ZYTextField */ = {
 			isa = PBXGroup;
 			children = (
-				C561D2F62AAC7E7A00E28603 /* TextFieldDefine.h */,
 				C561D2F72AAC7E7A00E28603 /* ZYTextField.m */,
 				C561D2F82AAC7E7A00E28603 /* ZYTextField.bundle */,
 				C561D2F92AAC7E7A00E28603 /* ZYTextField.h */,
