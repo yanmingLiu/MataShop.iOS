@@ -256,11 +256,11 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             
             model.prodIMG = JobsIMG(@"商品占位图1");/// 商品图
             model.prodIMGURL = @"";/// 商品图URL
-            model.prodTitle = Internationalization(@"天然羊羔毛外套");/// 商品名
-            model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
-            model.prodPrice = @"￥6".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodTitle = Internationalization(@"纯之素 一次性抽取式全棉加厚洗脸巾卸…");/// 商品名
+            model.prodSubTitle = Internationalization(@"宿迁千毛美装商城…");
+            model.prodPrice = @"￥6".resetStringByFontAndTailStrings(@"",Internationalization(@"到手价"));/// 商品折扣价(实际卖价)
             model.prodSubPrice = @"￥126";/// 商品原价
-            model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
+            model.prodSales = [NSString stringWithFormat:@"%dw+已付款",2];/// 商品销量
             
             [_cvCellDataMutArr addObject:model];
         }
@@ -270,11 +270,11 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             
             model.prodIMG = JobsIMG(@"商品占位图1");/// 商品图
             model.prodIMGURL = @"";/// 商品图URL
-            model.prodTitle = Internationalization(@"火箭");/// 商品名
-            model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
-            model.prodPrice = @"￥126".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodTitle = Internationalization(@"纯之素 一次性抽取式全棉加厚洗脸巾卸…");/// 商品名
+            model.prodSubTitle = Internationalization(@"宿迁千毛美装商城…");
+            model.prodPrice = @"￥6".resetStringByFontAndTailStrings(@"",Internationalization(@"到手价"));/// 商品折扣价(实际卖价)
             model.prodSubPrice = @"￥126";/// 商品原价
-            model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
+            model.prodSales = [NSString stringWithFormat:@"%dw+已付款",2];/// 商品销量
             
             [_cvCellDataMutArr addObject:model];
         }
@@ -284,11 +284,11 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             
             model.prodIMG = JobsIMG(@"商品占位图1");/// 商品图
             model.prodIMGURL = @"";/// 商品图URL
-            model.prodTitle = Internationalization(@"火车");/// 商品名
-            model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
-            model.prodPrice = @"￥126".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodTitle = Internationalization(@"纯之素 一次性抽取式全棉加厚洗脸巾卸…");/// 商品名
+            model.prodSubTitle = Internationalization(@"宿迁千毛美装商城…");
+            model.prodPrice = @"￥6".resetStringByFontAndTailStrings(@"",Internationalization(@"到手价"));/// 商品折扣价(实际卖价)
             model.prodSubPrice = @"￥126";/// 商品原价
-            model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
+            model.prodSales = [NSString stringWithFormat:@"%dw+已付款",2];/// 商品销量
             
             [_cvCellDataMutArr addObject:model];
         }
@@ -298,11 +298,11 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             
             model.prodIMG = JobsIMG(@"商品占位图1");/// 商品图
             model.prodIMGURL = @"";/// 商品图URL
-            model.prodTitle = Internationalization(@"蛋糕");/// 商品名
-            model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
-            model.prodPrice = @"￥126".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodTitle = Internationalization(@"纯之素 一次性抽取式全棉加厚洗脸巾卸…");/// 商品名
+            model.prodSubTitle = Internationalization(@"宿迁千毛美装商城…");
+            model.prodPrice = @"￥6".resetStringByFontAndTailStrings(@"",Internationalization(@"到手价"));/// 商品折扣价(实际卖价)
             model.prodSubPrice = @"￥126";/// 商品原价
-            model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
+            model.prodSales = [NSString stringWithFormat:@"%dw+已付款",2];/// 商品销量
             
             [_cvCellDataMutArr addObject:model];
         }

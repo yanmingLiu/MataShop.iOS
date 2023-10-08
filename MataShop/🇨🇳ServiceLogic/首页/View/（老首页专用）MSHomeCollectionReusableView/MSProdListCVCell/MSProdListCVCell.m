@@ -62,19 +62,17 @@
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInCellWithModel:(MSProdShowModel *_Nullable)model{
-    
     self.prodShowModel = model;
-    
     self.imageView.alpha = 1;
     self.prodTitleLab.alpha = 1;
-    self.prodSubNameLab.alpha = 1;
     self.prodSalesBtn.alpha = 1;
-//    self.prodPriceLab.alpha = 1;
-//    self.prodSubPriceLab.alpha = 1;
+    self.prodPriceLab.alpha = 1;
+    self.prodSubPriceLab.alpha = 1;
+    self.prodSubNameLab.alpha = 1;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)cellSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsWidth(172), JobsWidth(172 + 80));
+    return CGSizeMake(JobsWidth(172), JobsWidth(172 + 120));
 }
 #pragma mark —— lazyLoad
 -(UIImageView *)imageView{
@@ -98,74 +96,15 @@
         _prodTitleLab.font = UIFontWeightRegularSize(14);
         [self.contentView addSubview:_prodTitleLab];
         [_prodTitleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(JobsWidth(14));
+            make.width.mas_equalTo([MSProdListCVCell cellSizeWithModel:nil].width);
             make.top.equalTo(self.imageView.mas_bottom).offset(JobsWidth(8));
             make.left.equalTo(self.contentView).offset(JobsWidth(12));
             make.right.equalTo(self.contentView).offset(JobsWidth(-12));
         }];
     }
     _prodTitleLab.text = self.prodShowModel.prodTitle;
-    [_prodTitleLab makeLabelByShowingType:UILabelShowingType_01];
+    [_prodTitleLab makeLabelByShowingType:UILabelShowingType_05];
     return _prodTitleLab;
-}
-
--(UILabel *)prodSubNameLab{
-    if(!_prodSubNameLab){
-        _prodSubNameLab = UILabel.new;
-        _prodSubNameLab.textColor = JobsCor(@"#2B3034");
-        _prodSubNameLab.backgroundColor = JobsCor(@"#EAECEE");
-        _prodSubNameLab.textAlignment = NSTextAlignmentLeft;
-        _prodSubNameLab.font = UIFontWeightRegularSize(12);
-        [self.contentView addSubview:_prodSubNameLab];
-        [_prodSubNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(JobsWidth(14));
-            make.bottom.equalTo(self.contentView.mas_bottom).offset(JobsWidth(8));
-            make.right.equalTo(self.contentView);
-        }];
-    }
-    [_prodSubNameLab appointCornerCutToCircleByRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomLeft
-                                                   cornerRadii:CGSizeMake(JobsWidth(7), JobsWidth(7))];
-    _prodSubNameLab.text = self.prodShowModel.prodSubTitle;
-    [_prodSubNameLab makeLabelByShowingType:UILabelShowingType_03];
-    return _prodSubNameLab;
-}
-
--(UILabel *)prodPriceLab{
-    if(!_prodPriceLab){
-        _prodPriceLab = UILabel.new;
-        _prodPriceLab.textColor = JobsCor(@"#FFFFFF");
-        _prodPriceLab.backgroundColor = JobsCor(@"#EA2A18");
-        _prodPriceLab.textAlignment = NSTextAlignmentLeft;
-        _prodPriceLab.font = UIFontWeightBoldSize(14);
-        [self.contentView addSubview:_prodPriceLab];
-        [_prodPriceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.prodSubNameLab.mas_bottom).offset(JobsWidth(6));
-            make.left.equalTo(self.contentView).offset(JobsWidth(12));
-            make.height.mas_equalTo(JobsWidth(14));
-        }];
-        [_prodPriceLab cornerCutToCircleWithCornerRadius:JobsWidth(7)];
-    }
-    _prodPriceLab.text = self.prodShowModel.prodPrice;
-    [_prodPriceLab makeLabelByShowingType:UILabelShowingType_03];
-    return _prodPriceLab;
-}
-
--(UILabel *)prodSubPriceLab{
-    if(!_prodSubPriceLab){
-        _prodSubPriceLab = UILabel.new;
-        _prodSubPriceLab.textColor = RGBA_COLOR(255, 89, 12, 1);
-        _prodSubPriceLab.textAlignment = NSTextAlignmentRight;
-        _prodSubPriceLab.font = UIFontWeightBoldSize(14);
-        [self.contentView addSubview:_prodSubPriceLab];
-        [_prodSubPriceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(JobsWidth(14));
-            make.centerY.equalTo(self.prodPriceLab);
-            make.left.equalTo(self.prodPriceLab.mas_right).offset(JobsWidth(5));
-        }];
-    }
-    _prodSubPriceLab.attributedText = _prodSubPriceLab.jobsHorizontalCentralLineation(self.prodShowModel.prodSubPrice);
-//    [_prodSubPriceLab makeLabelByShowingType:UILabelShowingType_01];
-    return _prodSubPriceLab;
 }
 
 -(UIButton *)prodSalesBtn{
@@ -183,7 +122,7 @@
                                                 attributedSubtitle:nil
                                                              title:nil
                                                           subTitle:nil
-                                                            titleFont:UIFontWeightBoldSize(14)
+                                                         titleFont:UIFontWeightBoldSize(14)
                                                       subTitleFont:nil
                                                           titleCor:JobsCor(@"#FF0E3E")
                                                        subTitleCor:nil
@@ -217,6 +156,65 @@
     }
     _prodSalesBtn.jobsResetTitle(self.prodShowModel.prodSales);
     return _prodSalesBtn;
+}
+
+-(UILabel *)prodPriceLab{
+    if(!_prodPriceLab){
+        _prodPriceLab = UILabel.new;
+        _prodPriceLab.textColor = JobsCor(@"#FA6400");
+        _prodPriceLab.backgroundColor = UIColor.whiteColor;
+        _prodPriceLab.textAlignment = NSTextAlignmentLeft;
+        _prodPriceLab.font = UIFontWeightBoldSize(14);
+        [self.contentView addSubview:_prodPriceLab];
+        [_prodPriceLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.prodSalesBtn.mas_bottom).offset(JobsWidth(6));
+            make.left.equalTo(self.contentView).offset(JobsWidth(12));
+            make.height.mas_equalTo(JobsWidth(14));
+        }];
+        [_prodPriceLab cornerCutToCircleWithCornerRadius:JobsWidth(7)];
+    }
+    _prodPriceLab.text = self.prodShowModel.prodPrice;
+    [_prodPriceLab makeLabelByShowingType:UILabelShowingType_03];
+    return _prodPriceLab;
+}
+
+-(UILabel *)prodSubPriceLab{
+    if(!_prodSubPriceLab){
+        _prodSubPriceLab = UILabel.new;
+        _prodSubPriceLab.textColor = RGBA_COLOR(255, 89, 12, 1);
+        _prodSubPriceLab.textAlignment = NSTextAlignmentRight;
+        _prodSubPriceLab.font = UIFontWeightBoldSize(14);
+        [self.contentView addSubview:_prodSubPriceLab];
+        [_prodSubPriceLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(JobsWidth(14));
+            make.centerY.equalTo(self.prodPriceLab);
+            make.left.equalTo(self.prodPriceLab.mas_right).offset(JobsWidth(5));
+        }];
+    }
+    _prodSubPriceLab.attributedText = _prodSubPriceLab.jobsHorizontalCentralLineation(self.prodShowModel.prodSubPrice);
+//    [_prodSubPriceLab makeLabelByShowingType:UILabelShowingType_01];
+    return _prodSubPriceLab;
+}
+
+-(UILabel *)prodSubNameLab{
+    if(!_prodSubNameLab){
+        _prodSubNameLab = UILabel.new;
+        _prodSubNameLab.textColor = JobsCor(@"#2B3034");
+        _prodSubNameLab.backgroundColor = JobsCor(@"#EAECEE");
+        _prodSubNameLab.textAlignment = NSTextAlignmentLeft;
+        _prodSubNameLab.font = UIFontWeightRegularSize(12);
+        [self.contentView addSubview:_prodSubNameLab];
+        [_prodSubNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(JobsWidth(14));
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(JobsWidth(-8));
+            make.right.equalTo(self.contentView);
+        }];
+    }
+    _prodSubNameLab.text = self.prodShowModel.prodSubTitle.resetStringByFontString(@" ");
+    [_prodSubNameLab makeLabelByShowingType:UILabelShowingType_03];
+    [_prodSubNameLab appointCornerCutToCircleByRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomLeft
+                                                   cornerRadii:CGSizeMake(JobsWidth(7), JobsWidth(7))];
+    return _prodSubNameLab;
 }
 
 @end

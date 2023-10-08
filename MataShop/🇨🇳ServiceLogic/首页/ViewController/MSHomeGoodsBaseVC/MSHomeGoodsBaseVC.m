@@ -246,7 +246,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             model.prodIMGURL = @"";/// 商品图URL
             model.prodTitle = Internationalization(@"天然羊羔毛外套");/// 商品名
             model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
-            model.prodPrice = @"￥6".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodPrice = @"￥6".resetStringByFontAndTailString(@" ");/// 商品折扣价(实际卖价)
             model.prodSubPrice = @"￥126";/// 商品原价
             model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
             
@@ -260,7 +260,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             model.prodIMGURL = @"";/// 商品图URL
             model.prodTitle = Internationalization(@"火箭");/// 商品名
             model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
-            model.prodPrice = @"￥126".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodPrice = @"￥126".resetStringByFontAndTailString(@" ");/// 商品折扣价(实际卖价)
             model.prodSubPrice = @"￥126";/// 商品原价
             model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
             
@@ -274,7 +274,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             model.prodIMGURL = @"";/// 商品图URL
             model.prodTitle = Internationalization(@"火车");/// 商品名
             model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
-            model.prodPrice = @"￥126".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodPrice = @"￥126".resetStringByFontAndTailString(@" ");/// 商品折扣价(实际卖价)
             model.prodSubPrice = @"￥126";/// 商品原价
             model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
             
@@ -288,7 +288,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             model.prodIMGURL = @"";/// 商品图URL
             model.prodTitle = Internationalization(@"蛋糕");/// 商品名
             model.prodSubTitle = Internationalization(@"特色1、特色1、特色1");
-            model.prodPrice = @"￥126".resetStringByfontAndTailString(@" ");/// 商品折扣价(实际卖价)
+            model.prodPrice = @"￥126".resetStringByFontAndTailString(@" ");/// 商品折扣价(实际卖价)
             model.prodSubPrice = @"￥126";/// 商品原价
             model.prodSales = [NSString stringWithFormat:@"已售%d件",2];/// 商品销量
             

@@ -176,25 +176,21 @@ ratio:(CGFloat)ratio {
         _categoryView = JXCategoryTimelineView.new;
         _categoryView.delegate = self;
         _categoryView.backgroundColor = UIColor.clearColor;
-        
-        _categoryView.titles = self.subTitleMutArr;
-        _categoryView.timeTitles = self.titleMutArr;
-        
-        _categoryView.titleFont = UIFontWeightRegularSize(12);
-        _categoryView.titleColor = RGBA_COLOR(159, 153, 147, 1);
-        _categoryView.titleSelectedFont = UIFontWeightSemiboldSize(12);
-        _categoryView.titleSelectedColor = UIColor.whiteColor;
-        
-        _categoryView.timeTitleSelectedColor = UIColor.blackColor;
-        _categoryView.timeTitleNormalColor = RGB_SAMECOLOR(108);
-        _categoryView.timeTitleFont = UIFontWeightBoldSize(16);
-        _categoryView.timeTitleSelectedFont = UIFontWeightBoldSize(16);
-        
         _categoryView.titleColorGradientEnabled = YES;
         _categoryView.indicators = @[self.lineView];//
         _categoryView.defaultSelectedIndex = 1;// 默认从第二个开始显示
         _categoryView.cellSpacing = JobsWidth(-20);
-        _categoryView.titleLabelVerticalOffset = JobsWidth(13);/// _lineView.verticalMargin = JobsWidth(-13);
+        _categoryView.titleLabelVerticalOffset = JobsWidth(15);/// _lineView.verticalMargin = JobsWidth(-13);
+        _categoryView.titleFont = UIFontWeightRegularSize(12);
+        _categoryView.titleColor = RGBA_COLOR(159, 153, 147, 1);
+        _categoryView.titleSelectedFont = UIFontWeightSemiboldSize(12);
+        _categoryView.titleSelectedColor = UIColor.whiteColor;
+        _categoryView.titles = self.subTitleMutArr;
+        _categoryView.timeTitles = self.titleMutArr;
+        _categoryView.timeTitleSelectedColor = UIColor.blackColor;
+        _categoryView.timeTitleNormalColor = RGB_SAMECOLOR(108);
+        _categoryView.timeTitleFont = UIFontWeightBoldSize(16);
+        _categoryView.timeTitleSelectedFont = UIFontWeightBoldSize(16);
         // 关联cotentScrollView，关联之后才可以互相联动！！！
         _categoryView.contentScrollView = self.listContainerView.scrollView;//
         [self addSubview:_categoryView];
@@ -211,7 +207,7 @@ ratio:(CGFloat)ratio {
         _lineView = JXCategoryIndicatorBackgroundView.new;
         _lineView.indicatorHeight = JobsWidth(20);
         _lineView.indicatorCornerRadius = JobsWidth(10);
-        _lineView.verticalMargin = JobsWidth(-13);
+        _lineView.verticalMargin = JobsWidth(-15);
         _lineView.indicatorColor = HEXCOLOR(0xEA2819);
     }return _lineView;
 }
