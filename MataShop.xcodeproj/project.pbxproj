@@ -351,7 +351,6 @@
 		C561D3E92AAC7E7B00E28603 /* UIView+ZFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0912AAC7E7900E28603 /* UIView+ZFPlayer.m */; };
 		C561D3EA2AAC7E7B00E28603 /* UIView+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0942AAC7E7900E28603 /* UIView+Gesture.m */; };
 		C561D3EB2AAC7E7B00E28603 /* UIView+Measure.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0962AAC7E7900E28603 /* UIView+Measure.m */; };
-		C561D3EC2AAC7E7B00E28603 /* UIView+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0992AAC7E7900E28603 /* UIView+BRPickerView.m */; };
 		C561D3ED2AAC7E7B00E28603 /* UIView+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D09D2AAC7E7900E28603 /* UIView+Gradient.m */; };
 		C561D3EE2AAC7E7B00E28603 /* UIView+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D09F2AAC7E7900E28603 /* UIView+Chain.m */; };
 		C561D3EF2AAC7E7B00E28603 /* UIView+BackgroundLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0A32AAC7E7900E28603 /* UIView+BackgroundLabel.m */; };
@@ -610,7 +609,7 @@
 		C569E9972AD38DFA000F4DE3 /* MSOrderDueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C569E9962AD38DFA000F4DE3 /* MSOrderDueVC.m */; };
 		C569E99A2AD38E12000F4DE3 /* MSOrderAllVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C569E9992AD38E12000F4DE3 /* MSOrderAllVC.m */; };
 		C569E99C2AD39818000F4DE3 /* 订单.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C569E99B2AD392C7000F4DE3 /* 订单.xcassets */; };
-		C569E9A32AD399A3000F4DE3 /* MSOrderFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C569E9A22AD399A3000F4DE3 /* MSOrderFilterView.m */; };
+		C569EA142AD3B438000F4DE3 /* NSObject+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C569EA132AD3B438000F4DE3 /* NSObject+BRPickerView.m */; };
 		C5729A972AB591E10084EAFC /* MSInternalRecruitmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729A962AB591E10084EAFC /* MSInternalRecruitmentVC.m */; };
 		C5729AA12AB593B00084EAFC /* MSBODVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729AA02AB593B00084EAFC /* MSBODVC.m */; };
 		C5729AA42AB593CD0084EAFC /* MSMDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5729AA32AB593CD0084EAFC /* MSMDVC.m */; };
@@ -1652,8 +1651,6 @@
 		C561D0942AAC7E7900E28603 /* UIView+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gesture.m"; sourceTree = "<group>"; };
 		C561D0962AAC7E7900E28603 /* UIView+Measure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Measure.m"; sourceTree = "<group>"; };
 		C561D0972AAC7E7900E28603 /* UIView+Measure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Measure.h"; sourceTree = "<group>"; };
-		C561D0992AAC7E7900E28603 /* UIView+BRPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BRPickerView.m"; sourceTree = "<group>"; };
-		C561D09A2AAC7E7900E28603 /* UIView+BRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BRPickerView.h"; sourceTree = "<group>"; };
 		C561D09C2AAC7E7900E28603 /* UIView+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gradient.h"; sourceTree = "<group>"; };
 		C561D09D2AAC7E7900E28603 /* UIView+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gradient.m"; sourceTree = "<group>"; };
 		C561D09F2AAC7E7900E28603 /* UIView+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Chain.m"; sourceTree = "<group>"; };
@@ -2249,9 +2246,8 @@
 		C569E9982AD38E12000F4DE3 /* MSOrderAllVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrderAllVC.h; sourceTree = "<group>"; };
 		C569E9992AD38E12000F4DE3 /* MSOrderAllVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSOrderAllVC.m; sourceTree = "<group>"; };
 		C569E99B2AD392C7000F4DE3 /* 订单.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "订单.xcassets"; sourceTree = "<group>"; };
-		C569E9A12AD399A3000F4DE3 /* MSOrderFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrderFilterView.h; sourceTree = "<group>"; };
-		C569E9A22AD399A3000F4DE3 /* MSOrderFilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSOrderFilterView.m; sourceTree = "<group>"; };
-		C569EA102AD3B23A000F4DE3 /* 订单筛选视图.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "订单筛选视图.jpg"; sourceTree = "<group>"; };
+		C569EA122AD3B438000F4DE3 /* NSObject+BRPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BRPickerView.h"; sourceTree = "<group>"; };
+		C569EA132AD3B438000F4DE3 /* NSObject+BRPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BRPickerView.m"; sourceTree = "<group>"; };
 		C56D8DF82ACECFEA00523046 /* 结息记录子控件UI002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI002.jpg"; sourceTree = "<group>"; };
 		C56D8DF92ACECFEA00523046 /* 结息记录子控件UI004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI004.jpg"; sourceTree = "<group>"; };
 		C56D8DFA2ACECFEA00523046 /* 结息记录子控件UI001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "结息记录子控件UI001.jpg"; sourceTree = "<group>"; };
@@ -5571,7 +5567,6 @@
 				C561D0B82AAC7E7900E28603 /* UIView+AutoSelfAdaptionSize */,
 				C561D0A72AAC7E7900E28603 /* UIView+BackgroundImage */,
 				C561D0A12AAC7E7900E28603 /* UIView+BackgroundLabel */,
-				C561D0982AAC7E7900E28603 /* UIView+BRPickerView */,
 				C561D09E2AAC7E7900E28603 /* UIView+Chain */,
 				C561D0A42AAC7E7900E28603 /* UIView+EmptyData */,
 				C561D0C42AAC7E7900E28603 /* UIView+Extras */,
@@ -5623,15 +5618,6 @@
 				C561D0972AAC7E7900E28603 /* UIView+Measure.h */,
 			);
 			path = "UIView+Measure";
-			sourceTree = "<group>";
-		};
-		C561D0982AAC7E7900E28603 /* UIView+BRPickerView */ = {
-			isa = PBXGroup;
-			children = (
-				C561D0992AAC7E7900E28603 /* UIView+BRPickerView.m */,
-				C561D09A2AAC7E7900E28603 /* UIView+BRPickerView.h */,
-			);
-			path = "UIView+BRPickerView";
 			sourceTree = "<group>";
 		};
 		C561D09B2AAC7E7900E28603 /* UIView+Gradient */ = {
@@ -7099,39 +7085,40 @@
 		C561D2432AAC7E7A00E28603 /* NSObject+Category */ = {
 			isa = PBXGroup;
 			children = (
-				C53F698D2AD0DCCF00B51391 /* NSObject+NSMutableParagraphStyle */,
-				C561D2442AAC7E7A00E28603 /* NSObject+Swizzling */,
-				C561D2482AAC7E7A00E28603 /* NSObject+OpenURL */,
-				C561D24B2AAC7E7A00E28603 /* NSObject+Measure */,
-				C561D2512AAC7E7A00E28603 /* NSObject+Alert */,
-				C561D2582AAC7E7A00E28603 /* NSObject+UIScrollViewDelegate */,
-				C561D25B2AAC7E7A00E28603 /* NSObject+HXPhotoPicker */,
-				C561D25E2AAC7E7A00E28603 /* NSObject+PopViewToLogOut */,
-				C561D2612AAC7E7A00E28603 /* NSObject+UserNotifications */,
-				C561D2642AAC7E7A00E28603 /* NSObject+DataSave */,
-				C561D2672AAC7E7A00E28603 /* NSObject+DynamicInvoke */,
-				C561D26C2AAC7E7A00E28603 /* NSObject+Shake */,
-				C561D26F2AAC7E7A00E28603 /* NSObject+RegularExpression */,
-				C561D2722AAC7E7A00E28603 /* NSObject+Time */,
-				C561D2752AAC7E7A00E28603 /* NSObject+DataBinding */,
-				C561D2782AAC7E7A00E28603 /* NSObject+CurrentDevice */,
-				C561D27B2AAC7E7A00E28603 /* NSObject+DeployCell */,
-				C561D27F2AAC7E7A00E28603 /* NSObject+Popup */,
-				C561D2822AAC7E7A00E28603 /* NSObject+Random */,
-				C561D2852AAC7E7A00E28603 /* NSObject+Notification */,
-				C561D2882AAC7E7A00E28603 /* NSObject+RunrtimeGet */,
-				C561D28B2AAC7E7A00E28603 /* NSObject+Sound */,
 				C561D28E2AAC7E7A00E28603 /* NSObject+AFNReachability */,
-				C561D2912AAC7E7A00E28603 /* NSObject+ID */,
-				C561D2A72AAC7E7A00E28603 /* NSObject+RichText */,
-				C561D2AA2AAC7E7A00E28603 /* NSObject+Extras */,
-				C561D2AE2AAC7E7A00E28603 /* NSObject+DeviceIP */,
-				C561D2B12AAC7E7A00E28603 /* NSObject+ChangeAppicon */,
-				C561D2B42AAC7E7A00E28603 /* NSObject+WHToast */,
-				C561D2B82AAC7E7A00E28603 /* NSObject+Class */,
-				C561D2BB2AAC7E7A00E28603 /* NSObject+UNUserNotificationCenterDelegate */,
-				C561D2BE2AAC7E7A00E28603 /* NSObject+DefConfig */,
+				C561D2512AAC7E7A00E28603 /* NSObject+Alert */,
+				C569EA112AD3B41F000F4DE3 /* NSObject+BRPickerView */,
 				C561D2C12AAC7E7A00E28603 /* NSObject+CallBackInfoByBlock */,
+				C561D2B12AAC7E7A00E28603 /* NSObject+ChangeAppicon */,
+				C561D2B82AAC7E7A00E28603 /* NSObject+Class */,
+				C561D2782AAC7E7A00E28603 /* NSObject+CurrentDevice */,
+				C561D2752AAC7E7A00E28603 /* NSObject+DataBinding */,
+				C561D2642AAC7E7A00E28603 /* NSObject+DataSave */,
+				C561D2BE2AAC7E7A00E28603 /* NSObject+DefConfig */,
+				C561D27B2AAC7E7A00E28603 /* NSObject+DeployCell */,
+				C561D2AE2AAC7E7A00E28603 /* NSObject+DeviceIP */,
+				C561D2672AAC7E7A00E28603 /* NSObject+DynamicInvoke */,
+				C561D2AA2AAC7E7A00E28603 /* NSObject+Extras */,
+				C561D25B2AAC7E7A00E28603 /* NSObject+HXPhotoPicker */,
+				C561D2912AAC7E7A00E28603 /* NSObject+ID */,
+				C561D24B2AAC7E7A00E28603 /* NSObject+Measure */,
+				C561D2852AAC7E7A00E28603 /* NSObject+Notification */,
+				C53F698D2AD0DCCF00B51391 /* NSObject+NSMutableParagraphStyle */,
+				C561D2482AAC7E7A00E28603 /* NSObject+OpenURL */,
+				C561D27F2AAC7E7A00E28603 /* NSObject+Popup */,
+				C561D25E2AAC7E7A00E28603 /* NSObject+PopViewToLogOut */,
+				C561D2822AAC7E7A00E28603 /* NSObject+Random */,
+				C561D26F2AAC7E7A00E28603 /* NSObject+RegularExpression */,
+				C561D2A72AAC7E7A00E28603 /* NSObject+RichText */,
+				C561D2882AAC7E7A00E28603 /* NSObject+RunrtimeGet */,
+				C561D26C2AAC7E7A00E28603 /* NSObject+Shake */,
+				C561D28B2AAC7E7A00E28603 /* NSObject+Sound */,
+				C561D2442AAC7E7A00E28603 /* NSObject+Swizzling */,
+				C561D2722AAC7E7A00E28603 /* NSObject+Time */,
+				C561D2582AAC7E7A00E28603 /* NSObject+UIScrollViewDelegate */,
+				C561D2BB2AAC7E7A00E28603 /* NSObject+UNUserNotificationCenterDelegate */,
+				C561D2612AAC7E7A00E28603 /* NSObject+UserNotifications */,
+				C561D2B42AAC7E7A00E28603 /* NSObject+WHToast */,
 			);
 			path = "NSObject+Category";
 			sourceTree = "<group>";
@@ -8738,7 +8725,6 @@
 		C569E81E2AD386F6000F4DE3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C569E99D2AD3994E000F4DE3 /* 订单筛选视图 */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -8810,14 +8796,13 @@
 			path = "评价";
 			sourceTree = "<group>";
 		};
-		C569E99D2AD3994E000F4DE3 /* 订单筛选视图 */ = {
+		C569EA112AD3B41F000F4DE3 /* NSObject+BRPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				C569EA102AD3B23A000F4DE3 /* 订单筛选视图.jpg */,
-				C569E9A12AD399A3000F4DE3 /* MSOrderFilterView.h */,
-				C569E9A22AD399A3000F4DE3 /* MSOrderFilterView.m */,
+				C569EA122AD3B438000F4DE3 /* NSObject+BRPickerView.h */,
+				C569EA132AD3B438000F4DE3 /* NSObject+BRPickerView.m */,
 			);
-			path = "订单筛选视图";
+			path = "NSObject+BRPickerView";
 			sourceTree = "<group>";
 		};
 		C5729A942AB591B30084EAFC /* 内部招聘 */ = {
@@ -10960,12 +10945,12 @@
 				C561D4A42AAC7E7B00E28603 /* JobsMagicTextField.m in Sources */,
 				C5CFEA112AB255B500D0F225 /* MS3rdShopLinkView.m in Sources */,
 				C561D3422AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_10.m in Sources */,
-				C569E9A32AD399A3000F4DE3 /* MSOrderFilterView.m in Sources */,
 				C561D4852AAC7E7B00E28603 /* NSObject+Notification.m in Sources */,
 				C561D45A2AAC7E7B00E28603 /* FileFolderHandleTool.m in Sources */,
 				C561D4162AAC7E7B00E28603 /* NSString+Path.m in Sources */,
 				C561D3F02AAC7E7B00E28603 /* UIView+EmptyData.m in Sources */,
 				C5DE5D332ACBB3E80075DF4B /* ECPrivacyCheckMotionAndFitness.m in Sources */,
+				C569EA142AD3B438000F4DE3 /* NSObject+BRPickerView.m in Sources */,
 				C561D6602AAC862000E28603 /* DDNetworkingAPI+Test.m in Sources */,
 				C520F5FD2AB396F500142DCC /* JobsCommentCoreVC.m in Sources */,
 				C5E017682AAF3684005ABE09 /* MSChuBaoView2.m in Sources */,
@@ -11163,7 +11148,6 @@
 				C561D3AD2AAC7E7A00E28603 /* AppInternationalizationVC.m in Sources */,
 				C5DE5D2D2ACBB3E80075DF4B /* ECPrivacyCheckBluetooth.m in Sources */,
 				C53299B42ABE2BE7004294E0 /* MSInputTextFieldLeftView.m in Sources */,
-				C561D3EC2AAC7E7B00E28603 /* UIView+BRPickerView.m in Sources */,
 				C5329FD42ABF0551004294E0 /* MSVedioCVCell.m in Sources */,
 				C561D3F82AAC7E7B00E28603 /* UIView+AOP.m in Sources */,
 				C5E0175D2AAF2F90005ABE09 /* MSChuBaoVC.m in Sources */,

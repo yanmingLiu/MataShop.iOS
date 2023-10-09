@@ -14,11 +14,11 @@
 @property(nonatomic,strong)JXCategoryTitleView *categoryView;/// 文字
 @property(nonatomic,strong)JXCategoryIndicatorLineView *lineView;/// 跟随的指示器
 @property(nonatomic,strong)JXCategoryListContainerView *listContainerView;/// 此属性决定依附于此的viewController
-@property(nonatomic,strong)MSOrderFilterView *orderFilterView;
 /// Data
 @property(nonatomic,strong)NSMutableArray <NSString *>*titleMutArr;
 @property(nonatomic,strong)NSMutableArray <NSString *>*popViewTitleMutArr;
 @property(nonatomic,strong)NSMutableArray <UIViewController *>*childVCMutArr;
+@property(nonatomic,strong)BRStringPickerViewModel *stringPickerViewModel;
 
 @end
 
@@ -185,19 +185,28 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            
-//            TFPopupParam *dd = TFPopupParam.new;
-//            dd.bubbleDirection = PopupDirectionBottom;
-//            dd.popupSize = CGSizeMake(self.view.frame.size.width, 300);
-//            dd.dragEnable = YES;
-//            [self.orderFilterView tf_showSlide:jobsGetMainWindow() direction:PopupDirectionBottom popupParam:dd];
-            [self popupshowSlideWithView:self.orderFilterView];
-//            self.popupParameter.bubbleDirection = PopupDirectionBottom;
-//            [jobsGetMainWindow() popupshowSlideWithView:self.orderFilterView];
-            
+            self.stringPickerView.alpha = 1;
+            [self makeStringPickerViewWithModel:self.stringPickerViewModel
+                                    pickerStyle:nil
+                                      doneBlock:^{
+                NSLog(@"");
+            }
+                                    resultBlock:^(id data) {
+                NSLog(@"");
+            }];
             return nil;
         }];
     }return _leftBtn;
+}
+
+-(BRStringPickerViewModel *)stringPickerViewModel{
+    if(!_stringPickerViewModel){
+        _stringPickerViewModel = BRStringPickerViewModel.new;
+        _stringPickerViewModel.pickerMode = BRStringPickerComponentSingle;
+        _stringPickerViewModel.title = Internationalization(@"筛选");
+        _stringPickerViewModel.dataSourceArr = self.popViewTitleMutArr;
+        _stringPickerViewModel.selectIndex = 2;
+    }return _stringPickerViewModel;
 }
 
 -(UIButton *)rightBtn{
