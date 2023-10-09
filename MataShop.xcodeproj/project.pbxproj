@@ -1162,7 +1162,6 @@
 		C5329FD92ABF106C004294E0 /* MSMineView1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView1.jpg; sourceTree = "<group>"; };
 		C5329FDB2ABF1079004294E0 /* MSMineView2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView2.jpg; sourceTree = "<group>"; };
 		C5329FDD2ABF1083004294E0 /* MSMineView3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView3.jpg; sourceTree = "<group>"; };
-		C5329FDF2ABF108F004294E0 /* MSMineView4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView4.jpg; sourceTree = "<group>"; };
 		C5329FE12ABF1099004294E0 /* MSMineView5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView5.jpg; sourceTree = "<group>"; };
 		C5329FE22ABF10C1004294E0 /* MSMineView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineView1.h; sourceTree = "<group>"; };
 		C5329FE32ABF10C1004294E0 /* MSMineView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineView1.m; sourceTree = "<group>"; };
@@ -2300,6 +2299,8 @@
 		C5A7D1BD2ACFB34300440B7C /* MSChuBaoBuyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChuBaoBuyVC.m; sourceTree = "<group>"; };
 		C5A7D1BF2ACFBE4100440B7C /* MSTransactionRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSTransactionRecordModel.h; sourceTree = "<group>"; };
 		C5A7D1C02ACFBE4100440B7C /* MSTransactionRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTransactionRecordModel.m; sourceTree = "<group>"; };
+		C5ACF93F2AD4944700316387 /* 个人中心.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "个人中心.jpg"; sourceTree = "<group>"; };
+		C5ACF9402AD4948300316387 /* MSMineView4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView4.jpg; sourceTree = "<group>"; };
 		C5BD5E682AAC76740048F36B /* MataShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD5E6B2AAC76740048F36B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5BD5E6C2AAC76740048F36B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -3443,7 +3444,7 @@
 		C5329FDE2ABF1085004294E0 /* MSMineView4 */ = {
 			isa = PBXGroup;
 			children = (
-				C5329FDF2ABF108F004294E0 /* MSMineView4.jpg */,
+				C5ACF9402AD4948300316387 /* MSMineView4.jpg */,
 				C5329FEB2ABF10DE004294E0 /* MSMineView4.h */,
 				C5329FEC2ABF10DE004294E0 /* MSMineView4.m */,
 			);
@@ -10157,6 +10158,7 @@
 		C5FF922E2AC493B000D3A386 /* MSMineVC */ = {
 			isa = PBXGroup;
 			children = (
+				C5ACF93F2AD4944700316387 /* 个人中心.jpg */,
 				C561D5412AAC847400E28603 /* MSMineVC.h */,
 				C561D5422AAC847400E28603 /* MSMineVC.m */,
 			);

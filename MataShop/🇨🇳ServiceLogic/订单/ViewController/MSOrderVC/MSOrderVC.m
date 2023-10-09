@@ -331,29 +331,6 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     }return _childVCMutArr;
 }
 
--(MSOrderFilterView *)orderFilterView{
-    if(!_orderFilterView){
-        _orderFilterView = MSOrderFilterView.new;
-        _orderFilterView.size = [MSOrderFilterView viewSizeWithModel:nil];
-        [_orderFilterView richElementsInViewWithModel:self.popViewTitleMutArr];
-        @jobs_weakify(self)
-        [_orderFilterView actionObjectBlock:^(UIButton *data) {
-            @jobs_strongify(self)
-            if([data.titleForNormalState isKindOfClass:NSString.class]){
-                if (data.titleForNormalState.isEqualToString(self.popViewTitleMutArr[0])) {
-        
-                }else if (data.titleForNormalState.isEqualToString(self.popViewTitleMutArr[1])){
-        
-                }else if (data.titleForNormalState.isEqualToString(self.popViewTitleMutArr[2])){
-                    
-                }else{}
-            }
-            [self.orderFilterView tf_hide];
-            [self.orderFilterView.class destroySingleton];
-        }];
-    }return _orderFilterView;
-}
-
 -(NSMutableArray<NSString *> *)popViewTitleMutArr{
     if(!_popViewTitleMutArr){
         _popViewTitleMutArr = NSMutableArray.array;

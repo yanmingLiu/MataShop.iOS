@@ -68,7 +68,7 @@ static dispatch_once_t static_mineView4OnceToken;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)viewSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsWidth(379), JobsWidth(180));
+    return CGSizeMake(JobsWidth(379), JobsWidth(260));
 }
 #pragma mark —— 一些私有方法
 
@@ -142,6 +142,15 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     }
     if(viewModel.textModel.text.isEqualToString(Internationalization(@"分享二维码"))){
         
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"每日签到"))){
+        [self forceComingToPushVC:MSSignInVC.new requestParams:@""];
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"邀请领红包"))){
+        [self forceComingToPushVC:MSRedEnvelopeDetailVC.new requestParams:@""];
+    }
+    if(viewModel.textModel.text.isEqualToString(Internationalization(@"共享收益"))){
+        [self forceComingToPushVC:MSChuBaoVC.new requestParams:@""];
     }
     /**
      滚动到指定位置
@@ -277,6 +286,36 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"分享二维码");
             viewModel.image = JobsIMG(@"分享二维码");
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
+            viewModel.imageTitleSpace = JobsWidth(1);
+            
+            [_dataMutArr addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"每日签到");
+            viewModel.image = JobsIMG(@"每日签到");
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
+            viewModel.imageTitleSpace = JobsWidth(1);
+            
+            [_dataMutArr addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"邀请领红包");
+            viewModel.image = JobsIMG(@"邀请领红包");
+            viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
+            viewModel.imageTitleSpace = JobsWidth(1);
+            
+            [_dataMutArr addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"共享收益");
+            viewModel.image = JobsIMG(@"共享收益");
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
             viewModel.imageTitleSpace = JobsWidth(1);
             
