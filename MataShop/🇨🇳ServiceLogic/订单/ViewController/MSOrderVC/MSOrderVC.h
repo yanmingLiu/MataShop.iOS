@@ -18,6 +18,12 @@
 #import "JXCategoryView.h"
 #endif
 
+#if __has_include(<BRPickerView/BRPickerView.h>)
+#import <BRPickerView/BRPickerView.h>
+#else
+#import "BRPickerView.h"
+#endif
+
 #import "MSOrderFilterView.h"
 
 NS_ASSUME_NONNULL_BEGIN
