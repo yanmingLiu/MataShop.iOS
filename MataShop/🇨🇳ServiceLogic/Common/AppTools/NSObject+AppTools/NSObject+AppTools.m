@@ -84,7 +84,8 @@ languageSwitchNotificationWithSelector:(SEL)aSelector{
 }
 /// 触发退出登录模块之前，弹窗提示二次确认，确认以后再删除本地用户数据
 -(void)popUpViewToLogout{
-    [self popupWithView:self.logOutPopupView popupParam:self.popupParameter];
+    [self popupShowScaleWithView:self.logOutPopupView
+                  popupParameter:self.popupParameter];
 }
 #pragma mark —— <AppToolsProtocol> 关于 TabBar
 /// TabBar
@@ -189,7 +190,7 @@ languageSwitchNotificationWithSelector:(SEL)aSelector{
 //    viewModel.textModel = textModel;
 //    return [self jobsTestPopView:viewModel];
 //}
-///// 在外层进行调用，[ 需要被展现的视图 popupWithView:popupView];
+///// 在外层进行调用，[ 需要被展现的视图 popupShowScaleWithView:popupView];
 //-(JobsBaseConfigTestPopupView *)jobsTestPopView:(UIViewModel *_Nullable)viewModel{
 //    
 //#ifdef DEBUG
@@ -208,7 +209,7 @@ languageSwitchNotificationWithSelector:(SEL)aSelector{
 //    }];return testPopupView;
 //#endif
 //}
-/// 测试和业务密切相关的弹窗 ：在外层进行调用，[ 需要被展现的视图 popupWithView:popupView];
+/// 测试和业务密切相关的弹窗 ：在外层进行调用，[ 需要被展现的视图 popupShowScaleWithView:popupView];
 /// @param popViewClass 被测试的弹窗视图
 /// @param viewModel 此视图所绑定的数据。传nil则使用testPopViewData的数据、传UIViewModel.new则使用popViewClass预埋的数据
 -(UIView<BaseViewProtocol> *)jobsPopView:(Class<BaseViewProtocol> _Nullable)popViewClass
@@ -218,7 +219,9 @@ languageSwitchNotificationWithSelector:(SEL)aSelector{
     // 这里设置弹出框的尺寸（最好在View内部layoutSubviews里面进行设置，外界设置的话，在某些情况下会出现异常）
     // popupView.size = [popViewClass viewSizeWithModel:nil];
     [popupView richElementsInViewWithModel:viewModel ? : self.testPopViewData];
+    @jobs_weakify(popupView)
     [popupView actionObjectBlock:^(UIButton *data) {
+        @jobs_strongify(popupView)
         if([data.titleForNormalState isKindOfClass:NSString.class]){
             if (data.titleForNormalState.isEqualToString(Internationalization(@"取消"))) {
 
@@ -247,7 +250,7 @@ languageSwitchNotificationWithSelector:(SEL)aSelector{
 //        [upgradePopupView tf_hide];
 //    }];
 //
-//    [self popupWithView:upgradePopupView];
+//    [self popupShowScaleWithView:upgradePopupView];
 }
 
 -(void)actionForHotLabel:(JobsHotLabelWithSingleLine *)hl{

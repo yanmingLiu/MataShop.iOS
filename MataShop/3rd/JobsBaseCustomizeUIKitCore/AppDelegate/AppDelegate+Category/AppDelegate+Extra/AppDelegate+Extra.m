@@ -15,7 +15,7 @@
         [tabBarTitleMutArr addObject:Internationalization(@"首页")];
         [tabBarTitleMutArr addObject:Internationalization(@"圈子")];
         [tabBarTitleMutArr addObject:Internationalization(@"")];
-        [tabBarTitleMutArr addObject:Internationalization(@"消息")];
+        [tabBarTitleMutArr addObject:Internationalization(@"订单")];
         [tabBarTitleMutArr addObject:Internationalization(@"未登录")];
         Jobs_setAssociatedRETAIN_NONATOMIC(_tabBarTitleMutArr, tabBarTitleMutArr)
     }
@@ -146,7 +146,7 @@ JobsKey(_configMutArr)
         
         {
             JobsTabBarControllerConfig *config = JobsTabBarControllerConfig.new;
-            config.vc = MSOrderVC.new;
+            config.vc = MSFindVC.new;
             config.title = self.tabBarTitleMutArr[ConfigMutArr.count];
             config.imageSelected = JobsIMG(@"tabbar_discount_selected");
             config.imageUnselected = JobsIMG(@"tabbar_discount_normal");

@@ -28,6 +28,7 @@
 
 #import "MSHomeVC.h"// 首页
 #import "MSMomentsVC.h"// 圈子
+#import "MSMyFindVC.h"// 发现
 #import "MSOrderVC.h"// 订单
 #import "MSMsgVC.h"// 消息
 #import "MSMineVC.h"// 我的

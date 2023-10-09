@@ -50,6 +50,8 @@
 #import "MSHomeCollectionReusableView.h"
 #import "MSInternalRecruitmentCVCell1.h"// 内部招聘Cell1
 #import "MSInternalRecruitmentCVCell2.h"// 内部招聘Cell2
+#import "MSFindCVCell.h"
+#import "MSVedioCVCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -75,7 +75,7 @@
     [self forceComingToPushVC:MSDoorVC.new requestParams:nil];
 //    [self forceComingToPushVC:MSSignInVC.new requestParams:@""];//签到
 //    [self forceComingToPushVC:MSRedEnvelopeDetailVC.new requestParams:@""];//助力红包
-//    [jobsGetMainWindow() popupWithView:[self jobsPopView:MSPayView.class viewModel:UIViewModel.new]];//zhifu 
+//    [jobsGetMainWindow() popupShowScaleWithView:[self jobsPopView:MSPayView.class viewModel:UIViewModel.new]];//zhifu 
 }
 #pragma mark —— lazyLoad
 
