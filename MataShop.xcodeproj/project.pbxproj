@@ -628,6 +628,8 @@
 		C5A7D1BB2ACFB32500440B7C /* MSChuBaoTopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D1BA2ACFB32500440B7C /* MSChuBaoTopUpVC.m */; };
 		C5A7D1BE2ACFB34300440B7C /* MSChuBaoBuyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D1BD2ACFB34300440B7C /* MSChuBaoBuyVC.m */; };
 		C5A7D1C12ACFBE4100440B7C /* MSTransactionRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D1C02ACFBE4100440B7C /* MSTransactionRecordModel.m */; };
+		C5ACF9432AD4986700316387 /* MSOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACF9422AD4986700316387 /* MSOrderModel.m */; };
+		C5ACFA222AD4AE1A00316387 /* MSOrderTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFA212AD4AE1A00316387 /* MSOrderTBVCell.m */; };
 		C5BD5E6D2AAC76740048F36B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6C2AAC76740048F36B /* AppDelegate.m */; };
 		C5BD5E702AAC76740048F36B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6F2AAC76740048F36B /* SceneDelegate.m */; };
 		C5BD5E762AAC76740048F36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BD5E742AAC76740048F36B /* Main.storyboard */; };
@@ -2074,7 +2076,6 @@
 		C561D5622AAC84DF00E28603 /* MacroDef_SysWarning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_SysWarning.h; sourceTree = "<group>"; };
 		C561D5632AAC84DF00E28603 /* MacroDef_Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Log.h; sourceTree = "<group>"; };
 		C561D5642AAC84DF00E28603 /* MacroDef_Sys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDef_Sys.h; sourceTree = "<group>"; };
-		C561D5662AAC84DF00E28603 /* DefineStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineStructure.h; sourceTree = "<group>"; };
 		C561D5672AAC84DF00E28603 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
 		C561D5692AAC84DF00E28603 /* JobsBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBlock.h; sourceTree = "<group>"; };
 		C561D56B2AAC84DF00E28603 /* ReturnByUnCertainParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnByUnCertainParameters.h; sourceTree = "<group>"; };
@@ -2301,6 +2302,11 @@
 		C5A7D1C02ACFBE4100440B7C /* MSTransactionRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTransactionRecordModel.m; sourceTree = "<group>"; };
 		C5ACF93F2AD4944700316387 /* 个人中心.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "个人中心.jpg"; sourceTree = "<group>"; };
 		C5ACF9402AD4948300316387 /* MSMineView4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSMineView4.jpg; sourceTree = "<group>"; };
+		C5ACF9412AD4986700316387 /* MSOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrderModel.h; sourceTree = "<group>"; };
+		C5ACF9422AD4986700316387 /* MSOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSOrderModel.m; sourceTree = "<group>"; };
+		C5ACF9462AD49E7600316387 /* JobsDefineAllEnumHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobsDefineAllEnumHeader.h; sourceTree = "<group>"; };
+		C5ACFA202AD4AE1A00316387 /* MSOrderTBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrderTBVCell.h; sourceTree = "<group>"; };
+		C5ACFA212AD4AE1A00316387 /* MSOrderTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSOrderTBVCell.m; sourceTree = "<group>"; };
 		C5BD5E682AAC76740048F36B /* MataShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD5E6B2AAC76740048F36B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5BD5E6C2AAC76740048F36B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -7894,7 +7900,7 @@
 		C561D5652AAC84DF00E28603 /* 其他的一些全局定义文件 */ = {
 			isa = PBXGroup;
 			children = (
-				C561D5662AAC84DF00E28603 /* DefineStructure.h */,
+				C5ACF9462AD49E7600316387 /* JobsDefineAllEnumHeader.h */,
 				C561D5672AAC84DF00E28603 /* APIKey.h */,
 				C561D5682AAC84DF00E28603 /* JobsBlock */,
 			);
@@ -8717,8 +8723,8 @@
 			children = (
 				C569E81A2AD386E9000F4DE3 /* 订单1.jpg */,
 				C569E81B2AD386E9000F4DE3 /* 订单2.jpg */,
-				C569E81F2AD38703000F4DE3 /* ViewController */,
 				C569E81E2AD386F6000F4DE3 /* View */,
+				C569E81F2AD38703000F4DE3 /* ViewController */,
 			);
 			path = "订单";
 			sourceTree = "<group>";
@@ -8726,6 +8732,8 @@
 		C569E81E2AD386F6000F4DE3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5ACFA202AD4AE1A00316387 /* MSOrderTBVCell.h */,
+				C5ACFA212AD4AE1A00316387 /* MSOrderTBVCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -8733,6 +8741,7 @@
 		C569E81F2AD38703000F4DE3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C5ACF9442AD4986C00316387 /* MSOrderModel */,
 				C569E98B2AD38D47000F4DE3 /* 评价 */,
 				C569E98A2AD38D41000F4DE3 /* 待收货 */,
 				C569E9892AD38D3B000F4DE3 /* 待发货 */,
@@ -9015,6 +9024,15 @@
 				C5A7D1BD2ACFB34300440B7C /* MSChuBaoBuyVC.m */,
 			);
 			path = "购买";
+			sourceTree = "<group>";
+		};
+		C5ACF9442AD4986C00316387 /* MSOrderModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACF9412AD4986700316387 /* MSOrderModel.h */,
+				C5ACF9422AD4986700316387 /* MSOrderModel.m */,
+			);
+			path = MSOrderModel;
 			sourceTree = "<group>";
 		};
 		C5BD5E5F2AAC76740048F36B = {
@@ -11106,6 +11124,7 @@
 				C561D65B2AAC862000E28603 /* NSObject+BaiShaETProjCheck.m in Sources */,
 				C561D4742AAC7E7B00E28603 /* NSObject+SPAlertController.m in Sources */,
 				C561D3002AAC7E7A00E28603 /* JobsTabBarItem.m in Sources */,
+				C5ACFA222AD4AE1A00316387 /* MSOrderTBVCell.m in Sources */,
 				C561D32E2AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_8.m in Sources */,
 				C561D46A2AAC7E7B00E28603 /* TouchID.m in Sources */,
 				C561D3AF2AAC7E7A00E28603 /* JobsDropDownListView.m in Sources */,
@@ -11274,6 +11293,7 @@
 				C5329FED2ABF10DE004294E0 /* MSMineView4.m in Sources */,
 				C561D3362AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_1.m in Sources */,
 				C561D99D2AAC9A8400E28603 /* BaiShaETProjMarqueeView.m in Sources */,
+				C5ACF9432AD4986700316387 /* MSOrderModel.m in Sources */,
 				C561D9472AAC8D8000E28603 /* JobsCustomView.m in Sources */,
 				C561D3F42AAC7E7B00E28603 /* UIView+JHGestureBlock.m in Sources */,
 				C561D46D2AAC7E7B00E28603 /* JobsTimeModel.m in Sources */,

@@ -6,10 +6,16 @@
 //
 
 #import "BaseViewController.h"
+#import "MSOrderTBVCell.h"
+#import "MSOrderModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MSOrderAllVC : BaseViewController
+<
+UITableViewDelegate
+,UITableViewDataSource
+>
 
 @end
 

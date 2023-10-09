@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong)NSNumber *bankId;// 银行ID
 @property(nonatomic,copy)NSString *bankLogo;// 银行LOGO
 @property(nonatomic,copy)NSString *bankName;// 银行名称
-@property(nonatomic,assign)BankCardStyle defaultCard;// 默认卡，主卡= 1
+@property(nonatomic,assign)JobsPayDefaultType defaultCard;// 默认卡，主卡= 1
 @property(nonatomic,strong)NSNumber *ID;// 银行卡ID
 @property(nonatomic,copy)NSString *realName;// 真实姓名
 
