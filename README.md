@@ -1,10 +1,5 @@
 # Mata商城iOS原生版本
-
-
-
 ## 一些潜在的Bug
-
-</details>
 
 <details id="WMZBannerView">
  <summary><strong>WMZBannerView</strong></summary>
@@ -12,9 +7,6 @@
 ```objective-c
 WMZBannerView 完全停止更新，且文字过长会出现问题。跑马灯功能需要另辟蹊径
 ```
-
-</details>
-
 </details>
 
 <details id="iPhone 15">
@@ -27,7 +19,6 @@ iPhone 15全系列机型因为才上市，暂时还没有拿到最新的机型�
 https://www.theiphonewiki.com/wiki/Models
 对 UIDevice+XMUtils.h 和 MacroDef_Size.h 进行更新
 ```
-
 </details>
 
 ## 几点重要说明
@@ -37,21 +28,15 @@ https://www.theiphonewiki.com/wiki/Models
 
 * 要想快，用快捷键调取代码块。集成方式：
 
-
 ```javascript
 https://github.com/JobsKit/JobsCodeSnippets
 ```
-
-</details>
-
 </details>
 
 <details id="UIButton">
  <summary><strong>UIButton</strong></summary>
 
 * 兼容新Api，如果还是按照以前的方式创建，你会发现UIButton不正常出现（请看下面的示例代码）
-
-
 ```javascript
 苹果在后续的Api中推出了 UIButtonConfiguration 来设置UIButton，但是这个新Api会存在几大问题
 1、大多数开发者对这个Api不熟悉
@@ -66,16 +51,12 @@ https://github.com/JobsKit/JobsCodeSnippets
 Chat GPT 3.5 
 https://www.jianshu.com/p/12426709420e
 ```
-
-</details>
-
 </details>
 
 <details id="示例代码">
  <summary><strong>示例代码</strong></summary>
 
 * Masonry约束动画
-
 ```objective-c
 -(MSMineView2 *)view2{
     if(!_view2){
@@ -99,9 +80,7 @@ https://www.jianshu.com/p/12426709420e
     }return _view2;
 }
 ```
-
 * 用新Api创建一个带富文本的UIButton
-
 ```objective-c
 @property(nonatomic,strong)BaseButton *titleBtn;
 @property(nonatomic,strong)NSMutableArray <NSString *>*richTextMutArr;
@@ -198,13 +177,11 @@ https://www.jianshu.com/p/12426709420e
      }return _richTextConfigMutArr;
  }
 ```
-
 </details>
 
 ## 打开苹果的反馈助理
 
 * 浏览器打开并输入 
-
 ```javascript
 applefeedback://
 ```
