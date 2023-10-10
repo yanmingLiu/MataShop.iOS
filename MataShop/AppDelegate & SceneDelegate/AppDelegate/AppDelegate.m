@@ -58,7 +58,7 @@ AppDelegate *appDelegate;
     
     {
         JobsTabBarControllerConfig *config = JobsTabBarControllerConfig.new;
-        config.vc = MSFindVC.new;
+        config.vc = MSMyFindVC.new;
         config.title = self.tabBarTitleMutArr[ConfigMutArr.count];
         config.imageSelected = JobsIMG(@"加号图片");
         config.imageUnselected = JobsIMG(@"加号图片");

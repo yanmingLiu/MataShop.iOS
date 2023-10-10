@@ -10,6 +10,7 @@
 @interface MSMomentsVC ()
 /// UI
 @property(nonatomic,strong)UIButton *rightBtn;
+@property(nonatomic,strong)UIImageView *imageView;
 @property(nonatomic,strong)UICollectionViewFlowLayout *layout;
 @property(nonatomic,strong)UICollectionView *collectionView;
 /// Data
@@ -36,7 +37,8 @@
     self.viewModel.textModel.textCor = HEXCOLOR(0x3D4A58);
     self.viewModel.textModel.text = Internationalization(@"活动圈子");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);
-    self.viewModel.bgImage = JobsIMG(@"内部招聘导航栏背景图");
+    self.viewModel.bgCor = JobsCor(@"#E92014");
+//    self.viewModel.bgImage = JobsIMG(@"活动圈子背景图");
 //
 //    self.bgImage = nil;
 }
@@ -48,6 +50,7 @@
     [self setGKNavBackBtn];
     self.gk_navRightBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:self.rightBtn];
     self.gk_navigationBar.jobsVisible = YES;
+    self.imageView.alpha = 1;
     self.collectionView.alpha = 1;
 }
 
@@ -256,6 +259,19 @@ insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 #pragma mark —— lazyLoad
+-(UIImageView *)imageView{
+    if(!_imageView){
+        _imageView = UIImageView.new;
+        _imageView.image = JobsIMG(@"活动圈子背景图");
+        [self.view addSubview:_imageView];
+        [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(JobsMainScreen_WIDTH(), JobsWidth(100)));
+            make.top.equalTo(self.gk_navigationBar.mas_bottom);
+            make.centerX.equalTo(self.view);
+        }];
+    }return _imageView;
+}
+
 -(UIButton *)rightBtn{
     if(!_rightBtn){
         @jobs_weakify(self)
@@ -311,7 +327,7 @@ insetForSectionAtIndex:(NSInteger)section {
     if (!_collectionView) {
         _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero
                                            collectionViewLayout:self.layout];
-        _collectionView.backgroundColor = JobsCor(@"#F7F7F7");
+        _collectionView.backgroundColor = JobsClearColor;//JobsCor(@"#F7F7F7");
         [self dataLinkByCollectionView:_collectionView];
         _collectionView.showsVerticalScrollIndicator = NO;
         
@@ -390,9 +406,10 @@ insetForSectionAtIndex:(NSInteger)section {
         
         [self.view addSubview:_collectionView];
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.bottom.equalTo(self.view).offset(JobsWidth(-15));
+            make.right.equalTo(self.view).offset(JobsWidth(-15));
+            make.bottom.equalTo(self.view).offset(JobsWidth(0));
             make.left.equalTo(self.view).offset(JobsWidth(15));
-            make.top.equalTo(self.gk_navigationBar.mas_bottom).offset(JobsWidth(5));
+            make.top.equalTo(self.gk_navigationBar.mas_bottom).offset(JobsWidth(30));
         }];
     }return _collectionView;
 }

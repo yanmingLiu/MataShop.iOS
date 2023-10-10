@@ -146,7 +146,7 @@ JobsKey(_configMutArr)
         
         {
             JobsTabBarControllerConfig *config = JobsTabBarControllerConfig.new;
-            config.vc = MSFindVC.new;
+            config.vc = MSMyFindVC.new;
             config.title = self.tabBarTitleMutArr[ConfigMutArr.count];
             config.imageSelected = JobsIMG(@"tabbar_discount_selected");
             config.imageUnselected = JobsIMG(@"tabbar_discount_normal");

@@ -198,8 +198,8 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
         [_userInfoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(JobsWidth(58));
             make.top.equalTo(self.contentView).offset(JobsWidth(0));
-            make.left.equalTo(self.contentView).offset(JobsWidth(15));
-            make.right.equalTo(self.contentView).offset(JobsWidth(-15));
+            make.left.equalTo(self.contentView).offset(JobsWidth(0));
+            make.right.equalTo(self.contentView).offset(JobsWidth(-0));
         }];
     }
     _userInfoBtn.jobsResetImage(self.lastDynamicModel.userImage);
@@ -390,8 +390,8 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 //            make.size.mas_equalTo(CGSizeMake([MSLastDynamicCVCell cellSizeWithModel:nil].width, [MSForLastDynamicCVCell cellSizeWithModel:nil].height));
             make.height.mas_equalTo([MSForLastDynamicCVCell cellSizeWithModel:nil].height);
             make.centerX.equalTo(self.contentView);
-            make.left.equalTo(self.contentView).offset(JobsWidth(15));
-            make.right.equalTo(self.contentView).offset(JobsWidth(-15));
+            make.left.equalTo(self.contentView).offset(JobsWidth(0));
+            make.right.equalTo(self.contentView).offset(JobsWidth(-0));
         }];
     }return _collectionView;
 }

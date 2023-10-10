@@ -37,8 +37,8 @@
     }
     
     // UICollectionViewCell 圆切角
-//    [cell.contentView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
-//    [cell.contentView layerBorderCor:RGBA_COLOR(255, 225, 144, 1) andBorderWidth:JobsWidth(0.5f)];
+    [cell.contentView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
+    [cell.contentView layerBorderCor:RGBA_COLOR(255, 225, 144, 1) andBorderWidth:JobsWidth(0.5f)];
     cell.indexPath = indexPath;
     return cell;
 }
@@ -50,7 +50,7 @@
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)cellSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsWidth(315), JobsWidth(150));
+    return CGSizeMake(JobsWidth(345), JobsWidth(116));
 }
 #pragma mark —— 一些私有方法
 /// 下拉刷新 （子类要进行覆写）
@@ -87,7 +87,7 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView
                                    cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MSForHotTopicCVCell *cell = [MSForHotTopicCVCell cellWithCollectionView:collectionView forIndexPath:indexPath];
-    [cell richElementsInCellWithModel:self.dataMutArr[indexPath.section]];
+    [cell richElementsInCellWithModel:self.dataMutArr[indexPath.row]];
     return cell;
 }
 
