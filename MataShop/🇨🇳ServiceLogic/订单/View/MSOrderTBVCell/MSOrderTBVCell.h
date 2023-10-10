@@ -6,6 +6,7 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "MSOrderModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

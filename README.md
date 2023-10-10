@@ -53,6 +53,16 @@ https://www.jianshu.com/p/12426709420e
 ```
 </details>
 
+<details id="其他">
+ <summary><strong>其他</strong></summary>
+
+* 用 JobsDefineAllEnumHeader.h 管理全局的结构体定义
+
+```
+App内所有的结构体定义，都写在 JobsDefineAllEnumHeader.h 文件里面进行统一的全局管理。不要单独的写在某个文件里面
+```
+</details>
+
 <details id="示例代码">
  <summary><strong>示例代码</strong></summary>
 

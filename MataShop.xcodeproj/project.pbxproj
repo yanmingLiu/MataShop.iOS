@@ -2307,6 +2307,8 @@
 		C5ACF9462AD49E7600316387 /* JobsDefineAllEnumHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobsDefineAllEnumHeader.h; sourceTree = "<group>"; };
 		C5ACFA202AD4AE1A00316387 /* MSOrderTBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSOrderTBVCell.h; sourceTree = "<group>"; };
 		C5ACFA212AD4AE1A00316387 /* MSOrderTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSOrderTBVCell.m; sourceTree = "<group>"; };
+		C5ACFB0A2AD4B28500316387 /* MSOrderTBVCell1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSOrderTBVCell1.jpg; sourceTree = "<group>"; };
+		C5ACFB0B2AD4B28500316387 /* MSOrderTBVCell2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSOrderTBVCell2.jpg; sourceTree = "<group>"; };
 		C5BD5E682AAC76740048F36B /* MataShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD5E6B2AAC76740048F36B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5BD5E6C2AAC76740048F36B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -8732,8 +8734,7 @@
 		C569E81E2AD386F6000F4DE3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C5ACFA202AD4AE1A00316387 /* MSOrderTBVCell.h */,
-				C5ACFA212AD4AE1A00316387 /* MSOrderTBVCell.m */,
+				C5ACFB092AD4B26300316387 /* MSOrderTBVCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -9033,6 +9034,17 @@
 				C5ACF9422AD4986700316387 /* MSOrderModel.m */,
 			);
 			path = MSOrderModel;
+			sourceTree = "<group>";
+		};
+		C5ACFB092AD4B26300316387 /* MSOrderTBVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFB0A2AD4B28500316387 /* MSOrderTBVCell1.jpg */,
+				C5ACFB0B2AD4B28500316387 /* MSOrderTBVCell2.jpg */,
+				C5ACFA202AD4AE1A00316387 /* MSOrderTBVCell.h */,
+				C5ACFA212AD4AE1A00316387 /* MSOrderTBVCell.m */,
+			);
+			path = MSOrderTBVCell;
 			sourceTree = "<group>";
 		};
 		C5BD5E5F2AAC76740048F36B = {

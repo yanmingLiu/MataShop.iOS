@@ -24,7 +24,6 @@
 
 -(void)loadView{
     [super loadView];
-    
     if ([self.requestParams isKindOfClass:UIViewModel.class]) {
         self.viewModel = (UIViewModel *)self.requestParams;
     }
@@ -37,6 +36,7 @@
     [self setGKNav];
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
+    self.tableView.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -68,20 +68,20 @@
 /// 下拉刷新 （子类要进行覆写）
 -(void)pullToRefresh{
     [self feedbackGenerator];//震动反馈
-    //    @jobs_weakify(self)
-    //    [self withdrawBanklist:^(NSArray *data) {
-    //        @jobs_strongify(self)
-    //        if (data.count) {
-    //            [self endRefreshing:self.tableView];
-    //        }else{
-    //            [self endRefreshingWithNoMoreData:self.tableView];
-    //        }
-    //        /// 在reloadData后做的操作，因为reloadData刷新UI是在主线程上，那么就在主线程上等待
-    //        @jobs_weakify(self)
-    //        [self getMainQueue:^{
-    //            @jobs_strongify(self)
-    //        }];
-    //    }];
+//    @jobs_weakify(self)
+//    [self withdrawBanklist:^(NSArray *data) {
+//        @jobs_strongify(self)
+//        if (data.count) {
+//            [self endRefreshing:self.tableView];
+//        }else{
+//            [self endRefreshingWithNoMoreData:self.tableView];
+//        }
+//        /// 在reloadData后做的操作，因为reloadData刷新UI是在主线程上，那么就在主线程上等待
+//        @jobs_weakify(self)
+//        [self getMainQueue:^{
+//            @jobs_strongify(self)
+//        }];
+//    }];
 }
 /// 上拉加载更多 （子类要进行覆写）
 -(void)loadMoreRefresh{
@@ -110,7 +110,7 @@ didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [MSOrderTBVCell cellHeightWithModel:nil];
+    return [MSOrderTBVCell cellSizeWithModel:nil].height;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -120,33 +120,16 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    BaseTableViewCell *cell = [BaseTableViewCell cellStyleDefaultWithTableView:tableView];
+    MSOrderTBVCell *cell = [MSOrderTBVCell cellStyleDefaultWithTableView:tableView];
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.indexPath = indexPath;
-    [cell richElementsInCellWithModel:nil];
+    [cell richElementsInCellWithModel:self.dataMutArr[indexPath.row]];
     return cell;
-}
-/// 这里涉及到复用机制，return出去的是UITableViewHeaderFooterView的派生类
-- (nullable UIView *)tableView:(UITableView *)tableView
-        viewForFooterInSection:(NSInteger)section{
-    if(self.viewModel.usesTableViewFooterView){
-        BaseTableViewHeaderFooterView *tbvFooterView = BaseTableViewHeaderFooterView.jobsInitWithReuseIdentifier;
-        tbvFooterView.section = section;// 不写这一句有悬浮
-        tbvFooterView.backgroundColor = HEXCOLOR(0xEAEBED);
-        tbvFooterView.contentView.backgroundColor = HEXCOLOR(0xEAEBED);
-        
-        [tbvFooterView richElementsInViewWithModel:nil];
-        @jobs_weakify(self)
-        [tbvFooterView actionObjectBlock:^(id data) {
-            @jobs_strongify(self)
-        }];return tbvFooterView;
-    }return nil;
 }
 #pragma mark —— lazyLoad
 -(UITableView *)tableView{
     if (!_tableView) {
-        _tableView = UITableView.initWithStyleGrouped;
+        _tableView = UITableView.initWithStylePlain;
         _tableView.backgroundColor = AppMainCor_02;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _tableView.separatorColor = HEXCOLOR(0xEEE2C8);
@@ -156,7 +139,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
         _tableView.tableHeaderView = UIView.new;/// 这里接入的就是一个UIView的派生类
         _tableView.tableFooterView = UIView.new;/// 这里接入的就是一个UIView的派生类
         _tableView.contentInset = UIEdgeInsetsMake(0, 0, JobsBottomSafeAreaHeight(), 0);
-        [_tableView registerHeaderFooterViewClass:MSCommentTableHeaderFooterView.class];
         [_tableView registerTableViewClass];
         if(@available(iOS 11.0, *)) {
             _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -196,13 +178,13 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
             _tableView.ly_emptyView.titleLabFont = UIFontWeightLightSize(16);
         }
         
-        {/// 设置tabAnimated相关属性
-            // 可以不进行手动初始化，将使用默认属性
-            _tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:MSOrderTBVCell.class
-                                                                  cellHeight:[MSOrderTBVCell cellHeightWithModel:nil]];
-            _tableView.tabAnimated.superAnimationType = TABViewSuperAnimationTypeShimmer;
-            [_tableView tab_startAnimation];   // 开启动画
-        }
+//        {/// 设置tabAnimated相关属性
+//            // 可以不进行手动初始化，将使用默认属性
+//            _tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:MSOrderTBVCell.class
+//                                                                  cellHeight:[MSOrderTBVCell cellSizeWithModel:nil].height];
+//            _tableView.tabAnimated.superAnimationType = TABViewSuperAnimationTypeShimmer;
+//            [_tableView tab_startAnimation];   // 开启动画
+//        }
         
         [self.view addSubview:_tableView];
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -218,9 +200,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
         {
             MSOrderModel *orderModel = MSOrderModel.new;
             orderModel.shopName = @"我的小店";
-            orderModel.orderType = JobsOrderType_Evaluate;
-            orderModel.goodsName = @"醒者乐解酒液醒者乐解酒";
+            orderModel.orderState = JobsOrderState_Evaluate;
+            orderModel.goodsTitle = @"醒者乐解酒液醒者乐解酒";
+            orderModel.goodsSubTitle = @"类型：课程订单";
             orderModel.orderTime = @"下单时间：2023-04-25 09:14:47";
+            orderModel.payType = JobsPayType_AppBalance;
             orderModel.orderAmount = @"￥1999";
             [_dataMutArr addObject:orderModel];
         }
@@ -228,9 +212,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
         {
             MSOrderModel *orderModel = MSOrderModel.new;
             orderModel.shopName = @"你的小店";
-            orderModel.orderType = JobsOrderType_Evaluate;
-            orderModel.goodsName = @"钥匙扣";
+            orderModel.orderState = JobsOrderState_WaitReceived;
+            orderModel.goodsTitle = @"钥匙扣";
+            orderModel.goodsSubTitle = @"类型：课程订单";
             orderModel.orderTime = @"下单时间：2023-04-25 09:14:47";
+            orderModel.payType = JobsPayType_MataValue;
             orderModel.orderAmount = @"￥223";
             [_dataMutArr addObject:orderModel];
         }
@@ -238,9 +224,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
         {
             MSOrderModel *orderModel = MSOrderModel.new;
             orderModel.shopName = @"他的小店";
-            orderModel.orderType = JobsOrderType_Evaluate;
-            orderModel.goodsName = @"大力丸";
+            orderModel.orderState = JobsOrderState_Due;
+            orderModel.goodsTitle = @"大力丸";
+            orderModel.goodsSubTitle = @"类型：课程订单";
             orderModel.orderTime = @"下单时间：2023-04-25 09:14:47";
+            orderModel.payType = JobsPayType_MataCreditScore;
             orderModel.orderAmount = @"￥3333";
             [_dataMutArr addObject:orderModel];
         }
