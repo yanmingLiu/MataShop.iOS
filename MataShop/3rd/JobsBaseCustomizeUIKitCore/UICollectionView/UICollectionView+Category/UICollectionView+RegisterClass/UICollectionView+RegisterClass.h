@@ -41,17 +41,26 @@
 //
 //#import "BaiShaETProjUSDTWithdrawalCVCell.h"
 
-#import "MSTransactionRecordCVCell.h"// 储宝-交易记录子控件UI
-#import "MSPromotionIncentiveCVCell.h"// 储宝-推广奖励子控件UI
-#import "MSInterestSettleRecordCVCell.h"// 储宝-结息记录子控件UI
+#import "MSTransactionRecordCVCell.h"/// 储宝-交易记录子控件UI
+#import "MSPromotionIncentiveCVCell.h"/// 储宝-推广奖励子控件UI
+#import "MSInterestSettleRecordCVCell.h"/// 储宝-结息记录子控件UI
 #import "MSProdSelectCVCell.h"// 储宝-产品选购子控件UI
-#import "MSProdShowCVCell.h"// 首页商品展示UI
-#import "MSProdListCVCell.h"// 商品列表UI
+#import "MSProdShowCVCell.h"/// 首页商品展示UI
+#import "MSProdListCVCell.h"/// 商品列表UI
 #import "MSHomeCollectionReusableView.h"
-#import "MSInternalRecruitmentCVCell1.h"// 内部招聘Cell1
-#import "MSInternalRecruitmentCVCell2.h"// 内部招聘Cell2
+#import "MSInternalRecruitmentCVCell1.h"/// 内部招聘Cell1
+#import "MSInternalRecruitmentCVCell2.h"/// 内部招聘Cell2
 #import "MSFindCVCell.h"
 #import "MSVedioCVCell.h"
+#import "MSMomentsCollectionReusableView.h"
+#import "MSMoreMomentsCVCell.h"/// 更多圈子
+#import "MSForMoreMomentsCVCell.h"
+
+#import "MSHotTopicCVCell.h"/// 热门话题
+#import "MSForHotTopicCVCell.h"
+
+#import "MSLastDynamicCVCell.h"/// 最新动态
+#import "MSForLastDynamicCVCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -630,6 +630,16 @@
 		C5A7D1C12ACFBE4100440B7C /* MSTransactionRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7D1C02ACFBE4100440B7C /* MSTransactionRecordModel.m */; };
 		C5ACF9432AD4986700316387 /* MSOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACF9422AD4986700316387 /* MSOrderModel.m */; };
 		C5ACFA222AD4AE1A00316387 /* MSOrderTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFA212AD4AE1A00316387 /* MSOrderTBVCell.m */; };
+		C5ACFB7C2AD4E33300316387 /* MSCustomerServiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFB7B2AD4E33300316387 /* MSCustomerServiceVC.m */; };
+		C5ACFB812AD4E4A100316387 /* MSCustomerServiceTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFB802AD4E4A100316387 /* MSCustomerServiceTBVCell.m */; };
+		C5ACFB912AD4F34F00316387 /* MSMoreMomentsCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFB902AD4F34F00316387 /* MSMoreMomentsCVCell.m */; };
+		C5ACFC8D2AD4F57200316387 /* MSLastDynamicCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFC8C2AD4F57200316387 /* MSLastDynamicCVCell.m */; };
+		C5ACFC922AD4F88F00316387 /* MSHotTopicCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFC912AD4F88F00316387 /* MSHotTopicCVCell.m */; };
+		C5ACFC952AD4FB1C00316387 /* MSMomentsCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFC942AD4FB1C00316387 /* MSMomentsCollectionReusableView.m */; };
+		C5ACFC992AD5032F00316387 /* MSLastDynamicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFC982AD5032F00316387 /* MSLastDynamicModel.m */; };
+		C5ACFC9C2AD507BF00316387 /* MSForMoreMomentsCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFC9B2AD507BF00316387 /* MSForMoreMomentsCVCell.m */; };
+		C5ACFCA22AD509B300316387 /* MSForHotTopicCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFCA12AD509B300316387 /* MSForHotTopicCVCell.m */; };
+		C5ACFCA62AD50BDA00316387 /* MSForLastDynamicCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5ACFCA52AD50BDA00316387 /* MSForLastDynamicCVCell.m */; };
 		C5BD5E6D2AAC76740048F36B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6C2AAC76740048F36B /* AppDelegate.m */; };
 		C5BD5E702AAC76740048F36B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD5E6F2AAC76740048F36B /* SceneDelegate.m */; };
 		C5BD5E762AAC76740048F36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BD5E742AAC76740048F36B /* Main.storyboard */; };
@@ -2309,6 +2319,33 @@
 		C5ACFA212AD4AE1A00316387 /* MSOrderTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSOrderTBVCell.m; sourceTree = "<group>"; };
 		C5ACFB0A2AD4B28500316387 /* MSOrderTBVCell1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSOrderTBVCell1.jpg; sourceTree = "<group>"; };
 		C5ACFB0B2AD4B28500316387 /* MSOrderTBVCell2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSOrderTBVCell2.jpg; sourceTree = "<group>"; };
+		C5ACFB792AD4E11000316387 /* 客服.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "客服.jpg"; sourceTree = "<group>"; };
+		C5ACFB7A2AD4E33300316387 /* MSCustomerServiceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCustomerServiceVC.h; sourceTree = "<group>"; };
+		C5ACFB7B2AD4E33300316387 /* MSCustomerServiceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSCustomerServiceVC.m; sourceTree = "<group>"; };
+		C5ACFB7F2AD4E4A100316387 /* MSCustomerServiceTBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCustomerServiceTBVCell.h; sourceTree = "<group>"; };
+		C5ACFB802AD4E4A100316387 /* MSCustomerServiceTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSCustomerServiceTBVCell.m; sourceTree = "<group>"; };
+		C5ACFB822AD4F04C00316387 /* 圈子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "圈子.jpg"; sourceTree = "<group>"; };
+		C5ACFB852AD4F2D600316387 /* 热门话题.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "热门话题.jpg"; sourceTree = "<group>"; };
+		C5ACFB862AD4F2D600316387 /* 最新动态.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "最新动态.jpg"; sourceTree = "<group>"; };
+		C5ACFB8F2AD4F34F00316387 /* MSMoreMomentsCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMoreMomentsCVCell.h; sourceTree = "<group>"; };
+		C5ACFB902AD4F34F00316387 /* MSMoreMomentsCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMoreMomentsCVCell.m; sourceTree = "<group>"; };
+		C5ACFC8B2AD4F57200316387 /* MSLastDynamicCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSLastDynamicCVCell.h; sourceTree = "<group>"; };
+		C5ACFC8C2AD4F57200316387 /* MSLastDynamicCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSLastDynamicCVCell.m; sourceTree = "<group>"; };
+		C5ACFC8F2AD4F5E300316387 /* 更多圈子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "更多圈子.jpg"; sourceTree = "<group>"; };
+		C5ACFC902AD4F88F00316387 /* MSHotTopicCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHotTopicCVCell.h; sourceTree = "<group>"; };
+		C5ACFC912AD4F88F00316387 /* MSHotTopicCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHotTopicCVCell.m; sourceTree = "<group>"; };
+		C5ACFC932AD4FB1C00316387 /* MSMomentsCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMomentsCollectionReusableView.h; sourceTree = "<group>"; };
+		C5ACFC942AD4FB1C00316387 /* MSMomentsCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMomentsCollectionReusableView.m; sourceTree = "<group>"; };
+		C5ACFC972AD5032F00316387 /* MSLastDynamicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSLastDynamicModel.h; sourceTree = "<group>"; };
+		C5ACFC982AD5032F00316387 /* MSLastDynamicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSLastDynamicModel.m; sourceTree = "<group>"; };
+		C5ACFC9A2AD507BF00316387 /* MSForMoreMomentsCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSForMoreMomentsCVCell.h; sourceTree = "<group>"; };
+		C5ACFC9B2AD507BF00316387 /* MSForMoreMomentsCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSForMoreMomentsCVCell.m; sourceTree = "<group>"; };
+		C5ACFC9E2AD5080100316387 /* MSForMoreMomentsCVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSForMoreMomentsCVCell.jpg; sourceTree = "<group>"; };
+		C5ACFCA02AD509B300316387 /* MSForHotTopicCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSForHotTopicCVCell.h; sourceTree = "<group>"; };
+		C5ACFCA12AD509B300316387 /* MSForHotTopicCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSForHotTopicCVCell.m; sourceTree = "<group>"; };
+		C5ACFCA32AD509D900316387 /* MSForHotTopicCVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MSForHotTopicCVCell.jpg; sourceTree = "<group>"; };
+		C5ACFCA42AD50BDA00316387 /* MSForLastDynamicCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSForLastDynamicCVCell.h; sourceTree = "<group>"; };
+		C5ACFCA52AD50BDA00316387 /* MSForLastDynamicCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSForLastDynamicCVCell.m; sourceTree = "<group>"; };
 		C5BD5E682AAC76740048F36B /* MataShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MataShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5BD5E6B2AAC76740048F36B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5BD5E6C2AAC76740048F36B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -7685,6 +7722,7 @@
 		C561D4A52AAC7EA600E28603 /* 🇨🇳ServiceLogic */ = {
 			isa = PBXGroup;
 			children = (
+				C5ACFB782AD4E0E100316387 /* 客服 */,
 				C569E8192AD3868E000F4DE3 /* 订单 */,
 				C578F0522ABB8C8300832A07 /* MataShopDoor */,
 				C5EE372A2AB86F420020BDB8 /* 助力红包详情 */,
@@ -7760,6 +7798,9 @@
 		C561D5312AAC83DA00E28603 /* 圈子 */ = {
 			isa = PBXGroup;
 			children = (
+				C5ACFB822AD4F04C00316387 /* 圈子.jpg */,
+				C5ACFCA82AD5144C00316387 /* MSLastDynamicModel */,
+				C5ACFB832AD4F05200316387 /* View */,
 				C561D98E2AAC9A4800E28603 /* ViewController */,
 			);
 			path = "圈子";
@@ -9045,6 +9086,125 @@
 				C5ACFA212AD4AE1A00316387 /* MSOrderTBVCell.m */,
 			);
 			path = MSOrderTBVCell;
+			sourceTree = "<group>";
+		};
+		C5ACFB782AD4E0E100316387 /* 客服 */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFB7E2AD4E34700316387 /* View */,
+				C5ACFB7D2AD4E33D00316387 /* ViewController */,
+			);
+			path = "客服";
+			sourceTree = "<group>";
+		};
+		C5ACFB7D2AD4E33D00316387 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFB792AD4E11000316387 /* 客服.jpg */,
+				C5ACFB7A2AD4E33300316387 /* MSCustomerServiceVC.h */,
+				C5ACFB7B2AD4E33300316387 /* MSCustomerServiceVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C5ACFB7E2AD4E34700316387 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFB7F2AD4E4A100316387 /* MSCustomerServiceTBVCell.h */,
+				C5ACFB802AD4E4A100316387 /* MSCustomerServiceTBVCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5ACFB832AD4F05200316387 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFC882AD4F4DB00316387 /* MSMoreMomentsCVCell */,
+				C5ACFC9D2AD507C400316387 /* MSForMoreMomentsCVCell */,
+				C5ACFC892AD4F4E600316387 /* MSHotTopicCVCell */,
+				C5ACFC9F2AD509A400316387 /* MSForHotTopicCVCell */,
+				C5ACFC8E2AD4F57800316387 /* MSLastDynamicCVCell */,
+				C5ACFCA72AD50BDF00316387 /* MSForLastDynamicCVCell */,
+				C5ACFC962AD4FB2200316387 /* MSMomentsCollectionReusableView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5ACFC882AD4F4DB00316387 /* MSMoreMomentsCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFC8F2AD4F5E300316387 /* 更多圈子.jpg */,
+				C5ACFB8F2AD4F34F00316387 /* MSMoreMomentsCVCell.h */,
+				C5ACFB902AD4F34F00316387 /* MSMoreMomentsCVCell.m */,
+			);
+			path = MSMoreMomentsCVCell;
+			sourceTree = "<group>";
+		};
+		C5ACFC892AD4F4E600316387 /* MSHotTopicCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFB852AD4F2D600316387 /* 热门话题.jpg */,
+				C5ACFC902AD4F88F00316387 /* MSHotTopicCVCell.h */,
+				C5ACFC912AD4F88F00316387 /* MSHotTopicCVCell.m */,
+			);
+			path = MSHotTopicCVCell;
+			sourceTree = "<group>";
+		};
+		C5ACFC8E2AD4F57800316387 /* MSLastDynamicCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFB862AD4F2D600316387 /* 最新动态.jpg */,
+				C5ACFC8B2AD4F57200316387 /* MSLastDynamicCVCell.h */,
+				C5ACFC8C2AD4F57200316387 /* MSLastDynamicCVCell.m */,
+			);
+			path = MSLastDynamicCVCell;
+			sourceTree = "<group>";
+		};
+		C5ACFC962AD4FB2200316387 /* MSMomentsCollectionReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFC932AD4FB1C00316387 /* MSMomentsCollectionReusableView.h */,
+				C5ACFC942AD4FB1C00316387 /* MSMomentsCollectionReusableView.m */,
+			);
+			path = MSMomentsCollectionReusableView;
+			sourceTree = "<group>";
+		};
+		C5ACFC9D2AD507C400316387 /* MSForMoreMomentsCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFC9E2AD5080100316387 /* MSForMoreMomentsCVCell.jpg */,
+				C5ACFC9A2AD507BF00316387 /* MSForMoreMomentsCVCell.h */,
+				C5ACFC9B2AD507BF00316387 /* MSForMoreMomentsCVCell.m */,
+			);
+			path = MSForMoreMomentsCVCell;
+			sourceTree = "<group>";
+		};
+		C5ACFC9F2AD509A400316387 /* MSForHotTopicCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFCA32AD509D900316387 /* MSForHotTopicCVCell.jpg */,
+				C5ACFCA02AD509B300316387 /* MSForHotTopicCVCell.h */,
+				C5ACFCA12AD509B300316387 /* MSForHotTopicCVCell.m */,
+			);
+			path = MSForHotTopicCVCell;
+			sourceTree = "<group>";
+		};
+		C5ACFCA72AD50BDF00316387 /* MSForLastDynamicCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFCA42AD50BDA00316387 /* MSForLastDynamicCVCell.h */,
+				C5ACFCA52AD50BDA00316387 /* MSForLastDynamicCVCell.m */,
+			);
+			path = MSForLastDynamicCVCell;
+			sourceTree = "<group>";
+		};
+		C5ACFCA82AD5144C00316387 /* MSLastDynamicModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5ACFC972AD5032F00316387 /* MSLastDynamicModel.h */,
+				C5ACFC982AD5032F00316387 /* MSLastDynamicModel.m */,
+			);
+			path = MSLastDynamicModel;
 			sourceTree = "<group>";
 		};
 		C5BD5E5F2AAC76740048F36B = {
@@ -10943,6 +11103,7 @@
 				C561D3BB2AAC7E7A00E28603 /* UIScrollView+Extra.m in Sources */,
 				C561D3192AAC7E7A00E28603 /* JobsTabbarVC.m in Sources */,
 				C561D48D2AAC7E7B00E28603 /* NSObject+IDFA.m in Sources */,
+				C5ACFC8D2AD4F57200316387 /* MSLastDynamicCVCell.m in Sources */,
 				C569E5582AD24F31000F4DE3 /* MSMyInfoStyle1TBVCell.m in Sources */,
 				C520F5FA2AB396F500142DCC /* JobsCommentPopUpView_viewForHeaderInSection.m in Sources */,
 				C561D6872AAC862000E28603 /* BaiShaETProjMembersTBVCell1.m in Sources */,
@@ -11045,6 +11206,7 @@
 				C561D47F2AAC7E7B00E28603 /* NSObject+Time.m in Sources */,
 				C561D49F2AAC7E7B00E28603 /* UITextField+Placeholder.m in Sources */,
 				C5E017652AAF3676005ABE09 /* MSChuBaoView1.m in Sources */,
+				C5ACFB812AD4E4A100316387 /* MSCustomerServiceTBVCell.m in Sources */,
 				C561D68C2AAC862000E28603 /* UBLVerticalListCollectionView.m in Sources */,
 				C561D42A2AAC7E7B00E28603 /* UIViewController+GifImageView.m in Sources */,
 				C520F5FB2AB396F500142DCC /* JobsPopUpVC.m in Sources */,
@@ -11194,6 +11356,7 @@
 				C561D41E2AAC7E7B00E28603 /* UIViewController+JXCategoryListContentViewDelegate.m in Sources */,
 				C561D3492AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyleModel.m in Sources */,
 				C561D5432AAC847400E28603 /* MSMineVC.m in Sources */,
+				C5ACFC992AD5032F00316387 /* MSLastDynamicModel.m in Sources */,
 				C5A7D16A2ACF850A00440B7C /* MSTransactionRecordVC.m in Sources */,
 				C561CE562AAC7CE200E28603 /* XHLaunchAdImageManager.m in Sources */,
 				C520F5F32AB396F400142DCC /* JobsCommentConfig.m in Sources */,
@@ -11214,6 +11377,7 @@
 				C561D3672AAC7E7A00E28603 /* JobsTitleView01.m in Sources */,
 				C561D4722AAC7E7B00E28603 /* NSObject+Measure.m in Sources */,
 				C5DE5D392ACBB3E80075DF4B /* ECPrivacyCheckGatherTool.m in Sources */,
+				C5ACFB912AD4F34F00316387 /* MSMoreMomentsCVCell.m in Sources */,
 				C561D3DF2AAC7E7B00E28603 /* BaseButton.m in Sources */,
 				C561D5762AAC84DF00E28603 /* JobsBaseConfigNotificationManager.m in Sources */,
 				C561D47D2AAC7E7B00E28603 /* NSObject+Shake.m in Sources */,
@@ -11249,6 +11413,7 @@
 				C5DE5D352ACBB3E80075DF4B /* ECPrivacyCheckPhotos.m in Sources */,
 				C561D4862AAC7E7B00E28603 /* NSObject+RunrtimeGet.m in Sources */,
 				C578F0572ABB8CCA00832A07 /* MSDoorVC.m in Sources */,
+				C5ACFCA62AD50BDA00316387 /* MSForLastDynamicCVCell.m in Sources */,
 				C561D4092AAC7E7B00E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.m in Sources */,
 				C561D3FF2AAC7E7B00E28603 /* UITextView+Extend.m in Sources */,
 				C561D9232AAC8D8000E28603 /* BaiShaETProjRuleDetailTBVCell.m in Sources */,
@@ -11274,6 +11439,7 @@
 				C5D71EBE2AC22DAE00DD8938 /* JobsRightBtnsView.m in Sources */,
 				C561D4352AAC7E7B00E28603 /* UINavigationController+SafeTransition.m in Sources */,
 				C561CDFC2AAC7CE200E28603 /* ZMJCell+CustomView.m in Sources */,
+				C5ACFB7C2AD4E33300316387 /* MSCustomerServiceVC.m in Sources */,
 				C5329B1C2ABECE3B004294E0 /* MSMySocialVC.m in Sources */,
 				C561D47A2AAC7E7B00E28603 /* NSObject+DataSave.m in Sources */,
 				C5432E002ACB1F25008F92B0 /* MSMyPostDynamicVC.m in Sources */,
@@ -11299,6 +11465,7 @@
 				C561D35B2AAC7E7A00E28603 /* JobsHotLabelWithMultiLineHeaderFooterView.m in Sources */,
 				C5EE3D4F2AB9D1E60020BDB8 /* MSHomeGoodsView.m in Sources */,
 				C561D4262AAC7E7B00E28603 /* UIViewController+BackBtn.m in Sources */,
+				C5ACFC9C2AD507BF00316387 /* MSForMoreMomentsCVCell.m in Sources */,
 				C561D69A2AAC862000E28603 /* BaiShaETProjTipsView04.m in Sources */,
 				C5D71F3E2AC22EE800DD8938 /* KTVHCDataCacheItem.m in Sources */,
 				C520F6392AB3975800142DCC /* YTKChainRequest+AnimatingAccessory.m in Sources */,
@@ -11344,10 +11511,12 @@
 				C561D3BD2AAC7E7B00E28603 /* JobsAnimationLabel.m in Sources */,
 				C569E9942AD38DDD000F4DE3 /* MSOrderWaitSentVC.m in Sources */,
 				C561D3012AAC7E7A00E28603 /* UITabBarItem+TLAnimation.m in Sources */,
+				C5ACFCA22AD509B300316387 /* MSForHotTopicCVCell.m in Sources */,
 				C561D3D22AAC7E7B00E28603 /* UIButton+Animation.m in Sources */,
 				C561D4A12AAC7E7B00E28603 /* CJTextField.m in Sources */,
 				C561D53D2AAC845600E28603 /* MSMyFindVC.m in Sources */,
 				C5CFE91A2AB237BD00D0F225 /* MSSearchView.m in Sources */,
+				C5ACFC952AD4FB1C00316387 /* MSMomentsCollectionReusableView.m in Sources */,
 				C561D3282AAC7E7A00E28603 /* JobsAppDoorForgotCodeContentView.m in Sources */,
 				C5DE5D312ACBB3E80075DF4B /* ECPrivacyCheckCalendars.m in Sources */,
 				C5EE37342AB871250020BDB8 /* MSIncomeVC.m in Sources */,
@@ -11400,6 +11569,7 @@
 				C561CE192AAC7CE200E28603 /* JXCategoryTimelineCellModel.m in Sources */,
 				C5D71EB42AC22CC700DD8938 /* ZFDouYinControlView.m in Sources */,
 				C561D3E12AAC7E7B00E28603 /* IrregularBtn.m in Sources */,
+				C5ACFC922AD4F88F00316387 /* MSHotTopicCVCell.m in Sources */,
 				C561D3272AAC7E7A00E28603 /* BaseContentView.m in Sources */,
 				C561D6A42AAC862000E28603 /* BaiShaETProjTipsView01.m in Sources */,
 				C561D4832AAC7E7B00E28603 /* NSObject+Popup.m in Sources */,

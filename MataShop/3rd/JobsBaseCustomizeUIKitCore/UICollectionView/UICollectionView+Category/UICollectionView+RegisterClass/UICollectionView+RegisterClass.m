@@ -15,31 +15,33 @@
     [self registerCollectionElementKindSectionHeaderClass:BaseCollectionReusableView.class];
     [self registerCollectionElementKindSectionHeaderClass:JobsHotLabelWithMultiLineHeaderFooterView.class];
     [self registerCollectionElementKindSectionHeaderClass:MSHomeCollectionReusableView.class];
-//    [self registerCollectionElementKindSectionHeaderClass:BaiShaETProjTopupTipsVIew.class];
-//    [self registerCollectionElementKindSectionHeaderClass:BaiShaETProjUSDTWithdrawalCRView.class];
+    [self registerCollectionElementKindSectionHeaderClass:MSMomentsCollectionReusableView.class];
     // CollectionReusableView—Footer
     [self registerCollectionElementKindSectionFooterClass:UICollectionReusableView.class];
     [self registerCollectionElementKindSectionFooterClass:JobsHotLabelWithMultiLineHeaderFooterView.class];
-//    [self registerCollectionElementKindSectionFooterClass:BaiShaETProjVIPSubCVFooterView.class];
-//    [self registerCollectionElementKindSectionFooterClass:BaiShaETProjTopupTipsVIew.class];
     // CollectionViewCell
     [self registerCollectionViewCellClass:UICollectionViewCell.class];
     [self registerCollectionViewCellClass:BaseCollectionViewCell.class];
     [self registerCollectionViewCellClass:JobsHotLabelWithMultiLineCVCell.class];
     [self registerCollectionViewCellClass:JobsBtnStyleCVCell.class];
     [self registerCollectionViewCellClass:JobsImageViewStyleCVCell.class];
-
-    [self registerCollectionViewCellClass:MSTransactionRecordCVCell.class];// 储宝-交易记录子控件UI
-    [self registerCollectionViewCellClass:MSPromotionIncentiveCVCell.class];// 储宝-推广奖励子控件UI
-    [self registerCollectionViewCellClass:MSInterestSettleRecordCVCell.class];// 储宝-结息记录子控件UI
-    [self registerCollectionViewCellClass:MSProdSelectCVCell.class];// 储宝-产品选购子控件UI
-    [self registerCollectionViewCellClass:MSProdShowCVCell.class];// 首页商品展示UI
-    [self registerCollectionViewCellClass:MSProdListCVCell.class];// 商品列表UI
-    [self registerCollectionViewCellClass:MSInternalRecruitmentCVCell1.class];// 内部招聘Cell1
-    [self registerCollectionViewCellClass:MSInternalRecruitmentCVCell2.class];// 内部招聘Cell2
-    [self registerCollectionViewCellClass:MSFindCVCell.class];//
-    [self registerCollectionViewCellClass:MSVedioCVCell.class];// 
-    [self registerCollectionViewCellClass:MSMineView6CVCell.class];//
+    [self registerCollectionViewCellClass:MSForLastDynamicCVCell.class];
+    [self registerCollectionViewCellClass:MSForHotTopicCVCell.class];
+    [self registerCollectionViewCellClass:MSForMoreMomentsCVCell.class];
+    [self registerCollectionViewCellClass:MSLastDynamicCVCell.class];/// 最新动态
+    [self registerCollectionViewCellClass:MSHotTopicCVCell.class];/// 热门话题
+    [self registerCollectionViewCellClass:MSMoreMomentsCVCell.class];/// 更多圈子
+    [self registerCollectionViewCellClass:MSTransactionRecordCVCell.class];/// 储宝-交易记录子控件UI
+    [self registerCollectionViewCellClass:MSPromotionIncentiveCVCell.class];/// 储宝-推广奖励子控件UI
+    [self registerCollectionViewCellClass:MSInterestSettleRecordCVCell.class];/// 储宝-结息记录子控件UI
+    [self registerCollectionViewCellClass:MSProdSelectCVCell.class];/// 储宝-产品选购子控件UI
+    [self registerCollectionViewCellClass:MSProdShowCVCell.class];/// 首页商品展示UI
+    [self registerCollectionViewCellClass:MSProdListCVCell.class];/// 商品列表UI
+    [self registerCollectionViewCellClass:MSInternalRecruitmentCVCell1.class];/// 内部招聘Cell1
+    [self registerCollectionViewCellClass:MSInternalRecruitmentCVCell2.class];/// 内部招聘Cell2
+    [self registerCollectionViewCellClass:MSFindCVCell.class];///
+    [self registerCollectionViewCellClass:MSVedioCVCell.class];///
+    [self registerCollectionViewCellClass:MSMineView6CVCell.class];///
 }
 /// 注册 UICollectionViewCell 及其子类
 -(void)registerCollectionViewCellClass:(Class)cls{

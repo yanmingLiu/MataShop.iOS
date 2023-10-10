@@ -43,7 +43,7 @@
     self.view.backgroundColor = JobsCor(@"#EA2D19");
     [self setGKNav];
     [self setGKNavBackBtn];
-    self.gk_navigationBar.jobsVisible = NO;
+    self.gk_navigationBar.jobsVisible = YES;
     self.collectionView.alpha = 1;
     self.categoryView.alpha = 1;
 }

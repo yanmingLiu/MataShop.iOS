@@ -11,6 +11,7 @@
 #import "MSOrderWaitSentVC.h"/// 订单.待发货
 #import "MSOrderWaitReceivedVC.h"/// 订单.待收货
 #import "MSOrderEvaluateVC.h"/// 订单.评价
+#import "MSCustomerServiceVC.h"/// 客服
 
 #if __has_include(<JXCategoryView/JXCategoryView.h>)
 #import <JXCategoryView/JXCategoryView.h>

@@ -17,7 +17,7 @@
 -(NSString *_Nonnull)pasteboard{
     UIPasteboard *pasteboard = UIPasteboard.generalPasteboard;
     pasteboard.string = self;
-    [WHToast toastSuccessMsg:Internationalization(@"Copy success")];
+    [WHToast toastSuccessMsg:Internationalization(@"复制成功")];
     return pasteboard.string;
 }
 /// 根据字符串生成二维码图像
