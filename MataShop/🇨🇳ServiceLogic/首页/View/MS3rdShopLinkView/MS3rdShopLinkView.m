@@ -164,7 +164,7 @@ static dispatch_once_t static_shopLinkViewOnceToken;
             _adIMGV1.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target,
                                                                        UITapGestureRecognizer *_Nullable arg) {
                 @jobs_strongify(self)
-                [WHToast toastErrMsg:Internationalization(@"超值折扣区")];
+                [WHToast jobsToastErrMsg:Internationalization(@"超值折扣区")];
             }];
             _adIMGV1.tapGR.enabled = YES;/// 必须在设置完Target和selector以后方可开启执行
         }
@@ -196,7 +196,7 @@ static dispatch_once_t static_shopLinkViewOnceToken;
             _adIMGV2.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target,
                                                                        UITapGestureRecognizer *_Nullable arg) {
                 @jobs_strongify(self)
-                [WHToast toastErrMsg:Internationalization(@"超值")];
+                [WHToast jobsToastErrMsg:Internationalization(@"超值")];
             }];
             _adIMGV2.tapGR.enabled = YES;/// 必须在设置完Target和selector以后方可开启执行
         }
@@ -228,7 +228,7 @@ static dispatch_once_t static_shopLinkViewOnceToken;
             _adIMGV3.tapGR_SelImp.selector = [self jobsSelectorBlock:^(id _Nullable target,
                                                                        UITapGestureRecognizer *_Nullable arg) {
                 @jobs_strongify(self)
-                [WHToast toastErrMsg:Internationalization(@"火爆")];
+                [WHToast jobsToastErrMsg:Internationalization(@"火爆")];
             }];
             _adIMGV3.tapGR.enabled = YES;/// 必须在设置完Target和selector以后方可开启执行
         }

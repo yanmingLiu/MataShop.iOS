@@ -87,7 +87,7 @@
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastMsg:Internationalization(@"提现")];
+            [self jobsToastMsg:Internationalization(@"提现")];
             return nil;
         }];
         [self.contentView addSubview:_leftBtn];

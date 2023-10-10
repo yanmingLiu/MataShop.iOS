@@ -22,8 +22,16 @@
 //        [self richElementsInViewWithModel:nil];
     }return self;
 }
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    /// 内部指定圆切角
+    [self layoutSubviewsCutCnrByRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
+                                    cornerRadii:CGSizeMake(JobsWidth(8), JobsWidth(8))];
+}
 /// 由具体的子类进行覆写
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
+    self.backgroundColor = JobsWhiteColor;
     self.viewModel = model;
     self.titleLab.alpha = 1;
     self.moreBtn.alpha = 1;
@@ -89,7 +97,7 @@
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastMsg:Internationalization(@"更多")];
+            [self jobsToastMsg:Internationalization(@"更多")];
             return nil;
         }];
         [self addSubview:_moreBtn];

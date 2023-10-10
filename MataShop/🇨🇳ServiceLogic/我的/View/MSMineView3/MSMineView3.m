@@ -125,7 +125,7 @@ shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
     UIViewModel *viewModel = self.dataMutArr[indexPath.item];
-    [WHToast toastMsg:viewModel.textModel.text];
+    [self jobsToastMsg:viewModel.textModel.text];
     if(viewModel.textModel.text.isEqualToString(Internationalization(@"钱包"))){
         
     }

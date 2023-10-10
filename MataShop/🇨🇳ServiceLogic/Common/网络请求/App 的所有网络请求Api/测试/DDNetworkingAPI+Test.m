@@ -56,7 +56,7 @@
 //    }failure:^(NSError * _Nullable error){
 //        NSLog(@"error = %@",error);
 //        if (error) {
-//            [WHToast toastMsg:[NSObject.testSendMqGET.funcName stringByAppendingString:error.description]];
+//            [self jobsToastMsg:[NSObject.testSendMqGET.funcName stringByAppendingString:error.description]];
 //
 //        }
 //        if (failureBlock) failureBlock(error);
@@ -113,7 +113,7 @@
 //    }failure:^(NSError * _Nullable error){
 //        NSLog(@"error = %@",error);
 //        if (error) {
-//            [WHToast toastMsg:[NSObject.testSendMqGET.funcName stringByAppendingString:error.description]];
+//            [self jobsToastMsg:[NSObject.testSendMqGET.funcName stringByAppendingString:error.description]];
 //            
 //        }
 //        if (failureBlock) failureBlock(error);

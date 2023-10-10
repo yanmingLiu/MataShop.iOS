@@ -103,7 +103,7 @@
 //                   successBlock:^(DDResponseModel *data) {
 //        @jobs_strongify(self)
 //        if (data.code == HTTPResponseCodeSuccess) {
-//            [WHToast toastSuccessMsg:Internationalization(@"Setting success")];
+//            [WHToast jobsToastSuccessMsg:Internationalization(@"Setting success")];
 //            if (self.objectBlock) self.objectBlock(@1);
 //        }
 //    } failureBlock:^(id data) {

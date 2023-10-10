@@ -247,7 +247,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-//            [WHToast toastMsg:Internationalization(@"客服")];
+//            [self jobsToastMsg:Internationalization(@"客服")];
             [self forceComingToPushVC:MSCustomerServiceVC.new requestParams:nil];
             return nil;
         }];

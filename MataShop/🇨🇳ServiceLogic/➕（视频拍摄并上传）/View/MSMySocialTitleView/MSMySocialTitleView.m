@@ -124,7 +124,7 @@ shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
 //    UIViewModel *viewModel = self.dataMutArr[indexPath.item];
-//    [WHToast toastMsg:viewModel.textModel.text];
+//    [self jobsToastMsg:viewModel.textModel.text];
     /**
      滚动到指定位置
      _collectionView.contentOffset = CGPointMake(0,-100);

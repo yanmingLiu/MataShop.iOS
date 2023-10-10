@@ -48,7 +48,7 @@
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)cellSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsWidth(74), JobsWidth(44 + 8 + 14 + 5 + 32));
+    return CGSizeMake(JobsWidth(80), JobsWidth(100));
 }
 #pragma mark —— lazyLoad
 -(UIButton *)btn{
@@ -89,7 +89,7 @@
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastMsg:Internationalization(@"AAA")];
+            [self jobsToastMsg:Internationalization(@"AAA")];
             return nil;
         }];
         [self.contentView addSubview:_btn];

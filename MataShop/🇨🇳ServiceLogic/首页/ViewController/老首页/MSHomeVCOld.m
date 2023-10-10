@@ -112,8 +112,8 @@ atIndexPath:(NSIndexPath *)indexPath {
         [headerView richElementsInViewWithModel:nil];
         return headerView;
     }else if (kind.isEqualToString(UICollectionElementKindSectionFooter)) {
-        ReturnBaseCollectionReusableView
-    }else ReturnBaseCollectionReusableView;
+        ReturnBaseCollectionReusableFooterView
+    }else ReturnBaseCollectionReusableHeaderView;
 }
 #pragma mark —— UICollectionViewDelegate
 /// 允许选中时，高亮

@@ -113,7 +113,7 @@ static dispatch_once_t static_chuBaoAdMarqueeViewOnceToken;
              @jobs_strongify(self)
              x.selected = !x.selected;
              if (self.objectBlock) self.objectBlock(x);
-             [WHToast toastMsg:Internationalization(@"提现")];
+             [self jobsToastMsg:Internationalization(@"提现")];
              return nil;
         }];
     }

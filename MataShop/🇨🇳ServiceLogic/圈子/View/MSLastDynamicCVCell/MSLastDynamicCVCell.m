@@ -47,7 +47,7 @@
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInCellWithModel:(MSLastDynamicModel *_Nullable)model{
-//    self.contentView.backgroundColor = JobsRandomColor;
+    self.contentView.backgroundColor = self.backgroundColor = JobsWhiteColor;
     self.lastDynamicModel = model;
     
     self.userInfoBtn.alpha = 1;
@@ -60,9 +60,40 @@
 +(CGSize)cellSizeWithModel:(NSMutableArray <MSLastDynamicModel *>*_Nullable)model{
     return CGSizeMake(JobsWidth(345), JobsWidth(210));
 }
+#pragma mark —— 一些私有方法
 /// 上拉加载更多 （子类要进行覆写）
 -(void)loadMoreRefresh{
     [self pullToRefresh];
+}
+///
+-(void)btn:(UIButton *)btn
+  isPraise:(BOOL)isPraise{
+    if(isPraise){
+        self.lastDynamicModel.praise = [self addPraise:self.lastDynamicModel.praise];
+        [btn jobsSetBtntitleFont:UIFontWeightBoldSize(12)
+                     btnTitleCor:JobsCor(@"#DD0000")];
+        btn.jobsResetImage(JobsIMG(@"圈子点赞.已点击"));
+        [self jobsToastMsg:Internationalization(@"点赞")];
+    }else{
+        self.lastDynamicModel.praise = [self subtractionPraise:self.lastDynamicModel.praise];
+        [btn jobsSetBtntitleFont:UIFontWeightBoldSize(12)
+                     btnTitleCor:JobsCor(@"#999999")];
+        btn.jobsResetImage(JobsIMG(@"圈子点赞.未点击"));
+        [self jobsToastMsg:Internationalization(@"取消点赞")];
+    }
+    btn.jobsResetTitle(self.lastDynamicModel.praise);
+}
+/// 点赞数加1
+-(NSString *)addPraise:(NSString *)praise{
+    NSInteger num = praise.intValue;
+    num += 1;
+    return [NSString stringWithFormat:@"%ld",num];
+}
+/// 点赞数减1
+-(NSString *)subtractionPraise:(NSString *)praise{
+    NSInteger num = praise.intValue;
+    num -= 1;
+    return [NSString stringWithFormat:@"%ld",num];
 }
 #pragma mark —— UICollectionViewCell 部署策略
 //见 @interface NSObject (JobsDeployCellConfig)
@@ -157,7 +188,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 -(UIButton *)userInfoBtn{
     if(!_userInfoBtn){
         @jobs_weakify(self)
-        _userInfoBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+        _userInfoBtn = [BaseButton.alloc jobsInitBtnByConfiguration:UIButtonConfiguration.plainButtonConfiguration
                                                          background:nil
                                                      titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
                                                       textAlignment:NSTextAlignmentCenter
@@ -198,7 +229,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
         [_userInfoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(JobsWidth(58));
             make.top.equalTo(self.contentView).offset(JobsWidth(0));
-            make.left.equalTo(self.contentView).offset(JobsWidth(0));
+            make.left.equalTo(self.contentView).offset(JobsWidth(15));
             make.right.equalTo(self.contentView).offset(JobsWidth(-0));
         }];
     }
@@ -263,7 +294,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastMsg:Internationalization(@"提现")];
+            [self jobsToastMsg:Internationalization(@"提现")];
             return nil;
         }];
         [self.contentView addSubview:_commentsBtn];
@@ -315,8 +346,9 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
                                                   clickEventBlock:^id(BaseButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
+            [self btn:x isPraise:x.selected];
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastMsg:Internationalization(@"点赞")];
+//            [self jobsToastMsg:Internationalization(@"点赞")];
             return nil;
         }];
         [self.contentView addSubview:_praiseBtn];
@@ -326,15 +358,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
             make.top.equalTo(self.commentsBtn);
         }];
     }
-    if(self.lastDynamicModel.isPraise){
-        [_praiseBtn jobsSetBtntitleFont:UIFontWeightBoldSize(12) 
-                            btnTitleCor:JobsCor(@"#DD0000")];
-        _praiseBtn.jobsResetImage(JobsIMG(@"圈子点赞.已点击"));
-    }else{
-        [_praiseBtn jobsSetBtntitleFont:UIFontWeightBoldSize(12) 
-                            btnTitleCor:JobsCor(@"#999999")];
-        _praiseBtn.jobsResetImage(JobsIMG(@"圈子点赞.未点击"));
-    }
+    [self btn:_praiseBtn isPraise:self.lastDynamicModel.isPraise];
     
     _praiseBtn.jobsResetTitle(self.lastDynamicModel.praise);
     [_praiseBtn makeBtnLabelByShowingType:UILabelShowingType_03];
@@ -352,42 +376,15 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     if (!_collectionView) {
         _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero
                                            collectionViewLayout:self.layout];
-        _collectionView.backgroundColor = RGB_SAMECOLOR(246);
-//        _collectionView.layoutSubviewsRectCorner = UIRectCornerTopLeft | UIRectCornerTopRight;
-//        _collectionView.layoutSubviewsRectCornerSize = CGSizeMake(JobsWidth(20), JobsWidth(20));
+        _collectionView.backgroundColor = JobsWhiteColor;
         [self dataLinkByCollectionView:_collectionView];
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
-        
-//        _collectionView.contentInset = UIEdgeInsetsMake(0, 0, JobsBottomSafeAreaHeight(), 0);
-        //_collectionView.contentOffset = CGPointMake(0, -JobsWidth(250));//
-//        [_collectionView setContentOffset:CGPointMake(0, -400) animated:YES];// 这句最快在 viewWillLayoutSubviews 有效
         [_collectionView registerCollectionViewClass];
         [_collectionView registerCollectionViewCellClass:MSForMoreMomentsCVCell.class];
-        
-//        {
-//            NSArray *classArray = @[
-//                MSForMoreMomentsCVCell.class
-//            ];
-//            NSArray *sizeArray = @[
-//                [NSValue valueWithCGSize:[MSForMoreMomentsCVCell cellSizeWithModel:nil]]
-//            ];
-//
-//            _collectionView.tabAnimated = [TABCollectionAnimated animatedWithCellClassArray:classArray
-//                                                                              cellSizeArray:sizeArray
-//                                                                         animatedCountArray:@[@(1)]];
-//
-//            _collectionView.tabAnimated.containNestAnimation = YES;
-//            _collectionView.tabAnimated.superAnimationType = TABViewSuperAnimationTypeShimmer;
-//            _collectionView.tabAnimated.canLoadAgain = YES;
-//            [_collectionView tab_startAnimation];   // 开启动画
-//        }
-        
         [self.contentView addSubview:_collectionView];
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.userInfoBtn.mas_bottom);
-//            make.size.mas_equalTo([MSForLastDynamicCVCell cellSizeWithModel:nil]);
-//            make.size.mas_equalTo(CGSizeMake([MSLastDynamicCVCell cellSizeWithModel:nil].width, [MSForLastDynamicCVCell cellSizeWithModel:nil].height));
             make.height.mas_equalTo([MSForLastDynamicCVCell cellSizeWithModel:nil].height);
             make.centerX.equalTo(self.contentView);
             make.left.equalTo(self.contentView).offset(JobsWidth(0));
@@ -395,6 +392,5 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
         }];
     }return _collectionView;
 }
-
 
 @end

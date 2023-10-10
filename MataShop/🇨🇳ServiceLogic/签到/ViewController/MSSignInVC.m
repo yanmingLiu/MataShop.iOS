@@ -256,7 +256,7 @@ NSString *const 日历数组信息 = @"日历数组信息";
             });
             
         } else {
-            [WHToast toastErrMsg:Internationalization(@"获取节日事件需要权限呀大宝贝!")];
+            [WHToast jobsToastErrMsg:Internationalization(@"获取节日事件需要权限呀大宝贝!")];
         }
     }];
 }

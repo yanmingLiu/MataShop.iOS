@@ -66,11 +66,6 @@
     UICollectionReusableView *collectionReusableView = [self dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                                                                                 withReuseIdentifier:cls.description
                                                                                        forIndexPath:indexPath];
-    if (!collectionReusableView) {
-        collectionReusableView = [self dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-                                                          withReuseIdentifier:cls.description
-                                                                 forIndexPath:indexPath];
-    }
     collectionReusableView.indexPath = indexPath;
     return collectionReusableView;
 }
@@ -81,11 +76,6 @@
     UICollectionReusableView *collectionReusableView = [self dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter
                                                                                 withReuseIdentifier:cls.description
                                                                                        forIndexPath:indexPath];
-    if (!collectionReusableView) {
-        collectionReusableView = [self dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter
-                                                          withReuseIdentifier:cls.description
-                                                                 forIndexPath:indexPath];
-    }
     collectionReusableView.indexPath = indexPath;
     return collectionReusableView;
 }

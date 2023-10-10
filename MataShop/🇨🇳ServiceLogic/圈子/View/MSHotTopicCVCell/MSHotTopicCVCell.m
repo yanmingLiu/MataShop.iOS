@@ -38,7 +38,7 @@
     
     // UICollectionViewCell 圆切角
     [cell.contentView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
-    [cell.contentView layerBorderCor:RGBA_COLOR(255, 225, 144, 1) andBorderWidth:JobsWidth(0.5f)];
+    [cell.contentView layerBorderCor:JobsCor(@"#FFFFFF") andBorderWidth:JobsWidth(0.5f)];
     cell.indexPath = indexPath;
     return cell;
 }
@@ -175,7 +175,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     if (!_collectionView) {
         _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero
                                            collectionViewLayout:self.layout];
-        _collectionView.backgroundColor = RGB_SAMECOLOR(246);
+        _collectionView.backgroundColor = JobsWhiteColor;
 //        _collectionView.layoutSubviewsRectCorner = UIRectCornerTopLeft | UIRectCornerTopRight;
 //        _collectionView.layoutSubviewsRectCornerSize = CGSizeMake(JobsWidth(20), JobsWidth(20));
         [self dataLinkByCollectionView:_collectionView];

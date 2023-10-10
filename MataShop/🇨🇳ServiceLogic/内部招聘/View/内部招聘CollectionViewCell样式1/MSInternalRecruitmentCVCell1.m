@@ -104,7 +104,7 @@
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastMsg:Internationalization(@"我要加入")];
+            [self jobsToastMsg:Internationalization(@"我要加入")];
             return nil;
         }];
         [self.contentView addSubview:_joinBtn];

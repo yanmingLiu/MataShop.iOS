@@ -140,7 +140,7 @@
             NSLog(@"输入的字符为 = %@",x);
             self.securityModeBtn.jobsVisible = ![NSString isNullString:x] && self.doorInputViewBaseStyleModel.isShowSecurityBtn;/// 👁
             if ([x isContainsSpecialSymbolsString:nil]) {
-                [WHToast toastMsg:Internationalization(@"Do not enter special characters")];
+                [self jobsToastMsg:Internationalization(@"Do not enter special characters")];
             }else{
                 NSLog(@"输入的字符为 = %@",x);
                 [self textFieldBlock:self.textField

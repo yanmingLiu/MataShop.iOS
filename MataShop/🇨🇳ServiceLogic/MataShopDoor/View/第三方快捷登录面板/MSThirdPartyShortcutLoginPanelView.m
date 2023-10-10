@@ -135,7 +135,7 @@ static dispatch_once_t static_thirdPartyShortcutLoginPanelViewOnceToken;
         @jobs_weakify(self)
         [_qqLoginBtn jobsBtnClickEventBlock:^id(id data) {
             @jobs_strongify(self)
-            [WHToast toastErrMsg:Internationalization(@"微信登录")];
+            [WHToast jobsToastErrMsg:Internationalization(@"微信登录")];
             return nil;
         }];
     }return _qqLoginBtn;
@@ -154,7 +154,7 @@ static dispatch_once_t static_thirdPartyShortcutLoginPanelViewOnceToken;
         @jobs_weakify(self)
         [_wechatLoginBtn jobsBtnClickEventBlock:^id(id data) {
             @jobs_strongify(self)
-            [WHToast toastErrMsg:Internationalization(@"QQ登录")];
+            [WHToast jobsToastErrMsg:Internationalization(@"QQ登录")];
             return nil;
         }];
     }return _wechatLoginBtn;

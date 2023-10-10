@@ -312,7 +312,7 @@ UIViewModelProtocol_synthesize
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastMsg:Internationalization(@"????")];
+            [self jobsToastMsg:Internationalization(@"????")];
             return nil;
         }];
         [self.contentView addSubview:_orderStateBtn];
@@ -383,7 +383,7 @@ UIViewModelProtocol_synthesize
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastMsg:Internationalization(@"查看物流")];
+            [self jobsToastMsg:Internationalization(@"查看物流")];
             return nil;
         }];
         [self.contentView addSubview:_logisticsBtn];

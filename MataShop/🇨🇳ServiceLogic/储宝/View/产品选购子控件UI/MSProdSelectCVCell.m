@@ -286,7 +286,7 @@
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastErrMsg:Internationalization(@"我要购买")];
+            [WHToast jobsToastErrMsg:Internationalization(@"我要购买")];
             return nil;
         }];
         [self.contentView addSubview:_buyBtn];
@@ -336,7 +336,7 @@
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastErrMsg:Internationalization(@"推荐购买")];
+            [WHToast jobsToastErrMsg:Internationalization(@"推荐购买")];
             return nil;
         }];
         [self.contentView addSubview:_recommendedBuyBtn];

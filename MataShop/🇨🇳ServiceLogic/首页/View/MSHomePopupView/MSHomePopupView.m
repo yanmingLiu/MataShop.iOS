@@ -151,7 +151,7 @@ static dispatch_once_t static_homePopupViewOnceToken;
         [_leftBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
-//            [WHToast toastErrMsg:Internationalization(@"关注招聘资讯")];
+//            [WHToast jobsToastErrMsg:Internationalization(@"关注招聘资讯")];
             [self cancelBtnActionForPopView:x];
             [self forceComingToPushVC:MSInternalRecruitmentVC.new requestParams:nil];
             return nil;
@@ -184,7 +184,7 @@ static dispatch_once_t static_homePopupViewOnceToken;
         [_rightBtn jobsBtnClickEventBlock:^id(UIButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
-//            [WHToast toastErrMsg:Internationalization(@"进入Mata商城")];
+//            [WHToast jobsToastErrMsg:Internationalization(@"进入Mata商城")];
             [self cancelBtnActionForPopView:x];
             return nil;
         }];

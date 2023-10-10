@@ -152,7 +152,7 @@ static dispatch_once_t static_mineView1OnceToken;
         @jobs_weakify(self)
         [_leftArrowBtn jobsBtnClickEventBlock:^id(id data) {
             @jobs_strongify(self)
-            [WHToast toastMsg:Internationalization(@"编辑个人资料")];
+            [self jobsToastMsg:Internationalization(@"编辑个人资料")];
             return nil;
         }];
     }return _leftArrowBtn;

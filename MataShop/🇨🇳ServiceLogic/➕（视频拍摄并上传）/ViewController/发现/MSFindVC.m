@@ -129,7 +129,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
      _collectionView.contentOffset = CGPointMake(0,-100);
      [_collectionView setContentOffset:CGPointMake(0, -200) animated:YES];// 只有在viewDidAppear周期 或者 手动触发才有效
      */
-    [WHToast toastErrMsg:Internationalization(@"点击进入视频")];
+    [WHToast jobsToastErrMsg:Internationalization(@"点击进入视频")];
 }
 /// 取消选中操作
 -(void)collectionView:(UICollectionView *)collectionView

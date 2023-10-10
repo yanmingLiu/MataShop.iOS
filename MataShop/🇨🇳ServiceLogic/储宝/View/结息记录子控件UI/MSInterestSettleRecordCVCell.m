@@ -365,7 +365,7 @@
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [WHToast toastErrMsg:Internationalization(@"我要")];
+            [WHToast jobsToastErrMsg:Internationalization(@"我要")];
             return nil;
         }];
         [self.contentView addSubview:_moneyBackBtn];

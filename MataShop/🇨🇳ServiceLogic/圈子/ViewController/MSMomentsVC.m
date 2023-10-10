@@ -34,7 +34,7 @@
     self.setupNavigationBarHidden = YES;
     
 //    self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");
-    self.viewModel.textModel.textCor = HEXCOLOR(0x3D4A58);
+    self.viewModel.textModel.textCor = JobsWhiteColor;
     self.viewModel.textModel.text = Internationalization(@"活动圈子");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);
     self.viewModel.bgCor = JobsCor(@"#E92014");
@@ -160,15 +160,17 @@ numberOfItemsInSection:(NSInteger)section {
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
-viewForSupplementaryElementOfKind:(NSString *)kind
-atIndexPath:(NSIndexPath *)indexPath {
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath {
     if (kind.isEqualToString(UICollectionElementKindSectionHeader)) {
         MSMomentsCollectionReusableView *headerView = [collectionView UICollectionElementKindSectionHeaderClass:MSMomentsCollectionReusableView.class
                                                                                                    forIndexPath:indexPath];
         
         [headerView richElementsInViewWithModel:self.dataMutArr[indexPath.section]];
         return headerView;
-    }else ReturnBaseCollectionReusableView;
+    }else if (kind.isEqualToString(UICollectionElementKindSectionFooter)) {
+        return [collectionView UICollectionElementKindSectionFooterClass:BaseCollectionReusableView.class forIndexPath:indexPath];
+    }else ReturnBaseCollectionReusableHeaderView;
 }
 #pragma mark —— UICollectionViewDelegate
 /// 允许选中时，高亮
@@ -221,6 +223,16 @@ layout:(UICollectionViewLayout *)collectionViewLayout
 referenceSizeForHeaderInSection:(NSInteger)section {
     return section ? [MSMomentsCollectionReusableView collectionReusableViewSizeWithModel:nil] : CGSizeZero;
 }
+/// Footer 大小
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout
+referenceSizeForFooterInSection:(NSInteger)section{
+    if(section == 2){
+        return CGSizeMake(JobsMainScreen_WIDTH(), JobsWidth(0));
+    }else{
+        return CGSizeMake(JobsMainScreen_WIDTH(), JobsWidth(10));
+    }
+}
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
@@ -244,7 +256,11 @@ sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 - (CGFloat)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return JobsWidth(12);
+    if(section == 2){
+        return JobsWidth(0);
+    }else{
+        return JobsWidth(12);
+    }
 }
 /// 定义的是元素水平之间的间距。Api自动计算一行的Cell个数，只有当间距小于此定义的最小值时才会换行，最小执行单元是Section（每个section里面的样式是统一的）
 - (CGFloat)collectionView:(UICollectionView *)collectionView
@@ -289,7 +305,7 @@ insetForSectionAtIndex:(NSInteger)section {
                                                         subTitle:nil
                                                        titleFont:UIFontWeightMediumSize(14)
                                                     subTitleFont:nil
-                                                        titleCor:JobsCor(@"#EA2918")
+                                                        titleCor:JobsCor(@"#FFFFFF")
                                                      subTitleCor:nil
                                               titleLineBreakMode:NSLineBreakByWordWrapping
                                            subtitleLineBreakMode:NSLineBreakByWordWrapping
@@ -327,7 +343,7 @@ insetForSectionAtIndex:(NSInteger)section {
     if (!_collectionView) {
         _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero
                                            collectionViewLayout:self.layout];
-        _collectionView.backgroundColor = JobsClearColor;//JobsCor(@"#F7F7F7");
+        _collectionView.backgroundColor = JobsClearColor;
         [self dataLinkByCollectionView:_collectionView];
         _collectionView.showsVerticalScrollIndicator = NO;
         
@@ -411,6 +427,7 @@ insetForSectionAtIndex:(NSInteger)section {
             make.left.equalTo(self.view).offset(JobsWidth(15));
             make.top.equalTo(self.gk_navigationBar.mas_bottom).offset(JobsWidth(30));
         }];
+        [_collectionView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
     }return _collectionView;
 }
 
@@ -512,7 +529,7 @@ insetForSectionAtIndex:(NSInteger)section {
                 MSLastDynamicModel *lastDynamicModel = MSLastDynamicModel.new;
 //                lastDynamicModel.userImageUrl;/// 用户头像URL
                 lastDynamicModel.userImage = JobsIMG(@"最新动态用户头像临时占位图");/// 用户头像Image
-                lastDynamicModel.userTitle = @"会飞的鱼";/// 用户名
+                lastDynamicModel.userTitle = @"会飞的鱼1";/// 用户名
                 lastDynamicModel.userSubTitle = @"三月营销秘籍上线 为品牌赋能新生态";/// 用户发表的内容
                 {
                     NSMutableArray <UIImage *>*imageDataMutArr = NSMutableArray.array;
@@ -533,7 +550,7 @@ insetForSectionAtIndex:(NSInteger)section {
                 MSLastDynamicModel *lastDynamicModel = MSLastDynamicModel.new;
 //                lastDynamicModel.userImageUrl;/// 用户头像URL
                 lastDynamicModel.userImage = JobsIMG(@"最新动态用户头像临时占位图");/// 用户头像Image
-                lastDynamicModel.userTitle = @"会飞的鱼";/// 用户名
+                lastDynamicModel.userTitle = @"会飞的鱼2";/// 用户名
                 lastDynamicModel.userSubTitle = @"三月营销秘籍上线 为品牌赋能新生态";/// 用户发表的内容
                 {
                     NSMutableArray <UIImage *>*imageDataMutArr = NSMutableArray.array;
@@ -554,7 +571,7 @@ insetForSectionAtIndex:(NSInteger)section {
                 MSLastDynamicModel *lastDynamicModel = MSLastDynamicModel.new;
 //                lastDynamicModel.userImageUrl;/// 用户头像URL
                 lastDynamicModel.userImage = JobsIMG(@"最新动态用户头像临时占位图");/// 用户头像Image
-                lastDynamicModel.userTitle = @"会飞的鱼";/// 用户名
+                lastDynamicModel.userTitle = @"会飞的鱼3";/// 用户名
                 lastDynamicModel.userSubTitle = @"三月营销秘籍上线 为品牌赋能新生态";/// 用户发表的内容
                 {
                     NSMutableArray <UIImage *>*imageDataMutArr = NSMutableArray.array;

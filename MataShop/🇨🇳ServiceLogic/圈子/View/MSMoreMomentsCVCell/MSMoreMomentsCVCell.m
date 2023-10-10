@@ -34,7 +34,7 @@
     
     // UICollectionViewCell 圆切角
     [cell.contentView cornerCutToCircleWithCornerRadius:JobsWidth(8)];
-    [cell.contentView layerBorderCor:RGBA_COLOR(255, 225, 144, 1) andBorderWidth:JobsWidth(0.5f)];
+    [cell.contentView layerBorderCor:JobsCor(@"#FFFFFF") andBorderWidth:JobsWidth(0.5f)];
     cell.indexPath = indexPath;
     return cell;
 }
@@ -45,7 +45,7 @@
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)cellSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsWidth(345), JobsWidth(112));
+    return CGSizeMake(JobsWidth(345), JobsWidth(120));
 }
 #pragma mark —— 一些私有方法
 /// 下拉刷新 （子类要进行覆写）
@@ -156,7 +156,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView
                        layout:(UICollectionViewLayout *)collectionViewLayout
        insetForSectionAtIndex:(NSInteger)section {
-    return jobsSameEdgeInset(15);
+    return jobsSameEdgeInset(0);
 }
 #pragma mark —— lazyLoad
 -(UICollectionViewFlowLayout *)layout{
@@ -170,7 +170,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     if (!_collectionView) {
         _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero
                                            collectionViewLayout:self.layout];
-        _collectionView.backgroundColor = RGB_SAMECOLOR(246);
+        _collectionView.backgroundColor = JobsWhiteColor;
 //        _collectionView.layoutSubviewsRectCorner = UIRectCornerTopLeft | UIRectCornerTopRight;
 //        _collectionView.layoutSubviewsRectCornerSize = CGSizeMake(JobsWidth(20), JobsWidth(20));
         [self dataLinkByCollectionView:_collectionView];
