@@ -73,13 +73,13 @@
         [btn jobsSetBtntitleFont:UIFontWeightBoldSize(12)
                      btnTitleCor:JobsCor(@"#DD0000")];
         btn.jobsResetImage(JobsIMG(@"圈子点赞.已点击"));
-        [self jobsToastMsg:Internationalization(@"点赞")];
+//        [self jobsToastMsg:Internationalization(@"点赞")];
     }else{
         self.lastDynamicModel.praise = [self subtractionPraise:self.lastDynamicModel.praise];
         [btn jobsSetBtntitleFont:UIFontWeightBoldSize(12)
                      btnTitleCor:JobsCor(@"#999999")];
         btn.jobsResetImage(JobsIMG(@"圈子点赞.未点击"));
-        [self jobsToastMsg:Internationalization(@"取消点赞")];
+//        [self jobsToastMsg:Internationalization(@"取消点赞")];
     }
     btn.jobsResetTitle(self.lastDynamicModel.praise);
 }

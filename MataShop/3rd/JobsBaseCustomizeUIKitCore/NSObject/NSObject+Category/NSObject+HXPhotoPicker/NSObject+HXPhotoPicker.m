@@ -14,7 +14,9 @@
                              failBlock:(jobsByIDBlock _Nullable)failBlock{
     /// 请求相册权限
     @jobs_weakify(self)
-    [ECPrivacyCheckGatherTool requestPhotosAuthorizationWithCompletionHandler:^(BOOL granted) {
+    [TKPermissionPhoto authWithAlert:YES
+                               level:TKPhotoAccessLevelReadWrite
+                          completion:^(BOOL granted) {
         @jobs_strongify(self)
         if (granted) {
             if ([self isKindOfClass:UIViewController.class]) {
@@ -54,7 +56,8 @@
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         /// 请求相机📷权限
         @jobs_weakify(self)
-        [ECPrivacyCheckGatherTool requestCameraAuthorizationWithCompletionHandler:^(BOOL granted) {
+        [TKPermissionCamera authWithAlert:YES
+                               completion:^(BOOL granted) {
             @jobs_strongify(self)
             if (granted) {
                 if ([self isKindOfClass:UIViewController.class]) {

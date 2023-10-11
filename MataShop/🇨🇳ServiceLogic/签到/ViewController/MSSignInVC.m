@@ -10,9 +10,7 @@
 NSString *const 日历数组信息 = @"日历数组信息";
 @interface MSSignInVC ()
 /// UI
-@property(nonatomic,strong)UIImageView *backIMGV;
-@property(nonatomic,strong)UIImageView *calendarBack;// 日历的背景
-@property(nonatomic,strong)UIButton *signBtn;// 签到按钮
+@property(nonatomic,strong)UIButton *signBtn;/// 签到按钮
 @property(nonatomic,strong)FSCalendar *calendar;
 /// Data
 @property(nonatomic,strong)NSCalendar *gregorian;
@@ -22,13 +20,13 @@ NSString *const 日历数组信息 = @"日历数组信息";
 @property(nonatomic,strong)NSDate *minimumDate;
 @property(nonatomic,strong)NSDate *maximumDate;
 @property(nonatomic,strong)NSCache *cache;
-@property(nonatomic,assign)BOOL showsLunar;
-@property(nonatomic,assign)BOOL showsEvents;
+@property(nonatomic,assign)BOOL showsLunar;/// 显示农历
+@property(nonatomic,assign)BOOL showsEvents;/// 显示节日
 @property(nonatomic,strong)LunarFormatter *lunarFormatter;
 @property(nonatomic,strong)NSArray<EKEvent *> *events;
 @property(nonatomic,strong)NSArray *timeArr;
-@property(nonatomic,strong)NSMutableArray *signInList;// 签到列表
-@property(nonatomic,strong)NSString *dateStr;// 记录年月(正式使用时,不需要此属性)
+@property(nonatomic,strong)NSMutableArray *signInList;/// 签到列表
+@property(nonatomic,strong)NSString *dateStr;/// 记录年月(正式使用时,不需要此属性)
 
 @end
 
@@ -63,13 +61,8 @@ NSString *const 日历数组信息 = @"日历数组信息";
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = YES;
     
-    self.backIMGV.alpha = 1;
-    self.calendarBack.alpha = 1;
     self.signBtn.alpha = 1;
-    
-    [self calendarConfig];/// 日历配置
-    [self getCache];/// 1.加载缓存的日期,并选中
-    [self getSign];/// 2.从网络获取其签到结果,如果发现请求的结果中存在没有被选中,就将其选中,并加载到缓存中
+    self.calendar.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -78,26 +71,6 @@ NSString *const 日历数组信息 = @"日历数组信息";
 
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
-    //布局FSCalendar
-    self.calendar.frame = CGRectMake(0,
-                                     CGRectGetMaxY(self.navigationController.navigationBar.frame),
-                                     JobsMainScreen_WIDTH() - JobsWidth(50),
-                                     JobsWidth(300));
-    [self.calendar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(JobsMainScreen_WIDTH() - JobsWidth(50));
-        make.height.mas_equalTo(JobsWidth(300));
-        make.centerX.mas_equalTo(self.view.mas_centerX);
-        make.top.mas_equalTo(JobsWidth(50));
-    }];
-
-    //布局签到按钮
-    int signHeight = JobsWidth(60);
-    [self.signBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(self.calendar.width / JobsWidth(1.2));
-        make.height.mas_equalTo(35);
-        make.centerX.mas_equalTo(self.view.mas_centerX);
-        make.top.mas_equalTo(CGRectGetMaxY(self.calendar.frame) + signHeight + JobsWidth(44));
-    }];
 }
 
 -(void)viewDidLayoutSubviews{
@@ -120,10 +93,6 @@ NSString *const 日历数组信息 = @"日历数组信息";
 -(void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     DeleUserDefaultWithKey(日历数组信息);/// 清除缓存
-}
-
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    NSLog(@"");
 }
 #pragma mark —— 一些私有方法
 /// 加载缓存
@@ -199,12 +168,9 @@ NSString *const 日历数组信息 = @"日历数组信息";
 }
 /// 配置日历
 - (void)calendarConfig{
-    //载入节假日
-    [self loadCalendarEvents];
-    //显示农历
-    [self lunarItemClicked];
-    //显示节假日
-    [self eventItemClicked];
+    [self loadCalendarEvents];//载入节假日
+    [self lunarItemClicked];//显示农历
+    [self eventItemClicked];//显示节假日
 }
 /// 显示农历
 - (void)lunarItemClicked{
@@ -227,23 +193,29 @@ NSString *const 日历数组信息 = @"日历数组信息";
         return [self.lunarFormatter stringFromDate:date];
     }return nil;
 }
-// 加载节日到日历中
+/// 加载节日到日历中
 -(void)loadCalendarEvents{
     @jobs_weakify(self)
-    EKEventStore *store = EKEventStore.new;
-    /// 请求访问日历
-    [store requestAccessToEntityType:EKEntityTypeEvent
-                          completion:^(BOOL granted,
-                                       NSError *error) {
+    [TKPermissionReminder authWithAlert:YES
+requestFullAccessToEventsWithCompletion:^(BOOL granted, EKEventStore * _Nonnull eventStore, NSError * _Nullable error) {
+        NSLog(@"SSSS");//ok
+    }
+requestWriteOnlyAccessToEventsWithCompletion:^(BOOL granted, EKEventStore * _Nonnull eventStore, NSError * _Nullable error) {
+        NSLog(@"SSSSS");
+    }
+requestFullAccessToRemindersWithCompletion:^(BOOL granted,
+                                             EKEventStore *eventStore,
+                                             NSError * _Nullable error) {
+        NSLog(@"SSSSSS");
         @jobs_strongify(self)
         /// 允许访问
         if(granted) {
             NSDate *startDate = self.minimumDate;
             NSDate *endDate = self.maximumDate;
-            NSPredicate *fetchCalendarEvents = [store predicateForEventsWithStartDate:startDate
-                                                                              endDate:endDate
-                                                                            calendars:nil];
-            NSArray<EKEvent *> *eventList = [store eventsMatchingPredicate:fetchCalendarEvents];
+            NSPredicate *fetchCalendarEvents = [eventStore predicateForEventsWithStartDate:startDate
+                                                                                   endDate:endDate
+                                                                                 calendars:nil];
+            NSArray<EKEvent *> *eventList = [eventStore eventsMatchingPredicate:fetchCalendarEvents];
             NSArray<EKEvent *> *events = [eventList filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(EKEvent * _Nullable event,
                                                                                                                       NSDictionary<NSString *,id> * _Nullable bindings) {
                 return event.calendar.subscribed;
@@ -258,7 +230,38 @@ NSString *const 日历数组信息 = @"日历数组信息";
         } else {
             [WHToast jobsToastErrMsg:Internationalization(@"获取节日事件需要权限呀大宝贝!")];
         }
-    }];
+    } completion:nil];
+    
+    
+//    EKEventStore *store = EKEventStore.new;
+//    /// 请求访问日历
+//    [store requestAccessToEntityType:EKEntityTypeEvent
+//                          completion:^(BOOL granted,
+//                                       NSError *error) {
+//        @jobs_strongify(self)
+//        /// 允许访问
+//        if(granted) {
+//            NSDate *startDate = self.minimumDate;
+//            NSDate *endDate = self.maximumDate;
+//            NSPredicate *fetchCalendarEvents = [store predicateForEventsWithStartDate:startDate
+//                                                                              endDate:endDate
+//                                                                            calendars:nil];
+//            NSArray<EKEvent *> *eventList = [store eventsMatchingPredicate:fetchCalendarEvents];
+//            NSArray<EKEvent *> *events = [eventList filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(EKEvent * _Nullable event,
+//                                                                                                                      NSDictionary<NSString *,id> * _Nullable bindings) {
+//                return event.calendar.subscribed;
+//            }]];
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                if (!self) return;
+//                self.events = events;
+//                [self.calendar reloadData];
+//            });
+//            
+//        } else {
+//            [WHToast jobsToastErrMsg:Internationalization(@"获取节日事件需要权限呀大宝贝!")];
+//        }
+//    }];
 }
 /// 根据日期来显示事件
 - (NSArray<EKEvent *> *)eventsForDate:(NSDate *)date{
@@ -320,12 +323,42 @@ numberOfEventsForDate:(NSDate *)date{
 #pragma mark —— lazyLoad
 -(UIButton *)signBtn{
     if(!_signBtn){
-        _signBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _signBtn.backgroundColor = JobsYellowColor;
-        _signBtn.normalTitle = Internationalization(@"签到");
         @jobs_weakify(self)
-        [_signBtn jobsBtnClickEventBlock:^id(UIButton *x) {
+        _signBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                     background:nil
+                                                 titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                  textAlignment:NSTextAlignmentCenter
+                                               subTextAlignment:NSTextAlignmentCenter
+                                                    normalImage:nil
+                                                 highlightImage:nil
+                                                attributedTitle:nil
+                                        selectedAttributedTitle:nil
+                                             attributedSubtitle:nil
+                                                          title:Internationalization(@"签到")
+                                                       subTitle:nil
+                                                      titleFont:UIFontWeightBoldSize(12)
+                                                   subTitleFont:nil
+                                                       titleCor:JobsCor(@"#EA2918")
+                                                    subTitleCor:nil
+                                             titleLineBreakMode:NSLineBreakByWordWrapping
+                                          subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                            baseBackgroundColor:JobsYellowColor
+                                                   imagePadding:JobsWidth(0)
+                                                   titlePadding:JobsWidth(0)
+                                                 imagePlacement:NSDirectionalRectEdgeNone
+                                     contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                       contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                  contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                              cornerRadiusValue:JobsWidth(5)
+                                                roundingCorners:UIRectCornerAllCorners
+                                           roundingCornersRadii:CGSizeZero
+                                                 layerBorderCor:nil
+                                                    borderWidth:JobsWidth(0)
+                                                  primaryAction:nil
+                                                clickEventBlock:^id(BaseButton *x) {
             @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
             
@@ -342,48 +375,20 @@ numberOfEventsForDate:(NSDate *)date{
             [self getSign];
             return nil;
         }];
-        
-        [_signBtn cornerCutToCircleWithCornerRadius:5];
-        
-        if(UIDevice.currentDevice.systemVersion.floatValue < 15.0){
-            SuppressWdeprecatedDeclarationsWarning(_signBtn.showsTouchWhenHighlighted = YES;);
-        }
-        
+
         [self.view addSubview:_signBtn];
+        [_signBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(self.calendar.width / JobsWidth(1.2));
+            make.height.mas_equalTo(35);
+            make.centerX.mas_equalTo(self.view.mas_centerX);
+            make.top.mas_equalTo(CGRectGetMaxY(self.calendar.frame) + JobsWidth(60) + JobsWidth(44));
+        }];
     }return _signBtn;
-}
-
--(UIImageView *)calendarBack{
-    if(!_calendarBack){
-        _calendarBack = UIImageView.new;
-        _calendarBack.image = JobsIMG(@"signInCalandarBack");
-        _calendarBack.frame = CGRectMake(JobsWidth(10),
-                                         self.navigationController.navigationBar.height * 2 + JobsWidth(30),
-                                         self.calendar.width + JobsWidth(30),
-                                         self.calendar.height + JobsWidth(45));
-        [self.view insertSubview:_calendarBack atIndex:1];
-    }return _calendarBack;
-}
-
--(UIImageView *)backIMGV{
-    if(!_backIMGV){
-        _backIMGV = UIImageView.new;
-        _backIMGV.image = JobsIMG(@"signInback.png");
-        _backIMGV.frame = CGRectMake(0,
-                                     0,
-                                     JobsMainScreen_WIDTH(),
-                                     JobsMainScreen_HEIGHT());
-        [self.view insertSubview:_backIMGV atIndex:0];
-    }return _backIMGV;
 }
 
 -(FSCalendar *)calendar{
     if(!_calendar){
         _calendar = FSCalendar.new;
-        _calendar.frame = CGRectMake(0,
-                                     self.navigationController.navigationBar.frame.size.height,//❤️
-                                     JobsMainScreen_WIDTH() - JobsWidth(50),
-                                     JobsWidth(300));
         _calendar.backgroundColor = JobsWhiteColor;
         _calendar.dataSource = self;
         _calendar.delegate = self;
@@ -407,6 +412,15 @@ numberOfEventsForDate:(NSDate *)date{
         _calendar.calendarHeaderView.backgroundColor = JobsRedColor;
         _calendar.calendarWeekdayView.backgroundColor = JobsRedColor;
         [self.view addSubview:_calendar];
+        [self.calendar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(JobsMainScreen_WIDTH() - JobsWidth(50));
+            make.height.mas_equalTo(JobsWidth(300));
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.navigationBar.mas_bottom).offset(JobsWidth(87));
+        }];
+        [self calendarConfig];/// 日历配置
+        [self getCache];/// 1.加载缓存的日期,并选中
+        [self getSign];/// 2.从网络获取其签到结果,如果发现请求的结果中存在没有被选中,就将其选中,并加载到缓存中
     }return _calendar;
 }
 //设置最小和最大日期(在最小和最大日期之外的日期不能被选中,日期范围如果大于一个月,则日历可翻动)

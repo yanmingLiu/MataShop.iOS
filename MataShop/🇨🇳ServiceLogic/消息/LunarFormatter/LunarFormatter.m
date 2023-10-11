@@ -22,7 +22,7 @@
 - (instancetype)init{
     if (self = [super init]) {
         self.chineseCalendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierChinese];
-        self.formatter = [[NSDateFormatter alloc] init];
+        self.formatter = NSDateFormatter.new;
         self.formatter.calendar = self.chineseCalendar;
         self.formatter.dateFormat = @"M";
         self.lunarDays = @[@"初二",@"初三",@"初四",@"初五",@"初六",@"初七",@"初八",@"初九",@"初十",@"十一",@"十二",@"十三",@"十四",@"十五",@"十六",@"十七",@"十八",@"十九",@"二十",@"二一",@"二二",@"二三",@"二四",@"二五",@"二六",@"二七",@"二八",@"二九",@"三十"];
@@ -39,7 +39,7 @@
     // First day of month
     NSString *monthString = [self.formatter stringFromDate:date];
     if ([self.chineseCalendar.veryShortMonthSymbols containsObject:monthString]) {
-        return self.lunarMonths[monthString.integerValue-1];
+        return self.lunarMonths[monthString.integerValue - 1];
     }
     // Leap month
     NSInteger month = [self.chineseCalendar component:NSCalendarUnitMonth
