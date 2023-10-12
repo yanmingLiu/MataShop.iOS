@@ -12,8 +12,6 @@
 @end
 
 @implementation MSMineView6CVCell
-@synthesize viewModel = _viewModel;
-
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         
@@ -38,25 +36,17 @@
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInCellWithModel:(UIViewModel *_Nullable)model{
-    self.viewModel = model;
-    self.contentView.backgroundColor = self.backgroundColor = UIColor.clearColor;
-    UIButton *btn = self.getBtn;
-    btn.backgroundColor = JobsWhiteColor;
-    btn.normalTitle = self.viewModel.textModel.text;
-    btn.normalTitleColor = JobsCor(@"#333333");
-    btn.titleFont = UIFontWeightRegularSize(14);
-    btn.normalImage = self.viewModel.image;
-    [btn layoutButtonWithEdgeInsetsStyle:self.viewModel.buttonEdgeInsetsStyle
-                            imagePadding:self.viewModel.imageTitleSpace];
+    model.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
+    model.bgSelectedCor = model.bgCor = JobsClearColor;
+    [super richElementsInCellWithModel:model];
+    self.contentView.backgroundColor = self.backgroundColor = JobsCor(@"#FFFFFF");
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)cellSizeWithModel:(UIViewModel *_Nullable)model{
     if([model.cls isEqual:MSMySocialTitleView.class]){
         return CGSizeMake(JobsWidth(40), JobsWidth(60));
-    }else if ([model.cls isEqual:MSMineView3.class] ||
-              [model.cls isEqual:MSMineView4.class] ||
-              [model.cls isEqual:MSMineView5.class]){
-        return CGSizeMake(JobsWidth(73), JobsWidth(64));
+    }else if ([model.cls isEqual:MSMineVC.class]){
+        return CGSizeMake(JobsWidth(70), JobsWidth(70));
     }else return CGSizeZero;
 }
 #pragma mark —— lazyLoad

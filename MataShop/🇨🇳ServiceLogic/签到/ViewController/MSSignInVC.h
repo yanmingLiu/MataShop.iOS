@@ -16,6 +16,8 @@
 #import "LunarFormatter.h"
 #import "MacroDef_UserDefault.h"
 
+#import "MSSignInHeaderImageView.h"
+
 FOUNDATION_EXTERN NSString * _Nonnull const 日历数组信息;
 
 NS_ASSUME_NONNULL_BEGIN

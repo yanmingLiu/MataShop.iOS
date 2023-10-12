@@ -17,6 +17,7 @@
 @end
 
 @implementation MSMineView1
+@synthesize viewModel = _viewModel;
 #pragma mark —— BaseProtocol
 /// 单例化和销毁
 +(void)destroySingleton{
@@ -62,8 +63,13 @@ static dispatch_once_t static_mineView1OnceToken;
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
+
+    self.viewModel = model ? : UIViewModel.new;
+    self.viewModel.bgImage = JobsIMG(@"个人中心背景图片");
+    if(!self.viewModel.image) self.viewModel.image = JobsIMG(@"用户默认头像");
+    [super richElementsInViewWithModel:model];
+    
     self.userInteractionEnabled = YES;
-    self.image = JobsIMG(@"个人中心背景图片");
     self.avatarIMGV.alpha = 1;
     self.userInfoBtn.alpha = 1;
     self.leftArrowBtn.alpha = 1;
@@ -76,14 +82,15 @@ static dispatch_once_t static_mineView1OnceToken;
 -(UIImageView *)avatarIMGV{
     if(!_avatarIMGV){
         _avatarIMGV = UIImageView.new;
-        _avatarIMGV.image = JobsIMG(@"用户默认头像");
         [self addSubview:_avatarIMGV];
         [_avatarIMGV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(JobsWidth(56), JobsWidth(56)));
             make.left.equalTo(self).offset(JobsWidth(16));
             make.bottom.equalTo(self).offset(JobsWidth(-20));
         }];
-    }return _avatarIMGV;
+    }
+    _avatarIMGV.image = self.viewModel.image;
+    return _avatarIMGV;
 }
 
 -(BaseButton *)userInfoBtn{

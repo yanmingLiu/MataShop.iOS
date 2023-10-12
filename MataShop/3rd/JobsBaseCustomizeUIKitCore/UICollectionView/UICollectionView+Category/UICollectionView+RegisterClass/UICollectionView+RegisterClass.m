@@ -13,12 +13,13 @@
     // CollectionReusableView-Header
     [self registerCollectionElementKindSectionHeaderClass:UICollectionReusableView.class];
     [self registerCollectionElementKindSectionHeaderClass:BaseCollectionReusableView.class];
-    [self registerCollectionElementKindSectionHeaderClass:JobsHotLabelWithMultiLineHeaderFooterView.class];
+    [self registerCollectionElementKindSectionHeaderClass:JobsHeaderFooterView.class];
     [self registerCollectionElementKindSectionHeaderClass:MSHomeCollectionReusableView.class];
     [self registerCollectionElementKindSectionHeaderClass:MSMomentsCollectionReusableView.class];
+    [self registerCollectionElementKindSectionHeaderClass:MSMineCollectionReusableView.class];
     // CollectionReusableView—Footer
     [self registerCollectionElementKindSectionFooterClass:UICollectionReusableView.class];
-    [self registerCollectionElementKindSectionFooterClass:JobsHotLabelWithMultiLineHeaderFooterView.class];
+    [self registerCollectionElementKindSectionFooterClass:JobsHeaderFooterView.class];
     // CollectionViewCell
     [self registerCollectionViewCellClass:UICollectionViewCell.class];
     [self registerCollectionViewCellClass:BaseCollectionViewCell.class];

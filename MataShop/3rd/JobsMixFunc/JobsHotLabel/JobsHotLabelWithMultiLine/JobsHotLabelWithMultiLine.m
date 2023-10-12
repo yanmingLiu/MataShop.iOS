@@ -106,12 +106,12 @@ static dispatch_once_t static_hotLabelWithMultiLineOnceToken;
            viewForSupplementaryElementOfKind:(NSString *)kind
                                  atIndexPath:(NSIndexPath *)indexPath {
     if (kind == UICollectionElementKindSectionHeader) {
-        JobsHotLabelWithMultiLineHeaderFooterView *headerView = [collectionView UICollectionElementKindSectionHeaderClass:JobsHotLabelWithMultiLineHeaderFooterView.class
+        JobsHeaderFooterView *headerView = [collectionView UICollectionElementKindSectionHeaderClass:JobsHeaderFooterView.class
                                                                                                        forIndexPath:indexPath];
         [headerView richElementsInViewWithModel:self.dataModel.headerViewModel];
         return headerView;
     }else if (kind == UICollectionElementKindSectionFooter) {
-        JobsHotLabelWithMultiLineHeaderFooterView *footerView = [collectionView UICollectionElementKindSectionFooterClass:JobsHotLabelWithMultiLineHeaderFooterView.class
+        JobsHeaderFooterView *footerView = [collectionView UICollectionElementKindSectionFooterClass:JobsHeaderFooterView.class
                                                                                                        forIndexPath:indexPath];
         [footerView richElementsInViewWithModel:self.dataModel.footerViewModel];
         return footerView;
@@ -174,7 +174,7 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 referenceSizeForHeaderInSection:(NSInteger)section {
     /// ❤️外部传入配置优先❤️
     if (self.dataModel.headerViewModel.useHeaderView) {
-        return jobsZeroSizeValue(self.dataModel.headerViewModel.jobsSize) ? [JobsHotLabelWithMultiLineHeaderFooterView collectionReusableViewSizeWithModel:nil] : self.dataModel.headerViewModel.jobsSize;
+        return jobsZeroSizeValue(self.dataModel.headerViewModel.jobsSize) ? [JobsHeaderFooterView collectionReusableViewSizeWithModel:nil] : self.dataModel.headerViewModel.jobsSize;
     }return CGSizeZero;
 }
 /// footer 大小
@@ -183,7 +183,7 @@ referenceSizeForHeaderInSection:(NSInteger)section {
 referenceSizeForFooterInSection:(NSInteger)section {
     /// ❤️外部传入配置优先❤️
     if (self.dataModel.footerViewModel.useFooterView) {
-        return jobsZeroSizeValue(self.dataModel.footerViewModel.jobsSize) ? [JobsHotLabelWithMultiLineHeaderFooterView collectionReusableViewSizeWithModel:nil] : self.dataModel.headerViewModel.jobsSize;
+        return jobsZeroSizeValue(self.dataModel.footerViewModel.jobsSize) ? [JobsHeaderFooterView collectionReusableViewSizeWithModel:nil] : self.dataModel.headerViewModel.jobsSize;
     }return CGSizeZero;
 }
 /// item/cell 的大小
@@ -199,7 +199,9 @@ referenceSizeForFooterInSection:(NSInteger)section {
 minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return hotLabOffsetY;
 }
-/// 定义的是元素水平之间的间距。Api自动计算一行的Cell个数，只有当间距小于此定义的最小值时才会换行，最小执行单元是Section（每个section里面的样式是统一的）
+/// 定义的是UICollectionViewScrollDirectionVertical下，元素水平之间的间距。
+/// UICollectionViewScrollDirectionHorizontal下，垂直和水平正好相反
+/// Api自动计算一行的Cell个数，只有当间距小于此定义的最小值时才会换行，最小执行单元是Section（每个section里面的样式是统一的）
 -(CGFloat)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
 minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{

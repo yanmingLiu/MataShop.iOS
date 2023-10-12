@@ -81,7 +81,7 @@
     _textField.placeHolderOffset = self.doorInputViewBaseStyleModel.placeHolderOffset;
     _textField.leftViewOffsetX = self.doorInputViewBaseStyleModel.leftViewOffsetX;
     _textField.offset = self.doorInputViewBaseStyleModel.offset;
-    _textField.objBindingParams = self.textFieldInputModel;
+    _textField.requestParams = self.textFieldInputModel;
     _textField.placeholderColor = self.doorInputViewBaseStyleModel.placeholderColor;
     _textField.placeholderFont = self.doorInputViewBaseStyleModel.placeholderFont;
     _textField.fieldEditorOffset = self.doorInputViewBaseStyleModel.fieldEditorOffset ? : JobsWidth(50);
@@ -248,7 +248,7 @@
         @jobs_weakify(self)
         [_textField jobsTextFieldEventFilterBlock:^BOOL(NSString * _Nullable value) {
             if (self.style_5 == InputViewStyle_5_3) {
-                JobsAppDoorInputViewTFModel *textFieldInputModel = (JobsAppDoorInputViewTFModel *)self.textField.objBindingParams;
+                JobsAppDoorInputViewTFModel *textFieldInputModel = (JobsAppDoorInputViewTFModel *)self.textField.requestParams;
                 if (textFieldInputModel.PlaceHolder.isEqualToString(Internationalization(@"Telephone"))) {// 手机号码
                     if ([self checkTelNum:value]) {
                         return YES;

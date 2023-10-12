@@ -9,7 +9,7 @@
 
 @interface MSMineView3 ()
 /// UI
-@property(nonatomic,strong)MSMineView2 *view2;
+@property(nonatomic,strong)MSMineCollectionReusableView *view2;
 @property(nonatomic,strong)UICollectionViewFlowLayout *layout;
 @property(nonatomic,strong)UICollectionView *collectionView;
 /// Data
@@ -163,7 +163,9 @@ layout:(UICollectionViewLayout *)collectionViewLayout
 minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return JobsWidth(10);
 }
-/// 定义的是元素水平之间的间距。Api自动计算一行的Cell个数，只有当间距小于此定义的最小值时才会换行，最小执行单元是Section（每个section里面的样式是统一的）
+/// 定义的是UICollectionViewScrollDirectionVertical下，元素水平之间的间距。
+/// UICollectionViewScrollDirectionHorizontal下，垂直和水平正好相反
+/// Api自动计算一行的Cell个数，只有当间距小于此定义的最小值时才会换行，最小执行单元是Section（每个section里面的样式是统一的）
 - (CGFloat)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
@@ -176,25 +178,25 @@ insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(JobsWidth(5), JobsWidth(5), JobsWidth(5), JobsWidth(5));
 }
 #pragma mark —— lazyLoad
--(MSMineView2 *)view2{
+-(MSMineCollectionReusableView *)view2{
     if(!_view2){
-        _view2 = MSMineView2.new;
+        _view2 = MSMineCollectionReusableView.new;
         [_view2 richElementsInViewWithModel:nil];
         [self addSubview:_view2];
         [_view2 jobsMasonryBeforeBlock:^(MASConstraintMaker * _Nonnull make) {
             // 添加第一个 _view2 的约束
             make.width.mas_equalTo(0);
-            make.height.mas_equalTo([MSMineView2 viewSizeWithModel:nil].height);
+            make.height.mas_equalTo([MSMineCollectionReusableView viewSizeWithModel:nil].height);
             make.right.equalTo(self).offset(JobsWidth(-10));
             make.top.equalTo(self).offset(JobsWidth(10));
         }
                      masonryAfterBlock:^(MASConstraintMaker * _Nonnull make) {
             // 添加第二个 _view2 的约束
-            make.size.mas_equalTo([MSMineView2 viewSizeWithModel:nil]);
+            make.size.mas_equalTo([MSMineCollectionReusableView viewSizeWithModel:nil]);
             make.centerX.equalTo(self);
             make.top.equalTo(self).offset(JobsWidth(10));
         }];
-        [_view2 cornerCutToCircleWithCornerRadius:[MSMineView2 viewSizeWithModel:nil].height / 2];
+        [_view2 cornerCutToCircleWithCornerRadius:[MSMineCollectionReusableView viewSizeWithModel:nil].height / 2];
     }return _view2;
 }
 
@@ -220,7 +222,7 @@ insetForSectionAtIndex:(NSInteger)section {
         viewModel.cls = self.class;
         
         [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.bottom.equalTo(self);
+            make.left.right.equalTo(self);
             make.bottom.equalTo(self).offset(JobsWidth(-10));
             make.height.mas_equalTo([MSMineView6CVCell cellSizeWithModel:viewModel].height);
         }];
@@ -236,7 +238,7 @@ insetForSectionAtIndex:(NSInteger)section {
             viewModel.textModel.text = Internationalization(@"钱包");
             viewModel.image = JobsIMG(@"钱包");
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            viewModel.imageTitleSpace = JobsWidth(1);
+            viewModel.imageTitleSpace = JobsWidth(2);
             
             [_dataMutArr addObject:viewModel];
         }
@@ -246,7 +248,7 @@ insetForSectionAtIndex:(NSInteger)section {
             viewModel.textModel.text = Internationalization(@"我的店铺");
             viewModel.image = JobsIMG(@"我的店铺");
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            viewModel.imageTitleSpace = JobsWidth(1);
+            viewModel.imageTitleSpace = JobsWidth(2);
             
             [_dataMutArr addObject:viewModel];
         }
@@ -256,7 +258,7 @@ insetForSectionAtIndex:(NSInteger)section {
             viewModel.textModel.text = Internationalization(@"我的团队");
             viewModel.image = JobsIMG(@"我的团队");
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            viewModel.imageTitleSpace = JobsWidth(1);
+            viewModel.imageTitleSpace = JobsWidth(2);
             
             [_dataMutArr addObject:viewModel];
         }
@@ -266,7 +268,7 @@ insetForSectionAtIndex:(NSInteger)section {
             viewModel.textModel.text = Internationalization(@"信用分数");
             viewModel.image = JobsIMG(@"信用分数");
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            viewModel.imageTitleSpace = JobsWidth(1);
+            viewModel.imageTitleSpace = JobsWidth(2);
             
             [_dataMutArr addObject:viewModel];
         }

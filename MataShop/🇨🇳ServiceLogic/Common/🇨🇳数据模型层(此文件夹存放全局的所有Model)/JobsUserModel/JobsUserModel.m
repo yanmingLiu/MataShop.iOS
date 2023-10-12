@@ -74,7 +74,7 @@ static dispatch_once_t static_userModelOnceToken;
 #pragma mark —— 默认值设置
 -(NSString *)userName{
     if (!_userName) {
-        _userName = @"暂时没有值";
+        _userName = @"暂时没有值.张山";
     }return _userName;
 }
 
@@ -92,7 +92,7 @@ static dispatch_once_t static_userModelOnceToken;
 
 -(UIImage *)userHeaderIMG{
     if (!_userHeaderIMG) {
-        _userHeaderIMG = JobsIMG(@"默认头像");
+        _userHeaderIMG = JobsIMG(@"用户默认头像");
     }return _userHeaderIMG;
 }
 

@@ -380,14 +380,14 @@
         case ProdStyle01:{/// 产品已到期
             _moneyBackBtn.jobsResetTitle(Internationalization(@"我要提现"));
             _moneyBackBtn.jobsResetBaseBackgroundColor(JobsCor(@"#EA2918"));
-            [_moneyBackBtn jobsSetBtntitleFont:UIFontWeightRegularSize(14) btnTitleCor:JobsWhiteColor];
+            [_moneyBackBtn jobsSetBtnTitleFont:UIFontWeightRegularSize(14) btnTitleCor:JobsWhiteColor];
             [_moneyBackBtn layerBorderCor:JobsCor(@"#EA2918") andBorderWidth:JobsWidth(.5f)];
             _moneyBackBtn.userInteractionEnabled = YES;
         } break;
         case ProdStyle02:{/// 产品未到期（可赎回）
             _moneyBackBtn.jobsResetTitle(Internationalization(@"我要赎回"));
             _moneyBackBtn.jobsResetBaseBackgroundColor(JobsWhiteColor);
-            [_moneyBackBtn jobsSetBtntitleFont:UIFontWeightRegularSize(14) btnTitleCor:JobsCor(@"#EA2918")];
+            [_moneyBackBtn jobsSetBtnTitleFont:UIFontWeightRegularSize(14) btnTitleCor:JobsCor(@"#EA2918")];
             [_moneyBackBtn layerBorderCor:JobsCor(@"#F0D4AD") andBorderWidth:JobsWidth(.5f)];
             _moneyBackBtn.userInteractionEnabled = YES;
 
@@ -395,7 +395,7 @@
         case ProdStyle03:{/// 产品未到期（不可赎回）
             _moneyBackBtn.jobsResetTitle(Internationalization(@"我要赎回"));
             _moneyBackBtn.jobsResetBaseBackgroundColor(JobsCor(@"#D4D4D4"));
-            [_moneyBackBtn jobsSetBtntitleFont:UIFontWeightRegularSize(14) btnTitleCor:JobsCor(@"#FFFFFF")];
+            [_moneyBackBtn jobsSetBtnTitleFont:UIFontWeightRegularSize(14) btnTitleCor:JobsCor(@"#FFFFFF")];
             [_moneyBackBtn layerBorderCor:JobsCor(@"#DDDDDD") andBorderWidth:JobsWidth(.5f)];
             _moneyBackBtn.userInteractionEnabled = NO;
         } break;

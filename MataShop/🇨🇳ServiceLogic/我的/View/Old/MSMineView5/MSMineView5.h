@@ -5,13 +5,13 @@
 //  Created by Jobs Hi on 9/23/23.
 //
 
-#import "BaseView.h"
+#import "BaseCollectionViewCell.h"
 #import "MSMineView6CVCell.h"
 #import "MSPersonalDataVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MSMineView5 : BaseView
+@interface MSMineView5 : BaseCollectionViewCell
 <
 UICollectionViewDataSource
 ,UICollectionViewDelegate

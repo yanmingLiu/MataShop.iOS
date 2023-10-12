@@ -70,13 +70,13 @@
   isPraise:(BOOL)isPraise{
     if(isPraise){
         self.lastDynamicModel.praise = [self addPraise:self.lastDynamicModel.praise];
-        [btn jobsSetBtntitleFont:UIFontWeightBoldSize(12)
+        [btn jobsSetBtnTitleFont:UIFontWeightBoldSize(12)
                      btnTitleCor:JobsCor(@"#DD0000")];
         btn.jobsResetImage(JobsIMG(@"圈子点赞.已点击"));
 //        [self jobsToastMsg:Internationalization(@"点赞")];
     }else{
         self.lastDynamicModel.praise = [self subtractionPraise:self.lastDynamicModel.praise];
-        [btn jobsSetBtntitleFont:UIFontWeightBoldSize(12)
+        [btn jobsSetBtnTitleFont:UIFontWeightBoldSize(12)
                      btnTitleCor:JobsCor(@"#999999")];
         btn.jobsResetImage(JobsIMG(@"圈子点赞.未点击"));
 //        [self jobsToastMsg:Internationalization(@"取消点赞")];
@@ -169,7 +169,9 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return JobsWidth(10);
 }
-/// 定义的是元素水平之间的间距。Api自动计算一行的Cell个数，只有当间距小于此定义的最小值时才会换行，最小执行单元是Section（每个section里面的样式是统一的）
+/// 定义的是UICollectionViewScrollDirectionVertical下，元素水平之间的间距。
+/// UICollectionViewScrollDirectionHorizontal下，垂直和水平正好相反
+/// Api自动计算一行的Cell个数，只有当间距小于此定义的最小值时才会换行，最小执行单元是Section（每个section里面的样式是统一的）
 - (CGFloat)collectionView:(UICollectionView *)collectionView
                    layout:(UICollectionViewLayout *)collectionViewLayout
 minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{

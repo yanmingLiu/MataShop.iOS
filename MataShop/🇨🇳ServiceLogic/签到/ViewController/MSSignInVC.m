@@ -10,6 +10,7 @@
 NSString *const 日历数组信息 = @"日历数组信息";
 @interface MSSignInVC ()
 /// UI
+@property(nonatomic,strong)MSSignInHeaderImageView *headerImageView;
 @property(nonatomic,strong)UIButton *signBtn;/// 签到按钮
 @property(nonatomic,strong)FSCalendar *calendar;
 /// Data
@@ -25,7 +26,7 @@ NSString *const 日历数组信息 = @"日历数组信息";
 @property(nonatomic,strong)LunarFormatter *lunarFormatter;
 @property(nonatomic,strong)NSArray<EKEvent *> *events;
 @property(nonatomic,strong)NSArray *timeArr;
-@property(nonatomic,strong)NSMutableArray *signInList;/// 签到列表
+@property(nonatomic,strong)NSMutableArray <NSString *>*signInList;/// 签到列表
 @property(nonatomic,strong)NSString *dateStr;/// 记录年月(正式使用时,不需要此属性)
 
 @end
@@ -46,23 +47,26 @@ NSString *const 日历数组信息 = @"日历数组信息";
     self.setupNavigationBarHidden = YES;
 
     self.viewModel.backBtnTitleModel.text = Internationalization(@"返回");
-    self.viewModel.textModel.textCor = RGBA_COLOR(51, 51, 51, 1);
+    self.viewModel.textModel.textCor = JobsWhiteColor;
     self.viewModel.textModel.text = Internationalization(@"签到");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);
     
+    self.viewModel.bgCor = JobsClearColor;
 //    self.bgImage = nil;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = JobsYellowColor;
+    self.view.backgroundColor = JobsCor(@"#F7F7F7");
+    self.headerImageView.alpha = 1;
+    
     [self setGKNav];
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = YES;
     
-    self.signBtn.alpha = 1;
     self.calendar.alpha = 1;
+    self.signBtn.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -95,6 +99,29 @@ NSString *const 日历数组信息 = @"日历数组信息";
     DeleUserDefaultWithKey(日历数组信息);/// 清除缓存
 }
 #pragma mark —— 一些私有方法
+/// 从网络获取所有签到结果
+- (void)getSign{
+    /// 在这里假装网络请求所有的签到结果(signInList)成功了
+    NSLog(@"%@",self.signInList);
+    /// 获取签到总数量
+    self.SignCount = self.signInList.count;
+    /// 常见临时数组dataArrayCache,用于存放签到结果(可能有的人觉得这一步不需要,但是咱们假设的签到结果里面只有纯日期,正式项目中可不一定如此)
+    NSMutableArray *dataArrayCache = NSMutableArray.array;
+    if (self.SignCount) {//如果请求的数据有效
+        for (NSString *dateStr in self.signInList) {
+            //把所有签到数据取出来添加进临时数组
+            NSDate *date = [self.dateFormatter dateFromString:dateStr];
+            if(date){
+                [dataArrayCache addObject:date];
+            }
+        }
+        /// 用偏好设置保存签到数据到本地缓存
+        SetUserDefaultKeyWithValue(日历数组信息, dataArrayCache);
+        UserDefaultSynchronize;
+        /// 保存后重新加载缓存数据
+        [self getCache];
+    }
+}
 /// 加载缓存
 - (void)getCache{
     /// 从缓存中先把数据取出来
@@ -116,29 +143,6 @@ NSString *const 日历数组信息 = @"日历数组信息";
     }
     /// 选择完毕后关闭可选项,不让用户自己点
     self.calendar.allowsSelection = NO;
-}
-/// 从网络获取所有签到结果
-- (void)getSign{
-    //在这里假装网络请求所有的签到结果(signInList)成功了
-    NSLog(@"%@",self.signInList);
-    //获取签到总数量
-    self.SignCount = self.signInList.count;
-    //常见临时数组dataArrayCache,用于存放签到结果(可能有的人觉得这一步不需要,但是咱们假设的签到结果里面只有纯日期,正式项目中可不一定如此)
-    NSMutableArray *dataArrayCache = NSMutableArray.array;
-    if (self.SignCount) {//如果请求的数据有效
-        for (NSString *dateStr in self.signInList) {
-            //把所有签到数据取出来添加进临时数组
-            NSDate *date = [self.dateFormatter dateFromString:dateStr];
-            if(date){
-                [dataArrayCache addObject:date];
-            }
-        }
-        //用偏好设置保存签到数据到本地缓存
-        SetUserDefaultKeyWithValue(日历数组信息, dataArrayCache);
-        UserDefaultSynchronize;
-        //保存后重新加载缓存数据
-        [self getCache];
-    }
 }
 /// 获取日历范围,让日历出现时就知道该显示哪个月了哪一页了(根据系统时间来获取)
 +(NSArray *)getStartTimeAndFinalTime{
@@ -168,9 +172,9 @@ NSString *const 日历数组信息 = @"日历数组信息";
 }
 /// 配置日历
 - (void)calendarConfig{
-    [self loadCalendarEvents];//载入节假日
-    [self lunarItemClicked];//显示农历
-    [self eventItemClicked];//显示节假日
+    [self loadCalendarEvents];/// 载入节假日
+    [self lunarItemClicked];/// 显示农历
+    [self eventItemClicked];/// 显示节假日
 }
 /// 显示农历
 - (void)lunarItemClicked{
@@ -197,16 +201,20 @@ NSString *const 日历数组信息 = @"日历数组信息";
 -(void)loadCalendarEvents{
     @jobs_weakify(self)
     [TKPermissionReminder authWithAlert:YES
-requestFullAccessToEventsWithCompletion:^(BOOL granted, EKEventStore * _Nonnull eventStore, NSError * _Nullable error) {
-        NSLog(@"SSSS");//ok
+requestFullAccessToEventsWithCompletion:^(BOOL granted,
+                                          EKEventStore * _Nonnull eventStore,
+                                          NSError * _Nullable error) {
+        NSLog(@"%@",error);
     }
-requestWriteOnlyAccessToEventsWithCompletion:^(BOOL granted, EKEventStore * _Nonnull eventStore, NSError * _Nullable error) {
-        NSLog(@"SSSSS");
+requestWriteOnlyAccessToEventsWithCompletion:^(BOOL granted,
+                                               EKEventStore * _Nonnull eventStore,
+                                               NSError * _Nullable error) {
+        NSLog(@"%@",error);
     }
 requestFullAccessToRemindersWithCompletion:^(BOOL granted,
                                              EKEventStore *eventStore,
                                              NSError * _Nullable error) {
-        NSLog(@"SSSSSS");
+        NSLog(@"%@",error);
         @jobs_strongify(self)
         /// 允许访问
         if(granted) {
@@ -228,40 +236,9 @@ requestFullAccessToRemindersWithCompletion:^(BOOL granted,
             });
             
         } else {
-            [WHToast jobsToastErrMsg:Internationalization(@"获取节日事件需要权限呀大宝贝!")];
+            [self jobsToastErrMsg:Internationalization(@"获取节日事件需要权限呀大宝贝!")];
         }
     } completion:nil];
-    
-    
-//    EKEventStore *store = EKEventStore.new;
-//    /// 请求访问日历
-//    [store requestAccessToEntityType:EKEntityTypeEvent
-//                          completion:^(BOOL granted,
-//                                       NSError *error) {
-//        @jobs_strongify(self)
-//        /// 允许访问
-//        if(granted) {
-//            NSDate *startDate = self.minimumDate;
-//            NSDate *endDate = self.maximumDate;
-//            NSPredicate *fetchCalendarEvents = [store predicateForEventsWithStartDate:startDate
-//                                                                              endDate:endDate
-//                                                                            calendars:nil];
-//            NSArray<EKEvent *> *eventList = [store eventsMatchingPredicate:fetchCalendarEvents];
-//            NSArray<EKEvent *> *events = [eventList filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(EKEvent * _Nullable event,
-//                                                                                                                      NSDictionary<NSString *,id> * _Nullable bindings) {
-//                return event.calendar.subscribed;
-//            }]];
-//            
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                if (!self) return;
-//                self.events = events;
-//                [self.calendar reloadData];
-//            });
-//            
-//        } else {
-//            [WHToast jobsToastErrMsg:Internationalization(@"获取节日事件需要权限呀大宝贝!")];
-//        }
-//    }];
 }
 /// 根据日期来显示事件
 - (NSArray<EKEvent *> *)eventsForDate:(NSDate *)date{
@@ -310,10 +287,10 @@ numberOfEventsForDate:(NSDate *)date{
        eventDefaultColorsForDate:(NSDate *)date{
     if (!self.showsEvents) return nil;//如果不允许显示节日
     if (!self.events) return nil;     //如果当前日期范围内根本没有节日
-    //根据日期来获取事件数组
+    /// 根据日期来获取事件数组
     NSArray<EKEvent *> *events = [self eventsForDate:date];
     NSMutableArray<UIColor *> *colors = [NSMutableArray arrayWithCapacity:events.count];
-    //遍历事件,设置事件文字颜色
+    /// 遍历事件,设置事件文字颜色
     [events enumerateObjectsUsingBlock:^(EKEvent * _Nonnull obj,
                                          NSUInteger idx,
                                          BOOL * _Nonnull stop) {
@@ -321,12 +298,25 @@ numberOfEventsForDate:(NSDate *)date{
     }];return colors.copy;
 }
 #pragma mark —— lazyLoad
+-(MSSignInHeaderImageView *)headerImageView{
+    if(!_headerImageView){
+        _headerImageView = MSSignInHeaderImageView.new;
+        [_headerImageView richElementsInViewWithModel:nil];
+        [self.view addSubview:_headerImageView];
+        [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view);
+            make.centerX.equalTo(self.view);
+            make.size.mas_equalTo([MSSignInHeaderImageView viewSizeWithModel:nil]);
+        }];
+    }return _headerImageView;
+}
+
 -(UIButton *)signBtn{
     if(!_signBtn){
         @jobs_weakify(self)
         _signBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                      background:nil
-                                                 titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                 titleAlignment:UIButtonConfigurationTitleAlignmentCenter
                                                   textAlignment:NSTextAlignmentCenter
                                                subTextAlignment:NSTextAlignmentCenter
                                                     normalImage:nil
@@ -335,21 +325,21 @@ numberOfEventsForDate:(NSDate *)date{
                                         selectedAttributedTitle:nil
                                              attributedSubtitle:nil
                                                           title:Internationalization(@"签到")
-                                                       subTitle:nil
-                                                      titleFont:UIFontWeightBoldSize(12)
-                                                   subTitleFont:nil
-                                                       titleCor:JobsCor(@"#EA2918")
-                                                    subTitleCor:nil
+                                                       subTitle:Internationalization(@"完成实名认证即可签到哦~")
+                                                      titleFont:UIFontWeightBoldSize(16)
+                                                   subTitleFont:UIFontWeightMediumSize(12)
+                                                       titleCor:JobsCor(@"#FFFFFF")
+                                                    subTitleCor:JobsCor(@"#FFFFFF")
                                              titleLineBreakMode:NSLineBreakByWordWrapping
                                           subtitleLineBreakMode:NSLineBreakByWordWrapping
-                                            baseBackgroundColor:JobsYellowColor
+                                            baseBackgroundColor:JobsCor(@"#DD0000")
                                                    imagePadding:JobsWidth(0)
-                                                   titlePadding:JobsWidth(0)
+                                                   titlePadding:JobsWidth(6)
                                                  imagePlacement:NSDirectionalRectEdgeNone
                                      contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
                                        contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
                                                   contentInsets:jobsSameDirectionalEdgeInsets(0)
-                                              cornerRadiusValue:JobsWidth(5)
+                                              cornerRadiusValue:JobsWidth(54 / 2)
                                                 roundingCorners:UIRectCornerAllCorners
                                            roundingCornersRadii:CGSizeZero
                                                  layerBorderCor:nil
@@ -359,10 +349,8 @@ numberOfEventsForDate:(NSDate *)date{
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            x.selected = !x.selected;
-            if (self.objectBlock) self.objectBlock(x);
             
-            //假设在这里网络请求签到成功,成功后需要重新请求签到所有结果
+            /// 假设在这里网络请求签到成功,成功后需要重新请求签到所有结果
             if (self.count > 31) {
                 NSLog(@"别点了");
                 return nil;
@@ -378,10 +366,9 @@ numberOfEventsForDate:(NSDate *)date{
 
         [self.view addSubview:_signBtn];
         [_signBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(self.calendar.width / JobsWidth(1.2));
-            make.height.mas_equalTo(35);
-            make.centerX.mas_equalTo(self.view.mas_centerX);
-            make.top.mas_equalTo(CGRectGetMaxY(self.calendar.frame) + JobsWidth(60) + JobsWidth(44));
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(194), JobsWidth(54)));
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.calendar.mas_bottom).offset(JobsWidth(40));
         }];
     }return _signBtn;
 }
@@ -389,7 +376,7 @@ numberOfEventsForDate:(NSDate *)date{
 -(FSCalendar *)calendar{
     if(!_calendar){
         _calendar = FSCalendar.new;
-        _calendar.backgroundColor = JobsWhiteColor;
+        _calendar.backgroundColor = JobsCor(@"#FFFFFF");
         _calendar.dataSource = self;
         _calendar.delegate = self;
         /// 日历语言为中文
@@ -399,37 +386,37 @@ numberOfEventsForDate:(NSDate *)date{
         /// 如果值为1,那么周日就在第一列,如果为2,周日就在最后一列
         _calendar.firstWeekday = 1;
         /// 周一\二\三...或者头部的2017年11月的显示方式
-        _calendar.appearance.caseOptions = FSCalendarCaseOptionsWeekdayUsesSingleUpperCase|FSCalendarCaseOptionsHeaderUsesUpperCase;
+        _calendar.appearance.caseOptions = FSCalendarCaseOptionsWeekdayUsesSingleUpperCase | FSCalendarCaseOptionsHeaderUsesUpperCase;
         _calendar.accessibilityIdentifier = @"calendar";
         /// title显示方式
         _calendar.appearance.headerDateFormat = @"yyyy年MM月";
         /// 关闭字体自适应,设置字体大小\颜色
         _calendar.appearance.subtitleFont = UIFontWeightLightSize(8);
         _calendar.appearance.headerTitleColor = JobsWhiteColor;
-        _calendar.appearance.weekdayTextColor = JobsWhiteColor;
-        _calendar.appearance.selectionColor = JobsOrangeColor;
+        _calendar.appearance.weekdayTextColor = JobsCor(@"#040930");
+        _calendar.appearance.selectionColor = JobsCor(@"#DD0000");
         /// 日历头部颜色
-        _calendar.calendarHeaderView.backgroundColor = JobsRedColor;
-        _calendar.calendarWeekdayView.backgroundColor = JobsRedColor;
+        _calendar.calendarHeaderView.backgroundColor = JobsCor(@"#DD0000");
+        _calendar.calendarWeekdayView.backgroundColor = JobsCor(@"#F7F7F7");
         [self.view addSubview:_calendar];
-        [self.calendar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(JobsMainScreen_WIDTH() - JobsWidth(50));
+        [_calendar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo([MSSignInHeaderImageView viewSizeWithModel:nil].width - JobsWidth(15 * 2));
             make.height.mas_equalTo(JobsWidth(300));
             make.centerX.equalTo(self.view);
-            make.top.equalTo(self.navigationBar.mas_bottom).offset(JobsWidth(87));
+            make.top.equalTo(self.headerImageView.mas_bottom).offset(JobsWidth(0));
         }];
         [self calendarConfig];/// 日历配置
-        [self getCache];/// 1.加载缓存的日期,并选中
-        [self getSign];/// 2.从网络获取其签到结果,如果发现请求的结果中存在没有被选中,就将其选中,并加载到缓存中
+        [self getCache];/// 1、加载缓存的日期,并选中
+        [self getSign];/// 2、从网络获取其签到结果,如果发现请求的结果中存在没有被选中,就将其选中,并加载到缓存中
     }return _calendar;
 }
-//设置最小和最大日期(在最小和最大日期之外的日期不能被选中,日期范围如果大于一个月,则日历可翻动)
+/// 设置最小和最大日期(在最小和最大日期之外的日期不能被选中,日期范围如果大于一个月,则日历可翻动)
 -(NSDate *)minimumDate{
     if(!_minimumDate){
         _minimumDate = [self.dateFormatter dateFromString:self.timeArr[0]];
     }return _minimumDate;
 }
-//设置最小和最大日期(在最小和最大日期之外的日期不能被选中,日期范围如果大于一个月,则日历可翻动)
+/// 设置最小和最大日期(在最小和最大日期之外的日期不能被选中,日期范围如果大于一个月,则日历可翻动)
 -(NSDate *)maximumDate{
     if(!_maximumDate){
         _maximumDate = [self.dateFormatter dateFromString:self.timeArr[1]];
@@ -454,7 +441,7 @@ numberOfEventsForDate:(NSDate *)date{
     }return _gregorian;
 }
 
-- (NSMutableArray *)signInList{
+-(NSMutableArray<NSString *> *)signInList{
     if (!_signInList) {
         _signInList = NSMutableArray.array;
     }return _signInList;

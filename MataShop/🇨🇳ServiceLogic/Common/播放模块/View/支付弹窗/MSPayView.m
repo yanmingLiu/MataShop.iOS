@@ -124,7 +124,7 @@ static dispatch_once_t static_payViewOnceToken;
        textFieldValue:(NSString *)value{
 //    self.textFieldInputModel.resString = value;
 //    self.textFieldInputModel.PlaceHolder = self.doorInputViewBaseStyleModel.placeHolderStr;
-//    textField.objBindingParams = self.textFieldInputModel;
+//    textField.requestParams = self.textFieldInputModel;
 //
 //    if (self.objectBlock) self.objectBlock(textField);// 对外统一传出TF
 }

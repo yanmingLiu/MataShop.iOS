@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "JobsHotLabelWithMultiLineHeaderFooterView.h"
+#import "JobsHeaderFooterView.h"
 //#import "BaiShaETProjTopupTipsVIew.h"
 //#import "BaiShaETProjUSDTWithdrawalCRView.h"
 
@@ -48,6 +48,7 @@
 #import "MSProdShowCVCell.h"/// 首页商品展示UI
 #import "MSProdListCVCell.h"/// 商品列表UI
 #import "MSHomeCollectionReusableView.h"
+#import "MSMineCollectionReusableView.h"
 #import "MSInternalRecruitmentCVCell1.h"/// 内部招聘Cell1
 #import "MSInternalRecruitmentCVCell2.h"/// 内部招聘Cell2
 #import "MSFindCVCell.h"

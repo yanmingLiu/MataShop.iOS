@@ -54,7 +54,7 @@
     _textField.useCustomClearButton = self.doorInputViewBaseStyleModel.useCustomClearButton;
     _textField.isShowDelBtn = self.doorInputViewBaseStyleModel.isShowDelBtn;
     _textField.rightViewOffsetX = self.doorInputViewBaseStyleModel.rightViewOffsetX ? : JobsWidth(8);// 删除按钮的偏移量
-    _textField.objBindingParams = self.textFieldInputModel;
+    _textField.requestParams = self.textFieldInputModel;
     _textField.offset = self.doorInputViewBaseStyleModel.offset ? : JobsWidth(1);
     _textField.animationColor = self.doorInputViewBaseStyleModel.animationColor ? : Cor4;
     _textField.moveDistance = self.doorInputViewBaseStyleModel.moveDistance ? : JobsWidth(35);
@@ -67,7 +67,7 @@
     self.textFieldInputModel.resString = value;
     self.textFieldInputModel.PlaceHolder = self.doorInputViewBaseStyleModel.placeHolderStr;
 
-    textField.objBindingParams = self.textFieldInputModel;
+    textField.requestParams = self.textFieldInputModel;
     
     if (self.objectBlock) self.objectBlock(textField);// 对外统一传出TF
 }
@@ -166,7 +166,7 @@
         @jobs_weakify(self)
         [_textField jobsTextFieldEventFilterBlock:^BOOL(NSString * _Nullable value) {
             @jobs_strongify(self)
-            JobsAppDoorInputViewTFModel *textFieldInputModel = (JobsAppDoorInputViewTFModel *)self.textField.objBindingParams;
+            JobsAppDoorInputViewTFModel *textFieldInputModel = (JobsAppDoorInputViewTFModel *)self.textField.requestParams;
             if ([textFieldInputModel.PlaceHolder isEqualToString:Internationalization(@"Telephone")]) {// 手机号码
                 if ([self checkTelNum:value]) {
                     return YES;
