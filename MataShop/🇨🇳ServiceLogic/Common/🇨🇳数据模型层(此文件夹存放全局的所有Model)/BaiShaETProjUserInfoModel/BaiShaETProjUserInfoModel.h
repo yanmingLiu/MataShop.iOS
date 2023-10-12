@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaiShaETProjUserInfoModel : JobsObject
+<
+NSCoding,/// 编码
+NSSecureCoding/// 解码
+>
 
 @property(nonatomic,copy)NSString *account;
 @property(nonatomic,copy)NSString *domain;// 域名配置

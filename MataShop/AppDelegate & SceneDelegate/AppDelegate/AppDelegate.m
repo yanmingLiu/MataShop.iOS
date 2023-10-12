@@ -39,6 +39,9 @@ AppDelegate *appDelegate;
     userModel.userName = @"张三丰";
     userModel.phone = @"134****0000";
     [self saveUserInfo:userModel];
+    
+    id f = self.readUserInfo;
+    NSLog(@"");
 }
 
 -(NSMutableArray <JobsTabBarControllerConfig *>*)makeConfigMutArr{

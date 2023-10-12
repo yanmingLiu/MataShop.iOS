@@ -1,6 +1,14 @@
 # Mata商城iOS原生版本
 ## 一些潜在的Bug
 
+<details id="iOS 归档 UIImage类型 失败">
+ <summary><strong>iOS 归档 UIImage类型 失败</strong></summary>
+
+```objective-c
+我想用归档来存放用户数据Model，但是归档 UIImage类型 失败。目前没有找到破解办法
+```
+</details>
+
 <details id="WMZBannerView">
  <summary><strong>WMZBannerView</strong></summary>
 
