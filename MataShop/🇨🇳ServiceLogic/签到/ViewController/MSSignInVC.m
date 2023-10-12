@@ -11,7 +11,7 @@ NSString *const 日历数组信息 = @"日历数组信息";
 @interface MSSignInVC ()
 /// UI
 @property(nonatomic,strong)MSSignInHeaderImageView *headerImageView;
-@property(nonatomic,strong)UIButton *signBtn;/// 签到按钮
+@property(nonatomic,strong)BaseButton *signBtn;/// 签到按钮
 @property(nonatomic,strong)FSCalendar *calendar;
 /// Data
 @property(nonatomic,strong)NSCalendar *gregorian;
@@ -311,7 +311,7 @@ numberOfEventsForDate:(NSDate *)date{
     }return _headerImageView;
 }
 
--(UIButton *)signBtn{
+-(BaseButton *)signBtn{
     if(!_signBtn){
         @jobs_weakify(self)
         _signBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil

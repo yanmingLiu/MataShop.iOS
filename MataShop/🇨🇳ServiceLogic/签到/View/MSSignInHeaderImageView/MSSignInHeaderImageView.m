@@ -16,6 +16,7 @@
 
 @implementation MSSignInHeaderImageView
 @synthesize viewModel = _viewModel;
+BaseProtocol_synthesize
 #pragma mark —— BaseProtocol
 /// 单例化和销毁
 +(void)destroySingleton{
@@ -52,7 +53,7 @@ static dispatch_once_t static_signInHeaderImageViewOnceToken;
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-    self.size = [MSSignInHeaderImageView viewSizeWithModel:nil];
+    JobsLock(self.size = [MSSignInHeaderImageView viewSizeWithModel:nil];)
     /// 内部指定圆切角
     [self.titleLab layoutSubviewsCutCnrByRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
                                              cornerRadii:CGSizeMake(JobsWidth(8), JobsWidth(8))];

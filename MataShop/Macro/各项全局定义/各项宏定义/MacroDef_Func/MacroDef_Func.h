@@ -10,7 +10,6 @@
 
 #import <UIKit/UIKit.h>
 #import "MacroDef_SysWarning.h"
-#import "MacroDef_Print.h"
 #import "MacroDef_Notification.h"
 #import "MacroDef_QUEUE.h"
 #import "MacroDef_String.h"
@@ -206,6 +205,10 @@ static inline void toastErr(NSString *_Nullable msg){
 #define JobsDefaultSize CGSizeZero
 #endif
 /// 其他
+#ifndef PrintRetainCount
+#define PrintRetainCount(obj) printf("Retain Count = %ld\n",CFGetRetainCount((__bridge CFTypeRef)(obj)));//打印引用计数器
+#endif
+
 #ifndef ReuseIdentifier
 #define ReuseIdentifier self.class.description
 #endif
