@@ -15,6 +15,7 @@
 #import "JobsBtnStyleCVCell.h"
 #import "JobsImageViewStyleCVCell.h"
 #import "MSMineView6CVCell.h"
+#import "JobsTextFieldStyleCVCell.h"
 //#import "BaiShaETProjMywalletCRView.h"
 //#import "BaiShaETProjCVCellStyle1.h"
 //#import "BaseCollectionViewCell.h"

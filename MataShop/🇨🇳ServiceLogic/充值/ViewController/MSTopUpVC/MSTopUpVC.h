@@ -17,7 +17,7 @@
 #import "MSBankCardTopUpVC.h"// 银行卡支付
 
 NS_ASSUME_NONNULL_BEGIN
-
+/// 不带输入框的充值页面
 @interface MSTopUpVC : BaseViewController
 <
 JXCategoryTitleViewDataSource

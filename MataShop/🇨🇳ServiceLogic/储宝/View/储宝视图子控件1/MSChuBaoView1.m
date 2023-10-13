@@ -111,7 +111,7 @@ static dispatch_once_t static_chuBaoView1OnceToken;
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [self forceComingToPushVC:MSTopUpVC.new requestParams:@""];
+//            [self forceComingToPushVC:MSTopUpVC.new requestParams:@""];
             return nil;
         }];
         [self addSubview:_titleBtn];
@@ -161,7 +161,8 @@ static dispatch_once_t static_chuBaoView1OnceToken;
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [self forceComingToPushVC:MSTopUpVC.new requestParams:@""];
+//            [self forceComingToPushVC:MSTopUpVC.new requestParams:@""];
+            [self forceComingToPushVC:MSRechargeVC.new requestParams:@""];
             return nil;
         }];
         [self addSubview:_rechargeBtn];

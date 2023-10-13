@@ -142,8 +142,10 @@
         /// 获取点击的Btn值
         [self jobsToastMsg:viewModel.textModel.text];
         for (JobsBtnStyleCVCell *collectionViewCell in collectionView.visibleCells) {
-            collectionViewCell.getBtn.selected = NO;
-            [self setCellBtn:collectionViewCell.getBtn collectionView:collectionView];
+            if([collectionViewCell isKindOfClass:JobsBtnStyleCVCell.class]){
+                collectionViewCell.getBtn.selected = NO;
+                [self setCellBtn:collectionViewCell.getBtn collectionView:collectionView];
+            }
         }
         data.selected = !data.selected;
         [self setCellBtn:data collectionView:collectionView];

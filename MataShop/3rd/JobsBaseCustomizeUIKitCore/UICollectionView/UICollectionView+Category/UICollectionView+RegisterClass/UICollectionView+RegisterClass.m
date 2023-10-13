@@ -17,6 +17,7 @@
     [self registerCollectionElementKindSectionHeaderClass:MSHomeCollectionReusableView.class];
     [self registerCollectionElementKindSectionHeaderClass:MSMomentsCollectionReusableView.class];
     [self registerCollectionElementKindSectionHeaderClass:MSMineCollectionReusableView.class];
+    [self registerCollectionElementKindSectionHeaderClass:JobsTextFieldStyleCVCell.class];
     // CollectionReusableView—Footer
     [self registerCollectionElementKindSectionFooterClass:UICollectionReusableView.class];
     [self registerCollectionElementKindSectionFooterClass:JobsHeaderFooterView.class];

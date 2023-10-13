@@ -1,23 +1,23 @@
 //
-//  MSBankCardTopUpVC.h
+//  MSRechargeVC.h
 //  MataShop
 //
-//  Created by Jobs Hi on 9/12/23.
+//  Created by Jobs Hi on 10/13/23.
 //
 
 #import "BaseViewController.h"
 #import "JobsBtnStyleCVCell.h"
 #import "JobsHeaderFooterView.h"
+#import "JobsTextFieldStyleCVCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-@interface MSBankCardTopUpVC : BaseViewController
+/// 带输入框的充值页面
+@interface MSRechargeVC : BaseViewController
 <
 UICollectionViewDataSource
 ,UICollectionViewDelegate
 ,UICollectionViewDelegateFlowLayout
 >
-
 
 @end
 

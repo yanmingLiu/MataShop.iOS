@@ -6,6 +6,8 @@
 //
 
 #import "BaseViewController.h"
+#import "JobsBtnStyleCVCell.h"
+#import "JobsHeaderFooterView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -41,6 +41,8 @@
 #import "Douyin_ZFPlayerVC@2.h"/// 播放模块
 #import "MSCustomerServiceVC.h"/// 客服
 #import "MSMyPostDynamicVC.h"/// 发布动态
+#import "MSTopUpVC.h"/// 不带输入框的充值页面
+#import "MSRechargeVC.h"/// 带输入框的充值页面
 /// 首页相关子控制器
 
 /// 个人中心相关子控制器
