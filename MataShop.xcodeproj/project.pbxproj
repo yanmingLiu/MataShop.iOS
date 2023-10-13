@@ -115,6 +115,7 @@
 		C5432E0F2ACB2C30008F92B0 /* MSTipsMeSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432E0E2ACB2C30008F92B0 /* MSTipsMeSubVC.m */; };
 		C5432F672ACB4356008F92B0 /* JobsTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432F622ACB4355008F92B0 /* JobsTextView.m */; };
 		C5432F682ACB4356008F92B0 /* JobsPostDelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432F652ACB4356008F92B0 /* JobsPostDelView.m */; };
+		C54AF2812AD98F3C0014B335 /* MSChooseRechargeWayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54AF2802AD98F3C0014B335 /* MSChooseRechargeWayView.m */; };
 		C553D0F02AC9CBFF00F9CEA1 /* MSVoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0EF2AC9CBFF00F9CEA1 /* MSVoteView.m */; };
 		C553D0F52AC9CFC000F9CEA1 /* MSMySocialTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0F42AC9CFBF00F9CEA1 /* MSMySocialTitleView.m */; };
 		C553D1722AC9D98900F9CEA1 /* MSCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D1712AC9D98900F9CEA1 /* MSCommentView.m */; };
@@ -1231,6 +1232,8 @@
 		C5432F632ACB4355008F92B0 /* JobsTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsTextView.h; sourceTree = "<group>"; };
 		C5432F652ACB4356008F92B0 /* JobsPostDelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsPostDelView.m; sourceTree = "<group>"; };
 		C5432F662ACB4356008F92B0 /* JobsPostDelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsPostDelView.h; sourceTree = "<group>"; };
+		C54AF27F2AD98F3C0014B335 /* MSChooseRechargeWayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChooseRechargeWayView.h; sourceTree = "<group>"; };
+		C54AF2802AD98F3C0014B335 /* MSChooseRechargeWayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChooseRechargeWayView.m; sourceTree = "<group>"; };
 		C553D0ED2AC9CBD500F9CEA1 /* 投票弹窗.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "投票弹窗.jpg"; sourceTree = "<group>"; };
 		C553D0EE2AC9CBFF00F9CEA1 /* MSVoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVoteView.h; sourceTree = "<group>"; };
 		C553D0EF2AC9CBFF00F9CEA1 /* MSVoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVoteView.m; sourceTree = "<group>"; };
@@ -10363,6 +10366,8 @@
 		C5FAF5B42AD8ECFC00100EDE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C54AF27F2AD98F3C0014B335 /* MSChooseRechargeWayView.h */,
+				C54AF2802AD98F3C0014B335 /* MSChooseRechargeWayView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -11328,6 +11333,7 @@
 				C561D43F2AAC7E7B00E28603 /* UIControl+Extra.m in Sources */,
 				C5D71EA02AC22BDF00DD8938 /* JobsPresentationCtrl.m in Sources */,
 				C5D71F322AC22EE800DD8938 /* KTVHCHTTPServer.m in Sources */,
+				C54AF2812AD98F3C0014B335 /* MSChooseRechargeWayView.m in Sources */,
 				C561D9252AAC8D8000E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVHeader.m in Sources */,
 				C5D71F302AC22EE800DD8938 /* KTVHCHTTPConnection.m in Sources */,
 				C561D3B12AAC7E7A00E28603 /* UIScrollView+FDFullscreenPopGesture.m in Sources */,

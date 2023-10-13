@@ -390,7 +390,8 @@ insetForSectionAtIndex:(NSInteger)section {
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-            [self jobsToastMsg:Internationalization(@"确认提交")];
+            [self jobsToastMsg:Internationalization(@"提交")];
+            [self popupshowSlideWithView:MSChooseRechargeWayView.new];
             return nil;
         }];
         [self.view addSubview:_submitBtn];

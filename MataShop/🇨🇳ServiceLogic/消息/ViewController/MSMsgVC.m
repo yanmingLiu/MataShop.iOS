@@ -73,7 +73,7 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self forceComingToPushVC:MSDoorVC.new requestParams:nil];
-//    [jobsGetMainWindow() popupShowScaleWithView:[self jobsPopView:MSPayView.class viewModel:UIViewModel.new]];//zhifu 
+//    [jobsGetMainWindow() popupShowScaleWithView:[self jobsPopView:MSPayView.class viewModel:UIViewModel.new]];//
 }
 #pragma mark —— lazyLoad
 
