@@ -30,8 +30,13 @@
 }
 /// 由具体的子类进行覆写
 -(void)richElementsInViewWithModel:(NSMutableArray <UIViewModel *>*_Nullable)model{
-    self.titleModel = model[0];
-    self.subTitleModel = model[1];
+    if(model.count){
+        self.titleModel = model[0];
+    }
+    
+    if(model.count >= 2){
+        self.subTitleModel = model[1];
+    }
     
     if(self.titleModel) self.titleBtn.alpha = 1;
     if(self.subTitleModel) self.subTitleBtn.alpha = 1;
@@ -91,23 +96,28 @@
             make.top.bottom.equalTo(self);
         }];
     }
-    _titleBtn.jobsResetTitle(self.titleModel.textModel.text);
+    
+    _titleBtn.jobsResetBtnTitle(self.titleModel.textModel.text);
     _titleBtn.jobsResetSubtitle((self.titleModel.subTextModel.text));
     _titleBtn.jobsResetImagePadding(self.titleModel.imageTitleSpace);
     _titleBtn.jobsResetTitlePadding(self.titleModel.titleSpace);
-    _titleBtn.jobsResetImage(self.titleModel.image);
+    _titleBtn.jobsResetBtnImage(self.titleModel.image);
     _titleBtn.jobsResetTitleLineBreakMode(self.titleModel.subTextModel.lineBreakMode);
     _titleBtn.jobsResetSubTitleLineBreakMode(self.titleModel.subTextModel.lineBreakMode);
     _titleBtn.jobsResetImagePlacement(self.titleModel.buttonEdgeInsetsStyle);
     _titleBtn.jobsResetBaseForegroundColor(self.titleModel.textModel.textCor);
-    _titleBtn.jobsResetBaseBackgroundColor((self.titleModel.bgCor));
+    _titleBtn.jobsResetBtnBgCor((self.titleModel.bgCor));
     [_titleBtn jobsSetBtnTitleFont:self.titleModel.textModel.font btnTitleCor:self.titleModel.textModel.textCor];
     [_titleBtn makeBtnLabelByShowingType:self.titleModel.textModel.labelShowingType];
 
-    _titleBtn.jobsResetAttributedTitle(self.titleModel.textModel.attributedText);
-    _titleBtn.jobsResetAttributedSubtitle(self.titleModel.subTextModel.attributedText);
-
-    return _titleBtn;
+    /// 富文本的优先级最高，不括起来上述的设置无效
+    if(self.titleModel.textModel.attributedText){
+        _titleBtn.jobsResetAttributedTitle(self.titleModel.textModel.attributedText);
+    }
+    
+    if(self.titleModel.subTextModel.attributedText){
+        _titleBtn.jobsResetAttributedSubtitle(self.titleModel.subTextModel.attributedText);
+    }return _titleBtn;
 }
 
 -(BaseButton *)subTitleBtn{
@@ -157,23 +167,28 @@
             make.top.bottom.equalTo(self);
         }];
     }
-    _subTitleBtn.jobsResetTitle(self.subTitleModel.textModel.text);
+    
+    _subTitleBtn.jobsResetBtnTitle(self.subTitleModel.textModel.text);
     _subTitleBtn.jobsResetSubtitle((self.subTitleModel.subTextModel.text));
     _subTitleBtn.jobsResetImagePadding(self.subTitleModel.imageTitleSpace);
     _subTitleBtn.jobsResetTitlePadding(self.subTitleModel.titleSpace);
-    _subTitleBtn.jobsResetImage(self.subTitleModel.image);
+    _subTitleBtn.jobsResetBtnImage(self.subTitleModel.image);
     _subTitleBtn.jobsResetTitleLineBreakMode(self.subTitleModel.subTextModel.lineBreakMode);
     _subTitleBtn.jobsResetSubTitleLineBreakMode(self.subTitleModel.subTextModel.lineBreakMode);
     _subTitleBtn.jobsResetImagePlacement(self.subTitleModel.buttonEdgeInsetsStyle);
     _subTitleBtn.jobsResetBaseForegroundColor(self.subTitleModel.textModel.textCor);
-    _subTitleBtn.jobsResetBaseBackgroundColor((self.subTitleModel.bgCor));
+    _subTitleBtn.jobsResetBtnBgCor((self.subTitleModel.bgCor));
     [_subTitleBtn jobsSetBtnTitleFont:self.subTitleModel.textModel.font btnTitleCor:self.subTitleModel.textModel.textCor];
     [_subTitleBtn makeBtnLabelByShowingType:self.subTitleModel.textModel.labelShowingType];
 
-    _subTitleBtn.jobsResetAttributedTitle(self.subTitleModel.textModel.attributedText);
-    _subTitleBtn.jobsResetAttributedSubtitle(self.subTitleModel.subTextModel.attributedText);
-
-    return _subTitleBtn;
+    /// 富文本的优先级最高，不括起来上述的设置无效
+    if(self.subTitleModel.textModel.attributedText){
+        _subTitleBtn.jobsResetAttributedTitle(self.subTitleModel.textModel.attributedText);
+    }
+    
+    if(self.subTitleModel.subTextModel.attributedText){
+        _subTitleBtn.jobsResetAttributedSubtitle(self.subTitleModel.subTextModel.attributedText);
+    }return _subTitleBtn;
 }
 
 @end

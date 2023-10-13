@@ -7,6 +7,8 @@
 
 #import "BaseViewController.h"
 
+#import "JobsBtnStyleCVCell.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MSBankCardTopUpVC : BaseViewController

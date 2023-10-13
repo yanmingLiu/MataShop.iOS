@@ -9,10 +9,13 @@
 
 @interface MSBankCardTopUpVC ()
 /// UI
-@property(nonatomic,strong)UICollectionViewFlowLayout *layout;
-@property(nonatomic,strong)UICollectionView *collectionView;
+@property(nonatomic,strong)UICollectionViewFlowLayout *layout1;
+@property(nonatomic,strong)UICollectionView *collectionView1;
+@property(nonatomic,strong)UICollectionViewFlowLayout *layout2;
+@property(nonatomic,strong)UICollectionView *collectionView2;
 /// Data
-@property(nonatomic,strong)NSMutableArray <UIViewModel *>*dataMutArr;
+@property(nonatomic,strong)NSMutableArray <UIViewModel *>*dataMutArr1;
+@property(nonatomic,strong)NSMutableArray <UIViewModel *>*dataMutArr2;
 
 @end
 
@@ -40,7 +43,8 @@
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
     
-    self.collectionView.alpha = 1;
+    self.collectionView1.alpha = 1;
+    self.collectionView2.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -70,6 +74,21 @@
     [super viewDidDisappear:animated];
 }
 #pragma mark —— 一些私有方法
+/// 依据btn的点击状态配置btn
+-(void)setCellBtn:(UIButton *)btn
+   collectionView:(nonnull UICollectionView *)collectionView{
+    if (collectionView.tag == 1) {
+        btn.jobsResetBtnlayerBorderCor(btn.selected ? JobsCor(@"#EA2819") : JobsClearColor);
+//        btn.jobsResetBtnlayerBorderWidth(JobsWidth(0.5f));
+        btn.jobsResetBtnBgCor(JobsClearColor);
+//        btn.jobsResetBtnCornerRadiusValue(8);
+    }else if (collectionView.tag == 2) {
+        btn.jobsResetBtnlayerBorderCor(btn.selected ? JobsClearColor : JobsCor(@"#AAAAAA"));
+//        btn.jobsResetBtnlayerBorderWidth(JobsWidth(0.5f));
+        btn.jobsResetBtnBgCor(btn.selected ? JobsCor(@"EA2918") : JobsClearColor);
+//        btn.jobsResetBtnCornerRadiusValue(8);
+    }
+}
 /// 下拉刷新 （子类要进行覆写）
 -(void)pullToRefresh{
     [self feedbackGenerator];//震动反馈
@@ -104,13 +123,62 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView
 cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     JobsBtnStyleCVCell *cell = [JobsBtnStyleCVCell cellWithCollectionView:collectionView forIndexPath:indexPath];
-    [cell richElementsInCellWithModel:self.dataMutArr[indexPath.row]];
-    return cell;
+    
+    if (collectionView.tag == 1) {
+        [cell richElementsInCellWithModel:self.dataMutArr1[indexPath.row]];
+    }else if (collectionView.tag == 2) {
+        [cell richElementsInCellWithModel:self.dataMutArr2[indexPath.row]];
+        [cell.getBtn layerBorderCor:JobsCor(@"#AAAAAA")
+             andBorderWidth:JobsWidth(0.5f)];
+    }
+    
+    cell.getBtn.enabled = YES;
+    @jobs_weakify(self)
+    [cell actionObjectBlock:^(UIButton *_Nullable data){
+        @jobs_strongify(self)
+        for (JobsBtnStyleCVCell *collectionViewCell in collectionView.visibleCells) {
+            collectionViewCell.getBtn.selected = NO;
+            [self setCellBtn:collectionViewCell.getBtn collectionView:collectionView];
+        }
+        data.selected = !data.selected;
+        [self setCellBtn:data collectionView:collectionView];
+    }];return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView
 numberOfItemsInSection:(NSInteger)section {
-    return self.dataMutArr.count;
+    if (collectionView.tag == 1) {
+        return self.dataMutArr1.count;
+    }else if (collectionView.tag == 2) {
+        return self.dataMutArr2.count;
+    }return 0;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath {
+    if (kind.isEqualToString(UICollectionElementKindSectionHeader)) {
+        JobsHeaderFooterView *headerView = [collectionView UICollectionElementKindSectionHeaderClass:JobsHeaderFooterView.class
+                                                                                        forIndexPath:indexPath];
+        
+        NSMutableArray *mutArr = NSMutableArray.array;
+        NSMutableArray *sectionMutArr = NSMutableArray.array;
+        UIViewModel *viewModel = UIViewModel.new;
+        viewModel.textModel.text = Internationalization(@"请快速选择金额(元)");
+        viewModel.textModel.font = UIFontWeightSemiboldSize(14);
+        viewModel.textModel.textCor = JobsCor(@"#333333");
+        viewModel.textModel.labelShowingType = UILabelShowingType_03;
+        viewModel.subTextModel.text = @"";
+        viewModel.bgCor = JobsClearColor;
+        
+        [sectionMutArr addObject:viewModel];
+        [mutArr addObject:sectionMutArr];
+        [headerView richElementsInViewWithModel:mutArr[indexPath.section]];
+        return headerView;
+    }else if (kind.isEqualToString(UICollectionElementKindSectionFooter)) {
+        ReturnBaseCollectionReusableFooterView
+
+    }else ReturnBaseCollectionReusableHeaderView
 }
 #pragma mark —— UICollectionViewDelegate
 /// 允许选中时，高亮
@@ -157,16 +225,35 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
 }
 #pragma mark —— UICollectionViewDelegateFlowLayout
+/// header 大小
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+referenceSizeForHeaderInSection:(NSInteger)section {
+    if (collectionView.tag == 1) {
+        return CGSizeZero;
+    }else if (collectionView.tag == 2) {
+        return CGSizeMake(JobsWidth(345), JobsWidth(18 + 22 * 2));
+    }return CGSizeZero;
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(JobsWidth(JobsWidth(60)), JobsWidth(84));
+    if (collectionView.tag == 1) {
+        return CGSizeMake(JobsWidth(JobsWidth(80)), JobsWidth(80));
+    }else if (collectionView.tag == 2) {
+        return CGSizeMake(JobsWidth(JobsWidth(96)), JobsWidth(40));
+    }return CGSizeZero;
 }
 /// 定义的是元素垂直之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return JobsWidth(30);
+    if (collectionView.tag == 1) {
+        return JobsWidth(30);
+    }else if (collectionView.tag == 2) {
+        return JobsWidth(16);
+    }return 0;
 }
 /// 定义的是UICollectionViewScrollDirectionVertical下，元素水平之间的间距。
 /// UICollectionViewScrollDirectionHorizontal下，垂直和水平正好相反
@@ -174,44 +261,60 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section {
 - (CGFloat)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return 0;
+    if (collectionView.tag == 1) {
+        return 0;
+    }else if (collectionView.tag == 2) {
+        return JobsWidth(14);
+    }return 0;
 }
 /// 内间距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView
 layout:(UICollectionViewLayout *)collectionViewLayout
 insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, 0, 0, 0);
+    if (collectionView.tag == 1) {
+        return jobsSameEdgeInset(JobsWidth(0));
+    }else if (collectionView.tag == 2) {
+        return jobsSameEdgeInset(JobsWidth(15));
+    }return jobsSameEdgeInset(JobsWidth(0));
 }
 #pragma mark —— lazyLoad
--(UICollectionViewFlowLayout *)layout{
-    if (!_layout) {
-        _layout = UICollectionViewFlowLayout.new;
-        _layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    }return _layout;
+-(UICollectionViewFlowLayout *)layout1{
+    if (!_layout1) {
+        _layout1 = UICollectionViewFlowLayout.new;
+        _layout1.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    }return _layout1;
 }
 
--(UICollectionView *)collectionView{
-    if (!_collectionView) {
-        _collectionView = [UICollectionView.alloc initWithFrame:CGRectZero
-                                           collectionViewLayout:self.layout];
-        _collectionView.backgroundColor = RGB_SAMECOLOR(246);
-        [self dataLinkByCollectionView:_collectionView];
+-(UICollectionViewFlowLayout *)layout2{
+    if (!_layout2) {
+        _layout2 = UICollectionViewFlowLayout.new;
+        _layout2.scrollDirection = UICollectionViewScrollDirectionVertical;
+    }return _layout2;
+}
+
+-(UICollectionView *)collectionView1{
+    if (!_collectionView1) {
+        _collectionView1 = [UICollectionView.alloc initWithFrame:CGRectZero
+                                            collectionViewLayout:self.layout1];
+        _collectionView1.backgroundColor = RGB_SAMECOLOR(246);
+        _collectionView1.tag = 1;
+        [self dataLinkByCollectionView:_collectionView1];
         
-        _collectionView.showsVerticalScrollIndicator = NO;
-        _collectionView.showsHorizontalScrollIndicator = NO;
-        _collectionView.bounces = NO;///设置为NO，使得collectionView只能上拉，不能下拉
+        _collectionView1.showsVerticalScrollIndicator = NO;
+        _collectionView1.showsHorizontalScrollIndicator = NO;
+        _collectionView1.bounces = NO;///设置为NO，使得collectionView只能上拉，不能下拉
     
-        [_collectionView registerCollectionViewClass];
-        [_collectionView registerCollectionViewCellClass:JobsBtnStyleCVCell.class];
+        [_collectionView1 registerCollectionViewClass];
+        [_collectionView1 registerCollectionViewCellClass:JobsBtnStyleCVCell.class];
         
         {
-            _collectionView.ly_emptyView = [LYEmptyView emptyViewWithImageStr:@"暂无数据"
+            _collectionView1.ly_emptyView = [LYEmptyView emptyViewWithImageStr:@"暂无数据"
                                                                      titleStr:Internationalization(@"暂无数据")
                                                                     detailStr:Internationalization(@"")];
             
-            _collectionView.ly_emptyView.titleLabTextColor = JobsLightGrayColor;
-            _collectionView.ly_emptyView.contentViewOffset = JobsWidth(-180);
-            _collectionView.ly_emptyView.titleLabFont = UIFontWeightMediumSize(16);
+            _collectionView1.ly_emptyView.titleLabTextColor = JobsLightGrayColor;
+            _collectionView1.ly_emptyView.contentViewOffset = JobsWidth(-180);
+            _collectionView1.ly_emptyView.titleLabFont = UIFontWeightMediumSize(16);
         }
         
 //        {
@@ -223,39 +326,98 @@ insetForSectionAtIndex:(NSInteger)section {
 //                [NSValue valueWithCGSize:[JobsBtnStyleCVCell cellSizeWithModel:nil]]
 //            ];
 //            
-//            _collectionView.tabAnimated = [TABCollectionAnimated animatedWithCellClassArray:classArray
-//                                                                              cellSizeArray:sizeArray
-//                                                                         animatedCountArray:@[@(1)]];
-//            
-//            [_collectionView.tabAnimated addHeaderViewClass:JobsBtnStyleCVCell.class
+//            _collectionView1.tabAnimated = [TABCollectionAnimated animatedWithCellClassArray:classArray
+//                                                                               cellSizeArray:sizeArray
+//                                                                             animatedCountArray:@[@(1)]];
+//
+//            [_collectionView1.tabAnimated addHeaderViewClass:JobsBtnStyleCVCell.class
 //                                                   viewSize:[JobsBtnStyleCVCell collectionReusableViewSizeWithModel:nil]
 //                                                  toSection:0];
 //            
-//            _collectionView.tabAnimated.containNestAnimation = YES;
-//            _collectionView.tabAnimated.superAnimationType = TABViewSuperAnimationTypeShimmer;
-//            _collectionView.tabAnimated.canLoadAgain = YES;
-//            [_collectionView tab_startAnimation];   // 开启动画
+//            _collectionView1.tabAnimated.containNestAnimation = YES;
+//            _collectionView1.tabAnimated.superAnimationType = TABViewSuperAnimationTypeShimmer;
+//            _collectionView1.tabAnimated.canLoadAgain = YES;
+//            [_collectionView1 tab_startAnimation];   // 开启动画
 //        }
         
-        [self.view addSubview:_collectionView];
-        [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.view addSubview:_collectionView1];
+        [_collectionView1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.view);
             make.top.equalTo(self.view).offset(JobsWidth(20));
             make.size.mas_equalTo(CGSizeMake(JobsWidth(335), JobsWidth(84)));
         }];
-    }return _collectionView;
+    }return _collectionView1;
 }
 
--(NSMutableArray<UIViewModel *> *)dataMutArr{
-    if (!_dataMutArr) {
-        _dataMutArr = NSMutableArray.array;
+-(UICollectionView *)collectionView2{
+    if (!_collectionView2) {
+        _collectionView2 = [UICollectionView.alloc initWithFrame:CGRectZero
+                                            collectionViewLayout:self.layout2];
+        _collectionView2.backgroundColor = RGB_SAMECOLOR(246);
+        _collectionView2.tag = 2;
+        [self dataLinkByCollectionView:_collectionView2];
+        
+        _collectionView2.showsVerticalScrollIndicator = NO;
+        _collectionView2.showsHorizontalScrollIndicator = NO;
+        _collectionView2.bounces = NO;///设置为NO，使得collectionView只能上拉，不能下拉
+    
+        [_collectionView2 registerCollectionViewClass];
+        [_collectionView2 registerCollectionViewCellClass:JobsBtnStyleCVCell.class];
+        
+        {
+            _collectionView2.ly_emptyView = [LYEmptyView emptyViewWithImageStr:@"暂无数据"
+                                                                     titleStr:Internationalization(@"暂无数据")
+                                                                    detailStr:Internationalization(@"")];
+            
+            _collectionView2.ly_emptyView.titleLabTextColor = JobsLightGrayColor;
+            _collectionView2.ly_emptyView.contentViewOffset = JobsWidth(-180);
+            _collectionView2.ly_emptyView.titleLabFont = UIFontWeightMediumSize(16);
+        }
+        
+//        {
+//
+//            NSArray *classArray = @[
+//                JobsBtnStyleCVCell.class
+//            ];
+//            NSArray *sizeArray = @[
+//                [NSValue valueWithCGSize:[JobsBtnStyleCVCell cellSizeWithModel:nil]]
+//            ];
+//
+//            _collectionView2.tabAnimated = [TABCollectionAnimated animatedWithCellClassArray:classArray
+//                                                                               cellSizeArray:sizeArray
+//                                                                             animatedCountArray:@[@(1)]];
+//
+//            [_collectionView2.tabAnimated addHeaderViewClass:JobsBtnStyleCVCell.class
+//                                                   viewSize:[JobsBtnStyleCVCell collectionReusableViewSizeWithModel:nil]
+//                                                  toSection:0];
+//
+//            _collectionView2.tabAnimated.containNestAnimation = YES;
+//            _collectionView2.tabAnimated.superAnimationType = TABViewSuperAnimationTypeShimmer;
+//            _collectionView2.tabAnimated.canLoadAgain = YES;
+//            [_collectionView2 tab_startAnimation];   // 开启动画
+//        }
+        
+        [self.view addSubview:_collectionView2];
+        [_collectionView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.view);
+            make.top.equalTo(self.collectionView1.mas_bottom).offset(JobsWidth(24));
+            make.width.mas_equalTo(JobsWidth(335));
+            make.height.mas_equalTo(JobsWidth(45) + JobsWidth(28) + JobsWidth(56) * (self.dataMutArr2.count / 3));
+        }];
+    }return _collectionView2;
+}
+
+-(NSMutableArray<UIViewModel *> *)dataMutArr1{
+    if (!_dataMutArr1) {
+        _dataMutArr1 = NSMutableArray.array;
         {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.image = JobsIMG(@"银行卡充值");
             viewModel.textModel.text = Internationalization(@"银行卡1");
             viewModel.imageTitleSpace = JobsWidth(6);
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            [_dataMutArr addObject:viewModel];
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr1 addObject:viewModel];
         }
         
         {
@@ -264,7 +426,8 @@ insetForSectionAtIndex:(NSInteger)section {
             viewModel.textModel.text = Internationalization(@"银行卡2");
             viewModel.imageTitleSpace = JobsWidth(6);
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            [_dataMutArr addObject:viewModel];
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr1 addObject:viewModel];
         }
         
         {
@@ -273,7 +436,8 @@ insetForSectionAtIndex:(NSInteger)section {
             viewModel.textModel.text = Internationalization(@"银行卡3");
             viewModel.imageTitleSpace = JobsWidth(6);
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            [_dataMutArr addObject:viewModel];
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr1 addObject:viewModel];
         }
         
         {
@@ -282,7 +446,8 @@ insetForSectionAtIndex:(NSInteger)section {
             viewModel.textModel.text = Internationalization(@"银行卡4");
             viewModel.imageTitleSpace = JobsWidth(6);
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            [_dataMutArr addObject:viewModel];
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr1 addObject:viewModel];
         }
         
         {
@@ -291,7 +456,8 @@ insetForSectionAtIndex:(NSInteger)section {
             viewModel.textModel.text = Internationalization(@"银行卡5");
             viewModel.imageTitleSpace = JobsWidth(6);
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            [_dataMutArr addObject:viewModel];
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr1 addObject:viewModel];
         }
         
         {
@@ -300,10 +466,78 @@ insetForSectionAtIndex:(NSInteger)section {
             viewModel.textModel.text = Internationalization(@"银行卡6");
             viewModel.imageTitleSpace = JobsWidth(6);
             viewModel.buttonEdgeInsetsStyle = NSDirectionalRectEdgeTop;
-            [_dataMutArr addObject:viewModel];
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr1 addObject:viewModel];
         }
-    }return _dataMutArr;
+    }return _dataMutArr1;
 }
 
+-(NSMutableArray<UIViewModel *> *)dataMutArr2{
+    if (!_dataMutArr2) {
+        _dataMutArr2 = NSMutableArray.array;
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"200");
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr2 addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"500");
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr2 addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"1000");
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr2 addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"2000");
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr2 addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"5000");
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr2 addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"10000");
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr2 addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"20000");
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr2 addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"40000");
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr2 addObject:viewModel];
+        }
+        
+        {
+            UIViewModel *viewModel = UIViewModel.new;
+            viewModel.textModel.text = Internationalization(@"100000");
+            viewModel.bgCor = JobsClearColor;
+            [_dataMutArr2 addObject:viewModel];
+        }
+    }return _dataMutArr2;
+}
 
 @end

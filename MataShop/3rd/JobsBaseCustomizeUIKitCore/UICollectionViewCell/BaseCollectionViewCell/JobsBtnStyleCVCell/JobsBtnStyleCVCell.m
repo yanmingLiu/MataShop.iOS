@@ -94,11 +94,10 @@
                                               primaryAction:nil
                                             clickEventBlock:^id(BaseButton *x) {
             @jobs_strongify(self)
-            x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
             return nil;
         }];
-        _btn.enabled = NO;
+        _btn.enabled = NO;/// 这个属性为YES，则优先响应Btn。这个属性为NO，则响应UICollectionViewCell
         [self.contentView addSubview:_btn];
         [_btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView);
@@ -108,10 +107,10 @@
 
     _btn.jobsResetBtnTitle(self.viewModel.textModel.text);
     _btn.jobsResetImage(self.viewModel.image);
-    _btn.jobsResetBtnBgCor(_btn.selected ? (self.viewModel.bgSelectedCor ? : JobsYellowColor) : (self.viewModel.bgCor ? : JobsCyanColor));
     _btn.jobsResetBtnTitleCor(self.viewModel.textModel.textCor);
-
-    [_btn jobsSetBtnTitleFont:self.viewModel.textModel.font ? : UIFontWeightSemiboldSize(12) btnTitleCor: self.viewModel.textModel.textCor ? : JobsBlueColor];
+    _btn.jobsResetBtnBgCor(self.viewModel.bgCor);
+    [_btn jobsSetBtnTitleFont:self.viewModel.textModel.font ? : UIFontWeightSemiboldSize(12)
+                  btnTitleCor: self.viewModel.textModel.textCor ? : JobsBlueColor];
     if (@available(iOS 16.0, *)) {
         _btn.jobsResetImagePadding(self.viewModel.imageTitleSpace);
     } else {
