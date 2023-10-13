@@ -141,7 +141,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _categoryView.titleColorGradientEnabled = YES;
         _categoryView.contentScrollView = self.listContainerView.scrollView;// 关联cotentScrollView，关联之后才可以互相联动！！!
         _categoryView.indicators = @[self.lineView];
-        _categoryView.defaultSelectedIndex = 1;// 默认从第二个开始显示
+        _categoryView.defaultSelectedIndex = 2;// 默认从第二个开始显示
         _categoryView.cellSpacing = JobsWidth(-20);
         [self.view addSubview:_categoryView];
         [_categoryView mas_makeConstraints:^(MASConstraintMaker *make) {

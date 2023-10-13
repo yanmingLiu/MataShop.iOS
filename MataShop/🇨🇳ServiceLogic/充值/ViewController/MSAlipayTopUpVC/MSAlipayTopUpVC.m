@@ -8,6 +8,11 @@
 #import "MSAlipayTopUpVC.h"
 
 @interface MSAlipayTopUpVC ()
+/// UI
+@property(nonatomic,strong)UICollectionViewFlowLayout *layout;
+@property(nonatomic,strong)UICollectionView *collectionView;
+/// Data
+@property(nonatomic,strong)NSMutableArray <UIViewModel *>*dataMutArr;
 
 @end
 
@@ -34,7 +39,6 @@
     [self setGKNav];
     [self setGKNavBackBtn];
     self.gk_navigationBar.jobsVisible = NO;
-    [self.bgImageView removeFromSuperview];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

@@ -105,26 +105,12 @@
         }];
     }
     _btn.selected = self.viewModel.jobsSelected;
-    if (@available(iOS 16.0, *)) {
-        _btn.jobsResetTitle(self.viewModel.textModel.text);
-    } else {
-        // Fallback on earlier versions
-    }
-    if (@available(iOS 16.0, *)) {
-        _btn.jobsResetImage( self.viewModel.image);
-    } else {
-        // Fallback on earlier versions
-    }
-    if (@available(iOS 16.0, *)) {
-        _btn.jobsResetBaseForegroundColor(self.viewModel.textModel.textCor ? : JobsBlueColor);
-    } else {
-        // Fallback on earlier versions
-    }
-    if (@available(iOS 16.0, *)) {
-        _btn.jobsResetBaseBackgroundColor(_btn.selected ? (self.viewModel.bgSelectedCor ? : JobsYellowColor) : (self.viewModel.bgCor ? : JobsCyanColor));
-    } else {
-        // Fallback on earlier versions
-    }
+
+    _btn.jobsResetBtnTitle(self.viewModel.textModel.text);
+    _btn.jobsResetImage(self.viewModel.image);
+    _btn.jobsResetBtnBgCor(_btn.selected ? (self.viewModel.bgSelectedCor ? : JobsYellowColor) : (self.viewModel.bgCor ? : JobsCyanColor));
+    _btn.jobsResetBtnTitleCor(self.viewModel.textModel.textCor);
+
     [_btn jobsSetBtnTitleFont:self.viewModel.textModel.font ? : UIFontWeightSemiboldSize(12) btnTitleCor: self.viewModel.textModel.textCor ? : JobsBlueColor];
     if (@available(iOS 16.0, *)) {
         _btn.jobsResetImagePadding(self.viewModel.imageTitleSpace);

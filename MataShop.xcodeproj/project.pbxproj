@@ -974,6 +974,7 @@
 		C5EE38342AB98B8D0020BDB8 /* MSHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE38332AB9862B0020BDB8 /* MSHomeVC.m */; };
 		C5EE3CD32AB9D1060020BDB8 /* BaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE3CD22AB9D1060020BDB8 /* BaseScrollView.m */; };
 		C5EE3D4F2AB9D1E60020BDB8 /* MSHomeGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EE3D4E2AB9D1E60020BDB8 /* MSHomeGoodsView.m */; };
+		C5FAF5B72AD8F18F00100EDE /* 充值.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5FAF5B62AD8F18F00100EDE /* 充值.xcassets */; };
 		C5FB56612AB31B5E00C873B7 /* 非iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */; };
 		C5FB56622AB31B5E00C873B7 /* iph_X.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */; };
 		C5FB566B2AB31F1300C873B7 /* MSHomePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB566A2AB31F1300C873B7 /* MSHomePopupView.m */; };
@@ -2771,6 +2772,7 @@
 		C5EE3D4D2AB9D1E60020BDB8 /* MSHomeGoodsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomeGoodsView.h; sourceTree = "<group>"; };
 		C5EE3D4E2AB9D1E60020BDB8 /* MSHomeGoodsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSHomeGoodsView.m; sourceTree = "<group>"; };
 		C5FAF5B22AD8EC7E00100EDE /* 充值.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "充值.jpg"; sourceTree = "<group>"; };
+		C5FAF5B62AD8F18F00100EDE /* 充值.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "充值.xcassets"; sourceTree = "<group>"; };
 		C5FB565F2AB31B5E00C873B7 /* 非iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "非iph_X.mp4"; sourceTree = "<group>"; };
 		C5FB56602AB31B5E00C873B7 /* iph_X.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iph_X.mp4; sourceTree = "<group>"; };
 		C5FB56692AB31F1300C873B7 /* MSHomePopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSHomePopupView.h; sourceTree = "<group>"; };
@@ -4130,6 +4132,7 @@
 		C561CE622AAC7D8500E28603 /* xcassets */ = {
 			isa = PBXGroup;
 			children = (
+				C5FAF5B62AD8F18F00100EDE /* 充值.xcassets */,
 				C569E99B2AD392C7000F4DE3 /* 订单.xcassets */,
 				C5D722052AC234C600DD8938 /* 视频模块.xcassets */,
 				C5329FD52ABF0C29004294E0 /* 个人中心.xcassets */,
@@ -10643,6 +10646,7 @@
 				C561D30A2AAC7E7A00E28603 /* green_lottie_tab_home.json in Resources */,
 				C5E011C52AADE1CD005ABE09 /* 186@2x.gif in Resources */,
 				C561D37F2AAC7E7A00E28603 /* 6@2x.png in Resources */,
+				C5FAF5B72AD8F18F00100EDE /* 充值.xcassets in Resources */,
 				C5E011FE2AADE1CD005ABE09 /* 100@2x.gif in Resources */,
 				C5E011D52AADE1CD005ABE09 /* 117@2x.gif in Resources */,
 				C561D34D2AAC7E7A00E28603 /* 输入框样式_3（输入👨🏻用户名）.md in Resources */,

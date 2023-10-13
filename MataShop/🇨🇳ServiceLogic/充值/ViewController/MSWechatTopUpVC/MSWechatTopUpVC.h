@@ -10,6 +10,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MSWechatTopUpVC : BaseViewController
+<
+UICollectionViewDataSource
+,UICollectionViewDelegate
+,UICollectionViewDelegateFlowLayout
+>
+
 
 @end
 
