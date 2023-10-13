@@ -138,7 +138,7 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 -(UITableView *)tableView{
     if (!_tableView) {
         _tableView = UITableView.initWithStylePlain;
-        _tableView.backgroundColor = AppMainCor_02;
+        _tableView.backgroundColor = JobsWhiteColor;
         _tableView.separatorColor = HEXCOLOR(0xEEE2C8);
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.scrollEnabled = NO;

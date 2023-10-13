@@ -8071,8 +8071,8 @@
 		C561D55A2AAC84DF00E28603 /* AppleProductsScreenSize */ = {
 			isa = PBXGroup;
 			children = (
-				C561D55B2AAC84DF00E28603 /* 安全区域.png */,
 				C561D55C2AAC84DF00E28603 /* MacroDef_AppDeviceScreenSize.h */,
+				C561D55B2AAC84DF00E28603 /* 安全区域.png */,
 				C561D55D2AAC84DF00E28603 /* iPhone尺寸.png */,
 				C561D55E2AAC84DF00E28603 /* iPad尺寸.png */,
 			);
