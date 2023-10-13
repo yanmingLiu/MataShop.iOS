@@ -37,6 +37,8 @@
     self.viewModel.textModel.textCor = RGBA_COLOR(51, 51, 51, 1);
     self.viewModel.textModel.text = Internationalization(@"充值");
     self.viewModel.textModel.font = UIFontWeightRegularSize(18);
+    self.viewModel.bgCor = JobsCor(@"#F5F5F5");
+    
     self.bgImage = nil;
 }
 
@@ -132,7 +134,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
     if (!_categoryView) {
         _categoryView = JXCategoryTitleView.new;
         _categoryView.delegate = self;
-        _categoryView.backgroundColor = JobsClearColor;
+        _categoryView.backgroundColor = JobsCor(@"#F5F5F5");
         _categoryView.titleSelectedColor = RGBA_COLOR(51, 51, 51, 1);
         _categoryView.titleColor = RGBA_COLOR(102, 102, 102, 1);
         _categoryView.titleFont = UIFontWeightRegularSize(14);
@@ -141,7 +143,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
         _categoryView.titleColorGradientEnabled = YES;
         _categoryView.contentScrollView = self.listContainerView.scrollView;// 关联cotentScrollView，关联之后才可以互相联动！！!
         _categoryView.indicators = @[self.lineView];
-        _categoryView.defaultSelectedIndex = 2;// 默认从第二个开始显示
+        _categoryView.defaultSelectedIndex = 1;// 默认从第二个开始显示
         _categoryView.cellSpacing = JobsWidth(-20);
         [self.view addSubview:_categoryView];
         [_categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -157,7 +159,7 @@ scrollingFromLeftIndex:(NSInteger)leftIndex
 -(JXCategoryIndicatorLineView *)lineView{
     if (!_lineView) {
         _lineView = JXCategoryIndicatorLineView.new;
-        _lineView.indicatorColor = RGBA_COLOR(247, 181, 0, 1);
+        _lineView.indicatorColor = JobsCor(@"#EA2918");
         _lineView.indicatorHeight = JobsWidth(4);
         _lineView.indicatorWidthIncrement = JobsWidth(10);
         _lineView.verticalMargin = 0;

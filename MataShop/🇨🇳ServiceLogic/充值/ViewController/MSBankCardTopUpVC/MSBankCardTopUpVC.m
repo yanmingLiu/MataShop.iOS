@@ -13,6 +13,8 @@
 @property(nonatomic,strong)UICollectionView *collectionView1;
 @property(nonatomic,strong)UICollectionViewFlowLayout *layout2;
 @property(nonatomic,strong)UICollectionView *collectionView2;
+@property(nonatomic,strong)UILabel *tiplab;
+@property(nonatomic,strong)UIButton *submitBtn;
 /// Data
 @property(nonatomic,strong)NSMutableArray <UIViewModel *>*dataMutArr1;
 @property(nonatomic,strong)NSMutableArray <UIViewModel *>*dataMutArr2;
@@ -45,6 +47,9 @@
     
     self.collectionView1.alpha = 1;
     self.collectionView2.alpha = 1;
+    
+    self.tiplab.alpha = 1;
+    self.submitBtn.alpha = 1;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -79,14 +84,11 @@
    collectionView:(nonnull UICollectionView *)collectionView{
     if (collectionView.tag == 1) {
         btn.jobsResetBtnlayerBorderCor(btn.selected ? JobsCor(@"#EA2819") : JobsClearColor);
-//        btn.jobsResetBtnlayerBorderWidth(JobsWidth(0.5f));
         btn.jobsResetBtnBgCor(JobsClearColor);
-//        btn.jobsResetBtnCornerRadiusValue(8);
     }else if (collectionView.tag == 2) {
         btn.jobsResetBtnlayerBorderCor(btn.selected ? JobsClearColor : JobsCor(@"#AAAAAA"));
-//        btn.jobsResetBtnlayerBorderWidth(JobsWidth(0.5f));
         btn.jobsResetBtnBgCor(btn.selected ? JobsCor(@"EA2918") : JobsClearColor);
-//        btn.jobsResetBtnCornerRadiusValue(8);
+        btn.jobsResetBtnTitleCor(btn.selected ? JobsCor(@"#FFFFFF") : JobsCor(@"#333333"));
     }
 }
 /// 下拉刷新 （子类要进行覆写）
@@ -121,7 +123,7 @@
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView
-cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+                                   cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     JobsBtnStyleCVCell *cell = [JobsBtnStyleCVCell cellWithCollectionView:collectionView forIndexPath:indexPath];
     
     if (collectionView.tag == 1) {
@@ -136,6 +138,9 @@ cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     @jobs_weakify(self)
     [cell actionObjectBlock:^(UIButton *_Nullable data){
         @jobs_strongify(self)
+        UIViewModel *viewModel = (UIViewModel *)data.data;
+        /// 获取点击的Btn值
+        [self jobsToastMsg:viewModel.textModel.text];
         for (JobsBtnStyleCVCell *collectionViewCell in collectionView.visibleCells) {
             collectionViewCell.getBtn.selected = NO;
             [self setCellBtn:collectionViewCell.getBtn collectionView:collectionView];
@@ -165,7 +170,7 @@ numberOfItemsInSection:(NSInteger)section {
         NSMutableArray *sectionMutArr = NSMutableArray.array;
         UIViewModel *viewModel = UIViewModel.new;
         viewModel.textModel.text = Internationalization(@"请快速选择金额(元)");
-        viewModel.textModel.font = UIFontWeightSemiboldSize(14);
+        viewModel.textModel.font = UIFontWeightSemiboldSize(18);
         viewModel.textModel.textCor = JobsCor(@"#333333");
         viewModel.textModel.labelShowingType = UILabelShowingType_03;
         viewModel.subTextModel.text = @"";
@@ -407,6 +412,73 @@ insetForSectionAtIndex:(NSInteger)section {
     }return _collectionView2;
 }
 
+-(UILabel *)tiplab{
+    if(!_tiplab){
+        _tiplab = UILabel.new;
+        _tiplab.text = Internationalization(@"财务上班时间为:10:00-22:00\n请在规定时间内提现,由此给您带来的不便,敬请谅解!");
+        _tiplab.textAlignment = NSTextAlignmentLeft;
+        _tiplab.font = UIFontWeightRegularSize(12);
+        _tiplab.textColor = JobsCor(@"#666666");
+        [self.view addSubview:_tiplab];
+        [_tiplab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(JobsMainScreen_WIDTH() - JobsWidth(27 * 2));
+            make.left.equalTo(self.view).offset(JobsWidth(27));
+            make.top.equalTo(self.collectionView2.mas_bottom).offset(JobsWidth(12));
+        }];
+        [_tiplab makeLabelByShowingType:UILabelShowingType_05];
+    }return _tiplab;
+}
+
+-(UIButton *)submitBtn{
+    if(!_submitBtn){
+        @jobs_weakify(self)
+        _submitBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                       background:nil
+                                                   titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                    textAlignment:NSTextAlignmentCenter
+                                                 subTextAlignment:NSTextAlignmentCenter
+                                                      normalImage:nil
+                                                   highlightImage:nil
+                                                  attributedTitle:nil
+                                          selectedAttributedTitle:nil
+                                               attributedSubtitle:nil
+                                                            title:Internationalization(@"确认提交")
+                                                         subTitle:nil
+                                                        titleFont:UIFontWeightSemiboldSize(18)
+                                                     subTitleFont:nil
+                                                         titleCor:JobsCor(@"#FFFFFF")
+                                                      subTitleCor:nil
+                                               titleLineBreakMode:NSLineBreakByWordWrapping
+                                            subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                              baseBackgroundColor:JobsCor(@"#EA2918")
+                                                     imagePadding:JobsWidth(0)
+                                                     titlePadding:JobsWidth(0)
+                                                   imagePlacement:NSDirectionalRectEdgeNone
+                                       contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                         contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                    contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                cornerRadiusValue:JobsWidth(8)
+                                                  roundingCorners:UIRectCornerAllCorners
+                                             roundingCornersRadii:CGSizeZero
+                                                   layerBorderCor:nil
+                                                      borderWidth:JobsWidth(0)
+                                                    primaryAction:nil
+                                                  clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            [self jobsToastMsg:Internationalization(@"确认提交")];
+            return nil;
+        }];
+        [self.view addSubview:_submitBtn];
+        [_submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(335), JobsWidth(50)));
+            make.centerX.equalTo(self.view);
+            make.bottom.equalTo(self.view).offset(JobsWidth(-40));
+        }];
+    }return _submitBtn;
+}
+
 -(NSMutableArray<UIViewModel *> *)dataMutArr1{
     if (!_dataMutArr1) {
         _dataMutArr1 = NSMutableArray.array;
@@ -479,6 +551,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"200");
             viewModel.bgCor = JobsClearColor;
+            viewModel.textModel.font = UIFontWeightRegularSize(16);
             [_dataMutArr2 addObject:viewModel];
         }
         
@@ -486,6 +559,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"500");
             viewModel.bgCor = JobsClearColor;
+            viewModel.textModel.font = UIFontWeightRegularSize(16);
             [_dataMutArr2 addObject:viewModel];
         }
         
@@ -493,6 +567,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"1000");
             viewModel.bgCor = JobsClearColor;
+            viewModel.textModel.font = UIFontWeightRegularSize(16);
             [_dataMutArr2 addObject:viewModel];
         }
         
@@ -500,6 +575,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"2000");
             viewModel.bgCor = JobsClearColor;
+            viewModel.textModel.font = UIFontWeightRegularSize(16);
             [_dataMutArr2 addObject:viewModel];
         }
         
@@ -507,6 +583,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"5000");
             viewModel.bgCor = JobsClearColor;
+            viewModel.textModel.font = UIFontWeightRegularSize(16);
             [_dataMutArr2 addObject:viewModel];
         }
         
@@ -514,6 +591,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"10000");
             viewModel.bgCor = JobsClearColor;
+            viewModel.textModel.font = UIFontWeightRegularSize(16);
             [_dataMutArr2 addObject:viewModel];
         }
         
@@ -521,6 +599,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"20000");
             viewModel.bgCor = JobsClearColor;
+            viewModel.textModel.font = UIFontWeightRegularSize(16);
             [_dataMutArr2 addObject:viewModel];
         }
         
@@ -528,6 +607,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"40000");
             viewModel.bgCor = JobsClearColor;
+            viewModel.textModel.font = UIFontWeightRegularSize(16);
             [_dataMutArr2 addObject:viewModel];
         }
         
@@ -535,6 +615,7 @@ insetForSectionAtIndex:(NSInteger)section {
             UIViewModel *viewModel = UIViewModel.new;
             viewModel.textModel.text = Internationalization(@"100000");
             viewModel.bgCor = JobsClearColor;
+            viewModel.textModel.font = UIFontWeightRegularSize(16);
             [_dataMutArr2 addObject:viewModel];
         }
     }return _dataMutArr2;
