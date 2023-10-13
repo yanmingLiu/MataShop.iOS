@@ -11,13 +11,13 @@
 #pragma mark —— 仅文字，展示在屏幕中间
 -(void)jobsToastMsg:(NSString *)msg{
     [WHToast showMessage:msg
-                duration:1.5
+                duration:.5f
            finishHandler:nil];
 }
 
 +(void)jobsToastMsg:(NSString *)msg{
     [WHToast showMessage:msg
-                duration:1.5
+                duration:.5f
            finishHandler:nil];
 }
 #pragma mark —— 成功图标和文字，展示在屏幕中间
