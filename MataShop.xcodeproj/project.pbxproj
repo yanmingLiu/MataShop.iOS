@@ -357,7 +357,7 @@
 		C561D3DA2AAC7E7B00E28603 /* RBCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D06B2AAC7E7900E28603 /* RBCLikeButton.m */; };
 		C561D3DC2AAC7E7B00E28603 /* del_Photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D06F2AAC7E7900E28603 /* del_Photo@3x.png */; };
 		C561D3DD2AAC7E7B00E28603 /* del_Photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D0702AAC7E7900E28603 /* del_Photo@2x.png */; };
-		C561D3DE2AAC7E7B00E28603 /* LGiOSBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0712AAC7E7900E28603 /* LGiOSBtn.m */; };
+		C561D3DE2AAC7E7B00E28603 /* JobsShakeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0712AAC7E7900E28603 /* JobsShakeBtn.m */; };
 		C561D3DF2AAC7E7B00E28603 /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0742AAC7E7900E28603 /* BaseButton.m */; };
 		C561D3E12AAC7E7B00E28603 /* IrregularBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0772AAC7E7900E28603 /* IrregularBtn.m */; };
 		C561D3E22AAC7E7B00E28603 /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C561D07A2AAC7E7900E28603 /* Sound.wav */; };
@@ -1639,10 +1639,10 @@
 		C561D0682AAC7E7900E28603 /* RBCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBCLikeButton.h; sourceTree = "<group>"; };
 		C561D06A2AAC7E7900E28603 /* RBCLikeButton.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RBCLikeButton.bundle; sourceTree = "<group>"; };
 		C561D06B2AAC7E7900E28603 /* RBCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBCLikeButton.m; sourceTree = "<group>"; };
-		C561D06D2AAC7E7900E28603 /* LGiOSBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGiOSBtn.h; sourceTree = "<group>"; };
+		C561D06D2AAC7E7900E28603 /* JobsShakeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsShakeBtn.h; sourceTree = "<group>"; };
 		C561D06F2AAC7E7900E28603 /* del_Photo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_Photo@3x.png"; sourceTree = "<group>"; };
 		C561D0702AAC7E7900E28603 /* del_Photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_Photo@2x.png"; sourceTree = "<group>"; };
-		C561D0712AAC7E7900E28603 /* LGiOSBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGiOSBtn.m; sourceTree = "<group>"; };
+		C561D0712AAC7E7900E28603 /* JobsShakeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsShakeBtn.m; sourceTree = "<group>"; };
 		C561D0732AAC7E7900E28603 /* BaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
 		C561D0742AAC7E7900E28603 /* BaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseButton.m; sourceTree = "<group>"; };
 		C561D0772AAC7E7900E28603 /* IrregularBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrregularBtn.m; sourceTree = "<group>"; };
@@ -5624,7 +5624,7 @@
 			isa = PBXGroup;
 			children = (
 				C561D0672AAC7E7900E28603 /* RBCLikeButton */,
-				C561D06C2AAC7E7900E28603 /* LGiOSBtn */,
+				C561D06C2AAC7E7900E28603 /* JobsShakeBtn */,
 				C561D0722AAC7E7900E28603 /* BaseButton */,
 				C561D0752AAC7E7900E28603 /* IrregularBtn */,
 				C561D0792AAC7E7900E28603 /* SoundBtn */,
@@ -5642,15 +5642,15 @@
 			path = RBCLikeButton;
 			sourceTree = "<group>";
 		};
-		C561D06C2AAC7E7900E28603 /* LGiOSBtn */ = {
+		C561D06C2AAC7E7900E28603 /* JobsShakeBtn */ = {
 			isa = PBXGroup;
 			children = (
-				C561D06D2AAC7E7900E28603 /* LGiOSBtn.h */,
+				C561D06D2AAC7E7900E28603 /* JobsShakeBtn.h */,
 				C561D06F2AAC7E7900E28603 /* del_Photo@3x.png */,
 				C561D0702AAC7E7900E28603 /* del_Photo@2x.png */,
-				C561D0712AAC7E7900E28603 /* LGiOSBtn.m */,
+				C561D0712AAC7E7900E28603 /* JobsShakeBtn.m */,
 			);
-			path = LGiOSBtn;
+			path = JobsShakeBtn;
 			sourceTree = "<group>";
 		};
 		C561D0722AAC7E7900E28603 /* BaseButton */ = {
@@ -11336,7 +11336,7 @@
 				C561D3572AAC7E7A00E28603 /* JobsUserHeaderDataViewTBVCell.m in Sources */,
 				C561D65F2AAC862000E28603 /* DDNetworkingAPI.m in Sources */,
 				C561D4312AAC7E7B00E28603 /* UIViewController+MJRefresh.m in Sources */,
-				C561D3DE2AAC7E7B00E28603 /* LGiOSBtn.m in Sources */,
+				C561D3DE2AAC7E7B00E28603 /* JobsShakeBtn.m in Sources */,
 				C561D3AD2AAC7E7A00E28603 /* AppInternationalizationVC.m in Sources */,
 				C53299B42ABE2BE7004294E0 /* MSInputTextFieldLeftView.m in Sources */,
 				C5329FD42ABF0551004294E0 /* MSVedioCVCell.m in Sources */,

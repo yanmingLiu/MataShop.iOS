@@ -62,7 +62,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #warning —— 本类不实现UIGestureRecognizerDelegate的原因说明:覆盖了UISCrollView 里面对应的方法
-
+/// 只能在当前UIView上面加一个同类型的手势
 @interface UIView (Gesture)
 // config
 @property(nonatomic,weak,nullable)id target;
