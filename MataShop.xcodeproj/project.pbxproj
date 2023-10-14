@@ -5645,9 +5645,9 @@
 		C561D06C2AAC7E7900E28603 /* JobsShakeBtn */ = {
 			isa = PBXGroup;
 			children = (
-				C561D06D2AAC7E7900E28603 /* JobsShakeBtn.h */,
-				C561D06F2AAC7E7900E28603 /* del_Photo@3x.png */,
 				C561D0702AAC7E7900E28603 /* del_Photo@2x.png */,
+				C561D06F2AAC7E7900E28603 /* del_Photo@3x.png */,
+				C561D06D2AAC7E7900E28603 /* JobsShakeBtn.h */,
 				C561D0712AAC7E7900E28603 /* JobsShakeBtn.m */,
 			);
 			path = JobsShakeBtn;
