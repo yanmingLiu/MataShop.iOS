@@ -391,7 +391,9 @@ insetForSectionAtIndex:(NSInteger)section {
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
             [self jobsToastMsg:Internationalization(@"提交")];
-            [self popupshowSlideWithView:MSChooseRechargeWayView.new];
+            MSChooseRechargeWayView *chooseRechargeWayView = MSChooseRechargeWayView.new;
+            [chooseRechargeWayView richElementsInViewWithModel:nil];
+            [self popupshowSlideWithView:chooseRechargeWayView];
             return nil;
         }];
         [self.view addSubview:_submitBtn];

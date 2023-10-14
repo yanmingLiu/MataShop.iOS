@@ -33,10 +33,12 @@ UIViewModelProtocol_synthesize
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInCellWithModel:(UIViewModel *_Nullable)model{
     self.viewModel = model;
+    self.leftBtn.alpha = 1;
+    self.rightBtn.alpha = 1;
 }
 /// 具体由子类进行复写【数据定高】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGFloat)cellHeightWithModel:(UIViewModel *_Nullable)model{
-    return JobsWidth(50);
+    return JobsWidth(55);
 }
 #pragma mark —— BaseViewProtocol
 /// 获取绑定的数据源
@@ -47,7 +49,6 @@ UIViewModelProtocol_synthesize
 -(UIButton *)leftBtn{
     if(!_leftBtn){
         @jobs_weakify(self)
-        
         _leftBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
                                                      background:nil
                                                  titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
@@ -58,11 +59,11 @@ UIViewModelProtocol_synthesize
                                                 attributedTitle:nil
                                         selectedAttributedTitle:nil
                                              attributedSubtitle:nil
-                                                          title:Internationalization(@"提现")
+                                                          title:nil
                                                        subTitle:nil
-                                                      titleFont:UIFontWeightBoldSize(12)
+                                                      titleFont:nil
                                                    subTitleFont:nil
-                                                       titleCor:JobsCor(@"#EA2918")
+                                                       titleCor:nil
                                                     subTitleCor:nil
                                              titleLineBreakMode:NSLineBreakByWordWrapping
                                           subtitleLineBreakMode:NSLineBreakByWordWrapping
@@ -83,10 +84,23 @@ UIViewModelProtocol_synthesize
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
-//            [self jobsToastMsg:Internationalization(@"提现")];
             return nil;
         }];
-    }return _leftBtn;
+        [self.contentView addSubview:_leftBtn];
+        [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.contentView);
+            make.left.equalTo(self.contentView).offset(JobsWidth(15));
+            make.height.mas_equalTo(JobsWidth(50));
+        }];
+    }
+    _leftBtn.jobsResetBtnTitle(self.viewModel.textModel.text);
+    _leftBtn.jobsResetBtnImage(self.viewModel.image);
+    _leftBtn.jobsResetImagePlacement(NSDirectionalRectEdgeLeading);
+    _leftBtn.jobsResetImagePadding(JobsWidth(5));
+    _leftBtn.jobsResetTitleFont(self.viewModel.textModel.font);
+    _leftBtn.jobsResetBtnTitleCor(self.viewModel.textModel.textCor);
+    [_leftBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+    return _leftBtn;
 }
 
 -(UIButton *)rightBtn{
@@ -102,11 +116,11 @@ UIViewModelProtocol_synthesize
                                                  attributedTitle:nil
                                          selectedAttributedTitle:nil
                                               attributedSubtitle:nil
-                                                           title:Internationalization(@"提现")
+                                                           title:nil
                                                         subTitle:nil
-                                                       titleFont:UIFontWeightBoldSize(12)
+                                                       titleFont:nil
                                                     subTitleFont:nil
-                                                        titleCor:JobsCor(@"#EA2918")
+                                                        titleCor:nil
                                                      subTitleCor:nil
                                               titleLineBreakMode:NSLineBreakByWordWrapping
                                            subtitleLineBreakMode:NSLineBreakByWordWrapping
@@ -126,11 +140,25 @@ UIViewModelProtocol_synthesize
                                                  clickEventBlock:^id(BaseButton *x) {
             @jobs_strongify(self)
             x.selected = !x.selected;
+            x.jobsResetBtnImage(x.selected ? self.viewModel.subButtonModel.selectedImage : self.viewModel.subButtonModel.normalImage);
             if (self.objectBlock) self.objectBlock(x);
-//            [self jobsToastMsg:Internationalization(@"提现")];
             return nil;
         }];
-    }return _rightBtn;
+        [self.contentView addSubview:_rightBtn];
+        [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.contentView);
+            make.right.equalTo(self.contentView).offset(JobsWidth(-15));
+            make.height.mas_equalTo(JobsWidth(50));
+        }];
+    }
+    _rightBtn.jobsResetBtnTitle(self.viewModel.subButtonModel.normalTitle);
+    _rightBtn.jobsResetBtnImage(_rightBtn.selected ? self.viewModel.subButtonModel.selectedImage : self.viewModel.subButtonModel.normalImage);
+    _rightBtn.jobsResetImagePlacement(NSDirectionalRectEdgeLeading);
+    _rightBtn.jobsResetImagePadding(JobsWidth(5));
+    _rightBtn.jobsResetTitleFont(self.viewModel.subButtonModel.titleFont);
+    _rightBtn.jobsResetBtnTitleCor(self.viewModel.subButtonModel.normalTitleColor);
+    [_rightBtn makeBtnLabelByShowingType:UILabelShowingType_03];
+    return _rightBtn;
 }
 
 @end

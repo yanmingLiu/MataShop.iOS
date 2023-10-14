@@ -10,6 +10,7 @@
 @interface MSChooseRechargeWayView ()
 /// UI
 @property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)UIButton *submitBtn;
 /// Data
 @property(nonatomic,strong)NSMutableArray <UIViewModel *>*dataMutArr;
 
@@ -35,6 +36,7 @@ static dispatch_once_t static_chooseRechargeWayViewOnceToken;
 -(instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = JobsWhiteColor;
+//        self.tableView.alpha = 1;
     }return self;
 }
 
@@ -55,6 +57,7 @@ static dispatch_once_t static_chooseRechargeWayViewOnceToken;
 -(void)layoutSubviews{
     [super layoutSubviews];
     JobsLock(self.size = [MSChooseRechargeWayView viewSizeWithModel:nil];)
+//    self.tableView.alpha = 1;
     /// 内部指定圆切角
     [self layoutSubviewsCutCnrByRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight
                                     cornerRadii:CGSizeMake(JobsWidth(8), JobsWidth(8))];
@@ -67,8 +70,9 @@ static dispatch_once_t static_chooseRechargeWayViewOnceToken;
 }
 /// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 -(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
-    self.viewModel = model ? : UIViewModel.new;
-    MakeDataNull
+    self.viewModel = model;
+    self.tableView.alpha = 1;
+    self.submitBtn.alpha = 1;
 }
 /// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
 +(CGSize)viewSizeWithModel:(UIViewModel *_Nullable)model{
@@ -120,7 +124,7 @@ didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [JobsBaseTableViewCell cellHeightWithModel:nil];
+    return [JobsBtnStyleTBVCell cellHeightWithModel:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -130,10 +134,10 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    JobsBaseTableViewCell *cell = [JobsBaseTableViewCell cellStyleDefaultWithTableView:tableView];
+    JobsBtnStyleTBVCell *cell = [JobsBtnStyleTBVCell cellStyleDefaultWithTableView:tableView];
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.indexPath = indexPath;
-    [cell richElementsInCellWithModel:nil];
+    [cell richElementsInCellWithModel:self.dataMutArr[indexPath.row]];
     return cell;
 }
 
@@ -144,38 +148,33 @@ heightForHeaderInSection:(NSInteger)section{
 /// 这里涉及到复用机制，return出去的是UITableViewHeaderFooterView的派生类
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section{
-    if (self.viewModel.usesTableViewHeaderView) {
-        BaseTableViewHeaderFooterView *headerView = BaseTableViewHeaderFooterView.jobsInitWithReuseIdentifier;
-       
-        
-        {
-            UILabel *titleLab = UILabel.new;
-            titleLab.textColor = JobsCor(@"#333333");
-            titleLab.font = UIFontWeightBoldSize(18);
-            titleLab.text = Internationalization(@"选择支付方式");
-            [headerView.contentView addSubview:titleLab];
-            [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.equalTo(headerView.contentView);
-            }];
-        }
-        
-        headerView.section = section;// 不写这一句有悬浮
-        [headerView richElementsInViewWithModel:nil];
-        @jobs_weakify(self)
-        [headerView actionObjectBlock:^(id data) {
-            @jobs_strongify(self)
-        }];return headerView;
-    }return nil;
+    BaseTableViewHeaderFooterView *headerView = BaseTableViewHeaderFooterView.jobsInitWithReuseIdentifier;
+    {
+        UILabel *titleLab = UILabel.new;
+        titleLab.textColor = JobsCor(@"#333333");
+        titleLab.font = UIFontWeightBoldSize(18);
+        titleLab.text = Internationalization(@"选择支付方式");
+        [headerView.contentView addSubview:titleLab];
+        [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(headerView.contentView).insets(jobsSameEdgeInset(5));
+        }];
+    }
+    headerView.section = section;// 不写这一句有悬浮
+    [headerView richElementsInViewWithModel:nil];
+    @jobs_weakify(self)
+    [headerView actionObjectBlock:^(id data) {
+        @jobs_strongify(self)
+    }];return headerView;
 }
 #pragma mark —— lazyLoad
 -(UITableView *)tableView{
     if (!_tableView) {
         _tableView = UITableView.initWithStyleGrouped;
         _tableView.backgroundColor = JobsCor(@"#FFFFFF");
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.separatorColor = HEXCOLOR(0xEEE2C8);
         _tableView.showsVerticalScrollIndicator = NO;
-        _tableView.scrollEnabled = YES;
+        _tableView.scrollEnabled = NO;
         [self dataLinkByTableView:_tableView];
         _tableView.tableHeaderView = UIView.new;/// 这里接入的就是一个UIView的派生类
         _tableView.tableFooterView = UIView.new;/// 这里接入的就是一个UIView的派生类
@@ -216,71 +215,198 @@ viewForHeaderInSection:(NSInteger)section{
             _tableView.ly_emptyView.titleLabFont = UIFontWeightLightSize(16);
         }
         
-        {/// 设置tabAnimated相关属性
-            // 可以不进行手动初始化，将使用默认属性
-            _tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:JobsBaseTableViewCell.class
-                                                                  cellHeight:[JobsBaseTableViewCell cellHeightWithModel:nil]];
-            _tableView.tabAnimated.superAnimationType = TABViewSuperAnimationTypeShimmer;
-            [_tableView tab_startAnimation];   // 开启动画
-        }
+//        {/// 设置tabAnimated相关属性
+//            // 可以不进行手动初始化，将使用默认属性
+//            _tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:JobsBtnStyleTBVCell.class
+//                                                                  cellHeight:[JobsBtnStyleTBVCell cellHeightWithModel:nil]];
+//            _tableView.tabAnimated.superAnimationType = TABViewSuperAnimationTypeShimmer;
+//            [_tableView tab_startAnimation];   // 开启动画
+//        }
         
         [self addSubview:_tableView];
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self).offset(JobsWidth(0));
-            make.left.equalTo(self).offset(JobsWidth(0));
-            make.right.equalTo(self).offset(JobsWidth(0));
-            make.height.mas_equalTo([JobsBaseTableViewCell cellHeightWithModel:nil] * self.dataMutArr.count + JobsWidth(50));
+            make.centerX.equalTo(self);
+            make.width.mas_equalTo(JobsMainScreen_WIDTH());
+            make.height.mas_equalTo([JobsBtnStyleTBVCell cellHeightWithModel:nil] * self.dataMutArr.count + JobsWidth(65));
         }];
+        [self layoutIfNeeded];
+        NSLog(@"");
     }return _tableView;
+}
+
+-(UIButton *)submitBtn{
+    if(!_submitBtn){
+        @jobs_weakify(self)
+        _submitBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
+                                                       background:nil
+                                                   titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
+                                                    textAlignment:NSTextAlignmentCenter
+                                                 subTextAlignment:NSTextAlignmentCenter
+                                                      normalImage:nil
+                                                   highlightImage:nil
+                                                  attributedTitle:nil
+                                          selectedAttributedTitle:nil
+                                               attributedSubtitle:nil
+                                                            title:Internationalization(@"提交")
+                                                         subTitle:nil
+                                                        titleFont:UIFontWeightSemiboldSize(18)
+                                                     subTitleFont:nil
+                                                         titleCor:JobsCor(@"#FFFFFF")
+                                                      subTitleCor:nil
+                                               titleLineBreakMode:NSLineBreakByWordWrapping
+                                            subtitleLineBreakMode:NSLineBreakByWordWrapping
+                                              baseBackgroundColor:JobsCor(@"#EA2918")
+                                                     imagePadding:JobsWidth(0)
+                                                     titlePadding:JobsWidth(0)
+                                                   imagePlacement:NSDirectionalRectEdgeNone
+                                       contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
+                                         contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
+                                                    contentInsets:jobsSameDirectionalEdgeInsets(0)
+                                                cornerRadiusValue:JobsWidth(8)
+                                                  roundingCorners:UIRectCornerAllCorners
+                                             roundingCornersRadii:CGSizeZero
+                                                   layerBorderCor:nil
+                                                      borderWidth:JobsWidth(0)
+                                                    primaryAction:nil
+                                                  clickEventBlock:^id(BaseButton *x) {
+            @jobs_strongify(self)
+            x.selected = !x.selected;
+            if (self.objectBlock) self.objectBlock(x);
+            [self jobsToastMsg:Internationalization(@"提交")];
+            return nil;
+        }];
+        [self addSubview:_submitBtn];
+        [_submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(JobsWidth(335), JobsWidth(50)));
+            make.centerX.equalTo(self);
+            make.bottom.equalTo(self).offset(JobsWidth(-40));
+        }];
+    }return _submitBtn;
 }
 
 -(NSMutableArray<UIViewModel *> *)dataMutArr{
     if (!_dataMutArr) {
         _dataMutArr = NSMutableArray.array;
+        
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.image = JobsIMG(@"微信充值");
-            viewModel.textModel.text = Internationalization(@"微信（限额 100-999）");
+            {
+                UIButtonModel *btnModel = UIButtonModel.new;
+                viewModel.image = JobsIMG(@"微信充值");
+                viewModel.textModel.text = Internationalization(@"微信（限额 100-999）");
+                viewModel.textModel.textCor = JobsCor(@"#333333");
+                viewModel.textModel.font = UIFontWeightMediumSize(16);
+                viewModel.buttonModel = btnModel;
+            }
+            
+            {
+                UIButtonModel *subButtonModel = UIButtonModel.new;
+                subButtonModel.normalTitle = Internationalization(@"");
+                subButtonModel.normalImage = JobsIMG(@"未选中支付方式");
+                subButtonModel.selectedImage = JobsIMG(@"已选中支付方式");
+                subButtonModel.titleFont = UIFontWeightMediumSize(16);
+                subButtonModel.normalTitleColor = JobsCor(@"#333333");
+                viewModel.subButtonModel = subButtonModel;
+            }
             [_dataMutArr addObject:viewModel];
         }
         
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.image = JobsIMG(@"支付宝充值");
-            viewModel.textModel.text = Internationalization(@"支付宝（限额 200-1500）");
+            {
+                UIButtonModel *btnModel = UIButtonModel.new;
+                viewModel.image = JobsIMG(@"支付宝充值");
+                viewModel.textModel.text = Internationalization(@"支付宝（限额 200-1500）");
+                viewModel.buttonModel = btnModel;
+            }
+            
+            {
+                UIButtonModel *subButtonModel = UIButtonModel.new;
+                subButtonModel.normalTitle = Internationalization(@"");
+                subButtonModel.normalImage = JobsIMG(@"未选中支付方式");
+                subButtonModel.selectedImage = JobsIMG(@"已选中支付方式");
+                viewModel.subButtonModel = subButtonModel;
+            }
             [_dataMutArr addObject:viewModel];
         }
         
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.image = JobsIMG(@"银行卡充值");
-            viewModel.textModel.text = Internationalization(@"银联支付（限额 1000-5000）");
+            {
+                UIButtonModel *btnModel = UIButtonModel.new;
+                viewModel.image = JobsIMG(@"银行卡充值");
+                viewModel.textModel.text = Internationalization(@"银联支付（限额 1000-5000）");
+                viewModel.buttonModel = btnModel;
+            }
+            
+            {
+                UIButtonModel *subButtonModel = UIButtonModel.new;
+                subButtonModel.normalTitle = Internationalization(@"");
+                subButtonModel.normalImage = JobsIMG(@"未选中支付方式");
+                subButtonModel.selectedImage = JobsIMG(@"已选中支付方式");
+                viewModel.subButtonModel = subButtonModel;
+            }
             [_dataMutArr addObject:viewModel];
         }
         
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.image = JobsIMG(@"云闪付");
-            viewModel.textModel.text = Internationalization(@"云闪付");
+            {
+                UIButtonModel *btnModel = UIButtonModel.new;
+                viewModel.image = JobsIMG(@"云闪付");
+                viewModel.textModel.text = Internationalization(@"云闪付");
+                viewModel.buttonModel = btnModel;
+            }
+            
+            {
+                UIButtonModel *subButtonModel = UIButtonModel.new;
+                subButtonModel.normalTitle = Internationalization(@"");
+                subButtonModel.normalImage = JobsIMG(@"未选中支付方式");
+                subButtonModel.selectedImage = JobsIMG(@"已选中支付方式");
+                viewModel.subButtonModel = subButtonModel;
+            }
             [_dataMutArr addObject:viewModel];
         }
         
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.image = JobsIMG(@"客服代充");
-            viewModel.textModel.text = Internationalization(@"客服代充（推荐）");
+            {
+                UIButtonModel *btnModel = UIButtonModel.new;
+                viewModel.image = JobsIMG(@"客服代充");
+                viewModel.textModel.text = Internationalization(@"客服代充（推荐）");
+                viewModel.buttonModel = btnModel;
+            }
+            
+            {
+                UIButtonModel *subButtonModel = UIButtonModel.new;
+                subButtonModel.normalTitle = Internationalization(@"");
+                subButtonModel.normalImage = JobsIMG(@"未选中支付方式");
+                subButtonModel.selectedImage = JobsIMG(@"已选中支付方式");
+                viewModel.subButtonModel = subButtonModel;
+            }
             [_dataMutArr addObject:viewModel];
         }
         
         {
             UIViewModel *viewModel = UIViewModel.new;
-            viewModel.image = JobsIMG(@"USDT充值");
-            viewModel.textModel.text = Internationalization(@"USDT（推荐）");
+            {
+                UIButtonModel *btnModel = UIButtonModel.new;
+                viewModel.image = JobsIMG(@"USDT充值");
+                viewModel.textModel.text = Internationalization(@"USDT（推荐）");
+                viewModel.buttonModel = btnModel;
+            }
+            
+            {
+                UIButtonModel *subButtonModel = UIButtonModel.new;
+                subButtonModel.normalTitle = Internationalization(@"");
+                subButtonModel.normalImage = JobsIMG(@"未选中支付方式");
+                subButtonModel.selectedImage = JobsIMG(@"已选中支付方式");
+                viewModel.subButtonModel = subButtonModel;
+            }
             [_dataMutArr addObject:viewModel];
         }
     }return _dataMutArr;
 }
-
-#pragma mark —— lazyLoad
 
 @end
