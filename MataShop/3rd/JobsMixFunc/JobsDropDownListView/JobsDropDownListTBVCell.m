@@ -14,6 +14,7 @@
 @implementation JobsDropDownListTBVCell
 #pragma mark —— @synthesize UITableViewCellProtocol
 UITableViewCellProtocol_synthesize
+UITableViewCell_UIViewModelProtocolSynthesize
 #pragma mark —— UITableViewCellProtocol
 +(instancetype)cellStyleValue1WithTableView:(UITableView *)tableView{
     JobsDropDownListTBVCell *cell = (JobsDropDownListTBVCell *)[tableView tableViewCellClass:JobsDropDownListTBVCell.class];

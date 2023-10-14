@@ -116,6 +116,8 @@
 		C5432F672ACB4356008F92B0 /* JobsTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432F622ACB4355008F92B0 /* JobsTextView.m */; };
 		C5432F682ACB4356008F92B0 /* JobsPostDelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432F652ACB4356008F92B0 /* JobsPostDelView.m */; };
 		C54AF2812AD98F3C0014B335 /* MSChooseRechargeWayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C54AF2802AD98F3C0014B335 /* MSChooseRechargeWayView.m */; };
+		C54AF4BE2ADAC44B0014B335 /* JobsBtnStyleTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C54AF4BD2ADAC44B0014B335 /* JobsBtnStyleTBVCell.m */; };
+		C54AF4C32ADAD0E40014B335 /* UIButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54AF4C22ADAD0E40014B335 /* UIButtonModel.m */; };
 		C553D0F02AC9CBFF00F9CEA1 /* MSVoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0EF2AC9CBFF00F9CEA1 /* MSVoteView.m */; };
 		C553D0F52AC9CFC000F9CEA1 /* MSMySocialTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D0F42AC9CFBF00F9CEA1 /* MSMySocialTitleView.m */; };
 		C553D1722AC9D98900F9CEA1 /* MSCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C553D1712AC9D98900F9CEA1 /* MSCommentView.m */; };
@@ -343,7 +345,7 @@
 		C561D3C62AAC7E7B00E28603 /* WhiteRightArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D03A2AAC7E7900E28603 /* WhiteRightArrow@3x.png */; };
 		C561D3C82AAC7E7B00E28603 /* UITableViewCell+WhiteArrows.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D03C2AAC7E7900E28603 /* UITableViewCell+WhiteArrows.m */; };
 		C561D3CA2AAC7E7B00E28603 /* UITableViewCell+Margin.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0402AAC7E7900E28603 /* UITableViewCell+Margin.m */; };
-		C561D3CB2AAC7E7B00E28603 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0422AAC7E7900E28603 /* BaseTableViewCell.m */; };
+		C561D3CB2AAC7E7B00E28603 /* JobsBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0422AAC7E7900E28603 /* JobsBaseTableViewCell.m */; };
 		C561D3D02AAC7E7B00E28603 /* NSBundle+CLLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D04D2AAC7E7900E28603 /* NSBundle+CLLanguage.m */; };
 		C561D3D12AAC7E7B00E28603 /* UIButton+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0532AAC7E7900E28603 /* UIButton+Extra.m */; };
 		C561D3D22AAC7E7B00E28603 /* UIButton+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0562AAC7E7900E28603 /* UIButton+Animation.m */; };
@@ -351,19 +353,15 @@
 		C561D3D42AAC7E7B00E28603 /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D05D2AAC7E7900E28603 /* UIButton+ImageTitleSpacing.m */; };
 		C561D3D62AAC7E7B00E28603 /* UIButton+Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0612AAC7E7900E28603 /* UIButton+Timer.m */; };
 		C561D3D72AAC7E7B00E28603 /* ButtonTimerConfigModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0642AAC7E7900E28603 /* ButtonTimerConfigModel.m */; };
-		C561D3D82AAC7E7B00E28603 /* RBCLikeButton.md in Resources */ = {isa = PBXBuildFile; fileRef = C561D0692AAC7E7900E28603 /* RBCLikeButton.md */; };
 		C561D3D92AAC7E7B00E28603 /* RBCLikeButton.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C561D06A2AAC7E7900E28603 /* RBCLikeButton.bundle */; };
 		C561D3DA2AAC7E7B00E28603 /* RBCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D06B2AAC7E7900E28603 /* RBCLikeButton.m */; };
-		C561D3DB2AAC7E7B00E28603 /* LGiOSBtn.md in Resources */ = {isa = PBXBuildFile; fileRef = C561D06E2AAC7E7900E28603 /* LGiOSBtn.md */; };
 		C561D3DC2AAC7E7B00E28603 /* del_Photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D06F2AAC7E7900E28603 /* del_Photo@3x.png */; };
 		C561D3DD2AAC7E7B00E28603 /* del_Photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D0702AAC7E7900E28603 /* del_Photo@2x.png */; };
 		C561D3DE2AAC7E7B00E28603 /* LGiOSBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0712AAC7E7900E28603 /* LGiOSBtn.m */; };
 		C561D3DF2AAC7E7B00E28603 /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0742AAC7E7900E28603 /* BaseButton.m */; };
-		C561D3E02AAC7E7B00E28603 /* IrregularBtn.md in Resources */ = {isa = PBXBuildFile; fileRef = C561D0762AAC7E7900E28603 /* IrregularBtn.md */; };
 		C561D3E12AAC7E7B00E28603 /* IrregularBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0772AAC7E7900E28603 /* IrregularBtn.m */; };
 		C561D3E22AAC7E7B00E28603 /* Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = C561D07A2AAC7E7900E28603 /* Sound.wav */; };
 		C561D3E32AAC7E7B00E28603 /* SoundBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D07B2AAC7E7900E28603 /* SoundBtn.m */; };
-		C561D3E42AAC7E7B00E28603 /* SoundBtn.md in Resources */ = {isa = PBXBuildFile; fileRef = C561D07C2AAC7E7900E28603 /* SoundBtn.md */; };
 		C561D3E72AAC7E7B00E28603 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0892AAC7E7900E28603 /* BaseView.m */; };
 		C561D3E82AAC7E7B00E28603 /* UIView+SuspendView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D08D2AAC7E7900E28603 /* UIView+SuspendView.m */; };
 		C561D3E92AAC7E7B00E28603 /* UIView+ZFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0912AAC7E7900E28603 /* UIView+ZFPlayer.m */; };
@@ -399,7 +397,7 @@
 		C561D4082AAC7E7B00E28603 /* UICollectionViewCell+ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0FB2AAC7E7900E28603 /* UICollectionViewCell+ShakeAnimation.m */; };
 		C561D4092AAC7E7B00E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D0FE2AAC7E7900E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.m */; };
 		C561D40A2AAC7E7B00E28603 /* JobsBtnStyleCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1022AAC7E7900E28603 /* JobsBtnStyleCVCell.m */; };
-		C561D40C2AAC7E7B00E28603 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1062AAC7E7900E28603 /* BaseCollectionViewCell.m */; };
+		C561D40C2AAC7E7B00E28603 /* JobsBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1062AAC7E7900E28603 /* JobsBaseCollectionViewCell.m */; };
 		C561D40D2AAC7E7B00E28603 /* UIBezierPath+TextPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D10B2AAC7E7900E28603 /* UIBezierPath+TextPath.m */; };
 		C561D40E2AAC7E7B00E28603 /* BaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1102AAC7E7900E28603 /* BaseImageView.m */; };
 		C561D40F2AAC7E7B00E28603 /* UIImageView+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D1132AAC7E7900E28603 /* UIImageView+GIF.m */; };
@@ -565,11 +563,7 @@
 		C561D6632AAC862000E28603 /* BaiShaETProjMembersBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D5972AAC862000E28603 /* BaiShaETProjMembersBoardView.m */; };
 		C561D6872AAC862000E28603 /* BaiShaETProjMembersTBVCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D5E42AAC862000E28603 /* BaiShaETProjMembersTBVCell1.m */; };
 		C561D68A2AAC862000E28603 /* BaiShaETProjPersonalDataTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D5EB2AAC862000E28603 /* BaiShaETProjPersonalDataTBVCell.m */; };
-		C561D68C2AAC862000E28603 /* UBLVerticalListCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D5EF2AAC862000E28603 /* UBLVerticalListCollectionView.m */; };
-		C561D68E2AAC862000E28603 /* CasinoMarqueeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D5F52AAC862000E28603 /* CasinoMarqueeCell.m */; };
-		C561D68F2AAC862000E28603 /* BaiShaETProjHeaderIconCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D5F82AAC862000E28603 /* BaiShaETProjHeaderIconCVCell.m */; };
 		C561D6922AAC862000E28603 /* BaiShaETProjCVCellStyle1.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D6002AAC862000E28603 /* BaiShaETProjCVCellStyle1.m */; };
-		C561D6942AAC862000E28603 /* CasinoBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D6042AAC862000E28603 /* CasinoBannerCell.m */; };
 		C561D6952AAC862000E28603 /* CasinoHasAddedBankCardCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D6072AAC862000E28603 /* CasinoHasAddedBankCardCVCell.m */; };
 		C561D6982AAC862000E28603 /* CasinoNoAddBankCardCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D60C2AAC862000E28603 /* CasinoNoAddBankCardCVCell.m */; };
 		C561D6992AAC862000E28603 /* ZMJCells.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D6102AAC862000E28603 /* ZMJCells.m */; };
@@ -597,7 +591,6 @@
 		C561D9232AAC8D8000E28603 /* BaiShaETProjRuleDetailTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D8B62AAC8D7900E28603 /* BaiShaETProjRuleDetailTBVCell.m */; };
 		C561D9242AAC8D8000E28603 /* BaiShaETProjVIPSubCVFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D8BA2AAC8D7A00E28603 /* BaiShaETProjVIPSubCVFooterView.m */; };
 		C561D9252AAC8D8000E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D8BD2AAC8D7A00E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVHeader.m */; };
-		C561D9292AAC8D8000E28603 /* BaiShaETProjChoiceHeaderIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D8C52AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView.m */; };
 		C561D92A2AAC8D8000E28603 /* BaiShaETProjChoiceStadiumView.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D8C72AAC8D7B00E28603 /* BaiShaETProjChoiceStadiumView.m */; };
 		C561D92C2AAC8D8000E28603 /* BaiShaETProjMembersSection1View.m in Sources */ = {isa = PBXBuildFile; fileRef = C561D8CC2AAC8D7C00E28603 /* BaiShaETProjMembersSection1View.m */; };
 		C561D9462AAC8D8000E28603 /* JobsCustomView.png in Resources */ = {isa = PBXBuildFile; fileRef = C561D9032AAC8D7D00E28603 /* JobsCustomView.png */; };
@@ -1234,6 +1227,10 @@
 		C5432F662ACB4356008F92B0 /* JobsPostDelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsPostDelView.h; sourceTree = "<group>"; };
 		C54AF27F2AD98F3C0014B335 /* MSChooseRechargeWayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSChooseRechargeWayView.h; sourceTree = "<group>"; };
 		C54AF2802AD98F3C0014B335 /* MSChooseRechargeWayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSChooseRechargeWayView.m; sourceTree = "<group>"; };
+		C54AF4BC2ADAC44B0014B335 /* JobsBtnStyleTBVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobsBtnStyleTBVCell.h; sourceTree = "<group>"; };
+		C54AF4BD2ADAC44B0014B335 /* JobsBtnStyleTBVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobsBtnStyleTBVCell.m; sourceTree = "<group>"; };
+		C54AF4C12ADAD0E40014B335 /* UIButtonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButtonModel.h; sourceTree = "<group>"; };
+		C54AF4C22ADAD0E40014B335 /* UIButtonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIButtonModel.m; sourceTree = "<group>"; };
 		C553D0ED2AC9CBD500F9CEA1 /* 投票弹窗.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "投票弹窗.jpg"; sourceTree = "<group>"; };
 		C553D0EE2AC9CBFF00F9CEA1 /* MSVoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSVoteView.h; sourceTree = "<group>"; };
 		C553D0EF2AC9CBFF00F9CEA1 /* MSVoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSVoteView.m; sourceTree = "<group>"; };
@@ -1612,17 +1609,15 @@
 		C561D0382AAC7E7900E28603 /* UITableViewCell+WhiteArrows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WhiteArrows.h"; sourceTree = "<group>"; };
 		C561D0392AAC7E7900E28603 /* WhiteRightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WhiteRightArrow@2x.png"; sourceTree = "<group>"; };
 		C561D03A2AAC7E7900E28603 /* WhiteRightArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WhiteRightArrow@3x.png"; sourceTree = "<group>"; };
-		C561D03B2AAC7E7900E28603 /* UITableViewCell+WhiteArrows.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UITableViewCell+WhiteArrows.md"; sourceTree = "<group>"; };
 		C561D03C2AAC7E7900E28603 /* UITableViewCell+WhiteArrows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WhiteArrows.m"; sourceTree = "<group>"; };
 		C561D03E2AAC7E7900E28603 /* UITableViewCell+Margin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Margin.h"; sourceTree = "<group>"; };
-		C561D03F2AAC7E7900E28603 /* UITableViewCell+Margin.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UITableViewCell+Margin.md"; sourceTree = "<group>"; };
 		C561D0402AAC7E7900E28603 /* UITableViewCell+Margin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Margin.m"; sourceTree = "<group>"; };
-		C561D0422AAC7E7900E28603 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		C561D0422AAC7E7900E28603 /* JobsBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsBaseTableViewCell.m; sourceTree = "<group>"; };
 		C561D0442AAC7E7900E28603 /* UITableViewCellStyleSubtitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableViewCellStyleSubtitle.png; sourceTree = "<group>"; };
 		C561D0452AAC7E7900E28603 /* UITableViewCellStyleValue2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableViewCellStyleValue2.png; sourceTree = "<group>"; };
 		C561D0462AAC7E7900E28603 /* UITableViewCellStyleValue1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableViewCellStyleValue1.png; sourceTree = "<group>"; };
 		C561D0472AAC7E7900E28603 /* UITableViewCellStyleDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableViewCellStyleDefault.png; sourceTree = "<group>"; };
-		C561D0482AAC7E7900E28603 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		C561D0482AAC7E7900E28603 /* JobsBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBaseTableViewCell.h; sourceTree = "<group>"; };
 		C561D04A2AAC7E7900E28603 /* JobsBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBundle.h; sourceTree = "<group>"; };
 		C561D04D2AAC7E7900E28603 /* NSBundle+CLLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CLLanguage.m"; sourceTree = "<group>"; };
 		C561D04E2AAC7E7900E28603 /* NSBundle+CLLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CLLanguage.h"; sourceTree = "<group>"; };
@@ -1642,22 +1637,18 @@
 		C561D0642AAC7E7900E28603 /* ButtonTimerConfigModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonTimerConfigModel.m; sourceTree = "<group>"; };
 		C561D0652AAC7E7900E28603 /* UIButton+Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Timer.h"; sourceTree = "<group>"; };
 		C561D0682AAC7E7900E28603 /* RBCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBCLikeButton.h; sourceTree = "<group>"; };
-		C561D0692AAC7E7900E28603 /* RBCLikeButton.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RBCLikeButton.md; sourceTree = "<group>"; };
 		C561D06A2AAC7E7900E28603 /* RBCLikeButton.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RBCLikeButton.bundle; sourceTree = "<group>"; };
 		C561D06B2AAC7E7900E28603 /* RBCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBCLikeButton.m; sourceTree = "<group>"; };
 		C561D06D2AAC7E7900E28603 /* LGiOSBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGiOSBtn.h; sourceTree = "<group>"; };
-		C561D06E2AAC7E7900E28603 /* LGiOSBtn.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LGiOSBtn.md; sourceTree = "<group>"; };
 		C561D06F2AAC7E7900E28603 /* del_Photo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_Photo@3x.png"; sourceTree = "<group>"; };
 		C561D0702AAC7E7900E28603 /* del_Photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_Photo@2x.png"; sourceTree = "<group>"; };
 		C561D0712AAC7E7900E28603 /* LGiOSBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGiOSBtn.m; sourceTree = "<group>"; };
 		C561D0732AAC7E7900E28603 /* BaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseButton.h; sourceTree = "<group>"; };
 		C561D0742AAC7E7900E28603 /* BaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseButton.m; sourceTree = "<group>"; };
-		C561D0762AAC7E7900E28603 /* IrregularBtn.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = IrregularBtn.md; sourceTree = "<group>"; };
 		C561D0772AAC7E7900E28603 /* IrregularBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IrregularBtn.m; sourceTree = "<group>"; };
 		C561D0782AAC7E7900E28603 /* IrregularBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IrregularBtn.h; sourceTree = "<group>"; };
 		C561D07A2AAC7E7900E28603 /* Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sound.wav; sourceTree = "<group>"; };
 		C561D07B2AAC7E7900E28603 /* SoundBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundBtn.m; sourceTree = "<group>"; };
-		C561D07C2AAC7E7900E28603 /* SoundBtn.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = SoundBtn.md; sourceTree = "<group>"; };
 		C561D07D2AAC7E7900E28603 /* SoundBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundBtn.h; sourceTree = "<group>"; };
 		C561D0862AAC7E7900E28603 /* JobsColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsColor.h; sourceTree = "<group>"; };
 		C561D0892AAC7E7900E28603 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
@@ -1735,8 +1726,8 @@
 		C561D0FE2AAC7E7900E28603 /* UICollectionViewCell+UICollectionViewCellProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+UICollectionViewCellProtocol.m"; sourceTree = "<group>"; };
 		C561D1012AAC7E7900E28603 /* JobsBtnStyleCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBtnStyleCVCell.h; sourceTree = "<group>"; };
 		C561D1022AAC7E7900E28603 /* JobsBtnStyleCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsBtnStyleCVCell.m; sourceTree = "<group>"; };
-		C561D1052AAC7E7900E28603 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
-		C561D1062AAC7E7900E28603 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
+		C561D1052AAC7E7900E28603 /* JobsBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		C561D1062AAC7E7900E28603 /* JobsBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsBaseCollectionViewCell.m; sourceTree = "<group>"; };
 		C561D1082AAC7E7900E28603 /* JobsBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsBezierPath.h; sourceTree = "<group>"; };
 		C561D10B2AAC7E7900E28603 /* UIBezierPath+TextPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+TextPath.m"; sourceTree = "<group>"; };
 		C561D10C2AAC7E7900E28603 /* UIBezierPath+TextPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+TextPath.h"; sourceTree = "<group>"; };
@@ -2122,18 +2113,10 @@
 		C561D5EB2AAC862000E28603 /* BaiShaETProjPersonalDataTBVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjPersonalDataTBVCell.m; sourceTree = "<group>"; };
 		C561D5EC2AAC862000E28603 /* BaiShaETProjPersonalDataTBVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjPersonalDataTBVCell.h; sourceTree = "<group>"; };
 		C561D5ED2AAC862000E28603 /* BaiShaETProjPersonalDataTBVCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjPersonalDataTBVCell.png; sourceTree = "<group>"; };
-		C561D5EF2AAC862000E28603 /* UBLVerticalListCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBLVerticalListCollectionView.m; sourceTree = "<group>"; };
-		C561D5F12AAC862000E28603 /* UBLVerticalListCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBLVerticalListCollectionView.h; sourceTree = "<group>"; };
 		C561D5F32AAC862000E28603 /* UICollectionViewCellHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewCellHeader.h; sourceTree = "<group>"; };
-		C561D5F52AAC862000E28603 /* CasinoMarqueeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CasinoMarqueeCell.m; sourceTree = "<group>"; };
-		C561D5F62AAC862000E28603 /* CasinoMarqueeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CasinoMarqueeCell.h; sourceTree = "<group>"; };
-		C561D5F82AAC862000E28603 /* BaiShaETProjHeaderIconCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjHeaderIconCVCell.m; sourceTree = "<group>"; };
-		C561D5F92AAC862000E28603 /* BaiShaETProjHeaderIconCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjHeaderIconCVCell.h; sourceTree = "<group>"; };
 		C561D5FF2AAC862000E28603 /* BaiShaETProjCVCellStyle1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjCVCellStyle1.h; sourceTree = "<group>"; };
 		C561D6002AAC862000E28603 /* BaiShaETProjCVCellStyle1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjCVCellStyle1.m; sourceTree = "<group>"; };
 		C561D6012AAC862000E28603 /* BaiShaETProjCVCellStyle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjCVCellStyle1.png; sourceTree = "<group>"; };
-		C561D6032AAC862000E28603 /* CasinoBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CasinoBannerCell.h; sourceTree = "<group>"; };
-		C561D6042AAC862000E28603 /* CasinoBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CasinoBannerCell.m; sourceTree = "<group>"; };
 		C561D6072AAC862000E28603 /* CasinoHasAddedBankCardCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CasinoHasAddedBankCardCVCell.m; sourceTree = "<group>"; };
 		C561D6082AAC862000E28603 /* CasinoHasAddedBankCardCVCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CasinoHasAddedBankCardCVCell.png; sourceTree = "<group>"; };
 		C561D6092AAC862000E28603 /* CasinoHasAddedBankCardCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CasinoHasAddedBankCardCVCell.h; sourceTree = "<group>"; };
@@ -2188,9 +2171,6 @@
 		C561D8BA2AAC8D7A00E28603 /* BaiShaETProjVIPSubCVFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjVIPSubCVFooterView.m; sourceTree = "<group>"; };
 		C561D8BC2AAC8D7A00E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjDepositAndWithdrawRecordTBVHeader.h; sourceTree = "<group>"; };
 		C561D8BD2AAC8D7A00E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjDepositAndWithdrawRecordTBVHeader.m; sourceTree = "<group>"; };
-		C561D8C32AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjChoiceHeaderIconView.png; sourceTree = "<group>"; };
-		C561D8C42AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjChoiceHeaderIconView.h; sourceTree = "<group>"; };
-		C561D8C52AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjChoiceHeaderIconView.m; sourceTree = "<group>"; };
 		C561D8C72AAC8D7B00E28603 /* BaiShaETProjChoiceStadiumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiShaETProjChoiceStadiumView.m; sourceTree = "<group>"; };
 		C561D8C82AAC8D7B00E28603 /* BaiShaETProjChoiceStadiumView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BaiShaETProjChoiceStadiumView.png; sourceTree = "<group>"; };
 		C561D8C92AAC8D7B00E28603 /* BaiShaETProjChoiceStadiumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiShaETProjChoiceStadiumView.h; sourceTree = "<group>"; };
@@ -3795,6 +3775,33 @@
 				C5432F662ACB4356008F92B0 /* JobsPostDelView.h */,
 			);
 			path = JobsPostDelView;
+			sourceTree = "<group>";
+		};
+		C54AF4BA2ADAA19C0014B335 /* JobsBaseTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C561D0482AAC7E7900E28603 /* JobsBaseTableViewCell.h */,
+				C561D0422AAC7E7900E28603 /* JobsBaseTableViewCell.m */,
+			);
+			path = JobsBaseTableViewCell;
+			sourceTree = "<group>";
+		};
+		C54AF4BF2ADAC4600014B335 /* JobsBtnStyleTBVCell */ = {
+			isa = PBXGroup;
+			children = (
+				C54AF4BC2ADAC44B0014B335 /* JobsBtnStyleTBVCell.h */,
+				C54AF4BD2ADAC44B0014B335 /* JobsBtnStyleTBVCell.m */,
+			);
+			path = JobsBtnStyleTBVCell;
+			sourceTree = "<group>";
+		};
+		C54AF4C02ADAD0AF0014B335 /* UIButtonModel */ = {
+			isa = PBXGroup;
+			children = (
+				C54AF4C12ADAD0E40014B335 /* UIButtonModel.h */,
+				C54AF4C22ADAD0E40014B335 /* UIButtonModel.m */,
+			);
+			path = UIButtonModel;
 			sourceTree = "<group>";
 		};
 		C552242A2AC89A1600668516 /* JobsCustomView */ = {
@@ -5472,7 +5479,6 @@
 			children = (
 				C561D0382AAC7E7900E28603 /* UITableViewCell+WhiteArrows.h */,
 				C561D03C2AAC7E7900E28603 /* UITableViewCell+WhiteArrows.m */,
-				C561D03B2AAC7E7900E28603 /* UITableViewCell+WhiteArrows.md */,
 				C561D0392AAC7E7900E28603 /* WhiteRightArrow@2x.png */,
 				C561D03A2AAC7E7900E28603 /* WhiteRightArrow@3x.png */,
 			);
@@ -5484,7 +5490,6 @@
 			children = (
 				C561D03E2AAC7E7900E28603 /* UITableViewCell+Margin.h */,
 				C561D0402AAC7E7900E28603 /* UITableViewCell+Margin.m */,
-				C561D03F2AAC7E7900E28603 /* UITableViewCell+Margin.md */,
 			);
 			path = "UITableViewCell+Margin";
 			sourceTree = "<group>";
@@ -5492,8 +5497,8 @@
 		C561D0412AAC7E7900E28603 /* BaseTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0482AAC7E7900E28603 /* BaseTableViewCell.h */,
-				C561D0422AAC7E7900E28603 /* BaseTableViewCell.m */,
+				C54AF4BF2ADAC4600014B335 /* JobsBtnStyleTBVCell */,
+				C54AF4BA2ADAA19C0014B335 /* JobsBaseTableViewCell */,
 				C561D0432AAC7E7900E28603 /* iOS UITableView中Cell的自带样式 */,
 			);
 			path = BaseTableViewCell;
@@ -5598,8 +5603,8 @@
 		C561D05F2AAC7E7900E28603 /* UIButton+Timer */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0602AAC7E7900E28603 /* ButtonTimerDefStructure.h */,
 				C561D0622AAC7E7900E28603 /* ButtonTimerModel */,
+				C561D0602AAC7E7900E28603 /* ButtonTimerDefStructure.h */,
 				C561D0652AAC7E7900E28603 /* UIButton+Timer.h */,
 				C561D0612AAC7E7900E28603 /* UIButton+Timer.m */,
 			);
@@ -5630,9 +5635,8 @@
 		C561D0672AAC7E7900E28603 /* RBCLikeButton */ = {
 			isa = PBXGroup;
 			children = (
-				C561D0682AAC7E7900E28603 /* RBCLikeButton.h */,
-				C561D0692AAC7E7900E28603 /* RBCLikeButton.md */,
 				C561D06A2AAC7E7900E28603 /* RBCLikeButton.bundle */,
+				C561D0682AAC7E7900E28603 /* RBCLikeButton.h */,
 				C561D06B2AAC7E7900E28603 /* RBCLikeButton.m */,
 			);
 			path = RBCLikeButton;
@@ -5642,7 +5646,6 @@
 			isa = PBXGroup;
 			children = (
 				C561D06D2AAC7E7900E28603 /* LGiOSBtn.h */,
-				C561D06E2AAC7E7900E28603 /* LGiOSBtn.md */,
 				C561D06F2AAC7E7900E28603 /* del_Photo@3x.png */,
 				C561D0702AAC7E7900E28603 /* del_Photo@2x.png */,
 				C561D0712AAC7E7900E28603 /* LGiOSBtn.m */,
@@ -5664,7 +5667,6 @@
 			children = (
 				C561D0782AAC7E7900E28603 /* IrregularBtn.h */,
 				C561D0772AAC7E7900E28603 /* IrregularBtn.m */,
-				C561D0762AAC7E7900E28603 /* IrregularBtn.md */,
 			);
 			path = IrregularBtn;
 			sourceTree = "<group>";
@@ -5675,7 +5677,6 @@
 				C561D07A2AAC7E7900E28603 /* Sound.wav */,
 				C561D07D2AAC7E7900E28603 /* SoundBtn.h */,
 				C561D07B2AAC7E7900E28603 /* SoundBtn.m */,
-				C561D07C2AAC7E7900E28603 /* SoundBtn.md */,
 			);
 			path = SoundBtn;
 			sourceTree = "<group>";
@@ -6120,7 +6121,7 @@
 				C5FAF8C62AD9785000100EDE /* JobsTextFieldStyleCVCell */,
 				C5329C152ABED957004294E0 /* JobsImageViewStyleCVCell */,
 				C561D1002AAC7E7900E28603 /* JobsBtnStyleCVCell */,
-				C561D1042AAC7E7900E28603 /* BaseCollectionViewCell */,
+				C561D1042AAC7E7900E28603 /* JobsBaseCollectionViewCell */,
 			);
 			path = BaseCollectionViewCell;
 			sourceTree = "<group>";
@@ -6134,13 +6135,13 @@
 			path = JobsBtnStyleCVCell;
 			sourceTree = "<group>";
 		};
-		C561D1042AAC7E7900E28603 /* BaseCollectionViewCell */ = {
+		C561D1042AAC7E7900E28603 /* JobsBaseCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C561D1052AAC7E7900E28603 /* BaseCollectionViewCell.h */,
-				C561D1062AAC7E7900E28603 /* BaseCollectionViewCell.m */,
+				C561D1052AAC7E7900E28603 /* JobsBaseCollectionViewCell.h */,
+				C561D1062AAC7E7900E28603 /* JobsBaseCollectionViewCell.m */,
 			);
-			path = BaseCollectionViewCell;
+			path = JobsBaseCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		C561D1072AAC7E7900E28603 /* UIBezierPath */ = {
@@ -7073,7 +7074,6 @@
 				C561D20F2AAC7E7A00E28603 /* JobsTimerManager */,
 				C53CD9112ABC32A20011FD1A /* JobsTuple */,
 				C561D2352AAC7E7A00E28603 /* TouchID */,
-				C561D20C2AAC7E7A00E28603 /* UITextModel */,
 				C561D2242AAC7E7A00E28603 /* UIViewModelFamily */,
 			);
 			path = BaseObject;
@@ -7092,8 +7092,8 @@
 		C561D20C2AAC7E7A00E28603 /* UITextModel */ = {
 			isa = PBXGroup;
 			children = (
-				C561D20D2AAC7E7A00E28603 /* UITextModel.m */,
 				C561D20E2AAC7E7A00E28603 /* UITextModel.h */,
+				C561D20D2AAC7E7A00E28603 /* UITextModel.m */,
 			);
 			path = UITextModel;
 			sourceTree = "<group>";
@@ -7168,6 +7168,8 @@
 		C561D2242AAC7E7A00E28603 /* UIViewModelFamily */ = {
 			isa = PBXGroup;
 			children = (
+				C54AF4C02ADAD0AF0014B335 /* UIButtonModel */,
+				C561D20C2AAC7E7A00E28603 /* UITextModel */,
 				C561D2252AAC7E7A00E28603 /* UIViewModel */,
 				C561D2282AAC7E7A00E28603 /* JobsHeaderFooterViewModel */,
 			);
@@ -7777,8 +7779,8 @@
 		C561D2EA2AAC7E7A00E28603 /* UITextField+Placeholder */ = {
 			isa = PBXGroup;
 			children = (
-				C561D2EB2AAC7E7A00E28603 /* UITextField+Placeholder.m */,
 				C561D2EC2AAC7E7A00E28603 /* UITextField+Placeholder.h */,
+				C561D2EB2AAC7E7A00E28603 /* UITextField+Placeholder.m */,
 			);
 			path = "UITextField+Placeholder";
 			sourceTree = "<group>";
@@ -8272,8 +8274,6 @@
 			isa = PBXGroup;
 			children = (
 				C5CFE53F2AB0619300D0F225 /* 我为什么要这么做.md */,
-				C561D5F12AAC862000E28603 /* UBLVerticalListCollectionView.h */,
-				C561D5EF2AAC862000E28603 /* UBLVerticalListCollectionView.m */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -8283,29 +8283,8 @@
 			children = (
 				C561D5F32AAC862000E28603 /* UICollectionViewCellHeader.h */,
 				C561D5FE2AAC862000E28603 /* BaiShaETProjCVCellStyle1 */,
-				C561D5F72AAC862000E28603 /* BaiShaETProjHeaderIconCVCell */,
-				C561D6022AAC862000E28603 /* CasinoBannerCell */,
-				C561D5F42AAC862000E28603 /* CasinoMarqueeCell */,
 			);
 			path = UICollectionViewCell;
-			sourceTree = "<group>";
-		};
-		C561D5F42AAC862000E28603 /* CasinoMarqueeCell */ = {
-			isa = PBXGroup;
-			children = (
-				C561D5F62AAC862000E28603 /* CasinoMarqueeCell.h */,
-				C561D5F52AAC862000E28603 /* CasinoMarqueeCell.m */,
-			);
-			path = CasinoMarqueeCell;
-			sourceTree = "<group>";
-		};
-		C561D5F72AAC862000E28603 /* BaiShaETProjHeaderIconCVCell */ = {
-			isa = PBXGroup;
-			children = (
-				C561D5F92AAC862000E28603 /* BaiShaETProjHeaderIconCVCell.h */,
-				C561D5F82AAC862000E28603 /* BaiShaETProjHeaderIconCVCell.m */,
-			);
-			path = BaiShaETProjHeaderIconCVCell;
 			sourceTree = "<group>";
 		};
 		C561D5FE2AAC862000E28603 /* BaiShaETProjCVCellStyle1 */ = {
@@ -8316,15 +8295,6 @@
 				C561D6012AAC862000E28603 /* BaiShaETProjCVCellStyle1.png */,
 			);
 			path = BaiShaETProjCVCellStyle1;
-			sourceTree = "<group>";
-		};
-		C561D6022AAC862000E28603 /* CasinoBannerCell */ = {
-			isa = PBXGroup;
-			children = (
-				C561D6032AAC862000E28603 /* CasinoBannerCell.h */,
-				C561D6042AAC862000E28603 /* CasinoBannerCell.m */,
-			);
-			path = CasinoBannerCell;
 			sourceTree = "<group>";
 		};
 		C561D6052AAC862000E28603 /* UICllectionView相关复用的模块 */ = {
@@ -8526,7 +8496,6 @@
 			isa = PBXGroup;
 			children = (
 				C561D9022AAC8D7D00E28603 /* 自定义视图 */,
-				C561D8C22AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView */,
 				C561D8C62AAC8D7B00E28603 /* BaiShaETProjChoiceStadiumView */,
 				C561D9152AAC8D7F00E28603 /* BaiShaETProjChoiceVenuesView */,
 				C561D8A62AAC8D7800E28603 /* BaiShaETProjCollectionHeaderView */,
@@ -8584,16 +8553,6 @@
 				C561D8BD2AAC8D7A00E28603 /* BaiShaETProjDepositAndWithdrawRecordTBVHeader.m */,
 			);
 			path = BaiShaETProjDepositAndWithdrawRecordTBVHeader;
-			sourceTree = "<group>";
-		};
-		C561D8C22AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView */ = {
-			isa = PBXGroup;
-			children = (
-				C561D8C42AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView.h */,
-				C561D8C52AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView.m */,
-				C561D8C32AAC8D7B00E28603 /* BaiShaETProjChoiceHeaderIconView.png */,
-			);
-			path = BaiShaETProjChoiceHeaderIconView;
 			sourceTree = "<group>";
 		};
 		C561D8C62AAC8D7B00E28603 /* BaiShaETProjChoiceStadiumView */ = {
@@ -10557,7 +10516,6 @@
 				C5E011F12AADE1CD005ABE09 /* 115@2x.gif in Resources */,
 				C5E011F92AADE1CD005ABE09 /* 36@2x.gif in Resources */,
 				C561D3E22AAC7E7B00E28603 /* Sound.wav in Resources */,
-				C561D3E42AAC7E7B00E28603 /* SoundBtn.md in Resources */,
 				C5E0119E2AADE1CD005ABE09 /* 105@2x.gif in Resources */,
 				C561D46F2AAC7E7B00E28603 /* 如何理解iOS的Runtime？ - 掘金.mht in Resources */,
 				C5E012032AADE1CD005ABE09 /* 13@2x.gif in Resources */,
@@ -10691,7 +10649,6 @@
 				C561D3132AAC7E7A00E28603 /* green_lottie_tab_mine.json in Resources */,
 				C5E011BA2AADE1CD005ABE09 /* 128@2x.gif in Resources */,
 				C561D3912AAC7E7A00E28603 /* 启动页_01.png in Resources */,
-				C561D3E02AAC7E7B00E28603 /* IrregularBtn.md in Resources */,
 				C561D3B22AAC7E7A00E28603 /* README.md in Resources */,
 				C561D33C2AAC7E7A00E28603 /* 输入框样式_9（✉️获取验证码）.md in Resources */,
 				C561D30C2AAC7E7A00E28603 /* tab_me_animate.json in Resources */,
@@ -10732,7 +10689,6 @@
 				C5E011EF2AADE1CD005ABE09 /* 181@2x.gif in Resources */,
 				C5E0176E2AAF4B49005ABE09 /* MSChuBaoAdMarqueeView.jpg in Resources */,
 				C5E011DB2AADE1CD005ABE09 /* 139@2x.gif in Resources */,
-				C561D3DB2AAC7E7B00E28603 /* LGiOSBtn.md in Resources */,
 				C520F5F92AB396F400142DCC /* 一级标题.md in Resources */,
 				C561D34F2AAC7E7A00E28603 /* 输入框样式_3.png in Resources */,
 				C5E011712AADE1CD005ABE09 /* 127@2x.gif in Resources */,
@@ -10876,7 +10832,6 @@
 				C5E011C92AADE1CD005ABE09 /* 140@2x.gif in Resources */,
 				C561D49B2AAC7E7B00E28603 /* BaseProtocol.md in Resources */,
 				C5E011E92AADE1CD005ABE09 /* 180@2x.gif in Resources */,
-				C561D3D82AAC7E7B00E28603 /* RBCLikeButton.md in Resources */,
 				C520F5FC2AB396F500142DCC /* PopUpVC.md in Resources */,
 				C5E011652AADE1CD005ABE09 /* 260@2x.gif in Resources */,
 				C5E011C62AADE1CD005ABE09 /* 42@2x.gif in Resources */,
@@ -11170,7 +11125,6 @@
 				C561D4982AAC7E7B00E28603 /* NSObject+UNUserNotificationCenterDelegate.m in Sources */,
 				C561CE182AAC7CE200E28603 /* JXCategoryTimelineView.m in Sources */,
 				C561D33A2AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_9.m in Sources */,
-				C561D68F2AAC862000E28603 /* BaiShaETProjHeaderIconCVCell.m in Sources */,
 				C561D3B02AAC7E7A00E28603 /* JobsDropDownListTBVCell.m in Sources */,
 				C5329B192ABECE20004294E0 /* MSFindVC.m in Sources */,
 				C561D4B52AAC7EC200E28603 /* AppDelegate+XHLaunchAdDelegate.m in Sources */,
@@ -11214,6 +11168,7 @@
 				C561D4132AAC7E7B00E28603 /* NSString+Eomji.m in Sources */,
 				C561D4212AAC7E7B00E28603 /* UIViewController+XLBubbleTransition.m in Sources */,
 				C553D1EC2ACA587600F9CEA1 /* MSCommentModel.m in Sources */,
+				C54AF4BE2ADAC44B0014B335 /* JobsBtnStyleTBVCell.m in Sources */,
 				C561D65C2AAC862000E28603 /* URLManagerModel.m in Sources */,
 				C5329FE72ABF10CB004294E0 /* MSMineCollectionReusableView.m in Sources */,
 				C553D0F02AC9CBFF00F9CEA1 /* MSVoteView.m in Sources */,
@@ -11248,7 +11203,6 @@
 				C561D49F2AAC7E7B00E28603 /* UITextField+Placeholder.m in Sources */,
 				C5E017652AAF3676005ABE09 /* MSChuBaoView1.m in Sources */,
 				C5ACFB812AD4E4A100316387 /* MSCustomerServiceTBVCell.m in Sources */,
-				C561D68C2AAC862000E28603 /* UBLVerticalListCollectionView.m in Sources */,
 				C561D42A2AAC7E7B00E28603 /* UIViewController+GifImageView.m in Sources */,
 				C520F5FB2AB396F500142DCC /* JobsPopUpVC.m in Sources */,
 				C520F23D2AB38CF700142DCC /* WMZBannerFadeLayout.m in Sources */,
@@ -11294,7 +11248,7 @@
 				C561D3C22AAC7E7B00E28603 /* UILabel+Gesture.m in Sources */,
 				C561CE152AAC7CE200E28603 /* JXCategoryTitleBackgroundCellModel.m in Sources */,
 				C561D3242AAC7E7A00E28603 /* JobsTabBar.m in Sources */,
-				C561D40C2AAC7E7B00E28603 /* BaseCollectionViewCell.m in Sources */,
+				C561D40C2AAC7E7B00E28603 /* JobsBaseCollectionViewCell.m in Sources */,
 				C561D4532AAC7E7B00E28603 /* BaseCollectionReusableView.m in Sources */,
 				C5D71F4A2AC22EE800DD8938 /* HTTPFileResponse.m in Sources */,
 				C561D34E2AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_3.m in Sources */,
@@ -11318,7 +11272,7 @@
 				C561D4872AAC7E7B00E28603 /* NSObject+Sound.m in Sources */,
 				C5D71F3A2AC22EE800DD8938 /* KTVHCDataCacheItemZone.m in Sources */,
 				C561D9842AAC929000E28603 /* BaiShaETProjVIPSubModel.m in Sources */,
-				C561D3CB2AAC7E7B00E28603 /* BaseTableViewCell.m in Sources */,
+				C561D3CB2AAC7E7B00E28603 /* JobsBaseTableViewCell.m in Sources */,
 				C561D4842AAC7E7B00E28603 /* NSObject+Random.m in Sources */,
 				C561D4812AAC7E7B00E28603 /* NSObject+CurrentDevice.m in Sources */,
 				C561D3EE2AAC7E7B00E28603 /* UIView+Chain.m in Sources */,
@@ -11472,6 +11426,7 @@
 				C561D4142AAC7E7B00E28603 /* NSString+Statistics.m in Sources */,
 				C561D3962AAC7E7A00E28603 /* JobsWelcomeVC.m in Sources */,
 				C5BD5E6D2AAC76740048F36B /* AppDelegate.m in Sources */,
+				C54AF4C32ADAD0E40014B335 /* UIButtonModel.m in Sources */,
 				C5329F582ABEFE9E004294E0 /* MSVedioSubVC.m in Sources */,
 				C561CE4D2AAC7CE200E28603 /* XHLaunchImageView.m in Sources */,
 				C561D4152AAC7E7B00E28603 /* NSString+Decoration.m in Sources */,
@@ -11532,7 +11487,6 @@
 				C5D71F402AC22EE800DD8938 /* KTVHCDataLoader.m in Sources */,
 				C561D49E2AAC7E7B00E28603 /* UITextField+Extend.m in Sources */,
 				C561D40A2AAC7E7B00E28603 /* JobsBtnStyleCVCell.m in Sources */,
-				C561D68E2AAC862000E28603 /* CasinoMarqueeCell.m in Sources */,
 				C561D3222AAC7E7A00E28603 /* UITabBar+TLAnimation.m in Sources */,
 				C561D3532AAC7E7A00E28603 /* BWShareView.m in Sources */,
 				C5D71F332AC22EE800DD8938 /* KTVHCDataResponse.m in Sources */,
@@ -11547,7 +11501,6 @@
 				C561D4332AAC7E7B00E28603 /* BaseViewController.m in Sources */,
 				C532984E2ABD9AF4004294E0 /* MSInputStyle2View.m in Sources */,
 				C527BD852AB46F2A00DFC90A /* MSProdShowCVCell.m in Sources */,
-				C561D9292AAC8D8000E28603 /* BaiShaETProjChoiceHeaderIconView.m in Sources */,
 				C561D4992AAC7E7B00E28603 /* NSObject+DefConfig.m in Sources */,
 				C561D3BD2AAC7E7B00E28603 /* JobsAnimationLabel.m in Sources */,
 				C569E9942AD38DDD000F4DE3 /* MSOrderWaitSentVC.m in Sources */,
@@ -11620,7 +11573,6 @@
 				C5729AA42AB593CD0084EAFC /* MSMDVC.m in Sources */,
 				C561D48E2AAC7E7B00E28603 /* NSObject+DeviceID.m in Sources */,
 				C561D3CA2AAC7E7B00E28603 /* UITableViewCell+Margin.m in Sources */,
-				C561D6942AAC862000E28603 /* CasinoBannerCell.m in Sources */,
 				C5D71F422AC22EE800DD8938 /* KTVHCLog.m in Sources */,
 				C5D71EA92AC22CA100DD8938 /* VideoModel.m in Sources */,
 				C5D71F362AC22EE800DD8938 /* KTVHCDataReader.m in Sources */,

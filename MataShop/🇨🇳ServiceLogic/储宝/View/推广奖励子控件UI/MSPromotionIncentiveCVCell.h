@@ -5,12 +5,12 @@
 //  Created by Jobs Hi on 9/12/23.
 //
 
-#import "BaseCollectionViewCell.h"
+#import "JobsBaseCollectionViewCell.h"
 #import "MSPromotionIncentiveModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MSPromotionIncentiveCVCell : BaseCollectionViewCell
+@interface MSPromotionIncentiveCVCell : JobsBaseCollectionViewCell
 
 @end
 

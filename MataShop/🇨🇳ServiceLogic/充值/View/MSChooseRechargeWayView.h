@@ -10,6 +10,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MSChooseRechargeWayView : BaseView
+<
+UITableViewDelegate
+,UITableViewDataSource
+>
 
 @end
 

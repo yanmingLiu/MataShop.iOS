@@ -43,7 +43,7 @@ UIViewModelProtocol_synthesize
 #pragma mark —— 子类重写父类方法
 /**
  1、-(void)setFrame:(CGRect)frame 此方法仅限于具体的 UITableViewCell子类使用
- 2、如果在 BaseTableViewCell 实现此方法，那么一单相关子类集成 BaseTableViewCell 则会对-(void)setFrame:(CGRect)frame进行反复调用，因为[super setFrame:frame];
+ 2、如果在 JobsBaseTableViewCell 实现此方法，那么一单相关子类集成 JobsBaseTableViewCell 则会对-(void)setFrame:(CGRect)frame进行反复调用，因为[super setFrame:frame];
  3、禁止分类去调用，否则引起异常
  */
 -(void)setFrame:(CGRect)frame{

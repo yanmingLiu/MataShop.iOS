@@ -104,4 +104,7 @@
 /// 平替UIPickerView
 #import "NSObject+BRPickerView.h"
 
+#import "UIButtonModel.h"
+#import "UITextModel.h"
+
 #endif /* JobsObject_h */

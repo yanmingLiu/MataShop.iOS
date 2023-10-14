@@ -5,11 +5,11 @@
 //  Created by Jobs Hi on 10/8/23.
 //
 
-#import "BaseCollectionViewCell.h"
+#import "JobsBaseCollectionViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MSProdListCVCell : BaseCollectionViewCell
+@interface MSProdListCVCell : JobsBaseCollectionViewCell
 
 @end
 

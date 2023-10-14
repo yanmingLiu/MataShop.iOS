@@ -10,12 +10,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AppDelegate (Networking)
-/// 获取客服联系方式
--(void)appDelegate_getCustomerContact;
-/// 获取文件服务器地址
--(void)appDelegate_getDownloadStationGetFileServerUrl;
-/// 检查平台维护开关
--(void)checkPlatformMaintenanceSwitch;
+///// 获取客服联系方式
+//-(void)appDelegate_getCustomerContact;
+///// 获取文件服务器地址
+//-(void)appDelegate_getDownloadStationGetFileServerUrl;
+///// 检查平台维护开关
+//-(void)checkPlatformMaintenanceSwitch;
 
 @end
 

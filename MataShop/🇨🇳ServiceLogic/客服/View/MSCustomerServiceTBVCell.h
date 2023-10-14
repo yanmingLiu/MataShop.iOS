@@ -5,11 +5,11 @@
 //  Created by Jobs Hi on 10/10/23.
 //
 
-#import "BaseTableViewCell.h"
+#import "JobsBaseTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MSCustomerServiceTBVCell : BaseTableViewCell
+@interface MSCustomerServiceTBVCell : JobsBaseTableViewCell
 
 @end
 

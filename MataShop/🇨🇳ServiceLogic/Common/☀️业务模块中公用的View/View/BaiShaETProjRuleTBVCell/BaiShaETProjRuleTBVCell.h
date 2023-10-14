@@ -5,11 +5,11 @@
 //  Created by Jobs on 2022/6/8.
 //
 
-#import "BaseTableViewCell.h"
+#import "JobsBaseTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaiShaETProjRuleTBVCell : BaseTableViewCell
+@interface BaiShaETProjRuleTBVCell : JobsBaseTableViewCell
 
 @end
 

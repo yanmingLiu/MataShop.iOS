@@ -5,12 +5,12 @@
 //  Created by Jobs on 2022/5/18.
 //
 
-#import "BaseTableViewCell.h"
+#import "JobsBaseTableViewCell.h"
 #import "JobsAppDoorInputViewBaseStyle_11.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaiShaETProjPersonalDataTBVCell : BaseTableViewCell
+@interface BaiShaETProjPersonalDataTBVCell : JobsBaseTableViewCell
 
 @end
 

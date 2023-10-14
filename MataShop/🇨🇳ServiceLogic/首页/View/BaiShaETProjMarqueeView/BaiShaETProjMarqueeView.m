@@ -138,14 +138,14 @@ static dispatch_once_t static_marqueeViewOnceToken;
     if (!_bannerParam) {
         _bannerParam = BannerParam()
         //自定义视图必传
-        .wMyCellClassNameSet(CasinoMarqueeCell.class.description)
+        .wMyCellClassNameSet(JobsBaseCollectionViewCell.class.description)
         .wMyCellSet(^UICollectionViewCell *(NSIndexPath *indexPath,
                                             UICollectionView *collectionView,
                                             id model,
                                             UIImageView *bgImageView,
                                             NSArray *dataArr) {
             //自定义视图
-            CasinoMarqueeCell *cell = [CasinoMarqueeCell cellWithCollectionView:collectionView
+            JobsBaseCollectionViewCell *cell = [JobsBaseCollectionViewCell cellWithCollectionView:collectionView
                                                                    forIndexPath:indexPath];
             cell.backgroundLabel.text = self.dataMutArr[indexPath.item];
             cell.backgroundLabel.textColor = UIColor.whiteColor;

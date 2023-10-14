@@ -135,7 +135,7 @@
             return cell;
         }break;
         default:
-            return BaseCollectionViewCell.new;
+            return JobsBaseCollectionViewCell.new;
             break;
     }
 }

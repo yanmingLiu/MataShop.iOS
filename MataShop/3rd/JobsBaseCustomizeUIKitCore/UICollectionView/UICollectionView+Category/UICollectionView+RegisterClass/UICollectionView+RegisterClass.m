@@ -23,7 +23,7 @@
     [self registerCollectionElementKindSectionFooterClass:JobsHeaderFooterView.class];
     // CollectionViewCell
     [self registerCollectionViewCellClass:UICollectionViewCell.class];
-    [self registerCollectionViewCellClass:BaseCollectionViewCell.class];
+    [self registerCollectionViewCellClass:JobsBaseCollectionViewCell.class];
     [self registerCollectionViewCellClass:JobsHotLabelWithMultiLineCVCell.class];
     [self registerCollectionViewCellClass:JobsBtnStyleCVCell.class];
     [self registerCollectionViewCellClass:JobsImageViewStyleCVCell.class];

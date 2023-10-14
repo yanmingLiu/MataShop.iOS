@@ -8,8 +8,7 @@
 #ifndef UICollectionViewCellHeader_h
 #define UICollectionViewCellHeader_h
 
-#import "CasinoBannerCell.h"
-#import "CasinoMarqueeCell.h"
+#import "JobsBaseCollectionViewCell.h"
 #import "BaiShaETProjCVCellStyle1.h"
 
 #import "MSTransactionRecordCVCell.h"// 储宝-交易记录子控件UI

@@ -14,6 +14,7 @@
 @implementation BaiShaETProjMembersTBVCell1
 #pragma mark —— @synthesize UITableViewCellProtocol
 UITableViewCellProtocol_synthesize
+UITableViewCell_UIViewModelProtocolSynthesize
 #pragma mark —— UITableViewCellProtocol
 +(instancetype)cellStyleDefaultWithTableView:(UITableView *)tableView{
     BaiShaETProjMembersTBVCell1 *cell = (BaiShaETProjMembersTBVCell1 *)[tableView tableViewCellClass:BaiShaETProjMembersTBVCell1.class];

@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)BOOL useCustomClearButton;/// 是否使用自定义的删除按钮 ,默认不使用
 /// 关于 placeHolder
 @property(nullable,nonatomic,strong)NSString *placeHolderStr;
-@property(nonatomic,strong)UIColor *placeholderColor;
+@property(nonatomic,strong)UIColor *placeholderCor;
 @property(nonatomic,strong)UIFont *placeholderFont;
 @property(nonatomic,strong)NSMutableArray <RichTextConfig *>*defaultAttributedDataForPlaceHolderMutArr;
 /// 关于输入的文本字符
@@ -37,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)UIKeyboardAppearance keyboardAppearance;
 @property(nonatomic,assign)UITextFieldViewMode leftViewMode;
 @property(nonatomic,assign)UIKeyboardType keyboardType;
+@property(nonatomic,assign)BOOL keyboardEnable;
 /// 关于TextField
 @property(nullable,nonatomic,strong)UIColor *backgroundColor UI_APPEARANCE_SELECTOR;
 @property(nullable,nonatomic,strong)UIImage *disabledBackground;

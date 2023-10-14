@@ -5,12 +5,12 @@
 //  Created by Jobs Hi on 9/18/23.
 //
 
-#import "BaseTableViewCell.h"
+#import "JobsBaseTableViewCell.h"
 #import "MSRedEnvelopeDetailModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MSMSRedEnvelopeDetailTBVCell : BaseTableViewCell
+@interface MSMSRedEnvelopeDetailTBVCell : JobsBaseTableViewCell
 
 @end
 

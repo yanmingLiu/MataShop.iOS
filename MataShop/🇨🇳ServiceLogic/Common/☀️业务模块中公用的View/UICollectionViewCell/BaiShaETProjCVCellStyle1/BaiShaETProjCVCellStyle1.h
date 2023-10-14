@@ -5,11 +5,11 @@
 //  Created by Jobs on 2022/5/16.
 //
 
-#import "BaseCollectionViewCell.h"
+#import "JobsBaseCollectionViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaiShaETProjCVCellStyle1 : BaseCollectionViewCell
+@interface BaiShaETProjCVCellStyle1 : JobsBaseCollectionViewCell
 
 @end
 

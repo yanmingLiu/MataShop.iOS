@@ -11,7 +11,6 @@
 #import "WMZBannerView.h"
 #endif
 
-#import "CasinoBannerCell.h"
 #import "BaiShaETProjMarqueeView.h"
 #import "MSSearchBoardView.h"
 #import "MSHomePopupView.h"

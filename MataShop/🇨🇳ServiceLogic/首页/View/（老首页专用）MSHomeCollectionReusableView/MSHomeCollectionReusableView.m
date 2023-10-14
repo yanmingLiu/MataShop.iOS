@@ -44,14 +44,14 @@
     if (!_bannerParam) {
         _bannerParam = BannerParam()
         //自定义视图必传
-        .wMyCellClassNameSet(CasinoBannerCell.class.description)
+        .wMyCellClassNameSet(JobsBaseCollectionViewCell.class.description)
         .wMyCellSet(^UICollectionViewCell *(NSIndexPath *indexPath,
                                             UICollectionView *collectionView,
                                             id model,
                                             UIImageView *bgImageView,
                                             NSArray *dataArr) {
             //自定义视图
-            CasinoBannerCell *cell = [CasinoBannerCell cellWithCollectionView:collectionView forIndexPath:indexPath];
+            JobsBaseCollectionViewCell *cell = [JobsBaseCollectionViewCell cellWithCollectionView:collectionView forIndexPath:indexPath];
             NSString *urlStr = @"";
 //            if (![NSString isNullString:self.dataArr[indexPath.item].url] &&
 //                ![NSString isNullString:self.readUserInfo.resourcesAddress] ) {
@@ -71,10 +71,10 @@
                                 UICollectionViewCell *cell) {
             NSLog(@"判断居中点击");
         })
-        .wFrameSet(CGRectMake((JobsMainScreen_WIDTH() - [CasinoBannerCell cellSizeWithModel:nil].width) / 2,
+        .wFrameSet(CGRectMake((JobsMainScreen_WIDTH() - [JobsBaseCollectionViewCell cellSizeWithModel:nil].width) / 2,
                               0,
-                              [CasinoBannerCell cellSizeWithModel:nil].width,
-                              [CasinoBannerCell cellSizeWithModel:nil].height))
+                              [JobsBaseCollectionViewCell cellSizeWithModel:nil].width,
+                              [JobsBaseCollectionViewCell cellSizeWithModel:nil].height))
         //图片铺满
         .wImageFillSet(YES)
         //循环滚动

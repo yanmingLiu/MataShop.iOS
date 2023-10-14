@@ -5,12 +5,12 @@
 //  Created by Jobs Hi on 9/16/23.
 //
 
-#import "BaseCollectionViewCell.h"
+#import "JobsBaseCollectionViewCell.h"
 #import "MSInternalRecruitmentModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MSInternalRecruitmentCVCell2 : BaseCollectionViewCell
+@interface MSInternalRecruitmentCVCell2 : JobsBaseCollectionViewCell
 <
 UITableViewDelegate
 ,UITableViewDataSource

@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell.h
+//  JobsBaseCollectionViewCell.h
 //  UBallLive
 //
 //  Created by Jobs on 2020/10/18.
@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseCollectionViewCell : UICollectionViewCell<UICollectionViewCellProtocol>
+@interface JobsBaseCollectionViewCell : UICollectionViewCell<UICollectionViewCellProtocol>
 
 @property(nonatomic,assign)BOOL forceUsetextView;
 @property(nonatomic,assign)BOOL forceUseBgBtn;

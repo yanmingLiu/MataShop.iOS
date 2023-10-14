@@ -19,8 +19,8 @@
 
 #pragma mark —— @synthesize UITableViewCellProtocol
 UITableViewCellProtocol_synthesize
+UITableViewCell_UIViewModelProtocolSynthesize
 @synthesize viewModel = _viewModel;
-
 #pragma mark —— BaseCellProtocol
 +(instancetype)cellStyleDefaultWithTableView:(UITableView *)tableView{
     BaiShaETProjPersonalDataTBVCell *cell = (BaiShaETProjPersonalDataTBVCell *)[tableView tableViewCellClass:BaiShaETProjPersonalDataTBVCell.class];
@@ -71,6 +71,5 @@ UITableViewCellProtocol_synthesize
 //        _inputViewModel.fieldEditorOffset = JobsWidth(80);
     }return _inputViewModel;
 }
-
 
 @end

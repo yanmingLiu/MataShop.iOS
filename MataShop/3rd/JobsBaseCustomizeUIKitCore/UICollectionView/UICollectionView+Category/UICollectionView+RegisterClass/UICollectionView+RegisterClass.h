@@ -17,10 +17,7 @@
 #import "MSMineView6CVCell.h"
 #import "JobsTextFieldStyleCVCell.h"
 //#import "BaiShaETProjMywalletCRView.h"
-//#import "BaiShaETProjCVCellStyle1.h"
-//#import "BaseCollectionViewCell.h"
-
-#import "BaiShaETProjHeaderIconCVCell.h"
+//#import "JobsBaseCollectionViewCell.h"
 
 //#import "BaiShaETProjVIPSubCVCell_02.h"
 //#import "BaiShaETProjVIPSubCVCell_03.h"

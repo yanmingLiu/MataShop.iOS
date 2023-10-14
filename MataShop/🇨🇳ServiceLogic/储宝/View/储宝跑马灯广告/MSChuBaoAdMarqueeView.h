@@ -6,7 +6,7 @@
 //
 
 #import "BaseView.h"
-#import "CasinoMarqueeCell.h"
+#import "JobsBaseCollectionViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

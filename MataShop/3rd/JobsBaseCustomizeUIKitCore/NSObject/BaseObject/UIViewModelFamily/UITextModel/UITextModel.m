@@ -10,6 +10,7 @@
 @implementation UITextModel
 
 UITextModelProtocol_synthesize
+UITextModelProtocol_UIViewModelSynthesize
 UILocationProtocol_synthesize
 UIViewModelOthersProtocol_synthesize
 

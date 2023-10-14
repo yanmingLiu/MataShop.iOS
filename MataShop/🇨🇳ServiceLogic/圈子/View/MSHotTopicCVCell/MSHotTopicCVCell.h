@@ -5,12 +5,12 @@
 //  Created by Jobs Hi on 10/10/23.
 //
 
-#import "BaseCollectionViewCell.h"
+#import "JobsBaseCollectionViewCell.h"
 #import "MSForHotTopicCVCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MSHotTopicCVCell : BaseCollectionViewCell
+@interface MSHotTopicCVCell : JobsBaseCollectionViewCell
 <
 UICollectionViewDataSource
 ,UICollectionViewDelegate

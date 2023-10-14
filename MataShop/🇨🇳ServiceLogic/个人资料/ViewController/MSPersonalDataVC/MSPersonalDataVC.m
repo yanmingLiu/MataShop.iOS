@@ -113,7 +113,7 @@ numberOfRowsInSection:(NSInteger)section{
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    BaseTableViewCell *cell = [BaseTableViewCell cellStyleValue1WithTableView:tableView];
+    JobsBaseTableViewCell *cell = [JobsBaseTableViewCell cellStyleValue1WithTableView:tableView];
     cell.textLabel.text = self.dataMutArr[indexPath.row].textModel.text;
     cell.textLabel.textColor = RGB_SAMECOLOR(109);
     cell.textLabel.font = UIFontWeightRegularSize(16);

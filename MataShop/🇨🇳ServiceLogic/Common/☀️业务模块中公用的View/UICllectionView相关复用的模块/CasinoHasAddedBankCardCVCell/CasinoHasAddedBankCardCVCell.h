@@ -5,11 +5,11 @@
 //  Created by Jobs on 2021/12/18.
 //
 
-#import "BaseCollectionViewCell.h"
+#import "JobsBaseCollectionViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CasinoHasAddedBankCardCVCell : BaseCollectionViewCell
+@interface CasinoHasAddedBankCardCVCell : JobsBaseCollectionViewCell
 
 @end
 
