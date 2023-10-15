@@ -1199,6 +1199,7 @@
 		C53CD9132ABC32BA0011FD1A /* JobsTuple.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobsTuple.m; sourceTree = "<group>"; };
 		C53F698A2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSMutableParagraphStyle.h"; sourceTree = "<group>"; };
 		C53F698B2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSMutableParagraphStyle.m"; sourceTree = "<group>"; };
+		C54014D92ADBC71F0059DE6A /* JobsBtnStyleTBVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JobsBtnStyleTBVCell.jpg; sourceTree = "<group>"; };
 		C5432CEF2ACB1BB6008F92B0 /* 我的粉丝.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "我的粉丝.jpg"; sourceTree = "<group>"; };
 		C5432CF02ACB1BB6008F92B0 /* 打赏我的用户.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "打赏我的用户.jpg"; sourceTree = "<group>"; };
 		C5432CF12ACB1BB6008F92B0 /* 我的关注.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "我的关注.jpg"; sourceTree = "<group>"; };
@@ -3789,6 +3790,7 @@
 		C54AF4BF2ADAC4600014B335 /* JobsBtnStyleTBVCell */ = {
 			isa = PBXGroup;
 			children = (
+				C54014D92ADBC71F0059DE6A /* JobsBtnStyleTBVCell.jpg */,
 				C54AF4BC2ADAC44B0014B335 /* JobsBtnStyleTBVCell.h */,
 				C54AF4BD2ADAC44B0014B335 /* JobsBtnStyleTBVCell.m */,
 			);

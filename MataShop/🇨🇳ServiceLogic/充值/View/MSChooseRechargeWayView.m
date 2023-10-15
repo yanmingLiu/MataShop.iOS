@@ -101,6 +101,18 @@ static dispatch_once_t static_chooseRechargeWayViewOnceToken;
 -(void)loadMoreRefresh{
     [self pullToRefresh];
 }
+
+-(void)tableView:(UITableView *)tableView 
+             btn:(UIButton *)btn{
+    for (JobsBtnStyleTBVCell *cell in tableView.visibleCells) {
+        cell.getRightBtn.selected = NO;
+        cell.getRightBtn.jobsResetBtnImage(JobsIMG(@"未选中支付方式"));
+    }
+    btn.selected = !btn.selected;
+    btn.jobsResetBtnImage(btn.selected ? JobsIMG(@"已选中支付方式") : JobsIMG(@"未选中支付方式"));
+    UIViewModel *vm = (UIViewModel *)btn.data;
+    [self jobsToastMsg:vm.buttonModel.normalTitle];
+}
 #pragma mark —— UITableViewDelegate,UITableViewDataSource
 - (void)tableView:(UITableView *)tableView
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
@@ -110,7 +122,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    JobsBtnStyleTBVCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [self tableView:tableView btn:cell.getRightBtn];
 }
 /// 编辑模式下，点击取消左边已选中的cell的按钮
 - (void)tableView:(UITableView *)tableView
@@ -137,8 +150,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     JobsBtnStyleTBVCell *cell = [JobsBtnStyleTBVCell cellStyleDefaultWithTableView:tableView];
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.indexPath = indexPath;
+    cell.getLeftBtn.enabled = NO;
+    cell.getRightBtn.enabled = NO;
     [cell richElementsInCellWithModel:self.dataMutArr[indexPath.row]];
-    return cell;
+    [cell actionObjectBlock:^(id  _Nullable data) {
+        
+    }];return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
@@ -292,12 +309,13 @@ viewForHeaderInSection:(NSInteger)section{
         {
             UIViewModel *viewModel = UIViewModel.new;
             {
-                UIButtonModel *btnModel = UIButtonModel.new;
-                viewModel.image = JobsIMG(@"微信充值");
-                viewModel.textModel.text = Internationalization(@"微信（限额 100-999）");
-                viewModel.textModel.textCor = JobsCor(@"#333333");
-                viewModel.textModel.font = UIFontWeightMediumSize(16);
-                viewModel.buttonModel = btnModel;
+                UIButtonModel *buttonModel = UIButtonModel.new;
+                buttonModel.normalTitle = Internationalization(@"微信（限额 100-999）");
+                buttonModel.normalImage = JobsIMG(@"微信充值");
+                buttonModel.selectedImage = JobsIMG(@"微信充值");
+                buttonModel.titleFont = UIFontWeightMediumSize(16);
+                buttonModel.normalTitleColor = JobsCor(@"#333333");
+                viewModel.buttonModel = buttonModel;
             }
             
             {
@@ -307,6 +325,7 @@ viewForHeaderInSection:(NSInteger)section{
                 subButtonModel.selectedImage = JobsIMG(@"已选中支付方式");
                 subButtonModel.titleFont = UIFontWeightMediumSize(16);
                 subButtonModel.normalTitleColor = JobsCor(@"#333333");
+                subButtonModel.selected = YES;/// 默认选择的支付方式
                 viewModel.subButtonModel = subButtonModel;
             }
             [_dataMutArr addObject:viewModel];
@@ -314,11 +333,15 @@ viewForHeaderInSection:(NSInteger)section{
         
         {
             UIViewModel *viewModel = UIViewModel.new;
+            
             {
-                UIButtonModel *btnModel = UIButtonModel.new;
-                viewModel.image = JobsIMG(@"支付宝充值");
-                viewModel.textModel.text = Internationalization(@"支付宝（限额 200-1500）");
-                viewModel.buttonModel = btnModel;
+                UIButtonModel *buttonModel = UIButtonModel.new;
+                buttonModel.normalTitle = Internationalization(@"支付宝（限额 200-1500）");
+                buttonModel.normalImage = JobsIMG(@"支付宝充值");
+                buttonModel.selectedImage = JobsIMG(@"支付宝充值");
+                buttonModel.titleFont = UIFontWeightMediumSize(16);
+                buttonModel.normalTitleColor = JobsCor(@"#333333");
+                viewModel.buttonModel = buttonModel;
             }
             
             {
@@ -334,10 +357,13 @@ viewForHeaderInSection:(NSInteger)section{
         {
             UIViewModel *viewModel = UIViewModel.new;
             {
-                UIButtonModel *btnModel = UIButtonModel.new;
-                viewModel.image = JobsIMG(@"银行卡充值");
-                viewModel.textModel.text = Internationalization(@"银联支付（限额 1000-5000）");
-                viewModel.buttonModel = btnModel;
+                UIButtonModel *buttonModel = UIButtonModel.new;
+                buttonModel.normalTitle = Internationalization(@"银联支付（限额 1000-5000）");
+                buttonModel.normalImage = JobsIMG(@"银行卡充值");
+                buttonModel.selectedImage = JobsIMG(@"银行卡充值");
+                buttonModel.titleFont = UIFontWeightMediumSize(16);
+                buttonModel.normalTitleColor = JobsCor(@"#333333");
+                viewModel.buttonModel = buttonModel;
             }
             
             {
@@ -353,10 +379,13 @@ viewForHeaderInSection:(NSInteger)section{
         {
             UIViewModel *viewModel = UIViewModel.new;
             {
-                UIButtonModel *btnModel = UIButtonModel.new;
-                viewModel.image = JobsIMG(@"云闪付");
-                viewModel.textModel.text = Internationalization(@"云闪付");
-                viewModel.buttonModel = btnModel;
+                UIButtonModel *buttonModel = UIButtonModel.new;
+                buttonModel.normalTitle = Internationalization(@"云闪付");
+                buttonModel.normalImage = JobsIMG(@"云闪付");
+                buttonModel.selectedImage = JobsIMG(@"云闪付");
+                buttonModel.titleFont = UIFontWeightMediumSize(16);
+                buttonModel.normalTitleColor = JobsCor(@"#333333");
+                viewModel.buttonModel = buttonModel;
             }
             
             {
@@ -372,10 +401,13 @@ viewForHeaderInSection:(NSInteger)section{
         {
             UIViewModel *viewModel = UIViewModel.new;
             {
-                UIButtonModel *btnModel = UIButtonModel.new;
-                viewModel.image = JobsIMG(@"客服代充");
-                viewModel.textModel.text = Internationalization(@"客服代充（推荐）");
-                viewModel.buttonModel = btnModel;
+                UIButtonModel *buttonModel = UIButtonModel.new;
+                buttonModel.normalTitle = Internationalization(@"客服代充（推荐）");
+                buttonModel.normalImage = JobsIMG(@"客服代充");
+                buttonModel.selectedImage = JobsIMG(@"客服代充");
+                buttonModel.titleFont = UIFontWeightMediumSize(16);
+                buttonModel.normalTitleColor = JobsCor(@"#333333");
+                viewModel.buttonModel = buttonModel;
             }
             
             {
@@ -391,10 +423,13 @@ viewForHeaderInSection:(NSInteger)section{
         {
             UIViewModel *viewModel = UIViewModel.new;
             {
-                UIButtonModel *btnModel = UIButtonModel.new;
-                viewModel.image = JobsIMG(@"USDT充值");
-                viewModel.textModel.text = Internationalization(@"USDT（推荐）");
-                viewModel.buttonModel = btnModel;
+                UIButtonModel *buttonModel = UIButtonModel.new;
+                buttonModel.normalTitle = Internationalization(@"USDT（推荐）");
+                buttonModel.normalImage = JobsIMG(@"USDT充值");
+                buttonModel.selectedImage = JobsIMG(@"USDT充值");
+                buttonModel.titleFont = UIFontWeightMediumSize(16);
+                buttonModel.normalTitleColor = JobsCor(@"#333333");
+                viewModel.buttonModel = buttonModel;
             }
             
             {
