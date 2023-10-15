@@ -106,6 +106,9 @@
                                    cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MSForLastDynamicCVCell *cell = [MSForLastDynamicCVCell cellWithCollectionView:collectionView forIndexPath:indexPath];
     [cell richElementsInCellWithModel:self.lastDynamicModel.imageDataMutArr[indexPath.row]];
+    [cell viewTapGRSavePicsWithImageDataMutArr:self.lastDynamicModel.imageDataMutArr
+                                   atIndexPath:indexPath
+                                      byTarget:self];
     return cell;
 }
 

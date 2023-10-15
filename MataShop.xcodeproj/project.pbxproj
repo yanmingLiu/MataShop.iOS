@@ -105,6 +105,7 @@
 		C5399F872AD622B200C8A5E3 /* TKPermissionMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = C5399F712AD622B200C8A5E3 /* TKPermissionMedia.m */; };
 		C53CD9142ABC32BA0011FD1A /* JobsTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C53CD9132ABC32BA0011FD1A /* JobsTuple.m */; };
 		C53F698C2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = C53F698B2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m */; };
+		C54015C12ADBD72D0059DE6A /* NSObject+GKPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C54015C02ADBD72D0059DE6A /* NSObject+GKPhotoBrowser.m */; };
 		C5432DF72ACB1E6C008F92B0 /* MSThumbsUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432DF62ACB1E6C008F92B0 /* MSThumbsUpVC.m */; };
 		C5432DFA2ACB1EAE008F92B0 /* MSMyFansSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432DF92ACB1EAE008F92B0 /* MSMyFansSubVC.m */; };
 		C5432DFD2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5432DFC2ACB1F03008F92B0 /* MSMyAppraiseComparisonVC.m */; };
@@ -1200,6 +1201,8 @@
 		C53F698A2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSMutableParagraphStyle.h"; sourceTree = "<group>"; };
 		C53F698B2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSMutableParagraphStyle.m"; sourceTree = "<group>"; };
 		C54014D92ADBC71F0059DE6A /* JobsBtnStyleTBVCell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JobsBtnStyleTBVCell.jpg; sourceTree = "<group>"; };
+		C54015BF2ADBD72D0059DE6A /* NSObject+GKPhotoBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+GKPhotoBrowser.h"; sourceTree = "<group>"; };
+		C54015C02ADBD72D0059DE6A /* NSObject+GKPhotoBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GKPhotoBrowser.m"; sourceTree = "<group>"; };
 		C5432CEF2ACB1BB6008F92B0 /* 我的粉丝.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "我的粉丝.jpg"; sourceTree = "<group>"; };
 		C5432CF02ACB1BB6008F92B0 /* 打赏我的用户.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "打赏我的用户.jpg"; sourceTree = "<group>"; };
 		C5432CF12ACB1BB6008F92B0 /* 我的关注.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "我的关注.jpg"; sourceTree = "<group>"; };
@@ -3680,6 +3683,15 @@
 				C53F698B2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m */,
 			);
 			path = "NSObject+NSMutableParagraphStyle";
+			sourceTree = "<group>";
+		};
+		C54015C22ADBD7350059DE6A /* NSObject+GKPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C54015BF2ADBD72D0059DE6A /* NSObject+GKPhotoBrowser.h */,
+				C54015C02ADBD72D0059DE6A /* NSObject+GKPhotoBrowser.m */,
+			);
+			path = "NSObject+GKPhotoBrowser";
 			sourceTree = "<group>";
 		};
 		C5432CED2ACB1ADB008F92B0 /* 点赞作品 */ = {
@@ -7247,6 +7259,7 @@
 		C561D2432AAC7E7A00E28603 /* NSObject+Category */ = {
 			isa = PBXGroup;
 			children = (
+				C54015C22ADBD7350059DE6A /* NSObject+GKPhotoBrowser */,
 				C561D28E2AAC7E7A00E28603 /* NSObject+AFNReachability */,
 				C561D2512AAC7E7A00E28603 /* NSObject+Alert */,
 				C569EA112AD3B41F000F4DE3 /* NSObject+BRPickerView */,
@@ -11063,6 +11076,7 @@
 				C561D3D32AAC7E7B00E28603 /* UIButton+UI.m in Sources */,
 				C5CFE5362AB0547600D0F225 /* MSProdSelectVC.m in Sources */,
 				C5FB566B2AB31F1300C873B7 /* MSHomePopupView.m in Sources */,
+				C54015C12ADBD72D0059DE6A /* NSObject+GKPhotoBrowser.m in Sources */,
 				C561D3212AAC7E7A00E28603 /* TLTabBarAnimation.m in Sources */,
 				C5A7D1BE2ACFB34300440B7C /* MSChuBaoBuyVC.m in Sources */,
 				C561D4032AAC7E7B00E28603 /* UIDevice+XMUtils.m in Sources */,

@@ -16,7 +16,9 @@
 #import "MSLastDynamicModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+/// 点击用户头像区域，进入该用户的用户中心
+/// 点击最近动态下面的时间、评论、点赞区域，进入动态详情页面
+/// 点击图片，图片在本页放大
 @interface MSMomentsVC : BaseViewController
 <
 UICollectionViewDataSource
