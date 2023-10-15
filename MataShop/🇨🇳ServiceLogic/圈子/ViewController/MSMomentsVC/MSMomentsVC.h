@@ -7,6 +7,7 @@
 
 #import "BaseViewController.h"
 #import "MSMyPostDynamicVC.h"/// 发布动态
+#import "MSMomentsDetailVC.h"
 
 #import "MSMoreMomentsCVCell.h"/// 更多圈子
 #import "MSHotTopicCVCell.h"/// 热门话题

@@ -205,6 +205,8 @@ shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s", __FUNCTION__);
+    id d = self.dataMutArr[indexPath.section].data[indexPath.item];
+    [self forceComingToPushVC:MSMomentsDetailVC.new requestParams:self.dataMutArr[indexPath.section].data];
     /**
      滚动到指定位置
      _collectionView.contentOffset = CGPointMake(0,-100);

@@ -46,9 +46,11 @@ NS_ASSUME_NONNULL_BEGIN
 UITableViewDelegate
 ,UITableViewDataSource
 >
-//用下面两个都可以
-@property(nonatomic,strong)JobsCommentModel *mjModel;
-@property(nonatomic,strong)JobsCommentModel *yyModel;
+
+-(void)setMJModel:(JobsCommentModel *)mjModel;
+-(void)setYYModel:(JobsCommentModel *)yyModel;
+-(JobsCommentTitleHeaderView *)getJobsCommentTitleHeaderView;
+-(UITableView *)getTableView;
 
 @end
 
