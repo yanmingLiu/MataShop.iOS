@@ -39,10 +39,10 @@
                                                   style:UIAlertActionStyleDefault
                                                 handler:^(UIAlertAction * _Nonnull action) {
             @jobs_strongify(self)
-            [self openURL:UIApplicationOpenSettingsURLString
-             successBlock:^(id data) {
+            [self jobsOpenURL:UIApplicationOpenSettingsURLString
+successCompletionHandlerBlock:^(id data) {
                 
-            } failBlock:^(id data) {
+            } failCompletionHandlerBlock:^(id data) {
                 
             }];
         }]];

@@ -34,9 +34,7 @@
 		C520F5F42AB396F400142DCC /* JobsCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5D02AB396F400142DCC /* JobsCommentModel.m */; };
 		C520F5F52AB396F400142DCC /* JobsLoadMoreTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5D62AB396F400142DCC /* JobsLoadMoreTBVCell.m */; };
 		C520F5F62AB396F400142DCC /* JobsInfoTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5D82AB396F400142DCC /* JobsInfoTBVCell.m */; };
-		C520F5F72AB396F400142DCC /* 二级标题.md in Resources */ = {isa = PBXBuildFile; fileRef = C520F5DA2AB396F400142DCC /* 二级标题.md */; };
 		C520F5F82AB396F400142DCC /* JobsCommentTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5DC2AB396F400142DCC /* JobsCommentTitleHeaderView.m */; };
-		C520F5F92AB396F400142DCC /* 一级标题.md in Resources */ = {isa = PBXBuildFile; fileRef = C520F5DF2AB396F400142DCC /* 一级标题.md */; };
 		C520F5FA2AB396F500142DCC /* JobsCommentPopUpView_viewForHeaderInSection.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5E02AB396F400142DCC /* JobsCommentPopUpView_viewForHeaderInSection.m */; };
 		C520F5FB2AB396F500142DCC /* JobsPopUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C520F5E42AB396F400142DCC /* JobsPopUpVC.m */; };
 		C520F5FC2AB396F500142DCC /* PopUpVC.md in Resources */ = {isa = PBXBuildFile; fileRef = C520F5E62AB396F400142DCC /* PopUpVC.md */; };
@@ -1047,10 +1045,8 @@
 		C520F5D62AB396F400142DCC /* JobsLoadMoreTBVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsLoadMoreTBVCell.m; sourceTree = "<group>"; };
 		C520F5D82AB396F400142DCC /* JobsInfoTBVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsInfoTBVCell.m; sourceTree = "<group>"; };
 		C520F5D92AB396F400142DCC /* JobsInfoTBVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsInfoTBVCell.h; sourceTree = "<group>"; };
-		C520F5DA2AB396F400142DCC /* 二级标题.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "二级标题.md"; sourceTree = "<group>"; };
 		C520F5DC2AB396F400142DCC /* JobsCommentTitleHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsCommentTitleHeaderView.m; sourceTree = "<group>"; };
 		C520F5DD2AB396F400142DCC /* JobsCommentTitleHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsCommentTitleHeaderView.h; sourceTree = "<group>"; };
-		C520F5DF2AB396F400142DCC /* 一级标题.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "一级标题.md"; sourceTree = "<group>"; };
 		C520F5E02AB396F400142DCC /* JobsCommentPopUpView_viewForHeaderInSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsCommentPopUpView_viewForHeaderInSection.m; sourceTree = "<group>"; };
 		C520F5E12AB396F400142DCC /* JobsCommentPopUpView_viewForHeaderInSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobsCommentPopUpView_viewForHeaderInSection.h; sourceTree = "<group>"; };
 		C520F5E42AB396F400142DCC /* JobsPopUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobsPopUpVC.m; sourceTree = "<group>"; };
@@ -2913,21 +2909,20 @@
 		C520F5D22AB396F400142DCC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C520F5D32AB396F400142DCC /* TBVCell */,
 				C520F5DB2AB396F400142DCC /* JobsCommentTitleHeaderView */,
-				C520F5DE2AB396F400142DCC /* JobsCommentPopUpViewForTVH */,
+				C520F5DE2AB396F400142DCC /* 一级标题 */,
+				C520F5D32AB396F400142DCC /* 二级标题 */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		C520F5D32AB396F400142DCC /* TBVCell */ = {
+		C520F5D32AB396F400142DCC /* 二级标题 */ = {
 			isa = PBXGroup;
 			children = (
-				C520F5D42AB396F400142DCC /* JobsLoadMoreTBVCell */,
 				C520F5D72AB396F400142DCC /* JobsInfoTBVCell */,
-				C520F5DA2AB396F400142DCC /* 二级标题.md */,
+				C520F5D42AB396F400142DCC /* JobsLoadMoreTBVCell */,
 			);
-			path = TBVCell;
+			path = "二级标题";
 			sourceTree = "<group>";
 		};
 		C520F5D42AB396F400142DCC /* JobsLoadMoreTBVCell */ = {
@@ -2942,8 +2937,8 @@
 		C520F5D72AB396F400142DCC /* JobsInfoTBVCell */ = {
 			isa = PBXGroup;
 			children = (
-				C520F5D82AB396F400142DCC /* JobsInfoTBVCell.m */,
 				C520F5D92AB396F400142DCC /* JobsInfoTBVCell.h */,
+				C520F5D82AB396F400142DCC /* JobsInfoTBVCell.m */,
 			);
 			path = JobsInfoTBVCell;
 			sourceTree = "<group>";
@@ -2952,20 +2947,19 @@
 			isa = PBXGroup;
 			children = (
 				C54016392ADC00530059DE6A /* 删除.png */,
-				C520F5DC2AB396F400142DCC /* JobsCommentTitleHeaderView.m */,
 				C520F5DD2AB396F400142DCC /* JobsCommentTitleHeaderView.h */,
+				C520F5DC2AB396F400142DCC /* JobsCommentTitleHeaderView.m */,
 			);
 			path = JobsCommentTitleHeaderView;
 			sourceTree = "<group>";
 		};
-		C520F5DE2AB396F400142DCC /* JobsCommentPopUpViewForTVH */ = {
+		C520F5DE2AB396F400142DCC /* 一级标题 */ = {
 			isa = PBXGroup;
 			children = (
-				C520F5DF2AB396F400142DCC /* 一级标题.md */,
 				C520F5E02AB396F400142DCC /* JobsCommentPopUpView_viewForHeaderInSection.m */,
 				C520F5E12AB396F400142DCC /* JobsCommentPopUpView_viewForHeaderInSection.h */,
 			);
-			path = JobsCommentPopUpViewForTVH;
+			path = "一级标题";
 			sourceTree = "<group>";
 		};
 		C520F5E22AB396F400142DCC /* ViewController */ = {
@@ -10662,7 +10656,6 @@
 				C5E011462AADE1CD005ABE09 /* 34@2x.gif in Resources */,
 				C561D41F2AAC7E7B00E28603 /* UIViewController+XLBubbleTransition.md in Resources */,
 				C5E011BD2AADE1CD005ABE09 /* 199@2x.gif in Resources */,
-				C520F5F72AB396F400142DCC /* 二级标题.md in Resources */,
 				C561D42C2AAC7E7B00E28603 /* 旋转.png in Resources */,
 				C5E0119B2AADE1CD005ABE09 /* newemoji_011.gif in Resources */,
 				C5E0114E2AADE1CD005ABE09 /* 1@2x.gif in Resources */,
@@ -10730,7 +10723,6 @@
 				C5E011EF2AADE1CD005ABE09 /* 181@2x.gif in Resources */,
 				C5E0176E2AAF4B49005ABE09 /* MSChuBaoAdMarqueeView.jpg in Resources */,
 				C5E011DB2AADE1CD005ABE09 /* 139@2x.gif in Resources */,
-				C520F5F92AB396F400142DCC /* 一级标题.md in Resources */,
 				C561D34F2AAC7E7A00E28603 /* 输入框样式_3.png in Resources */,
 				C5E011712AADE1CD005ABE09 /* 127@2x.gif in Resources */,
 				C561D3412AAC7E7A00E28603 /* 输入框样式_10.md in Resources */,
