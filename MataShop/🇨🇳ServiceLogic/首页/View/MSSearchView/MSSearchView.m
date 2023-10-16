@@ -54,6 +54,7 @@ static dispatch_once_t static_searchViewOnceToken;
 
 -(void)layoutSubviews{
     [super layoutSubviews];
+    
 }
 #pragma mark —— 一些私有方法
 -(void)textFieldBlock:(ZYTextField *)textField
@@ -178,6 +179,11 @@ static dispatch_once_t static_searchViewOnceToken;
             @jobs_strongify(self)
             x.selected = !x.selected;
             if (self.objectBlock) self.objectBlock(x);
+            
+            JobsShareView *shareView = JobsShareView.new;
+            [shareView richElementsInViewWithModel:nil];
+            [self popupshowSlideWithView:shareView];
+            
             return nil;
         }];
         _searchBtn.size = CGSizeMake(JobsWidth(60), JobsWidth(32));

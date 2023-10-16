@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+Extras.h"
+#import "JobsDefineAllEnumHeader.h"
 
 @implementation NSObject (Extras)
 #pragma mark —— 宏
