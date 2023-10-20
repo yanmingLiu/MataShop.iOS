@@ -45,7 +45,7 @@
 /// 【形成Frame后直接return，避免被其他中间过程修改】
 -(void)layoutSubviews{
     [super layoutSubviews];
-    [self printValue];
+//    [self printValue];
     [self resetSubViews];
 }
 

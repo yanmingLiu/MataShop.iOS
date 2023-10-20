@@ -8,294 +8,207 @@
 #import "MSMineCollectionReusableView.h"
 
 @interface MSMineCollectionReusableView ()
-/// UI
-@property(nonatomic,strong)UIImageView *bgImgView;
-@property(nonatomic,strong)BaseButton *userInfoBtn;
-@property(nonatomic,strong)UIButton *rightArrowBtn;
-@property(nonatomic,strong)UIButton *btn1;
-@property(nonatomic,strong)UIButton *btn2;
-/// Data
+
+@property(nonatomic,strong)UIImageView *avatar;
+@property(nonatomic,strong)UILabel *nameLabel;
+@property(nonatomic,strong)UILabel *accountLabel;
+@property(nonatomic,strong)UIImageView *arrowImageView;
+@property(nonatomic,strong)UIView *bottomView;
+@property(nonatomic,strong)UIButton *mataButton;
+@property(nonatomic,strong)UIButton *joinMataButton;
+@property(nonatomic,strong)CAGradientLayer *gradientLayer;
 
 @end
 
 @implementation MSMineCollectionReusableView
-#pragma mark —— BaseProtocol
-/// 单例化和销毁
-+(void)destroySingleton{
-    static_mineView2OnceToken = 0;
-    static_mineView2 = nil;
+
++ (NSString *)reuseIdentifier {
+    return NSStringFromClass(self);
 }
 
-static MSMineCollectionReusableView *static_mineView2 = nil;
-static dispatch_once_t static_mineView2OnceToken;
-+(instancetype)sharedInstance{
-    dispatch_once(&static_mineView2OnceToken, ^{
-        static_mineView2 = MSMineCollectionReusableView.new;
-    });return static_mineView2;
-}
-#pragma mark —— SysMethod
--(instancetype)init{
-    if (self = [super init]) {
-        self.backgroundColor = JobsWhiteColor;
-    }return self;
-}
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        JobsAddNotification(self,
-                        @selector(languageSwitchNotification:),
-                        LanguageSwitchNotification,
-                        nil);
-    }return self;
-}
-
--(void)drawRect:(CGRect)rect{
-    [super drawRect:rect];
-}
-
--(void)layoutSubviews{
-    [super layoutSubviews];
-}
-#pragma mark —— BaseViewProtocol
-- (instancetype)initWithSize:(CGSize)thisViewSize{
-    if (self = [super init]) {
-        
-    }return self;
-}
-/// 具体由子类进行复写【数据定UI】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
--(void)richElementsInViewWithModel:(UIViewModel *_Nullable)model{
-    self.backgroundColor = JobsWhiteColor;
-    self.viewModel = model ? : UIViewModel.new;
-    [super richElementsInViewWithModel:model];
-    
-    self.userInteractionEnabled = YES;
-    self.bgImgView.alpha = 1;
-    self.userInfoBtn.alpha = 1;
-    self.rightArrowBtn.alpha = 1;
-    
-    self.btn1.alpha = 1;
-    self.btn2.alpha = 1;
-}
-/// 具体由子类进行复写【数据尺寸】【如果所传参数为基本数据类型，那么包装成对象NSNumber进行转化承接】
-/// UICollectionViewDelegateFlowLayout
-+(CGSize)collectionReusableViewSizeWithModel:(UIViewModel *_Nullable)model{
-    return CGSizeMake(JobsMainScreen_WIDTH(), JobsWidth(218));
-}
-#pragma mark —— lazyLoad
--(UIImageView *)bgImgView{
-    if(!_bgImgView){
-        _bgImgView = UIImageView.new;
-        _bgImgView.image = JobsIMG(@"个人中心背景图片");
-        [self addSubview:_bgImgView];
-        [_bgImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.right.equalTo(self);
-            make.height.mas_equalTo([MSMineCollectionReusableView collectionReusableViewSizeWithModel:nil].height - JobsWidth(50));
-        }];
-    }return _bgImgView;
-}
-
--(BaseButton *)userInfoBtn{
-    if(!_userInfoBtn){
-        @jobs_weakify(self)
-        _userInfoBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
-                                                         background:nil
-                                                     titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
-                                                      textAlignment:NSTextAlignmentCenter
-                                                   subTextAlignment:NSTextAlignmentCenter
-                                                        normalImage:nil
-                                                     highlightImage:nil
-                                                    attributedTitle:nil
-                                            selectedAttributedTitle:nil
-                                                 attributedSubtitle:nil
-                                                              title:nil
-                                                           subTitle:nil
-                                                          titleFont:UIFontWeightBoldSize(18)
-                                                       subTitleFont:UIFontWeightRegularSize(14)
-                                                           titleCor:JobsWhiteColor
-                                                        subTitleCor:JobsWhiteColor
-                                                 titleLineBreakMode:NSLineBreakByWordWrapping
-                                              subtitleLineBreakMode:NSLineBreakByWordWrapping
-                                                baseBackgroundColor:JobsClearColor
-                                                       imagePadding:JobsWidth(15)
-                                                       titlePadding:JobsWidth(5)
-                                                     imagePlacement:NSDirectionalRectEdgeLeading
-                                         contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
-                                           contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
-                                                      contentInsets:jobsSameDirectionalEdgeInsets(0)
-                                                  cornerRadiusValue:JobsWidth(0)
-                                                    roundingCorners:UIRectCornerAllCorners
-                                               roundingCornersRadii:CGSizeZero
-                                                     layerBorderCor:nil
-                                                        borderWidth:JobsWidth(0)
-                                                      primaryAction:nil
-                                                    clickEventBlock:^id(BaseButton *x) {
-            @jobs_strongify(self)
-            x.selected = !x.selected;
-            if (self.objectBlock) self.objectBlock(x);
-            [self forceComingToPushVC:MSMyInfoVC.new requestParams:nil];
-            return nil;
-        }];
-        [self addSubview:_userInfoBtn];
-        [_userInfoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(JobsWidth(70));
-            make.bottom.equalTo(self.bgImgView.mas_bottom).offset(JobsWidth(-20));
-            make.left.equalTo(self).offset(JobsWidth(15));
-        }];
+        [self setupUI];
+        [self setupData];
     }
-    _userInfoBtn.jobsResetImage(self.readUserInfo.userHeaderIMG);
-    _userInfoBtn.jobsResetTitle(self.readUserInfo.userName);
-    _userInfoBtn.jobsResetSubtitle(Internationalization(@"138****8888"));
-    [_userInfoBtn makeBtnLabelByShowingType:UILabelShowingType_03];
-    return _userInfoBtn;
+    return self;
 }
 
--(UIButton *)rightArrowBtn{
-    if(!_rightArrowBtn){
-        @jobs_weakify(self)
-        _rightArrowBtn = [BaseButton.alloc jobsInitBtnByConfiguration:nil
-                                                           background:nil
-                                                       titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
-                                                        textAlignment:NSTextAlignmentCenter
-                                                     subTextAlignment:NSTextAlignmentCenter
-                                                          normalImage:JobsIMG(@"向右箭头")
-                                                       highlightImage:nil
-                                                      attributedTitle:nil
-                                              selectedAttributedTitle:nil
-                                                   attributedSubtitle:nil
-                                                                title:nil
-                                                             subTitle:nil
-                                                            titleFont:nil
-                                                         subTitleFont:nil
-                                                             titleCor:nil
-                                                          subTitleCor:nil
-                                                   titleLineBreakMode:NSLineBreakByWordWrapping
-                                                subtitleLineBreakMode:NSLineBreakByWordWrapping
-                                                  baseBackgroundColor:UIColor.clearColor
-                                                         imagePadding:JobsWidth(0)
-                                                    titlePadding:JobsWidth(0)
-                                                       imagePlacement:NSDirectionalRectEdgeNone
-                                           contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
-                                             contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
-                                                        contentInsets:jobsSameDirectionalEdgeInsets(0)
-                                                    cornerRadiusValue:JobsWidth(0)
-                                                      roundingCorners:UIRectCornerAllCorners
-                                                 roundingCornersRadii:CGSizeZero
-                                                       layerBorderCor:nil
-                                                          borderWidth:JobsWidth(0)
-                                                        primaryAction:nil
-                                                      clickEventBlock:^id(BaseButton *x) {
-            @jobs_strongify(self)
-            x.selected = !x.selected;
-            if (self.objectBlock) self.objectBlock(x);
-            [self jobsToastMsg:Internationalization(@"编辑个人资料")];
-            return nil;
-        }];
-        [self addSubview:_rightArrowBtn];
-        [_rightArrowBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(20), JobsWidth(20)));
-            make.centerY.equalTo(self.userInfoBtn);
-            make.right.equalTo(self).offset(JobsWidth(-16));
-        }];
-    }return _rightArrowBtn;
+- (void)layoutSubviews {
+    [super layoutSubviews];
+
+    self.gradientLayer.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height-60);
 }
 
--(UIButton *)btn1{
-    if(!_btn1){
-        @jobs_weakify(self)
-        _btn1 = [BaseButton.alloc jobsInitBtnByConfiguration:nil
-                                                  background:nil
-                                              titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
-                                               textAlignment:NSTextAlignmentCenter
-                                            subTextAlignment:NSTextAlignmentCenter
-                                                 normalImage:JobsIMG(@"入职Mata")
-                                              highlightImage:nil
-                                             attributedTitle:nil
-                                     selectedAttributedTitle:nil
-                                          attributedSubtitle:nil
-                                                       title:Internationalization(@"入职Mata")
-                                                    subTitle:nil
-                                                   titleFont:UIFontWeightRegularSize(14)
-                                                subTitleFont:nil
-                                                    titleCor:JobsBlackColor
-                                                 subTitleCor:nil
-                                          titleLineBreakMode:NSLineBreakByWordWrapping
-                                       subtitleLineBreakMode:NSLineBreakByWordWrapping
-                                         baseBackgroundColor:UIColor.whiteColor
-                                                imagePadding:JobsWidth(8)
-                                                titlePadding:JobsWidth(0)
-                                              imagePlacement:NSDirectionalRectEdgeLeading
-                                  contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
-                                    contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
-                                               contentInsets:jobsSameDirectionalEdgeInsets(0)
-                                           cornerRadiusValue:JobsWidth(0)
-                                             roundingCorners:UIRectCornerAllCorners
-                                        roundingCornersRadii:CGSizeZero
-                                              layerBorderCor:nil
-                                                 borderWidth:JobsWidth(0)
-                                               primaryAction:nil
-                                             clickEventBlock:^id(BaseButton *x) {
-            @jobs_strongify(self)
-            x.selected = !x.selected;
-            if (self.objectBlock) self.objectBlock(x);
-            return nil;
-        }];
-        [self addSubview:_btn1];
-        [_btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.bgImgView.mas_bottom).offset(JobsWidth(15));
-            make.bottom.equalTo(self).offset(JobsWidth(-15));
-            make.left.equalTo(self).offset(JobsWidth(15));
-        }];
-    }return _btn1;
+
+- (void)setupData {
+    self.nameLabel.text = @"赵露思";
+    self.accountLabel.text = @"138****8888";
+    self.avatar.image = JobsIMG(@"用户默认头像");
+    self.arrowImageView.image = JobsIMG(@"向右箭头");
 }
 
--(UIButton *)btn2{
-    if(!_btn2){
-        @jobs_weakify(self)
-        _btn2 = [BaseButton.alloc jobsInitBtnByConfiguration:nil
-                                                  background:nil
-                                              titleAlignment:UIButtonConfigurationTitleAlignmentAutomatic
-                                               textAlignment:NSTextAlignmentCenter
-                                            subTextAlignment:NSTextAlignmentCenter
-                                                 normalImage:nil
-                                              highlightImage:nil
-                                             attributedTitle:nil
-                                     selectedAttributedTitle:nil
-                                          attributedSubtitle:nil
-                                                       title:Internationalization(@"立即进入")
-                                                    subTitle:nil
-                                                   titleFont:UIFontWeightRegularSize(14)
-                                                subTitleFont:nil
-                                                    titleCor:JobsWhiteColor
-                                                 subTitleCor:nil
-                                          titleLineBreakMode:NSLineBreakByWordWrapping
-                                       subtitleLineBreakMode:NSLineBreakByWordWrapping
-                                         baseBackgroundColor:JobsCor(@"#EA2918")
-                                                imagePadding:JobsWidth(0)
-                                                titlePadding:JobsWidth(0)
-                                              imagePlacement:NSDirectionalRectEdgeNone
-                                  contentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter
-                                    contentVerticalAlignment:UIControlContentVerticalAlignmentCenter
-                                               contentInsets:jobsSameDirectionalEdgeInsets(0)
-                                           cornerRadiusValue:JobsWidth(14)
-                                             roundingCorners:UIRectCornerAllCorners
-                                        roundingCornersRadii:CGSizeZero
-                                              layerBorderCor:nil
-                                                 borderWidth:JobsWidth(0)
-                                               primaryAction:nil
-                                             clickEventBlock:^id(BaseButton *x) {
-            @jobs_strongify(self)
-            x.selected = !x.selected;
-            if (self.objectBlock) self.objectBlock(x);
-            [self forceComingToPushVC:MSInternalRecruitmentVC.new requestParams:nil];
-            return nil;
-        }];
-        [self addSubview:_btn2];
-        [_btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(JobsWidth(88), JobsWidth(28)));
-            make.centerY.equalTo(self.btn1);
-            make.right.equalTo(self).offset(JobsWidth(-15));
-        }];
-    }return _btn2;
+- (void)setupUI {
+    CAGradientLayer *layer = [CAGradientLayer layer];
+    layer.colors = @[(__bridge id)JobsCor(@"#E81A11").CGColor, (__bridge id)JobsCor(@"#F26A38").CGColor];
+    layer.startPoint = CGPointMake(0.5, 0);
+    layer.endPoint = CGPointMake(0.5, 1);
+    layer.locations = @[@0, @1];
+    [self.layer addSublayer:layer];
+    self.gradientLayer = layer;
+
+    [self addSubview:self.avatar];
+    [self.avatar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self).offset(13);
+        make.bottom.equalTo(self).offset(-72);
+        make.size.mas_equalTo(CGSizeMake(56, 56));
+    }];
+
+    UIStackView *nameStack = [[UIStackView alloc] initWithArrangedSubviews:@[self.nameLabel, self.accountLabel]];
+    nameStack.alignment = UIStackViewAlignmentLeading;
+    nameStack.axis = UILayoutConstraintAxisVertical;
+    nameStack.spacing = 8;
+    [self addSubview:nameStack];
+    [nameStack mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.avatar.mas_trailing).offset(16);
+        make.centerY.equalTo(self.avatar);
+        make.trailing.equalTo(self).offset(-52);
+    }];
+
+    [self addSubview:self.arrowImageView];
+    [self.arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(self).offset(-16);
+        make.centerY.equalTo(self.avatar);
+    }];
+
+    UIButton *userInfoButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [userInfoButton addAction:[self tapUserInfo] forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:userInfoButton];
+    [userInfoButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self);
+        make.top.bottom.equalTo(self.avatar);
+    }];
+
+    [self addSubview:self.bottomView];
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self).offset(10);
+        make.trailing.equalTo(self).offset(-10);
+        make.bottom.equalTo(self).offset(-12);
+        make.height.mas_equalTo(36);
+    }];
+
+    [self.bottomView addSubview:self.mataButton];
+    [self.mataButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.bottomView);
+        make.leading.equalTo(self.bottomView).offset(16);
+    }];
+
+    [self.bottomView addSubview:self.joinMataButton];
+    [self.joinMataButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.bottomView);
+        make.trailing.equalTo(self.bottomView).offset(-4);
+    }];
+
 }
+
+#pragma mark —— lazyLoad
+
+- (UILabel *)nameLabel {
+    if (!_nameLabel) {
+        _nameLabel = [[UILabel alloc] init];
+        _nameLabel.font = [UIFont boldSystemFontOfSize:16];
+        _nameLabel.textColor = UIColor.whiteColor;
+    }
+    return _nameLabel;
+}
+
+- (UIImageView *)avatar {
+    if(!_avatar){
+        _avatar = UIImageView.new;
+        _avatar.contentMode = UIViewContentModeScaleAspectFill;
+        _avatar.layer.masksToBounds = YES;
+        _avatar.layer.cornerRadius = 28;
+    }
+    return _avatar;
+}
+
+- (UILabel *)accountLabel {
+    if (!_accountLabel) {
+        _accountLabel = [[UILabel alloc] init];
+        _accountLabel.font = [UIFont systemFontOfSize:14];
+        _accountLabel.textColor = UIColor.whiteColor;
+    }
+    return _accountLabel;
+}
+
+- (UIImageView *)arrowImageView {
+    if(!_arrowImageView){
+        _arrowImageView = UIImageView.new;
+        _arrowImageView.contentMode = UIViewContentModeScaleAspectFill;
+    }
+    return _arrowImageView;
+}
+
+- (UIView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [[UIView alloc] init];
+        _bottomView.backgroundColor = JobsCor(@"#F0F0EF");
+        _bottomView.layer.masksToBounds = YES;
+        _bottomView.layer.cornerRadius = 18;
+    }
+    return _bottomView;
+}
+
+- (UIButton *)mataButton {
+    if (!_mataButton) {
+        UIButtonConfiguration *config = [UIButtonConfiguration plainButtonConfiguration];
+        config.image = JobsIMG(@"入职Mata");
+        config.title = @"入职Mata";
+        config.imagePlacement = NSDirectionalRectEdgeLeading;
+        config.contentInsets = NSDirectionalEdgeInsetsMake(0, 0, 0, 0);
+        config.imagePadding = 8;
+        config.titleTextAttributesTransformer = ^NSDictionary<NSAttributedStringKey,id> * _Nonnull(NSDictionary<NSAttributedStringKey,id> * _Nonnull textAttributes) {
+            return @{NSFontAttributeName : [UIFont systemFontOfSize:14],
+                     NSForegroundColorAttributeName: JobsCor(@"#333333")
+            };
+        };
+        _mataButton = [UIButton buttonWithConfiguration:config primaryAction:nil];
+    }
+    return _mataButton;
+}
+
+- (UIButton *)joinMataButton {
+    if (!_joinMataButton) {
+        UIButtonConfiguration *config = [UIButtonConfiguration filledButtonConfiguration];
+        config.title = @"立即进入";
+        config.baseBackgroundColor = JobsCor(@"#EA2918");
+        config.baseForegroundColor = UIColor.whiteColor;
+        config.cornerStyle = UIButtonConfigurationCornerStyleCapsule;
+        config.contentInsets = NSDirectionalEdgeInsetsMake(6, 16, 6, 16);
+        config.titleTextAttributesTransformer = ^NSDictionary<NSAttributedStringKey,id> * _Nonnull(NSDictionary<NSAttributedStringKey,id> * _Nonnull textAttributes) {
+            return @{NSFontAttributeName : [UIFont boldSystemFontOfSize:14],
+            };
+        };
+        _joinMataButton = [UIButton buttonWithConfiguration:config primaryAction:[self joinAction]];
+    }
+    return _joinMataButton;
+
+}
+
+- (UIAction *)joinAction {
+    __weak typeof(self) wSelf = self;
+    return [UIAction actionWithHandler:^(__kindof UIAction * _Nonnull action) {
+        [wSelf.delegate onTapJoinMata];
+    }];
+}
+
+- (UIAction *)tapUserInfo {
+    __weak typeof(self) wSelf = self;
+    return [UIAction actionWithHandler:^(__kindof UIAction * _Nonnull action) {
+        [wSelf.delegate onTapUserInfo];
+    }];
+}
+
 
 @end

@@ -341,7 +341,7 @@ UITableViewCellProtocol_synthesize
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-    [self printValue];
+//    [self printValue];
     /// 取内部类UITableViewCellEditControl,对编辑状态的Cell的点击按钮进行替换成自定义的
     for (UIControl *control in self.subviews){
         if ([control isMemberOfClass:NSClassFromString(@"UITableViewCellEditControl")]){

@@ -141,7 +141,7 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (CGFloat)collectionView:(UICollectionView *)collectionView
                    layout:(UICollectionViewLayout *)collectionViewLayout
 minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return JobsWidth(7);
+    return 12;
 }
 /// 定义的是UICollectionViewScrollDirectionVertical下，元素水平之间的间距。
 /// UICollectionViewScrollDirectionHorizontal下，垂直和水平正好相反
@@ -149,14 +149,16 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section {
 - (CGFloat)collectionView:(UICollectionView *)collectionView
                    layout:(UICollectionViewLayout *)collectionViewLayout
 minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return JobsWidth(7);
+    return 7;
 }
 /// 内间距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView
                        layout:(UICollectionViewLayout *)collectionViewLayout
        insetForSectionAtIndex:(NSInteger)section {
-    return jobsSameEdgeInset(JobsWidth(12));
+    return UIEdgeInsetsMake(12, 12, 12, 12);
 }
+
+
 #pragma mark —— lazyLoad
 -(UICollectionViewFlowLayout *)layout{
     if (!_layout) {

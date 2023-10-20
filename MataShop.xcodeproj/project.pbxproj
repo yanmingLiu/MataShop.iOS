@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3827226D2AE2506400BABB24 /* MSMineSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3827226C2AE2506400BABB24 /* MSMineSectionHeader.m */; };
+		382723D92AE2873D00BABB24 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723D82AE2873D00BABB24 /* AddressViewController.m */; };
+		382723DC2AE2875100BABB24 /* AddressItemViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723DB2AE2875100BABB24 /* AddressItemViewModel.m */; };
+		382723E12AE291D500BABB24 /* AddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723E02AE291D500BABB24 /* AddressCell.m */; };
+		382723E42AE293DE00BABB24 /* AddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723E32AE293DE00BABB24 /* AddressModel.m */; };
+		382723E72AE2940200BABB24 /* AddressViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723E62AE2940200BABB24 /* AddressViewModel.m */; };
+		382723EA2AE2B17A00BABB24 /* AddressBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723E92AE2B17A00BABB24 /* AddressBottomView.m */; };
+		382723F12AE2BA8000BABB24 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723F02AE2BA8000BABB24 /* SettingViewController.m */; };
+		382723FA2AE2BEB800BABB24 /* ClearCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723F82AE2BEB300BABB24 /* ClearCacheTool.m */; };
+		382723FF2AE2C26200BABB24 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723FE2AE2C26200BABB24 /* SettingCell.m */; };
 		B993043327D75E0EB77E92C0 /* Pods_MataShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C125973423803486C58BD /* Pods_MataShop.framework */; };
 		C50625932AAF5DAB00F14680 /* 1170x2532.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625842AAF5DAA00F14680 /* 1170x2532.png */; };
 		C50625942AAF5DAB00F14680 /* 320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625852AAF5DAA00F14680 /* 320x480.png */; };
@@ -998,6 +1008,26 @@
 		02044D4057B2EEF3ACE949CB /* Pods-MataShopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopTests.debug.xcconfig"; path = "Target Support Files/Pods-MataShopTests/Pods-MataShopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		36B1F4ECAB285B2B36724BDE /* Pods-MataShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShop.release.xcconfig"; path = "Target Support Files/Pods-MataShop/Pods-MataShop.release.xcconfig"; sourceTree = "<group>"; };
 		380C125973423803486C58BD /* Pods_MataShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MataShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3827226B2AE2506400BABB24 /* MSMineSectionHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineSectionHeader.h; sourceTree = "<group>"; };
+		3827226C2AE2506400BABB24 /* MSMineSectionHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMineSectionHeader.m; sourceTree = "<group>"; };
+		382723D72AE2873D00BABB24 /* AddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressViewController.h; sourceTree = "<group>"; };
+		382723D82AE2873D00BABB24 /* AddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressViewController.m; sourceTree = "<group>"; };
+		382723DA2AE2875100BABB24 /* AddressItemViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressItemViewModel.h; sourceTree = "<group>"; };
+		382723DB2AE2875100BABB24 /* AddressItemViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressItemViewModel.m; sourceTree = "<group>"; };
+		382723DF2AE291D500BABB24 /* AddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressCell.h; sourceTree = "<group>"; };
+		382723E02AE291D500BABB24 /* AddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressCell.m; sourceTree = "<group>"; };
+		382723E22AE293DE00BABB24 /* AddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressModel.h; sourceTree = "<group>"; };
+		382723E32AE293DE00BABB24 /* AddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressModel.m; sourceTree = "<group>"; };
+		382723E52AE2940200BABB24 /* AddressViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressViewModel.h; sourceTree = "<group>"; };
+		382723E62AE2940200BABB24 /* AddressViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressViewModel.m; sourceTree = "<group>"; };
+		382723E82AE2B17A00BABB24 /* AddressBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressBottomView.h; sourceTree = "<group>"; };
+		382723E92AE2B17A00BABB24 /* AddressBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressBottomView.m; sourceTree = "<group>"; };
+		382723EF2AE2BA8000BABB24 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		382723F02AE2BA8000BABB24 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		382723F82AE2BEB300BABB24 /* ClearCacheTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearCacheTool.m; sourceTree = "<group>"; };
+		382723F92AE2BEB700BABB24 /* ClearCacheTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearCacheTool.h; sourceTree = "<group>"; };
+		382723FD2AE2C26200BABB24 /* SettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
+		382723FE2AE2C26200BABB24 /* SettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
 		3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MataShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B8BC338A628F598A124F4E /* Pods-MataShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopTests.release.xcconfig"; path = "Target Support Files/Pods-MataShopTests/Pods-MataShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		B89C6B5C269ED0FC52F8B100 /* Pods-MataShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShop.debug.xcconfig"; path = "Target Support Files/Pods-MataShop/Pods-MataShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2814,6 +2844,94 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		382723D32AE285CF00BABB24 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				382723DE2AE291B400BABB24 /* View */,
+				382723DD2AE28C1400BABB24 /* Model */,
+				382723D62AE2870400BABB24 /* ViewModell */,
+				382723D52AE285F800BABB24 /* Controller */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		382723D52AE285F800BABB24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				382723D72AE2873D00BABB24 /* AddressViewController.h */,
+				382723D82AE2873D00BABB24 /* AddressViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		382723D62AE2870400BABB24 /* ViewModell */ = {
+			isa = PBXGroup;
+			children = (
+				382723DA2AE2875100BABB24 /* AddressItemViewModel.h */,
+				382723DB2AE2875100BABB24 /* AddressItemViewModel.m */,
+				382723E52AE2940200BABB24 /* AddressViewModel.h */,
+				382723E62AE2940200BABB24 /* AddressViewModel.m */,
+			);
+			path = ViewModell;
+			sourceTree = "<group>";
+		};
+		382723DD2AE28C1400BABB24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				382723E22AE293DE00BABB24 /* AddressModel.h */,
+				382723E32AE293DE00BABB24 /* AddressModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		382723DE2AE291B400BABB24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				382723DF2AE291D500BABB24 /* AddressCell.h */,
+				382723E02AE291D500BABB24 /* AddressCell.m */,
+				382723E82AE2B17A00BABB24 /* AddressBottomView.h */,
+				382723E92AE2B17A00BABB24 /* AddressBottomView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		382723EB2AE2BA5A00BABB24 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				382723FC2AE2C25000BABB24 /* View */,
+				382723FB2AE2BEBC00BABB24 /* ViewModel */,
+				382723EC2AE2BA6100BABB24 /* Controller */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		382723EC2AE2BA6100BABB24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				382723EF2AE2BA8000BABB24 /* SettingViewController.h */,
+				382723F02AE2BA8000BABB24 /* SettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		382723FB2AE2BEBC00BABB24 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				382723F92AE2BEB700BABB24 /* ClearCacheTool.h */,
+				382723F82AE2BEB300BABB24 /* ClearCacheTool.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		382723FC2AE2C25000BABB24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				382723FD2AE2C26200BABB24 /* SettingCell.h */,
+				382723FE2AE2C26200BABB24 /* SettingCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C520F22B2AB38CF700142DCC /* WMZBanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -3368,6 +3486,8 @@
 				C59A35652AD79F990002741E /* MSMineCollectionReusableView.jpg */,
 				C5329FE52ABF10CB004294E0 /* MSMineCollectionReusableView.h */,
 				C5329FE62ABF10CB004294E0 /* MSMineCollectionReusableView.m */,
+				3827226B2AE2506400BABB24 /* MSMineSectionHeader.h */,
+				3827226C2AE2506400BABB24 /* MSMineSectionHeader.m */,
 			);
 			path = MSMineCollectionReusableView;
 			sourceTree = "<group>";
@@ -7929,6 +8049,8 @@
 		C561D5342AAC83E800E28603 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				382723EB2AE2BA5A00BABB24 /* Setting */,
+				382723D32AE285CF00BABB24 /* Address */,
 				C5ACF93F2AD4944700316387 /* 个人中心.jpg */,
 				C5329FD72ABF0FB7004294E0 /* View */,
 				C561D9912AAC9A5900E28603 /* ViewController */,
@@ -11064,6 +11186,7 @@
 				C561D31D2AAC7E7A00E28603 /* TransitionAnimation.m in Sources */,
 				C561D48A2AAC7E7B00E28603 /* KeychainHelper.m in Sources */,
 				C561D3FC2AAC7E7B00E28603 /* UICollectionHeaderFooterView.m in Sources */,
+				382723FA2AE2BEB800BABB24 /* ClearCacheTool.m in Sources */,
 				C561D97C2AAC917900E28603 /* BaiShaETProjGestureLoginVC.m in Sources */,
 				C561D3E72AAC7E7B00E28603 /* BaseView.m in Sources */,
 				C561D3DA2AAC7E7B00E28603 /* RBCLikeButton.m in Sources */,
@@ -11078,6 +11201,7 @@
 				C5CFE7242AB0934F00D0F225 /* MSProdSelectModel.m in Sources */,
 				C561D4572AAC7E7B00E28603 /* NSNumber+Extra.m in Sources */,
 				C561D3232AAC7E7A00E28603 /* UITabBar+Ex.m in Sources */,
+				382723E72AE2940200BABB24 /* AddressViewModel.m in Sources */,
 				C520F6362AB3975800142DCC /* YTKUrlArgumentsFilter.m in Sources */,
 				C561CE032AAC7CE200E28603 /* ZWPullMenuCell.m in Sources */,
 				C561D3B82AAC7E7A00E28603 /* UIImage+Tailor.m in Sources */,
@@ -11127,6 +11251,7 @@
 				C561D6AA2AAC862000E28603 /* DDResponseModel.m in Sources */,
 				C54016362ADBED5B0059DE6A /* MSMomentsDetailVC.m in Sources */,
 				C561D4A42AAC7E7B00E28603 /* JobsMagicTextField.m in Sources */,
+				382723FF2AE2C26200BABB24 /* SettingCell.m in Sources */,
 				C5CFEA112AB255B500D0F225 /* MS3rdShopLinkView.m in Sources */,
 				C561D3422AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_10.m in Sources */,
 				C561D4852AAC7E7B00E28603 /* NSObject+Notification.m in Sources */,
@@ -11236,6 +11361,7 @@
 				C53F698C2AD0DB8200B51391 /* NSObject+NSMutableParagraphStyle.m in Sources */,
 				C561D3F32AAC7E7B00E28603 /* UIView+UIBackgroundConfig.m in Sources */,
 				C561D42E2AAC7E7B00E28603 /* MJRefreshConfigModel.m in Sources */,
+				382723E42AE293DE00BABB24 /* AddressModel.m in Sources */,
 				C5FAF8C02AD974E400100EDE /* MSRechargeVC.m in Sources */,
 				C5E015CB2AAE1DD9005ABE09 /* LunarFormatter.m in Sources */,
 				C561D3BC2AAC7E7A00E28603 /* UIScrollView+AnimationKit.m in Sources */,
@@ -11265,6 +11391,7 @@
 				C561D3022AAC7E7A00E28603 /* JobsTabBarControllerConfig.m in Sources */,
 				C5CFE53E2AB0550700D0F225 /* MSPromotionIncentiveVC.m in Sources */,
 				C561D4272AAC7E7B00E28603 /* UIViewController+EmptyData.m in Sources */,
+				382723EA2AE2B17A00BABB24 /* AddressBottomView.m in Sources */,
 				C561D4872AAC7E7B00E28603 /* NSObject+Sound.m in Sources */,
 				C5D71F3A2AC22EE800DD8938 /* KTVHCDataCacheItemZone.m in Sources */,
 				C561D9842AAC929000E28603 /* BaiShaETProjVIPSubModel.m in Sources */,
@@ -11291,6 +11418,7 @@
 				C561D4252AAC7E7B00E28603 /* UIViewController+Lottie.m in Sources */,
 				C5399F7A2AD622B200C8A5E3 /* TKPermissionCamera.m in Sources */,
 				C561D65B2AAC862000E28603 /* NSObject+BaiShaETProjCheck.m in Sources */,
+				382723E12AE291D500BABB24 /* AddressCell.m in Sources */,
 				C561D4742AAC7E7B00E28603 /* NSObject+SPAlertController.m in Sources */,
 				C561D3002AAC7E7A00E28603 /* JobsTabBarItem.m in Sources */,
 				C5ACFA222AD4AE1A00316387 /* MSOrderTBVCell.m in Sources */,
@@ -11322,6 +11450,7 @@
 				C520F63A2AB3975800142DCC /* YTKAnimatingRequestAccessory.m in Sources */,
 				C553D1E92ACA4E1C00F9CEA1 /* MSCommentTBVCell.m in Sources */,
 				C5729A972AB591E10084EAFC /* MSInternalRecruitmentVC.m in Sources */,
+				3827226D2AE2506400BABB24 /* MSMineSectionHeader.m in Sources */,
 				C561D4192AAC7E7B00E28603 /* NSString+Replace.m in Sources */,
 				C553D4AF2ACA6AA700F9CEA1 /* MSCommentTableHeaderFooterView.m in Sources */,
 				C5D71F352AC22EE800DD8938 /* KTVHCDataStorage.m in Sources */,
@@ -11361,6 +11490,7 @@
 				C52F30572AC036B200BB5549 /* NSNotificationCenter+JobsBlock.m in Sources */,
 				C5D71F462AC22EE800DD8938 /* KTVHTTPCache.m in Sources */,
 				C561D35A2AAC7E7A00E28603 /* JobsHotLabelWithMultiLine.m in Sources */,
+				382723D92AE2873D00BABB24 /* AddressViewController.m in Sources */,
 				C569E5602AD24F87000F4DE3 /* MSMyInfoStyle3TBVCell.m in Sources */,
 				C59FE5A72AD1FEA3005F3DDE /* MSProdListVC.m in Sources */,
 				C561D40F2AAC7E7B00E28603 /* UIImageView+GIF.m in Sources */,
@@ -11481,6 +11611,7 @@
 				C561D4632AAC7E7B00E28603 /* JobsHeaderFooterViewModel.m in Sources */,
 				C5D71F402AC22EE800DD8938 /* KTVHCDataLoader.m in Sources */,
 				C561D49E2AAC7E7B00E28603 /* UITextField+Extend.m in Sources */,
+				382723DC2AE2875100BABB24 /* AddressItemViewModel.m in Sources */,
 				C561D40A2AAC7E7B00E28603 /* JobsBtnStyleCVCell.m in Sources */,
 				C561D3222AAC7E7A00E28603 /* UITabBar+TLAnimation.m in Sources */,
 				C5D71F332AC22EE800DD8938 /* KTVHCDataResponse.m in Sources */,
@@ -11501,6 +11632,7 @@
 				C561D3012AAC7E7A00E28603 /* UITabBarItem+TLAnimation.m in Sources */,
 				C5ACFCA22AD509B300316387 /* MSForHotTopicCVCell.m in Sources */,
 				C561D3D22AAC7E7B00E28603 /* UIButton+Animation.m in Sources */,
+				382723F12AE2BA8000BABB24 /* SettingViewController.m in Sources */,
 				C561D4A12AAC7E7B00E28603 /* CJTextField.m in Sources */,
 				C561D53D2AAC845600E28603 /* MSMyFindVC.m in Sources */,
 				C5CFE91A2AB237BD00D0F225 /* MSSearchView.m in Sources */,
@@ -11763,7 +11895,7 @@
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Add tracks to your music library.";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "若不允许，你将无法使用联机服务";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "若不允许，你将无法使用联机服务";
-				INFOPLIST_KEY_NSCalendarsUsageDescription = "若不允许，你将无法使用添加日历功能";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = 111;
 				INFOPLIST_KEY_NSCameraUsageDescription = "若不允许，你将无法使用拍照功能";
 				INFOPLIST_KEY_NSContactsUsageDescription = "通讯录信息仅用于查找联系人，并会得到严格保密";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "App需要您的同意，才能访问您的面容识别功能，用于安全验证";
@@ -11784,8 +11916,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -11817,7 +11948,7 @@
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Add tracks to your music library.";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "若不允许，你将无法使用联机服务";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "若不允许，你将无法使用联机服务";
-				INFOPLIST_KEY_NSCalendarsUsageDescription = "若不允许，你将无法使用添加日历功能";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = 111;
 				INFOPLIST_KEY_NSCameraUsageDescription = "若不允许，你将无法使用拍照功能";
 				INFOPLIST_KEY_NSContactsUsageDescription = "通讯录信息仅用于查找联系人，并会得到严格保密";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "App需要您的同意，才能访问您的面容识别功能，用于安全验证";
@@ -11838,8 +11969,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

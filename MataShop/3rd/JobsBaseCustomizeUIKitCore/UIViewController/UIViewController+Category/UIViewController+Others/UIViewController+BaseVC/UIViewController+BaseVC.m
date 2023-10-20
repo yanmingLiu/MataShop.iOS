@@ -27,13 +27,13 @@
     self.gk_navBackgroundColor = self.viewModel.bgCor;
     self.gk_navBackgroundImage = self.viewModel.bgImage;
     self.gk_navLineHidden = YES;
-    self.gk_navItemLeftSpace = JobsWidth(20);
+    self.gk_navItemLeftSpace = 15;
     [self hideNavLine];
 }
 /// 配置GKNavigationBar的返回按钮
 -(void)setGKNavBackBtn{
     if (self.navigationController.viewControllers.count - 1) {//从上个页面推过来才有返回键，直接的个人中心是没有的
-        self.gk_backImage = JobsIMG(@"全局返回箭头");/// 设置返回按钮图片（优先级高于gk_backStyle）
+//        self.gk_backImage = JobsIMG(@"全局返回箭头");/// 设置返回按钮图片（优先级高于gk_backStyle）
         self.gk_backStyle = GKNavigationBarBackStyleBlack;
         self.gk_navLeftBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:self.backBtnCategory];
     }

@@ -160,13 +160,13 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section {
 - (CGFloat)collectionView:(UICollectionView *)collectionView
                    layout:(UICollectionViewLayout *)collectionViewLayout
 minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return JobsWidth(7);
+    return 6;
 }
 /// 内间距
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView
                        layout:(UICollectionViewLayout *)collectionViewLayout
        insetForSectionAtIndex:(NSInteger)section {
-    return jobsSameEdgeInset(JobsWidth(12));
+    return jobsSameEdgeInset(JobsWidth(10));
 }
 #pragma mark —— lazyLoad
 -(UICollectionViewFlowLayout *)layout{
