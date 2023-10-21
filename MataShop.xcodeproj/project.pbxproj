@@ -17,6 +17,8 @@
 		382723F12AE2BA8000BABB24 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723F02AE2BA8000BABB24 /* SettingViewController.m */; };
 		382723FA2AE2BEB800BABB24 /* ClearCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723F82AE2BEB300BABB24 /* ClearCacheTool.m */; };
 		382723FF2AE2C26200BABB24 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723FE2AE2C26200BABB24 /* SettingCell.m */; };
+		382724022AE3602200BABB24 /* AddressEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382724012AE3602200BABB24 /* AddressEditViewController.m */; };
+		382724042AE3604D00BABB24 /* AddressStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382724032AE3604D00BABB24 /* AddressStoryboard.storyboard */; };
 		B993043327D75E0EB77E92C0 /* Pods_MataShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C125973423803486C58BD /* Pods_MataShop.framework */; };
 		C50625932AAF5DAB00F14680 /* 1170x2532.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625842AAF5DAA00F14680 /* 1170x2532.png */; };
 		C50625942AAF5DAB00F14680 /* 320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625852AAF5DAA00F14680 /* 320x480.png */; };
@@ -1028,6 +1030,9 @@
 		382723F92AE2BEB700BABB24 /* ClearCacheTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearCacheTool.h; sourceTree = "<group>"; };
 		382723FD2AE2C26200BABB24 /* SettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
 		382723FE2AE2C26200BABB24 /* SettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
+		382724002AE3602200BABB24 /* AddressEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressEditViewController.h; sourceTree = "<group>"; };
+		382724012AE3602200BABB24 /* AddressEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressEditViewController.m; sourceTree = "<group>"; };
+		382724032AE3604D00BABB24 /* AddressStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddressStoryboard.storyboard; sourceTree = "<group>"; };
 		3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MataShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B8BC338A628F598A124F4E /* Pods-MataShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopTests.release.xcconfig"; path = "Target Support Files/Pods-MataShopTests/Pods-MataShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		B89C6B5C269ED0FC52F8B100 /* Pods-MataShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShop.debug.xcconfig"; path = "Target Support Files/Pods-MataShop/Pods-MataShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2860,6 +2865,9 @@
 			children = (
 				382723D72AE2873D00BABB24 /* AddressViewController.h */,
 				382723D82AE2873D00BABB24 /* AddressViewController.m */,
+				382724002AE3602200BABB24 /* AddressEditViewController.h */,
+				382724012AE3602200BABB24 /* AddressEditViewController.m */,
+				382724032AE3604D00BABB24 /* AddressStoryboard.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -10829,6 +10837,7 @@
 				C561D5772AAC84DF00E28603 /* 安全区域.png in Resources */,
 				C5E0116C2AADE1CD005ABE09 /* 79@2x.gif in Resources */,
 				C561D3752AAC7E7A00E28603 /* 9@2x.png in Resources */,
+				382724042AE3604D00BABB24 /* AddressStoryboard.storyboard in Resources */,
 				C561D3182AAC7E7A00E28603 /* tab_message_animate.json in Resources */,
 				C5E011CE2AADE1CD005ABE09 /* 149@2x.gif in Resources */,
 				C520FC162AB3C36D00142DCC /* data.json in Resources */,
@@ -11154,6 +11163,7 @@
 				C561D3322AAC7E7A00E28603 /* JobsAppDoorInputViewBaseStyle_6.m in Sources */,
 				C5D71F502AC22EE800DD8938 /* WebSocket.m in Sources */,
 				C561D4372AAC7E7B00E28603 /* UITableView+RegisterClass.m in Sources */,
+				382724022AE3602200BABB24 /* AddressEditViewController.m in Sources */,
 				C561D4522AAC7E7B00E28603 /* NSCache+Extra.m in Sources */,
 				C5E7BC5D2AC3EEB300236FC6 /* MSPayView.m in Sources */,
 				C561D4422AAC7E7B00E28603 /* NSArray+Tools.m in Sources */,

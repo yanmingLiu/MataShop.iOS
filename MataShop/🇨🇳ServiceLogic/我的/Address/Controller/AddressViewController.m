@@ -9,11 +9,13 @@
 #import "AddressCell.h"
 #import "AddressViewModel.h"
 #import "AddressBottomView.h"
+#import "AddressEditViewController.h"
 
 @interface AddressViewController () 
 <UITableViewDataSource,
 UITableViewDelegate,
-AddressCellDelegate>
+AddressCellDelegate,
+AddressEditViewControllerDelegate>
 
 @property(nonatomic, strong) AddressBottomView *bottomView;
 @property(nonatomic, strong) UITableView *tableView;
@@ -141,19 +143,29 @@ static CGFloat const bottomH = 49;
 }
 
 - (void)onTapEdit:(AddressItemViewModel *)viewModel {
-    // MARK: - TODO api
-
+    AddressEditViewController *vc = [[AddressEditViewController alloc] init];
+    vc.isEdit = YES;
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Actions
 
 - (void)addAction {
-    // MARK: - TODO api
+    AddressEditViewController *vc = [[AddressEditViewController alloc] init];
+    vc.isEdit = YES;
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+#pragma mark - AddressEditViewControllerDelegate
+
+- (void)saveAddressSuccess {
     __weak typeof(self) wSelf = self;
     [self.vm addAddress:^{
         [wSelf.tableView reloadData];
     }];
 }
-
 
 @end
