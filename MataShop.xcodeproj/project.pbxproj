@@ -21,6 +21,8 @@
 		382724042AE3604D00BABB24 /* AddressStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382724032AE3604D00BABB24 /* AddressStoryboard.storyboard */; };
 		382724092AE39E3B00BABB24 /* RealNameAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382724082AE39E3B00BABB24 /* RealNameAuthViewController.m */; };
 		3827240B2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827240A2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard */; };
+		3827240F2AE3DAD500BABB24 /* FeedbackStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827240E2AE3DAD500BABB24 /* FeedbackStoryboard.storyboard */; };
+		382724122AE3DAE000BABB24 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382724112AE3DAE000BABB24 /* FeedbackViewController.m */; };
 		B993043327D75E0EB77E92C0 /* Pods_MataShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C125973423803486C58BD /* Pods_MataShop.framework */; };
 		C50625932AAF5DAB00F14680 /* 1170x2532.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625842AAF5DAA00F14680 /* 1170x2532.png */; };
 		C50625942AAF5DAB00F14680 /* 320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625852AAF5DAA00F14680 /* 320x480.png */; };
@@ -1038,6 +1040,9 @@
 		382724072AE39E3B00BABB24 /* RealNameAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealNameAuthViewController.h; sourceTree = "<group>"; };
 		382724082AE39E3B00BABB24 /* RealNameAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealNameAuthViewController.m; sourceTree = "<group>"; };
 		3827240A2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RealNameAuthStoryboard.storyboard; sourceTree = "<group>"; };
+		3827240E2AE3DAD500BABB24 /* FeedbackStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackStoryboard.storyboard; sourceTree = "<group>"; };
+		382724102AE3DAE000BABB24 /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		382724112AE3DAE000BABB24 /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MataShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B8BC338A628F598A124F4E /* Pods-MataShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopTests.release.xcconfig"; path = "Target Support Files/Pods-MataShopTests/Pods-MataShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		B89C6B5C269ED0FC52F8B100 /* Pods-MataShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShop.debug.xcconfig"; path = "Target Support Files/Pods-MataShop/Pods-MataShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2959,6 +2964,24 @@
 				382724072AE39E3B00BABB24 /* RealNameAuthViewController.h */,
 				382724082AE39E3B00BABB24 /* RealNameAuthViewController.m */,
 				3827240A2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3827240C2AE3DABA00BABB24 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				3827240D2AE3DAC300BABB24 /* Controller */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		3827240D2AE3DAC300BABB24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3827240E2AE3DAD500BABB24 /* FeedbackStoryboard.storyboard */,
+				382724102AE3DAE000BABB24 /* FeedbackViewController.h */,
+				382724112AE3DAE000BABB24 /* FeedbackViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -8080,6 +8103,7 @@
 		C561D5342AAC83E800E28603 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				3827240C2AE3DABA00BABB24 /* Feedback */,
 				382724052AE39DE300BABB24 /* RealNameAuth */,
 				382723EB2AE2BA5A00BABB24 /* Setting */,
 				382723D32AE285CF00BABB24 /* Address */,
@@ -10853,6 +10877,7 @@
 				C5E011852AADE1CD005ABE09 /* 56@2x.gif in Resources */,
 				C5E011402AADE1CD005ABE09 /* 274@2x.gif in Resources */,
 				C561D4682AAC7E7B00E28603 /* DeleteSystemUITabBarButton.md in Resources */,
+				3827240F2AE3DAD500BABB24 /* FeedbackStoryboard.storyboard in Resources */,
 				C5E0115D2AADE1CD005ABE09 /* 157@2x.gif in Resources */,
 				C5E017592AAF2F15005ABE09 /* 储宝.xcassets in Resources */,
 				C5E011622AADE1CD005ABE09 /* 39@2x.gif in Resources */,
@@ -11357,6 +11382,7 @@
 				C5399F732AD622B200C8A5E3 /* TKPermissionHome.m in Sources */,
 				C561D47F2AAC7E7B00E28603 /* NSObject+Time.m in Sources */,
 				C561D49F2AAC7E7B00E28603 /* UITextField+Placeholder.m in Sources */,
+				382724122AE3DAE000BABB24 /* FeedbackViewController.m in Sources */,
 				C5E017652AAF3676005ABE09 /* MSChuBaoView1.m in Sources */,
 				C5ACFB812AD4E4A100316387 /* MSCustomerServiceTBVCell.m in Sources */,
 				C561D42A2AAC7E7B00E28603 /* UIViewController+GifImageView.m in Sources */,

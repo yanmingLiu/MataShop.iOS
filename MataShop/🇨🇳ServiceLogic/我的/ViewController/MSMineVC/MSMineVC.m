@@ -11,6 +11,7 @@
 #import "AddressViewController.h"
 #import "SettingViewController.h"
 #import "RealNameAuthViewController.h"
+#import "FeedbackViewController.h"
 
 @interface MSMineVC () <MSMineCollectionReusableViewDelegate>
 /// UI
@@ -153,7 +154,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             [self forceComingToPushVC:MSPersonalDataVC.new requestParams:nil];
         }
         if(viewModel.textModel.text.isEqualToString(Internationalization(@"意见反馈"))){
-            
+            FeedbackViewController *vc = [[FeedbackViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         if(viewModel.textModel.text.isEqualToString(Internationalization(@"消息通知"))){
             
