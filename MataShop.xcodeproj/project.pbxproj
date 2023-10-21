@@ -19,6 +19,8 @@
 		382723FF2AE2C26200BABB24 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723FE2AE2C26200BABB24 /* SettingCell.m */; };
 		382724022AE3602200BABB24 /* AddressEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382724012AE3602200BABB24 /* AddressEditViewController.m */; };
 		382724042AE3604D00BABB24 /* AddressStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382724032AE3604D00BABB24 /* AddressStoryboard.storyboard */; };
+		382724092AE39E3B00BABB24 /* RealNameAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382724082AE39E3B00BABB24 /* RealNameAuthViewController.m */; };
+		3827240B2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827240A2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard */; };
 		B993043327D75E0EB77E92C0 /* Pods_MataShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C125973423803486C58BD /* Pods_MataShop.framework */; };
 		C50625932AAF5DAB00F14680 /* 1170x2532.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625842AAF5DAA00F14680 /* 1170x2532.png */; };
 		C50625942AAF5DAB00F14680 /* 320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625852AAF5DAA00F14680 /* 320x480.png */; };
@@ -1033,6 +1035,9 @@
 		382724002AE3602200BABB24 /* AddressEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressEditViewController.h; sourceTree = "<group>"; };
 		382724012AE3602200BABB24 /* AddressEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressEditViewController.m; sourceTree = "<group>"; };
 		382724032AE3604D00BABB24 /* AddressStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddressStoryboard.storyboard; sourceTree = "<group>"; };
+		382724072AE39E3B00BABB24 /* RealNameAuthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealNameAuthViewController.h; sourceTree = "<group>"; };
+		382724082AE39E3B00BABB24 /* RealNameAuthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealNameAuthViewController.m; sourceTree = "<group>"; };
+		3827240A2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RealNameAuthStoryboard.storyboard; sourceTree = "<group>"; };
 		3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MataShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B8BC338A628F598A124F4E /* Pods-MataShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopTests.release.xcconfig"; path = "Target Support Files/Pods-MataShopTests/Pods-MataShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		B89C6B5C269ED0FC52F8B100 /* Pods-MataShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShop.debug.xcconfig"; path = "Target Support Files/Pods-MataShop/Pods-MataShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2938,6 +2943,24 @@
 				382723FE2AE2C26200BABB24 /* SettingCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		382724052AE39DE300BABB24 /* RealNameAuth */ = {
+			isa = PBXGroup;
+			children = (
+				382724062AE39E2500BABB24 /* Controller */,
+			);
+			path = RealNameAuth;
+			sourceTree = "<group>";
+		};
+		382724062AE39E2500BABB24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				382724072AE39E3B00BABB24 /* RealNameAuthViewController.h */,
+				382724082AE39E3B00BABB24 /* RealNameAuthViewController.m */,
+				3827240A2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		C520F22B2AB38CF700142DCC /* WMZBanner */ = {
@@ -8057,6 +8080,7 @@
 		C561D5342AAC83E800E28603 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				382724052AE39DE300BABB24 /* RealNameAuth */,
 				382723EB2AE2BA5A00BABB24 /* Setting */,
 				382723D32AE285CF00BABB24 /* Address */,
 				C5ACF93F2AD4944700316387 /* 个人中心.jpg */,
@@ -10949,6 +10973,7 @@
 				C561D3152AAC7E7A00E28603 /* fangzi.json in Resources */,
 				C5E011B52AADE1CD005ABE09 /* 118@2x.gif in Resources */,
 				C5E0119A2AADE1CD005ABE09 /* 63@2x.gif in Resources */,
+				3827240B2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard in Resources */,
 				C5E011882AADE1CD005ABE09 /* newemoji_010.gif in Resources */,
 				C561CDFE2AAC7CE200E28603 /* CasinoFlowDetailsVC_m in Resources */,
 				C561D37C2AAC7E7A00E28603 /* 3@2x.png in Resources */,
@@ -11589,6 +11614,7 @@
 				C561D4B22AAC7EC200E28603 /* AppDelegate+Networking.m in Sources */,
 				C561D44D2AAC7E7B00E28603 /* KFZShopCatoryFlowLayput.m in Sources */,
 				C561D3C12AAC7E7B00E28603 /* UILabel+Extra.m in Sources */,
+				382724092AE39E3B00BABB24 /* RealNameAuthViewController.m in Sources */,
 				C520F23E2AB38CF700142DCC /* WMZBannerOverLayout.m in Sources */,
 				C561CE582AAC7CE200E28603 /* RACEXTRuntimeExtensions.m in Sources */,
 				C561D49A2AAC7E7B00E28603 /* NSObject+CallBackInfoByBlock.m in Sources */,

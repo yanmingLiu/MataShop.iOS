@@ -221,6 +221,7 @@
     self.releaseBtn.enabled = photoDataArr.count || inputDataString.length;
     self.releaseBtn.normalBackgroundImage = self.releaseBtn.enabled ? JobsIMG(@"发布") : JobsIMG(@"未发布");
 }
+
 #pragma mark —— HXPhotoViewDelegate
 /// 在这里获取到点选的资料
 - (void)photoView:(HXPhotoView *)photoView

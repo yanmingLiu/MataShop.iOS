@@ -10,6 +10,7 @@
 #import "MSInternalRecruitmentVC.h"
 #import "AddressViewController.h"
 #import "SettingViewController.h"
+#import "RealNameAuthViewController.h"
 
 @interface MSMineVC () <MSMineCollectionReusableViewDelegate>
 /// UI
@@ -127,7 +128,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             
         }
         if(viewModel.textModel.text.isEqualToString(Internationalization(@"实名认证"))){
-            
+            RealNameAuthViewController *vc = [[RealNameAuthViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         if(viewModel.textModel.text.isEqualToString(Internationalization(@"邀请好友"))){
             
