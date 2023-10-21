@@ -23,6 +23,10 @@
 		3827240B2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827240A2AE39E4F00BABB24 /* RealNameAuthStoryboard.storyboard */; };
 		3827240F2AE3DAD500BABB24 /* FeedbackStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3827240E2AE3DAD500BABB24 /* FeedbackStoryboard.storyboard */; };
 		382724122AE3DAE000BABB24 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382724112AE3DAE000BABB24 /* FeedbackViewController.m */; };
+		382724192AE3E1E500BABB24 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382724182AE3E1E500BABB24 /* NotificationViewController.m */; };
+		3827241C2AE3E22500BABB24 /* NotificationViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3827241B2AE3E22500BABB24 /* NotificationViewModel.m */; };
+		3827241F2AE3E26300BABB24 /* NotificationItemViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3827241E2AE3E26300BABB24 /* NotificationItemViewModel.m */; };
+		382724222AE3E30100BABB24 /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 382724212AE3E30100BABB24 /* NotificationCell.m */; };
 		B993043327D75E0EB77E92C0 /* Pods_MataShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C125973423803486C58BD /* Pods_MataShop.framework */; };
 		C50625932AAF5DAB00F14680 /* 1170x2532.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625842AAF5DAA00F14680 /* 1170x2532.png */; };
 		C50625942AAF5DAB00F14680 /* 320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = C50625852AAF5DAA00F14680 /* 320x480.png */; };
@@ -1043,6 +1047,14 @@
 		3827240E2AE3DAD500BABB24 /* FeedbackStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackStoryboard.storyboard; sourceTree = "<group>"; };
 		382724102AE3DAE000BABB24 /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		382724112AE3DAE000BABB24 /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		382724172AE3E1E500BABB24 /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		382724182AE3E1E500BABB24 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		3827241A2AE3E22500BABB24 /* NotificationViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewModel.h; sourceTree = "<group>"; };
+		3827241B2AE3E22500BABB24 /* NotificationViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewModel.m; sourceTree = "<group>"; };
+		3827241D2AE3E26300BABB24 /* NotificationItemViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationItemViewModel.h; sourceTree = "<group>"; };
+		3827241E2AE3E26300BABB24 /* NotificationItemViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationItemViewModel.m; sourceTree = "<group>"; };
+		382724202AE3E30100BABB24 /* NotificationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCell.h; sourceTree = "<group>"; };
+		382724212AE3E30100BABB24 /* NotificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCell.m; sourceTree = "<group>"; };
 		3C139C5917950ABAA4BE876F /* Pods_MataShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MataShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B8BC338A628F598A124F4E /* Pods-MataShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopTests.release.xcconfig"; path = "Target Support Files/Pods-MataShopTests/Pods-MataShopTests.release.xcconfig"; sourceTree = "<group>"; };
 		B89C6B5C269ED0FC52F8B100 /* Pods-MataShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShop.debug.xcconfig"; path = "Target Support Files/Pods-MataShop/Pods-MataShop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2984,6 +2996,45 @@
 				382724112AE3DAE000BABB24 /* FeedbackViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		382724132AE3E1B100BABB24 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				382724162AE3E1D300BABB24 /* View */,
+				382724152AE3E1CA00BABB24 /* ViewModell */,
+				382724142AE3E1BD00BABB24 /* Controller */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		382724142AE3E1BD00BABB24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				382724172AE3E1E500BABB24 /* NotificationViewController.h */,
+				382724182AE3E1E500BABB24 /* NotificationViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		382724152AE3E1CA00BABB24 /* ViewModell */ = {
+			isa = PBXGroup;
+			children = (
+				3827241A2AE3E22500BABB24 /* NotificationViewModel.h */,
+				3827241B2AE3E22500BABB24 /* NotificationViewModel.m */,
+				3827241D2AE3E26300BABB24 /* NotificationItemViewModel.h */,
+				3827241E2AE3E26300BABB24 /* NotificationItemViewModel.m */,
+			);
+			path = ViewModell;
+			sourceTree = "<group>";
+		};
+		382724162AE3E1D300BABB24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				382724202AE3E30100BABB24 /* NotificationCell.h */,
+				382724212AE3E30100BABB24 /* NotificationCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C520F22B2AB38CF700142DCC /* WMZBanner */ = {
@@ -8103,6 +8154,7 @@
 		C561D5342AAC83E800E28603 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				382724132AE3E1B100BABB24 /* Notification */,
 				3827240C2AE3DABA00BABB24 /* Feedback */,
 				382724052AE39DE300BABB24 /* RealNameAuth */,
 				382723EB2AE2BA5A00BABB24 /* Setting */,
@@ -11226,6 +11278,7 @@
 				C5432E0F2ACB2C30008F92B0 /* MSTipsMeSubVC.m in Sources */,
 				C561D3AA2AAC7E7A00E28603 /* CheckMemFreeVC.m in Sources */,
 				C561D45F2AAC7E7B00E28603 /* CADisplayLink_TimerManager.m in Sources */,
+				3827241F2AE3E26300BABB24 /* NotificationItemViewModel.m in Sources */,
 				C561D4282AAC7E7B00E28603 /* UIViewController+Shake.m in Sources */,
 				C561D4932AAC7E7B00E28603 /* NSObject+DeviceIP.m in Sources */,
 				C561CE162AAC7CE200E28603 /* JXCategoryTitleBackgroundCell.m in Sources */,
@@ -11329,6 +11382,7 @@
 				C561D3252AAC7E7A00E28603 /* JobsAppDoorModel.m in Sources */,
 				C5CFE6832AB0831800D0F225 /* MSWechatTopUpVC.m in Sources */,
 				C561D3ED2AAC7E7B00E28603 /* UIView+Gradient.m in Sources */,
+				382724222AE3E30100BABB24 /* NotificationCell.m in Sources */,
 				C561D3872AAC7E7A00E28603 /* JobsImageNumberView.m in Sources */,
 				C5399F852AD622B200C8A5E3 /* TKPermissionTracking.m in Sources */,
 				C561D53A2AAC844700E28603 /* MSMomentsVC.m in Sources */,
@@ -11345,6 +11399,7 @@
 				C561D3F22AAC7E7B00E28603 /* UIView+ViewController.m in Sources */,
 				C5D71F572AC22EE800DD8938 /* DDRange.m in Sources */,
 				C561D45B2AAC7E7B00E28603 /* UITextModel.m in Sources */,
+				3827241C2AE3E22500BABB24 /* NotificationViewModel.m in Sources */,
 				C561D3A52AAC7E7A00E28603 /* JobsBasePopupView.m in Sources */,
 				C561D4132AAC7E7B00E28603 /* NSString+Eomji.m in Sources */,
 				C561D4212AAC7E7B00E28603 /* UIViewController+XLBubbleTransition.m in Sources */,
@@ -11643,6 +11698,7 @@
 				382724092AE39E3B00BABB24 /* RealNameAuthViewController.m in Sources */,
 				C520F23E2AB38CF700142DCC /* WMZBannerOverLayout.m in Sources */,
 				C561CE582AAC7CE200E28603 /* RACEXTRuntimeExtensions.m in Sources */,
+				382724192AE3E1E500BABB24 /* NotificationViewController.m in Sources */,
 				C561D49A2AAC7E7B00E28603 /* NSObject+CallBackInfoByBlock.m in Sources */,
 				C561D35B2AAC7E7A00E28603 /* JobsHeaderFooterView.m in Sources */,
 				C5EE3D4F2AB9D1E60020BDB8 /* MSHomeGoodsView.m in Sources */,

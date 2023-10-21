@@ -12,6 +12,7 @@
 #import "SettingViewController.h"
 #import "RealNameAuthViewController.h"
 #import "FeedbackViewController.h"
+#import "NotificationViewController.h"
 
 @interface MSMineVC () <MSMineCollectionReusableViewDelegate>
 /// UI
@@ -158,7 +159,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             [self.navigationController pushViewController:vc animated:YES];
         }
         if(viewModel.textModel.text.isEqualToString(Internationalization(@"消息通知"))){
-            
+            NotificationViewController *vc = [[NotificationViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         if(viewModel.textModel.text.isEqualToString(Internationalization(@"收货地址"))){
             AddressViewController *vc = [[AddressViewController alloc] init];
