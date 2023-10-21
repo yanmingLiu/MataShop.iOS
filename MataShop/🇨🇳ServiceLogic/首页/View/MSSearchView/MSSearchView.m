@@ -118,7 +118,7 @@ static dispatch_once_t static_searchViewOnceToken;
                                                   0,
                                                   [MSSearchView viewSizeWithModel:nil].width - JobsWidth(32 + 22 + 5),// 5 是右边与self.searchBtn的距离
                                                   100);// 100 这个值写死，不用管
-        _textField.rightViewRectForBounds = CGRectMake(JobsWidth([MSSearchView viewSizeWithModel:nil].width - self.searchBtn.size.width),
+        _textField.rightViewRectForBounds = CGRectMake(JobsWidth([MSSearchView viewSizeWithModel:nil].width - self.searchBtn.size.width)-25,
                                                        rightViewY,
                                                        self.searchBtn.size.width,
                                                        self.searchBtn.size.height);
