@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041855152AE3C23F003F3EAC /* MSWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041855142AE3C23F003F3EAC /* MSWalletViewController.m */; };
+		041855192AE3C4EB003F3EAC /* MSWalletHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041855182AE3C4EB003F3EAC /* MSWalletHeadView.m */; };
+		0418551C2AE7E61E003F3EAC /* MSWalletContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418551B2AE7E61E003F3EAC /* MSWalletContentView.m */; };
+		0418551F2AE8052B003F3EAC /* MSWalletRecordVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418551E2AE8052B003F3EAC /* MSWalletRecordVCViewController.m */; };
+		041855222AE80F4A003F3EAC /* MSTopupRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041855212AE80F4A003F3EAC /* MSTopupRecordViewController.m */; };
+		041855252AE80FF2003F3EAC /* MSTopupRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041855242AE80FF2003F3EAC /* MSTopupRecordModel.m */; };
+		041855282AE810F6003F3EAC /* MSTopupRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041855272AE810F6003F3EAC /* MSTopupRecordCell.m */; };
 		3827226D2AE2506400BABB24 /* MSMineSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3827226C2AE2506400BABB24 /* MSMineSectionHeader.m */; };
 		382723D92AE2873D00BABB24 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723D82AE2873D00BABB24 /* AddressViewController.m */; };
 		382723DC2AE2875100BABB24 /* AddressItemViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723DB2AE2875100BABB24 /* AddressItemViewModel.m */; };
@@ -1016,6 +1023,20 @@
 /* Begin PBXFileReference section */
 		00C02D5733203072DE54A104 /* Pods-MataShopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopUITests.release.xcconfig"; path = "Target Support Files/Pods-MataShopUITests/Pods-MataShopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		02044D4057B2EEF3ACE949CB /* Pods-MataShopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShopTests.debug.xcconfig"; path = "Target Support Files/Pods-MataShopTests/Pods-MataShopTests.debug.xcconfig"; sourceTree = "<group>"; };
+		041855132AE3C23F003F3EAC /* MSWalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWalletViewController.h; sourceTree = "<group>"; };
+		041855142AE3C23F003F3EAC /* MSWalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWalletViewController.m; sourceTree = "<group>"; };
+		041855172AE3C4EB003F3EAC /* MSWalletHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSWalletHeadView.h; sourceTree = "<group>"; };
+		041855182AE3C4EB003F3EAC /* MSWalletHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSWalletHeadView.m; sourceTree = "<group>"; };
+		0418551A2AE7E61E003F3EAC /* MSWalletContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSWalletContentView.h; sourceTree = "<group>"; };
+		0418551B2AE7E61E003F3EAC /* MSWalletContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSWalletContentView.m; sourceTree = "<group>"; };
+		0418551D2AE8052B003F3EAC /* MSWalletRecordVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSWalletRecordVCViewController.h; sourceTree = "<group>"; };
+		0418551E2AE8052B003F3EAC /* MSWalletRecordVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSWalletRecordVCViewController.m; sourceTree = "<group>"; };
+		041855202AE80F4A003F3EAC /* MSTopupRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSTopupRecordViewController.h; sourceTree = "<group>"; };
+		041855212AE80F4A003F3EAC /* MSTopupRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTopupRecordViewController.m; sourceTree = "<group>"; };
+		041855232AE80FF1003F3EAC /* MSTopupRecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSTopupRecordModel.h; sourceTree = "<group>"; };
+		041855242AE80FF2003F3EAC /* MSTopupRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTopupRecordModel.m; sourceTree = "<group>"; };
+		041855262AE810F6003F3EAC /* MSTopupRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSTopupRecordCell.h; sourceTree = "<group>"; };
+		041855272AE810F6003F3EAC /* MSTopupRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTopupRecordCell.m; sourceTree = "<group>"; };
 		36B1F4ECAB285B2B36724BDE /* Pods-MataShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShop.release.xcconfig"; path = "Target Support Files/Pods-MataShop/Pods-MataShop.release.xcconfig"; sourceTree = "<group>"; };
 		380C125973423803486C58BD /* Pods_MataShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MataShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3827226B2AE2506400BABB24 /* MSMineSectionHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineSectionHeader.h; sourceTree = "<group>"; };
@@ -2848,6 +2869,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0418550E2AE3C1CB003F3EAC /* MSWallet */ = {
+			isa = PBXGroup;
+			children = (
+				041855132AE3C23F003F3EAC /* MSWalletViewController.h */,
+				041855142AE3C23F003F3EAC /* MSWalletViewController.m */,
+				0418551D2AE8052B003F3EAC /* MSWalletRecordVCViewController.h */,
+				0418551E2AE8052B003F3EAC /* MSWalletRecordVCViewController.m */,
+				041855202AE80F4A003F3EAC /* MSTopupRecordViewController.h */,
+				041855212AE80F4A003F3EAC /* MSTopupRecordViewController.m */,
+			);
+			path = MSWallet;
+			sourceTree = "<group>";
+		};
+		041855162AE3C4D4003F3EAC /* MSWallet */ = {
+			isa = PBXGroup;
+			children = (
+				041855172AE3C4EB003F3EAC /* MSWalletHeadView.h */,
+				041855182AE3C4EB003F3EAC /* MSWalletHeadView.m */,
+				0418551A2AE7E61E003F3EAC /* MSWalletContentView.h */,
+				0418551B2AE7E61E003F3EAC /* MSWalletContentView.m */,
+				041855232AE80FF1003F3EAC /* MSTopupRecordModel.h */,
+				041855242AE80FF2003F3EAC /* MSTopupRecordModel.m */,
+				041855262AE810F6003F3EAC /* MSTopupRecordCell.h */,
+				041855272AE810F6003F3EAC /* MSTopupRecordCell.m */,
+			);
+			path = MSWallet;
+			sourceTree = "<group>";
+		};
 		15D1355ABEB6BF59847AC26C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3576,6 +3625,7 @@
 		C5329FD72ABF0FB7004294E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				041855162AE3C4D4003F3EAC /* MSWallet */,
 				C569E5592AD24F3C000F4DE3 /* MSMyInfoStyle1TBVCell */,
 				C569E55D2AD24F76000F4DE3 /* MSMyInfoStyle2TBVCell */,
 				C569E5612AD24F8C000F4DE3 /* MSMyInfoStyle3TBVCell */,
@@ -8987,6 +9037,7 @@
 		C561D9912AAC9A5900E28603 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0418550E2AE3C1CB003F3EAC /* MSWallet */,
 				C5FF922E2AC493B000D3A386 /* MSMineVC */,
 				C5FF922F2AC493C500D3A386 /* MSMyInfoVC */,
 			);
@@ -11330,6 +11381,7 @@
 				C561D3BB2AAC7E7A00E28603 /* UIScrollView+Extra.m in Sources */,
 				C561D3192AAC7E7A00E28603 /* JobsTabbarVC.m in Sources */,
 				C561D48D2AAC7E7B00E28603 /* NSObject+IDFA.m in Sources */,
+				041855252AE80FF2003F3EAC /* MSTopupRecordModel.m in Sources */,
 				C5ACFC8D2AD4F57200316387 /* MSLastDynamicCVCell.m in Sources */,
 				C569E5582AD24F31000F4DE3 /* MSMyInfoStyle1TBVCell.m in Sources */,
 				C520F5FA2AB396F500142DCC /* JobsCommentPopUpView_viewForHeaderInSection.m in Sources */,
@@ -11346,6 +11398,7 @@
 				C561D4242AAC7E7B00E28603 /* UIViewController+JPImageresizerView.m in Sources */,
 				C561D65E2AAC862000E28603 /* DataManager.m in Sources */,
 				C561D6A02AAC862000E28603 /* BaiShaETProjTipsView05.m in Sources */,
+				041855192AE3C4EB003F3EAC /* MSWalletHeadView.m in Sources */,
 				C561D4322AAC7E7B00E28603 /* LOTAnimationMJRefreshFooter.m in Sources */,
 				C520F5F42AB396F400142DCC /* JobsCommentModel.m in Sources */,
 				C561D2FD2AAC7E7A00E28603 /* ImageCodeView.m in Sources */,
@@ -11551,6 +11604,7 @@
 				C569E55C2AD24F6F000F4DE3 /* MSMyInfoStyle2TBVCell.m in Sources */,
 				C5CFE6802AB0830D00D0F225 /* MSAlipayTopUpVC.m in Sources */,
 				C561CDFF2AAC7CE200E28603 /* FMDatabase+Manager.m in Sources */,
+				041855222AE80F4A003F3EAC /* MSTopupRecordViewController.m in Sources */,
 				C561D3682AAC7E7A00E28603 /* JobsNoticePopupView.m in Sources */,
 				C5D71F492AC22EE800DD8938 /* HTTPDynamicFileResponse.m in Sources */,
 				C561D47E2AAC7E7B00E28603 /* NSObject+RegularExpression.m in Sources */,
@@ -11561,6 +11615,7 @@
 				C5432DFA2ACB1EAE008F92B0 /* MSMyFansSubVC.m in Sources */,
 				C5D71F542AC22EE800DD8938 /* HTTPAuthenticationRequest.m in Sources */,
 				C561D9552AAC8ECB00E28603 /* BaiShaETProjUserInfoModel.m in Sources */,
+				041855152AE3C23F003F3EAC /* MSWalletViewController.m in Sources */,
 				C561D43A2AAC7E7B00E28603 /* UITableView+Expand.m in Sources */,
 				C561D92A2AAC8D8000E28603 /* BaiShaETProjChoiceStadiumView.m in Sources */,
 				C520F63A2AB3975800142DCC /* YTKAnimatingRequestAccessory.m in Sources */,
@@ -11645,6 +11700,7 @@
 				C561D42D2AAC7E7B00E28603 /* UIViewController+SuspendBtn.m in Sources */,
 				C561CE552AAC7CE200E28603 /* XHLaunchAdCache.m in Sources */,
 				C520F23C2AB38CF700142DCC /* WMZBannerControl.m in Sources */,
+				0418551C2AE7E61E003F3EAC /* MSWalletContentView.m in Sources */,
 				C561CE002AAC7CE200E28603 /* ZWPullMenuConfig.m in Sources */,
 				C561D4862AAC7E7B00E28603 /* NSObject+RunrtimeGet.m in Sources */,
 				C578F0572ABB8CCA00832A07 /* MSDoorVC.m in Sources */,
@@ -11700,6 +11756,7 @@
 				C561CE582AAC7CE200E28603 /* RACEXTRuntimeExtensions.m in Sources */,
 				382724192AE3E1E500BABB24 /* NotificationViewController.m in Sources */,
 				C561D49A2AAC7E7B00E28603 /* NSObject+CallBackInfoByBlock.m in Sources */,
+				0418551F2AE8052B003F3EAC /* MSWalletRecordVCViewController.m in Sources */,
 				C561D35B2AAC7E7A00E28603 /* JobsHeaderFooterView.m in Sources */,
 				C5EE3D4F2AB9D1E60020BDB8 /* MSHomeGoodsView.m in Sources */,
 				C561D4262AAC7E7B00E28603 /* UIViewController+BackBtn.m in Sources */,
@@ -11723,6 +11780,7 @@
 				C561D9632AAC914300E28603 /* BaiShaETProjMembersSubsBaseVC.m in Sources */,
 				C561D4922AAC7E7B00E28603 /* NSObject+Extras.m in Sources */,
 				C561D4432AAC7E7B00E28603 /* UITableViewHeaderFooterView+BaseTableViewHeaderFooterViewProtocol.m in Sources */,
+				041855282AE810F6003F3EAC /* MSTopupRecordCell.m in Sources */,
 				C561D3D02AAC7E7B00E28603 /* NSBundle+CLLanguage.m in Sources */,
 				C561D94E2AAC8D8000E28603 /* JobsFiltrationView.m in Sources */,
 				C561D3FD2AAC7E7B00E28603 /* NSMutableDictionary+Ordered.m in Sources */,

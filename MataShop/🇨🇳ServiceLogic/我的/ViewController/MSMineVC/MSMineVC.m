@@ -13,6 +13,7 @@
 #import "RealNameAuthViewController.h"
 #import "FeedbackViewController.h"
 #import "NotificationViewController.h"
+#import "MSWalletViewController.h"
 
 @interface MSMineVC () <MSMineCollectionReusableViewDelegate>
 /// UI
@@ -106,7 +107,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     {
         if(viewModel.textModel.text.isEqualToString(Internationalization(@"钱包"))){
-            
+            [self forceComingToPushVC:MSWalletViewController.new requestParams:@""];
         }
         if(viewModel.textModel.text.isEqualToString(Internationalization(@"我的店铺"))){
             

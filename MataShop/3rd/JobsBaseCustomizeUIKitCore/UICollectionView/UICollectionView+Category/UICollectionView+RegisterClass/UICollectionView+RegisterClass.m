@@ -43,6 +43,7 @@
     [self registerCollectionViewCellClass:MSFindCVCell.class];///
     [self registerCollectionViewCellClass:MSVedioCVCell.class];///
     [self registerCollectionViewCellClass:MSMineView6CVCell.class];///
+    [self registerCollectionViewCellClass:MSTopupRecordCell.class];
 }
 /// 注册 UICollectionViewCell 及其子类
 -(void)registerCollectionViewCellClass:(Class)cls{

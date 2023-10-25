@@ -60,6 +60,7 @@
 #import "MSLastDynamicCVCell.h"/// 最新动态
 #import "MSForLastDynamicCVCell.h"
 
+#import "MSTopupRecordCell.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UICollectionView (RegisterClass)
