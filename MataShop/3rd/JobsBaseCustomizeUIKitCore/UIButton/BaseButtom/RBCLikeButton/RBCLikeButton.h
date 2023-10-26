@@ -2,7 +2,6 @@
 //  RBCLikeButton.h
 //  EmitterAnimation
 //
-//  Created by 刘庆贺 on 2019/3/13.
 //  Copyright © 2019 lmh. All rights reserved.
 //
 

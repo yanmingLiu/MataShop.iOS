@@ -1,16 +1,15 @@
 //
-//  MSWalletHeadView.h
+//  MSMyTeamHeadView.h
 //  MataShop
 //
-//  Created by Mac on 2023/10/21.
+//  Created by Mac on 2023/10/25.
 //
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MSWalletHeadView : UIView
-
+@interface MSMyTeamHeadView : UIView
 
 @end
 

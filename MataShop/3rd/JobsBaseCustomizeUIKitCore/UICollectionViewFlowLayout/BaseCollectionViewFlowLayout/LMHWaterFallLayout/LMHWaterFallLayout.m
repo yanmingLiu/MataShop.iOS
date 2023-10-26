@@ -2,7 +2,6 @@
 //  LMHWaterFallLayout.m
 //  WateFallLayoutTest
 //
-//  Created by 刘梦桦 on 2017/5/18.
 //  Copyright © 2017年 lmh. All rights reserved.
 //
 

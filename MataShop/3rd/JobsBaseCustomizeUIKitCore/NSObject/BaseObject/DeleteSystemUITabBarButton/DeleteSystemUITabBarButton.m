@@ -2,9 +2,6 @@
 //  DeleteSystemUITabBarButton.m
 //  JinXian Finance
 //
-//  Created by 刘赓 on 2017/6/7.
-//  Copyright © 2017年 刘赓. All rights reserved.
-//
 
 #import "DeleteSystemUITabBarButton.h"
 

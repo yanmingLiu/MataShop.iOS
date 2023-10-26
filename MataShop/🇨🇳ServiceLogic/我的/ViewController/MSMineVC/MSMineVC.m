@@ -14,7 +14,7 @@
 #import "FeedbackViewController.h"
 #import "NotificationViewController.h"
 #import "MSWalletViewController.h"
-
+#import "MSMyTeamViewController.h"
 @interface MSMineVC () <MSMineCollectionReusableViewDelegate>
 /// UI
 @property(nonatomic,strong)UICollectionViewFlowLayout *layout;
@@ -113,7 +113,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             
         }
         if(viewModel.textModel.text.isEqualToString(Internationalization(@"我的团队"))){
-            
+            [self forceComingToPushVC:MSMyTeamViewController.new requestParams:@""];
         }
         if(viewModel.textModel.text.isEqualToString(Internationalization(@"信用分数"))){
             

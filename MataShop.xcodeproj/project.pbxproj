@@ -14,6 +14,8 @@
 		041855222AE80F4A003F3EAC /* MSTopupRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041855212AE80F4A003F3EAC /* MSTopupRecordViewController.m */; };
 		041855252AE80FF2003F3EAC /* MSTopupRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041855242AE80FF2003F3EAC /* MSTopupRecordModel.m */; };
 		041855282AE810F6003F3EAC /* MSTopupRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041855272AE810F6003F3EAC /* MSTopupRecordCell.m */; };
+		0418552B2AE93C71003F3EAC /* MSMyTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418552A2AE93C71003F3EAC /* MSMyTeamViewController.m */; };
+		041855302AE93D1F003F3EAC /* MSMyTeamHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418552F2AE93D1F003F3EAC /* MSMyTeamHeadView.m */; };
 		3827226D2AE2506400BABB24 /* MSMineSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3827226C2AE2506400BABB24 /* MSMineSectionHeader.m */; };
 		382723D92AE2873D00BABB24 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723D82AE2873D00BABB24 /* AddressViewController.m */; };
 		382723DC2AE2875100BABB24 /* AddressItemViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 382723DB2AE2875100BABB24 /* AddressItemViewModel.m */; };
@@ -1037,6 +1039,10 @@
 		041855242AE80FF2003F3EAC /* MSTopupRecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTopupRecordModel.m; sourceTree = "<group>"; };
 		041855262AE810F6003F3EAC /* MSTopupRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSTopupRecordCell.h; sourceTree = "<group>"; };
 		041855272AE810F6003F3EAC /* MSTopupRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSTopupRecordCell.m; sourceTree = "<group>"; };
+		041855292AE93C71003F3EAC /* MSMyTeamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyTeamViewController.h; sourceTree = "<group>"; };
+		0418552A2AE93C71003F3EAC /* MSMyTeamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyTeamViewController.m; sourceTree = "<group>"; };
+		0418552E2AE93D1F003F3EAC /* MSMyTeamHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMyTeamHeadView.h; sourceTree = "<group>"; };
+		0418552F2AE93D1F003F3EAC /* MSMyTeamHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMyTeamHeadView.m; sourceTree = "<group>"; };
 		36B1F4ECAB285B2B36724BDE /* Pods-MataShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MataShop.release.xcconfig"; path = "Target Support Files/Pods-MataShop/Pods-MataShop.release.xcconfig"; sourceTree = "<group>"; };
 		380C125973423803486C58BD /* Pods_MataShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MataShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3827226B2AE2506400BABB24 /* MSMineSectionHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMineSectionHeader.h; sourceTree = "<group>"; };
@@ -2897,6 +2903,24 @@
 			path = MSWallet;
 			sourceTree = "<group>";
 		};
+		0418552C2AE93C78003F3EAC /* MSMyTeam */ = {
+			isa = PBXGroup;
+			children = (
+				041855292AE93C71003F3EAC /* MSMyTeamViewController.h */,
+				0418552A2AE93C71003F3EAC /* MSMyTeamViewController.m */,
+			);
+			path = MSMyTeam;
+			sourceTree = "<group>";
+		};
+		0418552D2AE93CEB003F3EAC /* MSMyTeam */ = {
+			isa = PBXGroup;
+			children = (
+				0418552E2AE93D1F003F3EAC /* MSMyTeamHeadView.h */,
+				0418552F2AE93D1F003F3EAC /* MSMyTeamHeadView.m */,
+			);
+			path = MSMyTeam;
+			sourceTree = "<group>";
+		};
 		15D1355ABEB6BF59847AC26C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3625,6 +3649,7 @@
 		C5329FD72ABF0FB7004294E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0418552D2AE93CEB003F3EAC /* MSMyTeam */,
 				041855162AE3C4D4003F3EAC /* MSWallet */,
 				C569E5592AD24F3C000F4DE3 /* MSMyInfoStyle1TBVCell */,
 				C569E55D2AD24F76000F4DE3 /* MSMyInfoStyle2TBVCell */,
@@ -9037,6 +9062,7 @@
 		C561D9912AAC9A5900E28603 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0418552C2AE93C78003F3EAC /* MSMyTeam */,
 				0418550E2AE3C1CB003F3EAC /* MSWallet */,
 				C5FF922E2AC493B000D3A386 /* MSMineVC */,
 				C5FF922F2AC493C500D3A386 /* MSMyInfoVC */,
@@ -11533,6 +11559,7 @@
 				382723E42AE293DE00BABB24 /* AddressModel.m in Sources */,
 				C5FAF8C02AD974E400100EDE /* MSRechargeVC.m in Sources */,
 				C5E015CB2AAE1DD9005ABE09 /* LunarFormatter.m in Sources */,
+				0418552B2AE93C71003F3EAC /* MSMyTeamViewController.m in Sources */,
 				C561D3BC2AAC7E7A00E28603 /* UIScrollView+AnimationKit.m in Sources */,
 				C561CE1A2AAC7CE200E28603 /* JXCategoryTimelineCell.m in Sources */,
 				C5399F742AD622B200C8A5E3 /* TKPermissionFolders.m in Sources */,
@@ -11623,6 +11650,7 @@
 				C5729A972AB591E10084EAFC /* MSInternalRecruitmentVC.m in Sources */,
 				3827226D2AE2506400BABB24 /* MSMineSectionHeader.m in Sources */,
 				C561D4192AAC7E7B00E28603 /* NSString+Replace.m in Sources */,
+				041855302AE93D1F003F3EAC /* MSMyTeamHeadView.m in Sources */,
 				C553D4AF2ACA6AA700F9CEA1 /* MSCommentTableHeaderFooterView.m in Sources */,
 				C5D71F352AC22EE800DD8938 /* KTVHCDataStorage.m in Sources */,
 				C5D71F3F2AC22EE800DD8938 /* KTVHCDataUnitQueue.m in Sources */,
